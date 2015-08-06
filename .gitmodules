@@ -1,0 +1,3 @@
+[submodule "themes/casper"]
+	path = themes/casper
+	url = https://github.com/SwiftGGTeam/hexo-theme-casper.git
