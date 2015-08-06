@@ -69,4 +69,5 @@ theme: casper
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repository: git@github.com:SwiftGGTeam/SwiftGGTeam.github.io.git
