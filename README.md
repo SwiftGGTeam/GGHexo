@@ -11,7 +11,7 @@ clone项目
 
     git clone git@github.com:SwiftGGTeam/GGHexo.git
 
-拉取theme子项目
+拉取子项目
 
     cd GGHexo
     git submodule init
@@ -20,6 +20,16 @@ clone项目
 安装依赖  
 
     npm install
+
+---
+
+`TAG: 以下每次重复`
+
+将要修改的子项目切换到master分支
+
+    cd source
+    git checkout master
+    git pull
 
 创建文章
 
@@ -41,8 +51,16 @@ clone项目
 
     hexo d
 
-将文章推送到github
+将文章`md`文件推送到`SwiftGGTeam/source`
 
+    (source)目录下
     git add *
     git commit -m ''
+    git push
+
+更新`GGHexo`将其指向最新的`source`
+
+    (GGHexo)目录下
+    git add -u
+    git commit -m "update submodule to lastest commit id"
     git push
