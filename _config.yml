@@ -5,7 +5,7 @@
 # Site # 整站的基本信息
 title: SwiftGG # 网站标题
 subtitle: 走心的 Swift 翻译组 # 网站副标题
-description: "SwiftGG翻译组做高质量的Swift文章翻译，为你带来优质的国外Swift语言教程，是Swift学习的好地方。 # 网站描述，给搜索引擎用的，在生成html中的head->meta中可看到
+description: SwiftGG翻译组，做高质量的Swift文章翻译，为你带来优质的国外Swift语言教程 # 网站描述，给搜索引擎用的，在生成html中的head->meta中可看到
 author: SwiftGG # 网站作者
 language: zh-CN # 语言
 timezone:
