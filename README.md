@@ -37,6 +37,8 @@ clone项目
 
 在`source/_posts`下生成`新文章名字.md`文件，进行编辑即可。
 
+发布前需要先提取图片再生成页面，参考下一节内容。
+
 生成静态页面
 
     hexo g
@@ -65,7 +67,19 @@ clone项目
     git commit -m "update submodule to lastest commit id"
     git push
 
+## 自动提取图片
 
+在项目根目录下执行`python 2-extractImgs.py`或者`python 3-extractImgs.py`，取决于你的 Python 版本。
+
+脚本会自动遍历`_posts`下的文章，提取其中的图片地址并下载到`jacman/source/img/articles`中对应文章的目录，然后更新文章中的图片链接。
+
+注意：
+- 文章头部必须包含`permalink`
+- 图片链接必须正确
+
+以上两条如果违反会直接报错，请根据错误信息修改对应文章，然后再次执行即可。
+
+执行完毕之后，继续执行`hexo g`。
 
 ##其他信息
 ###google分析
