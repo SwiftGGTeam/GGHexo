@@ -71,7 +71,7 @@ article
       line-height 1.2em
       padding-bottom 0.3em
       margin-top 1.5em
-      border-bottom 2px solid lighten(color-gray,30%)
+      border-bottom 1px solid #eeeeee
     h3
       font-size font-size+40
       line-height 1em
@@ -84,7 +84,7 @@ article
       >code
         color darken(color-gray,20%)
     hr 
-      border 1px solid lighten(color-gray,30%)
+      border 1px solid #eeeeee
     strong
       font-weight bold
     em
@@ -183,16 +183,22 @@ article
         margin-top 0
     table
       max-width 100%
+      min-width 70%
+      margin-left 15%
       border-collapse collapse
       border-spacing 0
       margin-top: 1em
       th
         font-weight bold
-        border-bottom 2px solid lighten(color-gray,30%)
+        border 1px solid #dddddd
         padding 0.5em
         line-height: 1.3em
+      tr:nth-child(even)
+        background-color #f8f8f8
+      tbody tr:nth-child(-n+3)
+        color #FF8C19
       td 
-        border-bottom 1px solid lighten(color-gray,30%)
+        border 1px solid #dddddd
         padding 0.5em
         line-height: 1.3em
     .pullquote
