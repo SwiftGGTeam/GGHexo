@@ -39,6 +39,8 @@ clone项目
 
 发布前需要先提取图片再生成页面，参考下一节内容。
 
+发布前需要修改文章头，参考下下节。
+
 生成静态页面
 
     hexo g
@@ -80,6 +82,24 @@ clone项目
 以上两条如果违反会直接报错，请根据错误信息修改对应文章，然后再次执行即可。
 
 执行完毕之后，继续执行`hexo g`。
+
+## md文件头示例
+
+```
+title: "Swift 中的结构体与 NSCoding"  
+date: 2015-8-27
+tags: [Swift]
+categories: [Swift and Painless]
+permalink: nscoding_and_swift_structs
+
+---
+> 原文连接：[NSCoding And Swift Structs](http://swiftandpainless.com/nscoding-and-swift-structs/?utm_campaign=Swift%2BSandbox&utm_medium=web&utm_source=Swift_Sandbox_3)
+> 译者：[小锅](http://www.swiftyper.com)
+
+正文......
+```
+
+title是标题，date是发布日期，tag是标签，categories是分类（我们填写来源网站名），permalink是最终生成的URL。
 
 ##其他信息
 ###google分析
