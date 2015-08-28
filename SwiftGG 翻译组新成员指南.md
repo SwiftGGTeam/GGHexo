@@ -19,13 +19,13 @@ Tower 加入流程：
 
 Tower 有微信版和移动端 APP，可以自行下载。
 
-![](/img/guide/1.png)
+![](https://raw.githubusercontent.com/SwiftGGTeam/GGHexo/master/guide-imgs/1.png)
 
 进入 Tower 之后，可以看到分为`任务`、`讨论`、`文件`和`文档`四个部分，下面分别介绍。
 
 ### 任务
 
-![](/img/guide/2.png)
+![](https://raw.githubusercontent.com/SwiftGGTeam/GGHexo/master/guide-imgs/2.png)
 
 任务是核心部分，进入之后可以看到有多个列表，下面简单介绍列表的作用：
 - `备选文章`：这里的文章是其他成员筛选出来的优秀文章，可以认领翻译。如果要认领，把任务指派给自己，然后把任务用鼠标拖动到右侧的`翻译中`列表
@@ -58,11 +58,11 @@ Bearychat 有移动端 APP，可以自行下载。
 
 加入之后，可以看到左上角有三个讨论组：
 
-![](/img/guide/3.png)
+![](https://raw.githubusercontent.com/SwiftGGTeam/GGHexo/master/guide-imgs/3.png)
 
 `#所有人`是聊天用的，里面有 Tower 机器人，Tower 有操作的时候会自动发通知，比如：
 
-![](/img/guide/4.png)
+![](https://raw.githubusercontent.com/SwiftGGTeam/GGHexo/master/guide-imgs/4.png)
 
 `#运营通知`是运营用的，里面有微博机器人，之后还会添加其他机器人，感兴趣的话可以加入。
 
@@ -78,7 +78,7 @@ Bearychat 有移动端 APP，可以自行下载。
 
 翻译好的文章会加入译者的名字和链接：
 
-![](/img/guide/5.png)
+![](https://raw.githubusercontent.com/SwiftGGTeam/GGHexo/master/guide-imgs/5.png)
 
 所以，**第五件事**是发给@numbbbbb你的名字和链接。具体的文本可以自己定，不一定是真名。
 
