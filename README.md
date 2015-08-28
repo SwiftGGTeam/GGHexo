@@ -101,6 +101,15 @@ permalink: nscoding_and_swift_structs
 
 title是标题，date是发布日期，tag是标签，categories是分类（我们填写来源网站名），permalink是最终生成的URL。
 
-##其他信息
-###google分析
+## 统计
+
+统计脚本是`generateStat.js`，使用 ES6 语法编写，执行方法：
+- 首先安装`babel`：`npm install babel -g`
+- 接着命令行切换到项目根目录
+- 然后执行`babel-node generateStat.js`
+
+执行完毕后用`hexo`生成页面并部署即可。
+
+## 其他信息
+### google分析
 ID：UA-66150920-1
