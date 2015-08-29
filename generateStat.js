@@ -6,17 +6,26 @@ let basePath = './source/_posts'
 let pageHeader = `
 # SwiftGG团队贡献榜
 
-本页面会记录团队内所有成员的贡献，方便大家进行查看。你的努力，全世界都看得到:]。
+本页面会记录团队内所有成员的贡献，方便大家进行查看。
 
-# 翻译统计
+你的付出，全世界都看得到:]。
+`
+let wordHeader = `
+# 翻译字数统计
 
 | 译者 | 字数 |
+| :------------: | :------------: |
+`
+let articleHeader = `
+# 翻译篇数统计
+
+| 译者 | 篇数 |
 | :------------: | :------------: |
 `
 let targetFile = './source/stat/index.md'
 
 
-new Promise(function (resolve, reject) {
+let contentMap = new Promise(function (resolve, reject) {
   fs.readdir(basePath, (err, files) => {
     if (err) reject(err)
     resolve(files.filter(file => !(file.indexOf(".") === 0)))
@@ -41,17 +50,31 @@ new Promise(function (resolve, reject) {
 .then(contentArr => contentArr.reduce(
   (contentMap, item) => 
     contentMap.has(item.translator) ? 
-      contentMap.set(item.translator, contentMap.get(item.translator) + item.words) : 
-      contentMap.set(item.translator, item.words),
+      contentMap.set(item.translator, [contentMap.get(item.translator)[0] + item.words, contentMap.get(item.translator)[1] + 1]) : 
+      contentMap.set(item.translator, [item.words, 1]),
   new Map()
 ))
-.then(contentMap => Array.from(contentMap).sort((a, b) => b[1] - a[1]))
+
+
+let wordsStat = contentMap
+.then(contentMap => Array.from(contentMap).sort((a, b) => b[1][0] - a[1][0]))
 .then(contentArr => contentArr.map(
-  contentItem => `| ${contentItem[0]} | ${contentItem[1]} |`
+  contentItem => `| ${contentItem[0]} | ${contentItem[1][0]} |`
 ))
-.then(mdPartials => pageHeader + mdPartials.join("\n"))
-.then(md => new Promise((resolve, reject) =>
-  fs.writeFile(targetFile, md, (err) => {
+.then(mdPartials => wordHeader + mdPartials.join("\n"))
+
+
+let articlesStat = contentMap
+.then(contentMap => Array.from(contentMap).sort((a, b) => b[1][1] - a[1][1]))
+.then(contentArr => contentArr.map(
+  contentItem => `| ${contentItem[0]} | ${contentItem[1][1]} |`
+))
+.then(mdPartials => articleHeader + mdPartials.join("\n"))
+
+
+let writeBack = Promise.all([wordsStat, articlesStat])
+.then(statPartials => new Promise((resolve, reject) =>
+  fs.writeFile(targetFile, pageHeader + statPartials.join("\n\n"), (err) => {
     if (err) reject(err)
     resolve()
   })
