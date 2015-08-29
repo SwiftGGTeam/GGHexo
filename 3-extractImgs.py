@@ -4,8 +4,9 @@ from os import walk, path, mkdir
 import re
 
 
-basepath = ".\source\_posts"
+basepath = "./source/_posts"
 files = next(walk(basepath))[2]
+files = filter(lambda x: not x.startswith("."), files)
 
 
 def getcontent(filepath):

@@ -8,8 +8,9 @@ from io import open
 from itertools import imap
 
 
-basepath = u".\source\_posts"
+basepath = u"./source/_posts"
 files = walk(basepath).next()[2]
+files = filter(lambda x: not x.startswith("."), files)
 
 
 def getcontent(filepath):

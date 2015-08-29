@@ -19,7 +19,7 @@ let targetFile = './source/stat/index.md'
 new Promise(function (resolve, reject) {
   fs.readdir(basePath, (err, files) => {
     if (err) reject(err)
-    resolve(files)
+    resolve(files.filter(file => !(file.indexOf(".") === 0)))
   })
 })
 .then(files => Promise.all(
@@ -35,7 +35,7 @@ new Promise(function (resolve, reject) {
 .then(contents => contents.map(
   content => ({
     words: content.substr(content.indexOf("---") + 3).replace(/\s+/g, "").length,
-    translator: content.match(/> 译者：\[(.*?)\]\(.*?\)/)[1]
+    translator: content.match(/> 译者：\[(.*?)\]\((.*?)\)/)[1]
   })
 ))
 .then(contentArr => contentArr.reduce(
