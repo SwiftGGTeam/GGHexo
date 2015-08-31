@@ -94,7 +94,7 @@ let auditStat = originInfo
   (contentMap, item) => 
     contentMap.has(item.auditor) ? 
       contentMap.set(item.auditor, contentMap.get(item.auditor) + 1) : 
-      contentMap.set(item.translator, 1),
+      contentMap.set(item.auditor, 1),
   new Map()
 ))
 .then(contentMap => Array.from(contentMap).sort((a, b) => b[1] - a[1]))
