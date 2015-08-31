@@ -22,10 +22,22 @@ let articleHeader = `
 | 译者 | 篇数 |
 | :------------: | :------------: |
 `
+let auditHeader = `
+# 校对篇数统计
+
+| 校对者 | 篇数 |
+| :------------: | :------------: |
+`
+let finalHeader = `
+# 定稿篇数统计
+
+| 定稿者 | 篇数 |
+| :------------: | :------------: |
+`
 let targetFile = './source/stat/index.md'
 
 
-let contentMap = new Promise(function (resolve, reject) {
+let originInfo = new Promise(function (resolve, reject) {
   fs.readdir(basePath, (err, files) => {
     if (err) reject(err)
     resolve(files.filter(file => !(file.indexOf(".") === 0)))
@@ -41,12 +53,58 @@ let contentMap = new Promise(function (resolve, reject) {
     )
   )
 ))
+// .then(contents => contents.map(
+//   content => {
+//     console.log(content)
+//     return {
+//     words: content.substr(content.indexOf("---") + 3).replace(/\s+/g, "").length,
+//     translator: content.match(/> 译者：(\[.*?\]\(.*?\))/)[1],
+//     auditor: content.match(/> 校对：(\[.*?\]\(.*?\))/)[1],
+//     finalMan: content.match(/> 定稿：(\[.*?\]\(.*?\))/)[1],
+//   }
+//   }
+// ))
 .then(contents => contents.map(
   content => ({
     words: content.substr(content.indexOf("---") + 3).replace(/\s+/g, "").length,
-    translator: content.match(/> 译者：(\[.*?\]\(.*?\))/)[1]
+    translator: content.match(/> 译者：(\[.*?\]\(.*?\))/)[1],
+    auditor: content.match(/> 校对：(\[.*?\]\(.*?\))/)[1],
+    finalMan: content.match(/> 定稿：(\[.*?\]\(.*?\))/)[1],
   })
 ))
+
+
+let finalStat = originInfo
+.then(contentArr => contentArr.reduce(
+  (contentMap, item) => 
+    contentMap.has(item.finalMan) ? 
+      contentMap.set(item.finalMan, contentMap.get(item.finalMan) + 1) : 
+      contentMap.set(item.finalMan, 1),
+  new Map()
+))
+.then(contentMap => Array.from(contentMap).sort((a, b) => b[1] - a[1]))
+.then(contentArr => contentArr.map(
+  contentItem => `| ${contentItem[0]} | ${contentItem[1]} |`
+))
+.then(mdPartials => finalHeader + mdPartials.join("\n"))
+
+
+let auditStat = originInfo
+.then(contentArr => contentArr.reduce(
+  (contentMap, item) => 
+    contentMap.has(item.auditor) ? 
+      contentMap.set(item.auditor, contentMap.get(item.auditor) + 1) : 
+      contentMap.set(item.translator, 1),
+  new Map()
+))
+.then(contentMap => Array.from(contentMap).sort((a, b) => b[1] - a[1]))
+.then(contentArr => contentArr.map(
+  contentItem => `| ${contentItem[0]} | ${contentItem[1]} |`
+))
+.then(mdPartials => auditHeader + mdPartials.join("\n"))
+
+
+let translationInfo = originInfo
 .then(contentArr => contentArr.reduce(
   (contentMap, item) => 
     contentMap.has(item.translator) ? 
@@ -56,7 +114,7 @@ let contentMap = new Promise(function (resolve, reject) {
 ))
 
 
-let wordsStat = contentMap
+let wordsStat = translationInfo
 .then(contentMap => Array.from(contentMap).sort((a, b) => b[1][0] - a[1][0]))
 .then(contentArr => contentArr.map(
   contentItem => `| ${contentItem[0]} | ${contentItem[1][0]} |`
@@ -64,7 +122,7 @@ let wordsStat = contentMap
 .then(mdPartials => wordHeader + mdPartials.join("\n"))
 
 
-let articlesStat = contentMap
+let articlesStat = translationInfo
 .then(contentMap => Array.from(contentMap).sort((a, b) => b[1][1] - a[1][1]))
 .then(contentArr => contentArr.map(
   contentItem => `| ${contentItem[0]} | ${contentItem[1][1]} |`
@@ -72,7 +130,7 @@ let articlesStat = contentMap
 .then(mdPartials => articleHeader + mdPartials.join("\n"))
 
 
-let writeBack = Promise.all([wordsStat, articlesStat])
+let writeBack = Promise.all([wordsStat, articlesStat, auditStat, finalStat])
 .then(statPartials => new Promise((resolve, reject) =>
   fs.writeFile(targetFile, pageHeader + statPartials.join("\n\n"), (err) => {
     if (err) reject(err)
