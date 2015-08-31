@@ -105,10 +105,42 @@ title是标题，date是发布日期，tag是标签，categories是分类（我�
 
 统计脚本是`generateStat.js`，使用 ES6 语法编写，执行方法：
 - 首先安装`babel`：`npm install babel -g`
-- 接着命令行切换到项目根目录
-- 然后执行`babel-node generateStat.js`
+- 接着`cd ...`切换到项目根目录
+- 然后执行`babel-node generateStat.js`，会自动生成`source/stat`下的`md`文件
 
 执行完毕后用`hexo`生成页面并部署即可。
+
+## 运营版本生成
+
+由于在各个网站发文章都需要修改文章，因此编写脚本自动生成。
+
+目前运营目标：
+- 简书
+- 微信公众号
+- CSDN（发邮件给txy，不需要生成）
+- CSDN 极客头条（直接投稿链接，不需要生成）
+
+通用处理：
+- 去掉头部 hexo 信息
+- 去掉原文链接
+- 去掉尾部二维码
+- 图片链接换成完整 URL
+- 去掉`<!--more-->`标签
+- 第一行加文章名称，方便复制到微信和简书的标题栏，使用的时候删除本行
+
+简书特殊要求：
+- 第二行加引用，引流到公众号
+
+微信公众号特殊要求：
+- 第二行加原文链接，方便复制到原文输入框，使用的时候删除本行
+
+使用：
+- `npm install mkdirp`
+- `npm install babel -g`
+- `cd ...`进入项目根目录
+- `babel-node generateShareMD.js`
+
+生成好的文章在`share`目录下，每篇文章一个文件夹，用`permalink`命名文件夹，用运营目标命名具体的`md`文件
 
 ## 其他信息
 ### google分析
