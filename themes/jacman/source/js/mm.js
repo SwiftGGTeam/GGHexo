@@ -1,10 +1,10 @@
 $(function() {
-    //if (window.location.host[0] == "1") return
+    if (window.location.host[0] == "1") return
     AV.initialize("Ab21p9Df2hlkXxzSiwHuUSr5", "MNphO03YUzWhy9k6rHHi4eHA");
     var ArticleViewCount = AV.Object.extend("ArticleViewCount");
     var queryViewCount = new AV.Query(ArticleViewCount)
     queryViewCount.limit(1000)
-    if (window.location.pathname == "/") {
+    if (window.location.pathname == "/" || window.location.pathname.indexOf("page/") !== -1) {
         var allUrl = $("a[itemprop='url']").map(function () {
             return $(this).attr("href")
         }).get()
