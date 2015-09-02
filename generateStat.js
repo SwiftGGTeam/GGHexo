@@ -67,12 +67,11 @@ let originInfo = new Promise(function (resolve, reject) {
 .then(contents => contents.map(
   content => ({
     words: content.substr(content.indexOf("---") + 3).replace(/\s+/g, "").length,
-    translator: content.match(/> 译者：(\[.*?\]\(.*?\))/)[1],
-    auditor: content.match(/> 校对：(\[.*?\]\(.*?\))/)[1],
-    finalMan: content.match(/> 定稿：(\[.*?\]\(.*?\))/)[1],
+    translator: content.match(/> 译者：(\[.*?\]\(.*?)[\/]?\)/)[1] + ")",
+    auditor: content.match(/> 校对：(\[.*?\]\(.*?)[\/]?\)/)[1] + ")",
+    finalMan: content.match(/> 定稿：(\[.*?\]\(.*?)[\/]?\)/)[1] + ")",
   })
 ))
-
 
 let finalStat = originInfo
 .then(contentArr => contentArr.reduce(
