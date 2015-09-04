@@ -1,5 +1,4 @@
 UIGestureRecognizer教程：创建自定义手势识别器
-> 更多优秀译文请关注我们的微信公众号：learnSwift
 
 > 原文链接：[UIGestureRecognizer Tutorial: Creating Custom Recognizers](http://www.raywenderlich.com/104744/uigesturerecognizer-tutorial-creating-custom-recognizers)
 > 原文日期：2015/08/06

@@ -1,5 +1,4 @@
 如何为您的扩展取个好听的名字
-> 更多优秀译文请关注我们的微信公众号：learnSwift
 
 > 原文链接：[Swift: How To Name Your Extensions](http://natashatherobot.com/swift-how-to-name-your-extensions/)
 > 原文日期：2015/07/26

@@ -1,5 +1,4 @@
 苹果官方博客：Swift 2.0 中的字符串
-> 更多优秀译文请关注我们的微信公众号：learnSwift
 
 > 原文链接：[Strings in Swift 2](https://developer.apple.com/swift/blog/?id=30)
 > 原文日期：2015/07/23

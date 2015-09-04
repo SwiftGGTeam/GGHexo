@@ -35,7 +35,7 @@ let originInfo = new Promise(function (resolve, reject) {
   origin = origin.replace(/<center>!\[给译者打赏\]\(.*?\)<\/center>/, "")
   origin = origin.replace("<!--more-->", "")
   let jianshu = origin
-  jianshu = file.fileName + "\n" + "> 更多优秀译文请关注我们的微信公众号：learnSwift\n" + jianshu
+  jianshu = file.fileName + "\n" + jianshu
   let wechat = file.fileName + "\n" + origin
   wechat = wechat.replace(/> 原文链接：\[.*?\]\((.*?)\)/, "$1")
   return {

@@ -1,5 +1,4 @@
 Swift 2.0: 理解 flatMap
-> 更多优秀译文请关注我们的微信公众号：learnSwift
 
 > 原文链接：[Swift 2.0: Understanding flatMap](http://natashatherobot.com/swift-2-flatmap/)
 > 原文日期：2015/07/26

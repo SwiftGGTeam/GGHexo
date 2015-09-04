@@ -1,5 +1,4 @@
 Swift:什么时候使用结构体和类
-> 更多优秀译文请关注我们的微信公众号：learnSwift
 
 > 原文链接：[Friday Q&A 2015-07-17: When to Use Swift Structs and Classes](https://www.mikeash.com/pyblog/friday-qa-2015-07-17-when-to-use-swift-structs-and-classes.html)
 > 原文日期：2015/07/17

@@ -1,5 +1,4 @@
 Swift 中的结构体与 NSCoding
-> 更多优秀译文请关注我们的微信公众号：learnSwift
 
 > 原文链接：[NSCoding And Swift Structs](http://swiftandpainless.com/nscoding-and-swift-structs/?utm_campaign=Swift%2BSandbox&utm_medium=web&utm_source=Swift_Sandbox_3)
 > 原文日期：2015/08/19

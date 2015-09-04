@@ -1,7 +1,6 @@
 Swift 2：面向协议编程
-> 更多优秀译文请关注我们的微信公众号：learnSwift
 
-> 原文链接：[whats-new-in-swift-2][2]
+> 原文链接：[introducting_protocol_oriented_programming_in_swift_2][2]
 > 原文日期：2015/06/25
 
 > 译者：[小锅](http://www.swiftyper.com/)
@@ -340,3 +339,5 @@ topSpeed(flyingBirds) // 2000.0
   [6]: http://www.swiftyper.com/Swift/what_new_in_swift_2.html
   [7]: https://developer.apple.com/swift/blog/?id=29
   [8]: https://developer.apple.com/videos/wwdc/2015/?id=408	
+
+

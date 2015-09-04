@@ -1,5 +1,4 @@
 如何正确使用协议
-> 更多优秀译文请关注我们的微信公众号：learnSwift
 
 > 原文链接：[Protocols - My Current Recommendations](http://owensd.io/2015/08/06/protocols.html?utm_campaign=Swift%2BSandbox&utm_medium=web&utm_source=Swift_Sandbox_2)
 > 原文日期：2015/08/06

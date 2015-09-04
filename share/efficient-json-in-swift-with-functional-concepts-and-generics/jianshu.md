@@ -1,5 +1,4 @@
 使用泛型与函数式思想高效解析 JSON
-> 更多优秀译文请关注我们的微信公众号：learnSwift
 
 > 原文链接：[Efficient JSON in Swift with Functional Concepts and Generics](https://robots.thoughtbot.com/efficient-json-in-swift-with-functional-concepts-and-generics)
 > 原文日期：2014/08/06

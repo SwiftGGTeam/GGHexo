@@ -1,5 +1,4 @@
 为什么 guard 比 if 好
-> 更多优秀译文请关注我们的微信公众号：learnSwift
 
 > 原文链接：[Swift 2.0: Why Guard is Better than If](http://natashatherobot.com/swift-guard-better-than-if/)
 > 原文日期：2015/07/16

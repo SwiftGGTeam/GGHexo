@@ -1,5 +1,4 @@
 Swift面试题及答案
-> 更多优秀译文请关注我们的微信公众号：learnSwift
 
 > 原文链接：[Swift Interview Questions and Answers](http://www.raywenderlich.com/110982/swift-interview-questions-answers) 
 > 原文日期：2015/08/25

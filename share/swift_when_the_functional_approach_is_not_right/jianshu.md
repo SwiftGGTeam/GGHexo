@@ -1,5 +1,4 @@
 Swift:什么时候不适合使用函数式方法
-> 更多优秀译文请关注我们的微信公众号：learnSwift
 
 > 原文链接：[Swift: When the Functional Approach is NOT Right](http://natashatherobot.com/swift-when-the-functional-approach-is-not-right/)
 > 原文日期：2015/07/24

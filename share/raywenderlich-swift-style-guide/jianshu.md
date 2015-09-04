@@ -1,5 +1,4 @@
 RayWenderlich 官方 Swift 风格指南
-> 更多优秀译文请关注我们的微信公众号：learnSwift
 
 > 原文链接：[The Official raywenderlich.com Swift Style Guide](https://github.com/raywenderlich/swift-style-guide)
 > 原文日期：2015/07/01

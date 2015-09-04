@@ -1,5 +1,4 @@
 Swift 2.0 中使用 try? 关键字
-> 更多优秀译文请关注我们的微信公众号：learnSwift
 
 > 原文链接：[Swift 2.0: Let's try?](http://natashatherobot.com/swift-2-0-try/)
 > 原文日期：2015/08/26
@@ -26,7 +25,7 @@ ___
 
 ![](http://swift.gg/img/articles/swift-2-lets-try/Screen-Shot-2015-08-26-at-4.48.03-AM.png)
 
->Swift 新增一个关键字`try?`。`try?`会试图执行一个可能会抛出异常的操作。如果成功抛出异常，执行的结果就会包裹在可选值(optional)里；如果抛出异常失败(比如：已经在处理 error)，那么执行的结果就是`nil`，而且没有 error。`try?`配合`if let`和`guard`一齐使用效果更加。
+>Swift 新增一个关键字`try?`。`try?`会试图执行一个可能会抛出异常的操作。如果成功抛出异常，执行的结果就会包裹在可选值(optional)里；如果抛出异常失败(比如：已经在处理 error)，那么执行的结果就是`nil`，而且没有 error。`try?`配合`if let`和`guard`一起使用效果更佳。
 
 >```
 >func produceGizmoUsingTechnology() throws -> Gizmo {...}
