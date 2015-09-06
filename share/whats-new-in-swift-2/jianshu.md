@@ -3,13 +3,13 @@ Swift 2 中的新特性
 
 > 原文链接：[whats-new-in-swift-2][2]
 > 原文日期：2015/06/12
-
+> 
 > 译者：[小锅](http://www.swiftyper.com/)
 > 校对：[numbbbbb](https://github.com/numbbbbb)
 > 定稿：[shanksyang](http://codebuild.me/)
 
 
-![swift-new.jpg][3]
+![][3]
 
 在 WWDC 大会上，我们发现 Swift 小组为 Swift 2 的发展做出了很大的努力。
 
@@ -69,7 +69,7 @@ func tryToDrink() {
 
 新的语法相当轻量，并且可读性很高。之前系统中所有使用`NSError`的方法，都会改用这个新的语法，所以在之后我们将会看到很多类似这样的代码。
 
-![throw-all-the-things-415x320.jpg][5]
+![][5]
 
 ## Binding(绑定)
 
@@ -158,7 +158,9 @@ numbers.map { $0 * 2 }.filter { $0 % 3 == 0 }.indexOf(90) // return 2
 如果有人还记得 Swift 刚推出时，从 beta 版到 1.0 版本中间进行的变化和修改，你就会明白，所有的一切才刚刚开始。本站的教程小组将会持续关注 Swift 最新的变化和更新，并且推出关于这些令人兴奋的更新的一系列文章，以及视频教程。
 
 Swift 2 中哪些部分的更新最让你感到激动？你希望我们的教程从哪里开始？可以在下面留言，让我们知道你的需求！
-
+  
+  [1]: http://www.raywenderlich.com
+  [2]: http://www.raywenderlich.com/108522/whats-new-in-swift-2
   [3]: http://www.swiftyper.com/usr/uploads/2015/06/1201447177.jpg
   [4]: http://www.raywenderlich.com/108379/wwdc-2015-initial-impressions
   [5]: http://www.swiftyper.com/usr/uploads/2015/06/3611083208.jpg
