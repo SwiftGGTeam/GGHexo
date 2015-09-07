@@ -1,5 +1,6 @@
 使用 Swift 检查 API 可用性
 
+
 > [原文链接](http://useyourloaf.com/blog/checking-api-availability-with-swift.html)
 > 原文日期：2015/08/24
 
