@@ -1,14 +1,10 @@
 浅谈 Swift 2 中的 Objective-C 指针
-> 更多优秀译文请关注我们的微信公众号：learnSwift
 
 > 原文链接：[Objective-C Pointers and Swift 2: A Simple Guide](http://jamesonquave.com/blog/objective-c-pointers-and-swift)
-> 
 > 原文日期：2015/08/23
 > 
 > 译者：[mmoaay](http://blog.csdn.net/mmoaay)
-> 
 > 校对：[numbbbbb](https://github.com/numbbbbb)
-> 
 > 定稿：[shanks](http://codebuild.me/)
 > 
 > 本文写于 2015 年 8 月 23 日，与 Xcode7 Beta 版和 Swift 2 兼容

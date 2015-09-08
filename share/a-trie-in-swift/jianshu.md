@@ -1,5 +1,4 @@
 如何在 Swift 中使用字典树
-> 更多优秀译文请关注我们的微信公众号：learnSwift
 
 > 原文链接：[A Trie in Swift](https://bigonotetaking.wordpress.com/2015/08/11/a-trie-in-swift/?utm_campaign=Swift%2BSandbox&utm_medium=web&utm_source=Swift_Sandbox_2)
 > 原文日期：2015/08/11

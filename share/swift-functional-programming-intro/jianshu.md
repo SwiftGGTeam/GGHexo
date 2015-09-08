@@ -1,6 +1,5 @@
 Swift 函数式编程实践
 
-
 > 原文连接：[a practical introduction to functional programming](http://harlankellaway.com/blog/2015/08/10/swift-functional-programming-intro/)
 > 原文日期：2015/08/10
 
