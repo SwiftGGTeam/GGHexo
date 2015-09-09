@@ -1,11 +1,14 @@
 Swift 2：面向协议编程
 
-> 原文链接：[introducting_protocol_oriented_programming_in_swift_2][2]
-> 原文日期：2015/06/25
+> 作者：Erik Kerber，[原文链接](http://www.raywenderlich.com/109156/introducing-protocol-oriented-programming-in-swift-2)，原文日期：2015/06/25
+> 译者：[小锅](http://www.swiftyper.com/)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[mmoaay](http://blog.csdn.net/mmoaay)
+  
 
-> 译者：[小锅](http://www.swiftyper.com/)
-> 校对：[numbbbbb](https://github.com/numbbbbb)
-> 定稿：[mmoaay](http://blog.csdn.net/mmoaay)
+
+
+
+
+
 
 ![swift-new.jpg][3]
 
@@ -332,7 +335,6 @@ topSpeed(flyingBirds) // 2000.0
 可以观看 WWDC 的[Protocol Oriented Programming][8]来进行更加深入的学习，以及获得更底层的理论知识。
 
   [1]: http://www.raywenderlich.com
-  [2]: http://www.raywenderlich.com/109156/introducing-protocol-oriented-programming-in-swift-2
   [3]: http://www.swiftyper.com/usr/uploads/2015/06/955131448.jpg
   [4]: http://www.swiftyper.com/usr/uploads/2015/06/1238146152.png
   [5]: http://cdn1.raywenderlich.com/wp-content/uploads/2015/06/SwiftProtocols.playground.zip

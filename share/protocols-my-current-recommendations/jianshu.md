@@ -1,11 +1,14 @@
 如何正确使用协议
 
-> 原文链接：[Protocols - My Current Recommendations](http://owensd.io/2015/08/06/protocols.html?utm_campaign=Swift%2BSandbox&utm_medium=web&utm_source=Swift_Sandbox_2)
-> 原文日期：2015/08/06
+> 作者：David Owens II，[原文链接](http://owensd.io/2015/08/06/protocols.html)，原文日期：2015/08/06
+> 译者：[小铁匠Linus](http://weibo.com/linusling)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[numbbbbb](https://github.com/numbbbbb)
+  
 
-> 译者：[小铁匠Linus](http://weibo.com/linusling)
-> 校对：[千叶知风](http://weibo.com/xiaoxxiao)
-> 定稿：[numbbbbb](https://github.com/numbbbbb)
+
+
+
+
+
 
 最近 Swift 的热点都围绕在协议上。他们觉得任何东西都应该是协议。理论上这挺好，但是事实上，这种观点会产生一些副作用。
 

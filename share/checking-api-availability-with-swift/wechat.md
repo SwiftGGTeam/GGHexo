@@ -1,11 +1,14 @@
 使用 Swift 检查 API 可用性
 
-> [原文链接](http://useyourloaf.com/blog/checking-api-availability-with-swift.html)
-> 原文日期：2015/08/24
+> 作者：Keith Harrison，[原文链接](http://useyourloaf.com/blog/checking-api-availability-with-swift.html)，原文日期：2015/08/24
+> 译者：[天才175](http://weibo.com/u/2916092907)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[小锅](http://www.swiftyper.com/)
+  
 
-> 译者：[天才175](http://weibo.com/u/2916092907)
-> 校对：[numbbbbb](https://github.com/numbbbbb)
-> 定稿：[小锅](http://www.swiftyper.com/)
+
+
+
+
+
 
 Swift 2 做了一些改进，能够更简单、更安全地检查 API 可否用于特定的 iOS 版本。
 

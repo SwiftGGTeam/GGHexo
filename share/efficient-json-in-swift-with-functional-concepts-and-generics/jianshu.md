@@ -1,11 +1,14 @@
 使用泛型与函数式思想高效解析 JSON
 
-> 原文链接：[Efficient JSON in Swift with Functional Concepts and Generics](https://robots.thoughtbot.com/efficient-json-in-swift-with-functional-concepts-and-generics)
-> 原文日期：2014/08/06
+> 作者：Thought Bot，[原文链接](https://robots.thoughtbot.com/efficient-json-in-swift-with-functional-concepts-and-generics)，原文日期：2014/08/06
+> 译者：[shanks](http://codebuild.me/)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[numbbbbb](https://github.com/numbbbbb)
+  
 
-> 译者：[shanks](http://codebuild.me)
-> 校对：[numbbbbb](https://github.com/numbbbbb)
-> 定稿：[numbbbbb](https://github.com/numbbbbb)
+
+
+
+
+
 
 就在几个月前，苹果推出了一门全新的编程语言，其名为`Swift`, 这让我们对未来 iOS 和 OS X 开发充满了期待与兴奋。人们纷纷开始使用 Xcode Beta1 版本来进行 Swift 开发，但是很快就发现解析 JSON 这一常见的操作在 Swift 中并不如在 Objectitve-C 中那样快捷和方便。Swift 是一门[静态类型](http://en.wikipedia.org/wiki/Type_system)的语言，这意味我们不能简单地将对象赋值给一个特定类型的变量，并且让编译器相信这些对象就是我们所声明的那种类型。在 Swift 当中，编译器会进行检查，以确保我们不会意外地触发运行时错误。这使得我们可以依赖编译器来写出一些无 bug 的代码，同时我们必须做许多额外的工作来使编译器不报错。在这篇文章当中，我将使用函数式思想和[泛型](http://en.wikipedia.org/wiki/Generic_programming)来探讨如何编写易读高效的 JSON 解析代码。
 

@@ -1,11 +1,14 @@
 Swift 2 中的新特性
 
-> 原文链接：[whats-new-in-swift-2][2]
-> 原文日期：2015/06/12
-> 
-> 译者：[小锅](http://www.swiftyper.com/)
-> 校对：[numbbbbb](https://github.com/numbbbbb)
-> 定稿：[shanksyang](http://codebuild.me/)
+> 作者：Greg Heo，[原文链接](http://www.raywenderlich.com/108522/whats-new-in-swift-2)，原文日期：2015/06/12
+> 译者：[小锅](http://www.swiftyper.com/)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[shanksyang](undefined)
+  
+
+
+
+
+
+
 
 
 ![][3]
@@ -159,7 +162,6 @@ numbers.map { $0 * 2 }.filter { $0 % 3 == 0 }.indexOf(90) // return 2
 Swift 2 中哪些部分的更新最让你感到激动？你希望我们的教程从哪里开始？可以在下面留言，让我们知道你的需求！
   
   [1]: http://www.raywenderlich.com
-  [2]: http://www.raywenderlich.com/108522/whats-new-in-swift-2
   [3]: http://www.swiftyper.com/usr/uploads/2015/06/1201447177.jpg
   [4]: http://www.raywenderlich.com/108379/wwdc-2015-initial-impressions
   [5]: http://www.swiftyper.com/usr/uploads/2015/06/3611083208.jpg

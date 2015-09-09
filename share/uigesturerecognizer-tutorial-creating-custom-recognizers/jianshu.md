@@ -1,11 +1,14 @@
 UIGestureRecognizer教程：创建自定义手势识别器
 
-> 原文链接：[UIGestureRecognizer Tutorial: Creating Custom Recognizers](http://www.raywenderlich.com/104744/uigesturerecognizer-tutorial-creating-custom-recognizers)
-> 原文日期：2015/08/06
+> 作者：Michael Katz，[原文链接](http://www.raywenderlich.com/104744/uigesturerecognizer-tutorial-creating-custom-recognizers)，原文日期：2015/08/06
+> 译者：[mmoaay](http://blog.csdn.net/mmoaay)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[numbbbbb](https://github.com/numbbbbb)
+  
 
-> 译者：[mmoaay](http://blog.csdn.net/mmoaay)
-> 校对：[千叶知风](http://weibo.com/xiaoxxiao)
-> 定稿：[numbbbbb](https://github.com/numbbbbb)  
+
+
+
+
+
 
 > 如果是首次访问，可以订阅我的[RSS feed](http://www.raywenderlich.com/feed/)或者在[Twitter](http://twitter.com/rwenderlich)上粉我。热烈欢迎！
 

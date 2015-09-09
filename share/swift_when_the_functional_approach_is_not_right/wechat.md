@@ -1,11 +1,14 @@
 Swift:什么时候不适合使用函数式方法
 
-http://natashatherobot.com/swift-when-the-functional-approach-is-not-right/
-> 原文日期：2015/07/24
+> 作者：Natasha，[原文链接](http://natashatherobot.com/swift-when-the-functional-approach-is-not-right/)，原文日期：2015/07/24
+> 译者：[天才175](http://weibo.com/u/2916092907)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[numbbbbb](https://github.com/numbbbbb)
+  
 
-> 译者：[天才175](http://weibo.com/u/2916092907)
-> 校对：[numbbbbb](https://github.com/numbbbbb)
-> 定稿：[numbbbbb](https://github.com/numbbbbb)
+
+
+
+
+
 
 昨天，我在代码库中找到一段我所认为的极具 Swift 风格的代码。
 

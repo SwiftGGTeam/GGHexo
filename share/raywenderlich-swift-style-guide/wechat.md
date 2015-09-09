@@ -1,11 +1,14 @@
 RayWenderlich 官方 Swift 风格指南
 
-https://github.com/raywenderlich/swift-style-guide
-> 原文日期：2015/07/01
+> 作者：Ray Wenderlich，[原文链接](https://github.com/raywenderlich/swift-style-guide)，原文日期：2015/07/01
+> 译者：[shanks](http://codebuild.me/)；校对：[小锅](http://www.swiftyper.com/)；定稿：[小锅](http://www.swiftyper.com/)
+  
 
-> 译者：[shanks](http://codebuild.me)
-> 校对：[小锅](http://www.swiftyper.com)
-> 定稿：[小锅](http://www.swiftyper.com)
+
+
+
+
+
 
 这篇Swift风格指南与你看到的其他的指南有所不同，此篇指南主要焦点集中在打印和web展示的可读写上。我们创建此篇风格指南的目的，是为了让我们的图书，教程以及初学者套件中的代码保持优美和一致，即使我们有很多不同的作者共同编写这些图书。
 
