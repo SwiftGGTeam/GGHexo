@@ -70,5 +70,3 @@ private extension ViewStylingHelpers {
 ![image](/img/articles/swift-how-to-name-your-extensions/Screen_Shot_2015-07-26_at_4_43_29_AM.png)
 
 你觉得这种方式如何？我需要你们帮我做出选择——使用`typealias`还是`MARK:`。
-
-<center>![给译者打赏](/img/QRCode/SergioChan.jpg)</center>

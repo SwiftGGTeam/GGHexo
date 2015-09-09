@@ -126,5 +126,3 @@ if #available(iOS 9.0, *) {
   label.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
 }
 ```
-
-<center>![给译者打赏](/img/QRCode/175.jpg)</center>

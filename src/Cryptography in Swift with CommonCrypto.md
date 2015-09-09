@@ -119,5 +119,3 @@ do {
 ![](/img/articles/commoncrypto-in-swift/36052539.jpg)
 
 我会继续介绍非对称加密技术和公私密钥对，如果感兴趣请继续关注我。
-
-<center>![给译者打赏](/img/QRCode/CMB.jpg)</center>

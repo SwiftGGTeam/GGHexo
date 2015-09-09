@@ -172,5 +172,3 @@ Swift 2 中哪些部分的更新最让你感到激动？你希望我们的教程
   [8]: https://developer.apple.com/videos/wwdc/2015/?id=408
   [9]: https://developer.apple.com/videos/wwdc/2015/
   [10]: https://itunes.apple.com/us/book/swift-programming-language/id1002622538?mt=11
-
-<center>![给译者打赏](/img/QRCode/buginux.jpg)</center>

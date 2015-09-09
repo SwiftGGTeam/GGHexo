@@ -3,7 +3,7 @@ import path from 'path'
 import mkdirp from 'mkdirp'
 
 
-let basePath = './source/src'
+let basePath = './src'
 let targetPath = './source/_posts'
 let nameMap = {
   "shanks": "http://codebuild.me/",
@@ -19,6 +19,21 @@ let nameMap = {
   "千叶知风": "http://weibo.com/xiaoxxiao",
   "CMB": "https://github.com/chenmingbiao",
   "saitjr": "http://www.brighttj.com",
+  "Prayer": "http://www.futantan.com)"
+}
+let imgMap = {
+  "shanks": "shanksyang.jpg",
+  "小锅": "buginux.jpg",
+  "lfb_CD": "lfb-CD.jpg",
+  "mmoaay": "mmoaay.jpg",
+  "Yake": "wangyake.jpg",
+  "小铁匠Linus": "xiaotiejiang.jpg",
+  "SergioChan": "SergioChan.jpg",
+  "天才175": "175.jpg",
+  "靛青K": "DianQK.jpg",
+  "CMB": "CMB.jpg",
+  "saitjr": "http://www.brighttj.com",
+  "Prayer": "Prayer.jpg"
 }
 
 function* entries(obj) {
@@ -74,6 +89,7 @@ let originInfo = new Promise(function (resolve, reject) {
 > 译者：${info.translators.split(",").map(name => `[${name}](${nameMap[name]})`).join("，")}；校对：${info.auditors.split(",").map(name => `[${name}](${nameMap[name]})`).join("，")}；定稿：${info.finalmans.split(",").map(name => `[${name}](${nameMap[name]})`).join("，")}
   `
   result = result.splice(result.indexOf("---") + 3, 0, infoStr)
+  result += info.translators.split(",").map(name => `\n<center>![给译者打赏](/img/QRCode/${imgMap[name]})</center>`).join("\n")
   return {
     fileName: fileInfo.fileName,
     content: result
