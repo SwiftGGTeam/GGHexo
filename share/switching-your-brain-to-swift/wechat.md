@@ -145,3 +145,4 @@ NSArray<NSString *> * _Nonnull
 - [Swift Guard Statement](http://ericcerney.com/swift-guard-statement/) – 有人问过一个关于让代码保持"happy path（没有异常或错误代码，保证一切都按照所期望的情况运行 - 译者注）"的问题，Swift 2 中的 guard 语句能帮你实现这点！
 - [Introducing Protocol-Oriented Programming in Swift 2](http://www.raywenderlich.com/109156/introducing-protocol-oriented-programming-in-swift-2) – 面向协议编程（Protocol-oriented programming）是时下 Swift 的新热点。
 - [Using Swift with Cocoa and Objective-C (Swift 2 Prerelease)](https://geo.itunes.apple.com/ca/book/using-swift-cocoa-objective/id1002624212?mt=11&at=11l4G6) – Apple 关于 Swift + Objective-C + Cocoa 的教程
+
