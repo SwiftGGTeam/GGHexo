@@ -139,3 +139,87 @@ header nav
         width 15em
   label
     display none
+
+#swiftweekly
+  position fixed
+  bottom 0
+  height 2.5em
+  width 100%
+  padding 0.5em
+  background-color #E3512B
+  text-align center
+  #sw_slogan
+    letter-spacing 0.08em
+    font-size 1em
+    color #FBFBFB
+  #content
+    display inline-block
+    height: 46px;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+  #sw_email
+    border none
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: none;
+    border-radius: 4px 0px 0px 4px;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    color #000
+    pcolor=#7D706D
+    &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color pcolor
+    }
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+       color pcolor
+       opacity 1
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+       color pcolor
+       opacity 1
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+       color pcolor
+    }
+    width 66%
+  #sw_sub
+    border none
+    box-shadow: none;
+    background-color: #F36D40;
+    color: #FBFCFB;
+    border-radius: 4px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    padding: 9px 24px 10px 24px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    box-sizing: border-box;
+    width 34%
+  #sw_sub:hover
+    background-color: #B63F17;
+  @media phone
+    padding 0.3em
+    height 4.5em
+    #sw_slogan
+      margin-bottom 0.3em
+      font-size 0.6em
+      width 100%
+      display block
+    #content
+      width 80%
+  @media mini
+    #sw_slogan
+      font-size 1em
+      display inline-block
+      width 50%
+    #content
+      width 50%
+  @media tablet
+    #sw_slogan
+      font-size 1em
+      display inline-block
+      width 30%
+    #content
+      width 30%

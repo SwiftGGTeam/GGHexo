@@ -47,11 +47,6 @@ function root_for(path){
 						<input type="text" id="ts-search-input" name="q" size="30" placeholder="<%= __('search') %>"><br>
 						</form>
 					<% } else { %>
-					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="<%= __('search') %>" />
-						<input type="hidden" name="q" value="site:<%- config.url.replace(/^https?:\/\//, '') %>">
-					</form>
 					<% } %>
 					</li>
 				</ul>
