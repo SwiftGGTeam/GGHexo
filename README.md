@@ -31,19 +31,13 @@ clone项目
     git checkout master
     git pull
 
-创建文章
+在`/src`下创建`新文章名字.md`文件，进行编辑即可。
 
-    hexo new "新文章的名字"
+发布前需要:
 
-在`source/_posts`下生成`新文章名字.md`文件，进行编辑即可。
-
-发布前需要先提取图片再生成页面，参考下一节内容。
-
-发布前需要修改文章头，参考下下节。
-
-生成静态页面
-
-    hexo g
+1. **修改文章头**并**生成最终文章**，参考下下节。
+2. **提取图片**，参考下一节内容。
+3. 生成静态页面`hexo g`
 
 在本地环境预览
 
@@ -86,20 +80,30 @@ clone项目
 ## md文件头示例
 
 ```
-title: "Swift 中的结构体与 NSCoding"  
-date: 2015-8-27
+title: "Swift 函数式编程实践"
+date: 2015-09-04
 tags: [Swift]
-categories: [Swift and Painless]
-permalink: nscoding_and_swift_structs
+categories: [harlan kellaway]
+permalink: swift-functional-programming-intro
 
 ---
-> 原文连接：[NSCoding And Swift Structs](http://swiftandpainless.com/nscoding-and-swift-structs/?utm_campaign=Swift%2BSandbox&utm_medium=web&utm_source=Swift_Sandbox_3)
-> 译者：[小锅](http://www.swiftyper.com)
+原文链接=http://harlankellaway.com/blog/2015/08/10/swift-functional-programming-intro/
+作者=harlan kellaway
+原文日期=2015/08/10
+译者=shanks,mmoaay
+校对=numbbbbb
+定稿=小锅
 
 正文......
 ```
 
 title是标题，date是发布日期，tag是标签，categories是分类（我们填写来源网站名），permalink是最终生成的URL。
+
+下面的应该不用解释了，需要注意的是文字要写对，比如“链接”不要写成“连接”。
+
+译者、校对和定稿都支持多人，用英文逗号分隔即可。
+
+修改好头部之后，在项目根目录下执行`babel-node generatePosts.js`就会在`_posts`中生成最终文件。
 
 ## 统计
 
