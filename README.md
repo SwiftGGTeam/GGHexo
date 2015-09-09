@@ -31,7 +31,7 @@ clone项目
     git checkout master
     git pull
 
-在`/src`下生成`新文章名字.md`文件，进行编辑即可。
+在`/src`下创建`新文章名字.md`文件，进行编辑即可。
 
 发布前需要:
 
