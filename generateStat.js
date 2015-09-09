@@ -39,7 +39,7 @@ let targetFile = './source/stat/index.md'
 
 let originInfo = new Promise(function (resolve, reject) {
   fs.readdir(basePath, (err, files) => {
-    if (err) reject(err)
+    if (err) throw err
     resolve(files.filter(file => !(file.indexOf(".") === 0)))
   })
 })
@@ -47,7 +47,7 @@ let originInfo = new Promise(function (resolve, reject) {
   files.map(
     file => new Promise((resolve, reject) =>
       fs.readFile(path.join(basePath, file), function (err, content) {
-        if (err) reject(err)
+        if (err) throw err
         resolve(content.toString())
       })
     )
@@ -132,7 +132,7 @@ let articlesStat = translationInfo
 let writeBack = Promise.all([wordsStat, articlesStat, auditStat, finalStat])
 .then(statPartials => new Promise((resolve, reject) =>
   fs.writeFile(targetFile, pageHeader + statPartials.join("\n\n"), (err) => {
-    if (err) reject(err)
+    if (err) throw err
     resolve()
   })
 ))

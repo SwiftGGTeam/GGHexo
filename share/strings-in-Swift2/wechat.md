@@ -1,11 +1,14 @@
 苹果官方博客：Swift 2.0 中的字符串
 
-https://developer.apple.com/swift/blog/?id=30
-> 原文日期：2015/07/23
+> 作者：Apple，[原文链接](https://developer.apple.com/swift/blog/?id=30)，原文日期：2015/07/23
+> 译者：[小锅](http://www.swiftyper.com/)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[numbbbbb](https://github.com/numbbbbb)
+  
 
-> 译者：[小锅](http://www.swiftyper.com)
-> 校对：[千叶知风](http://weibo.com/xiaoxxiao)
-> 定稿：[numbbbbb](https://github.com/numbbbbb) 
+
+
+
+
+
 
 Swift 在它的标准库中提供了高效、Unicode 兼容的字符串实现。在 Swift 2.0 中，字符串不再遵守 `CollectionType` 协议，而在此之前，字符串被视为是一系列 `Character` 类型值的集合，行为与数组十分类似。现在，字符串提供了一个 `characters` 属性，可以获得这个字符串所包含的 `Character` 集合。
 

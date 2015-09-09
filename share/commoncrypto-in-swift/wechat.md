@@ -1,11 +1,14 @@
 如何在 Swift 中使用 CommonCrypto 类进行加密(I)
 
-> 原文连接：[Cryptography in Swift with CommonCrypto](http://digitalleaves.com/blog/2015/08/commoncrypto-in-swift)
-> 原文日期：2015/08/10
+> 作者：Ignacio Nieto Carvajal，[原文链接](http://digitalleaves.com/blog/2015/08/commoncrypto-in-swift)，原文日期：2015/08/10
+> 译者：[CMB](https://github.com/chenmingbiao)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[shanks](http://codebuild.me/)
+  
 
-> 译者：[CMB](https://github.com/chenmingbiao)
-> 校对：[numbbbbb](https://github.com/numbbbbb)
-> 定稿：[shanks](http://codebuild.me)
+
+
+
+
+
 
 
 ![](http://swift.gg/img/articles/commoncrypto-in-swift/34909577.jpg)

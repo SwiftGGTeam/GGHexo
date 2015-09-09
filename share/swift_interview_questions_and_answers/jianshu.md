@@ -1,11 +1,14 @@
 Swift面试题及答案
 
-> 原文链接：[Swift Interview Questions and Answers](http://www.raywenderlich.com/110982/swift-interview-questions-answers) 
-> 原文日期：2015/08/25
+> 作者：Antonio Bello，[原文链接](http://www.raywenderlich.com/110982/swift-interview-questions-answers)，原文日期：2015/08/25
+> 译者：[lfb_CD](http://weibo.com/lfbWb)；校对：[lfb_CD](http://weibo.com/lfbWb)；定稿：[lfb_CD](http://weibo.com/lfbWb)
+  
 
-> 译者：[lfb_CD](http://weibo.com/lfbWb)
-> 校对：[lfb_CD](http://weibo.com/lfbWb)
-> 定稿：[lfb_CD](http://weibo.com/lfbWb)
+
+
+
+
+
 
 ####写在前面的话：
 译文中有许多链接和代码是我为方便读者阅读添加的---我可是一名有情怀的译者

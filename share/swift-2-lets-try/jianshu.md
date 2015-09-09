@@ -1,11 +1,14 @@
 Swift 2.0 中使用 try? 关键字
 
-> 原文链接：[Swift 2.0: Let's try?](http://natashatherobot.com/swift-2-0-try/)
-> 原文日期：2015/08/26
+> 作者：Natasha，[原文链接](http://natashatherobot.com/swift-2-0-try/)，原文日期：2015/08/26
+> 译者：[小铁匠Linus](http://weibo.com/linusling)；校对：[lfb_CD](http://weibo.com/lfbWb)；定稿：[numbbbbb](https://github.com/numbbbbb)
+  
 
-> 译者：[小铁匠Linus](http://weibo.com/linusling)
-> 校对：[lfb_CD](http://weibo.com/lfbWb)
-> 定稿：[numbbbbb](https://github.com/numbbbbb)
+
+
+
+
+
 
 Xcode 7 Beta 6 发布时，我一下子就被下面这三个特性迷住了：
 

@@ -9,7 +9,7 @@ let targetPath = './share/'
 
 let originInfo = new Promise(function (resolve, reject) {
   fs.readdir(basePath, (err, files) => {
-    if (err) reject(err)
+    if (err) throw err
     resolve(files.filter(file => !(file.indexOf(".") === 0)))
   })
 })
@@ -17,11 +17,11 @@ let originInfo = new Promise(function (resolve, reject) {
   files.map(
     file => new Promise((resolve, reject) =>
       fs.readFile(path.join(basePath, file), function (err, content) {
-        if (err) reject(err)
+        if (err) throw err
         content = content.toString()
         resolve({
-          dirName: content.match(/permalink: (.*)/)[1],
-          fileName: content.match(/title: "(.*)"/)[1],
+          dirName: content.match(/permalink: (.*)/)[1].trim(),
+          fileName: content.match(/title: "(.*)"/)[1].trim(),
           content: content
         })
       })
@@ -37,7 +37,6 @@ let originInfo = new Promise(function (resolve, reject) {
   let jianshu = origin
   jianshu = file.fileName + "\n" + jianshu
   let wechat = file.fileName + "\n" + origin
-  wechat = wechat.replace(/> 原文链接：\[.*?\]\((.*?)\)/, "$1")
   return {
     dirName: file.dirName,
     jianshu: jianshu,
@@ -49,9 +48,9 @@ let originInfo = new Promise(function (resolve, reject) {
     new Promise((resolve, reject) => {
       let fullPath = path.join(targetPath, shareContent.dirName, "jianshu.md")
       mkdirp(path.dirname(fullPath), err => {
-        if (err) reject(err)
+        if (err) throw err
         fs.writeFile(fullPath, shareContent.jianshu, (err) => {
-          if (err) reject(err)
+          if (err) throw err
           resolve()
         })
       })
@@ -60,9 +59,9 @@ let originInfo = new Promise(function (resolve, reject) {
       new Promise((resolve, reject) => {
         let fullPath = path.join(targetPath, shareContent.dirName, "wechat.md")
         mkdirp(path.dirname(fullPath), err => {
-          if (err) reject(err)
+          if (err) throw err
           fs.writeFile(fullPath, shareContent.wechat, (err) => {
-            if (err) reject(err)
+            if (err) throw err
             resolve()
           })
         })

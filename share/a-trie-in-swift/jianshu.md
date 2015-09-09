@@ -1,11 +1,14 @@
 如何在 Swift 中使用字典树
 
-> 原文链接：[A Trie in Swift](https://bigonotetaking.wordpress.com/2015/08/11/a-trie-in-swift/?utm_campaign=Swift%2BSandbox&utm_medium=web&utm_source=Swift_Sandbox_2)
-> 原文日期：2015/08/11
+> 作者：bigonotetaker，[原文链接](https://bigonotetaking.wordpress.com/2015/08/11/a-trie-in-swift/)，原文日期：2015/08/11
+> 译者：[小铁匠Linus](http://weibo.com/linusling)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[numbbbbb](https://github.com/numbbbbb)
+  
 
-> 译者：[小铁匠Linus](http://weibo.com/linusling)
-> 校对：[numbbbbb](https://github.com/numbbbbb)
-> 定稿：[numbbbbb](https://github.com/numbbbbb)
+
+
+
+
+
 
 (此文中的代码都可以在[这里](https://github.com/oisdk/SwiftTrie)下载)  
 如果上 Google 搜“酷酷的数据结构”，你首先会看到[这个](http://stackoverflow.com/questions/500607/what-are-the-lesser-known-but-useful-data-structures)结果。其中主要是 stackoverflow 上的一个问题：“哪些是我们很少知道但是很有用的数据结构？”。而点赞最多的答案，就是本期主题：字典树。我读了一下，发现了很多酷酷的东西都是关于字典树的用途(同时发现我也是那种会去 Google 搜“酷酷的数据结构”的人，哈哈)。然后我就打开 playground，开始写这篇文章。  
