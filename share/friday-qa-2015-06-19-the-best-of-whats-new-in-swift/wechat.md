@@ -480,4 +480,3 @@ defer { file2.close() }
 
 今天就这样吧，欢迎下次再来学习一些新的并且激动人心的东西。Friday Q&A 是在读者的建议中产生的，所以如果你想看到哪些内容，请发给[我](mailto:mike@mikeash.com)。
 
-

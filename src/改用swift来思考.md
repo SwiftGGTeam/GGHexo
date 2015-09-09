@@ -7,7 +7,7 @@ permalink: switching-your-brain-to-swift
 ---
 原文链接=http://gregheo.com/blog/switching-your-brain-to-swift/
 作者=Greg Heo
-原文日期= 2015/08/17
+原文日期=2015/08/17
 译者=ray16897188
 校对=shanks
 定稿=numbbbbb

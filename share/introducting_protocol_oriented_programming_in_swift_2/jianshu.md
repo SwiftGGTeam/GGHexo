@@ -341,5 +341,3 @@ topSpeed(flyingBirds) // 2000.0
   [6]: http://www.swiftyper.com/Swift/what_new_in_swift_2.html
   [7]: https://developer.apple.com/swift/blog/?id=29
   [8]: https://developer.apple.com/videos/wwdc/2015/?id=408	
-
-

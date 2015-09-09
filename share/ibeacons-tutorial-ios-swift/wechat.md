@@ -513,5 +513,3 @@ registerUserNotificationSettings(notificationSettings)
 
 如果你关于这篇教程还有任何问题或者评论，或者你对于 `iBeacon` 的使用有什么屌炸天的想法， 请随意的加入下面的讨论吧！
 
-
-
