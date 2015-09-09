@@ -514,6 +514,3 @@ registerUserNotificationSettings(notificationSettings)
 `iBeacon` 不仅仅局限于自定义的应用程序，你可以把他们当成 Passbook 的通行证来使用。比方说，如果你运营着一个电影院，你可以将你的电影票以 Passbook 的通行证的形式卖出去。当你的老顾客们走过一个带有 `iBeacon` 设备的收票员的时候，他们的应用程序就会自动的把票显示在他们的手机上了！
 
 如果你关于这篇教程还有任何问题或者评论，或者你对于 `iBeacon` 的使用有什么屌炸天的想法， 请随意的加入下面的讨论吧！
-
-<center>![给译者打赏](/img/QRCode/SergioChan.jpg)</center>
-

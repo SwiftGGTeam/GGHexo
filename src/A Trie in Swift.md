@@ -358,5 +358,3 @@ public struct TrieGenerator<Element : Hashable> : GeneratorType {
 这里跟之前使用的`lazy flatMap`逻辑类似。  
 
 playground 版的代码可以在[这里](https://github.com/oisdk/SwiftTrie)下载，SwiftSequence 里有一些测试，代码在[这里](https://github.com/oisdk/SwiftSequence)。
-
-<center>![给译者打赏](/img/QRCode/xiaotiejiang.jpg)</center>

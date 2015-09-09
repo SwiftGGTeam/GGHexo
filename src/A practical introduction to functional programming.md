@@ -535,5 +535,3 @@ Swift 不是一个纯函数式语言——你的函数式代码可以很好的�
 本文所有例子的代码都放在了 Gists(译者注：请点击原文中例子的Gists链接)中，同时也放到了 GitHub 上：[https://github.com/hkellaway/swift-functional-intro](https://github.com/hkellaway/swift-functional-intro)
 
 编码快乐!
-
-<center>![给译者打赏](/img/QRCode/shanksyang.jpg)</center>

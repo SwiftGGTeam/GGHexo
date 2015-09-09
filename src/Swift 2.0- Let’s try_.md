@@ -158,5 +158,3 @@ struct TodoListParser {
 代码中唯一的不足(呵呵，双关！)就是返回的值是一个有两层的可选值。`guard let`对其中的一层可选值进行了解包，所以对`todoListDict`进行赋值的时候，只需要再进行一层解包即可。
 
 注意：我自己仍然处在学习`try?`的过程中，所以如果你有什么意见，一定要在下面留言。我会虚心接受的 :)
-
-<center>![给译者打赏](/img/QRCode/xiaotiejiang.jpg)</center>

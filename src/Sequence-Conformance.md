@@ -359,7 +359,3 @@ extension LazyRandomAccessCollection  : LazySequenceType {}
 ```
 
 然后在 `LazySequenceType` 中定义一次方法就可以了。
-
-
-<center>![给译者打赏](/img/QRCode/Prayer.jpg)</center>
-

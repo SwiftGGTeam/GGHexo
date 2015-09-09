@@ -496,6 +496,3 @@ mostPopularBooks["Gillian Flynn"] //Returns "Gone Girl"
 如果你想仔细分析呈现在这篇文章中的数据，你可以自己下载[the numbers spreadsheet used to track all the testing runs with Swift 1.2](http://cdn4.raywenderlich.com/wp-content/uploads/2014/11/performance-test-iPhone-6-iOS-8.3-Swift-1.2.numbers.zip)分析数据。
 
 更多问题或者想进一步分析数据的话，在下面尽情地留言吧！
-
-<center>![给译者打赏](/img/QRCode/wangyake.jpg)</center>
-

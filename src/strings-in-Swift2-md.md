@@ -92,5 +92,3 @@ decomposed == precomposed // true
 - `utf8` 和 `utf16` 属性分别以 UTF-8 和 UTF-16 来对码位(code points)进行表示。这些数值与我们对一个特定的编码进行转换时，要真实写入文件的字节相对应。UTF-8 编码单元(code units)被许多 POSIX 的字符串处理 API 所使用，而 UTF-16 编码单元(code units)则被用于表示 Cocoa 和 Cocoa Touch中的字符串长度和偏移。
 
 如果想了解更多 Swift 中关于的字符和字符串的信息，可以阅读[The Swift Programming Language](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html#//apple_ref/doc/uid/TP40014097-CH7-ID285) 和 [the Swift Standard Library Reference](https://developer.apple.com/library/prerelease/ios//documentation/Swift/Reference/Swift_String_Structure/index.html#//apple_ref/swift/struct/s:SS).
-
-<center>![给译者打赏](/img/QRCode/buginux.jpg)</center>

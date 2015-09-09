@@ -575,5 +575,3 @@ func parseResult<A: JSONDecodable>(data: NSData!, urlResponse: NSURLResponse!, e
 
 实例代码放在了[GitHub](https://github.com/thoughtbot/FunctionalJSON-swift/tree/d3fcf771c20813e57cb54472dd8c55ee33e87ae4)上供下载
 如果你对函数式编程或者这篇文章讨论的任何概念感兴趣，请查阅[Haskell](http://www.haskell.org/haskellwiki/Haskell)编程语言和[Learn You a Haskell](http://learnyouahaskell.com/)书中的[一篇特定文章](http://learnyouahaskell.com/functors-applicative-functors-and-monoids)，同时，请查阅Pat Brisbin写的博客：[Applicative Options Parsing in Haskell](http://robots.thoughtbot.com/applicative-options-parsing-in-haskell)
-
-<center>![给译者打赏](/img/QRCode/shanksyang.jpg)</center>
