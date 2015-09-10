@@ -4,12 +4,13 @@
 <script src="<%- config.root %>js/jquery.qrcode-0.12.0.min.js"></script>
 <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
 <script src="<%- config.root %>js/mm.js"></script>
+<script src="<%- config.root %>js/subscribe.js"></script>
 
-<div id="swiftweekly">
+<div id="swiftweekly" style="display:none;">
   <span id="sw_slogan">订阅同样走心的<b>『Swift开发者周报』</b>&nbsp;</span>
-  <div id="content">
-    <input id="sw_email" placeholder="输入邮箱地址" type="email" /><a class="sw_sub">订阅</a>
-  </div>
+  <form id="content">
+    <input name="email" id="sw_email" placeholder="输入邮箱地址" type="email" /><a class="sw_sub">订阅</a>
+  </form>
 </div>
 
 <script type="text/javascript">
