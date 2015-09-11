@@ -4,7 +4,7 @@ tags: [Swift]
 categories: [Raj Kandathi]
 permalink: sequencetype_and_generatortype
 
-------
+---
 原文链接=http://rajkandathi.com/swift-sequencetype-generatortype/
 作者=Raj Kandathi
 原文日期=2015/08/15
@@ -12,7 +12,7 @@ permalink: sequencetype_and_generatortype
 校对=numbbbbb
 定稿=shanks
 
->注：作者连续写了两篇文章，我们将译文合并到了一起
+> 注：作者连续写了两篇文章，我们将译文合并到了一起
 
 # 上篇
 

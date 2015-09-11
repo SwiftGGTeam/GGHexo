@@ -11,6 +11,10 @@ $(function() {
       return re.test(val)
     }
     $(document).scroll(function() {
+      checker = localStorage.getItem("swiftweeklysubscribed")
+      if (checker) {
+        return
+      }
       var y = $(this).scrollTop()
       if (y > 400) {
         $('#swiftweekly').fadeIn()

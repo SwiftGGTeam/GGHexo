@@ -157,7 +157,7 @@ header nav
     color #FBFBFB
   #content
     display inline-block
-    line-height 1.5rem
+    line-height 1.6rem
     height: 40px;
     font-size: 1rem;
     font-weight: 700;
@@ -165,27 +165,31 @@ header nav
     #sw_email
       box-shadow inset 0 0 2px #B63F17;
       border none
-      height 40px
       background-color: rgba(255, 255, 255, 0.9);
       border-radius: 4px 0px 0px 4px;
       box-sizing: border-box;
-      padding: 12px 16px ;
+      padding: 12px 16px
       color #000
       font-size 12px
       pcolor=#7D706D
+      lh=0.8rem
       &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+          line-height lh
           color pcolor
       }
       &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-         color pcolor
-         opacity 1
+        line-height lh
+        color pcolor
+        opacity 1
       }
       &::-moz-placeholder { /* Mozilla Firefox 19+ */
-         color pcolor
-         opacity 1
+        line-height lh
+        color pcolor
+        opacity 1
       }
       &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-         color pcolor
+        line-height lh
+        color pcolor
       }
       width 66%
     .sw_sub
@@ -195,7 +199,7 @@ header nav
       border-radius: 4px;
       border-bottom-left-radius: 0px;
       border-top-left-radius: 0px;
-      padding: 6px 24px 10px 24px;
+      
       text-decoration: none;
       display: inline-block;
       cursor: pointer;
@@ -213,6 +217,10 @@ header nav
       display block
     #content
       width 90%
+    #sw_email
+      font-size 12px
+    .sw_sub
+      padding: 5px 24px 8px 24px;
   @media mini
     height 40px
     padding 0.4em
@@ -221,7 +229,9 @@ header nav
       display inline-block
       width 30%
     #content
-      width 70%
+      width 40%
+    .sw_sub
+      padding: 5px 24px 8px 24px;
   @media tablet
     padding 1em
     #sw_slogan
@@ -229,3 +239,25 @@ header nav
       width 40%
     #content
       width 40%
+    .sw_sub
+      padding: 7px 24px 7px 24px;
+    #sw_email
+      lh=1rem
+      &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+          line-height lh
+          color pcolor
+      }
+      &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        line-height lh
+        color pcolor
+        opacity 1
+      }
+      &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        line-height lh
+        color pcolor
+        opacity 1
+      }
+      &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        line-height lh
+        color pcolor
+      }
