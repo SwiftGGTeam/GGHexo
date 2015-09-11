@@ -19,7 +19,8 @@ let nameMap = {
   "千叶知风": "http://weibo.com/xiaoxxiao",
   "CMB": "https://github.com/chenmingbiao",
   "saitjr": "http://www.brighttj.com",
-  "Prayer": "http://www.futantan.com)"
+  "Prayer": "http://www.futantan.com)",
+  "pmst": "http://blog.csdn.net/colouful987"
 }
 let imgMap = {
   "shanks": "shanksyang.jpg",
@@ -89,7 +90,7 @@ let originInfo = new Promise(function (resolve, reject) {
 > 译者：${info.translators.split(",").map(name => `[${name}](${nameMap[name]})`).join("，")}；校对：${info.auditors.split(",").map(name => `[${name}](${nameMap[name]})`).join("，")}；定稿：${info.finalmans.split(",").map(name => `[${name}](${nameMap[name]})`).join("，")}
   `
   result = result.splice(result.indexOf("---") + 3, 0, infoStr)
-  result += info.translators.split(",").map(name => `\n<center>![给译者打赏](/img/QRCode/${imgMap[name]})</center>`).join("\n")
+  // result += info.translators.split(",").map(name => `\n<center>![给译者打赏](/img/QRCode/${imgMap[name]})</center>`).join("\n")
   return {
     fileName: fileInfo.fileName,
     content: result
