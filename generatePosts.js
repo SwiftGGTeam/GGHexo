@@ -19,7 +19,7 @@ let nameMap = {
   "千叶知风": "http://weibo.com/xiaoxxiao",
   "CMB": "https://github.com/chenmingbiao",
   "saitjr": "http://www.brighttj.com",
-  "Prayer": "http://www.futantan.com)",
+  "Prayer": "http://www.futantan.com",
   "pmst": "http://blog.csdn.net/colouful987"
 }
 let imgMap = {
