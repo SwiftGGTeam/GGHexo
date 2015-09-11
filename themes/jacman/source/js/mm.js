@@ -1,4 +1,9 @@
 $(function() {
+
+    if (window.location.pathname.indexOf('stat') != -1) {
+        $("table").addClass("ggstat")
+    }
+
     if (window.location.host[0] == "1") return
     AV.initialize("Ab21p9Df2hlkXxzSiwHuUSr5", "MNphO03YUzWhy9k6rHHi4eHA");
     var ArticleViewCount = AV.Object.extend("ArticleViewCount");
