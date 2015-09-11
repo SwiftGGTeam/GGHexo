@@ -16,7 +16,7 @@ $(function() {
         return
       }
       var y = $(this).scrollTop()
-      if (y > 400) {
+      if (y > 600) {
         $('#swiftweekly').fadeIn()
       }
     })
