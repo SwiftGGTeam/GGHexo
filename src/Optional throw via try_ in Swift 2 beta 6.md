@@ -61,7 +61,7 @@ if let uid = loggedInUser() {
 
 ## Swift 2.0 beta 6
 在 beta6 中，我们有了一个新的关键字 `try?` ,它在代码执行失败时会抛出错误并返回可选值 `None`,而在执行成功的情况下，会直接返回可选值 `Some`。
-以下直接引用官方的更新日志:
+以下直接引用[官方的更新日志](http://adcdownload.apple.com/Developer_Tools/Xcode_7_beta_6/Xcode_7_beta_6_Release_Notes.pdf):
 
 > Swift 新添加了一个关键字`try?`。`try?`会试图执行一个可能会抛出异常的操作。如果操作执行成功，执行的结果就会包裹在可选值(optional)里；如果操作执行失败(比如某个错误被抛出了)，那么执行的结果就是 `nil`，而且`error`变量会被丢弃。`try?` 在和 `if let` 与 `guard`一起使用时的效果特别明显。
 
@@ -90,4 +90,4 @@ if let uid = loggedInUser(),
 1. 就像 Swift 中通过`?`语句声明的可选数据类型一样`try?`也封装了很多和可选相关的操作
 2. 也有不用`try?`的方法来改进这里的代码，但这段代码是一个很好的例子
 3. 值得一提的是，我这里使用的是原生的 `NSRegularExpression` 而非第三方库
-4. 你也需要在你的项目中添加相关的附加依赖项。
+4. 此外，你总是需要将相关依赖添加到工程中。

@@ -15,7 +15,7 @@ permalink: A-Beautiful-Solution-to-Non-Optional-UIImage-Named-in-Swift
 
 昨天，我抽空看了[Swift in Practice WWDC15 Session](https://developer.apple.com/videos/wwdc/2015/?id=411)的视频，很喜欢其中对 `Image` 命名的处理建议。
 
-这个视频里解决的问题是方法`UIImage:named:`总需要传入硬编码(写死)的字符串参数，然后返回一个可空(optional)的`UIImage`。这就意味着可能会有两种出错的情况：一种是字符串的拼写错误；另一种是对可选的`UIImage`不正确解包。
+这个视频里解决的问题是方法`UIImage:named:`总需要传入硬编码(hard-coded)的字符串参数，然后返回一个可空(optional)的`UIImage`。这就意味着可能会有两种出错的情况：一种是字符串的拼写错误；另一种是对可选的`UIImage`不正确解包。
 
 
 <!--more-->
@@ -43,7 +43,9 @@ extension UIImage {
 let minionBobImage = UIImage(assetIdentifier: .Bob)
 ```
 
-这样的方式是不是很清晰呀，哈哈。首先，使用了漂亮的枚举值，关键是不再需要硬编码的字符串了。并且，枚举的值是自动填充出来的，不必担心拼写错误。其次，`Image`不再是可空的了，因为你可以确保它一定是存在的。
+这样的方式是不是很清晰呀，哈哈。首先，使用了漂亮的枚举值，关键是不再需要硬编码的字符串了。并且，枚举的值是自动补全的，不必担心拼写错误。其次，`Image`不再是可空的了，因为你可以确保它一定是存在的。
+
+这个视频给我最大的启发是：充分利用编译器。使用枚举值作为图片的名字就可以让编译器来实现自动补全并检查图片是否存在。
 
 我自己建了个工程测试了一下，工程在 Github 可以下载，地址在[这里](https://github.com/NatashaTheRobot/ImageNamingInSwift)。如果你想知道它如何在一个app中实现的，可以 check out 后看看。
 
