@@ -88,11 +88,11 @@ struct Person {
 }
 ```
 
-在这段代码中，我们创建了一个 HelperClass 对象来帮助进行归档和解档。
+在这段代码中，我们创建了一个`HelperClass`对象来帮助进行归档和解档。
 
 这个结构体的使用方法应该是这样的：
 
-```
+```swift
 let me = Person(firstName: "Dominik", lastName: "Hauser")
     
 Person.encode(me)
@@ -106,4 +106,3 @@ lastNameLabel.text = myClone?.lastName
 你可以在 [github](https://github.com/dasdom/EncodeExperiments) 上找到完整的代码。
 
 如果你觉得这篇文章不错，请[猛戳这里](http://swiftandpainless.com/feed)对我的博客进行订阅。
-

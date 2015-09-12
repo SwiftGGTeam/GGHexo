@@ -1,4 +1,4 @@
-Swift:什么时候使用结构体和类
+Swift：什么时候使用结构体和类
 
 > 作者：Mike Ash，[原文链接](https://www.mikeash.com/pyblog/friday-qa-2015-07-17-when-to-use-swift-structs-and-classes.html)，原文日期：2015/07/17
 > 译者：[Yake](http://blog.csdn.net/yake_099)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[numbbbbb](https://github.com/numbbbbb)
@@ -242,4 +242,3 @@ Bob Josephsonson, Jr.
 ## 结论
 
 无论在什么时候你移动一个值类型他都会被拷贝，而引用类型则是产生了对同样的底层对象的一个新的引用。那也就意味着引用类型的改变对所有其他的引用都是可见的，而改变值类型只影响你改变的那块内存区域。当选择使用哪种类型时，考虑你的类型是否适合被拷贝，当类型从本质上来说是可拷贝时倾向使用值类型。最后，记住如果你在值类型中嵌入引用类型，不小心的话就会出错！
-

@@ -1,7 +1,7 @@
 title: "使用 Swift 创建自定义搜索栏"
 date: 2015-09-11 20:00:02
-tags: [Swift]
-categories: [AppCoda]
+tags: [AppCoda]
+categories: [Swift 进阶]
 permalink: custom_search_bar_tutorial
 
 ---

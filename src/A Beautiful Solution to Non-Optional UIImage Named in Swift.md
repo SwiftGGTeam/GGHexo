@@ -1,7 +1,7 @@
-title: 如何在Swift中优雅地使用UIImage  
+title: "如何在 Swift 中优雅地使用 UIImage"
 date: 2015-09-11 
-tags: [Swift]  
-categories: [Natasha The Robot]  
+tags: [Natasha The Robot]  
+categories: [Swift 入门]  
 permalink: A-Beautiful-Solution-to-Non-Optional-UIImage-Named-in-Swift
 
 ---
@@ -21,7 +21,7 @@ permalink: A-Beautiful-Solution-to-Non-Optional-UIImage-Named-in-Swift
 <!--more-->
 一种可以解决这个字符串拼写错误的方式就是构建一个`Image`的常量文件，但是这不能解决出错的第二种情况。在 Swift 中，有个更好的解决方案。可以扩展`UIImage`，把所有的`Image`名字作为枚举类型，然后建立便利构造器来通过枚举构造对应的`Image`。看代码：
 
-```
+```swift
 //  UIImage+Extension.swift
 import UIKit
 
@@ -39,7 +39,7 @@ extension UIImage {
 
 这样，就可以通过以下的方式在任何需要的地方构建`Image`：
 
-```
+```swift
 let minionBobImage = UIImage(assetIdentifier: .Bob)
 ```
 
@@ -47,13 +47,13 @@ let minionBobImage = UIImage(assetIdentifier: .Bob)
 
 我自己建了个工程测试了一下，工程在 Github 可以下载，地址在[这里](https://github.com/NatashaTheRobot/ImageNamingInSwift)。如果你想知道它如何在一个app中实现的，可以 check out 后看看。
 
-## Update
+## 更新
 
 正如很多读者指出的，有很多开源的第三方库可以将`Image`名字导出成枚举类型。
-可以 check out 以下的第三方库后查看：
+可以查看下面的第三方库：
 
 * [Shark](https://github.com/kaandedeoglu/Shark)
 
 * [SwiftGen](https://github.com/AliSoftware/SwiftGen)
 
-同时，可以在下面添加任何的评论。
+欢迎各种评论。

@@ -1,7 +1,7 @@
 title: "如何为您的扩展取个好听的名字"
 date: 2015-8-7
-tags: [Swift]
-categories: [Natasha The Robot]
+tags: [Natasha The Robot]
+categories: [Swift 入门]
 permalink: swift-how-to-name-your-extensions
 
 ---

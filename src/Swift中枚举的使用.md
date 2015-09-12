@@ -1,7 +1,7 @@
-title: "Swift中枚举的使用"  
+title: "Swift 中枚举的使用"  
 date: 2015-09-11
-tags: [Swift]  
-categories: [Raj Kandathi]  
+tags: [Raj Kandathi]  
+categories: [Swift 入门]  
 permalink: understanding-enums-using-swift
 
 ---
@@ -49,7 +49,7 @@ let sister = FamilyMember(name: "Jacky", relationshipType: FamilyRelationshipTyp
 let brother = FamilyMember(name: "Jack", relationshipType: FamilyRelationshipType.Brother)
 ```
 
-我们需要将上述的成员数据通过网络传输到远程的数据库里保存起来。然而，服务器端或远程数据库并不知道`GrandFather`到底代表什么意思，它们不认识自定义的数据类型，只认识已知的数据类型，比如`Int`类型的1,2,3或者`String`类型的 "GrandFather" 和 "GrandMother" 等。因此，我们需要把上面的枚举类型用应用和服务器端(数据库)双方都能识别的数据类型表示出来。在`Swift`中是使用`rawValue`来表示枚举类型的具体值。默认情况下，`rawValue`会在枚举类型的定义中按自上向下的顺序从0，1，2这样每次递增1。当然，我们也可以自己指定每个枚举类型的`rawValue`，代码如下：
+我们需要将上述的成员数据通过网络传输到远程的数据库里保存起来。然而，服务器端或远程数据库并不知道`GrandFather`到底代表什么意思，它们不认识自定义的数据类型，只认识已知的数据类型，比如`Int`类型的 1、2、3 或者`String`类型的 "GrandFather" 和 "GrandMother" 等。因此，我们需要把上面的枚举类型用应用和服务器端(数据库)双方都能识别的数据类型表示出来。在`Swift`中是使用`rawValue`来表示枚举类型的具体值。默认情况下，`rawValue`会在枚举类型的定义中按自上向下的顺序从 0、1、2 这样每次递增 1。当然，我们也可以自己指定每个枚举类型的`rawValue`，代码如下：
 
 ```swift
 enum FamilyRelationshipType: Int {
@@ -64,7 +64,7 @@ enum FamilyRelationshipType: Int {
 }
 ```
 
-枚举类型用的最多的地方是在`Switch`条件语句。举个例子，你要给每个家庭成员赠送礼物，并且有个`giftFor `函数会根据对方关系的不同来为你推荐不同的礼物。这个推荐礼物的函数如下：
+枚举类型用的最多的地方是在`Switch`条件语句。举个例子，你要给每个家庭成员赠送礼物，并且有个`giftFor`函数会根据对方关系的不同来为你推荐不同的礼物。这个推荐礼物的函数如下：
 
 ```swift
 static func giftFor(member: FamilyMember) -> String {
@@ -83,7 +83,7 @@ static func giftFor(member: FamilyMember) -> String {
 }
 ```
 
-Swift中也可以把每个枚举与它的值联合起来。这些联合值(associated values)只可以在`Switch`语句里使用枚举时访问。它完全不同于之前的`rawValue`，它不能通过`.`来读取。这样讲可能有点抽象，回到`giftFor`函数，现在需要根据家庭成员的年龄大小来决定具体的礼物，使用联合值的枚举可以这样来定义：
+Swift 中也可以把每个枚举与它的值联合起来。这些联合值(associated values)只可以在`Switch`语句里使用枚举时访问。它完全不同于之前的`rawValue`，它不能通过`.`来读取。这样讲可能有点抽象，回到`giftFor`函数，现在需要根据家庭成员的年龄大小来决定具体的礼物，使用联合值的枚举可以这样来定义：
 
 ```swift
 enum FamilyRelationshipType {
@@ -183,4 +183,4 @@ struct FamilyMember {
 }
 ```
 
-在我的下一篇文章中，我将简单分析枚举的其他例子，并将重点放在如何将`Objective - c`中的枚举重构为`Swift`的枚举。
+在我的下一篇文章中，我将简单分析枚举的其他例子，并将重点放在如何将 Objective-C 中的枚举重构为 Swift 的枚举。

@@ -1,7 +1,7 @@
-title: "iOS8 中使用 Swift 录制视频教程"
+title: "iOS 8 中使用 Swift 录制视频教程"
 date: 2015-9-11
-tags: [Swift]
-categories: [IOSCREATOR]
+tags: [IOSCREATOR]
+categories: [Swift 入门]
 permalink: take_video_tutorial_in_ios8_with_swift
 
 ---

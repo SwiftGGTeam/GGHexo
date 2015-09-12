@@ -1,7 +1,7 @@
-title: 如何组织 Auto Layout 代码
+title: "如何组织 Auto Layout 代码"
 date: 2015-09-10 09:30:00
-tags: [Swift]
-categories: [Swift and Painless]
+tags: [Swift and Painless]
+categories: [Swift 入门]
 permalink: where-to-put-the-auto-layout-code
 
 ---

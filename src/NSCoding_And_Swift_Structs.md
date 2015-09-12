@@ -1,7 +1,7 @@
 title: "Swift 中的结构体与 NSCoding"
 date: 2015-8-27
-tags: [Swift]
-categories: [Swift and Painless]
+tags: [Swift and Painless]
+categories: [Swift 入门]
 permalink: nscoding_and_swift_structs
 
 ---
@@ -90,11 +90,11 @@ struct Person {
 }
 ```
 
-在这段代码中，我们创建了一个 HelperClass 对象来帮助进行归档和解档。
+在这段代码中，我们创建了一个`HelperClass`对象来帮助进行归档和解档。
 
 这个结构体的使用方法应该是这样的：
 
-```
+```swift
 let me = Person(firstName: "Dominik", lastName: "Hauser")
     
 Person.encode(me)

@@ -1,7 +1,7 @@
 title: "Swift 中序列的实现方式"
 date: 2015-09-08 20:00:00  
-tags: [Swift]  
-categories: [Big O Note-Taking]  
+tags: [Big O Note-Taking]  
+categories: [Swift 进阶]  
 permalink: Sequence-Conformance  
 
 ---
