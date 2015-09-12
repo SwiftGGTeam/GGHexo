@@ -1,4 +1,4 @@
-title: "使用 Swift 创建自定义搜索栏"
+title: "使用UISearchController自定义搜索栏"
 date: 2015-09-11 20:00:02
 tags: [AppCoda]
 categories: [Swift 进阶]
@@ -717,6 +717,6 @@ func didChangeSearchText(searchText: String) {
 
 ## 总结
 
-再开速浏览一遍上面的实现流程，不管是使用 iOS 8 提供的 `UISearchController`，还是自定义搜索栏和搜索控制器，都还比较容易理解。得到的结论都是一样的：我们可以很完美的在自己的 App 使用搜索功能。如果你的 App 对 UI 的要求不是很严格，那么可以选用默认的搜索栏样式，如果需要自定义的样式，那也可以搞定，反正已经知道该怎么做了。是时候结束了，希望这篇教程能在需要的时候帮到你。
+再快速浏览一遍上面的实现流程，不管是使用 iOS 8 提供的 `UISearchController`，还是自定义搜索栏和搜索控制器，都还比较容易理解。得到的结论都是一样的：我们可以很完美的在自己的 App 使用搜索功能。如果你的 App 对 UI 的要求不是很严格，那么可以选用默认的搜索栏样式，如果需要自定义的样式，那也可以搞定，反正已经知道该怎么做了。是时候结束了，希望这篇教程能在需要的时候帮到你。
 
 完整的 Xcode 代码可以在[这里](https://www.dropbox.com/s/cl454ot0876hjax/CustomSearchBarFinal.zip?dl=0)下载。
