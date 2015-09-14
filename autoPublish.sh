@@ -25,4 +25,4 @@ else
   git reset --hard HEAD
   cd source
   git reset --hard HEAD
- fi
+fi
