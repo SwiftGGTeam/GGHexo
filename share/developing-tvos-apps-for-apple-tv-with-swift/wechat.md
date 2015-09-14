@@ -21,13 +21,13 @@
 ## 开始
 
 在我们开始之前你需要安装 Xcode 7.1 beta 版，可以从这里下载：[下载Xcode 7.1 Beta](https://developer.apple.com/xcode/download/)
-注意：你需要准备一个 Apple 开发者账号，而且由于目前是预览版，以后代码也可能发生变化。
+注意：下载 Xcode 7.1 Beta 需要有一个苹果开发者账号，由于目前 Xcode 是预发行版，以后正式发布的时候可能会有变化。
 
 安装的时候要注意，如果你重命名 Xcode 7.1 应用，会遇到一个已知 bug。一定有人会这么做，所以提前说明……别这么做，否则你的 tvOS 模拟器会崩溃。
 
-还要注意，如果系统是 Yosemite，性能会有限制。推荐用 OSX 10.11 El Capitan 或更新的系统。El Capitan beta 可以在[这里](https://developer.apple.com/osx/download/)下载。
+同时要注意，虽然支持优胜美地 (Yosemite)，但是在该操作系统上，功能会受限。推荐用 OSX 10.11 El Capitan 或更新的系统。El Capitan beta 可以在[这里](https://developer.apple.com/osx/download/)下载。
 
-下面我们来学习一些 tvOS 的名词。
+下面我们来介绍一些 tvOS 相关的定义。
 
 ### *TVMLKit*
 TVMLKit 是 Apple 设计的一个新框架，能在使用 Swift 或 Objective-C 实现应用逻辑的同时使用 Javascript 和 XML 开发更炫酷的用户界面。
@@ -40,7 +40,7 @@ TVML 是"TV Markup Language"（TV 标记语言）的缩写，基本上是一些 
 
 ### *Hello World*
 
-我们从一个基本的 hello world 程序开始。就 Apple TV 而言，我们可以只把`"Hello World"`输出到主机上。这也许是个不错的开始，但更好的选择是使用 Apple TV 的一些 TVMLKit 元素在屏幕上创建一个模板。
+我们从一个基本的 hello world 程序开始。就 Apple TV 而言，我们可以只把`"Hello World"`输出到控制台上。这也许是个不错的开始，但更好的选择是使用 Apple TV 的一些 TVMLKit 元素在屏幕上创建一个模板。
 
 首先，打开 Xcode 7.1 并创建一个新项目。你可以看到一个模板列表，我们在左侧选择*CHANGE tvOS*，然后再选*Single View Application*模板。
 
@@ -152,11 +152,11 @@ TVML 文件是 UI 的实际内容。文档（document）必须用模板编写，
 python -m SimpleHTTPServer 8000
 ```
 
-这条指令用 Mac OS 内建的 python 解释器开启了一个端口号为 8000 的 web 服务器，可以用它来托管本地文件。如果你直接复制了上面的代码，按一下 Xcode 的 play 键就能启动 tvOS 模拟器。还有一个要注意的事情：这是一个不够安全的 HTTP 请求，在 iOS 9 中会被默认的应用传输安全机制拦截。为了能够按之前的方法来使用本地主机，我们需要在`Info.plist`文件中添加一个`key`。
+这条指令用 Mac OS 内建的 python 解释器开启了一个端口号为 8000 的 web 服务器，可以用它来托管本地文件。如果在命令行中，执行了上面给出的代码，那么现在按一下 Xcode 的 play 按钮就能启动 tvOS 模拟器了。还有一个要注意的事情：这是一个不够安全的 HTTP 请求，在 iOS 9 中会被默认的应用传输安全机制拦截。为了能够按之前的方法来使用本地主机，我们需要在`Info.plist`文件中添加一个`key`。
 
 ### 允许直接加载（Allows Arbitrary Loads）
 
-选择`Info.plist`文件然后按加号(+)来创建一条新记录。在列表中选择"App Transport Security Settings"并按回车。这会在字典中创建一个新行，展开它，在这行上按加号(+)添加一个子行。接着选中"Allows Arbitrary Loads"并将其设为`true`。都设好了之后我们就能用模拟器运行应用了。
+选择`Info.plist`文件然后按加号(+)来创建一条新记录。在列表中选择"App Transport Security Settings"并按 return 建。这将创建一个新的字典条目，展开它，在这行上按加号(+)添加一个子行。接着选中"Allows Arbitrary Loads"并将其设为`true`。都设好了之后我们就能用模拟器运行应用了。
 
 ### 添加按钮
 
