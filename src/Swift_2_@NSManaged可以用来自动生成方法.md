@@ -1,5 +1,5 @@
 title: "在 Swift 2 中用 @NSManaged 标记自动生成方法"
-date: 2015-9-14 20:00:00
+date: 2015-09-14 20:00:00
 tags: [Tomasz Szulc]
 categories: [Swift 进阶]
 permalink: swift-2-nsmanaged-for-methods
@@ -11,7 +11,7 @@ permalink: swift-2-nsmanaged-for-methods
 译者=mmoaay
 校对=numbbbbb
 定稿=shanks
-发布时间=2015-9-14T19:50:00
+发布时间=2015-09-14T19:50:00
 
 > Xcode 7 beta 5 中的 Swift 2 拥有另外一个特性：当使用一对多关系时我们可以用 `@NSManaged` 来声明自动生成方法。
 
