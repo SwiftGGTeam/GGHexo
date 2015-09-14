@@ -15,6 +15,8 @@
 
 这个技巧非常有用。假设你有一个 `Library` 和多个 `Book` 实体对象。且 `Library` 和 `books` 是一对多的关系。那么使用最新的 Xcode 和 `@NSManaged` 就可以在 `Library` 实体对象内（手动）声明自动生成方法。
 
+
+
 就像下面这样：
 
 ```swift
