@@ -4,6 +4,7 @@ import mkdirp from 'mkdirp'
 
 
 let basePath = './src'
+let deletedPath = './unauthorized'
 let targetPath = './source/_posts'
 let nameMap = {
   "shanks": "http://codebuild.me/",
@@ -20,7 +21,8 @@ let nameMap = {
   "CMB": "https://github.com/chenmingbiao",
   "saitjr": "http://www.brighttj.com",
   "Prayer": "http://www.futantan.com",
-  "pmst": "http://blog.csdn.net/colouful987"
+  "pmst": "http://blog.csdn.net/colouful987",
+  "ray16897188": "http://swift.gg"
 }
 let imgMap = {
   "shanks": "shanksyang.jpg",
@@ -47,6 +49,40 @@ String.prototype.splice = function( idx, rem, s ) {
     return (this.slice(0,idx) + s + this.slice(idx + Math.abs(rem)));
 };
 
+// copy unauthorized files from ./unauthorized
+let deletedInfo = new Promise(function (resolve, reject) {
+  fs.readdir(deletedPath, (err, files) => {
+    if (err) reject(err)
+    resolve(files.filter(file => !(file.indexOf(".") === 0)))
+  })
+})
+.then(files => Promise.all(
+  files.map(
+    file => new Promise((resolve, reject) =>
+      fs.readFile(path.join(deletedPath, file), function (err, content) {
+        if (err) reject(err)
+        content = content.toString()
+        resolve({
+          fileName: file,
+          content: content
+        })
+      })
+    )
+  )
+))
+.then(finalContents => finalContents.map(finalContent => {
+  new Promise((resolve, reject) => {
+    let fullPath = path.join(targetPath, finalContent.fileName)
+    console.log(fullPath)
+    fs.writeFile(fullPath, finalContent.content, {flag: 'w'}, (err) => {
+      if (err) throw err
+      resolve()
+    })
+  })
+}))
+.catch(err => console.log(err))
+
+// get origin file content and generate posts
 let originInfo = new Promise(function (resolve, reject) {
   fs.readdir(basePath, (err, files) => {
     if (err) reject(err)

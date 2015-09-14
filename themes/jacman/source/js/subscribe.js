@@ -15,8 +15,11 @@ $(function() {
       if (checker) {
         return
       }
+      var body = document.body
+      var html = document.documentElement
+      var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
       var y = $(this).scrollTop()
-      if (y > 600) {
+      if (y > height * 0.618 ) {
         $('#swiftweekly').fadeIn()
       }
     })

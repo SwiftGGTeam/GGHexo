@@ -50,7 +50,8 @@ let nameMap = {
   "CMB": "https://github.com/chenmingbiao",
   "saitjr": "http://www.brighttj.com",
   "Prayer": "http://www.futantan.com",
-  "pmst": "http://blog.csdn.net/colouful987"
+  "pmst": "http://blog.csdn.net/colouful987",
+  "ray16897188": "http://swift.gg"
 }
 let deleted = {
   file: [
@@ -120,6 +121,7 @@ function* entries(obj) {
    }
 }
 
+// get origin file content, prepare to generate stat
 let originInfo = new Promise(function (resolve, reject) {
   fs.readdir(basePath, (err, files) => {
     if (err) throw err
@@ -136,17 +138,6 @@ let originInfo = new Promise(function (resolve, reject) {
     )
   )
 ))
-// .then(contents => contents.map(
-//   content => {
-//     console.log(content)
-//     return {
-//     words: content.substr(content.indexOf("---") + 3).replace(/\s+/g, "").length,
-//     translator: content.match(/> 译者：(\[.*?\]\(.*?\))/)[1],
-//     auditor: content.match(/> 校对：(\[.*?\]\(.*?\))/)[1],
-//     finalMan: content.match(/> 定稿：(\[.*?\]\(.*?\))/)[1],
-//   }
-//   }
-// ))
 .then(contents => contents.map(content => {
   let regs = {
     translators: '译者=(.*)',
@@ -166,7 +157,7 @@ let originInfo = new Promise(function (resolve, reject) {
   }
 }))
 
-
+// generate finalMan stat, return markdown table partial, contain final man name and article count
 let finalStat = originInfo
 .then(contentArr => contentArr.reduce(
   (contentMap, item) => 
@@ -194,7 +185,7 @@ let finalStat = originInfo
 ))
 .then(mdPartials => finalHeader + mdPartials.join("\n"))
 
-
+// generate audit stat, return markdown table partial, contain auditor name and article count
 let auditStat = originInfo
 .then(contentArr => contentArr.reduce(
   (contentMap, item) => 
@@ -222,7 +213,7 @@ let auditStat = originInfo
 ))
 .then(mdPartials => auditHeader + mdPartials.join("\n"))
 
-
+// deal with file content, prepare for word count and translation stat
 let translationInfo = originInfo
 .then(contentArr => contentArr.reduce(
   (contentMap, item) => {
@@ -247,7 +238,7 @@ let translationInfo = originInfo
   return contentMap
 })
 
-
+// generate word count stat, return markdown table partial, contain word count and translator name
 let wordsStat = translationInfo
 .then(contentMap => Array.from(contentMap).sort((a, b) => b[1][0] - a[1][0]))
 .then(contentArr => contentArr.map(
@@ -255,7 +246,7 @@ let wordsStat = translationInfo
 ))
 .then(mdPartials => wordHeader + mdPartials.join("\n"))
 
-
+// generate translation stat, return markdown table partial, contain translator name and article count
 let articlesStat = translationInfo
 .then(contentMap => Array.from(contentMap).sort((a, b) => b[1][1] - a[1][1]))
 .then(contentArr => contentArr.map(
@@ -263,7 +254,7 @@ let articlesStat = translationInfo
 ))
 .then(mdPartials => articleHeader + mdPartials.join("\n"))
 
-
+// combine all markdown partials and write to file
 let writeBack = Promise.all([wordsStat, articlesStat, auditStat, finalStat])
 .then(statPartials => new Promise((resolve, reject) =>
   fs.writeFile(targetFile, pageHeader + statPartials.join("\n\n"), (err) => {
