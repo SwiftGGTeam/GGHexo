@@ -41,13 +41,13 @@ let imgMap = {
 
 function* entries(obj) {
    for (let key of Object.keys(obj)) {
-     yield [key, obj[key]];
+     yield [key, obj[key]]
    }
 }
 
 String.prototype.splice = function( idx, rem, s ) {
-    return (this.slice(0,idx) + s + this.slice(idx + Math.abs(rem)));
-};
+    return (this.slice(0,idx) + s + this.slice(idx + Math.abs(rem)))
+}
 
 // copy unauthorized files from ./unauthorized
 let deletedInfo = new Promise(function (resolve, reject) {
@@ -104,13 +104,31 @@ let originInfo = new Promise(function (resolve, reject) {
   )
 ))
 .then(fileInfos => fileInfos.map(fileInfo => {
+  function publishNow() {
+      let reg = new RegExp('发布时间=(.*)')
+      if (fileInfo.content.match(reg)) {
+        let publishDate = new Date(fileInfo.content.match(reg)[1].trim())
+        publishDate = new Date(publishDate.getUTCFullYear(), publishDate.getUTCMonth(), publishDate.getUTCDate(),  publishDate.getUTCHours(), publishDate.getUTCMinutes(), publishDate.getUTCSeconds())
+        let now = new Date()
+        if (publishDate > now) {
+          return false
+        } else {
+          return true
+        }
+      } else {
+        return true
+      }
+  }
+  if (!publishNow()) {
+    return undefined
+  }
   let regs = {
     originUrl: '原文链接=(.*)',
     author: '作者=(.*)',
     originDate: '原文日期=(.*)',
     translators: '译者=(.*)',
     auditors: '校对=(.*)',
-    finalmans: '定稿=(.*)'
+    finalmans: '定稿=(.*)',
   }
   let info = {}
   let result = fileInfo.content
@@ -131,7 +149,8 @@ let originInfo = new Promise(function (resolve, reject) {
     fileName: fileInfo.fileName,
     content: result
   }
-}))
+}).filter(a => a)
+)
 .then(finalContents => finalContents.map(finalContent => {
   new Promise((resolve, reject) => {
     let fullPath = path.join(targetPath, finalContent.fileName)
