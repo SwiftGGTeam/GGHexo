@@ -12,6 +12,7 @@ permalink: fun_with_functions
 校对=numbbbbb
 定稿=shanks
 
+
 今天我们要研究 Swift 函数中一些好玩的特性，比如返回函数的函数，柯里化以及运算符函数。
 
 ## 函数的基础
