@@ -56,6 +56,7 @@ def downloadimgs(option):
 
     for img in imgs:
         (imgoriname, imgurl, imgname) = re.findall(r'!\[(.*)\]\((.*/(.*))\)', img)[0]
+        imgname = imgname.replace("?", "")
 
         if not path.isdir(path.join(targetpath, fileurl)):
             mkdir(path.join(targetpath, fileurl)) 
