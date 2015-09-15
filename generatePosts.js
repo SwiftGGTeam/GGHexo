@@ -90,6 +90,7 @@ let originInfo = new Promise(function (resolve, reject) {
   function publishNow() {
       let reg = new RegExp('发布时间=(.*)')
       if (fileInfo.content.match(reg)) {
+        result = result.replace(reg, "")
         let publishDate = new Date(fileInfo.content.match(reg)[1].trim())
         publishDate = new Date(publishDate.getUTCFullYear(), publishDate.getUTCMonth(), publishDate.getUTCDate(),  publishDate.getUTCHours(), publishDate.getUTCMinutes(), publishDate.getUTCSeconds())
         let now = new Date()
@@ -102,6 +103,7 @@ let originInfo = new Promise(function (resolve, reject) {
         return true
       }
   }
+  let result = fileInfo.content
   if (!publishNow()) {
     return undefined
   }
@@ -114,7 +116,6 @@ let originInfo = new Promise(function (resolve, reject) {
     finalmans: '定稿=(.*)',
   }
   let info = {}
-  let result = fileInfo.content
   for (let [key, value] of entries(regs)) {
     let reg = new RegExp(value)
     console.log(fileInfo.fileName, reg)
