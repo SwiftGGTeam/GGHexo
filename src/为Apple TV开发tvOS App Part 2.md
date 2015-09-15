@@ -1,7 +1,7 @@
 title: "为 Apple TV 开发 tvOS App Part 2"
 date: 2015-09-15 09:30:00
 tags: [Jameson Quave]
-categories: [Swift 入门]
+categories: [Swift 入门,Apple TV 开发]
 permalink: developing-tvos-apps-for-apple-tv-part-2
 ---
 原文链接=http://jamesonquave.com/blog/developing-tvos-apps-for-apple-tv-part-2/
