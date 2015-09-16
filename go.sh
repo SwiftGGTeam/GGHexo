@@ -3,7 +3,13 @@ cd source
 git pull
 cd ..
 git pull
-python 3-extractImgs.py
+pythonversion=$(python -c 'import sys; print(sys.version_info[:])')
+pythonversion=${pythonversion:1:1}
+if (( pythonversion == '2')); then
+	python 2-extractImgs.py
+else
+	python 3-extractImgs.py
+fi
 babel-node generatePosts.js
 babel-node generateStat.js
 babel-node generateShareMD.js
