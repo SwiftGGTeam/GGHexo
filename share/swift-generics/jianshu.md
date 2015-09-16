@@ -21,18 +21,18 @@
 
 ``` swift
 class IntStack{
-	// 采用数组作为容器保存数据 类型为Int
-	private var stackItems:[Int] = []
-	// 入栈操作 即Push 添加最新数据到容器最顶部
-	func pushItem(item:Int){
-		stackItems.append(item)	
-	}
-	// 出栈操作 即Pop 将容器最顶部数据移除
-	func popItem()->Int?{
-		let lastItem = stackItems.last
-		stackItems.removeLast()
-		return lastItem
-	}
+  // 采用数组作为容器保存数据 类型为Int
+  private var stackItems:[Int] = []
+  // 入栈操作 即Push 添加最新数据到容器最顶部
+  func pushItem(item:Int){
+    stackItems.append(item)    
+  }
+  // 出栈操作 即Pop 将容器最顶部数据移除
+  func popItem()->Int?{
+    let lastItem = stackItems.last
+    stackItems.removeLast()
+    return lastItem
+  }
 }
 ```
 
@@ -40,18 +40,18 @@ class IntStack{
 
 ``` swift
 class AnyObjectStack{
-	// 采用数组作为容器保存数据 类型为AnyObject
-	private var stackItems:[AnyObject] = []
-	// 入栈操作 即Push 添加最新数据到容器最顶部
-	func pushItem(item:AnyObject){
-		stackItems.append(item)	
-	}
-	// 出栈操作 即Pop 将容器最顶部数据移除
-	func popItem()->AnyObject?{
-		let lastItem = stackItems.last
-		stackItems.removeLast()
-		return lastItem
-	}	
+  // 采用数组作为容器保存数据 类型为AnyObject
+  private var stackItems:[AnyObject] = []
+  // 入栈操作 即Push 添加最新数据到容器最顶部
+  func pushItem(item:AnyObject){
+    stackItems.append(item)    
+  }
+  // 出栈操作 即Pop 将容器最顶部数据移除
+  func popItem()->AnyObject?{
+    let lastItem = stackItems.last
+    stackItems.removeLast()
+    return lastItem
+  }    
 }
 ```
 
@@ -68,17 +68,17 @@ class AnyObjectStack{
 ``` swift
 class Stack<T> {
 
-    private var stackItems: [T] = []
+  private var stackItems: [T] = []  
 
-    func pushItem(item:T) {
-        stackItems.append(item)
-    }
-
-    func popItem() -> T? {
-        let lastItem = stackItems.last
-        stackItems.removeLast()
-        return lastItem
-    }
+  func pushItem(item:T) {
+    stackItems.append(item)
+  }  
+  
+  func popItem() -> T? {
+    let lastItem = stackItems.last
+    stackItems.removeLast()
+    return lastItem
+  }
 
 }
 ```
@@ -92,7 +92,7 @@ let aStack = Stack<Int>()
 
 aStack.pushItem(10)
 if let lastItem = aStack.popItem() {
-    print("last item: \(lastItem)")
+  print("last item: \(lastItem)")
 }
 ```
 
@@ -107,27 +107,27 @@ if let lastItem = aStack.popItem() {
 ``` swift
 class Stack<T> {
 
-    private var stackItems: [T] = []
+  private var stackItems: [T] = []
 
-    func pushItem(item:T) {
-        stackItems.append(item)
-    }
+  func pushItem(item:T) {
+    stackItems.append(item)
+  }
 
-    func popItem() -> T? {
-        let lastItem = stackItems.last
-        stackItems.removeLast()
-        return lastItem
-    }
+  func popItem() -> T? {
+    let lastItem = stackItems.last
+    stackItems.removeLast()
+    return lastItem
+  }
 
-    func isItemInStack(item:T) -> Bool {
-        var found = false
-        for stackItem in stackItems {
-            if stackItem == item { //编译报错!!!!!!!!!!
-                found = true
-            }
-        }
-        return found
+  func isItemInStack(item:T) -> Bool {
+    var found = false
+    for stackItem in stackItems {
+      if stackItem == item { //编译报错!!!!!!!!!!
+        found = true
+      }
     }
+    return found
+  }
 }
 ```
 
@@ -138,27 +138,27 @@ class Stack<T> {
 ``` swift
 class Stack<T:Equatable> {
 
-    private var stackItems: [T] = []
+  private var stackItems: [T] = []
 
-    func pushItem(item:T) {
-        stackItems.append(item)
-    }
+  func pushItem(item:T) {
+    .append(item)
+  }
 
-    func popItem() -> T? {
-        let lastItem = stackItems.last
-        stackItems.removeLast()
-        return lastItem
-    }
+  func popItem() -> T? {
+    let lastItem = stackItems.last
+    stackItems.removeLast()
+    return lastItem
+  }
 
-    func isItemInStack(item:T) -> Bool {
-        var found = false
-        for stackItem in stackItems {
-            if stackItem == item {
-                found = true
-            }
-        }
-        return found
+  func isItemInStack(item:T) -> Bool {
+    var found = false
+    for stackItem in stackItems {
+      if stackItem == item {
+        ound = true
+      }
     }
+    return found
+  }
 }
 ```
 
