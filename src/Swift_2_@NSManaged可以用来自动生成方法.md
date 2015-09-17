@@ -33,7 +33,7 @@ class Library: NSManagedObject {
 
 天哪，这种实现方式竟然如此优雅！就在几天前我还不得不从零开始写这些方法。
 
-但我发现一个问题。我们确实可以像这样声明方法，但是问题的关键是如何在任意位置生成它们并放入到 *Entity+CoreDataProperties.swift* 文件中？生成 Objective-C 子类时这些方法都会继承，甚至在 Swift 项目中也是如此。然而，生成 Swift 语言时——这些方法竟然不见了！详情参见 [rdar://22177139](http://www.openradar.me/22177139) 。
+但我发现一个问题。我们的确可以像这样声明方法，但是问题的关键是如何在任意位置生成它们并放入到 *Entity+CoreDataProperties.swift* 文件中？生成 Objective-C 子类时这些方法都会继承，甚至在 Swift 项目中也是如此。然而，生成 Swift 语言时——这些方法竟然不见了！详情参见 [rdar://22177139](http://www.openradar.me/22177139) 。
 
 下面的代码是 Objective-C 生成的实体类
 
