@@ -19,30 +19,14 @@ Swift 中的重载运算符和自定义运算符
 
 魔方(`Cube`)类定义如下:
 
-<<<<<<< HEAD
-``` swift
-struct Cube{
-	var side:Double	//定义魔方边长
-=======
 ```swift
 struct Cube{
   var side:Double	//定义魔方边长
->>>>>>> b9ec85a02a409991f4aeace298222ac6efdd7f6e
 }
 ```
 
 在面向对象编程中，实现魔方之间"吞噬"(相加)的功能是往`Cube`结构体中添加一个加法的方法，具体实现代码如下:      
 
-<<<<<<< HEAD
-``` swift
-struct Cube {
-    var side: Double
-   	
-   	// 译者注: 结构体中，定义的方法修改内部定义变量值时，该方法必须添加mutating关键字
-    mutating func add(newCube: Cube) {
-        self.side += newCube.side
-    }
-=======
 ```swift
 struct Cube {
   var side: Double
@@ -51,7 +35,6 @@ struct Cube {
   mutating func add(newCube: Cube) {
     self.side += newCube.side
   }
->>>>>>> b9ec85a02a409991f4aeace298222ac6efdd7f6e
 }
 
 var myCube = Cube(side: 10.0)		
@@ -63,29 +46,17 @@ print(myCube.side, appendNewline: true)
 
 除了在结构体中定义`add`函数实现方式之外，我们更期望使用`+`运算符来实现`Cube`魔方之间的相加，就比如通过下面这种方式:
 
-<<<<<<< HEAD
-``` swift
-=======
 ```swift
->>>>>>> b9ec85a02a409991f4aeace298222ac6efdd7f6e
 let newCube = myCube + foundCube1
 ```
 
 通过重载已存在的运算符(例如`+ - * /`)的方式，**Swift**允许我们对类或结构体进行运算操作。重载已存在的运算符，言外之意即支持新的数据类型的运算操作。两个魔方(`Cube`)之间的相加函数定义如下: 
 
-<<<<<<< HEAD
-``` swift
-func + (lhsCube: Cube, rhsCube: Cube) -> Cube {
-    var resultCube = Cube(side: 0.0)
-    resultCube.side = lhsCube.side + rhsCube.side
-    return resultCube
-=======
 ```swift
 func + (lhsCube: Cube, rhsCube: Cube) -> Cube {
   var resultCube = Cube(side: 0.0)
   resultCube.side = lhsCube.side + rhsCube.side
   return resultCube
->>>>>>> b9ec85a02a409991f4aeace298222ac6efdd7f6e
 }
 
 let existingCube = Cube(side: 10.0)
@@ -103,11 +74,7 @@ print(newCube.side, appendNewline: true)
 ``` swift
 postfix operator *** {}
 postfix func *** (inout myCube: Cube){
-<<<<<<< HEAD
-    myCube.side = myCube.side * 3
-=======
   myCube.side = myCube.side * 3
->>>>>>> b9ec85a02a409991f4aeace298222ac6efdd7f6e
 }
 
 var myCube = Cube(side: 10.0)

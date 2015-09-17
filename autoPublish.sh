@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+cd /GGHexo
+git fetch
 LOCAL=$(git rev-parse @)
 REMOTE=$(git rev-parse @{u})
 BASE=$(git merge-base @ @{u})
