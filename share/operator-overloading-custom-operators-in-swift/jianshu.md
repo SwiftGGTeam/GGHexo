@@ -1,0 +1,85 @@
+Swift 中的重载运算符和自定义运算符
+
+> 作者：Raj Kandathi，[原文链接](http://rajkandathi.com/operator-overloading-custom-operators-in-swift/)，原文日期：2015/09/12
+> 译者：[pmst](http://blog.csdn.net/colouful987)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[shanks](http://codebuild.me/)
+  
+
+
+
+
+
+
+
+  
+
+### 重载运算符
+
+有时候，我们会遇到需要对自定义的类(`class`)或结构体(`struct`)支持某些运算符功能，例如`+,-,*,/`等。以魔方收集者(`Cube Collector`)游戏为例，初期你怀揣一个渺小的魔方，身处一个充斥各种尺寸魔方的空间中。你的任务是找寻新的魔方,并通过"吞噬"新魔方来进化你手中的魔方。(译者注:吞噬解释为原始魔方尺寸加上新的魔方尺寸得到进化后的魔方)
+
+
+魔方(`Cube`)类定义如下:
+
+``` swift
+struct Cube{
+	var side:Double	//定义魔方边长
+}
+```
+
+在面向对象编程中，实现魔方之间"吞噬"(相加)的功能是往`Cube`结构体中添加一个加法的方法，具体实现代码如下:      
+
+``` swift
+struct Cube {
+    var side: Double
+   	
+   	// 译者注: 结构体中，定义的方法修改内部定义变量值时，该方法必须添加mutating关键字
+    mutating func add(newCube: Cube) {
+        self.side += newCube.side
+    }
+}
+
+var myCube = Cube(side: 10.0)		
+let foundCube1 = Cube(side: 5.0)
+
+myCube.add(foundCube1)
+print(myCube.side, appendNewline: true)
+```
+
+除了在结构体中定义`add`函数实现方式之外，我们更期望使用`+`运算符来实现`Cube`魔方之间的相加，就比如通过下面这种方式:
+
+``` swift
+let newCube = myCube + foundCube1
+```
+
+通过重载已存在的运算符(例如`+ - * /`)的方式，**Swift**允许我们对类或结构体进行运算操作。重载已存在的运算符，言外之意即支持新的数据类型的运算操作。两个魔方(`Cube`)之间的相加函数定义如下: 
+
+``` swift
+func + (lhsCube: Cube, rhsCube: Cube) -> Cube {
+    var resultCube = Cube(side: 0.0)
+    resultCube.side = lhsCube.side + rhsCube.side
+    return resultCube
+}
+
+let existingCube = Cube(side: 10.0)
+let foundCube2 = Cube(side: 20.0)
+let newCube = existingCube + foundCube2
+print(newCube.side, appendNewline: true)
+```
+
+需要注意的是，重载运算函数(如上`+(lhsCube:rhsCube:)`函数)无法在自定义的类或结构体内声明，重载运算符函数只允许在**全局作用域**下有效！
+
+### 自定义运算符
+
+前文"Cube Collection"游戏不妨再加入一个“宝箱”玩法，每一次玩家收集到一个宝箱，他/她所拥有的魔方尺寸就放大三倍(边长`side * 3`)。为了实现这个游戏机制，我们创建一个自定义运算符。通常，我们需要为这个自定义运算符**命名**,**指定类型**，**指定优先级**以及**结合性**。想要知道更多这四个方面的知识，请参阅[苹果官方文档](http://wiki.jikexueyuan.com/project/swift/chapter2/25_Advanced_Operators.html)。既然宝箱的作用是使得魔方尺寸放大三倍，不妨我们将这个自定义运算符命名为`***`，结合性采用**后缀**方式(译者注:等价于`a++`中的`++`作用)。其中将传入运算符操作函数的变量类型用`inout`关键字修饰声明。代码如下:      
+
+``` swift
+postfix operator *** {}
+postfix func *** (inout myCube: Cube){
+    myCube.side = myCube.side * 3
+}
+
+var myCube = Cube(side: 10.0)
+myCube***
+print(myCube.side, appendNewline: true)//swift2.0新特性 Xcode7下支持
+```
+
+正如你所看到的，重载已存在的运算符以及自定义运算符在**Swift**是如此简单。不过重载已存在运算符时，请引起足够重视，防止一些意外情况发生。
