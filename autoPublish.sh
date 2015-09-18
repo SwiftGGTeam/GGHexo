@@ -13,9 +13,9 @@ elif [ $LOCAL = $BASE ]; then
   cd ..
   git pull
   babel-node generatePosts.js
+  python 3-extractImgs.py
   babel-node generateStat.js
   babel-node generateShareMD.js
-  python 3-extractImgs.py
   hexo clean
   hexo g
   hexo d
