@@ -18,7 +18,7 @@ iOS 8 到来以后，这种实现方式发生了改变。首先，`UISearchDispl
 
 
 
-![](http://swift.gghttp://www.appcoda.com/wp-content/uploads/2015/08/custom-search-bar-featured.jpg)
+![](http://swift.gg/img/articles/custom_search_bar_tutorial/custom-search-bar-featured.jpg)
 
 除了上面提到的内容， 在 `UITableView` 中搜索数据源还有一点比较有趣。iOS SDK 给搜索栏提供了一个默认外观，并且这个外观能适合绝大多数的界面样式。然而，当 UI 界面高度自定义时，自带的搜索栏样式可能就不太能符合整个 App 的界面风格了。这种情况下，为避免搜索栏特别扎眼，就必须要自定义了。
 
@@ -30,7 +30,7 @@ iOS 8 到来以后，这种实现方式发生了改变。首先，`UISearchDispl
 
 下面的两张图是Demo的最终效果：
 
-![](http://swift.gghttp://www.appcoda.com/wp-content/uploads/2015/08/search-bar-demo-app.png)
+![](http://swift.gg/img/articles/custom_search_bar_tutorial/search-bar-demo-app.png)
 
 第一张图，是`UISearchController`的默认搜索栏。第二张图，是自定义的搜索栏。接下来将会介绍到两种搜索栏的实现，但在此之前，还需要介绍下这个项目。
 
@@ -122,7 +122,7 @@ func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexP
 
 现在运行程序就可以看到国家列表显示在了 `tableView` 上。目前为止，我们还没有做一些比较新、比较难的操作，接下来让我们来配置搜索控制器并显示默认的搜索栏。
 
-![](http://swift.gghttp://www.appcoda.com/wp-content/uploads/2015/08/t41_3_countries_list.png)
+![](http://swift.gg/img/articles/custom_search_bar_tutorial/t41_3_countries_list.png)
 
 ## 配置 `UISearchController`
 
@@ -315,7 +315,7 @@ func updateSearchResultsForSearchController(searchController: UISearchController
 
 到此，教程的第一部分就结束了。在接下来这个部分中，你将看到如何重写搜索控制器和搜索栏的样式，如何通过自定义来让他们更加符合 App 的 UI 风格。
 
-![](http://swift.gghttp://www.appcoda.com/wp-content/uploads/2015/08/t41_1_default_search_sample.png)
+![](http://swift.gg/img/articles/custom_search_bar_tutorial/t41_1_default_search_sample.png)
 
 ## 自定义搜索栏
 
@@ -325,7 +325,7 @@ func updateSearchResultsForSearchController(searchController: UISearchController
 
 首先，在 Xcode 创建新文件，步骤是`File` >` New `>` File`…，在左侧的菜单中，选择 `iOS` >` Source` 分类的 `Cocoa Touch Class`。接着，将 `Subclass of` 内容设置为 `UISearchBar`，类名设置为 `CustomSearchBar`：
 
-![](http://swift.gghttp://www.appcoda.com/wp-content/uploads/2015/08/t41_4_custom_search_bar_class.png)
+![](http://swift.gg/img/articles/custom_search_bar_tutorial/t41_4_custom_search_bar_class.png)
 
 结束创建，并选中打开这个文件。我们开始写自定义初始化方法。在初始化方法中，定义接下来自定义搜索栏和搜索输入框所需的 `frame`，`font`和 `text color`。在此之前，先定义以下两个属性：
 
@@ -384,7 +384,7 @@ println(subviews[0].subviews)
 
 控制台上会显示：
 
-![](http://swift.gghttp://www.appcoda.com/wp-content/uploads/2015/08/t41_5_search_bar_subviews.png)
+![](http://swift.gg/img/articles/custom_search_bar_tutorial/t41_5_search_bar_subviews.png)
 
 除了刚才的自定义初始方法以外，还需要添加一个初始化方法：
 
@@ -478,7 +478,7 @@ override func drawRect(rect: CGRect) {
 
 我们的自定义搜索控制器将会是 `UISearchController` 的子类，操作步骤也和上一节差不多。创建文件的步骤都一样，只是要注意 `Subclass` 要改为 `UISearchController`，类名是 `CustomSearchController`:
 
-![](http://swift.gghttp://www.appcoda.com/wp-content/uploads/2015/08/t41_6_custom_search_controller_class.png)
+![](http://swift.gg/img/articles/custom_search_bar_tutorial/t41_6_custom_search_controller_class.png)
 
 创建完以后，在工程目录里面选中这个类，在开头添加自定义搜索栏的属性：
 
@@ -568,7 +568,7 @@ override func viewDidLoad() {
 
 在这个时候，自定义控制器还达不到想要的要求，因为搜索操作还没加上去。这个问题会在下一节中解决。不过现在已经可以看到自定义搜索控制器的效果了。
 
-![](http://swift.gghttp://www.appcoda.com/wp-content/uploads/2015/08/t41_7_custom_search_bar.png)
+![](http://swift.gg/img/articles/custom_search_bar_tutorial/t41_7_custom_search_bar.png)
 
 ## 给自定义搜索控制器添加搜索操作
 
@@ -711,7 +711,7 @@ func didChangeSearchText(searchText: String) {
 
 到此，整个 App 的功能就已经完全 ok 了，并且使用的是自定义的搜索控制器。运行看下效果：
 
-![](http://swift.gghttp://www.appcoda.com/wp-content/uploads/2015/08/custom_search_bar.png)
+![](http://swift.gg/img/articles/custom_search_bar_tutorial/custom_search_bar.png)
 
 ## 总结
 

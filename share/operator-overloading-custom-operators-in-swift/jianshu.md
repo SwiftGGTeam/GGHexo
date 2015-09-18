@@ -1,22 +1,21 @@
-title: "Swift 中的重载运算符和自定义运算符"
-date: 2015-09-17 10:00:00
-tags: [Raj Kandathi]
-categories: [Swift 入门]
-permalink: operator-overloading-custom-operators-in-swift
----
-原文链接=http://rajkandathi.com/operator-overloading-custom-operators-in-swift/
-作者=Raj Kandathi
-原文日期=2015/09/12
-译者=pmst
-校对=千叶知风
-定稿=shanks
-发布时间=2015-09-17T09:50:00
+Swift 中的重载运算符和自定义运算符
+
+> 作者：Raj Kandathi，[原文链接](http://rajkandathi.com/operator-overloading-custom-operators-in-swift/)，原文日期：2015/09/12
+> 译者：[pmst](http://blog.csdn.net/colouful987)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[shanks](http://codebuild.me/)
+  
+
+
+
+
+
+
+
   
 
 ### 重载运算符
 
 有时候，我们会遇到需要对自定义的类(`class`)或结构体(`struct`)支持某些运算符功能，例如`+,-,*,/`等。以魔方收集者(`Cube Collector`)游戏为例，初期你怀揣一个渺小的魔方，身处一个充斥各种尺寸魔方的空间中。你的任务是找寻新的魔方,并通过"吞噬"新魔方来进化你手中的魔方。(译者注:吞噬解释为原始魔方尺寸加上新的魔方尺寸得到进化后的魔方)
-<!--more-->
+
 
 魔方(`Cube`)类定义如下:
 

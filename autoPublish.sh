@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
-cd /GGHexo/source
-git pull
-cd ..
-git pull
-file_num=$(ls /GGHexo/source/_posts -1 --file-type | grep -v '/$' | wc -l)
-babel-node generatePosts.js
-file_num_now=$(ls /GGHexo/source/_posts -1 --file-type | grep -v '/$' | wc -l)
-if (( file_num_now > file_num )); then
+
+cd /GGHexo
+git fetch
+LOCAL=$(git rev-parse @)
+REMOTE=$(git rev-parse @{u})
+BASE=$(git merge-base @ @{u})
+if [ $LOCAL = $REMOTE ]; then
+  echo "Up-to-date"
+elif [ $LOCAL = $BASE ]; then
+  cd /GGHexo/source
+  git pull
+  cd ..
+  git pull
+  babel-node generatePosts.js
   babel-node generateStat.js
   babel-node generateShareMD.js
   python 3-extractImgs.py
@@ -21,8 +27,4 @@ if (( file_num_now > file_num )); then
   git add .
   git commit -m 'AUTO: publish'
   git push
-else
-  git reset --hard HEAD
-  cd source
-  git reset --hard HEAD
 fi
