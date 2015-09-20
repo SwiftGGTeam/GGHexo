@@ -14,7 +14,7 @@
 
 > 本教程代码基于 Xcode 6.2 写成。
 
-当你的应用在后台运行时，可以简单地使用本地通知把信息呈现给用户。它可以允许你显示 提醒、播放提示音和数字角标（badge）。本地通知可以被以下的事件触发：计划好的时间点或者用户进入和离开某个地理区域。在本教程中，我们会构建一个简单的待办列表应用(to-do list app)，并探索一下本地通知的特征和小技巧。
+当你的应用在后台运行时，可以简单地使用本地通知把信息呈现给用户。它可以允许你显示 提醒、播放提示音和数字角标（badge）。本地通知可以被以下的事件触发：计划好的时间点或者用户进入和离开某个地理区域。在本教程中，我们会构建一个简单的待办列表应用(to-do list app)，并探索一下 UILocalNotification  提供的一些功能和技巧。
 
 
 
@@ -22,7 +22,7 @@
 
 ![](http://swift.gghttp://jamesonquave.com/blog/wp-content/uploads/Screen-Shot-2015-01-30-at-10.15.42-PM.png)
 
-在开始写代码之前，我们要先设置好视图控制器和视图，这是必要步骤。我会在使用 Interface Builder 时讲一些基本知识，如果你想要跳过这个步骤，可以在[这里](https://github.com/jasonbnewell/LocalNotificationTutorials/tree/part1_simplified)下载设置好的应用源代码，然后直接跳到[这里](#scheduling)开始探索。
+在开始写代码之前，我们要先设置好视图控制器和视图，这是必要步骤。我会介绍一些使用 Interface Builder 的基本知识，如果你想要跳过这个步骤，可以在[这里](https://github.com/jasonbnewell/LocalNotificationTutorials/tree/part1_simplified)下载设置好的应用源代码，然后直接跳到[这里](#scheduling)开始探索。
 
 ## 配置视图
 
@@ -38,9 +38,9 @@
 
 ![](http://swift.gghttp://jamesonquave.com/blog/wp-content/uploads/Screen-Shot-2015-01-30-at-10.29.29-PM.png)
 
-接下来，选择“Cocoa Touch Class”，创建一个`UITableViewController`子类，名为`TodoTableViewController`。注意，选择 Swift 作为编程语言，但是不要勾选`create a XIB file`。这是根视图控制器，用来显示待办列表。
+接下来，选择“Cocoa Touch Class”，创建一个名为`TodoTableViewController`的 `UITableViewController`子类。注意，选择 Swift 作为编程语言，不要创建 XIB 文件。这是根视图控制器，用来显示待办列表。
 
-我们同样需要创建一个添加待办项的视图控制器。重复前面的过程，建一个`UIViewController`子类，名为`TodoSchedulingViewController`。
+我们同样需要创建一个添加待办项的视图控制器。重复前面的过程，创建一个名为  `TodoSchedulingViewController`的`UIViewController`子类。
 
 ## 设置 Navigation
 
@@ -50,7 +50,7 @@
 
 ![](http://swift.gghttp://jamesonquave.com/blog/wp-content/uploads/Screen-Shot-2015-01-30-at-11.11.26-PM.png)
 
-点选导航控制器的根视图(table view)，然后在 identity inspector 中把 custom class 为`TodoTableViewController`，如图。
+点选导航控制器的根视图(table view)，然后在 identity inspector 中把 custom class 设置为 TodoTableViewController，如图。
 
 ![](http://swift.gghttp://jamesonquave.com/blog/wp-content/uploads/Screen-Shot-2015-01-30-at-11.22.17-PM.png)
 
@@ -60,7 +60,7 @@
 
 还是在 attributes inspector 界面，把一个导航项（navigation item）拖到表格视图上，命名为“Todo List”，再拖拽一个菜单栏按钮（bar button item）上去，把标识设置为“Add”。
 
-接下来，我们来设置添加待办项的视图。把一个试图控制器拖拽到 storyboard 里。同样，百 custom class 设置为`TodoSchedulingViewController`。
+接下来，我们来设置添加待办项的视图。把一个试图控制器拖拽到 storyboard 里。同样，把 custom class 设置为`TodoSchedulingViewController`。
 
 Ctrl+左键或直接右键点击“Add”按钮，按住“action”并拖拽到新的视图，然后选择“show”，如图。至此，我们的导航已经连接起来了。
 
@@ -83,7 +83,7 @@ Ctrl+左键或直接右键点击“Add”按钮，按住“action”并拖拽到
 @IBOutlet weak var deadlinePicker: UIDatePicker!
 ```
 
-最后，将按钮联结为 IBAction，而不是 IBOutlet。Ctrl+左键或直接右键点击按钮，拖拽“Touch Up Inside”圆圈到代码中去，将`action`命名为“savePressed”并设置`sender`类型为`UIButton`（为了明确只由当前按钮触发 action，我特别指定类型为`UIButton`）。
+最后一步是将 save 按钮连接至一个 IBAction （一个事件处理函数）。Ctrl+左键或直接右键点击按钮，拖拽“Touch Up Inside”圆圈到代码中去，将`action`命名为“savePressed”并设置`sender`类型为`UIButton`（其它控件不会触发这个 action，所以在此可以指定具体的类型）。
 
 ```swift
 @IBAction func savePressed(sender: UIButton) {
@@ -104,7 +104,7 @@ Ctrl+左键或直接右键点击“Add”按钮，按住“action”并拖拽到
 application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert | .Badge | .Sound, categories: nil))  // types are UIUserNotificationType members
 ```
 
-在第一次运行这个应用的时候，用户会收到是否允许收到通知的提示。如果用户允许收到通知，当我们收到通知时，通知会以横幅形式展示，播放提示音以及展示更新后的应用图标(这部分内容会在本教程中的第二部分展示)。
+在第一次运行这个应用的时候，会提示用户授权应用程序触发通知的权限。如果用户授予权限，我们就能够做通知的计划了，通知包括显示一条横幅，播放一个声音，以及更新应用图标上的角标数字。(这部分内容会在本教程中的第二部分展示)。
 
 <div style="max-width:300px;">
 ![](http://swift.gghttp://jamesonquave.com/blog/wp-content/uploads/iOS-Simulator-Screen-Shot-Feb-3-2015-2.56.37-PM.png)
