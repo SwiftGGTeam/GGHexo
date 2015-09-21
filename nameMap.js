@@ -14,7 +14,8 @@ let nameMap = {
   "saitjr": "http://www.brighttj.com",
   "Prayer": "http://www.futantan.com",
   "pmst": "http://blog.csdn.net/colouful987",
-  "ray16897188": "http://www.jianshu.com/users/97c49dfd1f9f/latest_articles"
+  "ray16897188": "http://www.jianshu.com/users/97c49dfd1f9f/latest_articles",
+  "BridgeQ": "http://wxgbridgeq.github.io/",
 }
 
 export default nameMap
