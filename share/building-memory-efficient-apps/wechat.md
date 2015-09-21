@@ -1,7 +1,7 @@
 构建内存高效的应用
 
 > 作者：Thomas Hanning，[原文链接](http://www.thomashanning.com/building-memory-efficient-apps/)，原文日期：2015/08/06
-> 译者：[BridgeQ](undefined)；校对：[lfb-CD](undefined)；定稿：[shanks](http://codebuild.me/)
+> 译者：[BridgeQ](http://wxgbridgeq.github.io/)；校对：[lfb-CD](undefined)；定稿：[shanks](http://codebuild.me/)
   
 
 
@@ -97,6 +97,6 @@ deinit {
 
 ![](http://swift.gghttp://thomashanningcom.c.presscdn.com/wp-content/uploads/2015/08/Bildschirmfoto-2015-08-01-um-10.23.22.png)
 
-### 总结
+# 总结
 
 内存管理在移动开发领域是一个非常重要的话题。如果你使用了过多的内存消耗，应用就会变慢甚至可能崩溃。相反，如果你认真对待内存管理问题，你就会构建出内存高效的应用。
