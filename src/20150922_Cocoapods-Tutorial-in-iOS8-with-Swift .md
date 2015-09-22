@@ -1,4 +1,4 @@
-title: "iOS8（Swift）中使用 Cocoapods 教程" 
+title: "在 iOS8（Swift）中使用 Cocoapods" 
 date: 2015-09-22 10:00:00
 tags: [IOSCREATOR]  
 categories: [Swift 入门]  
