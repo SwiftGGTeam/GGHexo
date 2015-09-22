@@ -10,7 +10,7 @@ permalink: Cocoapods-Tutorial-in-iOS8-with-Swift
 原文日期=2015/07/07  
 译者=Prayer
 校对=shanks
-定稿=shanks
+定稿=千叶知风
 
 <!--此处开始正文-->
 
