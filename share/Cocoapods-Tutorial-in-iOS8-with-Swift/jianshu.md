@@ -30,7 +30,7 @@ Cocoapods 是 iOS 应用的包管理工具。它简化了第三方库的导入�
 
 接下来使用以下命令克隆 Cocoapods 的 master 分支到本地。
 
-> pod setup --verbode
+> pod setup --verbose
 
 然后进入 Xcode 项目文件目录，生成 `Podfile` 文件
 
