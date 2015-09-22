@@ -13,7 +13,7 @@ let nameMap = {
   "CMB": "https://github.com/chenmingbiao",
   "saitjr": "http://www.brighttj.com",
   "Prayer": "http://www.futantan.com",
-  "pmst": "http://blog.csdn.net/colouful987",
+  "pmst": "http://www.jianshu.com/users/596f2ba91ce9/latest_articles",
   "ray16897188": "http://www.jianshu.com/users/97c49dfd1f9f/latest_articles",
   "BridgeQ": "http://wxgbridgeq.github.io/",
 }
