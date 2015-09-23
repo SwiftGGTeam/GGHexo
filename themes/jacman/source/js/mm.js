@@ -54,11 +54,7 @@ $(function() {
                 }
             },
             error: function(results) {
-                var articleViewCount = new ArticleViewCount()
-                articleViewCount.set("url", url)
-                articleViewCount.set("count", 1)
                 $(".viewcount").text(1)
-                articleViewCount.save(null)
             }
         })
     }
