@@ -129,7 +129,7 @@ if case .Success(let person) = personResult {
 现在我们有了新的 guard 语句，这就意味着**返回值一定是一个 Person 对象**，并且编译器会要求你必须处理返回错误的情况：     
 
 <center>
-![](http://swift.gg/img/articles/swift-guard-better-than-if/Screen-Shot-2015-07-16-at-5.47.01-AM.png)
+![](http://swift.ggimg/articles/swift-guard-better-than-if/Screen-Shot-2015-07-16-at-5.47.01-AM.png)
 </center>     
 
 所以在使用 guard 的时候，需要用这样的语法捕捉错误信息：     
@@ -152,7 +152,7 @@ do {
 最后，最有意思的是，和其他编程语法（中类似 if 和 guard 的语句）相比，使用 guard 会强迫你编写 happy-path，如果出错会提前退出，从而必须处理可能发生的错误。这让我想到了幽冥的 [Railway Oriented Programming](http://fsharpforfunandprofit.com/rop/) 话题。     
 
 <center>
-![](http://swift.gg/img/articles/swift-guard-better-than-if/Recipe_Railway_Transparent.png)
+![](http://swift.ggimg/articles/swift-guard-better-than-if/Recipe_Railway_Transparent.png)
 </center>    
 
 你会持续编写正确的代码，程序一旦运行出错就会提前退出。这是一种非常优美的处理代码的方式，没有任何复杂的函数语法。看下面这段代码，你能立即发现 happy-path ：     

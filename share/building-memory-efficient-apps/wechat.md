@@ -95,7 +95,7 @@ deinit {
 
 我们通常是在项目开发的最后阶段才发现内存管理的很糟糕，不幸的是，这样已经太晚了。所以在项目开发过程中，经常对内存使用量进行监测是非常重要的。你只需在一台真机上运行你的应用，然后点击Xcode中调试选项卡下的`Memory`。
 
-![](http://swift.gghttp://thomashanningcom.c.presscdn.com/wp-content/uploads/2015/08/Bildschirmfoto-2015-08-01-um-10.23.22.png)
+![](http://swift.ggimg/articles/building-memory-efficient-apps/Bildschirmfoto-2015-08-01-um-10.23.22.png)
 
 # 总结
 
