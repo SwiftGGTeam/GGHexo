@@ -18,7 +18,7 @@ Swift 2.0 中的面向协议的MVVM
 
 接下来我会用一个简单的例子来说明。现在有一个设置界面，其中只有一个设置：开启、关闭Minion Mode，当然你也可以推广到有许多设置的情况：
 
-![](http://swift.ggimg/articles/swift-2-0-protocol-oriented-mvvm/Simulator-Screen-Shot-Aug-17-2015-8.26.21-AM.png)
+![](http://natashatherobot.com/wp-content/uploads/Simulator-Screen-Shot-Aug-17-2015-8.26.21-AM.png)
 
 ## 视图单元格
 

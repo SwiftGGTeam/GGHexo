@@ -48,14 +48,16 @@ for (index, value) in array[5..<array.count].enumerate() {
 }
 ```
 
+
 如果你想要更准确的计数，而不必每次都加上偏移量 5 的话，可以使用`zip`，例子如下：
+
 
 ```swift
 let range = 5..<array.count
 for (index, value) in zip(range, array[range]) {        
     // use index, value here
 }
-``` 
+```
 
 也可以调整`zip`方法，将其应用在`forEach`里：
 
