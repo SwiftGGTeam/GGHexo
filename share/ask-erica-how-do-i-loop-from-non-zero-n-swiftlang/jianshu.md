@@ -26,6 +26,7 @@ for var index = 5; index < array.count; index++ {
 也可以用区间运算符的方式实现相似的功能：
 
 
+
 ```swift
 for index in 5..<array.count {
  // do something with array[index]
@@ -48,9 +49,7 @@ for (index, value) in array[5..<array.count].enumerate() {
 }
 ```
 
-
 如果你想要更准确的计数，而不必每次都加上偏移量 5 的话，可以使用`zip`，例子如下：
-
 
 ```swift
 let range = 5..<array.count
@@ -58,7 +57,6 @@ for (index, value) in zip(range, array[range]) {
     // use index, value here
 }
 ```
-
 也可以调整`zip`方法，将其应用在`forEach`里：
 
 ```swift
