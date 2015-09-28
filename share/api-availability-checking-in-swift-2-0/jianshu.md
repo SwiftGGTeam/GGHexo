@@ -1,0 +1,150 @@
+Swift 2.0: API 可用性检查介绍
+
+> 作者：Thomas Hanning，[原文链接](http://www.thomashanning.com/api-availability-checking-in-swift-2-0/)，原文日期：2015-09-21
+> 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[shanks](http://codebuild.me/)；定稿：[shanks](http://codebuild.me/)
+  
+
+
+
+
+
+
+
+
+Swift 安全至上。除了`Swift2.0`引入的自动的`API`可用性检查之外，另外还新增一些非常棒的功能使得你的应用程序更加稳定。
+
+> 每年苹果发布新的 iOS 重大更新之时，都将引入新的功能以及`API`。但是它们并不能兼容之前的`iOS`版本，导致你不得不谨慎对待这些新的`API`。
+
+设想应用程序的部署目标是`iOS 8`(即只有`iOS 8.0`以上的设备才能安装该程序)，同时又要支持 `force touch`（注：`force touch` 是 `iOS 9` 下才能使用的新功能）功能。对于低于`iOS 9`版本的系统，有如下几种方式可以避免在`iOS 8`系统下调用`iOS 9`的API。
+
+
+
+方式一:     
+
+``` swift
+// 以下为译者注解:
+// respondsToSelector用来判断是否有以某个名字命名的方法(被封装在一个selector的对象里传递)
+// 只有iOS 9 才有forceTouchCapability方法。
+if traitCollection.respondsToSelector(Selector("forceTouchCapability")) {
+	 // 检查ForceTouch是否可用 倘若可用 进行配置
+     if (traitCollection.forceTouchCapability == UIForceTouchCapability.Available) {
+          //配置 Force touch
+     }
+}
+```
+
+方式二:     
+
+``` swift
+// 判断是否在iOS9能够正常工作
+if NSProcessInfo().isOperatingSystemAtLeastVersion(NSOperatingSystemVersion(majorVersion: 9, minorVersion: 0, patchVersion: 0)) {
+	// 判断force touch 是否可用
+     if (traitCollection.forceTouchCapability == UIForceTouchCapability.Available) {
+          //配置 Force touch
+     }
+}
+```
+
+以上这些解决方案的问题在于，你必须对所有检查都做到面面俱到.一旦你忘记检查新 API 的可用性，应用程序在旧版本中运行将导致崩溃。
+
+不过，在`Xcode7`和`Swift2.0`下，以上两个范例均无法编译通过。你必须使用`#available`关键字来进行`API`可用性检查，如此就能解决编译器报错了。因此在`Swift2.0`中你的代码应该这么写:
+
+``` swift
+// 检查当前设备系统是否在iOS 9下可用
+if #available(iOS 9.0,*){
+	// 可用情况下 才执行如下代码
+	if (traitCollection.forceTouchCapability == UIForceTouchCapability.Available) {
+          //configure force touch
+     } 
+}else {
+         // Fallback on earlier versions
+ }	
+```
+
+### Guard
+
+此外，使用`guard`来进行`API`可用性检查也不失为一个良策。
+
+``` swift
+func configureForceTouch() {
+	 // guard只有满足条件下才进行下一步 不满足则直接跳出程序
+     guard #available(iOS 9.0, *) else {
+          return
+     }
+
+     if (traitCollection.forceTouchCapability == UIForceTouchCapability.Available) {
+         //configure force touch
+     }        
+}
+```
+
+例子中，倘若运行在设备上的系统版本小于等于`iOS9.0`，那么函数就会直接跳出。
+
+
+
+### 类和方法
+
+当然我们还可对类和方法执行可用性检查。在这种情况下，必须使用`@available`,而非`#available`:
+
+``` 
+@available(iOS 9.0, *)
+     func configureForceTouch() {
+          if (traitCollection.forceTouchCapability == UIForceTouchCapability.Available) {
+               //configure force touch
+           }    
+     }
+}
+```
+
+
+
+### 平台的检查
+
+你同样能够对除`iOS`之外的平台进行检查。例如，检查应用程序是否支持在`Mac OSX 10.10`版本以上运行。
+
+``` swift
+if #available(iOS 9.0, OS X 10.10, *) {
+    // runs on iOS 9 and OS X 10.10
+}
+```
+
+你可能好奇这个"*"星号有啥用？它代表了所有标识的平台以及所有未来可能出现的平台。你必须使用它，即使你仅在`iOS`下使用。除以之外，你还可以明确`watchOS`以及`tvOS`的版本(`Xcode Beta 7.1`之后支持)。
+
+``` swift
+if #available(OSX 10.0, iOS 9, watchOS 2, tvOS 1, *) {
+     // runs on OS X 10.0, iOS 9, watchOS 2 and tvOS 1
+}
+```
+
+>总结: API可用性检查功能保证了代码的安全性。不过，为了在旧项目中使用`iOS 9 SDK`，你不得不做一些必要的迁移工作。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
