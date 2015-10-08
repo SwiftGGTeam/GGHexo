@@ -1,7 +1,7 @@
 title: "如何在 iOS 9 中创建 Stack View"
 date: 2015-10-08 09:00:00
 tags: [IOSCREATOR]
-categories: [iOS9, Swift 入门]
+categories: [iOS9,Swift 入门]
 permalink: stack-view-tutorial
 
 ---
