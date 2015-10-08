@@ -1,7 +1,7 @@
 构建内存高效的应用
 
 > 作者：Thomas Hanning，[原文链接](http://www.thomashanning.com/building-memory-efficient-apps/)，原文日期：2015/08/06
-> 译者：[BridgeQ](http://wxgbridgeq.github.io/)；校对：[lfb-CD](undefined)；定稿：[shanks](http://codebuild.me/)
+> 译者：[BridgeQ](http://wxgbridgeq.github.io/)；校对：[lfb_CD](http://weibo.com/lfbWb)；定稿：[shanks](http://codebuild.me/)
   
 
 
