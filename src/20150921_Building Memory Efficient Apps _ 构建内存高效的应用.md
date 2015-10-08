@@ -9,7 +9,7 @@ permalink: building-memory-efficient-apps
 作者=Thomas Hanning
 原文日期=2015/08/06
 译者=BridgeQ
-校对=lfb-CD
+校对=lfb_CD
 定稿=shanks
 
 近年来，移动设备的性能越来越强大。然而，同桌面电脑相比，性能上总还是有一段不小的差距。同时，用户界面和交互设计的要求也越来越高。所以，为移动设备编写内存高效的应用仍然很有必要。
