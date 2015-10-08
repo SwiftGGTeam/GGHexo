@@ -2,9 +2,12 @@
 import urllib.request
 from os import walk, path, mkdir
 import re
+import shutil
+import time
+import http
 
 
-basepath = "./source/_posts"
+basepath = "./src"
 files = next(walk(basepath))[2]
 files = filter(lambda x: not x.startswith("."), files)
 
@@ -56,7 +59,7 @@ def downloadimgs(option):
 
     for img in imgs:
         (imgoriname, imgurl, imgname) = re.findall(r'!\[(.*)\]\((.*/(.*))\)', img)[0]
-        imgname = imgname.replace("?", "")
+        imgname = imgname.replace("?", "") + str(time.time())
 
         if not path.isdir(path.join(targetpath, fileurl)):
             mkdir(path.join(targetpath, fileurl)) 
@@ -64,7 +67,9 @@ def downloadimgs(option):
             try:
                 urllib.request.urlretrieve(imgurl, path.join(targetpath, fileurl, imgname)) 
             except:
-                raise ValueError("Can't download %s-->%s, please check the url!" % (fileurl, imgurl))
+                print("Can't download %s-->%s, please check the url!" % (fileurl, imgurl))
+                downloadimgs.append(u"![%s](%s)" % (imgoriname, imgurl))
+                continue
         downloadimgs.append("![%s](%s)" % (imgoriname, targeturl + "/" + fileurl + "/" + imgname))
 
     return (filepath, fileurl, content, imgs, downloadimgs)

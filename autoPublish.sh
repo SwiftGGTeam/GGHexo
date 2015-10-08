@@ -12,6 +12,7 @@ if [ $LOCAL = $REMOTE ]; then
   file_num_now=$(ls /GGHexo/source/_posts -1 --file-type | grep -v '/$' | wc -l)
   if (( file_num_now > file_num )); then
     python 3-extractImgs.py
+    babel-node generatePosts.js
     babel-node generateStat.js
     babel-node generateShareMD.js
     hexo clean
@@ -35,8 +36,8 @@ elif [ $LOCAL = $BASE ]; then
   git pull
   cd ..
   git pull
-  babel-node generatePosts.js
   python 3-extractImgs.py
+  babel-node generatePosts.js
   babel-node generateStat.js
   babel-node generateShareMD.js
   hexo clean

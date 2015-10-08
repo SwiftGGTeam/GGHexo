@@ -1,7 +1,7 @@
 title: "使用 Core Graphics 绘制基本形状"
 date: 2015-09-24 09:00:00
 tags: [IOSCREATOR]
-categories: [Swift 入门, iOS9]
+categories: [Swift 入门,iOS9]
 permalink: drawing-shapes-core-graphics-tutorial
 ---
 原文链接=http://www.ioscreator.com/tutorials/drawing-shapes-core-graphics-tutorial
@@ -19,19 +19,19 @@ permalink: drawing-shapes-core-graphics-tutorial
 <!--more-->
 
 打开 Xcode 并创建一个`new Single View Application`项目。项目名称为**`IOS9DrawShapesTutorial`**，接着填上你的`Organization Name`和`Organization Identifier`，选择 Swift 语言，确保在设备一栏只选择了 IPhone。
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/55e352b7e4b0fd055b781163/1440961208856/?format=750w)
+![](/img/articles/drawing-shapes-core-graphics-tutorial/format=750w1444269942.141822)
 
 打开故事板，在主视图中拖入三个按钮，使他们水平对齐，并分别设置`title`为"Lines, Rectangle, Circle"。之后你的故事板内容应该像下面这样：
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/55e35323e4b0c5db7a89d7cb/1440961315643/DrawShapes-Storyboard.png?format=750w)
+![](/img/articles/drawing-shapes-core-graphics-tutorial/DrawShapes-Storyboard.pngformat=750w1444269942.392771)
 
 选中所有按钮，打开`Attributes Inspector`(属性检测器)。在`View`部分给从左到右的按钮添上"0,1,2"的`tag`。`tag`是我们后面才需要的，我们可以通过`tag`的值得知哪个按钮被按下了。
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/55e3535be4b0720c69a758fa/1440961371830/?format=300w)
+![](/img/articles/drawing-shapes-core-graphics-tutorial/format=300w1444269942.461758)
 
 打开`Assistant Editor`(关联面板)，并确保**`ViewController.swift`**文件是打开着的。按住 `Ctrl`键，把`Lines`按钮拖出到`ViewController.swift`文件中，并创建下面的`Action`
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/55e35527e4b02d84f4af47fc/1440961832251/?format=300w)
+![](/img/articles/drawing-shapes-core-graphics-tutorial/format=300w1444269942.535743)
 
 选中其它的按钮，按住`Ctrl`键并拖到`ViewController`类的`IBAction`方法里(刚刚创建的那个`Action`)。之后我们点击每一个按钮就会触发这里的`IBAction`方法。绘制的图形会呈现在一个自定义的视图中。接下来，我们为项目添加一个新文件。选中`File` ->`New File` ->`iOS` ->`Source` ->`Cocoa Touch Class`。类名称为"ShapeView",确保父类为`UIView`。
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/55e357bfe4b0aacd980b5700/1440962497602/?format=750w)
+![](/img/articles/drawing-shapes-core-graphics-tutorial/format=750w1444269942.609728)
 
 打开`ShapeView.swift`文件，添加下面的属性。
 
@@ -137,6 +137,6 @@ func drawCircle() {
 }
 ```
 编译并运行程序，点击不同的按钮来绘制不同的图形。
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/55e35f40e4b0c5db7a8a0cbf/1440964417444/?format=750w)
+![](/img/articles/drawing-shapes-core-graphics-tutorial/format=750w1444269942.683713)
 
 你可以在[Github](https://github.com/ioscreator/ioscreator)上下载**`IOS9DrawShapesTutorial`**的代码。

@@ -65,6 +65,6 @@ private extension ViewStylingHelpers {
 
 看完之后我的第一个问题是 - 在 Xcode 的导航栏里如何显示？不用担心，它们都会显示出来！
 
-![image](http://swift.ggimg/articles/swift-how-to-name-your-extensions/Screen_Shot_2015-07-26_at_4_43_29_AM.png)
+![image](http://swift.gg/img/articles/swift-how-to-name-your-extensions/Screen_Shot_2015-07-26_at_4_43_29_AM.png)
 
 你觉得这种方式如何？我需要你们帮我做出选择——使用`typealias`还是`MARK:`。

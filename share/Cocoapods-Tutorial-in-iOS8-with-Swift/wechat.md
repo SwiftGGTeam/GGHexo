@@ -18,7 +18,7 @@ Cocoapods 是 iOS 应用的包管理工具。它简化了第三方库的导入�
 
 打开 Xcode 使用 `Single View Application` 创建一个项目。项目名称可以使用 `IOS8SwiftCocoapodsTutorial`，其他配置项（比如：Organization Name 和 Organization Identifier）可以自定义。选择 Swift 作为开发语言，并且在设备选项选中 `iPhone`。 
 
-![新建项目](http://swift.ggimg/articles/Cocoapods-Tutorial-in-iOS8-with-Swift/IOS8SwiftCocoapodsTutorial_1.png)
+![新建项目](http://swift.gg/img/articles/Cocoapods-Tutorial-in-iOS8-with-Swift/IOS8SwiftCocoapodsTutorial_1.png1444269940.90207)
 
 咱们的这个教程中会用到一个自定义字体，可以从[这里](http://www.ioscreator.com/s/OpenSans-Bold.ttf)下载，并加入到项目中。接下来，关闭 Xcode 项目并打开终端。首先我们需要安装 cocoa pods。这个过程将会用到 ruby 环境，而 Mac OS X 系统已经自带了 ruby。在终端中输入如下命令：
 
@@ -64,11 +64,11 @@ end
 
 FontBlaster 和相关依赖都会被自动安装。同时会新建一个 `IOS8SwiftCocoapodTutorial.xcworkspace` 文件。打开这个 workspace，找到 Storyboard。向其中拖入一个 `Label`，并放在视图的中间偏上位置。
 
-![放入Label](http://swift.ggimg/articles/Cocoapods-Tutorial-in-iOS8-with-Swift/IOS8SwiftCocoapodsTutorial_2.png)
+![放入Label](http://swift.gg/img/articles/Cocoapods-Tutorial-in-iOS8-with-Swift/IOS8SwiftCocoapodsTutorial_2.png1444269941.389972)
 
 点击 `Assistant Editor`，确保 `ViewController.swift` 和 Storyboard 可以同时显示，按住 `Ctrl` 同时从 Label 向 swift 文件中拖拽，随后创建如下 Outlet：
 
-![创建 Outlet](http://swift.ggimg/articles/Cocoapods-Tutorial-in-iOS8-with-Swift/IOS8SwiftCocoapodsTutorial_3.png)
+![创建 Outlet](http://swift.gg/img/articles/Cocoapods-Tutorial-in-iOS8-with-Swift/IOS8SwiftCocoapodsTutorial_3.png1444269941.630924)
 
 在 `ViewController.swift` 文件的开始，导入 `FontBlaster` 库。
 
@@ -91,7 +91,7 @@ FontBlaster 和相关依赖都会被自动安装。同时会新建一个 `IOS8Sw
 
 > 译者注：如果遇到 `No fonts were found in the bundle path` 提示，可以到 `'Targets' -> 'Build Phases' -> 'Copy Bundle Resources'` 中手动添加字体文件。
 
-![运行效果](http://swift.ggimg/articles/Cocoapods-Tutorial-in-iOS8-with-Swift/IOS8SwiftCocoapodsTutorial_4.png)
+![运行效果](http://swift.gg/img/articles/Cocoapods-Tutorial-in-iOS8-with-Swift/IOS8SwiftCocoapodsTutorial_4.png1444269941.886873)
 
 你可以从 [Github](https://github.com/ioscreator/ioscreator) 上下载本教程的代码。
 

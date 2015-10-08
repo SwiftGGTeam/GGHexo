@@ -52,7 +52,7 @@ let originInfo = new Promise(function (resolve, reject) {
 .then(files => files.map(file => {
   let origin = file.content
   origin = origin.substr(origin.indexOf("---") + 3)
-  origin = origin.replace(/!\[(.*?)\]\(\/(.*?)\)/g, "![$1](http://swift.gg$2)")
+  origin = origin.replace(/!\[(.*?)\]\(\/(.*?)\)/g, "![$1](http://swift.gg/$2)")
   origin = origin.replace(/<center>!\[给译者打赏\]\(.*?\)<\/center>/, "")
   origin = origin.replace("<!--more-->", "")
   let jianshu = origin
