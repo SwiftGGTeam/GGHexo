@@ -1,7 +1,7 @@
 好的错误处理原则
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2015/09/02/good-errors-swiftlang/)，原文日期：2015-09-02
-> 译者：[小袋子](undefined)；校对：[shanks](http://codebuild.me/)；定稿：[shanks](http://codebuild.me/)
+> 译者：[小袋子](http://daizi.me)；校对：[shanks](http://codebuild.me/)；定稿：[shanks](http://codebuild.me/)
   
 
 
