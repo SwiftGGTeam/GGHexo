@@ -7,7 +7,7 @@ permalink: drawing-shapes-core-graphics-tutorial
 原文链接=http://www.ioscreator.com/tutorials/drawing-shapes-core-graphics-tutorial
 作者=Arthur Knopper
 原文日期=2015/08/31
-译者=lfb-CD
+译者=lfb_CD
 校对=千叶知风
 定稿=shanks
 发布时间=2015-09-24T09:00:00
