@@ -16,6 +16,7 @@ if [ $LOCAL = $REMOTE ]; then
     babel-node generateStat.js
     babel-node generateShareMD.js
     hexo clean
+    \cp /replaceHexo/post.js /node_modules/hexo/lib/models/post.js
     hexo g
     hexo d
     cd source
@@ -41,6 +42,7 @@ elif [ $LOCAL = $BASE ]; then
   babel-node generateStat.js
   babel-node generateShareMD.js
   hexo clean
+  \cp /replaceHexo/post.js /node_modules/hexo/lib/models/post.js
   hexo g
   hexo d
   cd source
