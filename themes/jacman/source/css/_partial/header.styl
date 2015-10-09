@@ -79,7 +79,7 @@ body
   right 0em
   top 1em
   padding 0.5em
-  @media tablet
+  @media mini
     display none
 
 .navbutton::before
@@ -93,9 +93,7 @@ body
 header nav
   float left    
   width 100%
-  @media phone
-    width 50%
-  @media tablet
+  @media mini
     float right
     width auto
     margin-top 1em
@@ -105,14 +103,14 @@ header nav
   max-height 0.01em
   transition max-height 1s ease-out
   ul
-    @media tablet
+    @media mini
       float right
   ul li
-    @media tablet
+    @media mini
       float left
   ul li a
     padding 0.2em 0 0.2em 1em
-    @media tablet
+    @media mini
       padding 0.2em 1.5em
     &:hover
       background saturate(darken(color-theme, 25%), 10%)
