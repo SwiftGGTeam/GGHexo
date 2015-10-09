@@ -16,7 +16,8 @@ let nameMap = {
   "pmst": "http://www.jianshu.com/users/596f2ba91ce9/latest_articles",
   "ray16897188": "http://www.jianshu.com/users/97c49dfd1f9f/latest_articles",
   "BridgeQ": "http://wxgbridgeq.github.io/",
-  "小袋子": "http://daizi.me"
+  "小袋子": "http://daizi.me",
+  "我偏笑": "http://blog.csdn.net/nsnirvana"
 }
 
 export default nameMap
