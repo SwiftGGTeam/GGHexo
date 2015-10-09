@@ -1,21 +1,19 @@
-title: "Swift 编程思想，第二部分：数组的 Map 方法"
-date: 2015-10-09 09:00:00
-tags: [Crunchy Development]
-categories: [Swift 进阶]
-permalink: thinking-in-swift-2
+Swift 编程思想，第二部分：数组的 Map 方法
 
----
-原文链接=http://alisoftware.github.io/swift/2015/09/20/thinking-in-swift-2/
-作者=Olivier Halligon
-原文日期=2015-09-20
-译者=我偏笑
-校对=pmst
-定稿=shanks
-发布时间=2015-10-09T09:00:00
+> 作者：Olivier Halligon，[原文链接](http://alisoftware.github.io/swift/2015/09/20/thinking-in-swift-2/)，原文日期：2015-09-20
+> 译者：[我偏笑](undefined)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；定稿：[shanks](http://codebuild.me/)
+  
+
+
+
+
+
+
+
 
 在[本系列的第一篇文章](http://alisoftware.github.io/swift/2015/09/06/thinking-in-swift-1/)中，介绍了如何避免对可选类型强制解包以及拯救“小马”🐴 。在第二部分中，我们将会精简前文代码来让它看起来更有"雨燕风"(*Swift-er* : Swift编程语言风格)，同时向你介绍 `map()` 和 `flatMap()` 方法。
 
-<!--more-->
+
 
 >今天这篇文章我们将要讨论数组的 `map()` 和 `flatMap()` 方法。
 
@@ -149,7 +147,7 @@ return jsonItems.flatMap { (itemDesc: NSDictionary) -> ListItem? in
 
 同时，希望你花点时间来深入了解一下 `map()` 和 `flatMap()` 在数组上的应用，我知道你第一次学的时候可能觉得它们很复杂，但是一旦你学会了，你什么时候都会想用它们。
 
-![](/img/articles/thinking-in-swift-2/map-everywhere.jpg1444352409.5202105)
+![](http://swift.gg/img/articles/thinking-in-swift-2/map-everywhere.jpg1444352409.5202105)
 
 
 [1](#note1): 请脑补一些作秀节目的用词
