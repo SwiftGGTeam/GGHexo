@@ -45,6 +45,7 @@ class ViewController: UIViewController {
     presentViewController(alertViewController, animated: true, completion: nil)
   }
 }
+
 ```
 
 注意，在这个例子中弹窗动作没有做什么具体的操作，他们只表示能验证单元测试。
@@ -74,8 +75,7 @@ class TestingAlertExperimentTests: XCTestCase {
     super.tearDown()
   }
 }
-```    
-
+```
 我们需要设置 sut 为根视图控制器，否则视图控制器不能弹出这个弹窗视图控制器。
 
 添加 UIAlertController 测试标题的代码如下：
@@ -87,7 +87,7 @@ func testAlert_HasTitle() {
   XCTAssertTrue(sut.presentedViewController is UIAlertController)
   XCTAssertEqual(sut.presentedViewController?.title, "Test Title")
 }
-```   
+```
 
 这很简单。现在让我们测试 UIAlertController 的取消按钮。这里有一个问题：无法获取弹窗动作的闭包。因此我们需要模拟弹窗动作，为了存储这个 handler 并在测试中调用它，看弹窗动作是否和我们预期的一样。在测试用例中添加这样一个类：
 
@@ -142,7 +142,7 @@ class ViewController: UIViewController {
     presentViewController(alertViewController, animated: true, completion: nil)
   }
 }
-```   
+```
 
 我们添加了一个类变量`Action`，并设置为`UIAlertAction.self`。这个变量我们会在初始化弹窗动作时使用。这就能让我们在测试时可以重写它。像这样：
 
