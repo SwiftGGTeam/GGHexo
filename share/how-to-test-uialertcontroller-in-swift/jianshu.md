@@ -70,8 +70,7 @@ Test Title", message: "Message
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
       }
-    }    
-
+    }
 我们需要设置 sut 为根视图控制器，否则视图控制器不能弹出这个弹窗视图控制器。
 
 添加 UIAlertController 测试标题的代码如下：
