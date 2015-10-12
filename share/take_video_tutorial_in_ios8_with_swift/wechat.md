@@ -36,86 +36,81 @@ iOS 8 中使用 Swift 录制视频教程
 
 打开`ViewController.swfit`文件，并在文件顶部添加下面代码：
 
-```swift
-import MobileCoreServices
-import AssetsLibrary
-```
+    
+    import MobileCoreServices
+    import AssetsLibrary
 
 修改`ViewController`类的声明：
 
-```swift
-class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-```
+    
+    class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
 `ViewController`类中需要实现`UIImagePickerController`的代理方法。实现`takeVideo`方法：
 
-```swift
-@IBAction func takeVideo(sender: AnyObject) {
-    // 1 Check if project runs on a device with camera available
-    if UIImagePickerController.isSourceTypeAvailable(.Camera) {
-        // 2 Present UIImagePickerController to take video
-        controller.sourceType = .Camera
-        controller.mediaTypes = [kUTTypeMovie as! String]
-        controller.delegate = self
-        controller.videoMaximumDuration = 10.0
-        presentViewController(controller, 
-        	animated: true, completion: nil)
-     }
-     else {
-        println("Camera is not available")
-     }
-}
-```
+    
+    @IBAction func takeVideo(sender: AnyObject) {
+        // 1 Check if project runs on a device with camera available
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            // 2 Present UIImagePickerController to take video
+            controller.sourceType = .Camera
+            controller.mediaTypes = [kUTTypeMovie as! String]
+            controller.delegate = self
+            controller.videoMaximumDuration = 10.0
+            presentViewController(controller, 
+            	animated: true, completion: nil)
+         }
+         else {
+            println("Camera is not available")
+         }
+    }
 
 1. `isSourceTypeAvailable`用来检测设备是否支持拍摄视频。
 2. `ImagePickerController`的数据可以是`Camera`或`Movie`(图片和视频)两种类型。视频的`maximum`(拍摄视频的最长时间)长度设置为10秒。
  
 实现 `viewLibrary`方法：
 
-```swift
-@IBAction func viewLibrary(sender: AnyObject) {
-    // Display Photo Library
-    controller.sourceType = 
-    UIImagePickerControllerSourceType.PhotoLibrary
-    controller.mediaTypes = [kUTTypeMovie as! String]
-    controller.delegate = self  
-    presentViewController(controller, 
-    	animated: true, completion: nil)
-    }
-``` 
+    
+    @IBAction func viewLibrary(sender: AnyObject) {
+        // Display Photo Library
+        controller.sourceType = 
+        UIImagePickerControllerSourceType.PhotoLibrary
+        controller.mediaTypes = [kUTTypeMovie as! String]
+        controller.delegate = self  
+        presentViewController(controller, 
+        	animated: true, completion: nil)
+        } 
  
 点击按钮就会打开相册。如果`mediaType`没有被设置为视频类型，那么视频文件就不会显示，只会显示图片资源。下面实现`UIImagePickerControllerDelegate`：
 
 
-```swift
-func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject: AnyObject]) {
-    // 1    
-    let mediaType:AnyObject? = info[UIImagePickerControllerMediaType]
-        
-    if let type:AnyObject = mediaType {
-        if type is String {
-            let stringType = type as! String
-                if stringType == kUTTypeMovie as! String {
-                    let urlOfVideo = info[UIImagePickerControllerMediaURL] as? NSURL
-                        if let url = urlOfVideo {
-                            // 2  
-                            assetsLibrary.writeVideoAtPathToSavedPhotosAlbum(url,
-                                completionBlock: {(url: NSURL!, error: NSError!) in
-                                    if let theError = error{
-                                        println("Error saving video = \(theError)")
-                                    }
-                                    else {
-                                        println("no errors happened")
-                                    }
-                                })
-                        }
-                } 
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject: AnyObject]) {
+        // 1    
+        let mediaType:AnyObject? = info[UIImagePickerControllerMediaType]
+            
+        if let type:AnyObject = mediaType {
+            if type is String {
+                let stringType = type as! String
+                    if stringType == kUTTypeMovie as! String {
+                        let urlOfVideo = info[UIImagePickerControllerMediaURL] as? NSURL
+                            if let url = urlOfVideo {
+                                // 2  
+                                assetsLibrary.writeVideoAtPathToSavedPhotosAlbum(url,
+                                    completionBlock: {(url: NSURL!, error: NSError!) in
+                                        if let theError = error{
+                                            println("Error saving video = \(theError)")
+                                        }
+                                        else {
+                                            println("no errors happened")
+                                        }
+                                    })
+                            }
+                    } 
+            }
         }
+        // 3
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
-    // 3
-    picker.dismissViewControllerAnimated(true, completion: nil)
-}
-```
 
 `imagePickerController(_:didFinishPickingMediaWithInfo:)`方法告诉代理，用户选择了一段视频。`info`参数包含了选中的视频的`URL`数据
 
@@ -127,11 +122,10 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingMedi
 实现`imagePickerControllerDidCancel`方法：
 
 
-```swift
-func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        picker.dismissViewControllerAnimated(true, completion: nil)
-}
-```
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+            picker.dismissViewControllerAnimated(true, completion: nil)
+    }
 
 当用户点击`Cancel`按钮时，`View Controller`视图就会消失掉。如果模拟器没有视频文件，请在真实的设备上编译并运行这个项目。选择”Take Video“拍摄一段视频并选择”Use Video“，接着选择”View Library“，视频就会保存到手机相册中了。
 

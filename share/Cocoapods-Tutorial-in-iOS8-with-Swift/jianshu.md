@@ -10,7 +10,7 @@
 
 
 
-<!--此处开始正文-->
+
 
 Cocoapods 是 iOS 应用的包管理工具。它简化了第三方库的导入并且将帮你处理库之间的依赖关系。在这个教程中，我们将会使用 cocoa pods 导入 `FontBlaster` 这个第三方库。使用 `FontBlaster` 这个库可以在项目中更加方便地使用第三方的字体。本教程的环境基于 iOS8 和 Xcode6.4。
 
@@ -42,19 +42,17 @@ Cocoapods 是 iOS 应用的包管理工具。它简化了第三方库的导入�
 
 编辑后的 Podfile 文件如下
 
-```
-# Uncomment this line to define a global platform for your project
-platform :ios, '8.0'
-use_frameworks!
-
-target 'IOS8SwiftCocoapodsTutorial' do
-pod 'FontBlaster', '1.0.8'
-end
-
-target 'IOS8SwiftCocoapodsTutorialTests' do
-
-end
-```
+    # Uncomment this line to define a global platform for your project
+    platform :ios, '8.0'
+    use_frameworks!
+    
+    target 'IOS8SwiftCocoapodsTutorial' do
+    pod 'FontBlaster', '1.0.8'
+    end
+    
+    target 'IOS8SwiftCocoapodsTutorialTests' do
+    
+    end
 
 > 译者注：这里的版本号 1.0.8 为译者加上，FontBlaster 已经支持 Swift 2.0，如果不指定为该版本号，会下载最新的 FontBlaster，这要求 Xcode 7.x版本。如果你使用的是 Xcode6.x 版本，需要指定该版本号。
 
@@ -76,16 +74,15 @@ FontBlaster 和相关依赖都会被自动安装。同时会新建一个 `IOS8Sw
 
 修改 `viewDidLoad` 代码：
 
-```swift
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    FontBlaster.debugEnabled = true
-    FontBlaster.blast()
-    label.font = UIFont(name: "OpenSans-Bold", size: 30.0)
-    label.text = "Testing Cocoapods"
-  }
-```
+    
+      override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        FontBlaster.debugEnabled = true
+        FontBlaster.blast()
+        label.font = UIFont(name: "OpenSans-Bold", size: 30.0)
+        label.text = "Testing Cocoapods"
+      }
 
 `debugEnabled` 属性被设置为 `true`，用来观察从 `bundle` 中加载字体的日志信息，通过调用 `blast()` 方法，`bundle` 中的所有字体都会被加载。编译运行程序，查看运行效果。
 

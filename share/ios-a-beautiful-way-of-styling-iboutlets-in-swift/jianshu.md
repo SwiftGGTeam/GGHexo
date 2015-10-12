@@ -20,63 +20,61 @@ Swift 小贴士: 优雅地设置 IBOutlets
 
 因此我个人更喜欢在代码中设置，这样在重新设计 App 时更容易看到所有颜色/字体/辅助功能等的变化. 我经常看到 Jesse 说的那种超长 viewDidLoad 方法，我试图把它们提取到一个或多个私有扩展中：
 
-```swift
-import UIKit
-
-class ViewController: UIViewController {
-
-    @IBOutlet weak var myLabel: UILabel!
-    @IBOutlet weak var myOtherLabel: UILabel!
-    @IBOutlet weak var myButton: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    import UIKit
+    
+    class ViewController: UIViewController {
+    
+        @IBOutlet weak var myLabel: UILabel!
+        @IBOutlet weak var myOtherLabel: UILabel!
+        @IBOutlet weak var myButton: UIButton!
         
-        // 提取到私有方法中,让viewDidLoad更短
-        configureStyling()
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            // 提取到私有方法中,让viewDidLoad更短
+            configureStyling()
+        }
     }
-}
-
-// MARK: 界面样式
-private extension ViewController {
     
-    func configureStyling() {
-        myLabel.textColor = UIColor.purpleColor()
-        myOtherLabel.textColor = UIColor.yellowColor()
-        myButton.tintColor = UIColor.magentaColor()
-    }
-}
-```
-
-然而,我真的很喜欢 Jesse 方案的可读性和简洁性:
-
-```swift
-import UIKit
-
-class ViewController: UIViewController {
-
-    @IBOutlet weak var myLabel: UILabel! {
-        didSet {
+    // MARK: 界面样式
+    private extension ViewController {
+        
+        func configureStyling() {
             myLabel.textColor = UIColor.purpleColor()
-        }
-    }
-    
-    @IBOutlet weak var myOtherLabel: UILabel! {
-        didSet {
             myOtherLabel.textColor = UIColor.yellowColor()
-        }
-    }
-    
-    @IBOutlet weak var myButton: UIButton! {
-        didSet {
             myButton.tintColor = UIColor.magentaColor()
         }
     }
+
+然而,我真的很喜欢 Jesse 方案的可读性和简洁性:
+
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    import UIKit
+    
+    class ViewController: UIViewController {
+    
+        @IBOutlet weak var myLabel: UILabel! {
+            didSet {
+                myLabel.textColor = UIColor.purpleColor()
+            }
+        }
+        
+        @IBOutlet weak var myOtherLabel: UILabel! {
+            didSet {
+                myOtherLabel.textColor = UIColor.yellowColor()
+            }
+        }
+        
+        @IBOutlet weak var myButton: UIButton! {
+            didSet {
+                myButton.tintColor = UIColor.magentaColor()
+            }
+        }
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+        }
     }
-}
-```
 
 是时候去重构代码了!

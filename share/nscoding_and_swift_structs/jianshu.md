@@ -22,86 +22,82 @@ Swift 中的结构体与 NSCoding
 
 假设我们有一个 person 结构体：
 
-```swift
-struct Person {
-  let firstName: String
-  let lastName: String
-}
-```
+    
+    struct Person {
+      let firstName: String
+      let lastName: String
+    }
 
 我们不能使这个结构体遵守 `NSCoding` 协议，但是我们可以在结构体当中增加一个类的定义，使这个类来遵守 `NSCoding` 协议：
 
-```swift
-extension Person {
-  class HelperClass: NSObject, NSCoding {
     
-    var person: Person?
-    
-    init(person: Person) {
-      self.person = person
-      super.init()
+    extension Person {
+      class HelperClass: NSObject, NSCoding {
+        
+        var person: Person?
+        
+        init(person: Person) {
+          self.person = person
+          super.init()
+        }
+        
+        class func path() -> String {
+          let documentsPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first
+          let path = documentsPath?.stringByAppendingString("/Person")
+          return path!
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+          guard let firstName = aDecoder.decodeObjectForKey("firstName") as? String else { person = nil; super.init(); return nil }
+          guard let laseName = aDecoder.decodeObjectForKey("lastName") as? String else { person = nil; super.init(); return nil }
+          
+          person = Person(firstName: firstName, lastName: laseName)
+          
+          super.init()
+        }
+        
+        func encodeWithCoder(aCoder: NSCoder) {
+          aCoder.encodeObject(person!.firstName, forKey: "firstName")
+          aCoder.encodeObject(person!.lastName, forKey: "lastName")
+        }
+      }
     }
-    
-    class func path() -> String {
-      let documentsPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first
-      let path = documentsPath?.stringByAppendingString("/Person")
-      return path!
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-      guard let firstName = aDecoder.decodeObjectForKey("firstName") as? String else { person = nil; super.init(); return nil }
-      guard let laseName = aDecoder.decodeObjectForKey("lastName") as? String else { person = nil; super.init(); return nil }
-      
-      person = Person(firstName: firstName, lastName: laseName)
-      
-      super.init()
-    }
-    
-    func encodeWithCoder(aCoder: NSCoder) {
-      aCoder.encodeObject(person!.firstName, forKey: "firstName")
-      aCoder.encodeObject(person!.lastName, forKey: "lastName")
-    }
-  }
-}
-```
 
 发生了什么呢？我们在 Person 结构体当中增加了一个类，并使它遵守了 `NSCoding` 协议，这也意味着这个类需要实现 `init?(coder aDecoder: NSCoder)` 和 `encodeWithCoder(aCoder: NSCoder)` 方法。这个类拥有一个类型为 `Person` 的属性，并且在 `encodeWithCoder(aCoder: NSCoder)` 方法中将这个结构体实例的值都进行了归档，同时在 `init?(coder aDecoder: NSCoder)` 中进行解档，并创建了一个新的 person 实例。
 
 接下来要做的事就是向 Person 结构体的定义中增加归档和解档的方法：
 
-```swift
-struct Person {
-  let firstName: String
-  let lastName: String
-  
-  static func encode(person: Person) {
-    let personClassObject = HelperClass(person: person)
     
-    NSKeyedArchiver.archiveRootObject(personClassObject, toFile: HelperClass.path())
-  }
-  
-  static func decode() -> Person? {
-    let personClassObject = NSKeyedUnarchiver.unarchiveObjectWithFile(HelperClass.path()) as? HelperClass
-
-    return personClassObject?.person
-  }
-}
-```
+    struct Person {
+      let firstName: String
+      let lastName: String
+      
+      static func encode(person: Person) {
+        let personClassObject = HelperClass(person: person)
+        
+        NSKeyedArchiver.archiveRootObject(personClassObject, toFile: HelperClass.path())
+      }
+      
+      static func decode() -> Person? {
+        let personClassObject = NSKeyedUnarchiver.unarchiveObjectWithFile(HelperClass.path()) as? HelperClass
+    
+        return personClassObject?.person
+      }
+    }
 
 在这段代码中，我们创建了一个`HelperClass`对象来帮助进行归档和解档。
 
 这个结构体的使用方法应该是这样的：
 
-```swift
-let me = Person(firstName: "Dominik", lastName: "Hauser")
     
-Person.encode(me)
-    
-let myClone = Person.decode()
-    
-firstNameLabel.text = myClone?.firstName
-lastNameLabel.text = myClone?.lastName
-```
+    let me = Person(firstName: "Dominik", lastName: "Hauser")
+        
+    Person.encode(me)
+        
+    let myClone = Person.decode()
+        
+    firstNameLabel.text = myClone?.firstName
+    lastNameLabel.text = myClone?.lastName
 
 你可以在 [github](https://github.com/dasdom/EncodeExperiments) 上找到完整的代码。
 

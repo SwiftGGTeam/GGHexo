@@ -14,23 +14,19 @@
 
 为了处理错误，我们可以抛出一些遵循 `ErrorType` 协议的实例。最简单的例子，创建一个 `struct` 并且抛出错误，就像如下示例：
 
-```
-public struct SomethingWentWrong : ErrorType {}
-...something happens...
-throw SomethingWentWrong()
-```
+    public struct SomethingWentWrong : ErrorType {}
+    ...something happens...
+    throw SomethingWentWrong()
 
 
 在所有可能的描述里，你的错误信息阅读起来不应该像随机的幸运纸片那样杂乱无章，而应该是像建设性指针那样，能够解释你的失败。应避免出现下列的写法：
 
-```
-public enum SomethingWentWrongError: ErrorType {
-    case YouWillFindNewLove
-    case AClosedMouthGathersNoFeet
-    case CynicsAreFrustratedOptimists
-    case IfEverythingIsComingYourWayYouAreInTheWrongLane
-}
-```
+    public enum SomethingWentWrongError: ErrorType {
+        case YouWillFindNewLove
+        case AClosedMouthGathersNoFeet
+        case CynicsAreFrustratedOptimists
+        case IfEverythingIsComingYourWayYouAreInTheWrongLane
+    }
 
 优秀的错误处理机制应该更易于我们在特定语境中理解错误：
 

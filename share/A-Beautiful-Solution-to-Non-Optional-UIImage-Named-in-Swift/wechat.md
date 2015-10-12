@@ -19,27 +19,25 @@
 
 一种可以解决这个字符串拼写错误的方式就是构建一个`Image`的常量文件，但是这不能解决出错的第二种情况。在 Swift 中，有个更好的解决方案。可以扩展`UIImage`，把所有的`Image`名字作为枚举类型，然后建立便利构造器来通过枚举构造对应的`Image`。看代码：
 
-```swift
-//  UIImage+Extension.swift
-import UIKit
-
-extension UIImage {
-    enum AssetIdentifier: String {
-        // Image Names of Minions
-        case Bob, Dave, Jorge, Jerry, Tim, Kevin, Mark, Phil, Stuart
-    }
     
-    convenience init!(assetIdentifier: AssetIdentifier) {
-        self.init(named: assetIdentifier.rawValue)
+    //  UIImage+Extension.swift
+    import UIKit
+    
+    extension UIImage {
+        enum AssetIdentifier: String {
+            // Image Names of Minions
+            case Bob, Dave, Jorge, Jerry, Tim, Kevin, Mark, Phil, Stuart
+        }
+        
+        convenience init!(assetIdentifier: AssetIdentifier) {
+            self.init(named: assetIdentifier.rawValue)
+        }
     }
-}
-```
 
 这样，就可以通过以下的方式在任何需要的地方构建`Image`：
 
-```swift
-let minionBobImage = UIImage(assetIdentifier: .Bob)
-```
+    
+    let minionBobImage = UIImage(assetIdentifier: .Bob)
 
 这样的方式是不是很清晰呀，哈哈。首先，使用了漂亮的枚举值，关键是不再需要硬编码的字符串了。并且，枚举的值是自动补全的，不必担心拼写错误。其次，`Image`不再是可空的了，因为你可以确保它一定是存在的。
 

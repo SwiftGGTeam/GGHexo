@@ -10,7 +10,7 @@
 
 
 
-<!--此处开始正文-->
+
 
 > 本教程代码基于 Xcode 6.2 写成。
 
@@ -78,17 +78,15 @@ Ctrl+左键或直接右键点击“Add”按钮，按住“action”并拖拽到
 
 用相同的方法处理文本框和日期选择器，分别命名为`titleField`和`deadlinePicker`。
 
-```swift
-@IBOutlet weak var titleField: UITextField!
-@IBOutlet weak var deadlinePicker: UIDatePicker!
-```
+    
+    @IBOutlet weak var titleField: UITextField!
+    @IBOutlet weak var deadlinePicker: UIDatePicker!
 
 最后一步是将 save 按钮连接至一个 IBAction （一个事件处理函数）。Ctrl+左键或直接右键点击按钮，拖拽“Touch Up Inside”圆圈到代码中去，将`action`命名为“savePressed”并设置`sender`类型为`UIButton`（其它控件不会触发这个 action，所以在此可以指定具体的类型）。
 
-```swift
-@IBAction func savePressed(sender: UIButton) {
-}
-```
+    
+    @IBAction func savePressed(sender: UIButton) {
+    }
 
 到目前为止，所有视图和导航都设置好了。在模拟器里运行一下程序，并在不同模拟器的设备上试一下，你会发现，添加约束后控件显示都很正常。
 
@@ -100,9 +98,8 @@ Ctrl+左键或直接右键点击“Add”按钮，按住“action”并拖拽到
 
 从 iOS 8 起，如果要在应用中发送通知就要先注册通知。否则，我们设置的通知也不会被触发。切换到工程的应用委托（Application Delegate）文件（`AppDelegate.swift`），将下面的代码添加到`application:didFinishLaunchingWithOptions`方法中。
 
-```swift
-application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert | .Badge | .Sound, categories: nil))  // types are UIUserNotificationType members
-```
+    
+    application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert | .Badge | .Sound, categories: nil))  // types are UIUserNotificationType members
 
 在第一次运行这个应用的时候，会提示用户授权应用程序触发通知的权限。如果用户授予权限，我们就能够做通知的计划了，通知包括显示一条横幅，播放一个声音，以及更新应用图标上的角标数字。(这部分内容会在本教程中的第二部分展示)。
 
@@ -116,36 +113,33 @@ application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes
 
 我选择将待办项以结构体的形式独立出来。点击“File -> New -> File”，然后选择“Swift File”并命名为`odoItem`。每个待办项都有一个标题和截止日期，所以我们把对应的属性建好，代码如下。
 
-```swift
-struct TodoItem {
-  var title: String
-  var deadline: NSDate
-}
-```
+    
+    struct TodoItem {
+      var title: String
+      var deadline: NSDate
+    }
 
 每个待办项都要保存在磁盘中，防止应用结束后数据丢失。`UILocalNotification`的实例有个`userInfo`属性（`[NSObject : AnyObject]?`），我们可以使用它来保存类似标题的数据，但是在以下情况中我们不能只靠它来存储数据。因为一旦某条本地通知被触发了，它就会被认为已经过期而被丢弃，我们就没有办法再取到这条本地通知了。所以，我们需要使用另外的方法来存储待办项，而且还要把在磁盘存储的待办项与本地通知关联起来。我们使用 universally unique identifier（UUID）来解决这个问题。
 
-```swift
-struct TodoItem {
-  var title: String
-  var deadline: NSDate
-  var UUID: String
- 
-  init(deadline: NSDate, title: String, UUID: String) {
-    self.deadline = deadline
-    self.title = title
-    self.UUID = UUID
-  }
-}
-```
+    
+    struct TodoItem {
+      var title: String
+      var deadline: NSDate
+      var UUID: String
+     
+      init(deadline: NSDate, title: String, UUID: String) {
+        self.deadline = deadline
+        self.title = title
+        self.UUID = UUID
+      }
+    }
 
 因为我们需要将过期的待办项显示为红色，所以添加一个计算只读属性返回待办项是否已过期。
 
-```swift
-var isOverdue: Bool {
-  return (NSDate().compare(self.deadline) == NSComparisonResult.OrderedDescending) // 截止日期比现在要早
-}
-```
+    
+    var isOverdue: Bool {
+      return (NSDate().compare(self.deadline) == NSComparisonResult.OrderedDescending) // 截止日期比现在要早
+    }
 
 ## 存储待办项(设置通知)
 
@@ -153,50 +147,47 @@ var isOverdue: Bool {
 
 因为我们这个应用只有一个待办项列表，所以可以在整个应用中使用单例。
 
-```swift
-class TodoList {
-  class var sharedInstance : TodoList {
-    struct Static {
-      static let instance : TodoList = TodoList()
+    
+    class TodoList {
+      class var sharedInstance : TodoList {
+        struct Static {
+          static let instance : TodoList = TodoList()
+        }
+        return Static.instance
+      }
     }
-    return Static.instance
-  }
-}
-```
 
 这种在 Swift 中实现单例的方法是社区公认的，我们也可以借鉴到自己的工程里。如果你对它很好奇，可以去[StackOverflow](http://stackoverflow.com/questions/24024549/dispatch-once-singleton-model-in-swift/24147830#24147830)看看具体怎么实现以及为什么要这样做。
 
 [NSUserDefaults](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSUserDefaults_Class/index.html)提供了一种存储待办项的简单方法。接下来的代码展示了如何将待办项以字典形式（以 UUID 为键）存储到`standard user defaults`中，并创建对应的本地通知。
 
-```swift
-private let ITEMS_KEY = "todoItems"
- 
-func addItem(item: TodoItem) { 
-  var todoDictionary = NSUserDefaults.standardUserDefaults().dictionaryForKey(ITEMS_KEY) ?? Dictionary() 
-  todoDictionary[item.UUID] = ["deadline": item.deadline, "title": item.title, "UUID": item.UUID] 
-  NSUserDefaults.standardUserDefaults().setObject(todoDictionary, forKey: ITEMS_KEY) 
-  var notification = UILocalNotification()
-  notification.alertBody = "Todo Item \"\(item.title)\" Is Overdue" 
-  notification.alertAction = "open" 
-  notification.fireDate = item.deadline 
-  notification.soundName = UILocalNotificationDefaultSoundName 
-  notification.userInfo = ["UUID": item.UUID, ] 
-  notification.category = "TODO_CATEGORY"
-  UIApplication.sharedApplication().scheduleLocalNotification(notification)
-}
-```
+    
+    private let ITEMS_KEY = "todoItems"
+     
+    func addItem(item: TodoItem) { 
+      var todoDictionary = NSUserDefaults.standardUserDefaults().dictionaryForKey(ITEMS_KEY) ?? Dictionary() 
+      todoDictionary[item.UUID] = ["deadline": item.deadline, "title": item.title, "UUID": item.UUID] 
+      NSUserDefaults.standardUserDefaults().setObject(todoDictionary, forKey: ITEMS_KEY) 
+      var notification = UILocalNotification()
+      notification.alertBody = "Todo Item \"\(item.title)\" Is Overdue" 
+      notification.alertAction = "open" 
+      notification.fireDate = item.deadline 
+      notification.soundName = UILocalNotificationDefaultSoundName 
+      notification.userInfo = ["UUID": item.UUID, ] 
+      notification.category = "TODO_CATEGORY"
+      UIApplication.sharedApplication().scheduleLocalNotification(notification)
+    }
 
 值得注意的是，我们只是在通知触发的时候播放默认的提示音。当然你也可以自己提供音频文件来代替默认的提示音，但是时长不能超过30秒钟。如果超过了30秒系统将使用默认音。
 
 我们已经完成了如何创建一个待办项列表，是时候来实现`TodoSchedulingViewController`中的`savePressed:`方法了。
 
-```swift
-@IBAction func savePressed(sender: UIButton) {
-    let todoItem = TodoItem(deadline: deadlinePicker.date, title: titleField.text, UUID: NSUUID().UUIDString)
-    TodoList.sharedInstance.addItem(todoItem) // schedule a local notification to persist this item
-    self.navigationController?.popToRootViewControllerAnimated(true) // return to list view
-}
-```
+    
+    @IBAction func savePressed(sender: UIButton) {
+        let todoItem = TodoItem(deadline: deadlinePicker.date, title: titleField.text, UUID: NSUUID().UUIDString)
+        TodoList.sharedInstance.addItem(todoItem) // schedule a local notification to persist this item
+        self.navigationController?.popToRootViewControllerAnimated(true) // return to list view
+    }
 
 需要注意的是，因为这是一个新的待办项，所以要传递一个新的 UUID 作为键。
 
@@ -214,81 +205,78 @@ func addItem(item: TodoItem) {
 
 `TodoTableViewController`里可以这样写：
 
-```swift
-var todoItems: [TodoItem] = []
- 
-func refreshList() {
-    todoItems = TodoList.sharedInstance.allItems()
-    if (todoItems.count >= 64) {
-        self.navigationItem.rightBarButtonItem!.enabled = false
-     }
-    tableView.reloadData()
-}
-```
+    
+    var todoItems: [TodoItem] = []
+     
+    func refreshList() {
+        todoItems = TodoList.sharedInstance.allItems()
+        if (todoItems.count >= 64) {
+            self.navigationItem.rightBarButtonItem!.enabled = false
+         }
+        tableView.reloadData()
+    }
 
 ## 取回待办项
 
 待办项以字典数组的形式存储，这样外部类就不用关心具体的细节。我们的`TodoList`类要提供一个公共的函数以便查询返回待办项的列表。
 
-```swift
-func allItems() -> [TodoItem] {
-  var todoDictionary = NSUserDefaults.standardUserDefaults().dictionaryForKey(ITEMS_KEY) ?? [:]
-  let items = Array(todoDictionary.values)
-  return items.map({TodoItem(deadline: $0["deadline"] as! NSDate, title: $0["title"] as! String, UUID: $0["UUID"] as! String!)}).sorted({(left: TodoItem, right:TodoItem) -> Bool in
-    (left.deadline.compare(right.deadline) == .OrderedAscending)
-}
-```
+    
+    func allItems() -> [TodoItem] {
+      var todoDictionary = NSUserDefaults.standardUserDefaults().dictionaryForKey(ITEMS_KEY) ?? [:]
+      let items = Array(todoDictionary.values)
+      return items.map({TodoItem(deadline: $0["deadline"] as! NSDate, title: $0["title"] as! String, UUID: $0["UUID"] as! String!)}).sorted({(left: TodoItem, right:TodoItem) -> Bool in
+        (left.deadline.compare(right.deadline) == .OrderedAscending)
+    }
 
 这个函数从外存取回待办项数组，并转换成以`TodoItem`实例为元素的数组，其中用闭包实现并按时间先后顺序排序。具体如何使用`map`以及排序函数已经超出了本教程的范围，你可以在 Swift language guide 的[闭包](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/Closures.html#//apple_ref/doc/uid/TP40014097-CH11-ID94)部分查询更多的信息。
 
 现在我们可以在`TodoTableViewController`里显示待办项列表了，代码如下。
 
-```swift
-class TodoTableViewController: UITableViewController {
-  var todoItems: [TodoItem] = []
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  }
- 
-  override func viewWillAppear(animated: Bool) {
-    super.viewWillAppear(animated)
-    refreshList()
-  }
- 
-  func refreshList() {
-    todoItems = TodoList.sharedInstance.allItems()
- 
-    if (todoItems.count >= 64) {
-      self.navigationItem.rightBarButtonItem!.enabled = false
+    
+    class TodoTableViewController: UITableViewController {
+      var todoItems: [TodoItem] = []
+      override func viewDidLoad() {
+        super.viewDidLoad()
+      }
+     
+      override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        refreshList()
+      }
+     
+      func refreshList() {
+        todoItems = TodoList.sharedInstance.allItems()
+     
+        if (todoItems.count >= 64) {
+          self.navigationItem.rightBarButtonItem!.enabled = false
+        }
+        tableView.reloadData()
+      }
+     
+      override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+      }
+     
+      override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return todoItems.count
+      }
+     
+      override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("todoCell", forIndexPath: indexPath) as! UITableViewCell
+        let todoItem = todoItems[indexPath.row] as TodoItem
+        cell.textLabel?.text = todoItem.title as String!
+        if (todoItem.isOverdue) {
+          cell.detailTextLabel?.textColor = UIColor.redColor()
+        } else {
+          cell.detailTextLabel?.textColor = UIColor.blackColor()dequeueReusableCellWithIdentifier:indexPath:
+        }
+     
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "'Due' MMM dd 'at' h:mm a"
+        cell.detailTextLabel?.text = dateFormatter.stringFromDate(todoItem.deadline)
+        return cell
+      }
     }
-    tableView.reloadData()
-  }
- 
-  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 1
-  }
- 
-  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return todoItems.count
-  }
- 
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("todoCell", forIndexPath: indexPath) as! UITableViewCell
-    let todoItem = todoItems[indexPath.row] as TodoItem
-    cell.textLabel?.text = todoItem.title as String!
-    if (todoItem.isOverdue) {
-      cell.detailTextLabel?.textColor = UIColor.redColor()
-    } else {
-      cell.detailTextLabel?.textColor = UIColor.blackColor()dequeueReusableCellWithIdentifier:indexPath:
-    }
- 
-    let dateFormatter = NSDateFormatter()
-    dateFormatter.dateFormat = "'Due' MMM dd 'at' h:mm a"
-    cell.detailTextLabel?.text = dateFormatter.stringFromDate(todoItem.deadline)
-    return cell
-  }
-}
-```
 
 我们这个待办列表现在能按时间顺序显示待办项，如果过期的话会以红色显示时间。
 
@@ -300,24 +288,22 @@ class TodoTableViewController: UITableViewController {
 
 `TodoTableViewController`里这样写：
 
-```swift
-override func viewDidLoad() {
-  super.viewDidLoad()
-  NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList", name: "TodoListShouldRefresh", object: nil)
-}
-```
+    
+    override func viewDidLoad() {
+      super.viewDidLoad()
+      NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList", name: "TodoListShouldRefresh", object: nil)
+    }
 
 `AppDelegate`里这样写：
 
-```swift
-func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
-  NSNotificationCenter.defaultCenter().postNotificationName("TodoListShouldRefresh", object: self)
-}
-
-func applicationDidBecomeActive(application: UIApplication) {      
-  NSNotificationCenter.defaultCenter().postNotificationName("TodoListShouldRefresh", object: self)
-}
-```
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+      NSNotificationCenter.defaultCenter().postNotificationName("TodoListShouldRefresh", object: self)
+    }
+    
+    func applicationDidBecomeActive(application: UIApplication) {      
+      NSNotificationCenter.defaultCenter().postNotificationName("TodoListShouldRefresh", object: self)
+    }
 
 值得注意的是，虽然同样有“notification”这个单词，但是`NSNotificationCenter`跟`UILocalNotification`一点关系都没有。使用`NSNotificationCenter`的目的是为了在应用中实现[观察者模式](http://en.wikipedia.org/wiki/Observer_pattern)。
 
@@ -327,21 +313,20 @@ func applicationDidBecomeActive(application: UIApplication) {
 
 我们的应用如果不能清空已经完成的待办项，用起来就会不爽。最简单的办法就是可以删除已经完成的待办项。那么，我们就需要为`TodoList`添加一些功能。
 
-```swift
-func removeItem(item: TodoItem) {
-  for notification in UIApplication.sharedApplication().scheduledLocalNotifications as! [UILocalNotification] {
-    if (notification.userInfo!["UUID"] as! String == item.UUID) {
-      UIApplication.sharedApplication().cancelLocalNotification(notification)
-      break
+    
+    func removeItem(item: TodoItem) {
+      for notification in UIApplication.sharedApplication().scheduledLocalNotifications as! [UILocalNotification] {
+        if (notification.userInfo!["UUID"] as! String == item.UUID) {
+          UIApplication.sharedApplication().cancelLocalNotification(notification)
+          break
+        }
+      }
+     
+      if var todoItems = NSUserDefaults.standardUserDefaults().dictionaryForKey(ITEMS_KEY) {
+        todoItems.removeValueForKey(item.UUID)
+        NSUserDefaults.standardUserDefaults().setObject(todoItems, forKey: ITEMS_KEY)
+      }
     }
-  }
- 
-  if var todoItems = NSUserDefaults.standardUserDefaults().dictionaryForKey(ITEMS_KEY) {
-    todoItems.removeValueForKey(item.UUID)
-    NSUserDefaults.standardUserDefaults().setObject(todoItems, forKey: ITEMS_KEY)
-  }
-}
-```
 
 需要注意的是，传递一个已经存在的通知给`scheduleLocalNotification:`方法会导致重复。如果你想要能让用户修改已经存在的通知，那么就需要在设置新的之前取消旧的那个。
 
@@ -349,19 +334,18 @@ func removeItem(item: TodoItem) {
 
 `TodoTableViewController`里这样写：
 
-```swift
-override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-  return true
-}
-override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-  if editingStyle == .Delete {
-    var item = todoItems.removeAtIndex(indexPath.row)
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    TodoList.sharedInstance.removeItem(item)
-    self.navigationItem.rightBarButtonItem!.enabled = true
-  }
-}
-```
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+      return true
+    }
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+      if editingStyle == .Delete {
+        var item = todoItems.removeAtIndex(indexPath.row)
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        TodoList.sharedInstance.removeItem(item)
+        self.navigationItem.rightBarButtonItem!.enabled = true
+      }
+    }
 
 <div style="max-width:300px;">
 ![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-4-2015-10.26.58-PM.png1444269933.474555)

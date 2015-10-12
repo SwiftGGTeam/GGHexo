@@ -54,15 +54,14 @@ TVML 是"TV Markup Language"（TV 标记语言）的缩写，基本上是一些 
 
 首先我们要修改应用的`AppDelegate.swift`文件。第一步是让我们的应用遵循`TVApplicationControllerDelegate`协议。该协议定义在 TVMLKit 框架中，所以需要导入它。更新`AppDelegate.swift`文件，如下所示：
 
-```swift
-import TVMLKit
-
-class AppDelegate: UIResponder,
-UIApplicationDelegate,
-TVApplicationControllerDelegate {
-
-....
-```
+    
+    import TVMLKit
+    
+    class AppDelegate: UIResponder,
+    UIApplicationDelegate,
+    TVApplicationControllerDelegate {
+    
+    ....
 
 此协议包含四个 tvOS 实现`AppDelegate`后会调用的函数，用于给我们的应用发送 tvOS 生命周期通知。现在我们无需操心这些，但在后面的教程中我们会对它们进行深入研究。目前只要像上面的代码那样把协议加进去就够了。
 
@@ -70,35 +69,34 @@ TVApplicationControllerDelegate {
 
 在程序里`didFinishLaunchingWithOptions`这个函数中我们要完成一些步骤。它们对所有应用来说都是一样的，所以你可以直接复制这段代码：
 
-```swift
-// 在一个可选属性中保存对 appController 的引用
-var appController: TVApplicationController?
- 
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-  self.window = UIWindow(frame:UIScreen.mainScreen().bounds)
- 
-  let appControllerContext = TVApplicationControllerContext()
- 
-  let jsFilePath = NSURL(string: "http://localhost:8000/main.js")
-  let javascriptURL = jsFilePath!
- 
-  appControllerContext.javaScriptApplicationURL = javascriptURL
-  if let options = launchOptions
-  {
-    for (kind, value) in options
-    {
-      if let kindStr = kind as? String
+    
+    // 在一个可选属性中保存对 appController 的引用
+    var appController: TVApplicationController?
+     
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+      self.window = UIWindow(frame:UIScreen.mainScreen().bounds)
+     
+      let appControllerContext = TVApplicationControllerContext()
+     
+      let jsFilePath = NSURL(string: "http://localhost:8000/main.js")
+      let javascriptURL = jsFilePath!
+     
+      appControllerContext.javaScriptApplicationURL = javascriptURL
+      if let options = launchOptions
       {
-        appControllerContext.launchOptions[kindStr] = value
+        for (kind, value) in options
+        {
+          if let kindStr = kind as? String
+          {
+            appControllerContext.launchOptions[kindStr] = value
+          }
+        }
       }
+     
+      self.appController = TVApplicationController(context: appControllerContext, window: self.window, delegate: self)
+     
+      return true
     }
-  }
- 
-  self.appController = TVApplicationController(context: appControllerContext, window: self.window, delegate: self)
- 
-  return true
-}
-```
 
 简单说说这段代码干了什么：它拿到了一个`TVApplicationControllerContext`引用，这个*Context*只是为我们的`AppDelegate`类提供了一些启动数据，然后给了我们一个能调整和修改启动过程的接口。接着把 URL 传给待会儿要运行的`main.js`文件，并将`appController`的路径设置成这个 URL。
 
@@ -108,39 +106,37 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 
 在`main.js`文件中添加一些简单的 JavaScript 代码，用来装载`hello.tvml`文件：
 
-```javascript
-function getDocument(url) {
-  var templateXHR = new XMLHttpRequest();
-  templateXHR.responseType = "document";
-  templateXHR.addEventListener("load", function() {pushDoc(templateXHR.responseXML);}, false);
-  templateXHR.open("GET", url, true);
-  templateXHR.send();
-  return templateXHR;
-}
- 
-function pushDoc(document) {
-  navigationDocument.pushDocument(document);
-}
- 
-App.onLaunch = function(options) {
-  var templateURL = 'http://localhost:8000/hello.tvml';
-  getDocument(templateURL);
-}
- 
-App.onExit = function() {
-  console.log('App finished');
-}
-```
+    javascript
+    function getDocument(url) {
+      var templateXHR = new XMLHttpRequest();
+      templateXHR.responseType = "document";
+      templateXHR.addEventListener("load", function() {pushDoc(templateXHR.responseXML);}, false);
+      templateXHR.open("GET", url, true);
+      templateXHR.send();
+      return templateXHR;
+    }
+     
+    function pushDoc(document) {
+      navigationDocument.pushDocument(document);
+    }
+     
+    App.onLaunch = function(options) {
+      var templateURL = 'http://localhost:8000/hello.tvml';
+      getDocument(templateURL);
+    }
+     
+    App.onExit = function() {
+      console.log('App finished');
+    }
 
 现在在`hello.tvml`文件中添加：
 
-```xml
-<document>
-  <alertTemplate>
-      <title>Hello tvOS!</title>
-  </alertTemplate>
-</document>
-```
+    xml
+    <document>
+      <alertTemplate>
+          <title>Hello tvOS!</title>
+      </alertTemplate>
+    </document>
 
 TVML 文件是 UI 的实际内容。文档（document）必须用模板编写，否则现在的代码运行时会崩溃。这个 TVML 文件只是包含了一个简单的模板和一个单元素的标题。
 
@@ -148,9 +144,7 @@ TVML 文件是 UI 的实际内容。文档（document）必须用模板编写，
 
 ## 启动服务端
 
-```
-python -m SimpleHTTPServer 8000
-```
+    python -m SimpleHTTPServer 8000
 
 这条指令用 Mac OS 内建的 python 解释器开启了一个端口号为 8000 的 web 服务器，可以用它来托管本地文件。如果在命令行中，执行了上面给出的代码，那么现在按一下 Xcode 的 play 按钮就能在 tvOS 模拟器中启动了。还有一个要注意的事情：这是一个不够安全的 HTTP 请求，在 iOS 9 中会被默认的应用传输安全机制拦截。为了能够按之前的方法来使用本地主机，我们需要在`Info.plist`文件中添加一个`key`。
 
@@ -162,19 +156,18 @@ python -m SimpleHTTPServer 8000
 
 在本例中你看到的实际上是一个被 Apple 称作`alertTemplate`的模板。你还能嵌入一些基本控件，比如在模板中添加文字和按钮。试着添加一些按钮吧：
 
-```xml
-<document>
-    <alertTemplate>
-        <title>Hello tvOS!</title>
-        <button>
-            <text>A Button</text>
-        </button>
-        <button>
-            <text>A Second Button</text>
-        </button>
-    </alertTemplate>
-</document>
-```
+    xml
+    <document>
+        <alertTemplate>
+            <title>Hello tvOS!</title>
+            <button>
+                <text>A Button</text>
+            </button>
+            <button>
+                <text>A Second Button</text>
+            </button>
+        </alertTemplate>
+    </document>
 
 这里我们只加了子按钮（child button）元素，每个子按钮都有它自己的子文本（child text）元素。这段代码在 tvOS 模拟器上全屏显示`alert`和两个按钮。如果你自学能力很强，[苹果的官方文档](https://developer.apple.com/library/prerelease/tvos/documentation/LanguagesUtilities/Conceptual/ATV_Template_Guide/TextboxTemplate.html#//apple_ref/doc/uid/TP40015064-CH2-SW8)中列出了你能使用的所有模板和控件。否则的话请跟紧我，订阅我的博客，之后我会教你开发一个完整的应用。
 

@@ -50,11 +50,21 @@ let originInfo = new Promise(function (resolve, reject) {
   )
 ))
 .then(files => files.map(file => {
+  function changeToTab(code){
+    code = code.replace(/```/g, "")
+    code = code.trim()
+    code = code.startsWith("Swift") || code.startsWith("swift") ? code.substr(5) : code
+    code = code.replace(/\n/g, "\n    ")
+    code = "    " + code
+    return code
+  }
   let origin = file.content
   origin = origin.substr(origin.indexOf("---") + 3)
   origin = origin.replace(/!\[(.*?)\]\(\/(.*?)\)/g, "![$1](http://swift.gg/$2)")
+  origin = origin.replace(/(```[.\s\S]*?```)/gm, changeToTab)
   origin = origin.replace(/<center>!\[给译者打赏\]\(.*?\)<\/center>/, "")
   origin = origin.replace("<!--more-->", "")
+  origin = origin.replace("<!--此处开始正文-->", "")
   let jianshu = origin
   jianshu = file.fileName + "\n" + jianshu
   let wechat = file.fileName + "\n" + origin

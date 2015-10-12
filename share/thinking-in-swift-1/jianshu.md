@@ -20,55 +20,53 @@ Swift 编程思想，第一部分：拯救小马
 ## ObjC代码 ##
 假设你想创建一个条目列表（比如过会儿要显示在一个`TableView`里）- 每个条目都有一个图标，标题和网址 - 这些条目都通过一个`JSON`初始化。下面是`ObjC`代码的实现：
 
-```Swift
-@interface ListItem : NSObject
-@property(strong) UIImage* icon;
-@property(strong) NSString* title;
-@property(strong) NSURL* url;
-@end
-
-@implementation ListItem
-+(NSArray*)listItemsFromJSONData:(NSData*)jsonData { 
-    NSArray* itemsDescriptors = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
-
-    NSMutableArray* items = [NSMutableArray new]; 
-    for (NSDictionary* itemDesc in itemsDescriptors) { 
-        ListItem* item = [ListItem new];    
-        item.icon = [UIImage imageNamed:itemDesc[@"icon"]]; 
-        item.title = itemDesc[@"title"]; 
-        item.url = [NSURL URLWithString:itemDesc[@"title"]]; 
-        [items addObject:item]; 
-    } 
-    return [items copy];
-}
-@end
-```
+    
+    @interface ListItem : NSObject
+    @property(strong) UIImage* icon;
+    @property(strong) NSString* title;
+    @property(strong) NSURL* url;
+    @end
+    
+    @implementation ListItem
+    +(NSArray*)listItemsFromJSONData:(NSData*)jsonData { 
+        NSArray* itemsDescriptors = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
+    
+        NSMutableArray* items = [NSMutableArray new]; 
+        for (NSDictionary* itemDesc in itemsDescriptors) { 
+            ListItem* item = [ListItem new];    
+            item.icon = [UIImage imageNamed:itemDesc[@"icon"]]; 
+            item.title = itemDesc[@"title"]; 
+            item.url = [NSURL URLWithString:itemDesc[@"title"]]; 
+            [items addObject:item]; 
+        } 
+        return [items copy];
+    }
+    @end
 
 OK，多么标准的 ObjC 代码啊。
 
 ## 直译成Swift ##
 想象一下有多少 Swift 的新手会把这段代码翻译成这样：
 
-```Swift
-class ListItem {
-    var icon: UIImage?
-    var title: String = ""
-    var url: NSURL!
-
-    static func listItemsFromJSONData(jsonData: NSData?) -> NSArray {
-        let jsonItems: NSArray = try! NSJSONSerialization.JSONObjectWithData(jsonData!, options: []) as! NSArray
-        let items: NSMutableArray = NSMutableArray()
-        for itemDesc in jsonItems {
-            let item: ListItem = ListItem()
-            item.icon = UIImage(named: itemDesc["icon"] as! String)
-            item.title = itemDesc["title"] as! String
-            item.url = NSURL(string: itemDesc["url"] as! String)!
-            items.addObject(item)
+    
+    class ListItem {
+        var icon: UIImage?
+        var title: String = ""
+        var url: NSURL!
+    
+        static func listItemsFromJSONData(jsonData: NSData?) -> NSArray {
+            let jsonItems: NSArray = try! NSJSONSerialization.JSONObjectWithData(jsonData!, options: []) as! NSArray
+            let items: NSMutableArray = NSMutableArray()
+            for itemDesc in jsonItems {
+                let item: ListItem = ListItem()
+                item.icon = UIImage(named: itemDesc["icon"] as! String)
+                item.title = itemDesc["title"] as! String
+                item.url = NSURL(string: itemDesc["url"] as! String)!
+                items.addObject(item)
+            }
+            return items.copy() as! NSArray
         }
-        return items.copy() as! NSArray
     }
-}
-```
 对 Swift 稍有经验的人应该会看出来这里面有很多代码异味。Swift 的专家读到这段代码之后就很可能心脏病突发而全部挂掉了。
 
 ## 哪里做错了？ ##
@@ -92,38 +90,37 @@ class ListItem {
 
 好了，来看看用了这些规则之后我们的代码[<sup>2</sup>](http://alisoftware.github.io/swift/2015/09/06/thinking-in-swift-1/#fn2)：
 
-```Swift
-class ListItem {
-    var icon: UIImage?
-    var title: String = ""
-    var url: NSURL!
-
-    static func listItemsFromJSONData(jsonData: NSData?) -> NSArray {
-        if let nonNilJsonData = jsonData {
-            if let jsonItems: NSArray = (try? NSJSONSerialization.JSONObjectWithData(nonNilJsonData, options: [])) as? NSArray {
-                let items: NSMutableArray = NSMutableArray()
-                for itemDesc in jsonItems {
-                    let item: ListItem = ListItem()
-                    if let icon = itemDesc["icon"] as? String {
-                        item.icon = UIImage(named: icon)
-                    }
-                    if let title = itemDesc["title"] as? String {
-                        item.title = title
-                    }
-                    if let urlString = itemDesc["url"] as? String {
-                        if let url = NSURL(string: urlString) {
-                           item.url = url
+    
+    class ListItem {
+        var icon: UIImage?
+        var title: String = ""
+        var url: NSURL!
+    
+        static func listItemsFromJSONData(jsonData: NSData?) -> NSArray {
+            if let nonNilJsonData = jsonData {
+                if let jsonItems: NSArray = (try? NSJSONSerialization.JSONObjectWithData(nonNilJsonData, options: [])) as? NSArray {
+                    let items: NSMutableArray = NSMutableArray()
+                    for itemDesc in jsonItems {
+                        let item: ListItem = ListItem()
+                        if let icon = itemDesc["icon"] as? String {
+                            item.icon = UIImage(named: icon)
                         }
+                        if let title = itemDesc["title"] as? String {
+                            item.title = title
+                        }
+                        if let urlString = itemDesc["url"] as? String {
+                            if let url = NSURL(string: urlString) {
+                               item.url = url
+                            }
+                        }
+                        items.addObject(item)
                     }
-                    items.addObject(item)
+                    return items.copy() as! NSArray
                 }
-                return items.copy() as! NSArray
             }
+            return [] // In case something failed above
         }
-        return [] // In case something failed above
     }
-}
-```
 
 ## 判决的金字塔 ##
 可悲的是，满世界的添加这些`if let`让我们的代码往右挪了好多，形成了臭名昭著的[判决金字塔](https://en.wikipedia.org/wiki/Pyramid_of_doom_(programming))（此处插段悲情音乐）。
@@ -135,41 +132,40 @@ Swift中有些机制能帮我们做简化：
 
 当类型能被推断出来的时候，我们再用此代码把这些变量类型去掉来消除冗余 - 比如简单的用`let items = NSMutableArray()` - 并利用`guard`语句再确保我们的json确实是一个`NSDictionary`对象的数组。最后，我们用一个更"Swift化"的返回类型`[ListItem]`替换掉ObjC的`NSArray`：
 
-```Swift
-class ListItem {
-    var icon: UIImage?
-    var title: String = ""
-    var url: NSURL!
-
-    static func listItemsFromJSONData(jsonData: NSData?) -> [ListItem] {
-        guard let nonNilJsonData = jsonData,
-            let json = try? NSJSONSerialization.JSONObjectWithData(nonNilJsonData, options: []),
-            let jsonItems = json as? Array<NSDictionary>
-            else {
-                // If we failed to unserialize the JSON
-                // or that JSON wasn't an Array of NSDictionaries,
-                // then bail early with an empty array
-                return []
+    
+    class ListItem {
+        var icon: UIImage?
+        var title: String = ""
+        var url: NSURL!
+    
+        static func listItemsFromJSONData(jsonData: NSData?) -> [ListItem] {
+            guard let nonNilJsonData = jsonData,
+                let json = try? NSJSONSerialization.JSONObjectWithData(nonNilJsonData, options: []),
+                let jsonItems = json as? Array<NSDictionary>
+                else {
+                    // If we failed to unserialize the JSON
+                    // or that JSON wasn't an Array of NSDictionaries,
+                    // then bail early with an empty array
+                    return []
+            }
+    
+            var items = [ListItem]()
+            for itemDesc in jsonItems {
+                let item = ListItem()
+                if let icon = itemDesc["icon"] as? String {
+                    item.icon = UIImage(named: icon)
+                }
+                if let title = itemDesc["title"] as? String {
+                    item.title = title
+                }
+                if let urlString = itemDesc["url"] as? String, let url = NSURL(string: urlString) {
+                    item.url = url
+                }
+                items.append(item)
+            }
+            return items
         }
-
-        var items = [ListItem]()
-        for itemDesc in jsonItems {
-            let item = ListItem()
-            if let icon = itemDesc["icon"] as? String {
-                item.icon = UIImage(named: icon)
-            }
-            if let title = itemDesc["title"] as? String {
-                item.title = title
-            }
-            if let urlString = itemDesc["url"] as? String, let url = NSURL(string: urlString) {
-                item.url = url
-            }
-            items.append(item)
-        }
-        return items
     }
-}
-```
 
 `guard`语句真心很赞，因为它在函数的开始部分就把代码专注于检查输入是否有效，然后在代码剩下的部分中你就不用再为这些检查操心了。如果输入并非所想，我们就尽早跳出，帮助我们专注在那些我们期望的事情上。
 

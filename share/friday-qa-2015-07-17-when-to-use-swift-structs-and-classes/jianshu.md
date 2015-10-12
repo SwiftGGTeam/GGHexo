@@ -40,36 +40,34 @@ Swift：什么时候使用结构体和类
 
 这真的很抽象。让我们来看一个例子，暂时把 swift 的这个问题从你脑海中移除，让我们来看一个 OC 的例子：
 
-```objectivec
-@interface SomeClass : NSObject 
-@property int number;
-@end
-@implementation SomeClass
-@end
-
-struct SomeStruct {
-    int number;
-};
-
-SomeClass *reference = [[SomeClass alloc] init];
-reference.number = 42;
-SomeClass *reference2 = reference;
-reference.number = 43;
-NSLog(@"The number in reference2 is %d", reference2.number);
-
-struct SomeStruct value = {};
-value.number = 42;
-struct SomeStruct value2 = value;
-value.number = 43;
-NSLog(@"The number in value2 is %d", value2.number);\
-```
+    objectivec
+    @interface SomeClass : NSObject 
+    @property int number;
+    @end
+    @implementation SomeClass
+    @end
+    
+    struct SomeStruct {
+        int number;
+    };
+    
+    SomeClass *reference = [[SomeClass alloc] init];
+    reference.number = 42;
+    SomeClass *reference2 = reference;
+    reference.number = 43;
+    NSLog(@"The number in reference2 is %d", reference2.number);
+    
+    struct SomeStruct value = {};
+    value.number = 42;
+    struct SomeStruct value2 = value;
+    value.number = 43;
+    NSLog(@"The number in value2 is %d", value2.number);\
 
 打印结果：
 
-```objectivec
-The number in reference2 is 43
-The number in value2 is 42
-```
+    objectivec
+    The number in reference2 is 43
+    The number in value2 is 42
     
 为什么会有这样的差异呢？
 
@@ -79,34 +77,32 @@ The number in value2 is 42
 
 这个例子对应下面 Swift 的举例：
 
-```swift
-class SomeClass {
-    var number: Int = 0
-}
-
-struct SomeStruct {
-    var number: Int = 0
-}
-
-var reference = SomeClass()
-reference.number = 42
-var reference2 = reference
-reference.number = 43
-print("The number in reference2 is \(reference2.number)")
-
-var value = SomeStruct()
-value.number = 42
-var value2 = value
-value.number = 43
-print("The number in value2 is \(value2.number)")
-```
+    
+    class SomeClass {
+        var number: Int = 0
+    }
+    
+    struct SomeStruct {
+        var number: Int = 0
+    }
+    
+    var reference = SomeClass()
+    reference.number = 42
+    var reference2 = reference
+    reference.number = 43
+    print("The number in reference2 is \(reference2.number)")
+    
+    var value = SomeStruct()
+    value.number = 42
+    var value2 = value
+    value.number = 43
+    print("The number in value2 is \(value2.number)")
 
 和之前的打印结果一样：
 
-```swift
-The number in reference2 is 43
-The number in value2 is 42
-```
+    
+    The number in reference2 is 43
+    The number in value2 is 42
 
 ## 值类型的体验
 
@@ -118,13 +114,12 @@ The number in value2 is 42
 
 但是别急！有这么一个区域几乎所有的语言都使用值类型：数字！下面的例子连刚开始编程几周的程序员都不会觉得陌生，忽略掉语言：
 
-```swift
-var x = 42
-var x2 = x
-x++
-print("x=\(x) x2=\(x2)")
-// prints: x=43 x2=42
-```
+    
+    var x = 42
+    var x2 = x
+    x++
+    print("x=\(x) x2=\(x2)")
+    // prints: x=43 x2=42
 
 这对我们来说是那么的明显和自然以至于我们根本没有觉察到他表现得有些不同，但是它就那样展现在我们面前。只要你在编程你就在跟值类型打交道，即使你没有意识到！
 
@@ -168,28 +163,26 @@ Swift 对此说“yes”,那也就意味着`Array`,`Dictionary`和`String`都是
 
 一个值类型嵌套一个引用类型就没有那么简单了。你可以有效地打破值语义而不被察觉。这可能是好的也可能是坏的，取决于你怎么做。当你把一个引用类型嵌套进一个值类型中，外部值被放进一块新的内存区域时就会被拷贝，但是拷贝的对象仍然指向原始的那个嵌套对象。下面是一个举例：
 
-```swift
-class Inner {
-    var value = 42
-}
-
-struct Outer {
-    var value = 42
-    var inner = Inner()
-}
-
-var outer = Outer()
-var outer2 = outer
-outer.value = 43
-outer.inner.value = 43
-print("outer2.value=\(outer2.value) outer2.inner.value=\(outer2.inner.value)”)
-```
+    
+    class Inner {
+        var value = 42
+    }
+    
+    struct Outer {
+        var value = 42
+        var inner = Inner()
+    }
+    
+    var outer = Outer()
+    var outer2 = outer
+    outer.value = 43
+    outer.inner.value = 43
+    print("outer2.value=\(outer2.value) outer2.inner.value=\(outer2.inner.value)”)
 
 打印结果如下：
 
-```swift
-outer2.value=42 outer2.inner.value=43
-```
+    
+    outer2.value=42 outer2.inner.value=43
 
 
 尽管`outer2`获取了`value`的一份拷贝，它只拷贝了`inner`的引用，因此两个结构体就共用了同一个`inner`对象。这样一来当改变`outer.inner.value`的值也会影响`outer2.inner.value`的值。哎呀！
@@ -198,38 +191,34 @@ outer2.value=42 outer2.inner.value=43
 
 这也可能会很危险。例如，我们正在创建一个`Person`对象。这是一个模型类所以明显是可拷贝的，所以它可以是结构体。按照通常的做法，你把Person类的name设置为NSString类型
 
-```swift
-struct Person {
-    var name: NSString
-}
-```
+    
+    struct Person {
+        var name: NSString
+    }
 
 然后你创建两个`Person`对象，并且分不同的部分创建名字：
 
-```swift
-let name = NSMutableString()
-name.appendString("Bob")
-name.appendString(" ")
-name.appendString("Josephsonson")
-let bob = Person(name: name)
-
-name.appendString(", Jr.")
-let bobjr = Person(name: name)
-```
+    
+    let name = NSMutableString()
+    name.appendString("Bob")
+    name.appendString(" ")
+    name.appendString("Josephsonson")
+    let bob = Person(name: name)
+    
+    name.appendString(", Jr.")
+    let bobjr = Person(name: name)
 
 打印这两个名字：
 
-```swift
-print(bob.name)
-print(bobjr.name)
-```
+    
+    print(bob.name)
+    print(bobjr.name)
 
 打印结果：
 
-```swift
-Bob Josephsonson, Jr.
-Bob Josephsonson, Jr.
-```
+    
+    Bob Josephsonson, Jr.
+    Bob Josephsonson, Jr.
 
 哎呀！
 

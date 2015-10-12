@@ -11,7 +11,7 @@
 
 
 
-<!--此处开始正文-->
+
 
 `Core Graphics`是`Cocoa`和`Cocoa Touch`所共有的API。它允许你在画布上绘制图形对象。在此篇教程中，我们会绘制一些标准的图形，比如三角形或者圆形。教程运行在 iOS 9 和 Xcode 7 下。
 
@@ -34,90 +34,86 @@
 
 打开`ShapeView.swift`文件，添加下面的属性。
 
-```swift
-var currentShapeType: Int = 0
-```
+    
+    var currentShapeType: Int = 0
 `currentShapeType`属性是用于选择正确的方法画出对应的对象。接着添加初始化方法：
 
-```swift
-init(frame: CGRect, shape: Int) {
-    super.init(frame: frame)
-    self.currentShapeType = shape
-}
     
-required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-}
-```
+    init(frame: CGRect, shape: Int) {
+        super.init(frame: frame)
+        self.currentShapeType = shape
+    }
+        
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 当自定义视图被初始化的时候，`tag`的值会决定绘制的图形类型。**`drawRect`**方法会在自定义视图绘制的过程中调用。
 
-```swift
-override func drawRect(rect: CGRect) {
-    switch currentShapeType {
-    case 0: drawLines()
-    case 1: drawRectangle()
-    case 2: drawCircle()
-    default: print("default")
-    }        
-}
-```
+    
+    override func drawRect(rect: CGRect) {
+        switch currentShapeType {
+        case 0: drawLines()
+        case 1: drawRectangle()
+        case 2: drawCircle()
+        default: print("default")
+        }        
+    }
 
 接下来，实现绘图的方法：
 
-```swift
-func drawLines() {
-    //1
-    let ctx = UIGraphicsGetCurrentContext()
-        
-    //2
-    CGContextBeginPath(ctx)
-    CGContextMoveToPoint(ctx, 20.0, 20.0)
-    CGContextAddLineToPoint(ctx, 250.0, 100.0)
-    CGContextAddLineToPoint(ctx, 100.0, 200.0)
-    CGContextSetLineWidth(ctx, 5)
-        
-    //3
-    CGContextClosePath(ctx)
-    CGContextStrokePath(ctx)
-}
     
-func drawRectangle() {
-    let center = CGPointMake(self.frame.size.width / 2.0, self.frame.size.height / 2.0)
-    let rectangleWidth:CGFloat = 100.0
-    let rectangleHeight:CGFloat = 100.0
-    let ctx = UIGraphicsGetCurrentContext()
-        
-    //4
-    CGContextAddRect(ctx, CGRectMake(center.x - (0.5 * rectangleWidth), center.y - (0.5 * rectangleHeight), rectangleWidth, rectangleHeight))
-    CGContextSetLineWidth(ctx, 10)
-    CGContextSetStrokeColorWithColor(ctx, UIColor.grayColor().CGColor)
-    CGContextStrokePath(ctx)
+    func drawLines() {
+        //1
+        let ctx = UIGraphicsGetCurrentContext()
             
-    //5
-    CGContextSetFillColorWithColor(ctx, UIColor.greenColor().CGColor)
-    CGContextAddRect(ctx, CGRectMake(center.x - (0.5 * rectangleWidth), center.y - (0.5 * rectangleHeight), rectangleWidth, rectangleHeight))
+        //2
+        CGContextBeginPath(ctx)
+        CGContextMoveToPoint(ctx, 20.0, 20.0)
+        CGContextAddLineToPoint(ctx, 250.0, 100.0)
+        CGContextAddLineToPoint(ctx, 100.0, 200.0)
+        CGContextSetLineWidth(ctx, 5)
+            
+        //3
+        CGContextClosePath(ctx)
+        CGContextStrokePath(ctx)
+    }
         
-    CGContextFillPath(ctx)
-}
-    
-func drawCircle() {
-    let center = CGPointMake(self.frame.size.width / 2.0, self.frame.size.height / 2.0)
-    let ctx = UIGraphicsGetCurrentContext()
-    CGContextBeginPath(ctx)
+    func drawRectangle() {
+        let center = CGPointMake(self.frame.size.width / 2.0, self.frame.size.height / 2.0)
+        let rectangleWidth:CGFloat = 100.0
+        let rectangleHeight:CGFloat = 100.0
+        let ctx = UIGraphicsGetCurrentContext()
+            
+        //4
+        CGContextAddRect(ctx, CGRectMake(center.x - (0.5 * rectangleWidth), center.y - (0.5 * rectangleHeight), rectangleWidth, rectangleHeight))
+        CGContextSetLineWidth(ctx, 10)
+        CGContextSetStrokeColorWithColor(ctx, UIColor.grayColor().CGColor)
+        CGContextStrokePath(ctx)
+                
+        //5
+        CGContextSetFillColorWithColor(ctx, UIColor.greenColor().CGColor)
+        CGContextAddRect(ctx, CGRectMake(center.x - (0.5 * rectangleWidth), center.y - (0.5 * rectangleHeight), rectangleWidth, rectangleHeight))
+            
+        CGContextFillPath(ctx)
+    }
         
-    //6 
-    CGContextSetLineWidth(ctx, 5)
-        
-    let x:CGFloat = center.x
-    let y:CGFloat = center.y
-    let radius: CGFloat = 100.0
-    let endAngle: CGFloat = CGFloat(2 * M_PI)
-        
-    CGContextAddArc(ctx, x, y, radius, 0, endAngle, 0)
-        
-    CGContextStrokePath(ctx)
-}
-```
+    func drawCircle() {
+        let center = CGPointMake(self.frame.size.width / 2.0, self.frame.size.height / 2.0)
+        let ctx = UIGraphicsGetCurrentContext()
+        CGContextBeginPath(ctx)
+            
+        //6 
+        CGContextSetLineWidth(ctx, 5)
+            
+        let x:CGFloat = center.x
+        let y:CGFloat = center.y
+        let radius: CGFloat = 100.0
+        let endAngle: CGFloat = CGFloat(2 * M_PI)
+            
+        CGContextAddArc(ctx, x, y, radius, 0, endAngle, 0)
+            
+        CGContextStrokePath(ctx)
+    }
 
  1. 这里的`Graphic Context`就是你绘图的画布。如果你想在一个视图上绘图，那么`view`就是你的画布。这里我们需要得到一个`Graphic Context`的引用。
  2. `path`就是一些线条,弧线和曲线的集合,你可以在当前画布使用它们来构建的复杂对象。这里我们绘制了一些线条并设置了线条的宽度为 5。
@@ -128,13 +124,12 @@ func drawCircle() {
 
 接着，在**`ViewController.swift`**文件中实现**`buttonPressed`**方法
 
-```swift
-@IBAction func buttonPressed(sender: UIButton) {
-    let myView = ShapeView(frame: CGRectMake(50, 200, 280, 250), shape: sender.tag)
-    myView.backgroundColor = UIColor.cyanColor()
-    view.addSubview(myView)
-}
-```
+    
+    @IBAction func buttonPressed(sender: UIButton) {
+        let myView = ShapeView(frame: CGRectMake(50, 200, 280, 250), shape: sender.tag)
+        myView.backgroundColor = UIColor.cyanColor()
+        view.addSubview(myView)
+    }
 编译并运行程序，点击不同的按钮来绘制不同的图形。
 ![](http://swift.gg/img/articles/drawing-shapes-core-graphics-tutorial/format=750w1444269942.683713)
 

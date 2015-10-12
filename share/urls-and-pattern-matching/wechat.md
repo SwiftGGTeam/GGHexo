@@ -24,16 +24,15 @@
 
 代码的大致架构如下：    
 
-```swift
-// path 是 [String] 类型，包含 URL 中分割的各个部分
-// 比如 ["customer","5","order","12"]
-switch (path[0], path[1], path[2], path[3]) {
-  case ("customer", let cid, "order", let oid):
-    print("Customer #\(cid), Order #\(oid)")
-  default:
-    print("Invalid request")
-}
-```    
+    
+    // path 是 [String] 类型，包含 URL 中分割的各个部分
+    // 比如 ["customer","5","order","12"]
+    switch (path[0], path[1], path[2], path[3]) {
+      case ("customer", let cid, "order", let oid):
+        print("Customer #\(cid), Order #\(oid)")
+      default:
+        print("Invalid request")
+    }    
 
 ## 问题
 
@@ -41,32 +40,31 @@ switch (path[0], path[1], path[2], path[3]) {
 
 然而，我们不能把大小不定的可变数组转换成一个元组，因为元组的类型是由内部元素的数量和类型决定的。当然我们可以创建不同的 `switch` 语句，匹配不同长度的元组…但是这样会使代码看起来非常混乱：   
 
-```swift
-func parse(path: [String]) -> String? {
-    switch path.count {
-    case 1:
-        switch path[0] {
-        case "products":  return "List of products"
-        case "customers": return "List of customers"
+    
+    func parse(path: [String]) -> String? {
+        switch path.count {
+        case 1:
+            switch path[0] {
+            case "products":  return "List of products"
+            case "customers": return "List of customers"
+            default: return nil
+            }
+        case 2:
+            switch (path[0], path[1]) {
+            case ("products", let pid):  return "Product #\(pid)"
+            case ("customers", let cid): return "Customer #\(cid)"
+            default: return nil
+            }
+        case 3:
+            switch (path[0], path[1], path[2]) {
+            case ("customers", let cid, "orders"):
+                return "List of orders for customer #\(cid)"
+            default: return nil
+            }
+            // ...
         default: return nil
         }
-    case 2:
-        switch (path[0], path[1]) {
-        case ("products", let pid):  return "Product #\(pid)"
-        case ("customers", let cid): return "Customer #\(cid)"
-        default: return nil
-        }
-    case 3:
-        switch (path[0], path[1], path[2]) {
-        case ("customers", let cid, "orders"):
-            return "List of orders for customer #\(cid)"
-        default: return nil
-        }
-        // ...
-    default: return nil
-    }
-}
-```    
+    }    
 
 这样的写法十分恶心并且十分冗长。没错，我们不想选择这种方法。那么到底该怎么提取呢？   
 
@@ -76,20 +74,18 @@ func parse(path: [String]) -> String? {
 
 但如何构造这样一个元组呢？当然，你可以使用 `switch`：    
 
-```swift
-switch path.count {
-    case 0: return (nil, nil, nil)
-    case 1: return (path[0], nil, nil)
-    case 2: return (path[0], path[1], nil)
-    default: return (path[0], path[1], path[2])
-}
-```   
+    
+    switch path.count {
+        case 0: return (nil, nil, nil)
+        case 1: return (path[0], nil, nil)
+        case 2: return (path[0], path[1], nil)
+        default: return (path[0], path[1], path[2])
+    }   
 
 还可以全部写在一行，不过这样很难阅读：   
 
-```swift
-return (path.count <= 0 ? nil : path[0], path.count <= 1 ? nil : path[1], path.count <= 2 ? nil : path[2], …)
-```   
+    
+    return (path.count <= 0 ? nil : path[0], path.count <= 1 ? nil : path[1], path.count <= 2 ? nil : path[2], …)   
 
 如果使用这种方式，当有7到8个分割路径数时，代码就会变得很长…而且这还只是构造元组，我们还没有进行任何模式匹配！   
 
@@ -103,12 +99,11 @@ return (path.count <= 0 ? nil : path[0], path.count <= 1 ? nil : path[1], path.c
 
 那么如何用它来建立我们的元组？很简单！每个 `SequenceType`（特别是`array`）都有一个生成器，我们只需要对每个值调用 `next()` 方法就可以建立元组。如果这个数组比较短，它将用 `nil` 填充最后几个值：    
 
-```swift
-let path : [String] = …
-// 获取遍历数组用的生成器
-var g = path.generate() // 注意：由于我们要使用 g.next()，必须声明为变量。（译者注：因为每次调用 g 都会绑定到下一个值）
-let tuple = (g.next(), g.next(), g.next(), g.next())
-```   
+    
+    let path : [String] = …
+    // 获取遍历数组用的生成器
+    var g = path.generate() // 注意：由于我们要使用 g.next()，必须声明为变量。（译者注：因为每次调用 g 都会绑定到下一个值）
+    let tuple = (g.next(), g.next(), g.next(), g.next())   
 
 妥妥的！如果`path`只有两个值，比如`["a","b"]`，那 `tuple`（元组）就将是`("a","b",nil,nil)`。`switch` 再也不需要依赖 `path.count`。
 
@@ -118,47 +113,45 @@ let tuple = (g.next(), g.next(), g.next(), g.next())
 
 我们使用一个枚举来表示所有可能出现的请求，并用关联值来保存变量参数:    
 
-```Swift
-enum Request {
-    case ProductsList                         // "/products"
-    case Product(productID: Int)              // "/products/:pid"
-    case CustomersList                        // "/customers"
-    case Customer(customerID: Int)            // "/customers/:cid"
-    case OrdersList(customerID: Int)          // "/customers/:cid/orders"
-    case Order(customerID: Int, orderID: Int) // "/customers/:cid/orders/:oid"
-}
-```    
+    
+    enum Request {
+        case ProductsList                         // "/products"
+        case Product(productID: Int)              // "/products/:pid"
+        case CustomersList                        // "/customers"
+        case Customer(customerID: Int)            // "/customers/:cid"
+        case OrdersList(customerID: Int)          // "/customers/:cid/orders"
+        case Order(customerID: Int, orderID: Int) // "/customers/:cid/orders/:oid"
+    }    
 
 使用之前的技巧，我们就可以用一个代表路径的 `[String]` 和一个单独的`switch`语句来创建一个`Request`实例。当然，初始化是最佳方案，但它有可能失败，因为分割的路径可能无法和期望的路径相匹配，比如 ID 的值无法转换成 `Int` 值（我们可以用 `guard` 语句来捕捉这些潜在的转换错误，正常情况下不会出现这种错误）。    
 
 这样我们就得到了初始化代码<sup>[[1]](#fn1) [[2]](#fn2) [[3]](#fn3)</sup>：    
 
-```swift
-extension Request {
-    init?(path: [String]) {
-        var g = path.generate() // use a generator to build our tuple
-        switch (g.next(), g.next(), g.next(), g.next(), g.next()) {
-        case ("products"?, nil, _, _, _):
-            self = .ProductsList
-        case ("products"?, let spid?, nil, _, _):
-            guard let pid = Int(spid) else { return nil }
-            self = .Product(productID: pid)
-        case ("customers"?, nil, _, _, _):
-            self = .CustomersList
-        case ("customers"?, let scid?, nil, _, _):
-            guard let cid = Int(scid) else { return nil }
-            self = .Customer(customerID: cid)
-        case ("customers"?, let scid?, "orders"?, nil, _):
-            guard let cid = Int(scid) else { return nil }
-            self = .OrdersList(customerID: cid)
-        case ("customers"?, let scid?, "orders"?, let soid?, nil):
-            guard let cid = Int(scid), oid = Int(soid) else { return nil }
-            self = .Order(customerID: cid, orderID: oid)
-        default: return nil
+    
+    extension Request {
+        init?(path: [String]) {
+            var g = path.generate() // use a generator to build our tuple
+            switch (g.next(), g.next(), g.next(), g.next(), g.next()) {
+            case ("products"?, nil, _, _, _):
+                self = .ProductsList
+            case ("products"?, let spid?, nil, _, _):
+                guard let pid = Int(spid) else { return nil }
+                self = .Product(productID: pid)
+            case ("customers"?, nil, _, _, _):
+                self = .CustomersList
+            case ("customers"?, let scid?, nil, _, _):
+                guard let cid = Int(scid) else { return nil }
+                self = .Customer(customerID: cid)
+            case ("customers"?, let scid?, "orders"?, nil, _):
+                guard let cid = Int(scid) else { return nil }
+                self = .OrdersList(customerID: cid)
+            case ("customers"?, let scid?, "orders"?, let soid?, nil):
+                guard let cid = Int(scid), oid = Int(soid) else { return nil }
+                self = .Order(customerID: cid, orderID: oid)
+            default: return nil
+            }
         }
-    }
-}
-```     
+    }     
 
 ## 收尾   
 
@@ -170,31 +163,30 @@ extension Request {
 * 我们想去掉开头的 `/` 。它肯定会出现在绝对路径中，我们不想在 `switch` 中的每个 `case` 里都对它进行匹配。
 * 如果结尾有 `/`，我们也要把它去掉。在本例中，我们希望类似`/customers/5`和`/customers/5/`的 URL 都解析成`.Customer(customerID: 5)`。
 
-```swift
-import Foundation
-
-func parse(url: NSURL) -> Request? {
-    if let comps = NSURLComponents(URL: url, resolvingAgainstBaseURL: false),
-        let path = comps.path where comps.host == "mywebsite.org"
-    {
-        let pathComps = (path as NSString).pathComponents
-        if pathComps.first == "/" {
-            var canonicalComps = pathComps.dropFirst()
-            if canonicalComps.last == "/" {
-                // 如果有url以 "/" 结尾，那么就需要丢掉它
-                canonicalComps = canonicalComps.dropLast()
+    
+    import Foundation
+    
+    func parse(url: NSURL) -> Request? {
+        if let comps = NSURLComponents(URL: url, resolvingAgainstBaseURL: false),
+            let path = comps.path where comps.host == "mywebsite.org"
+        {
+            let pathComps = (path as NSString).pathComponents
+            if pathComps.first == "/" {
+                var canonicalComps = pathComps.dropFirst()
+                if canonicalComps.last == "/" {
+                    // 如果有url以 "/" 结尾，那么就需要丢掉它
+                    canonicalComps = canonicalComps.dropLast()
+                }
+                return Request(path: Array(canonicalComps))
             }
-            return Request(path: Array(canonicalComps))
         }
+        return nil
     }
-    return nil
-}
-
-if let url = NSURL(string: "http://mywebsite.org/customers/12/orders"),
-    let req = parse(url) {
-    print(req) // 输出: OrdersList(12)
-}
-```    
+    
+    if let url = NSURL(string: "http://mywebsite.org/customers/12/orders"),
+        let req = parse(url) {
+        print(req) // 输出: OrdersList(12)
+    }    
 
 完成!
 

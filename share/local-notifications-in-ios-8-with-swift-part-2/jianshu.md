@@ -10,7 +10,7 @@
 
 
 
-<!--此处开始正文-->
+
 
 > 本文代码是基于 Xcode 6.2 写的。
 
@@ -24,35 +24,33 @@
 
 值得注意的是，我们不通过本地通知也可以为应用图标添加角标。AppDelegate 中的 applicationWillResignActive: 方法是可以实现这个功能的。在用户返回主屏幕的时候，看到应用图标时候，会触发这个方法。
 
-```swift
-func applicationWillResignActive(application: UIApplication) {
-  var todoItems: [TodoItem] = TodoList.sharedInstance.allItems()
-  var overdueItems = todoItems.filter({ (todoItem) -> Bool in
-    return todoItem.deadline.compare(NSDate()) != .OrderedDescending
-  })
-  UIApplication.sharedApplication().applicationIconBadgeNumber = overdueItems.count
-}
-```
+    
+    func applicationWillResignActive(application: UIApplication) {
+      var todoItems: [TodoItem] = TodoList.sharedInstance.allItems()
+      var overdueItems = todoItems.filter({ (todoItem) -> Bool in
+        return todoItem.deadline.compare(NSDate()) != .OrderedDescending
+      })
+      UIApplication.sharedApplication().applicationIconBadgeNumber = overdueItems.count
+    }
 <div style="max-width:300px;">
 ![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-2/iOS-Simulator-Screen-Shot-Feb-4-2015-10.31.14-PM.png1444269937.440762)![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-2/iOS-Simulator-Screen-Shot-Feb-4-2015-11.51.25-PM.png1444269937.731704)
 </div>
 
 虽然可行，但是并不能在待办项过期时自动更新角标的值。因为我们不能简单的在通知触发的时候增加角标的值，因此，我们可以为本地通知预设一个“applicationIconBadgeNumber”的属性值。接下来，我们在 TodoList 中写一个为每个通知设置相关角标值的方法。
 
-```swift
-func setBadgeNumbers() {
-  var notifications = UIApplication.sharedApplication().scheduledLocalNotifications as! [UILocalNotification]
-  var todoItems: [TodoItem] = self.allItems()
-  for notification in notifications {
-    var overdueItems = todoItems.filter({ (todoItem) -> Bool in
-      return (todoItem.deadline.compare(notification.fireDate!) != .OrderedDescending)
-    })
-    UIApplication.sharedApplication().cancelLocalNotification(notification) 
-    notification.applicationIconBadgeNumber = overdueItems.count
-    UIApplication.sharedApplication().scheduleLocalNotification(notification)
-  }
-}
-```
+    
+    func setBadgeNumbers() {
+      var notifications = UIApplication.sharedApplication().scheduledLocalNotifications as! [UILocalNotification]
+      var todoItems: [TodoItem] = self.allItems()
+      for notification in notifications {
+        var overdueItems = todoItems.filter({ (todoItem) -> Bool in
+          return (todoItem.deadline.compare(notification.fireDate!) != .OrderedDescending)
+        })
+        UIApplication.sharedApplication().cancelLocalNotification(notification) 
+        notification.applicationIconBadgeNumber = overdueItems.count
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+      }
+    }
 
 虽然没有办法去更新已经计划好时间的通知，但是可以通过删除当前通知然后重新设置的方式来达到同样的效果。
 
@@ -65,9 +63,8 @@ func setBadgeNumbers() {
 
 我们只是需要在待办列表发生变化的时候调用这个方法。将下面这段代码添加到 TodoList 中的`addItem:`和`removeItem:`两个方法之后。
 
-```swift
-self.setBadgeNumbers()
-```
+    
+    self.setBadgeNumbers()
 
 这样，当一个通知被触发的时候，角标的值会被自动更新。
 
@@ -89,27 +86,26 @@ iOS 8 引进了一个很有用的新特性：通知动作（notification actions
 
 `AppDelegate`文件里可以这样写：
 
-```swift
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-  let completeAction = UIMutableUserNotificationAction()
-  completeAction.identifier = "COMPLETE_TODO"
-  completeAction.title = "Complete"
-  completeAction.activationMode = .Background
-  completeAction.authenticationRequired = false
-  completeAction.destructive = true
-  let remindAction = UIMutableUserNotificationAction()
-  remindAction.identifier = "REMIND"
-  remindAction.title = "Remind in 30 minutes"
-  remindAction.activationMode = .Background
-  remindAction.destructive = fal  
-  let todoCategory = UIMutableUserNotificationCategory()
-  todoCategory.identifier = "TODO_CATEGORY"
-  todoCategory.setActions([remindAction, completeAction], forContext: .Default)
-  todoCategory.setActions([completeAction, remindAction], forContext: .Minimal)
-  application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert | .Badge | .Sou  categories: NSSet(array: [todoCategory])))
-  return true
-}
-```
+    
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+      let completeAction = UIMutableUserNotificationAction()
+      completeAction.identifier = "COMPLETE_TODO"
+      completeAction.title = "Complete"
+      completeAction.activationMode = .Background
+      completeAction.authenticationRequired = false
+      completeAction.destructive = true
+      let remindAction = UIMutableUserNotificationAction()
+      remindAction.identifier = "REMIND"
+      remindAction.title = "Remind in 30 minutes"
+      remindAction.activationMode = .Background
+      remindAction.destructive = fal  
+      let todoCategory = UIMutableUserNotificationCategory()
+      todoCategory.identifier = "TODO_CATEGORY"
+      todoCategory.setActions([remindAction, completeAction], forContext: .Default)
+      todoCategory.setActions([completeAction, remindAction], forContext: .Minimal)
+      application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert | .Badge | .Sou  categories: NSSet(array: [todoCategory])))
+      return true
+    }
 
 值得注意的是，上面的代码中我们调用了`todoCategory.setActions()`两次，分别设置了动作上下文（action contexts）。如果通知是以横幅（banner）的形式显示，那么通知动作会以迷你形式（minimal context）显示出来。如果通知是以（默认的）提示（alert） 形式显示，通知动作会显示至少 4 个操作。如下图。
 
@@ -121,41 +117,38 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 
 下面的代码是为了确保通知的`category`是为 TodoList 的`addItem:`方法设置的。
 
-```swift
-notification.category = "TODO_CATEGORY"
-```
+    
+    notification.category = "TODO_CATEGORY"
 
 到此，我们已经可以用`removeItem:`方法来实现完成待办项，现在我们需要在 TodoList 里实现过会提醒的功能。
 
-```swift
-func scheduleReminderforItem(item: TodoItem) {
-  var notification = UILocalNotification()
-  notification.alertBody = "Reminder: Todo Item \"\(item.title)\" Is Overdue"
-  notification.alertAction = "open"
-  notification.fireDate = NSDate().dateByAddingTimeInterval(30 * 60)
-  notification.soundName = UILocalNotificationDefaultSoundName
-  notification.userInfo = ["title": item.title, "UUID": item.UUID]
-  notification.category = "TODO_CATEGOR  
-  UIApplication.sharedApplication().scheduleLocalNotification(notification)
-}
-```
+    
+    func scheduleReminderforItem(item: TodoItem) {
+      var notification = UILocalNotification()
+      notification.alertBody = "Reminder: Todo Item \"\(item.title)\" Is Overdue"
+      notification.alertAction = "open"
+      notification.fireDate = NSDate().dateByAddingTimeInterval(30 * 60)
+      notification.soundName = UILocalNotificationDefaultSoundName
+      notification.userInfo = ["title": item.title, "UUID": item.UUID]
+      notification.category = "TODO_CATEGOR  
+      UIApplication.sharedApplication().scheduleLocalNotification(notification)
+    }
 
 值得注意的是，我们并没有修改待办项的到期日期（或者试着取消原来的通知，虽然已经被自动删除）。现在，回到`AppDelegate`里，实现`actions:`里的处理。
 
-```swift
-func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
-  var item = TodoItem(deadline: notification.fireDate!, title: notification.userInfo!["title"] as String, UU  notification.userInfo!["UUID"] as String!)
-  switch (identifier!) {
-      case "COMPLETE_TODO":
-      TodoList.sharedInstance.removeItem(item)
-  case "REMIND":
-      TodoList.sharedInstance.scheduleReminderforItem(item)
-  default:
-      println("Error: unexpected notification action identifier!")
-  }
-  completionHandler()
-}
-```
+    
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+      var item = TodoItem(deadline: notification.fireDate!, title: notification.userInfo!["title"] as String, UU  notification.userInfo!["UUID"] as String!)
+      switch (identifier!) {
+          case "COMPLETE_TODO":
+          TodoList.sharedInstance.removeItem(item)
+      case "REMIND":
+          TodoList.sharedInstance.scheduleReminderforItem(item)
+      default:
+          println("Error: unexpected notification action identifier!")
+      }
+      completionHandler()
+    }
 
 终于可以试着运行这个应用了（为了测试方便，建议将`dateByAddingTimeInterval:`设置一个较小的值）。
 <div style="max-width:300px;">

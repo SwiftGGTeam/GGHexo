@@ -28,112 +28,108 @@ Swift 2.0 中的面向协议的MVVM
 
 通常，我会在 `cell` 中使用配置(`configure`)方法来追踪在应用程序不同部分的所有可能用到这个 `cell` 的设置。这个方法大概是这样的：
 
-```swift
-class SwitchWithTextTableViewCell: UITableViewCell {
     
-    @IBOutlet private weak var label: UILabel!
-    @IBOutlet private weak var switchToggle: UISwitch!
-    
-    typealias onSwitchToggleHandlerType = (switchOn: Bool) -> Void
-    private var onSwitchToggleHandler: onSwitchToggleHandlerType?
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    func configure(withTitle title: String,
-        switchOn: Bool,
-        onSwitchToggleHandler: onSwitchToggleHandlerType? = nil)
-    {
-        label.text = title
-        switchToggle.on = switchOn
+    class SwitchWithTextTableViewCell: UITableViewCell {
         
-        self.onSwitchToggleHandler = onSwitchToggleHandler
+        @IBOutlet private weak var label: UILabel!
+        @IBOutlet private weak var switchToggle: UISwitch!
+        
+        typealias onSwitchToggleHandlerType = (switchOn: Bool) -> Void
+        private var onSwitchToggleHandler: onSwitchToggleHandlerType?
+        
+        override func awakeFromNib() {
+            super.awakeFromNib()
+        }
+        
+        func configure(withTitle title: String,
+            switchOn: Bool,
+            onSwitchToggleHandler: onSwitchToggleHandlerType? = nil)
+        {
+            label.text = title
+            switchToggle.on = switchOn
+            
+            self.onSwitchToggleHandler = onSwitchToggleHandler
+        }
+        
+        @IBAction func onSwitchToggle(sender: UISwitch) {
+            onSwitchToggleHandler?(switchOn: sender.on)
+        }
     }
-    
-    @IBAction func onSwitchToggle(sender: UISwitch) {
-        onSwitchToggleHandler?(switchOn: sender.on)
-    }
-}
-```
 
 使用 Swift 的默认参数，可以非常方便的，在不修改其他地方代码的情况下，添加额外的设置。举个例子，当设计师需要你将 switch 按钮的颜色改成不同颜色时，可以像下面这样添加一个默认的参数：
 
-```swift
-func configure(withTitle title: String,
-    switchOn: Bool,
-    switchColor: UIColor = .purpleColor(),
-    onSwitchToggleHandler: onSwitchToggleHandlerType? = nil) {
-    label.text = title
-    switchToggle.on = switchOn
-    // color option added!
-    switchToggle.onTintColor = switchColor
     
-    self.onSwitchToggleHandler = onSwitchToggleHandler
-}
-```
+    func configure(withTitle title: String,
+        switchOn: Bool,
+        switchColor: UIColor = .purpleColor(),
+        onSwitchToggleHandler: onSwitchToggleHandlerType? = nil) {
+        label.text = title
+        switchToggle.on = switchOn
+        // color option added!
+        switchToggle.onTintColor = switchColor
+        
+        self.onSwitchToggleHandler = onSwitchToggleHandler
+    }
 
 在这个案例中，这样写好像没什么大不了的，但是在现实中，这个配置(configure)方法会随着时间的增长和需求的增加变得又长又复杂。这就是需要酷酷的面向协议编程方式出场的地方了。
 
 ### 面向协议的实现方式
 
-```swift
-protocol SwitchWithTextCellProtocol {
-    var title: String { get }
-    var switchOn: Bool { get }
     
-    func onSwitchTogleOn(on: Bool)
-}
-
-class SwitchWithTextTableViewCell: UITableViewCell {
-
-    @IBOutlet private weak var label: UILabel!
-    @IBOutlet private weak var switchToggle: UISwitch!
-
-    private var delegate: SwitchWithTextCellProtocol?
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    func configure(withDelegate delegate: SwitchWithTextCellProtocol) {
-        self.delegate = delegate
+    protocol SwitchWithTextCellProtocol {
+        var title: String { get }
+        var switchOn: Bool { get }
         
-        label.text = delegate.title
-        switchToggle.on = delegate.switchOn
+        func onSwitchTogleOn(on: Bool)
     }
-
-    @IBAction func onSwitchToggle(sender: UISwitch) {
-        delegate?.onSwitchTogleOn(sender.on)
+    
+    class SwitchWithTextTableViewCell: UITableViewCell {
+    
+        @IBOutlet private weak var label: UILabel!
+        @IBOutlet private weak var switchToggle: UISwitch!
+    
+        private var delegate: SwitchWithTextCellProtocol?
+        
+        override func awakeFromNib() {
+            super.awakeFromNib()
+        }
+        
+        func configure(withDelegate delegate: SwitchWithTextCellProtocol) {
+            self.delegate = delegate
+            
+            label.text = delegate.title
+            switchToggle.on = delegate.switchOn
+        }
+    
+        @IBAction func onSwitchToggle(sender: UISwitch) {
+            delegate?.onSwitchTogleOn(sender.on)
+        }
     }
-}
-```
 
 当设计师又过来想要添加修改默认颜色的方法时，协议扩展就可以发挥神奇的作用了。
 
-```swift
-extension SwitchWithTextCellProtocol {
     
-    // 这里设置默认颜色
-    func switchColor() -> UIColor {
-        return .purpleColor()
-    }
-}
-
-class SwitchWithTextTableViewCell: UITableViewCell {
-    
-    // 省略部分同上
-
-    func configure(withDelegate delegate: SwitchWithTextCellProtocol) {
-        self.delegate = delegate
+    extension SwitchWithTextCellProtocol {
         
-        label.text = delegate.title
-        switchToggle.on = delegate.switchOn
-        // 颜色选项被添加
-        switchToggle.onTintColor = delegate.switchColor()
+        // 这里设置默认颜色
+        func switchColor() -> UIColor {
+            return .purpleColor()
+        }
     }
-}
-```
+    
+    class SwitchWithTextTableViewCell: UITableViewCell {
+        
+        // 省略部分同上
+    
+        func configure(withDelegate delegate: SwitchWithTextCellProtocol) {
+            self.delegate = delegate
+            
+            label.text = delegate.title
+            switchToggle.on = delegate.switchOn
+            // 颜色选项被添加
+            switchToggle.onTintColor = delegate.switchColor()
+        }
+    }
 
 协议扩展实现了默认 `switch` 颜色的选项，所以任何实现这个协议或不关心设置颜色的不要担心。只有新的 `cell` 可以设置一次不同的 `switch` 颜色。
 
@@ -141,72 +137,70 @@ class SwitchWithTextTableViewCell: UITableViewCell {
 
 现在，剩下的部分就很简单了。我需要为 `Minion Mode` 设置一个 `ViewModel`：
 
-```swuft
-import UIKit
-
-struct MinionModeViewModel: SwitchWithTextCellProtocol {
-    var title = "Minion Mode!!!"
-    var switchOn = true
+    swuft
+    import UIKit
     
-    func onSwitchTogleOn(on: Bool) {
-        if on {
-            print("The Minions are here to stay!")
-        } else {
-            print("The Minions went out to play!")
+    struct MinionModeViewModel: SwitchWithTextCellProtocol {
+        var title = "Minion Mode!!!"
+        var switchOn = true
+        
+        func onSwitchTogleOn(on: Bool) {
+            if on {
+                print("The Minions are here to stay!")
+            } else {
+                print("The Minions went out to play!")
+            }
+        }
+        
+        func switchColor() -> UIColor {
+            return .yellowColor()
         }
     }
-    
-    func switchColor() -> UIColor {
-        return .yellowColor()
-    }
-}
-```
 
 ### ViewController
 
 最后一步就是把 `ViewModel` 传递给在 `ViewController` 中设置的 `cell`：
 
-```swift
-import UIKit
-
-class SettingsViewController: UITableViewController {
-
-    enum Setting: Int {
-        case MinionMode
-        // other settings here
-    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    // MARK: - Table view data source
-
-    override func tableView(tableView: UITableView,
-        numberOfRowsInSection section: Int) -> Int
-    {
-        return 1
-    }
-
-    override func tableView(tableView: UITableView,
-        cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    {
-        if let setting = Setting(rawValue: indexPath.row) {
-            switch setting {
-            case .MinionMode:
-                let cell = tableView.dequeueReusableCellWithIdentifier("SwitchWithTextTableViewCell", forIndexPath: indexPath) as! SwitchWithTextTableViewCell
-                
-                // this is where the magic happens!
-                cell.configure(withDelegate: MinionModeViewModel())
-                return cell
-            }
+    import UIKit
+    
+    class SettingsViewController: UITableViewController {
+    
+        enum Setting: Int {
+            case MinionMode
+            // other settings here
         }
         
-        return tableView.dequeueReusableCellWithIdentifier("defaultCell", forIndexPath: indexPath)
+        override func viewDidLoad() {
+            super.viewDidLoad()
+        }
+    
+        // MARK: - Table view data source
+    
+        override func tableView(tableView: UITableView,
+            numberOfRowsInSection section: Int) -> Int
+        {
+            return 1
+        }
+    
+        override func tableView(tableView: UITableView,
+            cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+        {
+            if let setting = Setting(rawValue: indexPath.row) {
+                switch setting {
+                case .MinionMode:
+                    let cell = tableView.dequeueReusableCellWithIdentifier("SwitchWithTextTableViewCell", forIndexPath: indexPath) as! SwitchWithTextTableViewCell
+                    
+                    // this is where the magic happens!
+                    cell.configure(withDelegate: MinionModeViewModel())
+                    return cell
+                }
+            }
+            
+            return tableView.dequeueReusableCellWithIdentifier("defaultCell", forIndexPath: indexPath)
+        }
+    
     }
-
-}
-```
 
 伴随着协议扩展的使用，面向协议编程开始变得有意义起来，而且我也希望找出可以多使用它的方式来。你可以在[这里](https://github.com/NatashaTheRobot/ProtocolOrientedMVVMExperimentSwift)下载到所有的代码例子。
 
@@ -218,114 +212,111 @@ class SettingsViewController: UITableViewController {
 
 cell 有两个协议，两者都可以配置(configure)：
 
-```swift
-import UIKit
-
-protocol SwitchWithTextCellDataSource {
-    var title: String { get }
-    var switchOn: Bool { get }
-}
-
-protocol SwitchWithTextCellDelegate {
-    func onSwitchTogleOn(on: Bool)
     
-    var switchColor: UIColor { get }
-    var textColor: UIColor { get }
-    var font: UIFont { get }
-}
-
-extension SwitchWithTextCellDelegate {
+    import UIKit
     
-    var switchColor: UIColor {
-        return .purpleColor()
+    protocol SwitchWithTextCellDataSource {
+        var title: String { get }
+        var switchOn: Bool { get }
     }
     
-    var textColor: UIColor {
-        return .blackColor()
-    }
-    
-    var font: UIFont {
-        return .systemFontOfSize(17)
-    }
-}
-
-class SwitchWithTextTableViewCell: UITableViewCell {
-
-    @IBOutlet private weak var label: UILabel!
-    @IBOutlet private weak var switchToggle: UISwitch!
-
-    private var dataSource: SwitchWithTextCellDataSource?
-    private var delegate: SwitchWithTextCellDelegate?
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    func configure(withDataSource dataSource: SwitchWithTextCellDataSource, delegate: SwitchWithTextCellDelegate?) {
-        self.dataSource = dataSource
-        self.delegate = delegate
+    protocol SwitchWithTextCellDelegate {
+        func onSwitchTogleOn(on: Bool)
         
-        label.text = dataSource.title
-        switchToggle.on = dataSource.switchOn
-        // color option added!
-        switchToggle.onTintColor = delegate?.switchColor
+        var switchColor: UIColor { get }
+        var textColor: UIColor { get }
+        var font: UIFont { get }
     }
-
-    @IBAction func onSwitchToggle(sender: UISwitch) {
-        delegate?.onSwitchTogleOn(sender.on)
+    
+    extension SwitchWithTextCellDelegate {
+        
+        var switchColor: UIColor {
+            return .purpleColor()
+        }
+        
+        var textColor: UIColor {
+            return .blackColor()
+        }
+        
+        var font: UIFont {
+            return .systemFontOfSize(17)
+        }
     }
-}
-```
+    
+    class SwitchWithTextTableViewCell: UITableViewCell {
+    
+        @IBOutlet private weak var label: UILabel!
+        @IBOutlet private weak var switchToggle: UISwitch!
+    
+        private var dataSource: SwitchWithTextCellDataSource?
+        private var delegate: SwitchWithTextCellDelegate?
+        
+        override func awakeFromNib() {
+            super.awakeFromNib()
+        }
+        
+        func configure(withDataSource dataSource: SwitchWithTextCellDataSource, delegate: SwitchWithTextCellDelegate?) {
+            self.dataSource = dataSource
+            self.delegate = delegate
+            
+            label.text = dataSource.title
+            switchToggle.on = dataSource.switchOn
+            // color option added!
+            switchToggle.onTintColor = delegate?.switchColor
+        }
+    
+        @IBAction func onSwitchToggle(sender: UISwitch) {
+            delegate?.onSwitchTogleOn(sender.on)
+        }
+    }
 
 ### ViewModel
 
 现在可以在扩展里把数据源和`delegate`逻辑分开了：
 
-```swift
-import UIKit
-
-struct MinionModeViewModel: SwitchWithTextCellDataSource {
-    var title = "Minion Mode!!!"
-    var switchOn = true
-}
-
-extension MinionModeViewModel: SwitchWithTextCellDelegate {
     
-    func onSwitchTogleOn(on: Bool) {
-        if on {
-            print("The Minions are here to stay!")
-        } else {
-            print("The Minions went out to play!")
+    import UIKit
+    
+    struct MinionModeViewModel: SwitchWithTextCellDataSource {
+        var title = "Minion Mode!!!"
+        var switchOn = true
+    }
+    
+    extension MinionModeViewModel: SwitchWithTextCellDelegate {
+        
+        func onSwitchTogleOn(on: Bool) {
+            if on {
+                print("The Minions are here to stay!")
+            } else {
+                print("The Minions went out to play!")
+            }
+        }
+        
+        var switchColor: UIColor {
+            return .yellowColor()
         }
     }
-    
-    var switchColor: UIColor {
-        return .yellowColor()
-    }
-}
-```
 
 ### ViewController
 
 这部分不太好理解 -`ViewController`会传入两次`viewModel`：
 
-```swift
-override func tableView(tableView: UITableView,
-        cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let setting = Setting(rawValue: indexPath.row) {
-            switch setting {
-            case .MinionMode:
-                let cell = tableView.dequeueReusableCellWithIdentifier("SwitchWithTextTableViewCell", forIndexPath: indexPath) as! SwitchWithTextTableViewCell
-                
-                // 发生魔法的地方
-                let viewModel = MinionModeViewModel()
-                cell.configure(withDataSource: viewModel, delegate: viewModel)
-                return cell
+    
+    override func tableView(tableView: UITableView,
+            cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            if let setting = Setting(rawValue: indexPath.row) {
+                switch setting {
+                case .MinionMode:
+                    let cell = tableView.dequeueReusableCellWithIdentifier("SwitchWithTextTableViewCell", forIndexPath: indexPath) as! SwitchWithTextTableViewCell
+                    
+                    // 发生魔法的地方
+                    let viewModel = MinionModeViewModel()
+                    cell.configure(withDataSource: viewModel, delegate: viewModel)
+                    return cell
+                }
             }
+            
+            return tableView.dequeueReusableCellWithIdentifier("defaultCell", forIndexPath: indexPath)
         }
-        
-        return tableView.dequeueReusableCellWithIdentifier("defaultCell", forIndexPath: indexPath)
-    }
-```
 
 我更新示例代码，在[我的Github里](https://github.com/NatashaTheRobot/ProtocolOrientedMVVMExperimentSwift)。

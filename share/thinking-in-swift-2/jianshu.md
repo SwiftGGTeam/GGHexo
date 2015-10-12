@@ -21,40 +21,38 @@ Swift 编程思想，第二部分：数组的 Map 方法
 
 友情提示: 以下为[前文](http://alisoftware.github.io/swift/2015/09/06/thinking-in-swift-1/)留下的代码:
 
-``` 
-class ListItem {
-    var icon: UIImage?
-    var title: String = ""
-    var url: NSURL!
-
-    static func listItemsFromJSONData(jsonData: NSData?) -> [ListItem] {
-        guard let nonNilJsonData = jsonData,
-            let json = try? NSJSONSerialization.JSONObjectWithData(nonNilJsonData, options: []),
-            let jsonItems = json as? Array<NSDictionary>
-            else {
-                // 倘若JSON序列化失败，或者转换类型失败
-                // 返回一个空数组结果
-                return []
+    class ListItem {
+        var icon: UIImage?
+        var title: String = ""
+        var url: NSURL!
+    
+        static func listItemsFromJSONData(jsonData: NSData?) -> [ListItem] {
+            guard let nonNilJsonData = jsonData,
+                let json = try? NSJSONSerialization.JSONObjectWithData(nonNilJsonData, options: []),
+                let jsonItems = json as? Array<NSDictionary>
+                else {
+                    // 倘若JSON序列化失败，或者转换类型失败
+                    // 返回一个空数组结果
+                    return []
+            }
+    
+            var items = [ListItem]()
+            for itemDesc in jsonItems {
+                let item = ListItem()
+                if let icon = itemDesc["icon"] as? String {
+                    item.icon = UIImage(named: icon)
+                }
+                if let title = itemDesc["title"] as? String {
+                    item.title = title
+                }
+                if let urlString = itemDesc["url"] as? String, let url = NSURL(string: urlString) {
+                    item.url = url
+                }
+                items.append(item)
+            }
+            return items
         }
-
-        var items = [ListItem]()
-        for itemDesc in jsonItems {
-            let item = ListItem()
-            if let icon = itemDesc["icon"] as? String {
-                item.icon = UIImage(named: icon)
-            }
-            if let title = itemDesc["title"] as? String {
-                item.title = title
-            }
-            if let urlString = itemDesc["url"] as? String, let url = NSURL(string: urlString) {
-                item.url = url
-            }
-            items.append(item)
-        }
-        return items
     }
-}
-```
 
 本文的目标是使用更多“雨燕风”的模式和语法，使得代码看起来更棒并且简洁。
 
@@ -66,21 +64,19 @@ class ListItem {
 
 
 
-``` 
-return jsonItems.map { (itemDesc: NSDictionary) -> ListItem in
-    let item = ListItem()
-    if let icon = itemDesc["icon"] as? String {
-        item.icon = UIImage(named: icon)
+    return jsonItems.map { (itemDesc: NSDictionary) -> ListItem in
+        let item = ListItem()
+        if let icon = itemDesc["icon"] as? String {
+            item.icon = UIImage(named: icon)
+        }
+        if let title = itemDesc["title"] as? String {
+            item.title = title
+        }
+        if let urlString = itemDesc["url"] as? String, let url = NSURL(string: urlString) {
+            item.url = url
+        }
+        return item
     }
-    if let title = itemDesc["title"] as? String {
-        item.title = title
-    }
-    if let urlString = itemDesc["url"] as? String, let url = NSURL(string: urlString) {
-        item.url = url
-    }
-    return item
-}
-```
 
 这看起来只是个很小的改动，但是它让我们专注于怎样把 `NSDictionary` 转化成 `ListItem`，毕竟这是解决问题的核心。更为重要的是，避免了像在 ObjC 里做的那样，新建一个中间数组。我们应该尽可能地避免这种情况发生。
 
@@ -94,15 +90,12 @@ return jsonItems.map { (itemDesc: NSDictionary) -> ListItem in
 
 
 
-``` 
-return jsonItems.map { (itemDesc: NSDictionary) -> ListItem? in
-    guard …/* condition for valid data */… else { return nil }
-    let realValidItem = ListItem()
-    … /* fill the ListItem with the values */
-    return realValidItem
-}
-
-```
+    return jsonItems.map { (itemDesc: NSDictionary) -> ListItem? in
+        guard …/* condition for valid data */… else { return nil }
+        let realValidItem = ListItem()
+        … /* fill the ListItem with the values */
+        return realValidItem
+    }
 
 但是如果 `jsonItems.map` 里面传入的函数参数类型为 `NSDictionary -> ListItem?`，最后我们得到的是一个 `[ListItem?]` 数组，那些原来是不可用 `NSDictionary` 的位置就被我们替换成了 `nil`。比原来要好一些了，但还不够。
 
@@ -116,22 +109,19 @@ return jsonItems.map { (itemDesc: NSDictionary) -> ListItem? in
 
 通过`flatMap`方法改写后的实例代码如下:
 
-``` 
-return jsonItems.flatMap { (itemDesc: NSDictionary) -> ListItem? in
-    guard let title = itemDesc["title"] as? String,
-        let urlString = itemDesc["url"] as? String,
-        let url = NSURL(string: urlString)
-        else { return nil }
-    let li = ListItem()
-    if let icon = itemDesc["icon"] as? String {
-        li.icon = UIImage(named: icon)
+    return jsonItems.flatMap { (itemDesc: NSDictionary) -> ListItem? in
+        guard let title = itemDesc["title"] as? String,
+            let urlString = itemDesc["url"] as? String,
+            let url = NSURL(string: urlString)
+            else { return nil }
+        let li = ListItem()
+        if let icon = itemDesc["icon"] as? String {
+            li.icon = UIImage(named: icon)
+        }
+        li.title = title
+        li.url = url
+        return li
     }
-    li.title = title
-    li.url = url
-    return li
-}
-
-```
 
 现在我们只返回所有键都存在[<sup>3</sup>](/thinking-in-swift-1/#note3)并有效的 `ListItem`对象（保证 `NSURL`不为`nil`）。否则执行`guard`语句，返回`nil`值通知`flatMap`不要将这些无效元素添加到返回结果数组中。
 

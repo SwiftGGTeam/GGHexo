@@ -59,15 +59,13 @@
 
 那么在 iOS 开发中如何使用延迟加载技术呢？正如前文提到的，表格视图就是一个很好的使用延迟加载技术的栗子。另一种使用延迟加载的方法是使用`lazy`关键字来修饰属性。想象一下你需要一个包含所有产品的数组，当用户进行一定交互时需要使用到它们。
 
-```objc
-var products: [Products] = modelClass.loadProducts()
-```
+    objc
+    var products: [Products] = modelClass.loadProducts()
 
 如上代码，这个数组即使在用户没有进行任何交互的情况下仍然会被加载，这是一种内存浪费。如果加上`lazy`关键字进行修饰，那么只有在用户第一次访问数组的时候它才会初始化。
 
-```objc
-lazy var products: [Products] = modelClass.loadProducts()
-```
+    objc
+    lazy var products: [Products] = modelClass.loadProducts()
 
 即使只是一些小的数组和变量，合理地使用延迟加载技术也能节省很大一部分内存。
 
@@ -77,17 +75,15 @@ lazy var products: [Products] = modelClass.loadProducts()
 
 现在，即使控制器 A 从屏幕中离开，两个控制器也不会被释放，因为它们还都强引用着对方。要避免这种情况你可以使用`weak`关键字。举个栗子，想要将控制器 A 设置为控制器 B 的代理，正确的属性声明应该如下所示：
 
-```objc
-weak var delegate: DelegateType?
-```
+    objc
+    weak var delegate: DelegateType?
 
 如果想检查控制器是否被正确释放，可以在控制器的`deinit`方法中打印消息来查看，代码如下：
 
-```objc
-deinit {
-     println("deinit")
-}
-```
+    objc
+    deinit {
+         println("deinit")
+    }
 
 接下来你就可以通过在控制台中观察，是否有输出来检查控制器对象是否被正确释放。比如说，当你的控制器是被导航控制器通过`push`方法展现出来的时候，如果你点击了导航条上的返回按钮，控制器应该被释放并且在控制台中输出信息。
 

@@ -11,7 +11,7 @@
 
 
 
-<!--此处开始正文-->
+
 
 在 iOS 9 之前，即使是创建相对简单的用户界面(User Interface)，也需要在使用自动布局(Auto Layout)时添加大量的约束(Constraint)。在 iOS 9 中，苹果官方引进了 Stack View，它会为每个新增的子视图自动添加自动布局的约束。在本教程中，我们会创建一个包含三个子视图的纵向 Stack View。本教程使用 Xcode 7 和 iOS 9 实现。
 

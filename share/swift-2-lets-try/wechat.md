@@ -30,15 +30,14 @@ ___
 
 >Swift 新增一个关键字`try?`。`try?`会试图执行一个可能会抛出异常的操作。如果成功抛出异常，执行的结果就会包裹在可选值(optional)里；如果抛出异常失败(比如：已经在处理 error)，那么执行的结果就是`nil`，而且没有 error。`try?`配合`if let`和`guard`一起使用效果更佳。
 
->```
->func produceGizmoUsingTechnology() throws -> Gizmo {...}
->func produceGizmoUsingMagic() throws -> Gizmo {...}
->
->if let result = try? produceGizmoUsingTechnology() {return result}
->if let result = try? produceGizmoUsingMagic() {return result}
->print("warning: failed to produce a Gizmo in any way")
->return nil
->```
+>    >func produceGizmoUsingTechnology() throws -> Gizmo {...}
+    >func produceGizmoUsingMagic() throws -> Gizmo {...}
+    >
+    >if let result = try? produceGizmoUsingTechnology() {return result}
+    >if let result = try? produceGizmoUsingMagic() {return result}
+    >print("warning: failed to produce a Gizmo in any way")
+    >return nil
+    >
 >值得注意的是，`try?`总是给已经在求值的结果类型又增添一层Optional。如果一个方法正常返回的类型是`Int?`，那么使用`try?`调用这个方法就会返回`Int??`或者`Optional<Optional<Int>>`。(21692467)
 
 我昨天发给[@allonsykraken](https://twitter.com/allonsykraken)一些代码，然后他用`try?`漂亮地重构了那些代码。这帮我深深的理解了`try?`的重要性，所以我把这些代码共享出来。
@@ -47,30 +46,29 @@ ___
 
 这里的用例就是 ... 看 ↑ ，没错就是 Json 解析。以下的代码是我为一个简单的代办 app 写的：
 
-```swift
-struct TodoListParser {
     
-    enum Error: ErrorType {
-        case InvalidJSON
-    }
-    
-    func parse(fromData data: NSData) throws -> TodoList {
+    struct TodoListParser {
         
-        // Notice the need to use try here
-        guard let jsonDict = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String : AnyObject] else {
-            throw Error.InvalidJSON
+        enum Error: ErrorType {
+            case InvalidJSON
         }
         
-        guard let todoListDict = jsonDict["todos"] as? [[String : AnyObject]] else {
-            throw Error.InvalidJSON
+        func parse(fromData data: NSData) throws -> TodoList {
+            
+            // Notice the need to use try here
+            guard let jsonDict = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String : AnyObject] else {
+                throw Error.InvalidJSON
+            }
+            
+            guard let todoListDict = jsonDict["todos"] as? [[String : AnyObject]] else {
+                throw Error.InvalidJSON
+            }
+            
+            let todoItems = todoListDict.flatMap { TodoItemParser().parse(fromData: $0) }
+            
+            return TodoList(items: todoItems)
         }
-        
-        let todoItems = todoListDict.flatMap { TodoItemParser().parse(fromData: $0) }
-        
-        return TodoList(items: todoItems)
     }
-}
-```
 
 ### Issue 1: 出乎意料的异常
 
@@ -78,50 +76,47 @@ struct TodoListParser {
 
 为了处理这个问题，我用`do-catch`把之前需要处理的语句包裹起来，像这样：
 
-```
-func parse(fromData data: NSData) throws -> TodoList {
-    
-    do {
-    guard let jsonDict = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String : AnyObject] else {
-    throw Error.InvalidJSON
-    }
-    
-    guard let todoListDict = jsonDict["todos"] as? [[String : AnyObject]] else {
-    throw Error.InvalidJSON
-    }
-    
-    let todoItems = todoListDict.flatMap { TodoItemParser().parse(fromData: $0) }
-    
-    return TodoList(items: todoItems)
-    
-    } catch {
+    func parse(fromData data: NSData) throws -> TodoList {
+        
+        do {
+        guard let jsonDict = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String : AnyObject] else {
         throw Error.InvalidJSON
+        }
+        
+        guard let todoListDict = jsonDict["todos"] as? [[String : AnyObject]] else {
+        throw Error.InvalidJSON
+        }
+        
+        let todoItems = todoListDict.flatMap { TodoItemParser().parse(fromData: $0) }
+        
+        return TodoList(items: todoItems)
+        
+        } catch {
+            throw Error.InvalidJSON
+        }
     }
-}
-```
 
 ### Issue 2: 重复的抛出异常
 
 现在出现了另外一个问题。`jsonDict`和`todoListDict`两者的赋值报出了相同的错，如果两者都没有成功解包，就会报错`Error.InvalidJSON`。为了解决这个问题，我把两个`guard`语句合并成一个。这虽然跟`try`没什么关系，但是我还是想提一下，是因为我还是习惯用`guard`语句。修改后的代码如下：
 
-```swift
-func parse(fromData data: NSData) throws -> TodoList {
-        
-        do {
-            guard let jsonDict = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String : AnyObject],
-                // todoListDict is now moved up here
-                todoListDict = jsonDict["todos"] as? [[String : AnyObject]] else {
+    
+    func parse(fromData data: NSData) throws -> TodoList {
+            
+            do {
+                guard let jsonDict = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String : AnyObject],
+                    // todoListDict is now moved up here
+                    todoListDict = jsonDict["todos"] as? [[String : AnyObject]] else {
+                    throw Error.InvalidJSON
+                }
+                
+                let todoItems = todoListDict.flatMap { TodoItemParser().parse(fromData: $0) }
+                
+                return TodoList(items: todoItems)
+                
+            } catch {
                 throw Error.InvalidJSON
             }
-            
-            let todoItems = todoListDict.flatMap { TodoItemParser().parse(fromData: $0) }
-            
-            return TodoList(items: todoItems)
-            
-        } catch {
-            throw Error.InvalidJSON
-        }
-```
 
 现在让我们来比较一下这个版本和`try?`的版本：
 
@@ -129,28 +124,27 @@ func parse(fromData data: NSData) throws -> TodoList {
 
 `try?`才是真正我一开始想要的处理过程：当有 error 要抛出的时候，会进到`else`代码块中：
 
-```swift
-struct TodoListParser {
     
-    enum Error: ErrorType {
-        case InvalidJSON
-    }
-    
-    func parse(fromData data: NSData) throws -> TodoList {
+    struct TodoListParser {
         
-        guard let jsonDict = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String : AnyObject],
-            // Notice the extra question mark here!
-            todoListDict = jsonDict?["todos"] as? [[String : AnyObject]] else {
-                throw Error.InvalidJSON
+        enum Error: ErrorType {
+            case InvalidJSON
         }
         
-        let todoItems = todoListDict.flatMap { TodoItemParser().parse(fromData: $0) }
-        
-        return TodoList(items: todoItems)
-        
+        func parse(fromData data: NSData) throws -> TodoList {
+            
+            guard let jsonDict = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String : AnyObject],
+                // Notice the extra question mark here!
+                todoListDict = jsonDict?["todos"] as? [[String : AnyObject]] else {
+                    throw Error.InvalidJSON
+            }
+            
+            let todoItems = todoListDict.flatMap { TodoItemParser().parse(fromData: $0) }
+            
+            return TodoList(items: todoItems)
+            
+        }
     }
-}
-```
 
 代码中唯一的不足(呵呵，双关！)就是返回的值是一个有两层的可选值。`guard let`对其中的一层可选值进行了解包，所以对`todoListDict`进行赋值的时候，只需要再进行一层解包即可。
 
