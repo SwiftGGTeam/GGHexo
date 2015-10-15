@@ -43,8 +43,11 @@ permalink: alternatives-to-try-swiftlang
 
 新的写法是：
 
+```
+
 ~~`let result = tryit{try myFailableCoinToss()}`~~ *感谢bigonotetaker指出错误*
 `let result = tryit(myFailableCoinToss)`
+```
 
 读者glessard提供给我一个很棒的替代方式，建议我给`Result`添加一个初始化方法而不是用 tryit：
 
@@ -68,13 +71,15 @@ permalink: alternatives-to-try-swiftlang
 
 你需要用 `if-let` 和 `guard` 之外的语句来拆包你的返回值，可以用 `switch`：
 
+```
+
 ~~let result = tryit{try myFailableCoinToss()}~~
 	let result = tryit(myFailableCoinToss)
 	switch result {
 	case .Value(let value): print("Success:", value)
 	case .Error(let error): print("Failure:", error)
 	}
-
+```
 或者直接用模式匹配：
 
 	if case .Value(let value) = result {
@@ -138,8 +143,10 @@ permalink: alternatives-to-try-swiftlang
 
 这种替代 `try?` 的方法不仅拥有了 `if-let` 和 `guard` 的语句特性，还能返回错误。你可以用之前`Result`调用的方式使用它：
 
+```
 ~~`let result = tryit{try myFailableCoinToss()}`~~
 `let result = tryit(myFailableCoinToss)`
+```
 
 你仍然不能基于错误类型和错误细节来制定错误处理策略，但是这种实现方式也不像 `try?` 那样把错误信息完全丢弃掉了。
 
