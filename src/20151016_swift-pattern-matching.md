@@ -4,7 +4,7 @@ tags: [Ole Begemann]
 ctegories: [Swift 进阶]
 permalink: swift-pattern-matching
 
-------
+---
 原文链接=http://oleb.net/blog/2015/09/swift-pattern-matching/
 作者=Ole Begemann
 原文日期=2015-09-18
