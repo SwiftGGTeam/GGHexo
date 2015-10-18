@@ -1,11 +1,14 @@
 如何为您的扩展取个好听的名字
 
-http://natashatherobot.com/swift-how-to-name-your-extensions/
-> 原文日期：2015/07/26
+> 作者：Natasha，[原文链接](http://natashatherobot.com/swift-how-to-name-your-extensions/)，原文日期：2015/07/26
+> 译者：[SergioChan](https://github.com/SergioChan)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[numbbbbb](https://github.com/numbbbbb)
+  
 
-> 译者：[SergioChan](https://github.com/SergioChan)
-> 校对：[numbbbbb](https://github.com/numbbbbb)
-> 定稿：[numbbbbb](https://github.com/numbbbbb)
+
+
+
+
+
 
 发布于 2015 年 7 月 26 日
 
@@ -15,54 +18,52 @@ http://natashatherobot.com/swift-how-to-name-your-extensions/
 
 
 
-```swift
-
-import UIKit
-
-class ViewController: UIViewController {
-
-    @IBOutlet weak var tableView: UITableView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    import UIKit
+    
+    class ViewController: UIViewController {
+    
+        @IBOutlet weak var tableView: UITableView!
         
-        styleNavigationBar()
-    }
-}
-
-private typealias TableViewDataSource = ViewController
-extension TableViewDataSource: UITableViewDataSource {
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            styleNavigationBar()
+        }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("identifier", forIndexPath: indexPath)
-        return cell
+    private typealias TableViewDataSource = ViewController
+    extension TableViewDataSource: UITableViewDataSource {
+        
+        func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return 5
+        }
+        
+        func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCellWithIdentifier("identifier", forIndexPath: indexPath)
+            return cell
+        }
     }
-}
-
-private typealias TableViewDelegate = ViewController
-extension TableViewDelegate: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 64.0
+    private typealias TableViewDelegate = ViewController
+    extension TableViewDelegate: UITableViewDelegate {
+        
+        func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+            return 64.0
+        }
     }
-}
-
-private typealias ViewStylingHelpers = ViewController
-private extension ViewStylingHelpers {
     
-    func styleNavigationBar() {
-        // style navigation bar here
+    private typealias ViewStylingHelpers = ViewController
+    private extension ViewStylingHelpers {
+        
+        func styleNavigationBar() {
+            // style navigation bar here
+        }
     }
-}
-```
 
 看完之后我的第一个问题是 - 在 Xcode 的导航栏里如何显示？不用担心，它们都会显示出来！
 
 ![image](http://swift.gg/img/articles/swift-how-to-name-your-extensions/Screen_Shot_2015-07-26_at_4_43_29_AM.png)
 
 你觉得这种方式如何？我需要你们帮我做出选择——使用`typealias`还是`MARK:`。
-

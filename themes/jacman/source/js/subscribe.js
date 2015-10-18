@@ -11,8 +11,15 @@ $(function() {
       return re.test(val)
     }
     $(document).scroll(function() {
+      checker = localStorage.getItem("swiftweeklysubscribed")
+      if (checker) {
+        return
+      }
+      var body = document.body
+      var html = document.documentElement
+      var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
       var y = $(this).scrollTop()
-      if (y > 400) {
+      if (y > height * 0.618 ) {
         $('#swiftweekly').fadeIn()
       }
     })

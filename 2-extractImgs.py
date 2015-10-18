@@ -6,9 +6,12 @@ from os import walk, path, mkdir
 import re
 from io import open
 from itertools import imap
+import shutil
+import http
+import time
 
 
-basepath = u"./source/_posts"
+basepath = u"./src"
 files = walk(basepath).next()[2]
 files = filter(lambda x: not x.startswith("."), files)
 
@@ -60,6 +63,7 @@ def downloadimgs(option):
 
     for img in imgs:
         (imgoriname, imgurl, imgname) = re.findall(ur'!\[(.*)\]\((.*/(.*))\)', img)[0]
+        imgname = imgname.replace("?", "") + str(time.time())
 
         if not path.isdir(path.join(targetpath, fileurl)):
             mkdir(path.join(targetpath, fileurl)) 
@@ -67,7 +71,9 @@ def downloadimgs(option):
             try:
                 urllib.urlretrieve(imgurl, path.join(targetpath, fileurl, imgname)) 
             except:
-                raise ValueError(u"Can't download %s-->%s, please check the url!" % (fileurl, imgurl))
+                print "Can't download %s-->%s, please check the url!" % (fileurl, imgurl)
+                downloadimgs.append(u"![%s](%s)" % (imgoriname, imgurl))
+                continue
         downloadimgs.append(u"![%s](%s)" % (imgoriname, targeturl + u"/" + fileurl + u"/" + imgname))
 
     return (filepath, fileurl, content, imgs, downloadimgs)
