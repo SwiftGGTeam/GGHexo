@@ -15,6 +15,8 @@ permalink: thinking-in-swift-3
 
 继续说咱的"Swift编程思想系列"，今天我们将会做一些小小的改动，使用 `struct（结构体）` 来使代码得到进一步的简化。
 
+<!--more-->
+
 ### 前面的内容
 在[这个系列之前的一篇文章里](http://alisoftware.github.io/swift/2015/09/20/thinking-in-swift-2/)我们学到了对数组(arrays)使用 `map` 和 `flatMap`，消除了中间变量(intermediate variables)形式的状态性(statefulness)，并使用了一些函数式编程<sup>1<sup>。
 
