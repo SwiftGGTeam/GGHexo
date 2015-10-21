@@ -13,6 +13,11 @@ permalink: thinking-in-swift-3
 定稿=小锅
 发布时间=2015-10-20T09:00:00
 
+系列文章地址：
+
+* [Swift 编程思想，第一部分：拯救小马](http://swift.gg/2015/09/29/thinking-in-swift-1/)
+* [Swift 编程思想，第二部分：数组的 Map 方法](http://swift.gg/2015/10/09/thinking-in-swift-2/)
+
 继续说咱的"Swift编程思想系列"，今天我们将会做一些小小的改动，使用 `struct（结构体）` 来使代码得到进一步的简化。
 
 <!--more-->
