@@ -23,48 +23,48 @@ iOS 9 介绍了 Collection View 单元格的重新排序新特性。该特性默
 
 打开 Xcode 并创建一个**Single View Application** ；Product Name 为 **IOS9ReorderingCollectionViewTutorial** ；紧接着在 Organization Name 和 Organization Identidier 两个输入框中填写你惯用的信息；开发语言选 **Swift** 同时确保设备为 **iPhone** 。
 
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/55f92da8e4b0de8da1ae0379/1442393513684/?format=1500w)
+![](/img/articles/reordering-collection-view-cells-tutorial/format=1500w1445389581.348031)
 
 选中 Main.StoryBoard 文件，删除已有的视图控制器；从对象库中（译者注：Object Library ，快捷键 control+option+command+3 ）拖拽一个 CollectionView Controller 到 Storyboard 中；选中拖入的视图控制器，在 Xcode 上方菜单栏依次选择`Editor -> Embed in -> Navagation Controller`插入一个 Navigation Controller ；确保选中新插入的导航控制器后，打开属性设置面板（译者注：Attribute Inspector ,快捷键 option+command+4 ），勾选 View Controller 部分中的`is Initial View Controller`复选框。
 
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/55f934ffe4b00ec16bd68a6a/1442395391987/?format=750w)
+![](/img/articles/reordering-collection-view-cells-tutorial/format=750w1445389582.5906994)
 
 
 双击 Collection View Controller 中的导航栏，将标题改为“Alphabet”。选中 Collection View 后打开尺寸设置面板中（译者：Size Inspector ，快捷键 option+command+5 ）。将 Collection View 部分中的宽高设置为 100 。
 
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/55f95101e4b04ad8ee1cd256/1442402561778/?format=750w)
+![](/img/articles/reordering-collection-view-cells-tutorial/format=750w1445389583.365586)
 
 选中 Collection View Controller 中的单元格，前往属性设置面板（译者注：Attributes inspector ，快捷键 option+command+4 ），将单元格的背景色设为绿色。
 
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/55f93e5ae4b06db7a90df4e2/1442397787097/?format=750w)
+![](/img/articles/reordering-collection-view-cells-tutorial/format=750w1445389583.9036288)
 
 前往属性设置面板，将 Collection Reusable View 部分中的 Identifier 设为“Cell”
 
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/55f96abde4b0653425070bc2/1442409151133/?format=750w)
+![](/img/articles/reordering-collection-view-cells-tutorial/format=750w1445389584.315881)
 
 从对象库中拖拽一个 Label 放置到单元格中。双击该 Label ，输入字母“A”。到目前为止，storyboard 内容如下:
 
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/55f951d8e4b02fa04907d59d/1442402777111/CellSize.png?format=2500w)
+![](/img/articles/reordering-collection-view-cells-tutorial/CellSize.pngformat=2500w1445389584.655853)
 
 既然我们已经将视图控制器从 Storyboard 中移除了，那么 ViewController.swift 文件一并删除了吧。添加一个新文件到项目中，选择 File -> New File -> iOS -> Source -> Cocoa Touch Class 点击 Next 跳转下一步，为这个类命名**AlphabetViewController** ，设为 UICollectionViewController 的子类。
 
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/55f95286e4b0b275dd9ac08c/1442402951860/?format=1500w)
+![](/img/articles/reordering-collection-view-cells-tutorial/format=1500w1445389586.0430875)
 
 接下来，为 Collection View Cell 创建一个类。添加一个新文件到项目中，选择 File -> New File -> iOS -> Source -> Cocoa Touch Class 点击 Next 跳转下一步，为这个类命名 **AlphabetCell** ，设为 UICollectionViewCell 的子类。
 
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/55f95411e4b0f293fc9a9bf2/1442403346633/?format=1500w)
+![](/img/articles/reordering-collection-view-cells-tutorial/format=1500w1445389586.6271925)
 
 这些新创建的类需要和 storyboard 中的对象关联起来。为此，请选中 Storyboard 中的 Collection View Controller ，切换到 Identity Inspector 面板（译者注：快捷键 option+command+3 ），更改自定义类为 AlphabetViewController 。
 
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/55f95505e4b091a208942c68/1442403590704/?format=750w)
+![](/img/articles/reordering-collection-view-cells-tutorial/format=750w1445389587.3706524)
 
 依葫芦画瓢，选中 Storyboard 中的 Collection View Cell 并转到 Identity Inspector 面板，更改自定义类为 AlphabetCell 。
 
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/55f95545e4b06db7a90e307a/1442403653655/?format=750w)
+![](/img/articles/reordering-collection-view-cells-tutorial/format=750w1445389587.6798098)
 
 点击 Assistant Editor 按钮（译者注：快捷键 option+command+enter ），确保 **AlphabetCell.swift** 文件呈现在右侧面板。选中单元 Cell 中的 Label ,按住 Ctrl 键拖线至 **AlphabetCell** 类中创建以下 Outlet 接口:
 
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/55f96b2fe4b09fd61949154b/1442409263872/?format=750w)
+![](/img/articles/reordering-collection-view-cells-tutorial/format=750w1445389588.152526)
 
 前往 **AlphabetViewController.swift** 文件，在 viewDidLoad 方法中，删除以下行:
 
@@ -140,7 +140,7 @@ override func collectionView(collectionView: UICollectionView, moveItemAtIndexPa
 
 构建并运行项目，长按某个单元格后拖动调整它的位置。
 
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/55f9de9de4b0fc783fa1c343/1442438814578/?format=1500w)
+![](/img/articles/reordering-collection-view-cells-tutorial/format=1500w1445389588.5267599)
 
 
 你可以从[github](https://github.com/ioscreator/ioscreator)上下载 IOS9ReorderingCollectionViewTutorial 的源代码。
