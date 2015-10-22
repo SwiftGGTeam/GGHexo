@@ -1,6 +1,6 @@
 title: "Swift编程思想第三部分：结构体和类"
 date: 2015-10-20 09:00:00
-tags: [Erica Sadun]
+tags: [Crunchy Development]
 categories: [Swift 进阶]
 permalink: thinking-in-swift-3
 
