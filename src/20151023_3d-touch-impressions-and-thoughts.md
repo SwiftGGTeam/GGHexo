@@ -4,7 +4,7 @@ tags: [Tomasz Szulc]
 categories: [3D Touch, Swift 入门]
 permalink: 3d-touch-impressions-and-thoughts
 
-------
+---
 原文链接=http://szulctomasz.com/3d-touch-impressions-and-thoughts
 作者=Tomasz Szulc
 原文日期=2015-09-26
