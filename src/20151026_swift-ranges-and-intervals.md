@@ -15,18 +15,17 @@ permalink: swift-ranges-and-intervals
 <!--此处开始正文-->
 
 
-其他这个系列的文章：
+本系列其它文章：
 
 (1)[自定义模式匹配](http://oleb.net/blog/2015/09/swift-pattern-matching/)
 
-(2)范围和区间(这篇就是)
+(2)范围和区间(即本篇)
 
 (3)[更多有关模式匹配的例子](http://oleb.net/blog/2015/09/more-pattern-matching-examples/)
 
-> 下载这篇文章需要的 [playground](http://oleb.net/media/swift-ranges-and-intervals.playground.zip) （Xcode7 运行环境）
+> 下载本篇文章所需要的 [playground](http://oleb.net/media/swift-ranges-and-intervals.playground.zip) （Xcode7 运行环境）
 
 <!--more-->
-
 
 在前一篇[有关模式匹配](http://oleb.net/blog/2015/09/swift-pattern-matching/)的文章中，我提及标准库中已经针对**范围和区间**使用`~=`模式匹配操作符进行了重载。
 
@@ -38,7 +37,7 @@ permalink: swift-ranges-and-intervals
 
 > 注意：一个范围就是一个索引集合。
 
-*Range*在标准库中被频繁使用，特别处在集合的上下文中。当我们查看`Range`定义时，范围和集合之间的紧密关系一目了然：
+*Range*在标准库中被频繁使用，特别是处在集合的上下文当中时。当我们查看`Range`定义时，范围和集合之间的紧密关系一目了然：
 
 ``` Swift
 struct Range<Element : ForwardIndexType> : CollectionType, Indexable, ... { 
