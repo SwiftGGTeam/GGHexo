@@ -9,7 +9,7 @@ permalink: Sequence-Conformance
 作者=bigonotetaker
 原文日期=2015/08/22
 译者=Prayer
-校对=shanksyang
+校对=shanks
 定稿=numbbbbb
 
 

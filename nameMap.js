@@ -17,7 +17,8 @@ let nameMap = {
   "ray16897188": "http://www.jianshu.com/users/97c49dfd1f9f/latest_articles",
   "BridgeQ": "http://wxgbridgeq.github.io/",
   "小袋子": "http://daizi.me",
-  "我偏笑": "http://blog.csdn.net/nsnirvana"
+  "我偏笑": "http://blog.csdn.net/nsnirvana",
+  "riven": "http://weibo.com/riven0951"
 }
 
 export default nameMap

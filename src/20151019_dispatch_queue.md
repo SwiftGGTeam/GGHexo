@@ -8,7 +8,7 @@ permalink: friday-qa-2015-09-04-lets-build-dispatch_queue
 原文链接=https://www.mikeash.com/pyblog/friday-qa-2015-09-04-lets-build-dispatch_queue.html
 作者=Mike Ash
 原文日期=2015-09-04
-译者=王亚珂
+译者=Yake
 校对=shanks
 定稿=小锅
 发布时间=2015-10-19T09:00:00
