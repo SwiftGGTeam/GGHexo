@@ -124,6 +124,7 @@ module.exports = function(ctx){
     // Don't use "Promise.map". It doesn't run in series.
     // MUST USE "Promise.each".
     return Promise.each(cats, function(cat, i){
+      cat = cat.trim()
       // Find the category by name
       var data = Category.findOne({
         name: cat,
