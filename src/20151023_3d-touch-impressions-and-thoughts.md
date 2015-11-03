@@ -1,7 +1,7 @@
 title: "3D Touch之我见"
 date: 2015-10-23 09:00:00
 tags: [Tomasz Szulc]
-categories: [3D Touch, Swift 入门]
+categories: [3D Touch,Swift 入门]
 permalink: 3d-touch-impressions-and-thoughts
 
 ---
