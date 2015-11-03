@@ -1,20 +1,18 @@
-title: "WatchConnectivity 介绍：告别加载等待"
-date: 2015-11-03 09:00:00
-tags: [Natasha The Robot]
-categories: [Swift 入门, WatchOS 2]
-permalink: watchconnectivity-introduction-say-goodbye-to-the-spinner
+WatchConnectivity 介绍：告别加载等待
 
----
-原文链接=http://natashatherobot.com/watchconnectivity-introduction-say-goodbye-to-the-spinner/
-作者=Natasha The Robot
-原文日期=2015-09-21
-译者=小袋子
-校对=numbbbbb
-定稿=numbbbbb
+> 作者：Natasha The Robot，[原文链接](http://natashatherobot.com/watchconnectivity-introduction-say-goodbye-to-the-spinner/)，原文日期：2015-09-21
+> 译者：[小袋子](http://daizi.me)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[numbbbbb](https://github.com/numbbbbb)
+  
+
+
+
+
+
+
 
 在 WatchOS 2 上最有价值的新特性就是`WatchConnectivity`，虽然用户可能看不到，但是这个特性能让你的 WatchOS 应用更加好用。
 
-<!--more-->
+
 
 `WatchConnectivity`是 WatchOS 2 框架中用于 Watch 应用和 iOS 设备传输数据的。`WatchConnectivity` 关键的部分是，它使你的应用程序在用户**查看之前**就拿到必要的数据。这意味着用户想要看你的应用时，他们希望马上看到想要的数据，而不是愚蠢的加载等待。
 
@@ -54,7 +52,7 @@ permalink: watchconnectivity-introduction-say-goodbye-to-the-spinner
 
 使用交互式消息能够实时地在你的 iOS 和 Watch 应用之间传输数据！一个绝佳的示例就是愤怒的小鸟应用的 Watch 版本和 iPhone 版本-用户点击 Watch，但是小鸟在手机上飞。按钮点击通过交互式消息被传输到手机上了。
 
-![这里写图片描述](/img/articles/watchconnectivity-introduction-say-goodbye-to-the-spinner/flappybirdwatch.gif1446514271.8482146)
+![这里写图片描述](http://swift.gg/img/articles/watchconnectivity-introduction-say-goodbye-to-the-spinner/flappybirdwatch.gif1446514267.121279)
 
 一个需要注意的地方是，交互式消息需要 iPhone 开启`"reachable"`状态。Apple 文档解释道：
 
@@ -64,6 +62,6 @@ permalink: watchconnectivity-introduction-say-goodbye-to-the-spinner
 
 我爱死[Kristina Thai’s WatchConnectivity post](http://www.kristinathai.com/watchos-2-how-to-communicate-between-devices-using-watch-connectivity/) 里面区别传输的图解了：
 
-![这里写图片描述](/img/articles/watchconnectivity-introduction-say-goodbye-to-the-spinner/Screen-Shot-2015-09-21-at-8.17.29-AM.png1446514277.5708654)
+![这里写图片描述](http://swift.gg/img/articles/watchconnectivity-introduction-say-goodbye-to-the-spinner/Screen-Shot-2015-09-21-at-8.17.29-AM.png1446514271.90717)
 
 同时，本文参考了 Curtis Herbert 的文章 [Getting Data to Your WatchOS 2 App](http://blog.curtisherbert.com/data-synchronization-with-watchos/) 中最后的 Watch OS 2 observations 部分。

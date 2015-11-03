@@ -66,7 +66,7 @@ try? 的替代实现
 
 你需要用 `if-let` 和 `guard` 之外的语句来拆包你的返回值，可以用 `switch`：
 
-~~let result = tryit{try myFailableCoinToss()}~~
+~~`let result = tryit{try myFailableCoinToss()}`~~
 	let result = tryit(myFailableCoinToss)
 	switch result {
 	case .Value(let value): print("Success:", value)
@@ -78,7 +78,7 @@ try? 的替代实现
 	if case .Value(let value) = result {
     	print("Success:", value)
 	} else if case .Error(let error) = result {
-   		print("Failure:", error)
+    	print("Failure:", error)
 	}
 
 你也可以添加一些退出作用域的代码来模仿 `guard`，这的确可行，但是代码太难看了。
@@ -108,7 +108,7 @@ try? 的替代实现
     	} catch {return Result.Error(error)}
 	}
 	
-	~~let result = tryit{try myFailableCoinToss()}~~
+~~`let result = tryit{try myFailableCoinToss()}`~~
 	let result = tryit(myFailableCoinToss)
 
 	// guard error

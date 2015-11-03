@@ -91,10 +91,9 @@ let deleted = {
   finalMan: {
     "numbbbbb": 8,
     "小锅": 3,
-    "shanks": 2,
+    "shanks": 3,
     "mmoaay": 1,
     "lfb_CD": 1,
-    "shanksyang": 1,
   }
 }
 
