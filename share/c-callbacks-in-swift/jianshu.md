@@ -1,18 +1,16 @@
-title: "在 Swift 2.0 当中使用 C 语言回调"
-date: 2015-11-11 09:00:00
-tags: [Ole Begemann]
-categories: [Swift 进阶]
-permalink: c-callbacks-in-swift
+在 Swift 2.0 当中使用 C 语言回调
 
----
-原文链接=http://oleb.net/blog/2015/06/c-callbacks-in-swift/
-作者=Ole Begemann  
-原文日期=2015-06-22
-译者=小锅
-校对=shanks
-定稿=shanks
+> 作者：Ole Begemann，[原文链接](http://oleb.net/blog/2015/06/c-callbacks-in-swift/)，原文日期：2015-06-22
+> 译者：[小锅](http://www.swiftyper.com/)；校对：[shanks](http://codebuild.me/)；定稿：[shanks](http://codebuild.me/)
+  
 
-<!--此处开始正文-->
+
+
+
+
+
+
+
 
 > 更新:
 
@@ -25,7 +23,7 @@ permalink: c-callbacks-in-swift
 几年前，我曾经写过一篇关于如何获取 `CGPath` 和 `UIBezierPath` 中元素的[文章][1]。可以通过调用 [CGPathApply][2] 函数，并给这个函数传入一个回调的函数指针来达到这个目的。 随后 `CGPathApply` 会对 path(CGPath 或 UIBezierPath) 中的每一个元素调用这个回调函数。  
 
 
-<!--more-->
+
 
 很不幸，我们无法在 Swift 1.x 中做到这件事，因为我们没办法将 Swift 函数桥接到 C 语言函数。我们需要使用 C 或者 Objective-C 写一个小小的包装层来对这个回调函数进行封装。
 
@@ -45,78 +43,75 @@ permalink: c-callbacks-in-swift
 
 一个关联了点(point)个数的 Swift 枚举，会是达到这个目的的理想类型。我们同时还要定义一个从 `CGPathElement` 转换的自定义构造器。
 
-```swift
-/// A Swiftified representation of a `CGPathElement`
-///
-/// Simpler and safer than `CGPathElement` because it doesn’t use a
-/// C array for the associated points.
-public enum PathElement {
-    case MoveToPoint(CGPoint)
-    case AddLineToPoint(CGPoint)
-    case AddQuadCurveToPoint(CGPoint, CGPoint)
-    case AddCurveToPoint(CGPoint, CGPoint, CGPoint)
-    case CloseSubpath
-
-    init(element: CGPathElement) {
-        switch element.type {
-        case .MoveToPoint:
-            self = .MoveToPoint(element.points[0])
-        case .AddLineToPoint:
-            self = .AddLineToPoint(element.points[0])
-        case .AddQuadCurveToPoint:
-            self = .AddQuadCurveToPoint(element.points[0], element.points[1])
-        case .AddCurveToPoint:
-            self = .AddCurveToPoint(element.points[0], element.points[1], element.points[2])
-        case .CloseSubpath:
-            self = .CloseSubpath
+    
+    /// A Swiftified representation of a `CGPathElement`
+    ///
+    /// Simpler and safer than `CGPathElement` because it doesn’t use a
+    /// C array for the associated points.
+    public enum PathElement {
+        case MoveToPoint(CGPoint)
+        case AddLineToPoint(CGPoint)
+        case AddQuadCurveToPoint(CGPoint, CGPoint)
+        case AddCurveToPoint(CGPoint, CGPoint, CGPoint)
+        case CloseSubpath
+    
+        init(element: CGPathElement) {
+            switch element.type {
+            case .MoveToPoint:
+                self = .MoveToPoint(element.points[0])
+            case .AddLineToPoint:
+                self = .AddLineToPoint(element.points[0])
+            case .AddQuadCurveToPoint:
+                self = .AddQuadCurveToPoint(element.points[0], element.points[1])
+            case .AddCurveToPoint:
+                self = .AddCurveToPoint(element.points[0], element.points[1], element.points[2])
+            case .CloseSubpath:
+                self = .CloseSubpath
+            }
         }
     }
-}
-```
 
 接下来，为我们的新数据类型定义一个格式化的输出，这将使我们调试时更加方便：
 
-```swift
-extension PathElement : CustomDebugStringConvertible {
-    public var debugDescription: String {
-        switch self {
-        case let .MoveToPoint(point):
-            return "\(point.x) \(point.y) moveto"
-        case let .AddLineToPoint(point):
-            return "\(point.x) \(point.y) lineto"
-        case let .AddQuadCurveToPoint(point1, point2):
-            return "\(point1.x) \(point1.y) \(point2.x) \(point2.y) quadcurveto"
-        case let .AddCurveToPoint(point1, point2, point3):
-            return "\(point1.x) \(point1.y) \(point2.x) \(point2.y) \(point3.x) \(point3.y) curveto"
-        case .CloseSubpath:
-            return "closepath"
+    
+    extension PathElement : CustomDebugStringConvertible {
+        public var debugDescription: String {
+            switch self {
+            case let .MoveToPoint(point):
+                return "\(point.x) \(point.y) moveto"
+            case let .AddLineToPoint(point):
+                return "\(point.x) \(point.y) lineto"
+            case let .AddQuadCurveToPoint(point1, point2):
+                return "\(point1.x) \(point1.y) \(point2.x) \(point2.y) quadcurveto"
+            case let .AddCurveToPoint(point1, point2, point3):
+                return "\(point1.x) \(point1.y) \(point2.x) \(point2.y) \(point3.x) \(point3.y) curveto"
+            case .CloseSubpath:
+                return "closepath"
+            }
         }
     }
-}
-```
 
 再接再厉，来将 `PathElement` 实现为可比较的(Equatable)（因为我们[始终应该这样做][6]）
 
-```swift
-extension PathElement : Equatable { }
-
-public func ==(lhs: PathElement, rhs: PathElement) -> Bool {
-    switch(lhs, rhs) {
-    case let (.MoveToPoint(l), .MoveToPoint(r)):
-        return l == r
-    case let (.AddLineToPoint(l), .AddLineToPoint(r)):
-        return l == r
-    case let (.AddQuadCurveToPoint(l1, l2), .AddQuadCurveToPoint(r1, r2)):
-        return l1 == r1 && l2 == r2
-    case let (.AddCurveToPoint(l1, l2, l3), .AddCurveToPoint(r1, r2, r3)):
-        return l1 == r1 && l2 == r2 && l3 == r3
-    case (.CloseSubpath, .CloseSubpath):
-        return true
-    case (_, _):
-        return false
+    
+    extension PathElement : Equatable { }
+    
+    public func ==(lhs: PathElement, rhs: PathElement) -> Bool {
+        switch(lhs, rhs) {
+        case let (.MoveToPoint(l), .MoveToPoint(r)):
+            return l == r
+        case let (.AddLineToPoint(l), .AddLineToPoint(r)):
+            return l == r
+        case let (.AddQuadCurveToPoint(l1, l2), .AddQuadCurveToPoint(r1, r2)):
+            return l1 == r1 && l2 == r2
+        case let (.AddCurveToPoint(l1, l2, l3), .AddCurveToPoint(r1, r2, r3)):
+            return l1 == r1 && l2 == r2 && l3 == r3
+        case (.CloseSubpath, .CloseSubpath):
+            return true
+        case (_, _):
+            return false
+        }
     }
-}
-```
 
 ### 枚举 Path 元素
 
@@ -128,21 +123,19 @@ public func ==(lhs: PathElement, rhs: PathElement) -> Bool {
 
 完整的实现看起来是这样子的：
 
-```
-extension UIBezierPath {
-    var elements: [PathElement] {
-        var pathElements = [PathElement]()
-        withUnsafeMutablePointer(&pathElements) { elementsPointer in
-            CGPathApply(CGPath, elementsPointer) { (userInfo, nextElementPointer) in
-                let nextElement = PathElement(element: nextElementPointer.memory)
-                let elementsPointer = UnsafeMutablePointer<[PathElement]>(userInfo)
-                elementsPointer.memory.append(nextElement)
+    extension UIBezierPath {
+        var elements: [PathElement] {
+            var pathElements = [PathElement]()
+            withUnsafeMutablePointer(&pathElements) { elementsPointer in
+                CGPathApply(CGPath, elementsPointer) { (userInfo, nextElementPointer) in
+                    let nextElement = PathElement(element: nextElementPointer.memory)
+                    let elementsPointer = UnsafeMutablePointer<[PathElement]>(userInfo)
+                    elementsPointer.memory.append(nextElement)
+                }
             }
+            return pathElements
         }
-        return pathElements
     }
-}
-```
 
 更新：在[苹果开发者论坛中的一个帖子][9]里，苹果员工 Quinn "The Eskimo!" 提出了一个稍微不同的方法：我们可以传递指向另一个闭包的指针给 `userInfo` 参数，而非我们想要操作的数组的指针。因为这个闭包没有被C调用约定所限制，因此它是可以捕获外部变量的。
 
@@ -152,84 +145,79 @@ extension UIBezierPath {
 
 现在，我们有了一个包含 path 元素的数组，很自然地，我们会想要将 UIBezierPath 转化成一个序列。这使得用户可以使用 `for-in` 循环来对 path 进行迭代，或者直接对它调用 `map` 或 `filter` 方法。
 
-```swift
-extension UIBezierPath : SequenceType {
-    public func generate() -> AnyGenerator<PathElement> {
-        return anyGenerator(elements.generate())
+    
+    extension UIBezierPath : SequenceType {
+        public func generate() -> AnyGenerator<PathElement> {
+            return anyGenerator(elements.generate())
+        }
     }
-}
-```
 
 最后，这是一个便于 UIBezierPath 调试的格式化输出的实现，这个实现参考了 OS X 上的 NSBezierPath 的输出格式。
 
-```swift
-extension UIBezierPath : CustomDebugStringConvertible {
-    public override var debugDescription: String {
-        let cgPath = self.CGPath;
-        let bounds = CGPathGetPathBoundingBox(cgPath);
-        let controlPointBounds = CGPathGetBoundingBox(cgPath);
-
-        let description = "\(self.dynamicType)\n"
-            + "    Bounds: \(bounds)\n"
-            + "    Control Point Bounds: \(controlPointBounds)"
-            + elements.reduce("", combine: { (acc, element) in
-                acc + "\n    \(String(reflecting: element))"
-            })
-        return description
+    
+    extension UIBezierPath : CustomDebugStringConvertible {
+        public override var debugDescription: String {
+            let cgPath = self.CGPath;
+            let bounds = CGPathGetPathBoundingBox(cgPath);
+            let controlPointBounds = CGPathGetBoundingBox(cgPath);
+    
+            let description = "\(self.dynamicType)\n"
+                + "    Bounds: \(bounds)\n"
+                + "    Control Point Bounds: \(controlPointBounds)"
+                + elements.reduce("", combine: { (acc, element) in
+                    acc + "\n    \(String(reflecting: element))"
+                })
+            return description
+        }
     }
-}
-```
 
 现在用一个示例 path 来进行一下试验：
 
-```swift
-let path = UIBezierPath()
-path.moveToPoint(CGPoint(x: 0, y: 0))
-path.addLineToPoint(CGPoint(x: 100, y: 0))
-path.addLineToPoint(CGPoint(x: 50, y: 100))
-path.closePath()
-path.moveToPoint(CGPoint(x: 0, y: 100))
-path.addQuadCurveToPoint(CGPoint(x: 100, y: 100),
-    controlPoint: CGPoint(x: 50, y: 200))
-path.closePath()
-path.moveToPoint(CGPoint(x: 100, y: 0))
-path.addCurveToPoint(CGPoint(x: 200, y: 0),
-    controlPoint1: CGPoint(x: 125, y: 100),
-    controlPoint2: CGPoint(x: 175, y: -100))
-path.closePath()
-```
+    
+    let path = UIBezierPath()
+    path.moveToPoint(CGPoint(x: 0, y: 0))
+    path.addLineToPoint(CGPoint(x: 100, y: 0))
+    path.addLineToPoint(CGPoint(x: 50, y: 100))
+    path.closePath()
+    path.moveToPoint(CGPoint(x: 0, y: 100))
+    path.addQuadCurveToPoint(CGPoint(x: 100, y: 100),
+        controlPoint: CGPoint(x: 50, y: 200))
+    path.closePath()
+    path.moveToPoint(CGPoint(x: 100, y: 0))
+    path.addCurveToPoint(CGPoint(x: 200, y: 0),
+        controlPoint1: CGPoint(x: 125, y: 100),
+        controlPoint2: CGPoint(x: 175, y: -100))
+    path.closePath()
 
-![The example path](/img/articles/c-callbacks-in-swift/uibezierpath-example.png1447203254.48282)
+![The example path](http://swift.gg/img/articles/c-callbacks-in-swift/uibezierpath-example.png1447203254.48282)
 
 也可以迭代 path 中的每一个元素，然后打印出每个元素的描述(description)字符串：
 
-```swift
-for element in path {
-    debugPrint(element)
-}
-
-/* Output:
-0.0 0.0 moveto
-100.0 0.0 lineto
-50.0 100.0 lineto
-closepath
-0.0 100.0 moveto
-50.0 200.0 100.0 100.0 quadcurveto
-closepath
-100.0 0.0 moveto
-125.0 100.0 175.0 -100.0 200.0 0.0 curveto
-closepath
-*/
-```
+    
+    for element in path {
+        debugPrint(element)
+    }
+    
+    /* Output:
+    0.0 0.0 moveto
+    100.0 0.0 lineto
+    50.0 100.0 lineto
+    closepath
+    0.0 100.0 moveto
+    50.0 200.0 100.0 100.0 quadcurveto
+    closepath
+    100.0 0.0 moveto
+    125.0 100.0 175.0 -100.0 200.0 0.0 curveto
+    closepath
+    */
 
 或者，我们也可以计算 path 中的闭合路径(closepath)的个数：
 
-```swift
-let closePathCount = path.filter {
-        element in element == PathElement.CloseSubpath
-    }.count
-// -> 3
-```
+    
+    let closePathCount = path.filter {
+            element in element == PathElement.CloseSubpath
+        }.count
+    // -> 3
 
 ## 总结
 
