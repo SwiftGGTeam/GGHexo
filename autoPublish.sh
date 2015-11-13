@@ -11,6 +11,7 @@ if [ $LOCAL = $REMOTE ]; then
   babel-node generatePosts.js
   file_num_now=$(ls /GGHexo/source/_posts -1 --file-type | grep -v '/$' | wc -l)
   if (( file_num_now > file_num )); then
+    git pull
     python 3-extractImgs.py
     babel-node generatePosts.js
     babel-node generateStat.js
@@ -19,12 +20,13 @@ if [ $LOCAL = $REMOTE ]; then
     hexo g
     hexo d
     cd source
+    git pull
     git add .
-    git commit -m 'AUTO: publish'
+    git commit -m 'AUTO: publish1'
     git push
     cd ..
     git add .
-    git commit -m 'AUTO: publish'
+    git commit -m 'AUTO: publish1'
     git push
   else
     git reset --hard HEAD
