@@ -34,6 +34,7 @@ Swift 是苹果官方新推出的编程语言，它可以为 iOS、 watchOS、 t
 
 将会有更多内容出现在“写给初学者的 Swift 教程”系列中。
 
+本教程源码下载: [来自小铁匠的代码](https://github.com/kevin833752/MyTranslationPlaygrounds/tree/master/Swift_Tutorial_For_Beginners_Part_1.playground)
 ## 下载 Xcode
 
 成为 Swift 大牛的第一步当然是下载 Xcode 啦。你可以直接从 App Store 里下载。Xcode 是苹果官方的 IDE 工具，它可以为 iOS、 watchOS、 tvOS 和 Mac OS 这些平台开发应用。
