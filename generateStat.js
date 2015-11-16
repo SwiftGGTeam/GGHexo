@@ -163,9 +163,9 @@ let finalStat = originInfo
 })
 .then(contentMap => Array.from(contentMap).sort((a, b) => b[1] - a[1]))
 .then(contentArr => contentArr.map(
-  contentItem => `| [${contentItem[0]}](${nameMap[contentItem[0]]}) | ${contentItem[1]} |`
+  contentItem => contentItem[0] && `| [${contentItem[0]}](${nameMap[contentItem[0]]}) | ${contentItem[1]} |`
 ))
-.then(mdPartials => finalHeader + mdPartials.join("\n"))
+.then(mdPartials => finalHeader + mdPartials.filter(part => part.trim()).join("\n"))
 
 // generate audit stat, return markdown table partial, contain auditor name and article count
 let auditStat = originInfo
@@ -191,9 +191,9 @@ let auditStat = originInfo
 })
 .then(contentMap => Array.from(contentMap).sort((a, b) => b[1] - a[1]))
 .then(contentArr => contentArr.map(
-  contentItem => `| [${contentItem[0]}](${nameMap[contentItem[0]]}) | ${contentItem[1]} |`
+  contentItem => contentItem[0] && `| [${contentItem[0]}](${nameMap[contentItem[0]]}) | ${contentItem[1]} |`
 ))
-.then(mdPartials => auditHeader + mdPartials.join("\n"))
+.then(mdPartials => auditHeader + mdPartials.filter(part => part.trim()).join("\n"))
 
 // deal with file content, prepare for word count and translation stat
 let translationInfo = originInfo
@@ -224,17 +224,17 @@ let translationInfo = originInfo
 let wordsStat = translationInfo
 .then(contentMap => Array.from(contentMap).sort((a, b) => b[1][0] - a[1][0]))
 .then(contentArr => contentArr.map(
-  contentItem => `| [${contentItem[0]}](${nameMap[contentItem[0]]}) | ${contentItem[1][0]} |`
+  contentItem => contentItem[0] && `| [${contentItem[0]}](${nameMap[contentItem[0]]}) | ${contentItem[1][0]} |`
 ))
-.then(mdPartials => wordHeader + mdPartials.join("\n"))
+.then(mdPartials => wordHeader + mdPartials.filter(part => part.trim()).join("\n"))
 
 // generate translation stat, return markdown table partial, contain translator name and article count
 let articlesStat = translationInfo
 .then(contentMap => Array.from(contentMap).sort((a, b) => b[1][1] - a[1][1]))
 .then(contentArr => contentArr.map(
-  contentItem => `| [${contentItem[0]}](${nameMap[contentItem[0]]}) | ${contentItem[1][1]} |`
+  contentItem => contentItem[0] && `| [${contentItem[0]}](${nameMap[contentItem[0]]}) | ${contentItem[1][1]} |`
 ))
-.then(mdPartials => articleHeader + mdPartials.join("\n"))
+.then(mdPartials => articleHeader + mdPartials.filter(part => part.trim()).join("\n"))
 
 // combine all markdown partials and write to file
 let writeBack = Promise.all([wordsStat, articlesStat, auditStat, finalStat])
