@@ -129,6 +129,7 @@ let originInfo = new Promise(function (resolve, reject) {
   `
   result = result.splice(result.indexOf("---") + 3, 0, infoStr)
   // result += info.translators.split(",").map(name => `\n<center>![给译者打赏](/img/QRCode/${imgMap[name]})</center>`).join("\n")
+  result += "\n> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。"
   return {
     fileName: fileInfo.fileName,
     content: result
