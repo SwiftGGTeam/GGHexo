@@ -101,3 +101,4 @@ Test Case '-[speedTestTests.speedTestTests testSortaListComprehensionPerformance
 我见过最酷的列表解析的应用便是拼写检查。Airspeed Velocity 针对 [Peter Norvig 的  Python 版本的拼写检查](http://norvig.com/spell-correct.html)，[改写了一个 Swift 版本](http://airspeedvelocity.net/2015/05/02/spelling/)。
 
 在 Swift 中使用类列表解析的操作的主要优点就是简洁性。 [Paul Graham 写了一大篇关于在编程语言中简洁是多么重要的文章。](http://www.paulgraham.com/power.html) 因为每个程序员每天只能写一定行数的代码，如果你以同样数量的代码行数完成更多功能，那你每天便可以完成更多的工作任务。这种力量也会让你重新思考编写什么样的程序是可能的。在一些更繁琐的语言中，这个拼写检查的例子可能就是一个巨大的项目。我喜欢像拼写检查这种充满技术复杂性和神秘感的事物，并且在 Swift 中可以只用几行代码便能解决。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

@@ -107,3 +107,5 @@ Swift 2.0: 理解 flatMap
 他认为`flatMap`是在处理一个容器而不是数组，这样可以更好地理解它。
 
 我只是掌握了`flatMap`的冰山一角，但我觉得这是个不错的开始。祝大家学习 Swift 2.0 快乐！
+
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

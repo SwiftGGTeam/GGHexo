@@ -154,3 +154,4 @@ try? 的替代实现
 在当前的状态下，如果要用 `try` （而且又需要进行错误处理的话），你就必须得用 `do-catch` 或者像`Result`枚举之类的变通方法。
 
 非常感谢[Mike Ash](http://mikeash.com/)的帮忙！
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

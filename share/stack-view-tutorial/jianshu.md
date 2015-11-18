@@ -54,3 +54,4 @@
 ![](http://swift.gg/img/articles/stack-view-tutorial/format=1500w1444269944.038442)
 
 你可以在 [Github](https://github.com/ioscreator/ioscreator) 下载 **IO9StackViewTutorial** 工程的源代码。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

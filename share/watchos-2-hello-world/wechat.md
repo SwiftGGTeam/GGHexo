@@ -37,3 +37,5 @@ WatchOS 2: Hello, World
 ![](http://swift.gg/img/articles/watchos-2-hello-world/Menubar_and_ItsAWatchWorld_xcodeproj_and_MyPlayground_6_36_06_PM_playground.png1444874964.5578082)
 
 开心地编程吧！！
+
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

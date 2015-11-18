@@ -299,3 +299,4 @@
     for book in library {
         print(book.title)
     }
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

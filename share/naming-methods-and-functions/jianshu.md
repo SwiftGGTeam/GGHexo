@@ -43,3 +43,4 @@ Apple 支持使用 and 的一个例子是在一个方法中描述两种截然不
 **使用美国标准短语**。由于这些词是由 Apple 提供的，请使用 initialize 而不是 initialise 以及 color 而不是 colour。
 
 **有疑惑，找 Apple**。使用相似的概念搜索 Apple API 接口并模仿其方法签名。尽量参考 Objective-C  命名，因为 Swift 中的 Apple API 并没有全部通过人工审查。自动转换过来的 API 可能并不是一个好例子。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

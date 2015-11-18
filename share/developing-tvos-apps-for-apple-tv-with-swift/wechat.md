@@ -178,3 +178,5 @@ TVML 文件是 UI 的实际内容。文档（document）必须用模板编写，
 如果你想在新文章发布时收到通知，请[订阅我的 newsletter](http://eepurl.com/WKj4n)。
 
 刚开始学习难免会遇到问题，如果你卡住了，别犹豫，在 twitter 上联系我[@jquave](http://twitter.com/jquave)。
+
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

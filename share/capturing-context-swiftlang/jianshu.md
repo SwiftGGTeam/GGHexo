@@ -82,3 +82,4 @@
 正如读者 `Kametrixom` 所指出的，你还可以扩展 `Contextualizable` 协议并创建你自己的错误。（他还写了一个[非常棒的错误类型](https://gist.github.com/Kametrixom/21da650bd7c7006a70e3)，可以选择是否添加上下文。）
 
 本文的所有代码可以在 [这个 Gist](https://gist.github.com/erica/b6f4884ed5d70c269107) 中找到（译者注：Gist 已经被墙，需要翻墙查看）。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

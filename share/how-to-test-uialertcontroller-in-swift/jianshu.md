@@ -155,3 +155,4 @@ Test Title", message: "Message
 就是这样，一种很简单的又不使用 swizzling 来测试 UIAlertViewController 的方式。
 
 文章中的代码已经放到 [github](https://github.com/dasdom/TestingAlertExperiment) 。 
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

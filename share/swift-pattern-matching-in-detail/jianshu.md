@@ -790,3 +790,4 @@ fib n = fib (n-1) + fib (n-2)
 <a name="4">4.比如：switch [1, 2, 4, 3] { 
 case [_, 2, _, 3]: 
 }</a>
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

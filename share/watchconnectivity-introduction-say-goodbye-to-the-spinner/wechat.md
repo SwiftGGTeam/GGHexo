@@ -67,3 +67,4 @@ WatchConnectivity 介绍：告别加载等待
 ![这里写图片描述](http://swift.gg/img/articles/watchconnectivity-introduction-say-goodbye-to-the-spinner/Screen-Shot-2015-09-21-at-8.17.29-AM.png1447732460.5724132)
 
 同时，本文参考了 Curtis Herbert 的文章 [Getting Data to Your WatchOS 2 App](http://blog.curtisherbert.com/data-synchronization-with-watchos/) 中最后的 Watch OS 2 observations 部分。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

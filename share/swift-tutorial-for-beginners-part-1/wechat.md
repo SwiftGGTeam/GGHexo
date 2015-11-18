@@ -361,3 +361,4 @@ for 循环很好用，它可以对一个集合里面的每个元素执行一系�
 * [Swift 中的可选类型](http://www.thomashanning.com/optionals-in-swift/)
 
 在本系列的后续部分，我们会讨论更多关于 Swift 的新特性。请继续关注!
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

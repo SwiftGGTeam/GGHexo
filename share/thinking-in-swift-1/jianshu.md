@@ -189,3 +189,4 @@ Swift 是为了更高的安全性而设计。不要把所有东西都强制拆�
 ---
 1. 注意这个`try?`默默的将`error`丢弃了：用它的时候你不会知道*为什么*代码出错的原因。所以通常来说如果可能的话用`do { try ... } catch { }`替换掉`try?`会更好。但是在我们的例子中，因为我们希望在 JSON 因某种原因序列化失败时返回一个空数组，这里用`try?`是 OK 的。[↩](http://alisoftware.github.io/swift/2015/09/06/thinking-in-swift-1/#fnref1)
 2. 如你所见，我在代码的最后保留了一个`as!`(`items.copy() as! NSArray`)。有时~~杀死小马~~强制转型是 OK 的，如果你真的，真的知道返回的类型不是其他任何东西，就像这里的`mutableArray.copy()`。可是这种例外十分罕见，只有在你一开始的时候就认真思考过这个用例的情况下才可以接受（当心，如果那匹小马🐴死了，你将会受到良心的谴责）。[↩](http://alisoftware.github.io/swift/2015/09/06/thinking-in-swift-1/#fnref2)
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

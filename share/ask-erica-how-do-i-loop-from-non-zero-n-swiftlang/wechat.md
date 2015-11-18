@@ -87,3 +87,4 @@ Swift 2.0 提供了一种像 C 语言那样的循环，代码如下：
 另外也有很多方式可以遍历数组，包括在需要的时候才去获取数组切片的值(使用`lazy`进行延迟加载)，但是以上提到的方法已经基本够用了。
 
 感谢 [Mike Ash](http://mikeash.com/)，并且一定要去看看 [Nate Cook 的解决方案](https://gist.github.com/natecook1000/b6be8929451bb6f35ad4)。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

@@ -45,3 +45,4 @@ Dave DeLong 建议添加：好代码会让读的人产生敬畏，并使读的�
 Paul Cantrell 建议添加：好代码会注意权衡。它会根据工程来权衡,而不是按照绝对的教条。它也不会让工具或技术成为组内状态标记(in-group status markers)。
 
 Rainer Brockerhoff 建议添加：好代码可以被很轻松的重用（即使是在几年之后），也能只用几行代码来进行扩展或改编。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

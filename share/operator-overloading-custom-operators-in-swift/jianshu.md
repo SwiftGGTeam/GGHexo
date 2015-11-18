@@ -78,3 +78,4 @@ Swift 中的重载运算符和自定义运算符
     print(myCube.side, appendNewline: true)//swift2.0新特性 Xcode7下支持
 
 正如你所看到的，重载已存在的运算符以及自定义运算符在**Swift**是如此简单。不过重载已存在运算符时，请引起足够重视，防止一些意外情况发生。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

@@ -64,3 +64,5 @@ Swift 一个强有力的语言特性就是能够用多样的函数式风格去�
 再次强调，你不应该执着于在你的 Swift 代码中使用花哨的技巧（除非你只是为了试验、或者好玩）。我非常推荐深入学习函数式编程的思想，从而理解那些高级概念，并且更好地应用在你的代码中。
 
 推荐阅读 [Functional Programming in Swift](https://www.objc.io/books/fpinswift/) ！这里有[更多的资源](http://natashatherobot.com/reading-functional-programming/)去帮助你开始学习！
+
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

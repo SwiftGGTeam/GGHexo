@@ -232,3 +232,4 @@ Swift 2 中自动地将 C 语言函数指针桥接到为闭包。这使得对大
 [7]: https://developer.apple.com/library/prerelease/ios/documentation/Swift/Reference/Swift_UnsafeMutablePointer_Structure/
 [8]: https://developer.apple.com/library/prerelease/ios/documentation/Swift/Reference/Swift_StandardLibrary_Functions/index.html#//apple_ref/swift/func/s:FSs24withUnsafeMutablePointeru0_rFTRq_FGVSs20UnsafeMutablePointerq__q0__q0_
 [9]: https://forums.developer.apple.com/message/15725#15725
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

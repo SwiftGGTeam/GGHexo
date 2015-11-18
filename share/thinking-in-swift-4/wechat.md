@@ -174,3 +174,5 @@ Swift 编程思想 Part 4：map all the things!
 2. 我会马上发布一个收尾文章，留一个关于*Monads*的口风，并把这个系列真正完结。别愁，之后还有很多关于 Swift 的文章会陆续发布。
 
 
+
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

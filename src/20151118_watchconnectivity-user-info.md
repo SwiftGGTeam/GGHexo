@@ -29,7 +29,7 @@ permalink: watchconnectivity-user-info
 
 另外，这个应用可以成为一个基于食品杂货店展示的 Apple Watch 应用 —— 你在手机上选择打算购买的食物 emoji ，然后跳转到应用上，这样你就好像在食品杂货店上浏览商品了！
 
-![](http://natashatherobot.com/wp-content/uploads/Screen-Shot-2015-10-21-at-5.16.42-AM.png)
+![](/img/articles/watchconnectivity-user-info/Screen-Shot-2015-10-21-at-5.16.42-AM.png1447813695.0476735)
 
 ## 免责声明
 

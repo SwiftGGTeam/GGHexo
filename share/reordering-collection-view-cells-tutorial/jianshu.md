@@ -137,3 +137,4 @@ iOS 9 介绍了 Collection View 单元格的重新排序新特性。该特性默
 
 
 你可以从[github](https://github.com/ioscreator/ioscreator)上下载 IOS9ReorderingCollectionViewTutorial 的源代码。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

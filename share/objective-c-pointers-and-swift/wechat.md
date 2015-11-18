@@ -154,3 +154,4 @@
 重点是：你不是把一个 `Int` *强转* 为 `UnsafeMutablePointer<Int>`，因为指针不是简单地一个 `Int` 值。所以，如果需要创建一个新的对象，你需要调用构造方法 `UnsafeMutablePointer<Int>(count: Int)`。
 
 在本文之后我们会继续深入研究函数指针的一些细节，然后学习如何利用这些特性的优势去更好地与 C 和 Objective-C 的 API 进行交互。一定要注册我们的 [Newsletter](http://jamesonquave.us6.list-manage1.com/subscribe?u=1d2576bf288fe2fd7fa71bd20&id=6c787ed58a) ，这样你才不会错过这些精彩的内容！
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

@@ -155,3 +155,5 @@ iOS 8 引进了一个很有用的新特性：通知动作（notification actions
 ![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-2/iOS-Simulator-Screen-Shot-Feb-6-2015-1.25.36-AM.png1444269939.847281)
 </div>
 我们讨论了所有的非地理上（注：上一集讲到的用户进入和离开某个地理区域时，可以触发本地通知的功能）的 UILocalNotification 功能，现在已经有一个功能较全的待办项应用了，所以本系列教程到此结束。你可以在[这里](https://github.com/jasonbnewell/LocalNotificationTutorials/tree/part2_simplified)下载工程的源代码。
+
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

@@ -223,3 +223,4 @@ WatchConnectivity：学习 WCSession
 以上！现在你应该已经知道了`WCSession`的一些要领，所以我们将会学习更加好玩的部分 —— 真正使用它在 iOS 和 Watch 之间接收和发送收据！
 
 你可以在 GitHub 查看完整的[WatchSessionManager单例](https://gist.github.com/NatashaTheRobot/6bcbe79afd7e9572edf6)。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

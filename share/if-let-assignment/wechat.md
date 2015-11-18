@@ -80,3 +80,5 @@ twitter上有人提醒我: ruby中`||=`等价于`left = left || right`，与我�
     }
 
 
+
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
