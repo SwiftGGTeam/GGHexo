@@ -1,6 +1,6 @@
 let nameMap = {
   "shanks": "http://codebuild.me/",
-  "小锅": "http://www.swiftyper.com/",
+  "小锅": "http://www.jianshu.com/users/3b40e55ec6d5/latest_articles",
   "lfb_CD": "http://weibo.com/lfbWb",
   "mmoaay": "http://blog.csdn.net/mmoaay",
   "Yake": "http://blog.csdn.net/yake_099",

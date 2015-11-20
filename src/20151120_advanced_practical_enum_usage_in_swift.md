@@ -96,7 +96,7 @@ enum Constants: Double {
     case φ = 1.61803398874
     case λ = 1.30357
 }
-```   
+```
 
 对于`String`和`Int`类型来说，你甚至可以忽略为枚举中的`case`赋值，`Swift`编译器也能正常工作。
 
@@ -111,7 +111,7 @@ enum Planet: Int {
 enum CompassPoint: String {
     case North, South, East, West
 }
-```   
+```
 
 `Swift`枚举中支持以下四种关联值类型:
 
@@ -704,7 +704,7 @@ enum FileNode {
   case File(name: String)
   indirect case Folder(name: String, files: [FileNode])
 }
-``` 
+```
 
 此处的 `indrect` 关键字告诉编译器间接地处理这个枚举的 case。也可以对整个枚举类型使用这个关键字。[作为例子，我们来定义一个二叉树](http://airspeedvelocity.net/2015/07/22/a-persistent-tree-using-indirect-enums-in-swift/):
 
