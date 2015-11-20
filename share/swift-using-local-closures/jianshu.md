@@ -1,7 +1,7 @@
 Swift：使用本地闭包
 
 > 作者：Thomas Hanning，[原文链接](http://www.thomashanning.com/swift-using-local-closures/)，原文日期：2015-10-22
-> 译者：[小锅](http://www.swiftyper.com/)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 

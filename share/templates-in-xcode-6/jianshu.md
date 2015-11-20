@@ -1,7 +1,7 @@
 Xcode6 中模版的介绍
 
 > 作者：Thomas Hanning，[原文链接](http://www.thomashanning.com/templates-in-xcode-6/)，原文日期：2015-08-27
-> 译者：[CMB](https://github.com/chenmingbiao)；校对：[shanks](http://codebuild.me/)；定稿：[小锅](http://www.swiftyper.com/)
+> 译者：[CMB](https://github.com/chenmingbiao)；校对：[shanks](http://codebuild.me/)；定稿：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)
   
 
 

@@ -1,7 +1,7 @@
 Swift 中枚举高级用法及实践
 
 > 作者：Benedikt Terhechte，[原文链接](http://appventure.me/2015/10/17/advanced-practical-enum-examples/)，原文日期：2015-10-17
-> 译者：[小锅](http://www.swiftyper.com/)；校对：[shanks](http://codebuild.me/)；定稿：[shanks](http://codebuild.me/)
+> 译者：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)；校对：[shanks](http://codebuild.me/)；定稿：[shanks](http://codebuild.me/)
   
 
 
@@ -91,7 +91,7 @@ Swift 中枚举高级用法及实践
         case e = 2.71828
         case φ = 1.61803398874
         case λ = 1.30357
-    }   
+    }
 
 对于`String`和`Int`类型来说，你甚至可以忽略为枚举中的`case`赋值，`Swift`编译器也能正常工作。
 
@@ -105,7 +105,7 @@ Swift 中枚举高级用法及实践
     // 译者注: 这个是swift2.0新增语法
     enum CompassPoint: String {
         case North, South, East, West
-    }   
+    }
 
 `Swift`枚举中支持以下四种关联值类型:
 
@@ -249,7 +249,7 @@ Swift 中枚举高级用法及实践
     }
 倘若你添加了，那么，每当创建枚举用例时，你都需要将这些标签标示出来。
 
-#### (元组参数)Tuple as Arguments
+#### 元组参数(Tuple as Arguments)
 
 更重要的是,`Swift`内部相关信息其实是一个元组,所以你可以像下面这样做:
 
@@ -663,7 +663,7 @@ Swift 中枚举高级用法及实践
     enum FileNode {
       case File(name: String)
       indirect case Folder(name: String, files: [FileNode])
-    } 
+    }
 
 此处的 `indrect` 关键字告诉编译器间接地处理这个枚举的 case。也可以对整个枚举类型使用这个关键字。[作为例子，我们来定义一个二叉树](http://airspeedvelocity.net/2015/07/22/a-persistent-tree-using-indirect-enums-in-swift/):
 

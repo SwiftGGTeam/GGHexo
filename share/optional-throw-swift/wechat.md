@@ -1,7 +1,7 @@
 在 Swift 2 beta 6中使用 try? 抛出可选异常
 
 > 作者：Benedikt Terhechte，[原文链接](http://appventure.me/2015/08/25/optional-throw-swift/)，原文日期：2015/08/25
-> 译者：[lfb_CD](http://weibo.com/lfbWb)；校对：[小锅](http://www.swiftyper.com/)；定稿：[shanks](http://codebuild.me/)
+> 译者：[lfb_CD](http://weibo.com/lfbWb)；校对：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)；定稿：[shanks](http://codebuild.me/)
   
 
 

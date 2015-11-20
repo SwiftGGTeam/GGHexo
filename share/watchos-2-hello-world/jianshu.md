@@ -1,7 +1,7 @@
 WatchOS 2: Hello, World
 
 > 作者：Natasha The Robot，[原文链接](http://natashatherobot.com/watchos-2-hello-world/)，原文日期：2015-09-21
-> 译者：[小袋子](http://daizi.me)；校对：[小锅](http://www.swiftyper.com/)；定稿：[numbbbbb](https://github.com/numbbbbb)
+> 译者：[小袋子](http://daizi.me)；校对：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)；定稿：[numbbbbb](https://github.com/numbbbbb)
   
 
 
