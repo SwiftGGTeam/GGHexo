@@ -862,15 +862,11 @@ Erica Sadun 写过一篇很流弊的[关于枚举底层的博客](http://ericasa
 
 在我们准备继续探索枚举在项目中的不同用例之前，先看一下在 Swift 标准库当中是如何使用枚举可能会更诱人，所以现在让我们先来看看。
 
-[Bit](https://developer.apple.com/library/watchos/documentation/Swift/Reference/Swift_Bit_Enumeration/index.html#//apple_ref/swift/enum/s:OSs3Bit) 这个枚举有两个值，**One** 和 **Zero**。它被作为 `CollectionOfOne<T>` 中的 `Index` 类型。
-
-[FloatingPointClassification](https://developer.apple.com/library/watchos/documentation/Swift/Reference/Swift_FloatingPointClassification_Enumeration/index.html#//apple_ref/swift/enumelt/FloatingPointClassification/s:FOSs27FloatingPointClassification12SignalingNaNFMS_S_) 这个枚举定义了一系列 IEEE 754 可能的类别，比如 `NegativeInfinity`, `PositiveZero` 或 `SignalingNaN`。
-
-[Mirror.AncestorRepresentation](https://developer.apple.com/library/watchos/documentation/Swift/Reference/Swift_Mirror-AncestorRepresentation_Enumeration/index.html#//apple_ref/swift/enum/s:OVSs6Mirror22AncestorRepresentation) 和 [Mirror.DisplayStyle](https://developer.apple.com/library/watchos/documentation/Swift/Reference/Swift_Mirror-DisplayStyle_Enumeration/index.html#//apple_ref/swift/enum/s:OVSs6Mirror12DisplayStyle) 这两个枚举被用在 Swift 反射 API 的上下文当中。
-
-[Optional](https://developer.apple.com/library/watchos/documentation/Swift/Reference/Swift_Optional_Enumeration/index.html#//apple_ref/swift/enum/s:Sq) 这个就不用多说了
-
-[Process](https://developer.apple.com/library/watchos/documentation/Swift/Reference/Swift_Process_Enumeration/index.html#//apple_ref/swift/enum/s:OSs7Process) 这个枚举包含了当前进程的命令行参数(`Process.argc`, `Process.arguments`)。这是一个相当有趣的枚举类型，因为在 Swift 1.0 当中，它是被作为一个结构体来实现的。
+- [Bit](https://developer.apple.com/library/watchos/documentation/Swift/Reference/Swift_Bit_Enumeration/index.html#//apple_ref/swift/enum/s:OSs3Bit) 这个枚举有两个值，**One** 和 **Zero**。它被作为 `CollectionOfOne<T>` 中的 `Index` 类型。
+- [FloatingPointClassification](https://developer.apple.com/library/watchos/documentation/Swift/Reference/Swift_FloatingPointClassification_Enumeration/index.html#//apple_ref/swift/enumelt/FloatingPointClassification/s:FOSs27FloatingPointClassification12SignalingNaNFMS_S_) 这个枚举定义了一系列 IEEE 754 可能的类别，比如 `NegativeInfinity`, `PositiveZero` 或 `SignalingNaN`。
+- [Mirror.AncestorRepresentation](https://developer.apple.com/library/watchos/documentation/Swift/Reference/Swift_Mirror-AncestorRepresentation_Enumeration/index.html#//apple_ref/swift/enum/s:OVSs6Mirror22AncestorRepresentation) 和 [Mirror.DisplayStyle](https://developer.apple.com/library/watchos/documentation/Swift/Reference/Swift_Mirror-DisplayStyle_Enumeration/index.html#//apple_ref/swift/enum/s:OVSs6Mirror12DisplayStyle) 这两个枚举被用在 Swift 反射 API 的上下文当中。
+- [Optional](https://developer.apple.com/library/watchos/documentation/Swift/Reference/Swift_Optional_Enumeration/index.html#//apple_ref/swift/enum/s:Sq) 这个就不用多说了
+- [Process](https://developer.apple.com/library/watchos/documentation/Swift/Reference/Swift_Process_Enumeration/index.html#//apple_ref/swift/enum/s:OSs7Process) 这个枚举包含了当前进程的命令行参数(`Process.argc`, `Process.arguments`)。这是一个相当有趣的枚举类型，因为在 Swift 1.0 当中，它是被作为一个结构体来实现的。
 
 ## 实践用例
 
