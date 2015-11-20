@@ -8,7 +8,7 @@ permalink: advanced-practical-enum-examples
 原文链接=http://appventure.me/2015/10/17/advanced-practical-enum-examples/
 作者=Benedikt Terhechte
 原文日期=2015-10-17
-译者=小锅
+译者=小锅,pmst
 校对=shanks
 定稿=shanks
 
