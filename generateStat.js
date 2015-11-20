@@ -79,7 +79,8 @@ let deleted = {
     "小铁匠Linus": 1,
     "ray16897188": 1,
     "CMB": 1,
-    "天才175": 1
+    "天才175": 1,
+    "pmst": 1
   },
   auditor: {
     "numbbbbb": 8,
