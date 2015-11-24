@@ -14,6 +14,7 @@ if [ $LOCAL = $REMOTE ]; then
     git pull
     python 3-extractImgs.py
     babel-node generatePosts.js
+    cp -a treasure/. source/_posts
     babel-node generateStat.js
     babel-node generateShareMD.js
     hexo clean
@@ -39,6 +40,7 @@ elif [ $LOCAL = $BASE ]; then
   cd ..
   git pull
   python 3-extractImgs.py
+  cp -a treasure/. source/_posts
   babel-node generatePosts.js
   babel-node generateStat.js
   babel-node generateShareMD.js
