@@ -1,4 +1,4 @@
-Swift 2.0: API 可用性检查介绍
+Swift 2.0: API 可用性检查介绍"
 
 > 作者：Thomas Hanning，[原文链接](http://www.thomashanning.com/api-availability-checking-in-swift-2-0/)，原文日期：2015-09-21
 > 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[shanks](http://codebuild.me/)；定稿：[shanks](http://codebuild.me/)

@@ -1,4 +1,4 @@
-使用泛型与函数式思想高效解析 JSON
+使用泛型与函数式思想高效解析 JSON"
 
 > 作者：Thought Bot，[原文链接](https://robots.thoughtbot.com/efficient-json-in-swift-with-functional-concepts-and-generics)，原文日期：2014/08/06
 > 译者：[shanks](http://codebuild.me/)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[numbbbbb](https://github.com/numbbbbb)

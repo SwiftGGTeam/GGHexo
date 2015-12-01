@@ -1,4 +1,4 @@
-iBeacons iOS 和 Swift 教程
+iBeacons iOS 和 Swift 教程"
 
 > 作者：Adrian Strahan，[原文链接](http://www.raywenderlich.com/101891/ibeacons-tutorial-ios-swift)，原文日期：2015/08/07
 > 译者：[SergioChan](https://github.com/SergioChan)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[shanks](http://codebuild.me/)

@@ -42,7 +42,7 @@ let originInfo = new Promise(function (resolve, reject) {
         content = content.toString()
         resolve({
           dirName: content.match(/permalink: (.*)/)[1].trim(),
-          fileName: content.match(/title: "(.*)"/)[1].trim(),
+          fileName: content.match(/title: "?(.*)"?/)[1].trim(),
           content: content
         })
       })

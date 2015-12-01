@@ -1,4 +1,4 @@
-Swift 中的结构体与 NSCoding
+Swift 中的结构体与 NSCoding"
 
 > 作者：Dominik Hauser，[原文链接](http://swiftandpainless.com/nscoding-and-swift-structs/)，原文日期：2015/08/19
 > 译者：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)；校对：[Yake](http://blog.csdn.net/yake_099)；定稿：[Yake](http://blog.csdn.net/yake_099)

@@ -1,4 +1,4 @@
-Swift 的类型体系
+Swift 的类型体系"
 
 > 作者：Ole Begemann，[原文链接](http://oleb.net/blog/2015/07/swift-type-system/)，原文日期：2015/07/21
 > 译者：[mmoaay](http://blog.csdn.net/mmoaay)；校对：[shanks](http://codebuild.me/)；定稿：[shanks](http://codebuild.me/)

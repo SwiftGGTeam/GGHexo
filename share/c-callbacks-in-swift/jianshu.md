@@ -1,4 +1,4 @@
-在 Swift 2.0 当中使用 C 语言回调
+在 Swift 2.0 当中使用 C 语言回调"
 
 > 作者：Ole Begemann，[原文链接](http://oleb.net/blog/2015/06/c-callbacks-in-swift/)，原文日期：2015-06-22
 > 译者：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)；校对：[shanks](http://codebuild.me/)；定稿：[shanks](http://codebuild.me/)

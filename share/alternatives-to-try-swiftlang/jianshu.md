@@ -1,4 +1,4 @@
-try? 的替代实现
+try? 的替代实现"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2015/09/03/alternatives-to-try-swiftlang/)，原文日期：2015-09-03
 > 译者：[我偏笑](http://blog.csdn.net/nsnirvana)；校对：[shanks](http://codebuild.me/)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)

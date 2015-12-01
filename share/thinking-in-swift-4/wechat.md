@@ -1,4 +1,4 @@
-Swift 编程思想 Part 4：map all the things!
+Swift 编程思想 Part 4：map all the things!"
 
 > 作者：Olivier Halligon，[原文链接](http://alisoftware.github.io/swift/2015/10/11/thinking-in-swift-4/)，原文日期：2015-10-11
 > 译者：[ray16897188](http://www.jianshu.com/users/97c49dfd1f9f/latest_articles)；校对：[Prayer](http://www.futantan.com)；定稿：[numbbbbb](https://github.com/numbbbbb)

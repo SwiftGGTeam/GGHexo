@@ -1,4 +1,4 @@
-从 OC 到 Swift
+从 OC 到 Swift"
 
 > 作者：Greg Heo，[原文链接](http://gregheo.com/blog/switching-your-brain-to-swift/)，原文日期：2015/08/17
 > 译者：[ray16897188](undefined)；校对：[shanks](http://codebuild.me/)；定稿：[numbbbbb](https://github.com/numbbbbb)

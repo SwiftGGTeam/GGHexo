@@ -1,4 +1,4 @@
-如何在 Swift 中使用字典树
+如何在 Swift 中使用字典树"
 
 > 作者：bigonotetaker，[原文链接](https://bigonotetaking.wordpress.com/2015/08/11/a-trie-in-swift/)，原文日期：2015/08/11
 > 译者：[小铁匠Linus](http://weibo.com/linusling)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[numbbbbb](https://github.com/numbbbbb)

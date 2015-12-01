@@ -1,4 +1,4 @@
-Swift 2 中的新特性
+Swift 2 中的新特性"
 
 > 作者：Greg Heo，[原文链接](http://www.raywenderlich.com/108522/whats-new-in-swift-2)，原文日期：2015/06/12
 > 译者：[小锅](http://www.swiftyper.com/)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[shanksyang](undefined)

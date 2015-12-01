@@ -1,4 +1,4 @@
-深入研究 Swift 中的 ErrorType
+深入研究 Swift 中的 ErrorType"
 
 
 > 作者：Marius Rackwitz，[原文链接](https://realm.io/news/testing-swift-error-type/)，原文日期：2015/08/02

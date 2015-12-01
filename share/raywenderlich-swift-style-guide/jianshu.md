@@ -1,4 +1,4 @@
-RayWenderlich 官方 Swift 风格指南
+RayWenderlich 官方 Swift 风格指南"
 
 > 作者：Ray Wenderlich，[原文链接](https://github.com/raywenderlich/swift-style-guide)，原文日期：2015/07/01
 > 译者：[shanks](http://codebuild.me/)；校对：[小锅](http://www.swiftyper.com/)；定稿：[小锅](http://www.swiftyper.com/)

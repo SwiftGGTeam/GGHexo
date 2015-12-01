@@ -1,4 +1,4 @@
-Swift：map 和 flatMap 基础入门
+Swift：map 和 flatMap 基础入门"
 
 > 作者：Thomas Hanning，[原文链接](http://www.thomashanning.com/swift-map-and-flatmap/)，原文日期：2015-11-16
 > 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)

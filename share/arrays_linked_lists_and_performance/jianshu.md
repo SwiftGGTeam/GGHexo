@@ -1,4 +1,4 @@
-Swift 中数组和链表的性能
+Swift 中数组和链表的性能"
 
 > 作者：airspeedvelocity，[原文链接](http://airspeedvelocity.net/2015/08/03/arrays-linked-lists-and-performance/)，原文日期：2015/08/03
 > 译者：[mmoaay](http://blog.csdn.net/mmoaay)；校对：[shanks](http://codebuild.me/)；定稿：[numbbbbb](https://github.com/numbbbbb)

@@ -1,4 +1,4 @@
-使用UISearchController自定义搜索栏
+使用UISearchController自定义搜索栏"
 
 > 作者：AppCoda，[原文链接](http://www.appcoda.com/custom-search-bar-tutorial/)，原文日期：2015/08/27
 > 译者：[saitjr](http://www.brighttj.com)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[shanks](http://codebuild.me/)

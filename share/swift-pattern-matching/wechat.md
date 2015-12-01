@@ -1,4 +1,4 @@
-Swift中的模式匹配
+Swift中的模式匹配"
 
 > 作者：Ole Begemann，[原文链接](http://oleb.net/blog/2015/09/swift-pattern-matching/)，原文日期：2015-09-18
 > 译者：[lfb-CD](undefined)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)

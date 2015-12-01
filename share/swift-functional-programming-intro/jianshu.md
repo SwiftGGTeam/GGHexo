@@ -1,4 +1,4 @@
-Swift 函数式编程实践
+Swift 函数式编程实践"
 
 > 作者：harlan kellaway，[原文链接](http://harlankellaway.com/blog/2015/08/10/swift-functional-programming-intro/)，原文日期：2015/08/10
 > 译者：[shanks](http://codebuild.me/)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[小锅](http://www.swiftyper.com/)

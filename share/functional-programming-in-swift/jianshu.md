@@ -1,4 +1,4 @@
-Swift 中的函数式编程
+Swift 中的函数式编程"
 
 > 作者：Natasha The Robot，[原文链接](http://natashatherobot.com/functional-programming-in-swift/)，原文日期：2015/11/13
 > 译者：[小袋子](http://daizi.me)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[numbbbbb](https://github.com/numbbbbb)

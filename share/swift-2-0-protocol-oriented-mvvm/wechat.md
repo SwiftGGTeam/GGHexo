@@ -1,4 +1,4 @@
-Swift 2.0 中的面向协议的MVVM
+Swift 2.0 中的面向协议的MVVM"
 
 > 作者：Natasha，[原文链接](http://natashatherobot.com/swift-2-0-protocol-oriented-mvvm/)，原文日期：2015/08/17
 > 译者：[小铁匠Linus](http://weibo.com/linusling)；校对：[Channe](undefined)；定稿：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)
