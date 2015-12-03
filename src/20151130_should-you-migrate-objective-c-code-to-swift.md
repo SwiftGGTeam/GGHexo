@@ -8,7 +8,7 @@ permalink: should-you-migrate-objective-c-code-to-swift
 原文链接=http://www.thomashanning.com/should-you-migrate-objective-c-code-to-swift/
 作者=Thomas Hanning
 原文日期=2015-11-23
-译者=王亚珂
+译者=Yake
 校对=千叶知风
 定稿=千叶知风
 
