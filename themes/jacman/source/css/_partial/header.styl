@@ -151,17 +151,23 @@ header nav
     opacity: .65;
   }
   #sw_slogan
+    display block
+    float left
+    line-height 40px
+    margin-left 10%
     letter-spacing 0.08em
     font-size 1em
     color #FBFBFB
   #content
-    display inline-block
+    display block
+    float left
     line-height 1.6rem
     height: 40px;
     font-size: 1rem;
     font-weight: 700;
     text-align: center;
     #sw_email
+      float left
       box-shadow inset 0 0 2px #B63F17;
       border none
       background-color: rgba(255, 255, 255, 0.9);
@@ -170,6 +176,7 @@ header nav
       padding: 12px 16px
       color #000
       font-size 12px
+      height 100%
       pcolor=#7D706D
       lh=0.8rem
       &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -192,6 +199,10 @@ header nav
       }
       width 66%
     .sw_sub
+      float: left
+      display: block
+      line-height: 40px
+      height: 100%
       box-shadow: none;
       background-color: #F36D40;
       color: #FBFCFB;
@@ -208,38 +219,30 @@ header nav
       background-color: #B63F17;
   @media phone
     padding 0.4em
-    height 60px
+    height 100px
     #sw_slogan
       margin-bottom 0.3em
-      font-size 0.6em
       width 100%
-      display block
+      margin-left 0px
     #content
-      width 90%
+      width 80%
+      margin-left 10%
     #sw_email
       font-size 12px
-    .sw_sub
-      padding: 5px 24px 8px 24px;
   @media mini
     height 40px
     padding 0.4em
     #sw_slogan
       font-size 1em
-      display inline-block
-      width 30%
+      width 40%
     #content
       width 40%
-    .sw_sub
-      padding: 5px 24px 8px 24px;
   @media tablet
     padding 0.5em
     #sw_slogan
-      display inline-block
       width 40%
     #content
       width 40%
-    .sw_sub
-      padding: 7px 24px 7px 24px;
     #sw_email
       lh=1rem
       &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
