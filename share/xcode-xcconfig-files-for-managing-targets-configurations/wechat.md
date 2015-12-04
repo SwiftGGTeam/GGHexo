@@ -30,7 +30,7 @@ Xcode:用于管理多个 target 配置的 XCConfig 文件
 
 核心思想是使用一些有层级的配置文件。第一层是用于存储最普通的数据，第二层用于区分 debug 和 release 模式，最后一层用于关联特殊 target 的设置。
 
-![](http://swift.gg/img/articles/xcode-xcconfig-files-for-managing-targets-configurations/diagram_1.png1448931619.7076147)
+![](http://szulctomasz.com/wp-content/uploads/2015/11/diagram_1.png)
 
 ### Common.xcconfig
 

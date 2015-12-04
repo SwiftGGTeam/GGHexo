@@ -1,7 +1,7 @@
 你应该把 Objective-C 的代码转为 Swift 吗？"
 
 > 作者：Thomas Hanning，[原文链接](http://www.thomashanning.com/should-you-migrate-objective-c-code-to-swift/)，原文日期：2015-11-23
-> 译者：[王亚珂](undefined)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[Yake](http://blog.csdn.net/yake_099)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 
