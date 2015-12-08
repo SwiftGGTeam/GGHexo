@@ -59,11 +59,11 @@ Swift 中的 weak 和 unowned"
 
 准备工作完毕，现在来测试下内存管理：首先我们释放掉（dismiss）`SecondViewController` 视图控制器，你会发现使用内存并未有所下降。这是为什么呢？按照期望应该是释放掉 `SecondViewController` 对象,内存被释放才对。让我们首先来了解下对象之间的关系。假设 `SecondViewController` 加载完毕，对象之间关系应该看起来这样：
 
-![](http://thomashanningcom.c.presscdn.com/wp-content/uploads/2015/11/retainc1.jpg)
+![](http://swift.gg/img/articles/swift-weak-and-unowned/retainc1.jpg1449449056.5054061)
 
 现在，释放掉 `SecondViewController`，看起来应该这样：
 
-![](http://thomashanningcom.c.presscdn.com/wp-content/uploads/2015/11/retain2c.jpg)
+![](http://swift.gg/img/articles/swift-weak-and-unowned/retain2c.jpg1449449057.561948)
 
 如图所示：`RootViewController` 不再对 `SecondViewController` 拥有强引用关系。但是 `SecondViewController` 和 `ModelObject` 对象之间始终保持相互强引用。所以它们不会被释放掉。
 
@@ -86,7 +86,7 @@ Swift 中的 weak 和 unowned"
 
 现在对象关系图应该看起来这样：
 
-![](http://thomashanningcom.c.presscdn.com/wp-content/uploads/2015/11/retainc3.jpg)
+![](http://swift.gg/img/articles/swift-weak-and-unowned/retainc3.jpg1449449058.1724997)
 
 由于 `SecondViewController` 和 `ModelObject` 对象之间仅存一个强引用关系，毫无疑问可以成功释放内存。
 
