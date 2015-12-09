@@ -228,7 +228,7 @@ taskListA.tasks.appendContentsOf([wish1, wish2, wish3])
 let taskListB = TaskList(value: ["MoviesList", NSDate(), [["The Martian", NSDate(), "", false], ["The Maze Runner", NSDate(), "", true]]])
 ```
 
-在上面的代码中，我们创建了一个电影清单，并设置了清单名称、创建时间和清单内容，清单内容包括多个 task。每个 task 使用数组的方式来创建，例如 `[“The Maze Runner”, NSDate(), “”, true]` 表示一个 task，内容分别对应了名称、创建时间、备注和是否已经完成。
+在上面的代码中，我们创建了一个电影清单，并设置了清单名称、创建时间和清单内容，清单内容包括多个 task。每个 task 使用数组的方式来创建，例如 `["The Maze Runner", NSDate(), "", true]` 表示一个 task，内容分别对应了名称、创建时间、备注和是否已经完成。
 
 ## 使用 Realm 持久化对象
 
@@ -491,7 +491,7 @@ let aPredicate = NSPredicate(format: "color = %@ AND name BEGINSWITH %@", "red",
 redCars = realm.objects(Car).filter(aPredicate)
 ```
 
-在上面的代码中，我们使用 `filter` 方法来过滤 `color` 为 red，并且 `name` 以 “BMW” 开头的对象。第一行代码使用 string 作为参数来进行过滤。另外，你也可以使用 NSPredicate 获得同样的效果。下面的表格总结了 filter 方法的大部分常用操作：
+在上面的代码中，我们使用 `filter` 方法来过滤 `color` 为 red，并且 `name` 以 "BMW" 开头的对象。第一行代码使用 string 作为参数来进行过滤。另外，你也可以使用 NSPredicate 获得同样的效果。下面的表格总结了 filter 方法的大部分常用操作：
 
 ![](http://www.appcoda.com/wp-content/uploads/2015/10/realm-database-info-1024x675.png)
 
