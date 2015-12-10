@@ -80,15 +80,18 @@ toc:
 
 #### Links
 links:
-  The Swift Programming Language 中文版: http://www.swiftguide.cn
   Code Build Me: http://codebuild.me
+  "//TODO:": http://www.saitjr.com
+  Perfect Freeze: http://cee.moe/
   小锅的swift之路: http://www.swiftyper.com
+  Prayer的博客: http://www.futantan.com/
   画渣程序猿mmoaay: http://blog.csdn.net/mmoaay
   小铁匠的swift之路: http://blogoflinus.sinaapp.com
-  Swift's Secret: http://www.jianshu.com/users/596f2ba91ce9/latest_articles
+  ppppppmst的简书博客: http://www.jianshu.com/users/596f2ba91ce9/latest_articles
   BridgeQ: http://wxgbridgeq.github.io/
   BearyChat: https://bearychat.com/
   PHP-Z论坛: http://bbs.php-z.com
+  官方文档: http://www.swiftguide.cn
 #### Comment
 duoshuo_shortname: swiftgg   ## e.g. wuchong   your duoshuo short name.
 disqus_shortname:     ## e.g. wuchong   your disqus short name.
