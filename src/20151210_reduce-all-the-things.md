@@ -9,7 +9,7 @@ permalink: reduce-all-the-things
 原文链接=http://appventure.me/2015/11/30/reduce-all-the-things/
 作者=Benedikt Terhechte
 原文日期=2015-11-30
-译者=PMST
+译者=pmst
 校对=Cee
 定稿=千叶知风
 发布时间=2015-12-10T09:00:00
