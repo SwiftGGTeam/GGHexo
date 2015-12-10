@@ -41,8 +41,8 @@ let persons: [[String: AnyObject]] = [["name": "Carl Saxon", "city": "New York, 
 
 ```swift
 func infoFromState(state state: String, persons: [[String: AnyObject]]) 
-     -> Float {
-	 // 先进行 flatMap 后进行 filter 筛选
+     -> Int {
+	   // 先进行 flatMap 后进行 filter 筛选
      // $0["city"] 是一个可选值，对于那些没有 city 属性的项返回 nil
      // componentsSeparatedByString 处理键值，例如 "New York, NY" 
      // 最后返回的 ["New York","NY"]，last 取到最后的 NY
@@ -50,7 +50,7 @@ func infoFromState(state state: String, persons: [[String: AnyObject]])
 	   .filter({$0 == state})
 	   .count
 }
-personsFromState(state: "CA", persons: persons)
+infoFromState(state: "CA", persons: persons)
 //#+RESULTS:
 //: 3
 ```
