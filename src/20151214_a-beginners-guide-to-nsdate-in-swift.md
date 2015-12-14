@@ -263,7 +263,7 @@ newDate = calendar.dateFromComponents(components)
 
 前面的部分我们看过一个在把某特定格式的字符串转换成一个日期对象时使用了 timezone 的例子。如果你足够好奇想看看对一个日期对象设置不同 timezone 的结果，我们就将上面的代码稍稍扩展一下，看看 timezone 的多种取值：
 
-![](http://upload-images.jianshu.io/upload_images/131207-24725be693f5c46d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://www.appcoda.com/wp-content/uploads/2015/09/t44_12_timezones.png)
 
 ```swift
 components.timeZone = NSTimeZone(abbreviation: "GMT")
@@ -416,7 +416,7 @@ calculatedDate = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Da
 
 下面是每次叠加之后 playground 显示的结果：
 
-![](http://upload-images.jianshu.io/upload_images/131207-93f4abf76537ef05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://www.appcoda.com/wp-content/uploads/2015/09/t44_19_add_calendar_units.png5)
 
 上面的方式不错，但是仅限于你要加的只有 1~2 个 calendar units，否则你得连续多次调用上面那个方法才行。
 
@@ -447,7 +447,7 @@ calculatedDate = currentDate.dateByAddingTimeInterval(hoursToAddInSeconds)
 
 下面的代码示范了该怎么做。首先给当前日期加上一个特定天数的*负*值，这就可以得到一个属于过去的日期了。然后把结果转换成一个有适当格式的字符串，最后的结果...很有意思：
 
-![](http://upload-images.jianshu.io/upload_images/131207-be8a1ce8ff264563.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://www.appcoda.com/wp-content/uploads/2015/09/t44_21_date_in_the_past.png)
 
 ```swift
 let numberOfDays = -5684718
@@ -476,7 +476,7 @@ date2 = dateFormatter.dateFromString(dateAsString)!
 
 有了上面的日期对象，我们再来看一下如何获取日期组成元素（date components）形式的日期差值（date difference ）。我们会再次用到 *NSCalendar* 类，还有它的一个之前我们没见过的方法。最后把日期组成元素打印出来看一下结果。很明显当有了它，这个代表了日期差值的元素之后，想怎么做都取决于你了。来看下示范：
 
-![](http://upload-images.jianshu.io/upload_images/131207-198f69b38456eca1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://www.appcoda.com/wp-content/uploads/2015/09/t44_22_date_difference1.png)
 
 ```swift
 var diffDateComponents = NSCalendar.currentCalendar().components([NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second], fromDate: date1, toDate: date2, options: NSCalendarOptions.init(rawValue: 0))
@@ -506,7 +506,7 @@ dateComponentsFormatter.stringFromTimeInterval(interval)
 
 最后，在计算日期差值的最后一个方式中，两个日期需要作为参数传递给 *NSDateComponentsFormatter* 类的 *stringFromDate:toDate:* 方法。然而用这个方法之前需要先满足一个条件：*allowedUnits* 属性必须要设置一个 calendar unit，否则该方法会返回一个 nil。所以我们就「告诉」这个方法我们想要怎样的 unit，之后就等它给我们差值结果：
 
-![](http://upload-images.jianshu.io/upload_images/131207-cca6f485b55e2d70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://www.appcoda.com/wp-content/uploads/2015/09/t44_24_date_difference3.png)
 
 ```swift
 dateComponentsFormatter.allowedUnits = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second]
