@@ -14,10 +14,8 @@ iOS：选择 Realm 而不是 CoreData
 
 
 
-# iOS：选择 Realm 而不是 CoreData
-
 > 我已在网上多次看到「Realm」这个词。我甚至曾在十月时有机会参加由 Swift 用户组组织的 Realm 聚会。最终，我有机会用上了 Realm 这个框架。
-> 
+
 
 
 ## 案例
