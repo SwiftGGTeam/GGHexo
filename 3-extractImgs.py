@@ -65,6 +65,8 @@ def downloadimgs(option):
             mkdir(path.join(targetpath, fileurl)) 
         if not path.exists(path.join(targetpath, fileurl, imgname)):
             try:
+                if "appcoda" in imgurl:
+                    raise "jump"
                 urllib.request.urlretrieve(imgurl, path.join(targetpath, fileurl, imgname)) 
             except:
                 print("Can't download %s-->%s, please check the url!" % (fileurl, imgurl))
