@@ -1,5 +1,5 @@
 title: "Mixins 比继承更好"
-date: 2015-10-05 10:00:00
+date: 2015-12-15 10:30:00
 tags: [Crunchy Development]
 categories: [Swift 进阶]
 permalink: mixins-over-inheritance
