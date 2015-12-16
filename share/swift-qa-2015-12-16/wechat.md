@@ -13,6 +13,8 @@
 * [Filter array on type](#Q7) 
 * [Numbers in swift](#Q8)
 
+对应的代码都放到了 github 上，有兴趣的同学可以下载下来研究：[点击下载](https://github.com/SwiftGGTeam/SwiftCommunityWeeklyQA/tree/master/20151216/%E6%AF%8F%E5%91%A8%20Swift%20%E7%A4%BE%E5%8C%BA%E9%97%AE%E7%AD%9420151216.playground)
+
 
 
 <a name="Q1"></a>
