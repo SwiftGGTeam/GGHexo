@@ -1,45 +1,41 @@
-title: "在 iOS8 和 iOS9 中锁定视图自动旋转"
-date: 2015-12-17  
-tags: [Swift 入门]
-categories: [alloc-init]
-permalink: per-view-auto-rotation-locking-made-easy-for-ios-8-and-9
+在 iOS8 和 iOS9 中锁定视图自动旋转"
 
----
-原文链接=http://www.alloc-init.com/2015/11/per-view-auto-rotation-locking-made-easy-for-ios-8-and-9/  
-作者=Weston Hanners
-原文日期=2015-11-18
-译者=littledogboy
-校对=numbbbbb
-定稿=千叶知风
+> 作者：Weston Hanners，[原文链接](http://www.alloc-init.com/2015/11/per-view-auto-rotation-locking-made-easy-for-ios-8-and-9/)，原文日期：2015-11-18
+> 译者：[littledogboy](undefined)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+  
 
-<!--此处开始正文-->
+
+
+
+
+
+
+
 
 这周我在开发一个 App，客户想要此 App 在某些情况下锁定竖屏，某些情况下锁定横屏。幸运的是，我已经在自动布局下创建了所有的视图，因此它们已经支持所需的约束，我仅需要锁定视图旋转。
-<!--more-->
+
 
 旋转 API 属于 UIKit 中经常被弃用的内容，因此当我开始旋转工作时，不得不查一下。我还想说，弃用和替换相关的 API 太麻烦了。经过一个小时左右的研究和两个小时的实践，我终于整出了两部分。（译者注：=W=，我当时也搞了好久）
 
 * 选中 `Info.plist` 文件中所有你想要支持的旋转方向。
 
-![](/img/articles/per-view-auto-rotation-locking-made-easy-for-ios-8-and-9/InterfaceOrientation.png1450312516.562497)
+![](http://swift.gg/img/articles/per-view-auto-rotation-locking-made-easy-for-ios-8-and-9/InterfaceOrientation.png1450312516.562497)
 
 * 然后我们仅需要实现一个方法。
 
 Swift 1.2
 
-```swift
-override func supportedInterfaceOrientations() -> Int {
-  return Int(UIInterfaceOrientationMask.Portrait.rawValue)
-}
-```
+    
+    override func supportedInterfaceOrientations() -> Int {
+      return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    }
 
 Swift 2.0
 
-```swift
-override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-  return UIInterfaceOrientationMask.Portrait
-}
-```
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+      return UIInterfaceOrientationMask.Portrait
+    }
 
 确保选中你想要锁定的方向是横屏还是竖屏。
 
@@ -54,3 +50,4 @@ override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
 **“使用一个小技巧锁定视图控制器”**
 
 好吧，下不为例。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
