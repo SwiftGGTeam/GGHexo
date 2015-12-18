@@ -26,7 +26,7 @@
 
 ### 搭建数学模型
 为了方便理解问题，让我们画一副图来表示最初几天发生的事：
-![](http://swift.gg/img/articles/fibonacci/1)
+![](http://swift.gg/img/articles/fibonacci/1.png)
 
 仔细观察我们发现，特定的一天总的 Swifters 数量（我们用 \\(S_{今天}\\) 来表示）等于前一天的数量加上每个老师可以所教的学生。
 
@@ -370,7 +370,7 @@ $$F\_{n} = F\_{n-1} + F\_{n-2}$$
         // 随机选择接下来 10 个值当中的一个
     }
 
-![](http://swift.gg/img/articles/fibonacci/2)
+![](http://swift.gg/img/articles/fibonacci/2.png)
 
 是不是很有数学的简洁性呀？
 
