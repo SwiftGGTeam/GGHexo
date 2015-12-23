@@ -1,9 +1,5 @@
-每周 Swift 社区问答 2015-12-23"
-tle: "每周 Swift 社区问答 2015-12-23"
-date: 2015-12-23
-tags: [Swift, 社区问答]
-categories: [Swift, iOS开发]
-permalink: swift-qa-2015-12-23
+[原创] 每周 Swift 社区问答 2015-12-23"
+
 
 
 作者：[shanks](http://codebuild.me)
