@@ -1,0 +1,405 @@
+每周 Swift 社区问答 2015-12-23"
+tle: "每周 Swift 社区问答 2015-12-23"
+date: 2015-12-23
+tags: [Swift, 社区问答]
+categories: [Swift, iOS开发]
+permalink: swift-qa-2015-12-23
+
+
+作者：[shanks](http://codebuild.me)
+
+本周整理问题如下：
+
+* [Code doesn't work on Playground](#Q1)
+* [Array cannot be bridged from Objective-C](#Q2)
+* [Why do we need the keywords "let" and "var" at all ?](#Q3)
+* [“If” statement with an optional value not working](#Q4)
+* [Generic Random Function in Swift](#Q5)
+* [Setting a variable to an operator function](#Q6)
+* [Why I can't use let in protocol in Swift?](#Q7) 
+
+
+对应的代码都放到了 github 上，有兴趣的同学可以下载下来研究：[点击下载](https://github.com/SwiftGGTeam/SwiftCommunityWeeklyQA/tree/master/20151223/%E6%AF%8F%E5%91%A8%20Swift%20%E7%A4%BE%E5%8C%BA%E9%97%AE%E7%AD%9420151223.playground)
+
+
+
+<a name="Q1"></a>
+
+## Question1: Code doesn't work on Playground
+
+[Q1链接地址](https://forums.developer.apple.com/thread/27995)
+
+
+
+### 问题描述
+
+提问者说以下代码在 Playground 下运行， `range` 返回`nil`：
+
+    
+    var telefone = "+42 43 23123-2221"   
+    let range = telefone.rangeOfString("\\d{4,5}\\-?\\d{4}", options:.RegularExpressionSearch)   
+    print("range \(range)") //here returns nil
+
+下面回复，实际上是可以的，亲测也是可以，也不知道提问者是不是 Xcode 版本问题，输出结果：
+
+    
+    range Optional(Range(7..<17))\n
+
+
+### 解答
+这个问题是关于正则表达式匹配的，匹配结果返回的是`Range`类型。
+然后提问者不甘心，写出了一段很复杂的解决方案：
+
+    import Foundation  
+    var telefone = "+55 11 11111‑1111"  
+    let phoneNumberRegEx = "(?:(\\+\\d\\d\\s+)?((?:\\(\\d\\d\\)|\\d\\d)\\s+)?)(\\d{4,5}\\-?\\d{4})";  
+    let range = telefone.rangeOfString(phoneNumberRegEx,  
+        options:.RegularExpressionSearch)  
+    print("range \(range)")  
+    var found = telefone.substringWithRange(range!)  
+    print(found)  
+    let regex = try! NSRegularExpression(pattern: phoneNumberRegEx, options: [])  
+    let telephoneRange = NSMakeRange(0, telefone.characters.count)  
+    let result = regex.firstMatchInString(telefone, options: NSMatchingOptions(rawValue: 0), range: telephoneRange)  
+    let r1 = result!.rangeAtIndex(1)  
+    let r2 = result!.rangeAtIndex(2)  
+    let r3 = result!.rangeAtIndex(3)  
+    if (r1.length > 0) {  
+        let phoneCountry = (telefone as NSString).substringWithRange(r1)  
+        print("country: \(phoneCountry)")  
+    }  
+    if (r2.length > 0) {  
+        let phoneArea = (telefone as NSString).substringWithRange(r2)  
+        print("area: \(phoneArea)")  
+    }  
+    if (r3.length > 0) {  
+        let phone = (telefone as NSString).substringWithRange(r3)  
+        print("phone: \(phone)")  
+    }
+说会报错，下面大神看出了问题：
+
+    var telefone = "+55 11 11111‑1111"  //字符'‑'和下面正则表达式的字符'-'匹配不上
+    let phoneNumberRegEx = "(?:(\\+\\d\\d\\s+)?((?:\\(\\d\\d\\)|\\d\\d)\\s+)?)(\\d{4,5}\\-?\\d{4})";
+原来是字符'‑'和字符'-'用混了。统一改成'-'就好了。
+
+估计第一个问题也是这样造成的。
+
+
+<a name="Q2"></a>
+
+## Question2: Array cannot be bridged from Objective-C
+
+[Q2链接地址](https://forums.developer.apple.com/thread/28678)
+
+
+
+### 问题描述
+
+以下代码会在`testUnbridgableArrayOfPs `函数中报错:
+
+    
+    protocol P {
+        var name: String { get }
+    }
+    class PImpl: P {
+        let name: String
+        init(name: String) {
+            self.name = name
+        }
+    }
+    
+    func unbridgableArrayOfPs() -> [P] {
+        let pees = [PImpl(name: "A"), PImpl(name: "B"), PImpl(name: "C")]
+        return pees
+    }
+    
+    func arrayOfPs() -> [P] {
+        return [PImpl(name: "A"), PImpl(name: "B"), PImpl(name: "C")]
+    }
+    
+    func testUnbridgableArrayOfPs() {
+        let p = unbridgableArrayOfPs() // Fails with fatal error: array cannot be bridged from Objective-C
+        let result = p.map{$0.name}.joinWithSeparator("")
+        //XCTAssertEqual(result, "ABC")
+    }
+    
+    func testArrayOfPs() {
+        let p = arrayOfPs() // We get our P's
+        let result = p.map{$0.name}.joinWithSeparator("")
+       // XCTAssertEqual(result, "ABC")
+    }
+    
+    testUnbridgableArrayOfPs()
+    testArrayOfPs()
+楼主还用了`XCTAssertEqual `来进行测试，但是 Playground不支持`XCTest`测试框架，所以代码我就现注释掉了。
+楼主吐槽，定义了变量，使用了类型推断，就会报错。直接返回就不会。。
+
+
+
+### 问题解答
+
+不使用类型推断，定义时候，直接指定类型，就没有问题了：
+
+    let pees: [P] = [PImpl(name: "A"), PImpl(name: "B"), PImpl(name: "C")]
+类型推断会把`pees` 推断为`PImpl `类型，虽然`PImpl `遵从协议`P`，目前还是需要显式做一下声明或者转换。`OOPer` 还提供了以下 2 种转换方式：
+
+    let pees = [PImpl(name: "A"), PImpl(name: "B"), PImpl(name: "C")] as [P] 
+    
+    let pees = [PImpl(name: "A"), PImpl(name: "B"), PImpl(name: "C")]  
+    let peesAsArrayP: [P] = pees.map{$0 as P}  
+    return peesAsArrayP
+
+<a name="Q3"></a>
+
+## Question3: Why do we need the keywords "let" and "var" at all ?
+
+[Q3链接地址](https://forums.developer.apple.com/thread/28673)
+
+### 问题描述
+这个问题没有涉及到代码，提问者写了几段文字，为了表达自己的观点：为神马会有`var`关键字的存在，完全可以去掉：
+
+* 定义局部变量时，如果要定义一个常量，可以直接使用`let`,然后其他非常量的情况下，完全可以省略掉`var`, 因为可以直接推断出来啊
+* 类中变量定义也是可以类似的来做，`let` 定义常量，没有`let`就是变量
+
+回想一下好像是这么一回事。。。
+
+### 问题解答
+这个问题引来了 Chris Lattner 的回复。。。，所以得好好说说， Chris 回复的大概意思如下：
+首先，Chris 认为这个问题很有意思，说明 Swift 作者也应该思考过这个问题的。的确， Swift 编译器是可以基于提问者的思考，去推断出变量的可变修饰符，加`var` 和没加`var`对于编译器来讲没啥区别。主要基于2个目的来设计的`var`关键字：
+
+* human factors：主要是从可读性来讲，显式的声明`var`能够让代码更加可读，有点类似于 Swift 中目前饱受诟病的类型推断一样，目前大部分指南，都推荐你显式定义类型，可读性很高，且编译器不会出错。
+* hard cases：在一些复杂的情况下，没有使用`var`和`let`，编译器会很难推断出来是变量还是常量（公共全局变量，公共实例变量等）。所以人为使用`var`和`let`表明你的态度很重要。
+
+
+<a name="Q4"></a>
+
+## Question4: “If” statement with an optional value not working
+
+### 问题链接
+
+[Q4链接地址](http://stackoverflow.com/questions/34389158/if-statement-with-an-optional-value-not-working)
+
+### 问题描述
+此贴问题比较初级，楼主问的问题也是错误的，但是对于初学者来讲，值得一看。主要是对 Optional 类型的使用和理解。首先我们看看问题：
+
+    var x = Optional("6")
+    
+    if(x == 6) {
+        print("x is 6")
+    }
+    else
+    {
+        print("x is not 6")
+    }
+楼主说定义了一个值为 Optional("6") 的变量 x， 然后去和数字 6 比较，这段代码在 Playground 运行，因为 Optional("6") 是 Optional<String> 类型的，不能和 Int 进行比较。
+
+### 问题解答
+
+上述代码改为：
+
+    var x = Optional(6)
+    
+    if(x == 6) {
+        print("x is 6")
+    }
+    else
+    {
+        print("x is not 6")
+    }
+    
+    // 输出： x is 6
+
+x 的类型是一个可选类型，直接使用 if 去和固定值进行比较，编译器会拆包出来真正的值去比较。不过更推荐的做法是，使用 if let 去显式拆包：
+
+    var x1 = Optional(6)
+    
+    if let y = x1 where y == 6  {
+        print("x is 6")
+    }
+    else
+    {
+        print("x is not 6")
+    }
+
+<a name="Q5"></a>
+
+## Question5: Generic Random Function in Swift
+
+### 问题链接
+
+[Q5链接地址](http://stackoverflow.com/questions/34387250/generic-random-function-in-swift)
+
+### 问题描述
+问题很简单，如何实现随机数生成的泛型表达，支持 Int， Float，Double 和 CGFloat？
+
+### 问题解答
+
+首先，可以分部对这几种类型做扩展，来生成随机数：
+
+    public extension Int {
+        /// SwiftRandom extension
+        public static func random(lower: Int = 0, _ upper: Int = 100) -> Int {
+            return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
+        }
+    }
+    
+    public extension Double {
+        /// SwiftRandom extension
+        public static func random(lower: Double = 0, _ upper: Double = 100) -> Double {
+            return (Double(arc4random()) / 0xFFFFFFFF) * (upper - lower) + lower
+        }
+    }
+    
+    public extension Float {
+        /// SwiftRandom extension
+        public static func random(lower: Float = 0, _ upper: Float = 100) -> Float {
+            return (Float(arc4random()) / 0xFFFFFFFF) * (upper - lower) + lower
+        }
+    }
+    
+    public extension CGFloat {
+        /// SwiftRandom extension
+        public static func random(lower: CGFloat = 0, _ upper: CGFloat = 1) -> CGFloat {
+            return CGFloat(Float(arc4random()) / Float(UINT32_MAX)) * (upper - lower) + lower
+        }
+    }
+    
+    Int.random()
+
+
+也可以使用扩展协议来实现，不过 Int 和 Float，Double，CGFloat的协议不太一样：
+
+    protocol FloatingPointArithmeticType: FloatingPointType {
+        func /(lhs: Self, rhs: Self) -> Self
+        // etc
+    }
+    
+    extension Double: FloatingPointArithmeticType { }
+    extension Float: FloatingPointArithmeticType { }
+    extension CGFloat: FloatingPointArithmeticType { }
+    
+    extension FloatingPointArithmeticType {
+        static func rand() -> Self {
+            let num = Self(arc4random())
+            let denom = Self(UInt32.max)
+            // this line won’t compile:
+            return num / denom
+        }
+    }
+    
+    // so these now work
+    let d = Double.rand()  // etc
+
+而 Int 的随机数，直接通过`arc4random()`生成来转换，因为`arc4random()`结果是`UInt32`的,代码在第一段已经有了，直接基于 Int 去扩展。
+
+<a name="Q6"></a>
+
+## Question6: Setting a variable to an operator function 
+
+### 问题链接
+
+[Q6链接地址](http://stackoverflow.com/questions/34386306/setting-a-variable-to-an-operator-function)
+
+
+
+### 问题描述
+
+楼主的问题是，既然函数可以是第一公民，那么运算符也能够是第一公民，可以当成右值赋值给一个变量。代码如下：
+
+    func +(lhs: Int, rhs: Int) -> Int { return 1}
+    let op = + // results in an error
+但是，这段代码会报错，这是为什么呢？
+
+
+
+### 问题解答
+在 Swift 中，函数是第一公民，运算符也是第一公民，但是在作为右键赋值时，需要加括号包住操作符，并且要求显式定义操作符变量的类型，或者做显式转换：
+
+    func +(lhs: Int, rhs: Int) -> Int { return 1}
+    let v = (+) as (Int,Int) -> Int
+    let out = v(3,4)
+    print(out)
+    
+    let op: (Int, Int) -> Int = (+)
+    op(3, 4) //输出1，如果去掉自定义+操作符，输出7
+
+在另外一篇post中，也是类似的提问：
+[set-a-variable-to-the-less-than-operator-as-a-function-in-swift](http://stackoverflow.com/questions/30017400/set-a-variable-to-the-less-than-operator-as-a-function-in-swift)
+
+
+
+<a name="Q7"></a>
+
+## Question7: Why I can't use let in protocol in Swift?
+
+### 问题链接
+
+[Q7链接地址](http://stackoverflow.com/questions/34385897/why-i-cant-use-let-in-protocol-in-swift)
+
+### 问题描述
+楼主问，为啥以下协议定义中的只读存储变量，不能使用`let`定义的常量替代？
+
+    protocol someProtocol 
+    {
+       var someProperty: String { get }
+    }
+    
+    protocol someProtocol1
+    {
+       let someProperty: String
+    }
+### 问题解答
+`let` 修饰的是常量，而协议里面是不能指定变量的存储方式的，也就是说，如果要在协议里面，要求遵从只读属性，只能使用var和get，也就是`var someProperty: String { get }`这种写法。
+在具体定义的类或者结构体中，如果协议是要求只读计算属性，那么具体的实现可以使用`let`修饰，也可以实现`set`操作，也可以是一个存储属性。
+    protocol MyProtocol {
+        var someProperty: String { get }  // abstract interface
+    }
+    
+    struct MyStruct: MyProtocol {
+        let someProperty: String  // concrete implementation: stored property
+    }
+    
+    struct OtherStruct: MyProtocol {
+        var str: String
+        var someProperty: String {
+            get {
+                return "\(str)"
+            }
+            set(newValue) {
+                str = newValue
+            }
+        }  // concrete implementation: computed property
+    }
+    
+    var a = MyStruct(someProperty: "")
+    //a.someProperty = "est" --错误，常量不能修改
+    
+    var b = OtherStruct(str: "test")
+    b.someProperty
+    b.someProperty = "other test"
+    b.str
+也就是说，协议要求只是一个最小化要求。如果协议是定义的`get`和`set`，那么具体实现就不能定义为只读的了：
+
+    protocol MyProtocol1 {
+        var someProperty: String { get set }  // abstract interface
+    }
+    
+    struct OtherStruct1: MyProtocol1 { //错误：candidate is not settable, but protocol requires it
+        var str: String
+        var someProperty: String {
+            get {
+                return "\(str)"
+            }
+            
+        }  // concrete implementation: computed property
+    }
+
+
+
+
+
+
+
+
+
+
