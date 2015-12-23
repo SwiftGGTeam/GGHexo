@@ -1,7 +1,7 @@
 如何在 Swift 中使用 Alamofire 进行网络编程"
 
-> 作者：gregg mojica，[原文链接](http://www.appcoda.com/alamofire-beginner-guide/)，原文日期：2015-11-30
-> 译者：[小铁匠Linus](http://weibo.com/linusling)；校对：[Cee](https://github.com/Cee)；定稿：[](undefined)
+> 作者：gregg mojica，[原文链接](http://www.appcoda.com/alamofire-beginner-guide/)，原文日期：2015/11/30
+> 译者：[小铁匠Linus](http://weibo.com/linusling)；校对：[Cee](https://github.com/Cee)；定稿：[numbbbbb](https://github.com/numbbbbb)
   
 
 
@@ -12,51 +12,51 @@
 
 
 
-2014 年 6 月 Apple 发布 Swift 以来，如何在 Swift 中进行网络编程一直成为程序猿们关注的焦点。甚至，Chris Lattner，Swift 的作者之一，也发推说过，在 Swift 中解析 JSON 还有很长的路要走。因此，许多人开始寻求替代方案。尽管，在 Swift 中也有处理 JSON 解析的内建类，但是对开发者来说并不是很友好。幸运的是，Alamofire 出现了。Alamofire 是一个可以帮助我们解析 JSON 的强有力网络库，它由 Objective-C 中同类网络库 AFNetworking 的作者编写。
+2014 年 6 月 Apple 发布 Swift 以来，如何在 Swift 中进行网络编程一直成为程序猿们关注的焦点。甚至就连 Swift 的作者之一 Chris Lattner 也发推说过，在 Swift 中解析 JSON 还有很长的路要走。因此，许多人开始寻求替代方案。在 Swift 中虽然有处理 JSON 解析的内建类，但是对开发者来说并不是很友好。幸运的是，Alamofire 出现了。Alamofire 是一个可以帮助我们解析 JSON 的强力网络库，它由 Objective-C 中同类网络库 AFNetworking 的作者编写。
 
-在这个又臭又长、近乎 3500 多词（译者注：in English）的教程中，我们将探讨一系列广泛的网络基本话题，并建立一个假日待办应用。
+在这个又臭又长、近乎 3500 多词（译者注：in English；定稿注：这是作者原话，不是译者观点）的教程中，我们将探讨一系列广泛的网络基本话题，并建立一个假日待办应用。
+
+同时，你会从本教程中学到：如何使用和解析 JSON、如何自定义服务器端、如何使用 [Heroku](https://www.heroku.com/) 和 [MongoLab](https://mongolab.com/) 等工具、HTTP 的工作原理（包括 GET，POST 和 DELETE 请求）、如何使用 git 和终端（terminal）以及如何使用 Cocoapods。如果你觉得上面提到的内容太多了，那就对了，拿一杯咖啡，就让我们开始吧。
 
 
-
-同时，你会从本教程中学到：如何使用和解析 JSON，如何自定义服务器端，如何使用 [Heroku](https://www.heroku.com/) 和 [MongoLab](https://mongolab.com/) 等工具，HTTP 的工作原理（包括 GET，POST 和 DELETE 请求），如何使用 git 和终端（terminal）以及如何使用 Cocoapods。如果你觉得上面提到的内容太多了，那就对了，拿一杯咖啡，就让我们开始吧。
 
 ![](http://www.appcoda.com/wp-content/uploads/2015/11/thangiving-app-coda-20151-1024x768.png)
 
 哦，AppCoda 的所有作者祝大家节日开心！😊
 
-注意：本教程是一个进阶教程，涵盖了很多东西。而且，我假设你已经对 iOS 和 Swift 有了很坚实的了解。文章中诸如 tableviews， autolayout，delegate 等话题都不会深入的解释原理。你如果记不清这些内容，可以先去学习我们推出的[优秀课程](http://www.appcoda.com/ios-programming-course/)，然后再回来看本教程。
+注意：本教程是一个进阶教程，涵盖了很多东西。而且，我假设你已经对 iOS 和 Swift 有了很坚实的了解。文章中诸如 tableviews， autolayout，delegate 等话题都不会深入的解释原理。你如果不熟悉这些内容，可以先去学习我们推出的[优秀课程](http://www.appcoda.com/ios-programming-course/)，然后再回来看本教程。
 
 ## 开始
 
-为了实现本教程要实现的功能，我已用 Node.js 写了一个服务器后端。这里需要给那些对它不熟悉的人解释一下，Node.js 是一个基于 Javascript、运行在 Google Chrome 的 V8 引擎中的运行时环境。长话短说，总之它是一个特别可靠，速度特别快，特别厉害的东西，哈哈。
+为了实现本教程要实现的功能，我已用 Node.js 写了一个服务器后端。这里需要给那些对它不熟悉的人解释一下，Node.js 是一个基于 Javascript、运行在 Google Chrome 的 V8 引擎中的运行时环境。长话短说，总之它是一个特别可靠、速度特别快、特别厉害的东西，哈哈。
 
-为了搞定这个后端，我同时也使用了 Restify 和 MongoDB。MongoDB 是在 Web 开发人员中很流行的一个 no-SQL 数据库。我们可以使用 MongoDB 存储所有我们相关的数据。
+为了搞定这个后端，我同时也使用了 Restify 和 MongoDB。MongoDB 是在 Web 开发人员中很流行的一个 no-SQL 数据库。我们可以使用 MongoDB 存储所有数据。
 
-当我刚开始使用 Node 的时候，我不知道这些东西都是怎么运行的，其他我所浏览的一些博客也从没有解释 Node 到底是怎么工作的。因此，尽管这是个 iOS 的博客，但我还是要介绍一下 Javascript 和 Node 服务器的工作原理。
+我刚开始使用 Node 时，完全不知道这些东西是怎么运行的，我看到的其他博客也没有解释 Node 到底是怎么工作的。因此，尽管这是个 iOS 的博客，但我还是要介绍一下 Javascript 和 Node 服务器的工作原理。
 
-我搜遍了网络，都没有一个详细的教程引导你创建一个 API 与 iOS 应用程序交互的步骤，从现在开始就有了。
+我搜遍了网络，都没有一个详细的教程引导你创建一个 API 与 iOS 应用程序交互的步骤，直到本文出现。
 
 ## 遇见 Node.js
 
-像我之前提到的一样，Node.js 是一个很强大的服务器端开发技术，它建立在 Chrome 的运行时环境上。因此，它是高度异步的和非阻塞的（如果你不知道我说的是什么意思，其实很简单，大概就是：使用主线程或者应用的主要部分不会被阻塞）。多线程是一种可以防止延迟且能提高项目效率的编程技术。你把应用想象成一条高速公路，如果只有一条通道，却有 20 辆车要通过，那么他们就很有可能会堵车。如果一条高速公路有三条都有出入口的通道，那么堵车的机会就很小。多线程就可以这样来理解。在一个多线程的环境里，代码执行在不同的线程就可以避免应用阻塞，从而防止程序奔溃。
+像我之前说的那样，Node.js 是一个很强大的服务器端开发技术，它建立在 Chrome 的运行时环境上。因此，它是高度异步和非阻塞的（如果你不知道我说的是什么意思，其实很简单，大概就是：使用主线程或者应用的主要部分不会被阻塞）。多线程是一种可以防止延迟且能提高项目效率的编程技术。你可以把应用想象成一条高速公路，如果只有一条通道，却有 20 辆车要通过，那么他们就很有可能会堵车。如果一条高速公路有三条包含出入口的通道，那么堵车的可能性就很小。多线程就可以这样来理解。在一个多线程的环境里，代码执行在不同的线程就可以避免应用阻塞，从而防止程序崩溃。
 
 ![](http://www.appcoda.com/wp-content/uploads/2015/11/1436439824nodejs-logo.png)
 
 Node 是由 Joyent 开发并维持的，Joyent 是一家位于旧金山的云计算公司。
 
-如果你仍然不清楚所有这些是怎么运行的，想想后端具体干了些什么吧。下面列出来一些：
+如果你仍然不清楚所有这些是怎么运行的，想想后端具体干了些什么吧。下面是后端完成的工作：
 
-1. 后端是一个为你传送 API 的地方（我们现在正在为当前的应用构建 API，就和网络上其他的 API 一样，其中包括了我们在之前的 [tvOS 教程](http://www.appcoda.com/tvos-introduction/)中使用的 [forecast.io](http://forecast.io/) API）。
-2. MongoDB 提供了一个保存所有数据的地方。当你想要 POST 一条新的消息，我们需要有个地方可以存储这条消息。在本教程中，我们将把这些数据存储到 MongoDB 数据库中。
+1. 后端提供了 API 路由（我们现在正在为当前的应用构建 API，就和网络上其他的 API 一样，其中包括了我们在之前的 [tvOS 教程](http://www.appcoda.com/tvos-introduction/)中使用的 [forecast.io](http://forecast.io/) API）。
+2. MongoDB 用来保存所有数据。当你想要 POST 一条新消息时，我们需要找个地方来存储这条消息。在本教程中，我们把这些数据存储到 MongoDB 数据库中。
 3. 创建一个功能完整的 REST API，它遵循 REST 协议。
 
-我们的 MongoDB 放在 MongoLab 的主机上，Node 服务器放在 Heroku 上。Heroku 由 Salesforce 提供支持，可以作为 Node，Rails，Python等应用的主机服务商。MongoLab 也是一家可以当 MongoDB 主机的服务商。
+我们的 MongoDB 放在 MongoLab 的主机上，Node 服务器放在 Heroku 上。Heroku 由 Salesforce 提供支持，可以作为 Node、Rails、Python 等应用的主机服务商。MongoLab 也是一家可以当 MongoDB 主机的服务商。
 
 ## HTTP 请求介绍
 
 在我们开始写代码之前，你应该了解 HTTP 请求以及如何在我们的应用里使用。
 
-* GET 请求 - GET 请求会查询我们的数据库，然后获取内容。GET 请求可以被限制，使得其只能获取一个、多个或全部的内容。事实上，每次你访问 [google.com](http://google.com/) 或浏览你的 Facebook/Twitter 主页，你都会发起 GET 请求（可能你之前都不知道这个东西）！
+* GET 请求 - GET 请求会查询我们的数据库，然后获取内容。GET 请求可以获取一个、多个或全部的内容。事实上，每次你访问 [google.com](http://google.com/) 或浏览你的 Facebook/Twitter 主页，你都会发起 GET 请求（可能你之前都不知道这个东西）！
 
 * POST 请求 - POST 请求会发送数据到服务器，然后保存这个数据。举个例子，当你在 Facebook 或 Twitter 上写好文字，然后按 Post/Tweet 按钮的时候，你就发起了 POST 请求。
 
@@ -72,11 +72,11 @@ Node 是由 Joyent 开发并维持的，Joyent 是一家位于旧金山的云计
 
 在我们使用 MongoLab 或 Heroku 之前，我们应该要确保 Node.js 能正常使用。
 
-打开 [Node.js官网](https://nodejs.org/en/)，根据简单的引导下载 Node 到你的电脑上。
+打开 [Node.js官网](https://nodejs.org/en/)，按照教程下载 Node 到你的电脑上。
 
 然后，到 [npm 官网](https://docs.npmjs.com/getting-started/installing-node)下载 npm。
 
-为了正确配置我们的后端，我们需要分别在 Heroku 和 MongoLab 上注册帐号。我们先从 MongoLab 开始吧，去 [MongoLab 官网](https://mongolab.com/home)注册帐号。
+为了正确配置我们的后端，需要分别在 Heroku 和 MongoLab 上注册帐号。我们先从 MongoLab 开始吧，去 [MongoLab 官网](https://mongolab.com/home)注册帐号。
 
 ![](http://www.appcoda.com/wp-content/uploads/2015/11/Untitled-1024x640.png)
 
@@ -88,7 +88,7 @@ Node 是由 Joyent 开发并维持的，Joyent 是一家位于旧金山的云计
 
 ![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-2.35.58-PM-1024x328.png)
 
-马上就让你添加一个新的数据库帐号，输入用户名和密码。不要忘记密码。
+然后添加一个新的数据库帐号，输入用户名和密码。不要忘记密码。
 
 ![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-2.38.15-PM-1024x478.png)
 
@@ -104,9 +104,9 @@ MongoLab 搞定！
 
 现在去 [Heroku.com](http://heroku.com/)，免费注册后，打开 [heroku toolbelt 页面](https://toolbelt.heroku.com/)。
 
-跟随指南，成功安装后，打开终端并登录 heroku。如果你之前从未使用过终端，不用担心。本教程会多次使用终端，这样你最终就会对终端的使用有一个清晰的认识。
+按照教程成功安装后，打开终端并登录 heroku。如果你之前从未使用过终端，不用担心。本教程会多次使用终端，这样你最终就会对终端的使用有一个清晰的认识。
 
-一旦你在终端上登录 heroku，可以使用 cd 命令（cd 代表改变目录）进到对应目录，将之前从 dropbox 下载的工程文件夹移动进去。
+一旦你在终端上登录 heroku，就可以使用 cd 命令（cd 代表改变目录）进到对应目录，将之前从 dropbox 下载的工程文件夹移动进去。
 
 ![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-3.03.13-PM-2.png)
 
@@ -123,7 +123,7 @@ MongoLab 搞定！
 
 git 是一款很流行的版本控制软件。
 
-现在你可以看终端里应该和下图的内容差不多：
+现在你可以看到，终端里应该和下图的内容差不多：
 
 ![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-3.09.42-PM-2.png)
 
@@ -169,7 +169,7 @@ Express 是 [Node.js](http://nodejs.org/) 中的一个「快速、强大而又�
 
 ### 模型
 
-打开你的文本编辑器（再次顺便说一下，我用的是 Sublime），同时打开 app.js 文件。正如你看到的，应用被分割成了一个 model 和路由文件（就是你刚打开的 app.js 文件）。model 文件可以建立模式（schema）或数据库结构。让我们先来简单看看这个文件吧。
+打开你的文本编辑器（再说一下，我用的是 Sublime），同时打开 app.js 文件。正如你看到的，应用被分割成了一个 model 和路由文件（就是你刚打开的 app.js 文件）。model 文件可以建立模式（schema）或数据库结构。让我们先来简单看看这个文件吧。
 
     javascript
     var mongoose = require('mongoose'),
@@ -237,7 +237,7 @@ Mongoose 能很方便的提供与 mongoLab 的 heroku node 应用连接并提供
     bash
     curl -i -H "Accept: application/json" "https://rocky-meadow-1164.herokuapp.com/todo"
 
-命令行中的 -i 和 -H 参数，表示我们将要接收什么东西。我们会接收 JSON 并将 JSON url 追加到请求的末尾。
+命令行中的 -i 和 -H 参数表示我们将要接收什么东西。我们会接收 JSON 并将 JSON url 追加到请求的末尾。
 
 ![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-6.00.45-PM-2.png)
 
@@ -267,15 +267,15 @@ Mongoose 能很方便的提供与 mongoLab 的 heroku node 应用连接并提供
 
 ![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-8.21.40-PM-2.png)
 
-很棒！接下去我们不会讲 PUT 请求，因为在我们这个应用里暂时还用不上。但是它和其他的请求使用起来是差不多的。
+很棒！这里我们不会讲 PUT 请求，因为在这个应用里暂时还用不上。但是它和其他的请求使用起来差不多。
 
 ## 使用 Alamofire 设置 iOS 应用
 
 ![](http://www.appcoda.com/wp-content/uploads/2015/11/alamofire.png)
 
-让我们从新建一个名叫 TodoApp 的 Xcode 工程开始吧。因为假期就要到来，我们应该有一种方式来跟踪这件事情。幸运的是，我们有我们的 node 应用可以帮忙。
+让我们从新建一个名叫 TodoApp 的 Xcode 工程开始吧。因为假期就要到来，我们应该有一种方式来跟踪这件事情。幸运的是，我们有 node 应用来帮忙。
 
-虽然你可以手动安装 Alamofire（通过拖拽源文件到对应工程的方法），但是我们选择使用 Cocoapods。Cocoapods 是一款为 iOS 工程提供依赖管理的工具。在使用 Cocoapods 的时候，开发者可以轻松的添加框架或第三方类库。如果你之前没有使用 Cocoapods，强烈推荐你去使用。
+你可以手动安装 Alamofire（通过拖拽源文件到对应工程的方法），但是我们选择使用 Cocoapods。Cocoapods 是一款为 iOS 工程提供依赖管理的工具。在使用 Cocoapods 的时候，开发者可以轻松的添加框架或第三方类库。如果你之前没有使用 Cocoapods，强烈推荐你去使用。
 
 接下来，在终端里运行以下命令可以确保你在接下来的步骤后成功安装 Cocoapods。
 
@@ -349,7 +349,7 @@ Vim 是一款系统自带的命令行编辑器，与 Sublime Text 或 TextMate �
 
 ![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-9.38.31-PM-2-1024x576.png)
 
-将以下代码复制并粘帖到你的 Viewcontroller.swift 文件里。
+将以下代码复制并粘帖到你的 ViewController.swift 文件里。
 
     
     import UIKit
@@ -402,7 +402,7 @@ Vim 是一款系统自带的命令行编辑器，与 Sublime Text 或 TextMate �
     
     Alamofire.request(.GET, "https://rocky-meadow-1164.herokuapp.com/todo").responseJSON { response in debugPrint(response) }
 
-接下来，在文件顶部的 UIViewController 定义后面添加 UITableViewDelegate 和 UITableViewDataSource。并且，在 viewDidLoad() 方法里键入如下代码：
+接下来，在文件顶部的 UIViewController 定义后面添加 UITableViewDelegate 和 UITableViewDataSource，并在 viewDidLoad() 方法里键入如下代码：
 
     
     self.tableView.dataSource = self
@@ -431,20 +431,20 @@ Vim 是一款系统自带的命令行编辑器，与 Sublime Text 或 TextMate �
 
 正如你看到的，我们的 tableview 已经成功显示数据了。
 
-现在，让我们来添加一个按钮，用来添加数据到列表中。首先，先在 storyboard 里添加一个叫 AddViewController 的类，并用 segue 的方式连接起来。你的 storyboard 应该和下图差不多。
+现在我们来添加一个按钮，用来添加数据到列表中。首先，先在 storyboard 里添加一个叫 AddViewController 的类，并用 segue 的方式连接起来。你的 storyboard 应该和下图差不多。
 
 ![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-11.34.59-PM-2-1024x576.png)
 
 ### Alamofire POST 请求
 
-在你的 AddViewController.swift 文件里，为 textfield 建立一个 IBOutlet（命名为 textView）和为 Save 按钮建立一个 IBAction。在 Save 按钮代码下面键入如下代码：
+在你的 AddViewController.swift 文件里，为 textfield 建立一个 IBOutlet（命名为 textView），为 Save 按钮建立一个 IBAction。在 Save 按钮代码中键入如下代码：
 
     
     Alamofire.request(.POST, "https://rocky-meadow-1164.herokuapp.com/todo", parameters: ["name": self.textView.text!])
     
     self.navigationController!.popViewControllerAnimated(true)
 
-正如你看到的，Alamofire 大大简化了发送 POST 请求的过程。
+如你所见，Alamofire 大大简化了发送 POST 请求的过程。
 
 接下来，我们来对 ViewController.swift 文件进行重构，确保我们在保存数据后能及时更新列表。删除 viewDidLoad() 方法里 GET Alamofire 的代码，用以下的 downloadAndUpdate 方法代替。
 
@@ -479,9 +479,9 @@ Vim 是一款系统自带的命令行编辑器，与 Sublime Text 或 TextMate �
        self.downloadAndUpdate()
     }
 
-如果你再次编译并运行这个应用，就会发现每次添加新的 todo 后都会重新加载。但是，这是为什么呢？
+如果你再次编译并运行这个应用，就会发现每次添加新的 todo 后都会重新加载。这是为什么呢？
 
-这就关系到 view controller 的生命周期，这里我就简短讨论一下。viewDidLoad() 会在 view 初始化后并且所有控件都结束加载后被调用。问题就出在，当你从已经加载的 ViewController 上加载另外一个 view（比如 AppViewController）时，viewDidLoad 方法不会被调用（之前已经初始化过）。viewWillAppear 方法会在每次 view 在屏幕上显示时调用。因为我们需要在再次显示 ViewController.swift 时候显示，所以这个方法刚好可用。
+这就关系到 view controller 的生命周期，这里我简单介绍一下。viewDidLoad() 会在 view 初始化后并且所有控件都结束加载后被调用。问题出现了，当你从已经加载的 ViewController 上加载另外一个 view（比如 AppViewController）时，viewDidLoad 方法不会被调用（之前已经初始化过）。viewWillAppear 方法会在每次 view 在屏幕上显示时调用。因为我们需要在再次显示 ViewController.swift 时候显示，所以这个方法刚好可用。
 
 ### Alamofire DELETE 请求
 
