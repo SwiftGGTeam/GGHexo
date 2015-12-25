@@ -49,8 +49,8 @@ Friday Q&A 2015-11-20：协变与逆变"
             return Cat()
         }
     
-        let returnsAnimal: () -> Animal = catF
-        let returnsCat: () -> Cat = animalF
+        let returnsAnimal: () -> Animal = catF  //可以运行
+        let returnsCat: () -> Cat = animalF  //出错
 
 这些在 Objective-C 下也能实现，只不过要用 block，而且语法上会显得比较丑。所以我坚定地使用 Swift。
 
