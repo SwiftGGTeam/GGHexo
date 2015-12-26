@@ -19,7 +19,8 @@ let nameMap = {
   "小袋子": "http://daizi.me",
   "我偏笑": "http://blog.csdn.net/nsnirvana",
   "riven": "http://weibo.com/riven0951",
-  "Cee": "https://github.com/Cee"
+  "Cee": "https://github.com/Cee",
+  "星夜暮晨": "http://www.jianshu.com/users/ef1058d2d851"
 }
 
 export default nameMap
