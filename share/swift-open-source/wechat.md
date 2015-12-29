@@ -1,16 +1,15 @@
-title: "聚焦 Swift #0"
-date: 2015-12-29
-tags: [Open Source Swift]
-categories: [Swift 开源信息]
-permalink: swift-open-source
----
+聚焦 Swift #0"
 
-原文链接=http://www.jessesquires.com/swift-open-source/
-作者=Jesse Squires
-原文日期=2015/12/06
-译者=pmst
-校对=numbbbbb
-定稿=numbbbbb
+> 作者：Jesse Squires，[原文链接](http://www.jessesquires.com/swift-open-source/)，原文日期：2015/12/06
+> 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[numbbbbb](https://github.com/numbbbbb)
+  
+
+
+
+
+
+
+
 
 > 译者注：这个系列的关注重点是 Swift 开源项目本身的发展，作者会截取每周发生的大事（比如合并了一个大改动）并进行分析，还会写一些有趣的小发现，很有意思。我们已经拿到翻译授权，会每周进行更新，欢迎关注。
 
@@ -18,9 +17,9 @@ permalink: swift-open-source
 
 Apple 宣告 “[Swift即将开源](https://developer.apple.com/swift/blog/?id=34)” 的随后几天里，项目的活跃度让人瞠目结舌。回想今年早些时候的 [WWDC](https://developer.apple.com/wwdc/) 大会上 Apple 提及 Swift 不久会被开源，我可不认为任何人会像这样期待该发布版本。
 
-![](/img/articles/swift-open-source/swift-logo.png1451394012.0965536)
+![](http://swift.gg/img/articles/swift-open-source/swift-logo.png1451394012.0965536)
 
-<!--more-->
+
 
 ### Expectations（期望）
 
@@ -53,3 +52,4 @@ Apple 宣告 “[Swift即将开源](https://developer.apple.com/swift/blog/?id=3
 我想我们已经有了一个良好的开端。社区实在强大且狂热，仅仅**三天**,Swift 就有了极大地改进。正如 Lattner 所说，革命是属于 Swift 的！
 
 以上就是我所获知的所有东西了。如果你喜欢该文章，[请让我知道](https://twitter.com/jesse_squires)。或许我会坚持下去，分享我的发现。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
