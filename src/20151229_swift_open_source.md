@@ -20,6 +20,8 @@ Apple 宣告 “[Swift即将开源](https://developer.apple.com/swift/blog/?id=3
 
 ![](http://www.jessesquires.com/img/swift-logo.png)
 
+<!--more-->
+
 ### Expectations（期望）
 
 没人真正知道接下来会发生什么。譬如 Swift 项目将会被投放到 [opensource.apple.com](http://www.opensource.apple.com/) 上，变得和其他开源项目一样毫无新意？还是说它会像 [ResearchKit](https://github.com/ResearchKit) 一样放置到 GitHub 上？最终，Swift 不仅发布到 [GitHub](https://github.com/apple/) 上，而且 Swift 团队将会以一种彻底透明化的方式工作。Apple 为该发布版所做的工作是令人瞩目的。我们不但可以获得所有的源代码，同时还能浏览每个项目[完整的提交历史](https://github.com/apple/swift/commits/master)，提供非常详细的视图展示 Swift 团队的开发流程，以及 Swift 的[演变史](https://github.com/apple/swift-evolution)。 任何你想要获悉的东西都可以在 [Swift.org](http://swift.org/)上找到。
