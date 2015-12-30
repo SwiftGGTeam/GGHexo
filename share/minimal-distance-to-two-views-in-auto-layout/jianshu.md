@@ -20,9 +20,9 @@
 
     
     // 注意约束使用不等式 >=，以及设置优先级
-    leftViewConstraints += NSLayoutConstraint.constraintsWithVisualFormat("V:[red(50)]-(\>=10)-[green]", options: [], metrics: nil, views: leftViews)
-    leftViewConstraints += NSLayoutConstraint.constraintsWithVisualFormat("V:[blue(100)]-(\>=10)-[green]", options: [], metrics: nil, views: leftViews)
-    leftViewConstraints += NSLayoutConstraint.constraintsWithVisualFormat("V:[blue(100)]-(\<=10@999)-[green]", options: [], metrics: nil, views: leftViews)
+    leftViewConstraints += NSLayoutConstraint.constraintsWithVisualFormat("V:[red(50)]-(>=10)-[green]", options: [], metrics: nil, views: leftViews)
+    leftViewConstraints += NSLayoutConstraint.constraintsWithVisualFormat("V:[blue(100)]-(>=10)-[green]", options: [], metrics: nil, views: leftViews)
+    leftViewConstraints += NSLayoutConstraint.constraintsWithVisualFormat("V:[blue(100)]-(<=10@999)-[green]", options: [], metrics: nil, views: leftViews)
 
 上方两个视图与底部视图的最小间距不能小于 10（译者注：这里约束优先级默认是 1000）。此外蓝色视图与底部视图的最大间距不得大于 10 ，其优先级为 999。
 
