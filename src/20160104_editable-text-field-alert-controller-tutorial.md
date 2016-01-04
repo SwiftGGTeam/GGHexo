@@ -20,21 +20,21 @@ UIAlertController 类不仅用于呈现警告弹窗，还能够提供 Text Field
 打开X code，创建一个 Single View Application。输入项目名称：**IOS9TextFieldAlertControllerTutorial**，接着填写你独有的 Organization Name 以及 Organization Identifier。选择语言为 Swift 并确保设备为 iPhone 。
 <!--more-->
 
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/5671c6fcdc5cb4b9e2d47211/1450297086442/?format=1500w)
+![](/img/articles/editable-text-field-alert-controller-tutorial/format=1500w1451868017.9978042)
 
 前往 Storyboard。从 Object Library（译者注：快捷键 Command + Option + Control + 3） 中拖拽一个按钮（UIButton）到主视图中。双击按钮设置 title 名为 「Log in」。此刻保持按钮为选中状态，按下 Ctrl 键，使用鼠标左键拖拽一条线到主视图上方，弹出黑色信息框，使用 Shift 键选中「Vertical Spacing to Top Layout Guide」和「Center Horizontally in Container」两个选项。
 
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/567408d5d8af10a9411357c8/1450445013749/)
+![](/img/articles/editable-text-field-alert-controller-tutorial/1451868018.5434368)
 
 Storyboard 应该是这个样子的。
 
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/5671c787cbced6829d5ed1df/1450297224773/?format=1500w)
+![](/img/articles/editable-text-field-alert-controller-tutorial/format=1500w1451868018.9260972)
 
 （译者注：也许你的界面呈现了黄色约束警告，你需要使用 Command + Option + = 快捷键来更新下。）
 
 选中 Assistant Editor ，确保 **ViewControllers.swift** 可见。选中按钮使用 Ctrl + 左键拖拽方式创建如下 Action。
 
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/5671cb5ebfe8739f7af12ea5/1450298206884/?format=750w)
+![](/img/articles/editable-text-field-alert-controller-tutorial/format=750w1451868019.366837)
 
 在 **ViewController** 类中实现 **login** 方法：
 
@@ -96,6 +96,6 @@ Storyboard 应该是这个样子的。
 
 **构建并运行**该工程，点击 Login 按钮，填充 AlertController 中的 username 和 password 字段。输入内容随之打印到终端中。
 
-![](http://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/5671cb93bfe8739f7af131e9/1450298260884/?format=1500w)
+![](/img/articles/editable-text-field-alert-controller-tutorial/format=1500w1451868019.8416817)
 
 你可以前往 ioscreator 的 GitHub 仓库下载 [IOS9TextFieldAlertControllerTutorial](https://github.com/ioscreator/ioscreator) 源代码。
