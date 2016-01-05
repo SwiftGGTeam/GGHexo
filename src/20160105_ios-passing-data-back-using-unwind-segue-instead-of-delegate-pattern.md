@@ -18,6 +18,8 @@ permalink: ios-passing-data-back-using-unwind-segue-instead-of-delegate-pattern
 
 我今天注意到这个小技巧，值得和你分享一下。
 
+<!--more-->
+
 通常当我们创建一个视图控制器作为 picker 时，它会从屏幕的底部出现，覆盖在当前页面上，并且仅只占屏幕的一部分。当选择一个值后，就通过 delegate 模式返回回来。代码大概就像这样：
 
 ```swift
