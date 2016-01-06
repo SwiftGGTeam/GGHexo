@@ -20,7 +20,7 @@ permalink: utilize-the-responder-chain-for-target-action
 
 在 iOS 中，事件（比如，触摸事件（touch event））都使用响应链来传递。响应链由响应者对象（Responder Objects，[苹果官方术语](https://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/event_delivery_responder_chain/event_delivery_responder_chain.html#//apple_ref/doc/uid/TP40009541-CH4-SW1)）构成。如果你看过官方文档，可能会注意到 `UIView` 和 `UIViewController` 都是响应者对象。这就意味着， `UIView` 和 `UIViewController` 都继承自 `UIResponder` ，如下图：
 
-![](http://swift.eltanin.uberspace.de/wp-content/uploads/2016/01/UIViewDocumentation.png)
+![](/img/articles/utilize-the-responder-chain-for-target-action/UIViewDocumentation.png1452047417.154566)
 
 当用户点击了视图层级（view hierarchy）中的一个 view 时，iOS 会通过点击测试（hit test）来判定哪个响应者对象优先响应触摸事件。这个过程从最底层的 window 开始，沿着视图层级向上寻找并检查这个 touch 是不是发生在当前 view 边界内。该过程中被点击的最后一个 view 会先收到触摸事件。如果该 view 没有对触摸事件做出反应，触摸事件就会沿着响应链传递到下一个响应者。苹果的官方[示例](https://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/event_delivery_responder_chain/event_delivery_responder_chain.html#//apple_ref/doc/uid/TP40009541-CH4-SW4)很好的解释了这个过程。如果 view 告诉 iOS 它没有被点击，那它的子视图就不会被检查。
 
