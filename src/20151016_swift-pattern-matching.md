@@ -8,7 +8,7 @@ permalink: swift-pattern-matching
 原文链接=http://oleb.net/blog/2015/09/swift-pattern-matching/
 作者=Ole Begemann
 原文日期=2015-09-18
-译者=lfb-CD
+译者=lfb_CD
 校对=pmst
 定稿=千叶知风
 发布时间=2015-10-16T09:00:00
