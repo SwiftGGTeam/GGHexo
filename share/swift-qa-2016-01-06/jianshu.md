@@ -1,0 +1,580 @@
+每周 Swift 社区问答 2016-01-06"
+
+
+作者：[shanks](http://codebuild.me) & [pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)
+
+本周整理问题如下：
+
+* [Question on extracting a substring from a url](#Q1)
+* [All func pointers need a protocol now](#Q2)
+* [Property for Double and CGFloat](#Q3)
+* [Question on dismissing model ViewController](#Q4)
+* [count numbers in array and order them by count in swift](#Q5)
+* [Cannot invoke [Method] with argument list of type ( , )](#Q6)
+* [Swift programming style](#Q7)
+
+
+
+对应的代码都放到了 github 上，有兴趣的同学可以下载下来研究：[点击下载](https://github.com/SwiftGGTeam/SwiftCommunityWeeklyQA/tree/master/20160106/%E6%AF%8F%E5%91%A8%20Swift%20%E7%A4%BE%E5%8C%BA%E9%97%AE%E7%AD%9420160106.playground)
+
+
+
+<a name="Q1"></a>
+
+## Question1: Question on extracting a substring from a url
+
+[Q1链接地址](https://forums.developer.apple.com/thread/29374)
+
+
+
+### 问题描述
+
+这个问题在实战中经常被提及，譬如现在有一个字符串URL：[https://api.github.com/gists/public?page=2]( https://api.github.com/gists/public?page=2) ，我需要从中提取出“?page=2”以及“https://api.github.com/gists/public”，将这两个部分存储到两个变量中，如下：
+
+    
+    var strBase = "https://api.github.com/gists/public"
+    var strPage = "?page=2"
+问题解答前了解下小知识：
+
+* HTTP GET请求中，url 与请求参数之间用**?**分隔，参数与参数之间是**&**分隔。
+
+### 问题解答
+
+思路：显而易见，关注点应该放在**?**上，解决方式也五花八门，现提供以下几种方式：
+
+* 方法一
+
+    
+    var urlStr = "https://api.github.com/gists/public?page=2"
+    var strBase:String		// 请求地址
+    var strPage:String		// 请求参数
+    
+    if let qIndex = urlStr.characters.indexOf("?") {  //35
+    // 2
+    strBase = urlStr.substringToIndex(qIndex)
+    strPage = urlStr.substringFromIndex(qIndex)
+    } else {
+    // 3
+    strBase = urlStr
+    strPage = ""
+    }
+
+1. 首先定位到 **?** 的 index 索引值。
+2. 请求地址中存在参数（即存在?），那么通过`substringToIndex` 和 `substringFromIndex` 获取到两个部分
+3. 请求地址中不存在参数，那么直接传入的地址就是`strBase`。
+
+这里的`qIndex`是一个索引值，类型是`String.CharacterView.Index`，修改该值并非是用 `+、-` 操作，而是调用`qIndex.successor()` 取到下一位索引值，使用`qIndex.predecessor()`取到前一位索引值。
+
+对于`substringToIndex(qIndex)`方法，从 urlStr 的 `startIndex(这里是0)` 开始截取直到 `qIndex`；对于`substringFromIndex(qIndex)` 方法，即从 `qIndex` 索引开始直到`endIndex`前面一个索引，为什么这么说？举个例子，“Hello”字符的 startIndex 毫无疑问是等于0，但 endIndex 不是等于4！！而是5！！最后一个字符的后一位！希望大家记住。
+
+* 方法二
+
+这里是使用了`componentsSeparatedByString`方法，通过**?**字符将字符串分隔符将原字符串分割成多个部分到数组中。
+
+    
+    let parts = urlStr.componentsSeparatedByString("?")
+    // 1
+    strBase = parts[0]
+    // 2
+    strPage = parts.count >= 2 ? "?" + parts[1] : ""
+
+1. 显然这里只有一个 ? 字符，将原字符串分割成两个部分，第一个部分当然是 strBase 喽
+2. 通过数组的count 来判断是否存在请求参数。
+
+* 方法三
+这里使用了 NSURLComponents 方法：
+
+
+    
+    if let urlCompo = NSURLComponents(string: urlStr) {
+    strPage = urlCompo.query != nil ? "?" + urlCompo.query! : ""
+    urlCompo.query = nil
+    strBase = urlCompo.string!
+    } else {
+    fatalError("invalid URL")
+    }
+
+举一反三，如果我还想获得请求参数中的各个参数，那应该怎么做呢？我先抛砖引玉下：
+
+    
+    var urlStr1 = "https://api.github.com/gists/public?page=2&name=machao&pwd=222"
+    
+    
+    
+    let parts1 = urlStr1.componentsSeparatedByString("?")
+    strBase = parts1[0]
+    var strPara = parts1.count >= 2 ? "?" + parts[1] : ""
+    
+    strPara.removeAtIndex(strPara.startIndex)
+    let Paras1 = strPara.componentsSeparatedByString("&")//就是这个！
+
+
+
+<a name="Q2"></a>
+
+## Question2: All func pointers need a protocol now?
+
+[Q2链接地址](https://forums.developer.apple.com/thread/29580)
+
+
+### 问题描述
+
+
+Gargoyle 想实现一个对象之间的回调，但是却未使用 protocol + delegate 的设计模式，而是使用了如下方法：
+
+    
+    final class MyView: UIView {
+    var onSomeAction: ((String) -> Void)!
+    }
+    
+    final class MyViewController: UIViewController {
+    let myView = MyView(frame: CGRectZero)
+    override func viewDidLoad() {
+    super.viewDidLoad()
+    myView.onSomeAction = someFunc
+    }
+    
+    private func someFunc(str: String) {
+    }
+    }
+
+注意到 `myViewController` 实例与 `myView` 实例会形成一个 retain cycle ，倘若你想为 `var onSomeAction` 使用 `weak` 关键字，抱歉！报错“weak cannot be applied to non-class type xxxx” ，显然对于非 class 对象你无法使用 weak 关键字。
+
+
+
+### 问题解答
+
+Jessy 提供了一种解决方案：
+
+
+    
+    var onSomeAction_get: () -> (String -> Void)! = {nil}
+    
+    myView.onSomeAction_get = {[unowned self] in self.someFunc}
+
+首先对闭包类型进行了修改，从`(String) -> Void` 变为 `() -> (String -> Void)` ；其次为 `myView` 的 `onSomeAction_get` 赋值是用闭包方式，其中使用了[unowned self] 保证不会形成retain cycle，这也是问题解决的关键所在。
+
+
+<a name="Q3"></a>
+
+## Question3: Property for Double and CGFloat
+
+[Q3链接地址](https://forums.developer.apple.com/thread/29710)
+
+### 问题描述
+
+Albinus 希望判断是一个随意给定的 number 是否是整型，譬如给定一个 number 是 Double 类型，他现在是通过extension 来实现的，代码如下：
+
+    
+    extension Double {
+        var isInteger: Bool {
+            return Double(self) == Double(Int(self))
+        }
+    }
+
+注意到通过 extension 扩展了一个computed property `isInteger` ， 布尔类型，判断方式也很简单，是通过类型转换先 Int 去除小数部分（如果有的话），然后再转成 Double 类型，这样做很繁琐，但是 Swift 作为一门强类型语言，类型安全放在首位，任何时候都要先保证类型统一。
+
+再来说说其他数字类型，譬如 CGFloat 、 Float 等等，我们都可以通过 extension 依葫芦画瓢来实现，不过有木有更简单，直观的方式呢？
+
+### 问题解答
+
+OOPer 给出了自己解答：
+
+
+    
+    protocol IntegerCheckableFloatType: FloatLiteralConvertible, Equatable {
+        func % (lhs: Self, rhs: Self) -> Self   // % 可是取余运算符哦
+        var isInteger: Bool {get}
+        }
+    extension IntegerCheckableFloatType {
+        var isInteger: Bool {
+            return self % 1.0 == 0.0 as Self
+        }
+    }
+    extension Double: IntegerCheckableFloatType {}
+    extension CGFloat: IntegerCheckableFloatType {}
+    extension Float: IntegerCheckableFloatType {}
+    (123.4).isInteger //->false
+    (123.0).isInteger //->true
+
+首先定义 `IntegerCheckableFloatType` 协议，它遵循（实现）了 `FloatLiteralConvertible` 和 `Equatable` 协议，当然协议本身还要求一个 method 以及 read-only property，分别是 `func % (lhs: Self, rhs: Self) -> Self` 和 `isInteger`。
+
+对于 `FloatLiteralConvertible` 协议内容：
+
+    
+    typealias FloatLiteralType
+    /// Create an instance initialized to `value`.
+    public init(floatLiteral value: Self.FloatLiteralType)
+
+`FloatLiteralType` 又是什么鬼？其实是`public typealias FloatLiteralType = Double` 正如你所看到其实就是 Double。 只要实现了这个协议的类型就能使用浮点类型**字面量**进行初识化。
+
+`Equatable` 更简单，协议内容如下：
+
+    
+    public func ==(lhs: Self, rhs: Self) -> Bool
+
+从名称就知道这个协议用于 `==` 进行两个数之间的判断了，返回一个布尔类型值来标示是否相等。
+
+现在巧妙的是我们使用了 Protocol 中的 [extension 特性](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Protocols.html#//apple_ref/doc/uid/TP40014097-CH25-ID267)，为协议增加了默认行为，如下：
+
+    
+    extension IntegerCheckableFloatType {
+        var isInteger: Bool {
+            return self % 1.0 == 0.0 as Self
+        }
+    }
+
+根据协议的知识，一个类型遵循了某个协议，那么必须实现该协议中的所有“要求”。但是！倘若你使用了 extension 特性为协议增加了一个默认行为，那么类型遵循了该协议，本身却不实现，则会调用默认行为。就拿上文例子说吧，如果类型遵循了`IntegerCheckableFloatType` 协议却没有实现 `var isInteger:Bool` 这个只读属性，就会调用默认行为`self % 1.0 == 0.0 as Self` ，不过一旦你自己实现了 `var isInteger:Bool`这个协议内容，就会覆盖原有的默认行为。
+
+
+再来看看后面部分：
+
+    
+    extension Double: IntegerCheckableFloatType {}
+    extension CGFloat: IntegerCheckableFloatType {}
+    extension Float: IntegerCheckableFloatType {}
+
+我们令 `Double、CGFloat和Float` 遵循自定义协议`IntegerCheckableFloatType`，你可能会问怎么不实现协议内容呢？原因是这些类型本身就已经是实现了`FloatLiteralConvertible` 以及 `Equatable` 协议，另外`func % (lhs: Self, rhs: Self) -> Self` 也是实现的。所以你只需要贴心地用extension对已有类型进行扩展，告知它们是遵循`IntegerCheckableFloatType`即可，想要判断是否是整型，只需要获取`isInteger`属性即可。
+
+
+
+
+<a name="Q4"></a>
+
+## Question4: Question on dismissing model ViewController
+
+### 问题链接
+
+[Q4链接地址](https://forums.developer.apple.com/thread/29701)
+
+### 问题描述
+VolmDev 问了一个自己在实际开发中遇到的问题：应用需要登录操作，为此当主界面出现之后，跳转到登陆界面，输入账号密码，点击 Login 按钮，关闭登陆界面，回到主界面，一切就应该结束，不是吗？ 可问题偏偏出现了！当关闭登陆界面后居然又跳出了登陆界面！再关闭又打开？ VolmDev 抓狂了，这尼玛什么情况！他附上了完整的代码，如下：
+
+
+这是ViewController.swift 文件源代码：
+
+    
+    // ViewController.swift
+    
+    import UIKit
+    import SafariServices
+    
+    class ViewController: UIViewController, LoginViewDelegate  {
+    
+    var safariViewController: SFSafariViewController?
+    
+    override func viewDidLoad() {
+    	super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+    	super.viewDidAppear(animated)
+    	showPopUp()
+    }
+    
+    override func didReceiveMemoryWarning() {
+    	super.didReceiveMemoryWarning()
+    }
+    
+    func showPopUp()
+    {
+    	let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+    	if let loginVC = storyboard.instantiateViewControllerWithIdentifier(
+    "LoginViewController") as? LoginViewController {
+    	loginVC.delegate = self
+    	self.presentViewController(loginVC, animated: true, completion: nil)
+    	}
+    }
+    
+    // delegate function.
+    func didTapLoginButton() {
+    
+    self.dismissViewControllerAnimated(false, completion: nil)
+    //        if let authURL = GitHubAPIManager.sharedInstance.URLToStartOAuth2Login() {
+    //            safariViewController = SFSafariViewController(URL: authURL)
+    //            safariViewController?.delegate = self
+    //            if let webViewController = safariViewController {
+    //                self.presentViewController(webViewController, animated: true, completion: nil)
+    //            }
+    //        }
+    }
+    }
+
+这是 LoginViewController.swift 文件源代码:
+
+    
+    //  LoginViewController.swift
+    //  TestingPopUps
+    
+    import UIKit
+    
+    // this is a delegate function that can be used
+    // to call a funct+-*`*ion outside this class to do
+    // something on behafe of this class.
+    protocol LoginViewDelegate: class {
+    	func didTapLoginButton()
+    }
+    
+    class LoginViewController: UIViewController {
+    
+    weak var delegate: LoginViewDelegate?
+    
+    @IBAction func btnDismiss(sender: AnyObject) {
+    // Note: I tried dismissing here too with failure
+    //self.dismissViewControllerAnimated(false, completion: nil)
+    
+    if let delegate = self.delegate {
+    	delegate.didTapLoginButton()
+    }
+    
+    }
+    
+    override func viewDidLoad() {
+    	super.viewDidLoad()
+    	// Do any additional setup after loading the view.
+    }
+    
+    override func didReceiveMemoryWarning() {
+    	super.didReceiveMemoryWarning()
+    	// Dispose of any resources that can be recreated.
+    	}
+    }
+
+当然，storyboard 还有些不关紧要的东西，倘若有兴趣，你可以自己来补充。
+
+倘若不想看源代码思考下，请直接跳转到问题解答。
+
+
+
+
+
+
+
+### 问题解答
+
+该例出现的问题其实很简单，但也是新手经常犯的错误。贴出逻辑错误的部分：
+
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        showPopUp()
+    }
+
+当 viewController 的主视图出现之后，调用showPopUp方法弹出登陆界面，貌似没什么错误。此时登陆界面位于主视图之上，输入账号密码之后点击按钮，通过 protocol+delegate 方法告知 viewController 视图控制器用户点击了登陆按钮，此时事件处理只是简单的关闭登陆视图：
+
+    
+    func didTapLoginButton() {
+    	self.dismissViewControllerAnimated(false, completion: nil)
+    }
+
+关闭视图之后，意味着 viewController 的视图又出现了！那么就会调用`viewDidAppear` 方法，再次调用了`showPopUp`方法！问题就是这么来的。
+
+
+
+### 思考
+
+今天的问题很基础，但是同样有我们值得学习的地方，我简单归纳下：
+
+
+1. 你需要了解 ViewController 中几个方法的调用顺序，譬如：viewDidLoad() viewDidAppear() LoadView()等等
+2. Protocol + Delegate 的用法。
+3. 从 StoryBoard 中加载视图控制器。也就是 `storyboard.instantiateViewControllerWithIdentifier()`。
+
+
+<a name="Q5"></a>
+
+## Question5: count numbers in array and order them by count in swift
+
+### 问题链接
+
+[Q5链接地址](http://stackoverflow.com/questions/34614782/count-numbers-in-array-and-order-them-by-count-in-swift)
+
+
+### 问题描述
+楼主提了一个算法问题：
+1、已知一个数组，按照单个元素在数组中出现的次数作为重新排序的依据，个数多的排在前面
+2、相同个数时候，元素值大的排前面
+
+例如：
+
+    [1, 2, 2, 3, 5, 5]
+
+经过计算得到的结果是：
+
+    [5, 5, 2, 2, 3, 1]
+
+### 问题解答
+
+问题解答思路也比较简单，首先是要计算每个元素在数组中出现的次数，然后再做排序。
+跟帖提供了 2 中解法，都是这样的思路。不过实现方式略有不同：
+
+解法1：
+扩展 SequenceType，因为数组的遍历是基于 SequenceType 协议的，所以自然会拥有扩展的方法 frequencies，用来计算元素在数组出现的次数。然后通过 sort 方法输出比较的结果。注意结果数组元素是元组形式。如果想变成与输入相同的结构，要做一下遍历输出。
+
+    extension SequenceType where Generator.Element : Hashable {
+        func frequencies() -> [Generator.Element:Int] {
+            var results : [Generator.Element:Int] = [:]
+            for element in self {
+                results[element] = (results[element] ?? 0) + 1
+            }
+            return results
+        }
+    }
+    
+    let alpha = [2,8,2,6,1,8,2,6,6]
+    let beta = [6,6,6,2,2,2,8,8,1]
+    
+    let sorted = alpha.frequencies().sort {
+        if $0.1 > $1.1 { // if the frequency is higher, return true
+            return true
+        } else if $0.1 == $1.1 { // if the frequency is equal
+            return $0.0 > $1.0 // return value is higher
+        } else {
+            return false // else return false
+        }
+    }
+
+
+解答2：
+定义一个字典数组，专门来存储每个元素在数组出现的次数，然后用 sort 方法来输出结果：
+
+    var arr1 = [2,8,2,6,1,8,2,6,6]
+    var arr2 = [6,6,6,2,2,2,8,8,1]
+    
+    var counting = [Int: Int]()
+    
+    // fill counting dictionary
+    for num in arr1 {
+        if counting[num] != nil {
+            counting[num]!++
+        } else {
+            counting[num] = 1
+        }
+    }
+    
+    // [6: 3, 2: 3, 8: 2, 1: 1]
+    print(counting)
+    
+    func order(i1: Int, i2: Int) -> Bool {
+        let count1 = counting[i1]
+        let count2 = counting[i2]
+        
+        // if counting is the same: compare which number is greater
+        if count1 == count2 {
+            return i1 > i2
+        } else {
+            return count1 > count2
+        }
+    }
+    
+    // [6, 6, 6, 2, 2, 2, 8, 8, 1]
+    print(arr1.sort(order))
+    print(arr2)
+
+
+
+
+<a name="Q6"></a>
+
+## Question6: Cannot invoke [Method] with argument list of type ( , )
+
+
+### 问题链接
+
+[Q6链接地址](http://stackoverflow.com/questions/34610440/cannot-invoke-method-with-argument-list-of-type)
+
+
+### 问题描述
+
+楼主的问题是：
+已知协议 A，B 其中协议 B 遵从 协议 A。类 Utility 定义了一个泛型方法 add，T 遵从 A 协议。
+在另外一个 Test 类的方法 addItem 中，调用了这个 add 方法，但是传入的 data 类型是 B，但调用时候出错，见下面代码：
+
+    protocol A { }
+    
+    protocol B: A { }
+    
+    class Utility {
+        func add<T:A>(t:T.Type,param:T){
+        }
+    }
+    
+    class Test {
+        var util: Utility
+        
+        init() {
+            util = Utility()
+        }
+        
+        func addItem(data:B){
+            //util.add(B.self,param: data) //这里报错：expected an argument list of type '(T.Type, param: T)'
+        }
+    }
+
+### 问题解答
+
+楼主把 data 的类型定义为协议 B，这不是正确的用法，应该定义一个泛型类型 T，T 遵从 B 协议，见以下代码：
+
+    class Test1 {
+        var util: Utility
+        
+        init() {
+            util = Utility()
+        }
+        
+        func addItem<T: B>(data: T) {
+            util.add(T.self, param: data)
+        }
+    }
+
+<a name="Q7"></a>
+
+## Question7: Swift programming style 
+
+
+### 问题链接
+
+[Q7链接地址](http://stackoverflow.com/questions/34607320/swift-programming-style)
+
+
+### 问题描述
+
+楼主的问题是：extension 存在的意义是啥，为什么不直接写到一个定义里面，比如：
+
+    struct xxx {
+    }
+    
+    extension xxx {
+        func yyy() {}
+    }
+    
+    //: 可以合并成以下代码：
+    
+    
+    struct xxx1 {
+        func yyy() {}
+    }
+### 问题解答
+
+此问题其实很容易解答，extension 存在的意义，是去扩展已有的类型，而不是新建了类型，而去用 extension 扩展新的逻辑。
+比如，对 Int，Double 新增功能，就需要用到 extension。
+跟帖中也建议楼主好好读读官方文档，理解一下extension存在的价值。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
