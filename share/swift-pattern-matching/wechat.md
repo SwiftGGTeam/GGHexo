@@ -1,7 +1,7 @@
 Swift中的模式匹配"
 
 > 作者：Ole Begemann，[原文链接](http://oleb.net/blog/2015/09/swift-pattern-matching/)，原文日期：2015-09-18
-> 译者：[lfb-CD](undefined)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[lfb_CD](http://weibo.com/lfbWb)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 
@@ -243,4 +243,5 @@ Swift中的模式匹配是基于`~=`操作符。如果表达模式`~=`返回值�
 针对我们最初问题的一个通用的解决方案，我们提出了可以应用于很多不同的问题的解决方案。我发现这种情况很普遍：当你将函数作为值时可以到处传递并且通常用于你不想使用它们的地方。函数式编程提高了代码的可组合性，这是在参数使用的一个核心理念。
 
 在内置的数据类型或者是你自定义的数据类型的基础上，可以给Swift的模式匹配系统扩展出可以非常强大的新功能。但是，请不要过度地去扩展。虽然它看起来比原始的解决方案更加清晰，但是对那些不熟悉它的人来说，自定义的语法会使你的代码可读性变差。
+
 > 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
