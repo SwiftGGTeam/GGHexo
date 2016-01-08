@@ -1,24 +1,22 @@
-title: "iOS 并发：从 NSOperation 和 Dispatch Queues 开始"
-date: 2016-01-08
-tags: [AppCoda]
-categories: [Swift 进阶]
-permalink: ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues
+iOS 并发：从 NSOperation 和 Dispatch Queues 开始"
 
----
-原文链接=http://www.appcoda.com/ios-concurrency/
-作者=hossam ghareeb
-原文日期=2015-12-09
-译者=ray16897188
-校对=Channe
-定稿=千叶知风
+> 作者：hossam ghareeb，[原文链接](http://www.appcoda.com/ios-concurrency/)，原文日期：2015-12-09
+> 译者：[ray16897188](http://www.jianshu.com/users/97c49dfd1f9f/latest_articles)；校对：[Channe](undefined)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+  
 
-<!--此处开始正文-->
+
+
+
+
+
+
+
 
 并发（Concurrency）在 iOS 开发中总是被看作是洪水猛兽一般。人们以为它是一个很危险的领域，很多开发者都尽量避免与其接触。更有传闻说你一定要竭尽所能的避免写任何关于多线程的代码。假如你对并发不是很了解却还去使用它的话，那么我同意：并发是很危险的。只是它的危险是因为你不了解它。试想一下常人一生中体验过的危险运动和行为有多少，很多对吧？但是当掌握了之后，就会统统变成小菜一碟。并发是把双刃剑，你应该掌握并学会如何去使用它。它能帮你写出效率高、执行快、反应灵敏的 App，而与此同时，对它的滥用会无情的毁掉你的 App。这就是为什么在开始写任何关于并发的代码之前，先要想一想你为什么要用到并发、需要用到哪个（与并发有关的）API 来解决这个问题。iOS 中我们有很多能用到的 API。在此教程里我会讲到最常用的两个：`NSOperation` 和 `Dispatch Queues`（派发队列）。
 
-<!--more-->
 
-![](/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214820.2549465)
+
+![](http://swift.gg/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214820.2549465)
 
 ## 我们为什么要用并发？
 
@@ -39,7 +37,7 @@ GCD 是在系统的Unix层级中用于管理并发代码并异步执行操作时
 ### 什么是队列
 
 队列是按照先进先出（FIFO）顺序管理对象的数据结构。队列类似于电影院的售票窗口前的长队。电影票是按先到先得的顺序卖出。长队前面的人先买到票，晚来的人后买到票。计算机科学中的队列概念和这个很像，因为第一个被加到队列中的对象也是第一个要从队列中被移除的。
-![Photo credit: FreeImages.com/Sigurd Decroos](/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.022044)
+![Photo credit: FreeImages.com/Sigurd Decroos](http://swift.gg/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.022044)
 
 ### Dispatch Queues
 
@@ -84,7 +82,7 @@ GCD 是在系统的Unix层级中用于管理并发代码并异步执行操作时
 
 现在你应该有了一个对 `Dispatch Queues` 的基本了解。我会给你一个简单的小抄做参考。里面很简单，包含了对 GCD 你需要了解的所有信息。
 
-![](/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.2764683)
+![](http://swift.gg/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.2764683)
 
 还不错吧？现在我们来研究一个简单的示范，看看如何使用 `Dispatch Queues`。我会告诉你如何使用 `Dispatch Queues` 来优化 App 的性能，让它有更快的响应速度。
 
@@ -92,7 +90,7 @@ GCD 是在系统的Unix层级中用于管理并发代码并异步执行操作时
 
 我们的初始项目很简单，它展示4个 image views，每个 image view 显示一张来自远端站点的图片。图片的请求是在主线程中完成。为了给你展示这么做对UI响应会有何影响，我还在图片下面加了一个简单的 slider。[下载并运行这个初始项目](https://www.dropbox.com/s/lkiasutevec5vx0/ConcurrencyDemoStarter.zip?dl=0)。点击 **Start** 按钮开始图片的下载，然后在图片下载的过程中拖动 slider，你会发现根本就拖不动。
 
-![](/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.4513347)
+![](http://swift.gg/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.4513347)
 你点了 Start 按钮之后，图片就会在主线程中开始下载。显然这种方式糟糕至极，让 UI 无法响应。不幸的是时至今日还有很对的 App 依旧在主线程中执行繁重的装载任务。现在我们使用 `Dispatch Queues` 来解决这个问题。
 
 首先我们使用并发队列的解决方案，随后再使用串行队列的解决方案。
@@ -101,27 +99,44 @@ GCD 是在系统的Unix层级中用于管理并发代码并异步执行操作时
 
 现在回到 Xcode 项目的 ViewController.swift 文件中。如果你细看一下代码，就会看到点击事件的方法 **didClickOnStart**。这个方法负责处理图片的下载。我们现在是这样来完成该任务的：
 
-```swift
-@IBAction func didClickOnStart(sender: AnyObject) {
-    let img1 = Downloader.downloadImageWithURL(imageURLs[0])
-    self.imageView1.image = img1
     
-    let img2 = Downloader.downloadImageWithURL(imageURLs[1])
-    self.imageView2.image = img2
-    
-    let img3 = Downloader.downloadImageWithURL(imageURLs[2])
-    self.imageView3.image = img3
-    
-    let img4 = Downloader.downloadImageWithURL(imageURLs[3])
-    self.imageView4.image = img4
-    
-}
-```
+    @IBAction func didClickOnStart(sender: AnyObject) {
+        let img1 = Downloader.downloadImageWithURL(imageURLs[0])
+        self.imageView1.image = img1
+        
+        let img2 = Downloader.downloadImageWithURL(imageURLs[1])
+        self.imageView2.image = img2
+        
+        let img3 = Downloader.downloadImageWithURL(imageURLs[2])
+        self.imageView3.image = img3
+        
+        let img4 = Downloader.downloadImageWithURL(imageURLs[3])
+        self.imageView4.image = img4
+        
+    }
 
 每一个 downloader 都被看作是一个任务，而所有的任务都在主队列中被执行。现在我们来获得一个全局并发队列的引用，该队列是默认优先级的那个。
 
-```swift
-let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+    
+    let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+            dispatch_async(queue) { () -> Void in
+                
+                let img1 = Downloader.downloadImageWithURL(imageURLs[0])
+                dispatch_async(dispatch_get_main_queue(), {
+                    
+                    self.imageView1.image = img1
+                })
+                
+            }
+
+先用 *dispatch\_get\_global\_queue* 获得到默认并发队列的引用，然后在 block 中提交一个任务，下载第一张图片。当图片下载完成后，我们再向主队列提交另外一个任务，这个任务用拿下载好了的图片去更新 image view。换句话说，我们就是将图片下载任务放到了后台线程中执行，而 UI 相关的任务则是在主线程中执行。
+
+对剩下的图片做同样改动，代码如下：
+
+    
+    @IBAction func didClickOnStart(sender: AnyObject) {
+        
+        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
         dispatch_async(queue) { () -> Void in
             
             let img1 = Downloader.downloadImageWithURL(imageURLs[0])
@@ -131,57 +146,37 @@ let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
             })
             
         }
-```
-
-先用 *dispatch\_get\_global\_queue* 获得到默认并发队列的引用，然后在 block 中提交一个任务，下载第一张图片。当图片下载完成后，我们再向主队列提交另外一个任务，这个任务用拿下载好了的图片去更新 image view。换句话说，我们就是将图片下载任务放到了后台线程中执行，而 UI 相关的任务则是在主线程中执行。
-
-对剩下的图片做同样改动，代码如下：
-
-```swift
-@IBAction func didClickOnStart(sender: AnyObject) {
-    
-    let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-    dispatch_async(queue) { () -> Void in
-        
-        let img1 = Downloader.downloadImageWithURL(imageURLs[0])
-        dispatch_async(dispatch_get_main_queue(), {
+        dispatch_async(queue) { () -> Void in
             
-            self.imageView1.image = img1
-        })
+            let img2 = Downloader.downloadImageWithURL(imageURLs[1])
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                
+                self.imageView2.image = img2
+            })
+            
+        }
+        dispatch_async(queue) { () -> Void in
+            
+            let img3 = Downloader.downloadImageWithURL(imageURLs[2])
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                
+                self.imageView3.image = img3
+            })
+            
+        }
+        dispatch_async(queue) { () -> Void in
+            
+            let img4 = Downloader.downloadImageWithURL(imageURLs[3])
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                
+                self.imageView4.image = img4
+            })
+        }
         
     }
-    dispatch_async(queue) { () -> Void in
-        
-        let img2 = Downloader.downloadImageWithURL(imageURLs[1])
-        
-        dispatch_async(dispatch_get_main_queue(), {
-            
-            self.imageView2.image = img2
-        })
-        
-    }
-    dispatch_async(queue) { () -> Void in
-        
-        let img3 = Downloader.downloadImageWithURL(imageURLs[2])
-        
-        dispatch_async(dispatch_get_main_queue(), {
-            
-            self.imageView3.image = img3
-        })
-        
-    }
-    dispatch_async(queue) { () -> Void in
-        
-        let img4 = Downloader.downloadImageWithURL(imageURLs[3])
-        
-        dispatch_async(dispatch_get_main_queue(), {
-            
-            self.imageView4.image = img4
-        })
-    }
-    
-}
-```
 
 你向默认队列以并发任务的形式提交了四个图片的下载任务。现在创建项目然后运行 App ，运行起来应该更快了（如果你收到任何错误告警，在把你的代码和上面的比较一下）。注意到下载图片的过程中你应该可以拖动那个 slider，没有任何延迟。
 
@@ -189,53 +184,52 @@ let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
 另一种解决延迟问题的方法是使用串行队列。现在还是回到 ViewController.swift 中的 didClickOnStart() 方法。这回我们用一个串行队列来下载图片。使用串行队列时你一定要留意你所引用的到底是哪一个串行队列。每一个 App 都有一个默认的串行队列，实际上它也是UI任务相关的主队列。所以切记用串行队列的时候，你一定要创建一个新的，否则就会在 App 尝试执行更新UI相关任务的同时又执行你的任务。这就会产生错误，引起延时，毁掉用户体验。你可以使用 dispatch_queue_create 函数创建一个新的队列，然后将所有任务按相同方式提交给它，和我们之前做的一样。更改之后，代码如下：
 
-```swift
-@IBAction func didClickOnStart(sender: AnyObject) {
     
-    let serialQueue = dispatch_queue_create("com.appcoda.imagesQueue", DISPATCH_QUEUE_SERIAL)
-    
-    
-    dispatch_async(serialQueue) { () -> Void in
+    @IBAction func didClickOnStart(sender: AnyObject) {
         
-        let img1 = Downloader .downloadImageWithURL(imageURLs[0])
-        dispatch_async(dispatch_get_main_queue(), {
+        let serialQueue = dispatch_queue_create("com.appcoda.imagesQueue", DISPATCH_QUEUE_SERIAL)
+        
+        
+        dispatch_async(serialQueue) { () -> Void in
             
-            self.imageView1.image = img1
-        })
+            let img1 = Downloader .downloadImageWithURL(imageURLs[0])
+            dispatch_async(dispatch_get_main_queue(), {
+                
+                self.imageView1.image = img1
+            })
+            
+        }
+        dispatch_async(serialQueue) { () -> Void in
+            
+            let img2 = Downloader.downloadImageWithURL(imageURLs[1])
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                
+                self.imageView2.image = img2
+            })
+            
+        }
+        dispatch_async(serialQueue) { () -> Void in
+            
+            let img3 = Downloader.downloadImageWithURL(imageURLs[2])
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                
+                self.imageView3.image = img3
+            })
+            
+        }
+        dispatch_async(serialQueue) { () -> Void in
+            
+            let img4 = Downloader.downloadImageWithURL(imageURLs[3])
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                
+                self.imageView4.image = img4
+            })
+        }
         
     }
-    dispatch_async(serialQueue) { () -> Void in
-        
-        let img2 = Downloader.downloadImageWithURL(imageURLs[1])
-        
-        dispatch_async(dispatch_get_main_queue(), {
-            
-            self.imageView2.image = img2
-        })
-        
-    }
-    dispatch_async(serialQueue) { () -> Void in
-        
-        let img3 = Downloader.downloadImageWithURL(imageURLs[2])
-        
-        dispatch_async(dispatch_get_main_queue(), {
-            
-            self.imageView3.image = img3
-        })
-        
-    }
-    dispatch_async(serialQueue) { () -> Void in
-        
-        let img4 = Downloader.downloadImageWithURL(imageURLs[3])
-        
-        dispatch_async(dispatch_get_main_queue(), {
-            
-            self.imageView4.image = img4
-        })
-    }
-    
-}
-```
 
 正如我们所见，与并行队列解决方案唯一的不同就是需要创建一个串行队列。再次点击 build 然后运行 App ，你又会看见图片在后台进行下载，所以可以和UI进行交互。
 
@@ -266,18 +260,17 @@ GCD 是一个底层的 C API，能让开发者并行执行任务。与之相对�
 那么 `NSOperation` 的优势在哪里？
 
 1. 首先它可以通过 `NSOperation` 类的 addDependency（op: NSOperation）方法获得对相依性的支持。如果你有这样的需求：即某 operation 的启动需取决于另一个 operation 的执行，那么就得用 `NSOperation`。
-![](/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.6419117)
+![](http://swift.gg/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.6419117)
 2. 其次，你可将 *queuePriority* 属性设为以下值来改变执行优先级：
 
-```swift
-public enum NSOperationQueuePriority : Int {
-    case VeryLow
-    case Low
-    case Normal
-    case High
-    case VeryHigh
-}
-```
+    
+    public enum NSOperationQueuePriority : Int {
+        case VeryLow
+        case Low
+        case Normal
+        case High
+        case VeryHigh
+    }
 拥有最高优先级的 operation 会被第一个执行。
 
 3. 你可以取消掉某特定队列中的某个 operation，或者是取消队列中所有的 operation。
@@ -292,146 +285,139 @@ public enum NSOperationQueuePriority : Int {
 
 现在来重写一下我们的示例项目，这次使用 NSOperationQueues。首先在 ViewController 类中声明如下变量：
 
-```swift
-var queue = NSOperationQueue()
-```
+    
+    var queue = NSOperationQueue()
 然后将 didClickOnStart 方法中的代码替换成下面的，再看看在 NSOperationQueue 中怎样去执行 operation：
 
-```swift
-@IBAction func didClickOnStart(sender: AnyObject) {
-    queue = NSOperationQueue()
- 
-    queue.addOperationWithBlock { () -> Void in
-        
-        let img1 = Downloader.downloadImageWithURL(imageURLs[0])
- 
-        NSOperationQueue.mainQueue().addOperationWithBlock({
-            self.imageView1.image = img1
-        })
-    }
     
-    queue.addOperationWithBlock { () -> Void in
-        let img2 = Downloader.downloadImageWithURL(imageURLs[1])
+    @IBAction func didClickOnStart(sender: AnyObject) {
+        queue = NSOperationQueue()
+     
+        queue.addOperationWithBlock { () -> Void in
+            
+            let img1 = Downloader.downloadImageWithURL(imageURLs[0])
+     
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                self.imageView1.image = img1
+            })
+        }
         
-        NSOperationQueue.mainQueue().addOperationWithBlock({
-            self.imageView2.image = img2
-        })
- 
-    }
-    
-    queue.addOperationWithBlock { () -> Void in
-        let img3 = Downloader.downloadImageWithURL(imageURLs[2])
+        queue.addOperationWithBlock { () -> Void in
+            let img2 = Downloader.downloadImageWithURL(imageURLs[1])
+            
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                self.imageView2.image = img2
+            })
+     
+        }
         
-        NSOperationQueue.mainQueue().addOperationWithBlock({
-            self.imageView3.image = img3
-        })
- 
-    }
-    
-    queue.addOperationWithBlock { () -> Void in
-        let img4 = Downloader.downloadImageWithURL(imageURLs[3])
+        queue.addOperationWithBlock { () -> Void in
+            let img3 = Downloader.downloadImageWithURL(imageURLs[2])
+            
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                self.imageView3.image = img3
+            })
+     
+        }
         
-        NSOperationQueue.mainQueue().addOperationWithBlock({
-            self.imageView4.image = img4
-        })
- 
+        queue.addOperationWithBlock { () -> Void in
+            let img4 = Downloader.downloadImageWithURL(imageURLs[3])
+            
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                self.imageView4.image = img4
+            })
+     
+        }
     }
-}
-```
 如上所见，你使用了 *addOperationWithBlock* 方法来创建一个新的、带有某给定 block（或者它在 Swift 中的名字：闭包）的 operation。很简单，对吧？为在主队列中完成某个任务，与使用 GCD 时调用 dispatch_async() 不同，我们用 NSOperationQueue（NSOperationQueue.mainQueue()）也可以达到相同结果，将你想要在主队列中执行的 operation 提交过去。
 
 可以运行一下这个 App 做个快速测试。如果代码输入正确的话， App 应该能够在后台下载图片，不会阻塞UI。
 
 之前的例子中我们使用了 addOperationWithBlock 方法把 operation 添加到队列中。再让我们来看看如何使用 NSBlockOperation：在达到相同的效果的同时，还会给我们提供更多的功能和选项，比如设置 completion handler。改后的 didClickOnStart 方法如下：
 
-```swift
-@IBAction func didClickOnStart(sender: AnyObject) {
     
-    queue = NSOperationQueue()
-    let operation1 = NSBlockOperation(block: {
-        let img1 = Downloader.downloadImageWithURL(imageURLs[0])
-        NSOperationQueue.mainQueue().addOperationWithBlock({
-            self.imageView1.image = img1
+    @IBAction func didClickOnStart(sender: AnyObject) {
+        
+        queue = NSOperationQueue()
+        let operation1 = NSBlockOperation(block: {
+            let img1 = Downloader.downloadImageWithURL(imageURLs[0])
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                self.imageView1.image = img1
+            })
         })
-    })
-    
-    operation1.completionBlock = {
-        print("Operation 1 completed")
-    }
-    queue.addOperation(operation1)
-    
-    let operation2 = NSBlockOperation(block: {
-        let img2 = Downloader.downloadImageWithURL(imageURLs[1])
-        NSOperationQueue.mainQueue().addOperationWithBlock({
-            self.imageView2.image = img2
+        
+        operation1.completionBlock = {
+            print("Operation 1 completed")
+        }
+        queue.addOperation(operation1)
+        
+        let operation2 = NSBlockOperation(block: {
+            let img2 = Downloader.downloadImageWithURL(imageURLs[1])
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                self.imageView2.image = img2
+            })
         })
-    })
-    
-    operation2.completionBlock = {
-        print("Operation 2 completed")
-    }
-    queue.addOperation(operation2)
-    
-    
-    let operation3 = NSBlockOperation(block: {
-        let img3 = Downloader.downloadImageWithURL(imageURLs[2])
-        NSOperationQueue.mainQueue().addOperationWithBlock({
-            self.imageView3.image = img3
+        
+        operation2.completionBlock = {
+            print("Operation 2 completed")
+        }
+        queue.addOperation(operation2)
+        
+        
+        let operation3 = NSBlockOperation(block: {
+            let img3 = Downloader.downloadImageWithURL(imageURLs[2])
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                self.imageView3.image = img3
+            })
         })
-    })
-    
-    operation3.completionBlock = {
-        print("Operation 3 completed")
-    }
-    queue.addOperation(operation3)
-    
-    let operation4 = NSBlockOperation(block: {
-        let img4 = Downloader.downloadImageWithURL(imageURLs[3])
-        NSOperationQueue.mainQueue().addOperationWithBlock({
-            self.imageView4.image = img4
+        
+        operation3.completionBlock = {
+            print("Operation 3 completed")
+        }
+        queue.addOperation(operation3)
+        
+        let operation4 = NSBlockOperation(block: {
+            let img4 = Downloader.downloadImageWithURL(imageURLs[3])
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                self.imageView4.image = img4
+            })
         })
-    })
-    
-    operation4.completionBlock = {
-        print("Operation 4 completed")
+        
+        operation4.completionBlock = {
+            print("Operation 4 completed")
+        }
+        queue.addOperation(operation4)
     }
-    queue.addOperation(operation4)
-}
-```
 
 对每个 operation，我们都为其创建了一个新的 NSBlockOperation 实例并将任务封装在一个 block 中。而使用了 NSBlockOperation，你还可以设置 completion handler。当 operation 完成后，completion handler 就会被调用。将示例运行一下，就会在控制台看见这样的输出：
 
-```swift
-Operation 1 completed
-Operation 3 completed
-Operation 2 completed
-Operation 4 completed
-```
+    
+    Operation 1 completed
+    Operation 3 completed
+    Operation 2 completed
+    Operation 4 completed
 
 ### 取消 operation
 
 之前提过，NSBlockOperation 能够让你管理 operation。那么现在来看看如何取消一个 operation。首先给 navigation bar 加一个 bar button item，将其命名为 Cancel。为展示取消 operation，我们在 Operation #2 和 Operation #1 之间添加一个相依性，Operation #3 和 Operation #2 之间添加另一个相依性。也就是说 Operation #2 会在 Operation #1 完成后开始执行，而 Operation #3 会在 Operation #2 完成后执行。Operation #4 并没有相依性，它会被并发执行。要取消 operation 的话，你只需调用 NSOperationQueue 的 cancelAllOperations() 方法。在ViewController 类中插入下面的方法：
 
-```swift
-@IBAction func didClickOnCancel(sender: AnyObject) {
-        self.queue.cancelAllOperations()
-}
-```
+    
+    @IBAction func didClickOnCancel(sender: AnyObject) {
+            self.queue.cancelAllOperations()
+    }
 
 记住需要把你在 navigation bar 上添加的 Cancel 按钮与 didClickOnCancel 方法关联起来。你可以这么做：返回 Main.storyboard 文件，打开Connections Inspector，这里你会在Received Actions区域中看见unlink didSelectCancel()。点击 + 并将其从空圆圈拖拽到 Cancel bar button 上。然后在 didClickOnStart 方法中添加相依性：
 
-```swift
-operation2.addDependency(operation1)
-operation3.addDependency(operation2)
-```
+    
+    operation2.addDependency(operation1)
+    operation3.addDependency(operation2)
 
 接下来把 operation #1 的 completion block 改一下，让它在控制台打印出 cancel 的状态：
 
-```swift
-operation1.completionBlock = {
-    print("Operation 1 completed, cancelled:\(operation1.cancelled) ")
-}
-```
+    
+    operation1.completionBlock = {
+        print("Operation 1 completed, cancelled:\(operation1.cancelled) ")
+    }
 
 你可以自己改一下 operation #2，#3 和 #4 的打印语句，这样可以更好的理解这一过程。然后创建并运行项目。你点击了 Start 按钮之后，再按 Cancel 按钮，这就会在 operation #1 执行完毕后取消所有的 operation。下面告诉了我们都发生了些什么：
 
@@ -440,7 +426,7 @@ operation1.completionBlock = {
 - operation #3 已经排在队列中，等待 operation #2 的完成。因为 operation #3 是否开始取决于 operation #2 的完成与否，而 operation #2 已经被取消，operation #3 就不会被执行，从队列中被立即踢出了。
 - 没有对 operation #4 做任何相依性的设置，所以它被并发的执行了，下载了第四张图片。
 
-![](/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.7265584)
+![](http://swift.gg/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.7265584)
 
 ## 接下来看什么？
 
@@ -451,3 +437,4 @@ operation1.completionBlock = {
 你可以从 [iOS Concurrency repository on Github](https://github.com/appcoda/NSOperation-Demo) 这里找到此教程提到的全套源代码以作参考。
 
 随便问任何问题，我真心喜欢你的评论。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
