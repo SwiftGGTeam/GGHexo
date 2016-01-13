@@ -57,7 +57,7 @@ module CX11 [system] {
   }
   link "X11"
 }
-``` 
+```
 
 我们将所创建的模块(module)命名为 `CX11`，并且我们创建了两个子模块(submodules)。一个是 Xlib，另一个是 X。每一个子模块定义了它需要导入的头文件。最后我们使用 `link` 语句来链接到 libx11 类库。
 
