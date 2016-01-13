@@ -1,7 +1,7 @@
 title: Alert Controller 中实现可编辑文本字输入框教程
 date: 2016-01-04
 tags: [IOSCREATOR]
-categories: [iOS开发]
+categories: [iOS 开发]
 permalink: editable-text-field-alert-controller-tutorial
 
 ---
