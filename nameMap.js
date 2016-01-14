@@ -22,6 +22,7 @@ let nameMap = {
   "Cee": "https://github.com/Cee",
   "星夜暮晨": "http://www.jianshu.com/users/ef1058d2d851",
   "JackAlan": "http://ijack.pw/",
+  "walkingway": "http://chengway.in/",
 }
 
 export default nameMap
