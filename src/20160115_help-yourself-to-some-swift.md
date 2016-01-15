@@ -207,7 +207,7 @@ extension UIView
 
 如果你有开发过拖动手势相关的功能，你可能会写过类似下面的代码：
 
-```
+```swift
 // 触摸开始 / 鼠标按下:
 
 let touchPos = touch.locationInView(container)
@@ -217,7 +217,7 @@ objectOffset = CGPoint(x: object.center.x - touchPos.x, y: object.center.y - tou
 
 let touchPos = touch.locationInView(container)
 object.center = CGPoint(x: touchPos.x + objectOffset.x, y: touchPos.y + objectOffset.y)
-``` 
+```
 
 在这段代码里面我们只做了简单的加法和减法，但因为 `CGPoint` [包含](https://en.wikipedia.org/wiki/User:Giraffedata/comprised_of) `x` 和 `y`，所以每个表达式我们都要写两次。所以我们需要一些简化操作的函数。
 
