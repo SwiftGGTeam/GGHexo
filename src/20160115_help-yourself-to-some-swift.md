@@ -227,7 +227,7 @@ object.center = CGPoint(x: touchPos.x + objectOffset.x, y: touchPos.y + objectOf
 
 所以两个点相减得到一个向量就比较符合逻辑了，这样一来我们就得到了 `-` 操作符的一个重载：
 
-```
+```swift
 /// - 返回: 从 `rhs` 到 `lhs`的向量。
 func -(lhs: CGPoint, rhs: CGPoint) -> CGVector
 {
@@ -237,7 +237,7 @@ func -(lhs: CGPoint, rhs: CGPoint) -> CGVector
 
 然后，相反滴，把一个向量和一个点相加得到另外一个点：
 
-```
+```swift
 // - 返回: `lhs` 偏移`rhs` 之后得到的一个点
 func +(lhs: CGPoint, rhs: CGVector) -> CGPoint
 {
