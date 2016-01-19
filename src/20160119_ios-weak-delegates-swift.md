@@ -7,6 +7,7 @@ permalink: ios-weak-delegates-swift
 
 原文链接=https://www.natashatherobot.com/ios-weak-delegates-swift/
 原文日期=2015-12-23
+作者=Natasha the Robot
 译者=lfb_CD
 校对=numbbbbb
 定稿=Cee
