@@ -40,7 +40,7 @@ permalink: watchos-2-hello-world-app-in-swift
 
 ![](/img/articles/watchos-2-hello-world-app-in-swift/04-ObjectLibrary.png1453340118.7593)
 
-这时 label 看起来会比较拥挤，我们设置 Width 为 “Relative to Container“ ，并将其值设置为 1，从而把 label 的宽度设置为屏幕的宽度。这个值代表了和屏幕宽高的百分比，所以 1 就是 100%，0.5 就是 50％，以此类推。我们在垂直方向上也给它更多的空间，把 Height 设置为“Relative to Container“  然后将其值设置为 0.25 （即屏幕高度的 25%）。最后我们把 Text 设置为 “App Loaded…“，如果你喜欢还可以将其设置为居中显示。
+这时 label 看起来会比较拥挤，我们设置 width 为 “Relative to Container“ ，并将其值设置为 1，从而把 label 的宽度设置为屏幕的宽度。这个值代表了和屏幕宽高的百分比，所以 1 就是 100%，0.5 就是 50％，以此类推。我们在垂直方向上也给它更多的空间，把 Height 设置为“Relative to Container“  然后将其值设置为 0.25 （即屏幕高度的 25%）。最后我们把 Text 设置为 “App Loaded…“，如果你喜欢还可以将其设置为居中显示。
 
 ![](/img/articles/watchos-2-hello-world-app-in-swift/05-LabelAttributes.png1453340119.1029499)
 
