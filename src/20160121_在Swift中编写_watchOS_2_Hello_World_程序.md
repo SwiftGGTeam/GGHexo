@@ -14,7 +14,7 @@ permalink: watchos-2-hello-world-app-in-swift
 
 <!--此处开始正文-->
 
-过去的几个月我一直保持着写博客的习惯，但是现在我得专心工作了。最近在做一些 watchOS 2 相关的更新工作，我觉得如果出个系列教程会对大家很有帮助。首先我们需要学会开发第一个 watchOS 2 应用，所以下面来开发一个 watchOS 2 风格的 “Hello World!“吧！
+过去的几个月我一直保持着写博客的习惯，但是现在我得专心工作了。最近在做一些 watchOS 2 相关的更新工作，我觉得如果出个系列教程会对大家很有帮助。首先我们需要学会开发第一个 watchOS 2 应用，所以下面来开发一个 watchOS 2 风格的 “Hello World!”吧！
 
 在教程开始前，我准备介绍如何使用 Swift 在 iOS、watchOS、tvOS 和 OS X 上编程。此外，如果你想在本博客中学到其他知识，请给 Twitter [@CodingExplorer](https://twitter.com/CodingExplorer) 或者 [Contact Page](http://www.codingexplorer.com/contact/) 来提出建议。
 <!--more-->
