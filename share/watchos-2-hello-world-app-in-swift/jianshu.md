@@ -12,7 +12,7 @@
 
 
 
-过去的几个月我一直保持着写博客的习惯，但是现在我得专心工作了。最近在做一些 watchOS 2 相关的更新工作，我觉得如果出个系列教程会对大家很有帮助。首先我们需要学会开发第一个 watchOS 2 应用，所以下面来开发一个 watchOS 2 风格的 “Hello World!“吧！
+过去的几个月我一直保持着写博客的习惯，但是现在我得专心工作了。最近在做一些 watchOS 2 相关的更新工作，我觉得如果出个系列教程会对大家很有帮助。首先我们需要学会开发第一个 watchOS 2 应用，所以下面来开发一个 watchOS 2 风格的 “Hello World!”吧！
 
 在教程开始前，我准备介绍如何使用 Swift 在 iOS、watchOS、tvOS 和 OS X 上编程。此外，如果你想在本博客中学到其他知识，请给 Twitter [@CodingExplorer](https://twitter.com/CodingExplorer) 或者 [Contact Page](http://www.codingexplorer.com/contact/) 来提出建议。
 
@@ -38,7 +38,7 @@
 
 ![](http://swift.gg/img/articles/watchos-2-hello-world-app-in-swift/04-ObjectLibrary.png1453340118.7593)
 
-这时 label 看起来会比较拥挤，我们设置 Width 为 “Relative to Container“ ，并将其值设置为 1，从而把 label 的宽度设置为屏幕的宽度。这个值代表了和屏幕宽高的百分比，所以 1 就是 100%，0.5 就是 50％，以此类推。我们在垂直方向上也给它更多的空间，把 Height 设置为“Relative to Container“  然后将其值设置为 0.25 （即屏幕高度的 25%）。最后我们把 Text 设置为 “App Loaded…“，如果你喜欢还可以将其设置为居中显示。
+这时 label 看起来会比较拥挤，我们设置 width 为 “Relative to Container“ ，并将其值设置为 1，从而把 label 的宽度设置为屏幕的宽度。这个值代表了和屏幕宽高的百分比，所以 1 就是 100%，0.5 就是 50％，以此类推。我们在垂直方向上也给它更多的空间，把 Height 设置为“Relative to Container“  然后将其值设置为 0.25 （即屏幕高度的 25%）。最后我们把 Text 设置为 “App Loaded…“，如果你喜欢还可以将其设置为居中显示。
 
 ![](http://swift.gg/img/articles/watchos-2-hello-world-app-in-swift/05-LabelAttributes.png1453340119.1029499)
 
