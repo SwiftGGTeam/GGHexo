@@ -1,5 +1,5 @@
 title: 在 Swift 中编写 watchOS 2 Hello World 程序
-date: 2016-1-21
+date: 2016-01-21 09:00:00
 tags: [Coding Explorer]
 categories: [Swift 入门,WatchOS 2]
 permalink: watchos-2-hello-world-app-in-swift
