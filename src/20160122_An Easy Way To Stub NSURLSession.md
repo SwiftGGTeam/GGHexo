@@ -1,5 +1,5 @@
 title: "如何简单地模拟 NSURLSeesion 的返回数据"
-date: 2016-1-22
+date: 2016-01-22 09:00:00
 tags: [Swift and Painless]
 categories: [iOS 开发]
 permalink: an-easy-way-to-stub-nsurlsession
