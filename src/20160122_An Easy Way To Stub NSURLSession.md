@@ -7,6 +7,7 @@ permalink: an-easy-way-to-stub-nsurlsession
 
 原文链接=http://swiftandpainless.com/an-easy-way-to-stub-nsurlsession/
 原文日期=2016/01/09
+作者=dom
 译者=小袋子
 校对=千叶知风
 定稿=numbbbbb
