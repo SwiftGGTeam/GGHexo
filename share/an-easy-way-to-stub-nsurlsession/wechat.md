@@ -1,4 +1,4 @@
-如何简单地模拟 NSURLSeesion 的返回数据"
+如何简单地模拟 NSURLSession 的返回数据"
 
 > 作者：dom，[原文链接](http://swiftandpainless.com/an-easy-way-to-stub-nsurlsession/)，原文日期：2016/01/09
 > 译者：[小袋子](http://daizi.me)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[numbbbbb](https://github.com/numbbbbb)
@@ -12,7 +12,7 @@
 
 
 
-如果你经常看我的博客，那应该知道，我在调试时最喜欢的方法是模拟 `NSURLSeesion` 返回的数据。
+如果你经常看我的博客，那应该知道，我在调试时最喜欢的方法是模拟 `NSURLSession` 返回的数据。
 
 那么我们到底要做什么呢？其实就是模拟方法的回调数据。而这里的 `NSURLSession` 指的是伪造 web API 的响应。这样做有一些好处，例如：
 
