@@ -64,7 +64,7 @@ let cell = tableView.dequeueReusableCell(indexPath: indexPath) as MyCustomCell
 
 很美妙不是吗？
 
-![](http://alisoftware.github.io/assets/magic.gif)
+![](/img/articles/generic-tableviewcells/magic.gif1453861217.0830312)
 
 ## 更进一步
 
