@@ -44,7 +44,7 @@ String(MyTableViewCell)
 
 为确保这个方案可行，我在自己的工程中试了试，没想到真的成功了！！
 
-![](https://www.natashatherobot.com/wp-content/uploads/Screen-Shot-2016-01-15-at-9.12.02-AM.png)
+![](/img/articles/nsstringfromclass-in-swift/Screen-Shot-2016-01-15-at-9.12.02-AM.png1454009116.0360203)
 
 ``` swift
 // BlueTableViewController
