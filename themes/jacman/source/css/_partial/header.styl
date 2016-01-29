@@ -112,19 +112,35 @@ header nav
 .search
   padding 0.1em 0 0 1em
   input
+    lhhere = 30px
     -webkit-appearance textfield
     font-size 0.87em
-    line-height line-height+0.2
+    line-height lhhere
     border 1px solid color-white
     color color-white
     background transparent
     width 8rem
-    padding-left 0.5em
+    padding-left 0.6em
+    border-radius 30px
     @media tablet
       width 8em
       transition .5s width
       &:focus
         width 15em
+    &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        line-height lhhere - 4px
+    }
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      line-height lhhere - 4px
+      opacity 1
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+      line-height lhhere - 4px
+      opacity 1
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      line-height lhhere - 4px
+    }
   label
     display none
 
