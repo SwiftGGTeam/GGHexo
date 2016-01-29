@@ -1,5 +1,5 @@
 title: "Swift 一周简讯 #6"
-date: 2016-01-29 12:30:00
+date: 2016-01-29 14:30:00
 tags: [Open Source Swift]
 categories: [Swift 开源信息]
 permalink: open-source-swift-weekly-6
@@ -7,11 +7,11 @@ permalink: open-source-swift-weekly-6
 ---
 原文链接=http://swiftweekly.github.io/issue-6/
 作者=Jesse Squires
-原文日期=2016.1.21
+原文日期=2016/1/21
 译者=pmst
 校对=numbbbbb
 定稿=numbbbbb
-发布时间=2016-01-29T12:00:00
+发布时间=2016-01-29T14:00:00
 
 自 Apple 宣布 Swift 开源已过去一个月，我仍然在坚持探索新事物，乐此不疲，见证着 Swift 的成长与蜕变。欢迎来到新一期的每周开源简讯 #6！
 
@@ -20,6 +20,8 @@ permalink: open-source-swift-weekly-6
 [Anton Blanchard](https://github.com/antonblanchard) 关于增加 PowerPC64le Linux 支持的[提案](https://github.com/apple/swift/pull/979)已经被合并了。不得不说，这确实令人[印象深刻](https://github.com/apple/swift/pull/979#issuecomment-171833623)，当然也非常[酷](https://github.com/apple/swift/pull/979#issuecomment-171876376)。😎
 
 @Iplarson 提交了一个 [pull request](https://github.com/apple/swift/pull/997)，目的是为了支持代码覆盖分析。很高兴看到这一点。如果能在 pr 中自动显示分析报告就更好了。
+
+<!--more-->
 
 Chris Lattner 继续做[夜猫子](https://twitter.com/clattner_llvm/status/674254974629502976) —— 修复了大量 radars 问题。（[链接1](https://github.com/apple/swift/commit/20263bf46658dccafced86955fbf33ad72853c6d)|[链接2](https://github.com/apple/swift/commit/ce94e0af538f9f7e47dc1979e4db60549ffb9010)|[链接3](https://github.com/apple/swift/commit/9c9ddf9e6cba3ea199bcfd59e039c404b68bb1ac)）
 
