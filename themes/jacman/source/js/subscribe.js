@@ -23,6 +23,9 @@ $(function() {
         $('#swiftweekly').fadeIn()
       }
     })
+    $("#closeme").click(function() {
+      $("#swiftweekly").remove();
+    })
     $(".sw_sub").click(function() {
       $("#swiftweekly #content").submit()
     })

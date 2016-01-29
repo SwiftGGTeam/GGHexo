@@ -8,10 +8,9 @@
 
     npm install hexo-cli -g
 
-替换两个 Hexo 文件
+替换 Hexo 文件
 
 - `replaceHexo/post.js` 替换到 `{NODE_PATH}/hexo/lib/models/post.js`
-- `replaceHexo/open_graph.js` 替换到 `{NODE_PATH}/hexo/lib/plugins/helper/open_graph.js`
 
 clone 项目
 
