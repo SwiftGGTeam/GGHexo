@@ -24,7 +24,7 @@ description: 怎么使用Swift处理多个segue标识呢，不会的来看SwiftG
 
 今天就让我们开始针对你的选择展开旅程吧。你会选择：红色药丸还是蓝色药丸...（译者注：如果你看不懂这个梗的话，我建议你去补习一下黑客帝国）
 
-![Matrix Red Pill Blue Pill App](https://www.natashatherobot.com/wp-content/uploads/Simulator-Screen-Shot-Dec-18-2015-3.35.43-PM-768x432.png)
+![Matrix Red Pill Blue Pill App](/img/articles/protocol-oriented-segue-identifiers-swift/Simulator-Screen-Shot-Dec-18-2015-3.35.43-PM-768x432.png1454286916.1355195)
 
 ## 问题的出现
 
