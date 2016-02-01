@@ -23,6 +23,7 @@ let nameMap = {
   "星夜暮晨": "http://www.jianshu.com/users/ef1058d2d851",
   "JackAlan": "http://ijack.pw/",
   "walkingway": "http://chengway.in/",
+  "&nbsp": "https://github.com/initiOSJava",
 }
 
 export default nameMap
