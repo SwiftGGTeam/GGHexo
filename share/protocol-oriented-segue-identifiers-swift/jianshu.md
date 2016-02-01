@@ -1,7 +1,7 @@
 使用 Swift 的面向协议编程定义 Segue 标识"
 
 > 作者：Natasha，[原文链接](https://www.natashatherobot.com/protocol-oriented-segue-identifiers-swift/)，原文日期：2015-12-17
-> 译者：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)；校对：[&nbsp](undefined)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)；校对：[&nbsp](https://github.com/initiOSJava)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 
