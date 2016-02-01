@@ -21,7 +21,7 @@ description: 想知道Swift化tableView和collectionView是什么样子的吗，
 这是一个常见的场景：你有一个 tableView 或者一个 collectionView，并且里面含有大量不同种类的内容。你想做到基于不同种类的内容而展示不一样的 `cell` ，而且这些 `cell` 都混合在同一个部件里（原谅我站在艺术的角度去设计），它看起来就如下图所示：
 <!--more-->
 
-![](http://i4.tietuku.com/53092553e2ff9f43.png) 
+![](/img/articles/being-swifty-with-collection-view-and-table-view-cells/53092553e2ff9f43.png1454341216.473366) 
 
 在 Objective-C 中，最典型就是使用 NSArray 来记录 collectionView 的数据源，然后通过对比每个数据源的类型后再对 cell 进行操作，现在看来这种方式是特别不方便的。
 
