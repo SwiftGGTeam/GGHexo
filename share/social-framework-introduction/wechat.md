@@ -156,7 +156,7 @@
         ...
      
         let actionSheet = UIAlertController(title: "", message: "Share your Note", preferredStyle: UIAlertControllerStyle.ActionSheet)
-    } 
+    }
 
 正如你所看到的截屏一样，在我们的 action sheet 中我们需要显示三个样式相同的选项。然而，不要忘记为用户提供一个可以取消 action sheet 的选项。所以，我们一共需要四个选项，代码如下：
 
