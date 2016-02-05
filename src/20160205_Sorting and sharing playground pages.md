@@ -17,6 +17,8 @@ description: 想知道在Swift中playground页面怎么排序和共享么，相�
 
 <!--此处开始正文-->
 
+> 另一篇关于 Playground 的文章：[如何优雅地使用 Playground](http://www.swiftyper.com/playground-advance-usage/)
+
 ## 排序 Playground 页面
 
 如果在同一个文件中有多个 playground 页面（我就是这样），那么你会发现如果按照字母排序，查找起来会很方便。使用 Edit > Sort > ByName 来整理你的文件结构。

@@ -47,3 +47,8 @@ $(function() {
     })
   }
 })
+
+// common tasks
+$(function(){
+  $("img").closest("p").css({"text-align": "center"})
+})
