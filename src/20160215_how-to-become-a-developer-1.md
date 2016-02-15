@@ -51,7 +51,7 @@ description: 想成为一名iOS开发者吗，要么首先要如何入门呢，�
 这似乎是显而易见的，但如果你还没有一台 Mac 的话，弄一台！如果你没有任何一个 iOS 设备，弄一个！如果你没有使用过或者不熟悉设备的话，为它做开发会很难。类似的是，如果你没 Mac 写代码的话也很难。我是在2009年从一台 MacBook 13'' 和第一代 iPod Touch 开始的 。用低配置的设备也是能凑合的。当时是接近$1500的投资，但是长远来看绝对值得的。
 
 ## UX/UI
-通常来说 UX（用户体验）和 UI（交互界面）是由设计师负责的，但是你也应该了解[ Apple 的人机交互指南](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)。你应该要了解 mockups（译者注：原型设计工具）和 wireframes（译者注：线上原型设计工具）的区别，以及在开发的过程中如何使用它们。
+通常来说 UX（用户体验）和 UI（交互界面）是由设计师负责的，但是你也应该了解[ Apple 的人机交互指南](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)。你应该要了解产品原型和线框图的区别，以及在开发的过程中如何使用它们。
 
 ### 工具
 
