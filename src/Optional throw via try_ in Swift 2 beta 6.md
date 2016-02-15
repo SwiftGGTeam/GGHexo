@@ -1,6 +1,6 @@
 title: "在 Swift 2 beta 6中使用 try? 抛出可选异常"
 date: 2015-09-11 20:00:01
-tags: [Benedikt Terhechte]
+tags: [APPVENTURE]
 categories: [Swift 入门]
 permalink: optional-throw-swift
 
