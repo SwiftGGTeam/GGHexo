@@ -1,6 +1,6 @@
 title: 化零为整：Reduce 详解
 date: 2015-12-10
-tags: [Benedikt Terhechte]
+tags: [APPVENTURE]
 categories: [Swift 入门]
 permalink: reduce-all-the-things
 
