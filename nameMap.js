@@ -8,7 +8,7 @@ let nameMap = {
   "SergioChan": "https://github.com/SergioChan",
   "天才175": "http://weibo.com/u/2916092907",
   "靛青K": "http://www.dianqk.org/",
-  "numbbbbb": "https://github.com/numbbbbb",
+  "numbbbbb": "http://numbbbbb.com/",
   "千叶知风": "http://weibo.com/xiaoxxiao",
   "CMB": "https://github.com/chenmingbiao",
   "saitjr": "http://www.brighttj.com",
