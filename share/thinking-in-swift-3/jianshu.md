@@ -1,4 +1,4 @@
-Swift编程思想第三部分：结构体和类"
+Swift 编程思想，第三部分：结构体和类"
 
 > 作者：Olivier Halligon，[原文链接](http://alisoftware.github.io/swift/2015/10/03/thinking-in-swift-3/)，原文日期：2015-10-03
 > 译者：[ray16897188](http://www.jianshu.com/users/97c49dfd1f9f/latest_articles)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；定稿：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)
