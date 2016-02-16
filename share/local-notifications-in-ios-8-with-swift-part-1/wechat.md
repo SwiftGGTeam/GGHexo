@@ -1,7 +1,7 @@
 如何在 iOS 8 中使用 Swift 实现本地通知(上)"
 
 > 作者：Jason Newell，[原文链接](http://jamesonquave.com/blog/local-notifications-in-ios-8-with-swift-part-1/)，原文日期：2015/03/04
-> 译者：[小铁匠Linus](http://weibo.com/linusling)；校对：[shanks](http://codebuild.me/)；定稿：[numbbbbb](https://github.com/numbbbbb)
+> 译者：[小铁匠Linus](http://weibo.com/linusling)；校对：[shanks](http://codebuild.me/)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
 

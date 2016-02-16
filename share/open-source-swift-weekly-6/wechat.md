@@ -1,7 +1,7 @@
 Swift 一周简讯 #6"
 
 > 作者：Jesse Squires，[原文链接](http://swiftweekly.github.io/issue-6/)，原文日期：2016/1/21
-> 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[numbbbbb](https://github.com/numbbbbb)
+> 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
 

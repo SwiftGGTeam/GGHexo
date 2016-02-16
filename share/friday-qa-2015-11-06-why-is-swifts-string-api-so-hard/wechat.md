@@ -1,7 +1,7 @@
 Friday Q&A 2015-11-06：为什么 Swift 中的 String API 如此难用？"
 
 > 作者：Mike Ash，[原文链接](https://www.mikeash.com/pyblog/friday-qa-2015-11-06-why-is-swifts-string-api-so-hard.html)，原文日期：2015-11-06
-> 译者：[Cee](https://github.com/Cee)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[numbbbbb](https://github.com/numbbbbb)
+> 译者：[Cee](https://github.com/Cee)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
 

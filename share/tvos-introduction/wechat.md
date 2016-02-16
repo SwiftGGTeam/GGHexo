@@ -1,7 +1,7 @@
 tvOS 入门：开发你的第一个 tvOS 应用"
 
 > 作者：gregg mojica，[原文链接](http://www.appcoda.com/tvos-introduction/)，原文日期：2015-11-02
-> 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[numbbbbb](https://github.com/numbbbbb)
+> 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
 

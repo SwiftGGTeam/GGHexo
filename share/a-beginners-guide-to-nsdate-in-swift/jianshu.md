@@ -1,7 +1,7 @@
 Swift 的 NSDate 初学者指南"
 
 > 作者：gabriel theodoropoulos，[原文链接](http://www.appcoda.com/nsdate/)，原文日期：2015-10-18
-> 译者：[ray16897188](http://www.jianshu.com/users/97c49dfd1f9f/latest_articles)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[Cee](https://github.com/Cee)
+> 译者：[ray16897188](http://www.jianshu.com/users/97c49dfd1f9f/latest_articles)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[Cee](https://github.com/Cee)
   
 
 

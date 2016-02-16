@@ -1,7 +1,7 @@
 详解 Swift 模式匹配"
 
 > 作者：Benedikt Terhechte，[原文链接](http://appventure.me/2015/08/20/swift-pattern-matching-in-detail/)，原文日期：2015-08-20
-> 译者：[mmoaay](http://blog.csdn.net/mmoaay)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[mmoaay](http://blog.csdn.net/mmoaay)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 

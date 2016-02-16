@@ -1,7 +1,7 @@
 浅谈 Swift 中的泛型"
 
 > 作者：Thomas Hanning，[原文链接](http://www.thomashanning.com/swift-generics/)，原文日期：2015/09/09
-> 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[shanks](http://codebuild.me/)
+> 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[shanks](http://codebuild.me/)
   
 
 

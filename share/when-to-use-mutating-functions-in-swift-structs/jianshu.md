@@ -1,7 +1,7 @@
 在 Swift 结构体中使用 Mutating 函数的最佳时机"
 
 > 作者：NatashaTheRobot，[原文链接](https://www.natashatherobot.com/when-to-use-mutating-functions-in-swift-structs/)，原文日期：2016-1-13
-> 译者：[walkingway](http://chengway.in/)；校对：[Cee](https://github.com/Cee)；定稿：[numbbbbb](https://github.com/numbbbbb)
+> 译者：[walkingway](http://chengway.in/)；校对：[Cee](https://github.com/Cee)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
 

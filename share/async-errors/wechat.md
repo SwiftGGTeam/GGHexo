@@ -1,7 +1,7 @@
 如何处理 Swift 中的异步错误"
 
 > 作者：Olivier Halligon，[原文链接](http://alisoftware.github.io/swift/async/error/2016/02/06/async-errors/)，原文日期：2016-02-06
-> 译者：[ray16897188](http://www.jianshu.com/users/97c49dfd1f9f/latest_articles)；校对：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)；定稿：[numbbbbb](https://github.com/numbbbbb)
+> 译者：[ray16897188](http://www.jianshu.com/users/97c49dfd1f9f/latest_articles)；校对：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
 
@@ -222,7 +222,6 @@
         .flatMap(buildUser)
     
       // 如果我们想在剩下代码中回到 do/try/catch 的世界
-      // Then if we want to go back in the do/try/catch world for the rest of the code:
       do {
         let user = try resultUser.resolve()
         updateUI(user: user)
@@ -259,7 +258,7 @@
       .then(extractUserDict) // assuming extractUserDict is now a `NSDictionary -> Promise<NSDictionary>`
       .then(buildUser) // assuming buildUser is now a `NSDictionary -> Promise<User>`
       .then {
-        updateUI(user: user
+        updateUI(user: user)
       }
       .error { err in
         print("Error: \(err)")

@@ -1,7 +1,7 @@
 如何在 iOS 9 中创建 Stack View"
 
 > 作者：Arthur Knopper，[原文链接](http://www.ioscreator.com/tutorials/stack-view-tutorial/)，原文日期：2015-09-14
-> 译者：[小铁匠Linus](http://weibo.com/linusling)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)
+> 译者：[小铁匠Linus](http://weibo.com/linusling)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)
   
 
 

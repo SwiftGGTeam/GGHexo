@@ -1,7 +1,7 @@
 关于 Swift 演变的趣味探讨"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2015/12/15/interesting-discussions-on-swift-evolution/)，原文日期：2015/12/15
-> 译者：[小袋子](http://daizi.me)；校对：[Cee](https://github.com/Cee)；定稿：[numbbbbb](https://github.com/numbbbbb)
+> 译者：[小袋子](http://daizi.me)；校对：[Cee](https://github.com/Cee)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
 
