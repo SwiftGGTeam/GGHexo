@@ -1,12 +1,12 @@
 <div id="main">
 <% page.posts.each(function(item){ %>
-  <%- partial('_partial/article', {item: item, index: true,desc: true}) %>
+  <%- partial('_partial/article', {item: item, index: true, desc: true}) %>
 <% }); %>
 <% if (page.total > 1){ %>
   <nav id="page-nav" class="clearfix<% if (theme.index.expand != true) { %> unexpand<% } %>">
     <%- paginator({
-      prev_text: '<span></span>Prev',
-      next_text: 'Next<span></span>'
+      prev_text: '<span></span>上一页',
+      next_text: '下一页<span></span>'
     }) %>
   </nav>
 <% } %>
