@@ -52,3 +52,10 @@ $(function() {
 $(function(){
   $("img").closest("p").css({"text-align": "center"})
 })
+
+// min-height
+$(window).resize(function() {
+  $('#container').css({'min-height': $('html').height() - $('header').outerHeight(true) - $('footer').outerHeight(true)})
+})
+
+$(window).trigger('resize')
