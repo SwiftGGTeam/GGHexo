@@ -1,7 +1,7 @@
 几个 Swift 代码规范"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2015/11/17/a-handful-of-swift-style-rules-swiftlang/)，原文日期：2015-11-17
-> 译者：[mmoaay](http://blog.csdn.net/mmoaay)；校对：[lfb_CD](http://weibo.com/lfbWb)；定稿：[shanks](http://codebuild.me/)
+> 译者：[mmoaay](http://mmoaay.photo/)；校对：[lfb_CD](http://weibo.com/lfbWb)；定稿：[shanks](http://codebuild.me/)
   
 
 
