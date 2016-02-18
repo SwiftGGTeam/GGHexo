@@ -25,7 +25,7 @@ let nameMap = {
   "walkingway": "http://chengway.in/",
   "&nbsp": "https://github.com/initiOSJava",
   "bestswifter": "http://bestswifter.com",
-  "A.F.I": "http://coderafi.github.io/",
+  "CoderAFI": "http://coderafi.github.io/",
 }
 
 export default nameMap
