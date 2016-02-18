@@ -2,7 +2,7 @@ let nameMap = {
   "shanks": "http://codebuild.me/",
   "小锅": "http://www.jianshu.com/users/3b40e55ec6d5/latest_articles",
   "lfb_CD": "http://weibo.com/lfbWb",
-  "mmoaay": "http://blog.csdn.net/mmoaay",
+  "mmoaay": "http://mmoaay.photo/",
   "Yake": "http://blog.csdn.net/yake_099",
   "小铁匠Linus": "http://weibo.com/linusling",
   "SergioChan": "https://github.com/SergioChan",
@@ -24,6 +24,8 @@ let nameMap = {
   "JackAlan": "http://ijack.pw/",
   "walkingway": "http://chengway.in/",
   "&nbsp": "https://github.com/initiOSJava",
+  "bestswifter": "http://bestswifter.com",
+  "A.F.I": "http://coderafi.github.io/",
 }
 
 export default nameMap
