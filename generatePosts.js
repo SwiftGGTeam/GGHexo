@@ -123,6 +123,32 @@ let originInfo = new Promise(function (resolve, reject) {
     result = result.replace(reg, "")
   }
 
+  let fixer = {
+    title: 'title:(.*)',
+    date: 'date:(.*)',
+    tags: 'tags:(.*)',
+    categories: 'categories:(.*)',
+    permalink: 'permalink:(.*)',
+    keywords: 'keywords:(.*)',
+    custom_title: 'custom_title:(.*)',
+    description: 'description:(.*)',
+  }
+
+  let breakPoint = result.indexOf('---') + 3
+  var configContent = result.substring(0, breakPoint)
+  let postContent = result.substring(breakPoint)
+
+  for (let [key, value] of entries(fixer)) {
+    let reg = new RegExp(value)
+    let temp = configContent.match(reg)
+    if (!temp) continue
+    var temp2 = temp[1].trim()
+    temp2 = key + ': ' + temp2
+    configContent = configContent.replace(reg, temp2)
+  }
+
+  result = configContent + postContent
+
   let infoStr = `
 > 作者：${info.author}，[原文链接](${info.originUrl})，原文日期：${info.originDate}
 > 译者：${info.translators.split(",").map(name => `[${name}](${nameMap[name]})`).join("，")}；校对：${info.auditors.split(",").map(name => `[${name}](${nameMap[name]})`).join("，")}；定稿：${info.finalmans.split(",").map(name => `[${name}](${nameMap[name]})`).join("，")}
