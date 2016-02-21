@@ -1,7 +1,7 @@
 title: "如何成为一名入门级 iOS 开发者"
 date: 2016-02-15
-tags: [alloc-init]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: […alloc] init];]
 permalink: how-to-become-a-developer-1
 keywords: iOS开发
 custom_title:
