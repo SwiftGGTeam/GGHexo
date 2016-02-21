@@ -1,6 +1,6 @@
 使用 guard 的正确姿势
 
-> 作者：radexp，[原文链接](http://radex.io/swift/guard/)，原文日期：2015/12/14
+> 作者：Radek Pietruszewski，[原文链接](http://radex.io/swift/guard/)，原文日期：2015-12-14
 > 译者：[Prayer](http://www.futantan.com)；校对：[Channe](undefined)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
