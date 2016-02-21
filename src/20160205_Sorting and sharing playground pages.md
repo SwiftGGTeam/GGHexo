@@ -1,7 +1,7 @@
 title: "playground 页面排序和共享"
 date: 2016-02-05
-tags: [Erica Sadun]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Erica Sadun]
 permalink: sorting-and-sharing-playground-pages
 keywords: playground swift,playground xcode
 custom_title: 

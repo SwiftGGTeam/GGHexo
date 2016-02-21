@@ -1,7 +1,7 @@
 title: "在 Swift 结构体中使用 Mutating 函数的最佳时机"
 date: 2016-02-06 09:00:00
-tags: [Natasha The Robot]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Natasha The Robot]
 permalink: when-to-use-mutating-functions-in-swift-structs
 keywords: swift结构体,mutating swift
 custom_title: 

@@ -1,7 +1,7 @@
 title: "如何处理 Swift 中的异步错误"
 date: 2016-02-16
-tags: [Crunchy Development]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Crunchy Development]
 permalink: async-errors
 keywords: Swift错误处理,RxSwift,RAC,Swift throw,Swift Promise
 custom_title: 

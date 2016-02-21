@@ -1,7 +1,7 @@
 title: "探索 API 指南的大世界"
 date: 2016-02-19 09:00:00
-tags: [Erica Sadun]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Erica Sadun]
 permalink: diving-into-the-big-world-of-api-guidelines
 keywords: api设计规范,api设计原则,ios开发
 custom_title: 

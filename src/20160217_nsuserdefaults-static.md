@@ -1,7 +1,7 @@
 title: "静态类型的 NSUserDefaults"
 date: 2016-02-17 09:00:00
-tags: [radex.io]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [radex.io]
 permalink: nsuserdefaults-static
 keywords: nsuserdefaults swift,nsuserdefaults的使用,nsuserdefaults存对象
 custom_title: 

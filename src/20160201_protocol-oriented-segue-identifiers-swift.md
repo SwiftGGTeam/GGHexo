@@ -1,7 +1,7 @@
 title: "使用 Swift 的面向协议编程定义 Segue 标识"
 date: 2016-02-01 09:00:00
-tags: [Natasha The Robot]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Natasha The Robot]
 permalink: protocol-oriented-segue-identifiers-swift
 keywords: ios面向协议,swift面向协议,surge标识
 custom_title: 

@@ -1,7 +1,7 @@
 title: "更加 Swift 化的 Collection View 和 Table View Cells"
 date: 2016-02-02 09:00:00
-tags: [Jameson Quave]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [JamesonQuave.com]
 permalink: being-swifty-with-collection-view-and-table-view-cells
 keywords: collectionview使用,tableviewcell
 custom_title: 

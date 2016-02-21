@@ -1,7 +1,7 @@
 title: "为你的 Swift Packages 命名"
 date: 2016-02-18
-tags: [Erica Sadun]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Erica Sadun]
 permalink: naming-your-swift-packages
 keywords: namespace,swift package manager,swift开发
 custom_title: 

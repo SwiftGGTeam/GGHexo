@@ -1,7 +1,7 @@
 title: 使用 guard 的正确姿势
 date: 2016-02-14 10:00:00
-tags: [radex.io]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [radex.io]
 permalink: swift-guard-radix
 keywords: swift guard语句,swift guard let
 custom_title: Swift guard 语句的使用
@@ -9,8 +9,8 @@ description: 在Swift中怎么正确使用swift guard语句呢，本文就来详
 ---
 
 原文链接=http://radex.io/swift/guard/
-作者=radexp
-原文日期=2015/12/14
+作者=Radek Pietruszewski
+原文日期=2015-12-14
 译者=Prayer
 校对=Channe
 定稿=numbbbbb

@@ -1,7 +1,7 @@
 title: "新手指南：使用 Social Framework 以及 UIActivityViewController"
 date: 2016-02-04
-tags: [AppCoda]
-categories: [iOS 开发]
+tags: [iOS 开发]
+categories: [AppCoda]
 permalink: social-framework-introduction
 keywords: social framework,uiactivityviewcontroller
 custom_title: 

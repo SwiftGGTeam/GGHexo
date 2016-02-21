@@ -1,7 +1,7 @@
 title: "如何使用 OAuth 2.0 将 LinkedIn 集成入 iOS 应用"
 date: 2016-02-03 09:00:00
-tags: [AppCoda]
-categories: [iOS 开发]
+tags: [iOS 开发]
+categories: [AppCoda]
 permalink: linkedin-sign-in
 keywords: linkedin sign in,oauth2.0
 custom_title: 

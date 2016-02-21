@@ -1,7 +1,7 @@
 title: 化零为整：Reduce 详解
 date: 2015-12-10
-tags: [APPVENTURE]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [APPVENTURE]
 permalink: reduce-all-the-things
 
 ---
