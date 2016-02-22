@@ -29,13 +29,13 @@ if (page.archive){
 <% page.posts.each(function(item){ %>
   <%- partial('_partial/article_row', {item: item, index: true}) %>
 <% }); %>
+  </div>
+</div>
 <% if (page.total > 1){ %>
   <nav id="page-nav" class="clearfix archive-nav">
     <%- paginator({
-      prev_text: '<span></span>Prev',
-      next_text: 'Next<span></span>'
+      prev_text: '<span></span>上一页',
+      next_text: '下一页<span></span>'
     }) %>
   </nav>
 <% } %>
-  </div>
-</div>

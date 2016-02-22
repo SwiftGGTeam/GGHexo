@@ -15,34 +15,31 @@
   line-height line-height+0.3
   @media tablet
     margin 2em 0 0
-    width 75%
+    width 73%
     float left
-    transition margin 0.5s ease-out
   section.post
     background color-section
-    margin-bottom 0.125em
+    margin-bottom 1em
     a
       display block
-      border-left 0.5em solid color-gray
-      transition border-left .45s
+      border-left 1px solid color-theme
       padding 0.5em
       @media mini
         padding 1em
       &:hover
-        border-left 0.5em solid color-theme
+        h1
+          color color-theme
       h1
-        color color-blue
-        line-height line-height+0.5
+        color #333333
+        line-height 1
       p
         color color-font
       time
-        color color-font
+        color #cccccc
         display block
-        margin 0.5em 0
         font-size 0.9em
   article.post-expand
     background color-section
-    margin-bottom 3.5em
     //-webkit-box-shadow: 2px 2px 3px darken(color-background,20%)
     //box-shadow: 2px 2px 3px darken(color-background,20%)
     //-webkit-border-radius: 3px
@@ -50,12 +47,16 @@
     header.article-info
       font-size 1em
       h1
-        padding-top 0.5em
-        padding-bottom 0.5em
+        margin 0
+        margin-left -1px
         width 80%
+        line-height 1
+        padding 0
+        a
+          color color-theme
       .article-time
         float left
-        padding-left 4%
+        padding-left 0%
     .img-logo
       max-width 180px
       max-height 96px
@@ -74,32 +75,64 @@
       padding 0
       float right
       clear right
+    blockquote
+      display none
+    .p 
+      font-size 0.9em
+    .article-content
+      padding-bottom 0
+      *
+        color #999 !important
+    
     .article-more-link
       //margin-top: 1.5em
       //padding-top: 1em
       //border-top: 2px solid #ddd
+      margin-top: 1.1%
+      margin-bottom: 0.5%
       a
+        border: 1px solid #5AC8FA
         display: inline-block
         line-height: 1em
         padding: 6px 15px
         border-radius: 15px
-        background color-background
-        color color-font
+        color color-theme !important
         //text-shadow: 0 1px #fff
         text-decoration: none
         &:hover
           background: color-theme
-          color: #fff
+          color: #fff !important
           text-decoration: none
           //text-shadow: 0 1px darken(color-theme, 20%)
+    footer
+      border none
+      margin-top -4px
 #archive-page
   section.post
     a
       font-size 0.8em
       padding 0.5em !important
+      display block
+      line-height 30px
+      height 30px
       time
+        float left
+        line-height 30px
         @media mini
           padding-left 1em
+      h1
+        float left
+        width 88%
+        margin 0
+        height 30px
+        line-height 30px
+        white-space nowrap
+        text-overflow ellipsis
+        overflow hidden
+
+#page-nav
+  width 30% !important
+  margin-left 35% !important
 
 
 
@@ -117,11 +150,8 @@
   overflow hidden
   a
     display inline-block
-    padding 0.5em 1em
-  a
-    color color-blue
+    color #C7C7C7
     &:hover
-      background color-gray
       color color-theme
   .prev
     float left
@@ -140,14 +170,14 @@
       padding-left 0.5em
   .page-number
     display none
-    padding 0.5em 1em
+    padding 0em 0.5em
     @media mini
       display inline-block
   .current
     color darken(color-gray,10%)
     font-weight bold
   .space
-    color color-blue
+    color #C7C7C7
 
 /*! page layout */
 .page
@@ -176,21 +206,19 @@
   padding 2em
   @media tablet
     margin 2em 0
-    width 18.5%
-    padding-left 0.5%
+    width 13.5%
+    padding-left 2.5%
     float left
   background color-section
-  border-left 0.5em solid color-gray
   h2
     width 90%
-    color color-blue
+    color #ccc
     font-size font-size+20
   a
-    color color-blue
-    transition color .5s
+    color #ccc
+    margin-right 2%
     &:hover
       color color-theme
-      transition color .5s
 .current
   color color-orange !important
 
@@ -209,7 +237,7 @@
       @media phonemax
         width 100%
       @media phone
-        width 20%
+        width 10%
 /*    @media mini
       float left
       width 50%

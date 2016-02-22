@@ -6,7 +6,7 @@
         <a href="<%- config.root %><%- item.path %>" title="<%= item.title %>" itemprop="url"><%= item.title %></a><% } %>
     </h1>
     <p class="article-time">
-      <time datetime="<%= date_xml(item.date) %>" itemprop="datePublished"><i class="icon-time"></i> <%= item.date.format(config.date_format) %></time>
+      <time datetime="<%= date_xml(item.date) %>" itemprop="datePublished"><%= item.date.format(config.date_format) %></time>
       <span style="margin-left: 0.5em;"><i class="icon-eye-open"></i> <span class="viewcount"></span></span>
     </p>
   </header>
