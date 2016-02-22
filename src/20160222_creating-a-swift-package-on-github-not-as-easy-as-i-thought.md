@@ -1,11 +1,11 @@
-title: "在 GitHub 上创建一个 Swift 管理包：其实一点也不简单"
+title: "在 GitHub 上创建一个 Swift 包：其实一点也不简单"
 date: 2016-02-22 09:00:00
 tags: [Swift 入门]
 categories: [Erica Sadun]
 permalink: creating-a-swift-package-on-github-not-as-easy-as-i-thought
 keywords: github swift
 custom_title: 
-description: 很多人喜欢使用GitHub，但是你尝试过在GitHub上创建Swift管理包吗，如果感兴趣的话可以来看下本文哦。
+description: 很多人喜欢使用GitHub，但是你尝试过在GitHub上创建Swift包吗，如果感兴趣的话可以来看下本文哦。
 
 ---
 原文链接=http://ericasadun.com/2015/12/27/creating-a-swift-package-on-github-not-as-easy-as-i-thought/
@@ -18,7 +18,7 @@ description: 很多人喜欢使用GitHub，但是你尝试过在GitHub上创建S
 
 <!--此处开始正文-->
 
-一谈到 git 的事情，我就没什么可说的了。对每一个人而言这应该再熟悉不过了。
+我觉得我不需要再介绍 Git 了，大家应该已经很熟悉了。
 
 ### Package.swift
 
