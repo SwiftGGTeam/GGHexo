@@ -1,4 +1,4 @@
-在 GitHub 上创建一个 Swift 管理包：其实一点也不简单"
+在 GitHub 上创建一个 Swift 包：其实一点也不简单"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2015/12/27/creating-a-swift-package-on-github-not-as-easy-as-i-thought/)，原文日期：2015-12-27
 > 译者：[DianQK](undefined)；校对：[Cee](https://github.com/Cee)；定稿：[numbbbbb](http://numbbbbb.com/)
@@ -13,7 +13,7 @@
 
 
 
-一谈到 git 的事情，我就没什么可说的了。对每一个人而言这应该再熟悉不过了。
+我觉得我不需要再介绍 Git 了，大家应该已经很熟悉了。
 
 ### Package.swift
 
