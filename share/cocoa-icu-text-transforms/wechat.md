@@ -1,6 +1,6 @@
 在 Cocoa 中实现 ICU 文本变换"
 
-> 作者：Ole Begemann，[原文链接]([http://oleb.net/blog/2016/01/icu-text-transforms/](http://oleb.net/blog/2016/01/icu-text-transforms/))，原文日期：2016-01-03
+> 作者：Ole Begemann，[原文链接](http://oleb.net/blog/2016/01/icu-text-transforms/)，原文日期：2016-01-03
 > 译者：[aaaron7](undefined)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[Cee](https://github.com/Cee)
   
 
