@@ -28,7 +28,8 @@ let nameMap = {
   "CoderAFI": "http://coderafi.github.io/",
   "aaaron7": "http://www.jianshu.com/users/9efd08855d3a/",
   "zltunes": "http://zltunes.com",
-  "Lanford3_3": "http://lanfordcai.github.io"
+  "Lanford3_3": "http://lanfordcai.github.io",
+  "pucca601": "http://weibo.com/601pucca"
 }
 
 export default nameMap
