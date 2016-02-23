@@ -27,6 +27,7 @@ let nameMap = {
   "bestswifter": "http://bestswifter.com",
   "CoderAFI": "http://coderafi.github.io/",
   "aaaron7": "http://www.jianshu.com/users/9efd08855d3a/",
+  "zltunes": "http://zltunes.com"
 }
 
 export default nameMap
