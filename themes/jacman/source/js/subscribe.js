@@ -69,6 +69,9 @@ $(function() {
 })
 
 $(function() {
+  if (window.location.pathname != '/') {
+    return
+  }
   function openArticle(e) {
     e.preventDefault()
     $(this).closest(".article-content").find(".article-more-link a")[0].click()
