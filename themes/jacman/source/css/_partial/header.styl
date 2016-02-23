@@ -107,6 +107,7 @@ header nav
   padding 0.1em 0 0 1em
   color: #FF7554
   input
+    text-align: center
     lhhere = 30px
     -webkit-appearance textfield
     font-size 0.87em
@@ -190,7 +191,10 @@ header nav
       font-size 12px
       height 100%
       pcolor=#7D706D
-      lh=0.8rem
+      lh=0.7rem
+      &::-webkit-input-placeholder::before{content: "";}
+      &::-moz-placeholder:before{content: "\f002";}
+      &:-ms-input-placeholder::before{content: "\f002";}
       &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
           line-height lh
           color pcolor

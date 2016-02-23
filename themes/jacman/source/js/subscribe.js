@@ -79,3 +79,22 @@ $(function() {
   $(".article-content p").not('.article-more-link').css({'cursor': 'pointer'}).click(openArticle)
   $(".article-content p").not('.article-more-link').find('a').click(openArticle)
 })
+
+$(function() {
+  $("#totop").css({"left": $("#asidepart").offset().left})
+  var threadhold = $('#asidepart').offset().top + $('#asidepart').outerHeight()
+  if ($('#asidepart').css('float') == 'none') {
+    return
+  }
+  $(window).on('scroll', function() {
+    if ($('body').scrollTop() + $(window).height() >= threadhold) {
+      if ($('#asidepart').css('position') == 'fixed') {
+        return
+      }
+      $('#asidepart').css({'margin': $('#asidepart').css('margin'), 'width': $('#asidepart').width(), 'position': 'fixed', 'bottom': '0', "left": $("#asidepart").position().left + 'px'})
+    }
+    else {
+      $('#asidepart').css({'width': '18%', 'position': 'relative', 'bottom': 'auto', 'left': 'auto'})
+    }
+  })
+})
