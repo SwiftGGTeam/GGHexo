@@ -3,7 +3,7 @@
     <h1 itemprop="name">
       <% if(item.link) { %>
         <a href="<%- item.link %>" target="_blank" title="<%= item.title %>"><%= item.title %></a><% } else { %>
-        <a href="<%- config.root %><%- item.path %>" title="<%= item.title %>" itemprop="url"><%= item.title %></a><% } %>
+        <a href="<%- config.root %><%- item.path %>" target="_blank" title="<%= item.title %>" itemprop="url"><%= item.title %></a><% } %>
     </h1>
     <p class="article-time">
       <time datetime="<%= date_xml(item.date) %>" itemprop="datePublished"><%= item.date.format(config.date_format) %></time>

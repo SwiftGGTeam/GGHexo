@@ -67,3 +67,12 @@ $(function() {
     } 
   })
 })
+
+$(function() {
+  function openArticle(e) {
+    e.preventDefault()
+    $(this).closest(".article-content").find(".article-more-link a")[0].click()
+  }
+  $(".article-content p").not('.article-more-link').css({'cursor': 'pointer'}).click(openArticle)
+  $(".article-content p").not('.article-more-link').find('a').click(openArticle)
+})

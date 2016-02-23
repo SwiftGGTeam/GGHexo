@@ -22,7 +22,6 @@
     margin-bottom 1em
     a
       display block
-      border-left 1px solid color-theme
       padding 0.5em
       @media mini
         padding 1em
@@ -44,6 +43,12 @@
     //box-shadow: 2px 2px 3px darken(color-background,20%)
     //-webkit-border-radius: 3px
     //border-radius: 3px
+    padding 20px
+    margin-bottom 20px
+    padding-bottom 0px
+    border 1px solid rgba(0,0,0,.04)
+    box-shadow 0 1px 4px rgba(0,0,0,.03)
+    border-radius 3px
     header.article-info
       font-size 1em
       h1
@@ -55,7 +60,7 @@
         a
           color #333
           &:hover
-            color color-theme
+            color color-theme !important
       .article-time
         float left
         padding-left 0%
@@ -82,7 +87,10 @@
     .p 
       font-size 0.9em
     .article-content
+      margin-top 0.8em
       padding-bottom 0
+      p
+        margin-top 0.5em !important
       *
         color #999 !important
     
@@ -111,6 +119,10 @@
       margin-top -4px
 #archive-page
   section.post
+    background white
+    padding 20px
+    border 1px solid rgba(0,0,0,.04)
+    box-shadow 0 1px 4px rgba(0,0,0,.03)
     a
       font-size 0.8em
       padding 0.5em !important
@@ -120,8 +132,10 @@
       time
         float left
         line-height 30px
-        @media mini
+        padding-right 1em
+        @media tablet
           padding-left 1em
+          padding-right 0
       h1
         float left
         width 83%
@@ -131,10 +145,24 @@
         white-space nowrap
         text-overflow ellipsis
         overflow hidden
+    @media minimax
+      a
+        height 40px
+        time
+          font-size 12px !important
+          line-height 15px
+        h1
+          font-size 16px
+          line-height normal
+          width 100%
+      padding 0
 
 #page-nav
-  width 30% !important
-  margin-left 35% !important
+  width 90% !important
+  margin-left 5% !important
+  @media mini
+    width 40% !important
+    margin-left 30% !important
 
 
 
@@ -147,7 +175,6 @@
     border-left 0.5em solid color-theme
 
 #page-nav
-  background color-section
   text-align center
   overflow hidden
   a
@@ -204,6 +231,8 @@
   content "\f187"
 
 .archive-title
+  border 1px solid rgba(0,0,0,.04)
+  box-shadow 0 1px 4px rgba(0,0,0,.03)
   margin 1em 0
   padding 2em
   @media tablet
