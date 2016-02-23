@@ -39,7 +39,7 @@ Swift 2.0: 理解 flatMap"
 
 写上面的例子时，我想做一件无比简单的事情 —— 把每个元素乘以 2，就像`map`一样。但是结果是这样的：
 
-![image](http://swift.gg/img/articles/swift-2-flatmap/Screen-Shot-2015-07-26-at-5.50.07-AM.png)
+![image](http://swift.gg/img/articles/swift-2-flatmap/Screen-Shot-2015-07-26-at-5.50.07-AM-1024x144.png1456204213.364177)
 
 无论我在`flatMap`的闭包里做什么，都没有任何作用😢。于是我四处谷歌，幸运地撞见了一篇之前就看过但是却没有认真阅读的文章：[@sketchyTech](https://twitter.com/sketchyTech)的博文[What do map() and flatMap() really do?](http://sketchytech.blogspot.com/2015/06/swift-what-do-map-and-flatmap-really-do.html)。去读一读吧，里面有很多关于`flatMap`的实用内容！
 
@@ -102,7 +102,7 @@ Swift 2.0: 理解 flatMap"
 
 很棒，而且也很方便~但是这怎么和上面展开嵌套数组的例子关联起来呢？为什么要使用`flatMap`？我看过的最合理的解释是 Lars-Jørgen Kristiansen 的评论：
 
-![image](http://swift.gg/img/articles/swift-2-flatmap/Screen-Shot-2015-07-26-at-6.45.20-AM.png)
+![image](http://swift.gg/img/articles/swift-2-flatmap/Screen-Shot-2015-07-26-at-6.45.20-AM.png1456204214.9020329)
 
 他认为`flatMap`是在处理一个容器而不是数组，这样可以更好地理解它。
 
