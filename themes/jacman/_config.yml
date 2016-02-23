@@ -73,7 +73,7 @@ author:
 
 #### Toc
 toc:
-  article: true   ## show contents in article.
+  article: false   ## show contents in article.
   aside: true     ## show contents in aside.
 ## you can set both of the value to true of neither of them.
 ## if you don't want display contents in a specified post,you can modify `front-matter` and add `toc: false`.
