@@ -81,7 +81,7 @@ $(function() {
 })
 
 $(function() {
-  $("#totop").css({"left": $("#asidepart").offset().left})
+  $("#totop").css({"right": $("#asidepart").offset().right})
   var threadhold = $('#asidepart').offset().top + $('#asidepart').outerHeight() + 67
   if ($('#asidepart').css('float') == 'none') {
     return
