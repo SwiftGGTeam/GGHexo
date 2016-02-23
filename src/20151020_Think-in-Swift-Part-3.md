@@ -73,7 +73,7 @@ Swift的结构体(`structs`)和类(`Class`)具有相同的功能 - 除了继承 
 
 还有，这里把`class`迁移成`struct`的另一个优势是，如果`struct`没有定义适合一个构造器，则它会生成一个默认的隐式构造器：所以我们可以非常容易的用默认构造器`ListItem(icon: …, title: …, url: …)`去创建一个`ListItem`。
 
-最后一项要点是，由于在之前的文章中我们消除了数据损坏的问题，有问题的`ListItem`就不会被创建出来了，我们就可以把`title`的默认值`""`消除掉，但更重要的是我们就能把`NSURL!`转换成`NSURL!`去**[拯救最后一匹小马](http://alisoftware.github.io/swift/2015/09/06/thinking-in-swift-1/)**🐴<sup>2<sup>。
+最后一项要点是，由于在之前的文章中我们消除了数据损坏的问题，有问题的`ListItem`就不会被创建出来了，我们就可以把`title`的默认值`""`消除掉，但更重要的是我们就能把`NSURL!`转换成`NSURL`去**[拯救最后一匹小马](http://alisoftware.github.io/swift/2015/09/06/thinking-in-swift-1/)**🐴<sup>2<sup>。
 
 转换之后的代码如下：
 ```swift
