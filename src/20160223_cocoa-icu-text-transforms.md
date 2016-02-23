@@ -107,7 +107,6 @@ shanghai.stringByApplyingTransform(NSStringTransformToLatin,
 |2⁸ |	NFKD |	28 |
 |2⁸ |	NFKC |	28 |
 
----
 
 想象一下，自己实现上述转换方法多么蛋疼……
 
