@@ -82,7 +82,7 @@ $(function() {
 
 $(function() {
   $("#totop").css({"left": $("#asidepart").offset().left})
-  var threadhold = $('#asidepart').offset().top + $('#asidepart').outerHeight()
+  var threadhold = $('#asidepart').offset().top + $('#asidepart').outerHeight() + 67
   if ($('#asidepart').css('float') == 'none') {
     return
   }
@@ -91,7 +91,7 @@ $(function() {
       if ($('#asidepart').css('position') == 'fixed') {
         return
       }
-      $('#asidepart').css({'margin': $('#asidepart').css('margin'), 'width': $('#asidepart').width(), 'position': 'fixed', 'bottom': '0', "left": $("#asidepart").position().left + 'px'})
+      $('#asidepart').css({'margin': $('#asidepart').css('margin'), 'width': $('#asidepart').width(), 'position': 'fixed', 'bottom': '67px', "left": $("#asidepart").position().left + 'px'})
     }
     else {
       $('#asidepart').css({'width': '18%', 'position': 'relative', 'bottom': 'auto', 'left': 'auto'})
