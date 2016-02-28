@@ -1,7 +1,7 @@
 title: "iOS 并发：从 NSOperation 和 Dispatch Queues 开始"
 date: 2016-01-08
-tags: [AppCoda]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [AppCoda]
 permalink: ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues
 
 ---

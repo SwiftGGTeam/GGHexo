@@ -1,7 +1,7 @@
 title: "使用 unwind segue 而不是 delegate 模式传递回调数据"
 date: 2016-01-05
-tags: [Tomasz Szulc]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Tomasz Szulc]
 permalink: ios-passing-data-back-using-unwind-segue-instead-of-delegate-pattern
 
 ---

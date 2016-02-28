@@ -1,7 +1,7 @@
 title: "使用泛型来优化 TableView Cells 的使用体验"
 date: 2016-01-27
-tags: [Crunchy Development]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Crunchy Development]
 permalink: generic-tableviewcells
 
 ---

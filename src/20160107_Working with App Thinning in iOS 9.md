@@ -1,13 +1,13 @@
 title: "如何使用 iOS 9 App 瘦身功能"
 date: 2016-01-07 09:20:00
-tags: [AppCoda]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [AppCoda]
 permalink: app-thinning-appcoda
 ---
 
 原文链接=http://www.appcoda.com/app-thinning/
 作者=gregg mojica
-原文日期=2015/10/11
+原文日期=2015-10-11
 译者=JackAlan
 校对=lfb_CD
 定稿=numbbbbb

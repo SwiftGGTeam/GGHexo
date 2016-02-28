@@ -1,7 +1,7 @@
 title: "Swift：带有私有设置方法的公有属性"
 date: 2016-01-11
-tags: [Thomas Hanning]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Thomas Hanning]
 permalink: public-properties-with-private-setters
 ---
 

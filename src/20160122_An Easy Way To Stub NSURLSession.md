@@ -1,13 +1,13 @@
 title: "如何简单地模拟 NSURLSession 的返回数据"
 date: 2016-01-22 09:00:00
-tags: [Swift and Painless]
-categories: [iOS 开发]
+tags: [iOS 开发]
+categories: [Swift and Painless]
 permalink: an-easy-way-to-stub-nsurlsession
 ---
 
 原文链接=http://swiftandpainless.com/an-easy-way-to-stub-nsurlsession/
-原文日期=2016/01/09
-作者=dom
+原文日期=2016-01-09
+作者=Dominik Hauser
 译者=小袋子
 校对=千叶知风
 定稿=numbbbbb

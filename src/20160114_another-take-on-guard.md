@@ -1,7 +1,7 @@
 title: "关于 guard 的另一种观点"
 date: 2016-01-14
-tags: [Erica Sadun]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Erica Sadun]
 permalink: another-take-on-guard
 
 ---

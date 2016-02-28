@@ -1,7 +1,7 @@
 title: "优雅的 NSStringFromClass 替代方案"
 date: 2016-01-29
-tags: [Natasha The Robot]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Natasha The Robot]
 permalink: nsstringfromclass-in-swift
 keywords: nsstringfromcolor
 custom_title: 
@@ -9,7 +9,7 @@ description: 本文教你Swift中NSStringFromClass的替代方案，再也不用
 
 ---
 原文链接=https://www.natashatherobot.com/nsstringfromclass-in-swift/
-作者=Natasha The Robot
+作者=Natasha
 原文日期=2016-01-14
 译者=saitjr
 校对=千叶知风

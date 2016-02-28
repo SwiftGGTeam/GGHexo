@@ -1,7 +1,7 @@
 title: "Swift 魔法：公开 Getter，隐藏 Setter"
 date: 2016-01-28
-tags: [Natasha The Robot]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Natasha The Robot]
 permalink: swift-magic-public-getter-private-setter
 keywords: swift getter,swift setter
 custom_title: 
