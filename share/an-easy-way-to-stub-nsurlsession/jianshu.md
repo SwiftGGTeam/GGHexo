@@ -1,6 +1,6 @@
 如何简单地模拟 NSURLSession 的返回数据"
 
-> 作者：dom，[原文链接](http://swiftandpainless.com/an-easy-way-to-stub-nsurlsession/)，原文日期：2016/01/09
+> 作者：Dominik Hauser，[原文链接](http://swiftandpainless.com/an-easy-way-to-stub-nsurlsession/)，原文日期：2016-01-09
 > 译者：[小袋子](http://daizi.me)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 

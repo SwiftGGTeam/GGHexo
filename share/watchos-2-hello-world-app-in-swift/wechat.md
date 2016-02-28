@@ -1,6 +1,6 @@
 在 Swift 中编写 watchOS 2 Hello World 程序
 
-> 作者：codingexplorer，[原文链接](http://www.codingexplorer.com/watchos-2-hello-world-app-in-swift/)，原文日期：2015-12-08
+> 作者：Nick Hanan，[原文链接](http://www.codingexplorer.com/watchos-2-hello-world-app-in-swift/)，原文日期：2015-12-08
 > 译者：[mmoaay](http://mmoaay.photo/)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 

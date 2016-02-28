@@ -1,6 +1,6 @@
 iOS：如何用 Swift 实现弱代理"
 
-> 作者：Natasha the Robot，[原文链接](https://www.natashatherobot.com/ios-weak-delegates-swift/)，原文日期：2015-12-23
+> 作者：Natasha，[原文链接](https://www.natashatherobot.com/ios-weak-delegates-swift/)，原文日期：2015-12-23
 > 译者：[lfb_CD](http://weibo.com/lfbWb)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[Cee](https://github.com/Cee)
   
 

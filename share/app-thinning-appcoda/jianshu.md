@@ -1,6 +1,6 @@
 如何使用 iOS 9 App 瘦身功能"
 
-> 作者：gregg mojica，[原文链接](http://www.appcoda.com/app-thinning/)，原文日期：2015/10/11
+> 作者：gregg mojica，[原文链接](http://www.appcoda.com/app-thinning/)，原文日期：2015-10-11
 > 译者：[JackAlan](http://ijack.pw/)；校对：[lfb_CD](http://weibo.com/lfbWb)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 

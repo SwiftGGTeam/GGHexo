@@ -1,6 +1,6 @@
 优雅的 NSStringFromClass 替代方案"
 
-> 作者：Natasha The Robot，[原文链接](https://www.natashatherobot.com/nsstringfromclass-in-swift/)，原文日期：2016-01-14
+> 作者：Natasha，[原文链接](https://www.natashatherobot.com/nsstringfromclass-in-swift/)，原文日期：2016-01-14
 > 译者：[saitjr](http://www.brighttj.com)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[Cee](https://github.com/Cee)
   
 

@@ -1,6 +1,6 @@
 在 Target-Action 中使用响应链"
 
-> 作者：dom，[原文链接](http://swiftandpainless.com/utilize-the-responder-chain-for-target-action/)，原文日期：2016/1/1
+> 作者：Dominik Hauser，[原文链接](http://swiftandpainless.com/utilize-the-responder-chain-for-target-action/)，原文日期：2016-1-1
 > 译者：[小铁匠Linus](http://weibo.com/linusling)；校对：[saitjr](http://www.brighttj.com)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
