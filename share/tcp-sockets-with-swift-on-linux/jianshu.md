@@ -1,27 +1,22 @@
-title: "在 Linux 中使用 Swift 进行 TCP Sockets 编程"
-date: 2016-03-01
-tags: [Swift 入门]
-categories: [iAchieved.it]
-permalink: tcp-sockets-with-swift-on-linux
-keywords: linux swift,swift tcp socket
-custom_title: 
-description: 想知道在Linux下载使用Swift来进行TCP Sockets编程要怎么做吗，看看本文你就会知道了。
+在 Linux 中使用 Swift 进行 TCP Sockets 编程"
 
----
-原文链接=http://dev.iachieved.it/iachievedit/tcp-sockets-with-swift-on-linux/
-作者=Joe
-原文日期=2016-01-03
-译者=shanks
-校对=numbbbbb
-定稿=Cee
+> 作者：Joe，[原文链接](http://dev.iachieved.it/iachievedit/tcp-sockets-with-swift-on-linux/)，原文日期：2016-01-03
+> 译者：[shanks](http://codebuild.me/)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[Cee](https://github.com/Cee)
+  
 
-<!--此处开始正文-->
+
+
+
+
+
+
+
 
 在远古时代，程序员们使用 [TCP/IP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) [套接字（sockets）](https://en.wikipedia.org/wiki/Network_socket)来编写客户端-服务器（client-server）应用。这事发生在黑暗时代 [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) 诞生之前。
 
 当然，我只是开了个玩笑。HTTP 的出现给客户端-服务器（client-server）应用带来更多的变化，当然它也是 [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) 应用的基础。HTTP 带给我们的不仅是将数据在网络中打包传输，还包括一个一致认可的包协议架构（从某种程度上来讲，是一个在特定端口下使用的标准）。可以进行的动作有：GET，POST，PUT 等。HTTP 头部本身也使得 HTTP 协议对于开发客户端-服务器应用变得更加友好。
 
-<!--more-->
+
 
 接下来，在栈的底层，字节和字符都会被你操作系统的套接字接口处理和传输。网络套接字编程的 API 已经很强大了，很多[教程](http://gnosis.cx/publish/programming/sockets.html)和[书籍](http://www.amazon.com/TCP-Illustrated-Protocols-Addison-Wesley-Professional/dp/0321336313)都和这个知识点有关。用 C 来处理 IP 网络目前看来很繁琐，但是一开始只能用它来做。之后我们使用 C++ 面向对象的思想来包装这些 API，从而使网络编程变得更加容易。接着，出现了苹果 Foundation 中的 `CFStream` 类，然后就是我们要用到的 `swiftysockets` API。
 
@@ -34,23 +29,22 @@ description: 想知道在Linux下载使用Swift来进行TCP Sockets编程要怎�
 
 Swiftychat 需要用到 [swiftysockets](https://github.com/iachievedit/swiftysockets)，一个由 [Zewo 团队](https://github.com/zewo)基于 Swift 开发的 TCP/IP 套接字的包。但是由于包的限制，我们不得不首先安装一个 C 库──[Tide](https://github.com/iachievedit/Tide)。那么我们现在就搞起吧。
 
-```bash
-$ git clone https://github.com/iachievedit/Tide
-Cloning into 'Tide'...
-...
-$ cd Tide
-$ sudo make install
-clang -c Tide/tcp.c Tide/ip.c Tide/utils.c
-ar -rcs libtide.a *.o
-rm *.o
-mkdir -p tide/usr/local/lib
-mkdir -p tide/usr/local/include/tide
-cp Tide/tcp.h Tide/ip.h Tide/utils.h Tide/tide_swift.h tide/usr/local/include/tide
-# copy .a
-cp libtide.a tide/usr/local/lib/
-mkdir -p /usr/local
-cp -r tide/usr/local/* /usr/local/
-```
+    bash
+    $ git clone https://github.com/iachievedit/Tide
+    Cloning into 'Tide'...
+    ...
+    $ cd Tide
+    $ sudo make install
+    clang -c Tide/tcp.c Tide/ip.c Tide/utils.c
+    ar -rcs libtide.a *.o
+    rm *.o
+    mkdir -p tide/usr/local/lib
+    mkdir -p tide/usr/local/include/tide
+    cp Tide/tcp.h Tide/ip.h Tide/utils.h Tide/tide_swift.h tide/usr/local/include/tide
+    # copy .a
+    cp libtide.a tide/usr/local/lib/
+    mkdir -p /usr/local
+    cp -r tide/usr/local/* /usr/local/
 
 小道消息称未来 [Swift 包管理会支持编译 C 库](https://github.com/ddunbar/swift-evolution/blob/master/proposals/NNNN-swiftpm-c-language-targets.md)，可以和你写的包一起进行编译。但是在这之前，我们必须安装 C 库。
 
@@ -61,89 +55,87 @@ cp -r tide/usr/local/* /usr/local/
 
 `main.swift` 文件中的代码比较简单：创建一个 `ChatterServer` 并启动它。
 
-```swift
-//main.swift
-if let server = ChatterServer() {
-  server.start()
-}
-```
+    
+    //main.swift
+    if let server = ChatterServer() {
+      server.start()
+    }
 
 可以看到，`main.swift` 相当简单，只做了一件事情，入侵……抱歉，我刚才跑偏了，这不是星球大战……
 
 简洁的 `main.swift` 意味着我们所有的实现都在 `ChatterServer` 类中，代码如下：
 
-```swift
-import swiftysockets
-import Foundation
-
-class ChatterServer {
-
-  private let ip:IP?
-  private let server:TCPServerSocket?
-
-  init?() {
-    do {
-      self.ip     = try IP(port:5555)
-      self.server = try TCPServerSocket(ip:self.ip!)
-    } catch let error {
-      print(error)
-      return nil
-    }
-  }
-
-  func start() {
-    while true {
-      do {
-        let client = try server!.accept()
-        self.addClient(client)
-      } catch let error {
-        print(error)
-      }
-    }
-  }
-
-  private var connectedClients:[TCPClientSocket] = []
-  private var connectionCount = 0
-  private func addClient(client:TCPClientSocket) {
-    self.connectionCount += 1
-    let handlerThread = NSThread(){
-      let clientId = self.connectionCount
-      
-      print("Client \(clientId) connected")
-      
-      while true {
+    
+    import swiftysockets
+    import Foundation
+    
+    class ChatterServer {
+    
+      private let ip:IP?
+      private let server:TCPServerSocket?
+    
+      init?() {
         do {
-          if let s = try client.receiveString(untilDelimiter: "\n") {
-            print("Received from client \(clientId):  \(s)", terminator:"")
-            self.broadcastMessage(s, except:client)
-          }
+          self.ip     = try IP(port:5555)
+          self.server = try TCPServerSocket(ip:self.ip!)
         } catch let error {
-          print ("Client \(clientId) disconnected:  \(error)")
-          self.removeClient(client)
-          return
+          print(error)
+          return nil
+        }
+      }
+    
+      func start() {
+        while true {
+          do {
+            let client = try server!.accept()
+            self.addClient(client)
+          } catch let error {
+            print(error)
+          }
+        }
+      }
+    
+      private var connectedClients:[TCPClientSocket] = []
+      private var connectionCount = 0
+      private func addClient(client:TCPClientSocket) {
+        self.connectionCount += 1
+        let handlerThread = NSThread(){
+          let clientId = self.connectionCount
+          
+          print("Client \(clientId) connected")
+          
+          while true {
+            do {
+              if let s = try client.receiveString(untilDelimiter: "\n") {
+                print("Received from client \(clientId):  \(s)", terminator:"")
+                self.broadcastMessage(s, except:client)
+              }
+            } catch let error {
+              print ("Client \(clientId) disconnected:  \(error)")
+              self.removeClient(client)
+              return
+            }
+          }
+        }
+        handlerThread.start()
+        connectedClients.append(client)
+      }
+    
+      private func removeClient(client:TCPClientSocket) {
+        connectedClients = connectedClients.filter(){$0 !== client}
+      }
+    
+      private func broadcastMessage(message:String, except:TCPClientSocket) {
+        for client in connectedClients where client !== except {
+          do {
+            try client.sendString(message)
+            try client.flush()
+          } catch {
+            // 
+          }
         }
       }
     }
-    handlerThread.start()
-    connectedClients.append(client)
-  }
-
-  private func removeClient(client:TCPClientSocket) {
-    connectedClients = connectedClients.filter(){$0 !== client}
-  }
-
-  private func broadcastMessage(message:String, except:TCPClientSocket) {
-    for client in connectedClients where client !== except {
-      do {
-        try client.sendString(message)
-        try client.flush()
-      } catch {
-        // 
-      }
-    }
-  }
-}
-```
 
 我们的服务器分解为以下几部分代码：
 
@@ -176,27 +168,26 @@ class ChatterServer {
 
 让我们再看一眼线程代码：
 
-```swift
-let handlerThread = NSThread(){
-      let clientId = self.connectionCount
-      
-      print("Client \(clientId) connected")
-      
-      while true {
-        do {
-          if let s = try client.receiveString(untilDelimiter: "\n") {
-            print("Received from client \(clientId):  \(s)", terminator:"")
-            self.broadcastMessage(s, except:client)
+    
+    let handlerThread = NSThread(){
+          let clientId = self.connectionCount
+          
+          print("Client \(clientId) connected")
+          
+          while true {
+            do {
+              if let s = try client.receiveString(untilDelimiter: "\n") {
+                print("Received from client \(clientId):  \(s)", terminator:"")
+                self.broadcastMessage(s, except:client)
+              }
+            } catch let error {
+              print ("Client \(clientId) disconnected:  \(error)")
+              self.removeClient(client)
+              return
+            }
           }
-        } catch let error {
-          print ("Client \(clientId) disconnected:  \(error)")
-          self.removeClient(client)
-          return
         }
-      }
-    }
-    handlerThread.start()
-```
+        handlerThread.start()
 
 客户端处理线程时会进入一个循环，等待 `TCPClientSocket` 中的 `receiveString` 方法获取客户端的输入。当服务器端接收到一个字符串后，服务器端会打印到终端，然后广播这个消息，如果 `try` 语句抛出了错误（断开连接），服务器端会删除这个客户端连接。
 
@@ -206,16 +197,15 @@ let handlerThread = NSThread(){
 
 以下是 `Package.swift` 的代码：
 
-```swift
-import PackageDescription
-
-let package = Package(
-  name:  "chatterserver",
-  dependencies: [
-    .Package(url:  "https://github.com/iachievedit/swiftysockets", majorVersion: 0),
-  ]
-)
-```
+    
+    import PackageDescription
+    
+    let package = Package(
+      name:  "chatterserver",
+      dependencies: [
+        .Package(url:  "https://github.com/iachievedit/swiftysockets", majorVersion: 0),
+      ]
+    )
 
 然后创建一个 `Sources` 文件夹，把 `main.swift` 和 `ChatterServer.swift` 放进去。
 
@@ -228,7 +218,7 @@ let package = Package(
 
 下面进行更加真实的测试，我们将启用一个服务器端和三个客户端，见下图：
 
-![](/img/articles/tcp-sockets-with-swift-on-linux/Selection_007.png1456793714.7514606)
+![](http://swift.gg/img/articles/tcp-sockets-with-swift-on-linux/Selection_007.png1456793714.7514606)
 
 看图中左边的终端，我们的聊天服务器正在运行。右边终端有 3 个客户端，每一个都使用命令 `nc localhost 5555` 来启动。每个客户端连接服务器的时候，都会在服务器端打印出连接信息。
 
@@ -243,3 +233,4 @@ let package = Package(
 我们将聊天服务器代码上传到了 [GitHub](https://github.com/iachievedit/swiftychatter) 上。这其中也包括目前暂时未实现的 `chatterclient` 项目。下载完成后，你可以在根目录下使用 `make` 指令编译服务器端和客户端。
 
 **牢记**：你必须提前安装好 `libtide.a` 和对应的头文件，因为 `swiftysockets` 会用到它！
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
