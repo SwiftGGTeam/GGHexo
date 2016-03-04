@@ -1,19 +1,14 @@
-title: "Swift GYB 简易教程"
-date：2016-03-04 09:00:00
-tags: [GYB]
-categoris: [uraimo] 
-permalink: a-short-swift-gyb-tutorial
-keywords: swift模版生成,swift教程
-custom_title: 
-description: Swift GYB（模板生成）是Swift内部使用的工具，它可以用模板生成源文件，想学习的来看教程吧。
+Swift GYB 简易教程"
 
----
-原文链接=https://www.uraimo.com/2016/02/09/a-short-swift-gyb-tutorial/
-作者=Umberto Raimondi
-原文日期=2016-2-9
-译者=ahfepj
-校对=numbbbbb
-定稿=小铁匠Linus
+> 作者：Umberto Raimondi，[原文链接](https://www.uraimo.com/2016/02/09/a-short-swift-gyb-tutorial/)，原文日期：2016-2-9
+> 译者：[ahfepj](undefined)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[小铁匠Linus](http://weibo.com/linusling)
+  
+
+
+
+
+
+
 
 
 GYB（模板生成）[是一个 Swift 内部使用的工具](https://github.com/apple/swift/blob/master/utils/gyb.py)，可以用模板生成源文件。
@@ -26,7 +21,7 @@ GYB（模板生成）[是一个 Swift 内部使用的工具](https://github.com/
 
 让我们来看看如何使用 GYB。
 
-<!--more-->
+
 
 ## GYB 引擎元素
 
@@ -45,29 +40,28 @@ GYB（模板生成）[是一个 Swift 内部使用的工具](https://github.com/
 
 让我们用这几个简单的规则来做一个例子，拿 [Bitter 的模板](https://github.com/uraimo/Bitter/blob/master/Templates/Bitter.swift.gyb) 来说，用 `allOne` 为所有固定长度的整形变量添加一个计算属性，就会返回一个由带有 `allOne` 的位模式初始化后得到的整型变量/无符号整形变量:
 
-```swift
-%{
-  intTypes = [8,16,32,64]
-}%
-
-% for intType in intTypes:
-    % for sign in ['','U']:
-
-/// Extension that adds a few additional functionalities to ${sign}Int${intType}
-extension 
-${sign}Int${intType} {
-
-        /// Returns a ${sign}Int${intType} with all ones
-        %if sign == '':
-    public static var allOnes:Int${intType}{return Int${intType}(bitPattern: UInt${intType}.max)}
-        %else:
-    public static var allOnes:UInt${intType}{return UInt${intType}.max}
+    
+    %{
+      intTypes = [8,16,32,64]
+    }%
+    
+    % for intType in intTypes:
+        % for sign in ['','U']:
+    
+    /// Extension that adds a few additional functionalities to ${sign}Int${intType}
+    extension 
+    ${sign}Int${intType} {
+    
+            /// Returns a ${sign}Int${intType} with all ones
+            %if sign == '':
+        public static var allOnes:Int${intType}{return Int${intType}(bitPattern: UInt${intType}.max)}
+            %else:
+        public static var allOnes:UInt${intType}{return UInt${intType}.max}
+            %end
+    
+    }
         %end
-
-}
     %end
-%end
-```
 
 有了 Python 代码块，我们就可以在 Swift 中建立一个固定长度整型数组，然后遍历它并使用内部循环来处理有符号和无符号整数。然后，我们可以根据`符号`变量的值输出两个不同的代码片段。如果标识变量为空（有符号整数）就输出第一个代码段，如果不为空（无符号整数），就输出第二个代码段。
 
@@ -79,22 +73,21 @@ ${sign}Int${intType} {
 
 你可以从 Swift 仓库下载 GYB：
 
-```swift
-wget https://github.com/apple/swift/raw/master/utils/gyb
-wget https://github.com/apple/swift/raw/master/utils/gyb.py
-chmod +x gyb
-```
+    
+    wget https://github.com/apple/swift/raw/master/utils/gyb
+    wget https://github.com/apple/swift/raw/master/utils/gyb.py
+    chmod +x gyb
 
 通过如下方式解析模板：
 
-```bash
-./gyb --line-directive '' -o ../Sources/Bitter/Bitter.swift Bitter.swift.gyb
-```
+    bash
+    ./gyb --line-directive '' -o ../Sources/Bitter/Bitter.swift Bitter.swift.gyb
 
-```-o```选项指定输出文件，最后一个文件名指定包含模板的文件的名称。
+    -o选项指定输出文件，最后一个文件名指定包含模板的文件的名称。
 
-若 ```--line-directive ''```参数为缺省，GYB 输出会增加调试信息，在原始模板中每一部分的输出描述元素会被执行。
+若     --line-directive ''参数为缺省，GYB 输出会增加调试信息，在原始模板中每一部分的输出描述元素会被执行。
 
 当你在调试自己写的模板时，调试信息会很有用。一旦模板完成之后，可以禁用调试的注释，让输出清爽一些。
 
 要评论？在 [Twitter](https://twitter.com/uraimo) 上戳我。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
