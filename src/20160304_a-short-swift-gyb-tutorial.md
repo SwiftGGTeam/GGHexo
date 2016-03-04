@@ -1,8 +1,8 @@
 title: "Swift GYB 简易教程"
-date：2016-03-04 09:00:00
+date: 2016-03-04 09:00:00
 tags: [GYB]
 categoris: [uraimo] 
-permalink: a-short-swift-gyb-tutorial
+permalink:a-short-swift-gyb-tutorial
 keywords: swift模版生成,swift教程
 custom_title: 
 description: Swift GYB（模板生成）是Swift内部使用的工具，它可以用模板生成源文件，想学习的来看教程吧。
