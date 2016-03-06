@@ -1,7 +1,7 @@
 title: "在 Swift 中截取 C 字符串"
 date: 2016-02-26 09:00:00
 tags: [Swift 入门]
-categories: [iachieved]
+categories: [iAchieved.it]
 permalink: swift-substring-on-a-c-string
 keywords: c字符串截取,swift字符串
 custom_title: 
