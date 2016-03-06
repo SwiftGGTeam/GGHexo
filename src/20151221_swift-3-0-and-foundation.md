@@ -1,7 +1,7 @@
 title: "Swift 3.0 和 Foundation"
 date: 2015-12-21
-tags: [Erica Sadun]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Erica Sadun]
 permalink: swift-3-0-and-foundation
 
 ---

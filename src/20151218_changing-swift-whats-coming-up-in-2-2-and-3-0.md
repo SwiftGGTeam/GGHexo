@@ -1,7 +1,7 @@
 title: "Swift 的变化：从 2.2 到 3.0 会带来什么"
 date: 2015-12-18
-tags: [Erica Sadun]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Erica Sadun]
 permalink: changing-swift-whats-coming-up-in-2-2-and-3-0
 
 ---

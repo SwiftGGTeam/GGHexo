@@ -12,6 +12,7 @@ permalink: per-view-auto-rotation-locking-made-easy-for-ios-8-and-9
 校对=numbbbbb
 定稿=千叶知风
 
+
 <!--此处开始正文-->
 
 这周我在开发一个 App，客户想要此 App 在某些情况下锁定竖屏，某些情况下锁定横屏。幸运的是，我已经在自动布局下创建了所有的视图，因此它们已经支持所需的约束，我仅需要锁定视图旋转。

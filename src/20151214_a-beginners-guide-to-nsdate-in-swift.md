@@ -1,7 +1,7 @@
 title: "Swift 的 NSDate 初学者指南"
 date: 2015-12-14 09:00:00
-tags: [AppCoda]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [AppCoda]
 permalink: a-beginners-guide-to-nsdate-in-swift
 
 ---

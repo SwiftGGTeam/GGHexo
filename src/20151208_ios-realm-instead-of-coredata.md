@@ -1,7 +1,7 @@
 title: iOS：选择 Realm 而不是 CoreData
 date: 2015-12-08
-tags: [Tomasz Szulc]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Tomasz Szulc]
 permalink: ios-realm-instead-of-coredata
 
 ---

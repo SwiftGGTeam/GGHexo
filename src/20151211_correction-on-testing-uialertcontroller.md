@@ -1,7 +1,7 @@
 title: "UIAlertController 测试的修正"
 date: 2015-12-11
-tags: [Swift and Painless]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Swift and Painless]
 permalink: correction-on-testing-uialertcontroller
 
 ---

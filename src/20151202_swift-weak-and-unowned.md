@@ -1,7 +1,7 @@
 title: "Swift 中的 weak 和 unowned"
 date: 2015-12-02
-tags: [Thomas Hanning]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Thomas Hanning]
 permalink: swift-weak-and-unowned
 
 ---

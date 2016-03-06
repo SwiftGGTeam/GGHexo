@@ -1,7 +1,7 @@
 title: Xcode:用于管理多个 target 配置的 XCConfig 文件
 date: 2015-12-01
-tags: [Tomasz Szulc]
-categories: [Xcode]
+tags: [Xcode]
+categories: [Tomasz Szulc]
 permalink: xcode-xcconfig-files-for-managing-targets-configurations
 
 ---

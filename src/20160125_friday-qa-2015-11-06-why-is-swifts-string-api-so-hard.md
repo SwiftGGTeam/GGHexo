@@ -1,7 +1,7 @@
 title: "Friday Q&A 2015-11-06：为什么 Swift 中的 String API 如此难用？"
 date: 2016-01-25
-tags: [Mike Ash]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [mikeash.com]
 permalink: friday-qa-2015-11-06-why-is-swifts-string-api-so-hard
 ---
 
