@@ -1,6 +1,6 @@
 如何使用 Swift、Foursquare API 及 Realm 构建一款 Coffee Shop 应用"
 
-> 作者：reinder de vries，[原文链接](http://www.appcoda.com/foursquare-realm-swift/)，原文日期：2015/11/23
+> 作者：reinder de vries，[原文链接](http://www.appcoda.com/foursquare-realm-swift/)，原文日期：2015-11-23
 > 译者：[小铁匠Linus](http://weibo.com/linusling)；校对：[saitjr](http://www.brighttj.com)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
