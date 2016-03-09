@@ -4,7 +4,7 @@ let nameMap = {
   "lfb_CD": "http://weibo.com/lfbWb",
   "mmoaay": "http://mmoaay.photo/",
   "Yake": "http://blog.csdn.net/yake_099",
-  "小铁匠Linus": "http://weibo.com/linusling",
+  "小铁匠Linus": "http://linusling.com",
   "SergioChan": "https://github.com/SergioChan",
   "天才175": "http://weibo.com/u/2916092907",
   "靛青K": "http://www.dianqk.org/",
