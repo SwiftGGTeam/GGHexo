@@ -1,7 +1,7 @@
 如何使用 OAuth 2.0 将 LinkedIn 集成入 iOS 应用"
 
 > 作者：Gabriel Theodoropoulos，[原文链接](http://www.appcoda.com/linkedin-sign-in/)，原文日期：2016-1-3
-> 译者：[小铁匠Linus](http://weibo.com/linusling)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)
+> 译者：[小铁匠Linus](http://linusling.com)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)
   
 
 

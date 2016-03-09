@@ -1,7 +1,7 @@
 Swift 中枚举的使用"
 
 > 作者：Raj Kandathi，[原文链接](http://rajkandathi.com/understanding-enums-using-swift/)，原文日期：2015/08/31
-> 译者：[小铁匠Linus](http://weibo.com/linusling)；校对：[Prayer](http://www.futantan.com)；定稿：[shanks](http://codebuild.me/)
+> 译者：[小铁匠Linus](http://linusling.com)；校对：[Prayer](http://www.futantan.com)；定稿：[shanks](http://codebuild.me/)
   
 
 

@@ -1,7 +1,7 @@
 Swift GYB 简易教程"
 
 > 作者：Umberto Raimondi，[原文链接](https://www.uraimo.com/2016/02/09/a-short-swift-gyb-tutorial/)，原文日期：2016-2-9
-> 译者：[ahfepj](undefined)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[小铁匠Linus](http://weibo.com/linusling)
+> 译者：[ahfepj](undefined)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[小铁匠Linus](http://linusling.com)
   
 
 
