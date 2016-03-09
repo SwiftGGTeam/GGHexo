@@ -11,7 +11,7 @@ description: Swift自定义初始化方法来依赖注入是很多人还不会�
 原文链接=https://www.natashatherobot.com/swift-dependency-injection-with-a-custom-initializer/
 作者=Natasha The Robot
 原文日期=2016-01-08
-译者=littltedogboy
+译者=littledogboy
 校对=Cee
 定稿=千叶知风
 

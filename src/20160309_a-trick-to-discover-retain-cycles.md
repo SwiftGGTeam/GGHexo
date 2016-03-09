@@ -12,7 +12,7 @@ description: 发现循环引用的方法
 作者=Thomas Hanning
 原文日期=2015-11-09
 译者=靛青K
-校对=littltedogboy
+校对=littledogboy
 定稿=shanks
 
 
