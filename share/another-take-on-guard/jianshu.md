@@ -1,7 +1,7 @@
 关于 guard 的另一种观点"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2016/01/01/another-take-on-guard/)，原文日期：2016-01-01
-> 译者：[walkingway](http://chengway.in/)；校对：[saitjr](http://www.brighttj.com)；定稿：[shanks](http://codebuild.me/)
+> 译者：[walkingway](http://chengway.in/)；校对：[saitjr](http://www.saitjr.com)；定稿：[shanks](http://codebuild.me/)
   
 
 

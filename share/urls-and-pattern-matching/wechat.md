@@ -1,7 +1,7 @@
 用模式匹配解析 URL"
 
 > 作者：Olivier Halligon，[原文链接](http://alisoftware.github.io/swift/pattern-matching/2015/08/23/urls-and-pattern-matching/)，原文日期：2015/08/23
-> 译者：[靛青K](http://www.dianqk.org/)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[shanks](http://codebuild.me/)
+> 译者：[靛青K](http://blog.dianqk.org/)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[shanks](http://codebuild.me/)
   
 
 

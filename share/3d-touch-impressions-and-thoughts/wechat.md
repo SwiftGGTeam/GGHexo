@@ -1,7 +1,7 @@
 3D Touch之我见"
 
 > 作者：Tomasz Szulc，[原文链接](http://szulctomasz.com/3d-touch-impressions-and-thoughts)，原文日期：2015-09-26
-> 译者：[saitjr](http://www.brighttj.com)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[saitjr](http://www.saitjr.com)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 

@@ -1,7 +1,7 @@
 为什么 guard 比 if 好"
 
 > 作者：Natasha，[原文链接](http://natashatherobot.com/swift-guard-better-than-if/)，原文日期：2015/07/16
-> 译者：[靛青K](http://www.dianqk.org/)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[numbbbbb](http://numbbbbb.com/)
+> 译者：[靛青K](http://blog.dianqk.org/)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
 

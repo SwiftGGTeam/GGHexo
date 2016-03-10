@@ -1,7 +1,7 @@
 如何处理 Swift 中的异步错误"
 
 > 作者：Olivier Halligon，[原文链接](http://alisoftware.github.io/swift/async/error/2016/02/06/async-errors/)，原文日期：2016-02-06
-> 译者：[ray16897188](http://www.jianshu.com/users/97c49dfd1f9f/latest_articles)；校对：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)；定稿：[numbbbbb](http://numbbbbb.com/)
+> 译者：[ray16897188](http://www.jianshu.com/users/97c49dfd1f9f/latest_articles)；校对：[小锅](http://www.swiftyper.com)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
 

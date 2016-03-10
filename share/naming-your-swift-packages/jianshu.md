@@ -1,7 +1,7 @@
 为你的 Swift Packages 命名"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2016/02/08/naming-your-swift-packages/)，原文日期：2016-02-08
-> 译者：[Cee](https://github.com/Cee)；校对：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[Cee](https://github.com/Cee)；校对：[小锅](http://www.swiftyper.com)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 

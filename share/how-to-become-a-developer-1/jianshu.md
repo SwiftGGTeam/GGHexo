@@ -1,7 +1,7 @@
 如何成为一名入门级 iOS 开发者"
 
 > 作者：Weston Hanners，[原文链接](http://www.alloc-init.com/2016/01/how-to-become-a-developer-1/)，原文日期：2016-01-26
-> 译者：[ray16897188](http://www.jianshu.com/users/97c49dfd1f9f/latest_articles)；校对：[&nbsp](https://github.com/initiOSJava)；定稿：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)
+> 译者：[ray16897188](http://www.jianshu.com/users/97c49dfd1f9f/latest_articles)；校对：[&nbsp](https://github.com/initiOSJava)；定稿：[小锅](http://www.swiftyper.com)
   
 
 

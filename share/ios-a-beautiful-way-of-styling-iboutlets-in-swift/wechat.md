@@ -1,7 +1,7 @@
 Swift 小贴士: 优雅地设置 IBOutlets"
 
 > 作者：Natasha，[原文链接](http://natashatherobot.com/ios-a-beautiful-way-of-styling-iboutlets-in-swift/)，原文日期：2015/07/29
-> 译者：[Channe](undefined)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)
+> 译者：[Channe](undefined)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[小锅](http://www.swiftyper.com)
   
 
 

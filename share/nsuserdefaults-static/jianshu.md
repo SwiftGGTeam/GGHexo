@@ -1,7 +1,7 @@
 静态类型的 NSUserDefaults"
 
 > 作者：Radek Pietruszewski，[原文链接](http://radex.io/swift/nsuserdefaults/static/)，原文日期：2015-08-31
-> 译者：[walkingway](http://chengway.in/)；校对：[Cee](https://github.com/Cee)；定稿：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)
+> 译者：[walkingway](http://chengway.in/)；校对：[Cee](https://github.com/Cee)；定稿：[小锅](http://www.swiftyper.com)
   
 
 

@@ -1,7 +1,7 @@
 发现循环引用的方法"
 
 > 作者：Thomas Hanning，[原文链接](http://www.thomashanning.com/a-trick-to-discover-retain-cycles/)，原文日期：2015-11-09
-> 译者：[靛青K](http://www.dianqk.org/)；校对：[littledogboy](undefined)；定稿：[shanks](http://codebuild.me/)
+> 译者：[靛青K](http://blog.dianqk.org/)；校对：[littledogboy](undefined)；定稿：[shanks](http://codebuild.me/)
   
 
 

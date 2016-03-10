@@ -1,7 +1,7 @@
 集合视图重排教程"
 
 > 作者：ioscreator，[原文链接](http://www.ioscreator.com/tutorials/reordering-collection-view-cells-tutorial)，原文日期：2015-09-17
-> 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[靛青K](http://www.dianqk.org/)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[靛青K](http://blog.dianqk.org/)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 
