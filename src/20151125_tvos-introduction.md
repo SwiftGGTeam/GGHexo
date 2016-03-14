@@ -1,7 +1,7 @@
 title: "tvOS 入门：开发你的第一个 tvOS 应用"
 date: 2015-11-25
-tags: [AppCoda]
-categories: [Swift 入门,Apple TV 开发]
+tags: [Swift 入门,Apple TV 开发]
+categories: [AppCoda]
 permalink: tvos-introduction
 
 ---

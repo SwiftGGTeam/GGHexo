@@ -1,7 +1,7 @@
 title: "Swift 反射 API 及用法"
 date: 2015-11-23
-tags: [APPVENTURE]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [APPVENTURE]
 permalink: swift-reflection-api-what-you-can-do
 
 ---

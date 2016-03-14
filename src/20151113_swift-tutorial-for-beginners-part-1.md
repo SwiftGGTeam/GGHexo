@@ -1,7 +1,7 @@
 title: "写给初学者的 Swift 教程 Part 1"
 date: 2015-11-13 09:00:00
-tags: [Thomas Hanning]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Thomas Hanning]
 permalink: swift-tutorial-for-beginners-part-1
 
 ---

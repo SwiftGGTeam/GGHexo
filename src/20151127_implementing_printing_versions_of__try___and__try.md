@@ -1,13 +1,13 @@
 title: "实现可打印内容的 try? 和 try!"
 date: 2015-11-27 09:20:00
-tags: [Erica Sadun]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Erica Sadun]
 permalink: implementing-printing-versions-of-try-and-try-on-steroids-in-swiftlang
 
 ---
 原文链接=http://ericasadun.com/2015/11/05/implementing-printing-versions-of-try-and-try-on-steroids-in-swiftlang/
 作者=Erica Sadun
-原文日期=2015/11/5
+原文日期=2015-11-5
 译者=pmst
 校对=千叶知风
 定稿=numbbbbb

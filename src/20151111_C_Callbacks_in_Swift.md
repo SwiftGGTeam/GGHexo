@@ -1,7 +1,7 @@
 title: "在 Swift 2.0 当中使用 C 语言回调"
 date: 2015-11-11 09:00:00
-tags: [Ole Begemann]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Ole Begemann]
 permalink: c-callbacks-in-swift
 
 ---

@@ -1,7 +1,7 @@
 title: "If-Let 赋值运算符"
 date: 2015-11-06 09:00:00
-tags: [Weston Hanners]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [alloc-init]
 permalink: if-let-assignment
 
 ---

@@ -1,7 +1,7 @@
 title: "WatchOS 2: Hello, World"
 date: 2015-10-15 09:00:00
-tags: [Natasha The Robot]
-categories: [WatchOS 2,Swift 入门]
+tags: [WatchOS 2,Swift 入门]
+categories: [Natasha The Robot]
 permalink: watchos-2-hello-world
 
 ---

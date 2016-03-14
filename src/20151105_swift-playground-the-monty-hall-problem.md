@@ -1,7 +1,7 @@
 title: "Swift Playground: 三门问题的解法"
 date: 2015-11-05 09:00:00
-tags: [Thomas Hanning]
-categories: [Swift 入门] 
+tags: [Swift 入门]
+categories: [Thomas Hanning] 
 permalink: swift-playground-the-monty-hall-problem
 
 ---

@@ -1,7 +1,7 @@
 title: "捕获上下文信息"
 date: 2015-11-16 09:00:00
-tags: [Erica Sadun]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Erica Sadun]
 permalink: capturing-context-swiftlang
 
 ---

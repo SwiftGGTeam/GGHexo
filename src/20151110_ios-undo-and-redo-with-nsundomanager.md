@@ -1,7 +1,7 @@
 title: "使用 NSUndoManager 来进行撤销和重做"
 date: 2015-11-10 09:00:00
-tags: [Tomasz Szulc]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Tomasz Szulc]
 permalink: ios-undo-and-redo-with-nsundomanager
 
 ---

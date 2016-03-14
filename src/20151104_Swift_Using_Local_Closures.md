@@ -1,7 +1,7 @@
 title: "Swift：使用本地闭包"
 date: 2015-11-04 09:00:00
-tags: [Thomas Hanning]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Thomas Hanning]
 permalink: swift-using-local-closures
 
 ---
