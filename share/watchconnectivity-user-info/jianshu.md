@@ -1,6 +1,6 @@
 WatchConnectivity：通过用户信息共享所有数据"
 
-> 作者：Natasha The Robot，[原文链接](http://natashatherobot.com/watchconnectivity-user-info/)，原文日期：2015-10-21
+> 作者：Natasha，[原文链接](http://natashatherobot.com/watchconnectivity-user-info/)，原文日期：2015-10-21
 > 译者：[小袋子](http://daizi.me)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 

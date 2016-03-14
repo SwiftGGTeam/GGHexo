@@ -1,6 +1,6 @@
 WatchConnectivity 介绍：告别加载等待"
 
-> 作者：Natasha The Robot，[原文链接](http://natashatherobot.com/watchconnectivity-introduction-say-goodbye-to-the-spinner/)，原文日期：2015-09-21
+> 作者：Natasha，[原文链接](http://natashatherobot.com/watchconnectivity-introduction-say-goodbye-to-the-spinner/)，原文日期：2015-09-21
 > 译者：[小袋子](http://daizi.me)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 

@@ -1,6 +1,6 @@
 3D Touch介绍：电子秤App与快捷操作"
 
-> 作者：Maxime Defauw，[原文链接](http://www.appcoda.com/3d-touch-tutorial/)，原文日期：2015/11/09
+> 作者：Maxime Defauw，[原文链接](http://www.appcoda.com/3d-touch-tutorial/)，原文日期：2015-11-09
 > 译者：[saitjr](http://www.saitjr.com)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 

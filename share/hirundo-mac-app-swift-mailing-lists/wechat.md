@@ -1,25 +1,20 @@
-title: "Hirundo：在 OS X 上轻松获取 Swift 邮件列表"
-date: 2016-03-14
-tags: [Swift 邮件列表]
-categories: [APPVENTURE]
-permalink: hirundo-mac-app-swift-mailing-lists
-keywords: swift邮件列表
-custom_title: 
-description: 邮件列表能让你更好的理解Swift的理念和特性，那么如何在在 OS X 上轻松获取 Swift 邮件列表呢，来看看本文吧。
+Hirundo：在 OS X 上轻松获取 Swift 邮件列表"
 
----
+> 作者：BENEDIKT TERHECHTE，[原文链接](http://appventure.me/2016/02/02/hirundo-mac-app-swift-mailing-lists/)，原文日期：2016-02-02
+> 译者：[CoderAFI](http://coderafi.github.io/)；校对：[Cee](https://github.com/Cee)；定稿：[天才175](http://weibo.com/u/2916092907)
+  
 
-原文链接=http://appventure.me/2016/02/02/hirundo-mac-app-swift-mailing-lists/
-作者=BENEDIKT TERHECHTE
-原文日期=2016-02-02
-译者=CoderAFI
-校对=Cee
-定稿=天才175
 
-<!--此处开始正文-->
+
+
+
+
+
+
+
 
 如果你对 Swift 感兴趣，邮件列表是一个特棒的资源。像 [Swift-Evolution](https://lists.swift.org/mailman/listinfo/swift-evolution) 邮件列表里就讨论了很多关于语言未来的发展方向和走势的内容。订阅它肯定会帮助你很好的理解 Swift 的设计理念和新特性。[Swift-Dev](https://lists.swift.org/mailman/listinfo/swift-dev) 邮件列表是从另一个方面阐述 Swift 内部的工作原理。如果你对这些不感兴趣，另外还有一个 [Swift-Users](https://lists.swift.org/mailman/listinfo/swift-users) 邮件列表是专门帮助你来解决 Swift 开发中遇到的问题的。
-<!--more-->
+
 
 订阅这些邮件列表不仅有用而且会让你受益匪浅。但是，订阅它们有一些小麻烦：
 
@@ -32,9 +27,9 @@ description: 邮件列表能让你更好的理解Swift的理念和特性，那�
 
 ### **介绍** Hirundo
 
-![Hirundo](/img/articles/hirundo-mac-app-swift-mailing-lists/hirundo-title@2x.png1457917817.97722)
+![Hirundo](http://swift.gg/img/articles/hirundo-mac-app-swift-mailing-lists/hirundo-title@2x.png1457917817.97722)
 
-![Screenshot](/img/articles/hirundo-mac-app-swift-mailing-lists/teaser1-full@2x.png1457917822.1646836)
+![Screenshot](http://swift.gg/img/articles/hirundo-mac-app-swift-mailing-lists/teaser1-full@2x.png1457917822.1646836)
 
 Hirundo 最终就是长上面这样的（当然是用 Swift 写的）。这是个拉丁语，意思就是燕子或者雨燕，所以我觉得这个名字非常酷。我也给它专门制作了一个网站[stylemac.com/hirundo](https://stylemac.com/hirundo/)。
 
@@ -88,3 +83,5 @@ Hirundo 最终就是长上面这样的（当然是用 Swift 写的）。这是�
 1. 官方 Swift 列表采用的邮箱软件
 2. 有些消息如果卡的时间比较准，可能就会存在晚一天删除的概率。
 
+
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
