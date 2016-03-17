@@ -43,7 +43,7 @@
 
 所以事实上，你应该好好学学 Objective-C。
 
-##如何处理?
+## 如何处理?
 
 [倘若你是一个 iOS 初学者](http://www.thomashanning.com/become-ios-developer/)，在同一时间学习两种语言无疑是艰巨的。尤其是在同时学习两门语言的初期，会令人费解以及干扰到你的学习过程。
 
