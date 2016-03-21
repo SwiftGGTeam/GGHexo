@@ -29,7 +29,8 @@ let nameMap = {
   "aaaron7": "http://www.jianshu.com/users/9efd08855d3a/",
   "zltunes": "http://zltunes.com",
   "Lanford3_3": "http://lanfordcai.github.io",
-  "pucca601": "http://weibo.com/601pucca"
+  "pucca601": "http://weibo.com/601pucca",
+  "Crystal": "http://www.jianshu.com/users/7a2d2cc38444/latest_articles"
 }
 
 export default nameMap
