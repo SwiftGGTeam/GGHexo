@@ -1,19 +1,15 @@
-title: "Swift 3.0：你的代码即将崩坏"
-date: 2016-03-22
-tags: [Swift 进阶]
-categories: [Erica Sadun]
-permalink: getting-ready-for-swift-to-stop-breaking-code
-keywords: swift3.0学习,swift3.0教程
-custom_title: 
-description: 
----
+Swift 3.0：你的代码即将崩坏"
 
-原文链接=http://ericasadun.com/2016/02/29/getting-ready-for-swift-to-stop-breaking-code/
-作者=Erica Sadun
-原文日期=2016-02-29
-译者=Crystal Sun
-校对=numbbbbb
-定稿=shanks
+> 作者：Erica Sadun，[原文链接](http://ericasadun.com/2016/02/29/getting-ready-for-swift-to-stop-breaking-code/)，原文日期：2016-02-29
+> 译者：[Crystal Sun](undefined)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[shanks](http://codebuild.me/)
+  
+
+
+
+
+
+
+
 
 当我们提到代码崩坏（code breaking）时，一般是指下面这两种情况。
 
@@ -23,7 +19,7 @@ description:
 
 后者确实会带来一些麻烦，但更具破坏性的是前者。如果我猜的没错，Swift 3 的目标是进行最后一次内部调整，等到 Swift 4 时就不会再重新设计语言了，而是增加新的特性。
 
-<!--more-->
+
 
 Chris Lattener [写道](http://comments.gmane.org/gmane.comp.lang.swift.evolution/7746)，
 
@@ -58,3 +54,4 @@ Chris Lattener [写道](http://comments.gmane.org/gmane.comp.lang.swift.evolutio
 > 这意味着什么？恩，首先，从 Swift 2 过渡到 Swift 3 不可避免地将是悬崖式的过渡，大量的代码需要重写，Cocoa 的重命名工作也要落地了，我们将再次创建令人瞩目的科技成果。同样地，我们应该尝试将 “ 重新布局式的 ” 改变放到 Swift 3 中，如果可能的话，Swift 3 到 Swift 4 的过渡尽可能平缓一些。现在人们理解接受 Swift 的进化改变的种种不便，不过我们不能一直这样。我认为我们不能百分之百地保证从 Swift 3 到 Swift 4 的代码兼容性，我希望从 Swift 2 到 Swift 3 的代码升级能够简单一些。
 
 最后一点，留意 Cocoa 的重命名工作，这将是一项令人瞩目的成就。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
