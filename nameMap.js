@@ -30,7 +30,7 @@ let nameMap = {
   "zltunes": "http://zltunes.com",
   "Lanford3_3": "http://lanfordcai.github.io",
   "pucca601": "http://weibo.com/601pucca",
-  "Crystal": "http://www.jianshu.com/users/7a2d2cc38444/latest_articles"
+  "Crystal Sun": "http://www.jianshu.com/users/7a2d2cc38444/latest_articles"
 }
 
 export default nameMap
