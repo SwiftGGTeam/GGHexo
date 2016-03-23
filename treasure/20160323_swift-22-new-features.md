@@ -56,7 +56,7 @@ NSXPCInterface(`protocol`: SomeProtocolType.Protocol)
     ```swift
     func touchesMatching(phase: NSTouchPhase, in view: NSView?) -> Set<NSTouch>
     ```
-假如你想在函数声明中使用 `inout`, `var` 和 `let` 做为参数名的话，还是要加单引号
+    假如你想在函数声明中使用 `inout`, `var` 和 `let` 做为参数名的话，还是要加单引号
 
     ```swift
     func addParameter(name: String, `inout`: Bool)
@@ -65,7 +65,7 @@ NSXPCInterface(`protocol`: SomeProtocolType.Protocol)
     
     ```swift
     (NSTouchPhase, in: NSView?) -> Set<NSTouch>
-(String, inout: Bool) -> Void
+    (String, inout: Bool) -> Void
     ```
 
 ## 元组对象可以进行比较操作了
