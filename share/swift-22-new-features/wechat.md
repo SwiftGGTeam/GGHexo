@@ -45,7 +45,7 @@ Swift 2.2 随着 iOS 9.3 一同闪亮登场，相较于 Swift 2.1， 2.2 版本�
     
         
         func touchesMatching(phase: NSTouchPhase, in view: NSView?) -> Set<NSTouch>
-假如你想在函数声明中使用 `inout`, `var` 和 `let` 做为参数名的话，还是要加单引号
+    假如你想在函数声明中使用 `inout`, `var` 和 `let` 做为参数名的话，还是要加单引号
 
         
         func addParameter(name: String, `inout`: Bool)
@@ -53,7 +53,7 @@ Swift 2.2 随着 iOS 9.3 一同闪亮登场，相较于 Swift 2.1， 2.2 版本�
     
         
         (NSTouchPhase, in: NSView?) -> Set<NSTouch>
-    (String, inout: Bool) -> Void
+        (String, inout: Bool) -> Void
 
 ## 元组对象可以进行比较操作了
 
