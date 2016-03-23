@@ -24,7 +24,7 @@ description: Xcode7 和 Swift 都支持单元测试，那么想知道具体如�
 
 正如其名，在单元测试中你要为某段代码单元创建一些小规模的、针对其某个特性的测试，然后确保每个代码单元都能通过这些测试。如果通过的话，它的旁边会出现一个绿色小标志，而如果因故测试不通过， Xcode 会把该测试标记为 "failed"。这就提示你去查看代码，找出失败原因。
 
-###演示项目概览
+### 演示项目概览
 
 首先下载这个我为你准备的 [starting project](https://github.com/appcoda/SwiftUnitTestDemo/blob/master/PercentageCalculatorStarter.zip?raw=true)。一个短小精悍的 app：它会对一个给定的数字和百分比做一个乘法计算。（比如80的10%是8。）
 
@@ -44,7 +44,7 @@ description: Xcode7 和 Swift 都支持单元测试，那么想知道具体如�
 
 在 `PercentageCalculatorTests.swift` 文件中，`PercentageCalculatorTests` 类里面已经为我们创建好了 4 个方法。其中 2 个是测试方法（test methods）的例子，你可以删掉它们（它俩都以 `test` 关键字开头，并且它们左边的竖条中都有个方块形图标，名字也都以 “...Example” 结尾，所以你可以通过这些辨识出来它们是测试方法）。另外两个方法，`setUp()` 和 `tearDown()` 是特殊的样板方法（boilerplate methods），它们分别在每个测试方法被执行之前，和每个测试方法被执行之后被执行。
 
-##开始写单元测试吧
+## 开始写单元测试吧
 
 现在是时候写你的第一个单元测试函数了！本教程我们只测试 `ViewController` 类，需要在 `PercentageCalculatorTests` 中添加一个它的实例。
 
@@ -103,7 +103,7 @@ func testPercentageCalculator() {
 
 ![](/img/articles/unit-testing-swift/12401458696018.2352629)
 
-###验证百分比计算
+### 验证百分比计算
 
 现在来真的：测试 `percentage()` 方法！用 `ViewController` 的一个实例 - `vc` 属性来调用这个方法。给这个方法两个浮点数，比如 50 和 50，然后把结果存储到常量 `p` 中。这个例子中 `p` 应该是 25（50 的 50% 是 25）。然后用 `XCTAssert(p == 25)` 检测一下是不是这样，执行测试方法。把 `testPercentageCalculator()` 改成这样：
 
@@ -117,7 +117,7 @@ func testPercentageCalculator() {
 
 测试成功了，这意味着 `ViewController` 的 `percentage()` 函数工作正常，我们应该在其他的地方继续寻找 bug。也许 bug 在 `updateLabels()` 里面？
 
-###验证Labels
+### 验证Labels
 
 现在添加一个新的测试方法 `testLabelValuesShowedProperly()` 来验证一下 label 能不能正确的显示 text。和之前一样，调用 ViewController 的一个方法 - 这回是 `updateLabels()` - 然后看看每个标签的 `text` 属性和我们期望的那个 text 是否相同。
 
@@ -174,7 +174,7 @@ self.resultLabel.text = "\(rV)"
 
 更新代码之后再运行一次测试，一切都应该正常了！
 
-###结论
+### 结论
 
 本篇教程中你学到了 Xcode 中的单元测试的相关内容，以及它怎样能够帮你找到代码中的 bug。除了预防 bug 之外，单元测试还可以用来做性能测试和异步测试。还可能让你感兴趣的是UI测试，你可以录制下你在 app 上做出的动作来测试你的 app 在实际使用情景下是如何表现的。如果听起来觉得感兴趣，那一定要看看这个讲 UI 测试的 [WWDC视频](https://developer.apple.com/videos/play/wwdc2015-406/)。
 
