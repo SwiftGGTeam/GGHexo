@@ -1,13 +1,13 @@
 title: "如何在 Swift 中优雅地使用 UIImage"
 date: 2015-09-11 
-tags: [Natasha The Robot]  
-categories: [Swift 入门]  
+tags: [Swift 入门]  
+categories: [Natasha The Robot]  
 permalink: A-Beautiful-Solution-to-Non-Optional-UIImage-Named-in-Swift
 
 ---
 原文链接=http://natashatherobot.com/non-optional-uiimage-named-swift/
 作者=Natasha
-原文日期=2015/08/30
+原文日期=2015-08-30
 译者=小铁匠Linus
 校对=Prayer
 定稿=shanks

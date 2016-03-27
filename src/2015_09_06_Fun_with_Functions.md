@@ -1,13 +1,13 @@
 title: "函数之趣"
 date: 2015-9-11
-tags: [Crunchy Development]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Crunchy Development]
 permalink: fun_with_functions
 
 ---
 原文链接=http://alisoftware.github.io/swift/function/operator/2015/08/28/fun-with-functions/
 作者=Olivier Halligon
-原文日期=2015/08/28
+原文日期=2015-08-28
 译者=小锅
 校对=numbbbbb
 定稿=shanks

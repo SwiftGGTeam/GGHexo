@@ -1,13 +1,13 @@
 title: "Swift 中枚举的使用"  
 date: 2015-09-11
-tags: [Raj Kandathi]  
-categories: [Swift 入门]  
+tags: [Swift 入门]  
+categories: [Raj Kandathi]  
 permalink: understanding-enums-using-swift
 
 ---
 原文链接=http://rajkandathi.com/understanding-enums-using-swift/
 作者=Raj Kandathi
-原文日期=2015/08/31
+原文日期=2015-08-31
 译者=小铁匠Linus
 校对=Prayer
 定稿=shanks

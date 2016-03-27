@@ -1,13 +1,13 @@
 title: "为什么 guard 比 if 好"
 date: 2015-8-6
-tags: [Natasha The Robot]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Natasha The Robot]
 permalink: swift-guard-better-than-if
 
 ---
 原文链接=http://natashatherobot.com/swift-guard-better-than-if/
 作者=Natasha
-原文日期=2015/07/16
+原文日期=2015-07-16
 译者=靛青K
 校对=numbbbbb
 定稿=numbbbbb

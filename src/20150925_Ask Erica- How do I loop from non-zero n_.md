@@ -1,12 +1,12 @@
 title: "如何在 Swift 2.0 中实现从非零下标遍历数组"
 date: 2015-09-25 09:00:00
-tags: [Erica Sadun]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Erica Sadun]
 permalink: ask-erica-how-do-i-loop-from-non-zero-n-swiftlang
 ---
 原文链接=http://ericasadun.com/2015/09/01/ask-erica-how-do-i-loop-from-non-zero-n-swiftlang/
 作者=Erica Sadun
-原文日期=2015/09/01
+原文日期=2015-09-01
 译者=小铁匠Linus
 校对=千叶知风
 定稿=shanks

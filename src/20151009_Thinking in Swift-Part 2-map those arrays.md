@@ -1,7 +1,7 @@
 title: "Swift 编程思想，第二部分：数组的 Map 方法"
 date: 2015-10-09 09:00:00
-tags: [Crunchy Development]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Crunchy Development]
 permalink: thinking-in-swift-2
 
 ---

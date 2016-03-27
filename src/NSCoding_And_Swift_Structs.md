@@ -1,13 +1,13 @@
 title: "Swift 中的结构体与 NSCoding"
 date: 2015-8-27
-tags: [Swift and Painless]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Swift and Painless]
 permalink: nscoding_and_swift_structs
 
 ---
 原文链接=http://swiftandpainless.com/nscoding-and-swift-structs/
 作者=Dominik Hauser
-原文日期=2015/08/19
+原文日期=2015-08-19
 译者=小锅
 校对=Yake
 定稿=Yake

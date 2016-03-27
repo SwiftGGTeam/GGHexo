@@ -1,14 +1,14 @@
 title: "Swift 元组高级用法和最佳实践"
 date: 2015-10-10 09:00:00
-tags: [APPVENTURE]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [APPVENTURE]
 permalink: tuples-swift-advanced-usage-best-practices
 
 ---
 
 原文链接=http://appventure.me/2015/07/19/tuples-swift-advanced-usage-best-practices/
-作者=terhechte
-原文日期=2015/07/19
+作者=Benedikt Terhechte
+原文日期=2015-07-19
 译者=mmoaay
 校对=lfb_CD
 定稿=numbbbbb

@@ -1,7 +1,7 @@
 title: "Swift 中的范围和区间"
 date: 2015-10-26 09:00:00
-tags: [Ole Begemann]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Ole Begemann]
 permalink: swift-ranges-and-intervals
 ---
 原文链接=http://oleb.net/blog/2015/09/swift-ranges-and-intervals/

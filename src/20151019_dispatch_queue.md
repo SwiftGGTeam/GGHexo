@@ -1,7 +1,7 @@
 title: "Friday Q&A 2015-09-04:让我们来自定义 dispatch_queue"
 date: 2015-10-19 09:00:00
-tags: [Mike Ash]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [mikeash.com]
 permalink: friday-qa-2015-09-04-lets-build-dispatch_queue
 
 ---

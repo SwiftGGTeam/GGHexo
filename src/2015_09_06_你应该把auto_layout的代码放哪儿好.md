@@ -1,13 +1,13 @@
 title: "如何组织 Auto Layout 代码"
 date: 2015-09-10 09:30:00
-tags: [Swift and Painless]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Swift and Painless]
 permalink: where-to-put-the-auto-layout-code
 
 ---
 原文链接=http://swiftandpainless.com/where-to-put-the-auto-layout-code
 作者=Dominik Hauser
-原文日期=2015/08/12
+原文日期=2015-08-12
 译者=SergioChan
 校对=shanks
 定稿=小锅

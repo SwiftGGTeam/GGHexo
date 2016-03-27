@@ -1,7 +1,7 @@
 title: "聊一聊单子（Monad）"
 date: 2015-10-30 09:00:00
-tags: [Crunchy Development]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Crunchy Development]
 permalink: lets-talk-about-monads
 
 ---

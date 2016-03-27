@@ -1,7 +1,7 @@
 title: "try? 的替代实现"
 date: 2015-10-13 09:00:00
-tags: [Erica Sadun]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Erica Sadun]
 permalink: alternatives-to-try-swiftlang
 
 ---

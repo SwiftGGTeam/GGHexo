@@ -1,13 +1,13 @@
 title: "浅谈 Swift 2 中的 Objective-C 指针"
 date: 2015-09-07
-tags: [Jameson Quave]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [JamesonQuave.com]
 permalink: objective-c-pointers-and-swift
 
 ---
 原文链接=http://jamesonquave.com/blog/objective-c-pointers-and-swift
 作者=Jameson Quave
-原文日期=2015/08/23
+原文日期=2015-08-23
 译者=mmoaay
 校对=numbbbbb
 定稿=shanks

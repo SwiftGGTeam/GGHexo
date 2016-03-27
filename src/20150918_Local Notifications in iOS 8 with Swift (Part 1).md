@@ -1,7 +1,7 @@
 title: "如何在 iOS 8 中使用 Swift 实现本地通知(上)"
 date: 2015-09-18 10:00:00
-tags: [JamesonQuave.com]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [JamesonQuave.com]
 permalink: local-notifications-in-ios-8-with-swift-part-1
 
 ---

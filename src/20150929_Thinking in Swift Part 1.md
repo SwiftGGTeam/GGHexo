@@ -1,13 +1,13 @@
 title: "Swift 编程思想，第一部分：拯救小马"
 date: 2015-09-29 09:00:00
-tags: [Crunchy Development]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Crunchy Development]
 permalink: thinking-in-swift-1
 
 ---
 原文链接=http://alisoftware.github.io/swift/2015/09/06/thinking-in-swift-1/
 作者=Olivier Halligon
-原文日期=2015/09/06
+原文日期=2015-09-06
 译者=ray16897188
 校对=shanks
 定稿=千叶知风

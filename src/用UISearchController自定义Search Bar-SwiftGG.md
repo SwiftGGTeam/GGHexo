@@ -1,14 +1,14 @@
 title: "使用UISearchController自定义搜索栏"
 date: 2015-09-11 20:00:02
-tags: [AppCoda]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [AppCoda]
 permalink: custom_search_bar_tutorial
 
 ---
 
 原文链接=http://www.appcoda.com/custom-search-bar-tutorial/
 作者=AppCoda
-原文日期=2015/08/27
+原文日期=2015-08-27
 译者=saitjr
 校对=numbbbbb
 定稿=shanks

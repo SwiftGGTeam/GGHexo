@@ -1,7 +1,7 @@
 title: "用 Swift 进行列表解析及其性能问题"
 date: 2015-10-29 09:00:00
-tags: [Jameson Quave]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [JamesonQuave.com]
 permalink: list-comprehensions-and-performance-with-swift
 ---
 原文链接=http://jamesonquave.com/blog/list-comprehensions-and-performance-with-swift/

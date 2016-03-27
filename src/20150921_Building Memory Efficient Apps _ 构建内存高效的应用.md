@@ -1,13 +1,13 @@
 title: "构建内存高效的应用"
 date: 2015-09-21 10:00:00
-tags: [Thomas Hanning]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Thomas Hanning]
 permalink: building-memory-efficient-apps
 
 ---
 原文链接=http://www.thomashanning.com/building-memory-efficient-apps/
 作者=Thomas Hanning
-原文日期=2015/08/06
+原文日期=2015-08-06
 译者=BridgeQ
 校对=lfb_CD
 定稿=shanks
