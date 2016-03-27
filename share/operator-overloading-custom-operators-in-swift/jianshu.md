@@ -1,6 +1,6 @@
 Swift 中的重载运算符和自定义运算符"
 
-> 作者：Raj Kandathi，[原文链接](http://rajkandathi.com/operator-overloading-custom-operators-in-swift/)，原文日期：2015/09/12
+> 作者：Raj Kandathi，[原文链接](http://rajkandathi.com/operator-overloading-custom-operators-in-swift/)，原文日期：2015-09-12
 > 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[shanks](http://codebuild.me/)
   
 

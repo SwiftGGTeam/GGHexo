@@ -1,6 +1,6 @@
 在 Swift 2 中用 @NSManaged 标记自动生成方法"
 
-> 作者：Tomasz Szulc，[原文链接](http://szulctomasz.com/swift-2-nsmanaged-for-methods/)，原文日期：2015/08/06
+> 作者：Tomasz Szulc，[原文链接](http://szulctomasz.com/swift-2-nsmanaged-for-methods/)，原文日期：2015-08-06
 > 译者：[mmoaay](http://mmoaay.photo/)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[shanks](http://codebuild.me/)
   
 

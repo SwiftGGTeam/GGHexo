@@ -1,6 +1,6 @@
 模拟器和真机调试哪个更好？"
 
-> 作者：Thomas Hanning，[原文链接](http://www.thomashanning.com/simulator-vs-real-device/)，原文日期：2015/08/31
+> 作者：Thomas Hanning，[原文链接](http://www.thomashanning.com/simulator-vs-real-device/)，原文日期：2015-08-31
 > 译者：[靛青K](http://blog.dianqk.org/)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[shanks](http://codebuild.me/)
   
 

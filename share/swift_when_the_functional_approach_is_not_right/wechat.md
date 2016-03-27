@@ -1,6 +1,6 @@
 Swift:什么时候不适合使用函数式方法"
 
-> 作者：Natasha，[原文链接](http://natashatherobot.com/swift-when-the-functional-approach-is-not-right/)，原文日期：2015/07/24
+> 作者：Natasha，[原文链接](http://natashatherobot.com/swift-when-the-functional-approach-is-not-right/)，原文日期：2015-07-24
 > 译者：[天才175](http://weibo.com/u/2916092907)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 

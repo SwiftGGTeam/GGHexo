@@ -1,6 +1,6 @@
 函数之趣"
 
-> 作者：Olivier Halligon，[原文链接](http://alisoftware.github.io/swift/function/operator/2015/08/28/fun-with-functions/)，原文日期：2015/08/28
+> 作者：Olivier Halligon，[原文链接](http://alisoftware.github.io/swift/function/operator/2015/08/28/fun-with-functions/)，原文日期：2015-08-28
 > 译者：[小锅](http://www.swiftyper.com)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[shanks](http://codebuild.me/)
   
 

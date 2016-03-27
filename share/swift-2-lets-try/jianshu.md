@@ -1,6 +1,6 @@
 Swift 2.0 中使用 try? 关键字"
 
-> 作者：Natasha，[原文链接](http://natashatherobot.com/swift-2-0-try/)，原文日期：2015/08/26
+> 作者：Natasha，[原文链接](http://natashatherobot.com/swift-2-0-try/)，原文日期：2015-08-26
 > 译者：[小铁匠Linus](http://linusling.com)；校对：[lfb_CD](http://weibo.com/lfbWb)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 

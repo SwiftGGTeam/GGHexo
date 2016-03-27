@@ -1,6 +1,6 @@
 如何在 Swift 中优雅地使用 UIImage"
 
-> 作者：Natasha，[原文链接](http://natashatherobot.com/non-optional-uiimage-named-swift/)，原文日期：2015/08/30
+> 作者：Natasha，[原文链接](http://natashatherobot.com/non-optional-uiimage-named-swift/)，原文日期：2015-08-30
 > 译者：[小铁匠Linus](http://linusling.com)；校对：[Prayer](http://www.futantan.com)；定稿：[shanks](http://codebuild.me/)
   
 

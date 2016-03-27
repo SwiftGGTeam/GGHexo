@@ -1,6 +1,6 @@
 Swift 元组高级用法和最佳实践"
 
-> 作者：terhechte，[原文链接](http://appventure.me/2015/07/19/tuples-swift-advanced-usage-best-practices/)，原文日期：2015/07/19
+> 作者：Benedikt Terhechte，[原文链接](http://appventure.me/2015/07/19/tuples-swift-advanced-usage-best-practices/)，原文日期：2015-07-19
 > 译者：[mmoaay](http://mmoaay.photo/)；校对：[lfb_CD](http://weibo.com/lfbWb)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
