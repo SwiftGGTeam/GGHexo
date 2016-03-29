@@ -19,6 +19,8 @@ description: 在 Swift 中怎么使用 OC 中很有名 method swizzling 呢，�
 
 示例程序可以从 [Github](https://github.com/uraimo/SwizzlingInSwift/) 上下载。
 
+（译者注：译者也写了一篇关于 Method Swizzling 的文章 [Runtime 之 Method Swizzling](http://linusling.com/2016/03/23/method-swizzling-in-ios/)，顺便写了两个小 demo 来对比 Objective-C 和 Swift 之间 Method Swizzling 的异同，[示例代码传送门](https://github.com/LinusLing/RuntimeTest)）
+
 Method Swizzling 在 Objective-C 或其他语言中是一种很有名的技术，用来支持动态方法派发。
 
 Method Swizzling 通过改变特定 selector（方法）与实际实现之间的映射，在 *runtime* 时将一个方法的实现替换成其它方法的实现。
