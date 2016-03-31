@@ -1,26 +1,22 @@
-title: "iOS9 UIStackView 简介"
-date: 2016-03-31
-tags: [Swift 入门]
-categories: [uraimo]
-permalink: ios9-uistackview-guide-swift
-keywords: ios9 uistackview,uistackview的作用
-custom_title: 
-description: UIStackView可以让你的开发变的更简单哦，那么在 iOS9 中 UIStackView 要如何使用呢，本文来学习下吧。
----
-原文链接=https://www.uraimo.com/2015/09/08/ios9-uistackview-guide-swift/
-作者=Gabriel Theodoropoulos
-原文日期=2015-12-08
-译者=CoderAFI
-校对=Channe
-定稿=shanks
+iOS9 UIStackView 简介"
 
-<!--此处开始正文-->
+> 作者：Gabriel Theodoropoulos，[原文链接](https://www.uraimo.com/2015/09/08/ios9-uistackview-guide-swift/)，原文日期：2015-12-08
+> 译者：[CoderAFI](http://coderafi.github.io/)；校对：[Channe](undefined)；定稿：[shanks](http://codebuild.me/)
+  
+
+
+
+
+
+
+
+
 
 > **示例程序采用 Swift2.0 编写，需要用 Xcode7 进行编译，可以访问 [Github](https://github.com/uraimo/uistackview-sample) 或者 [zipped](https://github.com/uraimo/uistackview-sample/archive/master.zip) 下载本文源代码**
 
 iOS9 新加入了一个非常易用的布局控件 UIStackView，它可以将一组 UIView 视图进行垂直或水平方向的排列，用来替换手工使用 Auto Layout 对视图进行布局。
 
-<!--more-->
+
 
 每个 UIStackView 控件都可以在垂直和水平方向上排列展示一组 subviews，并可以根据当前屏幕大小和方向的变化动态调整它的内容，感觉起来就像是一个隐形的容器。实际上 subviews 的位置是根据设置的对齐、间距和大小属性来决定的。
 
@@ -34,11 +30,11 @@ UIStackView 既可以用代码编写也可以在 Interface Builder 中设计。
 
 在 Interface Builder 中你可以从 Object Library 控件选择工具集里找到垂直或者水平对齐的 UIStackView 并添加到相应位置，然后就可以在 UIStackView 上添加新的视图了。
 
-UIStackView 同样也可以对现有的一些视图进行包装，只需要选择他们并点击 Interface Builder 底部工具栏新加的![Stack icon](/img/articles/ios9-uistackview-guide-swift/uistackview00.png1459387514.8102102)图标即可。
+UIStackView 同样也可以对现有的一些视图进行包装，只需要选择他们并点击 Interface Builder 底部工具栏新加的![Stack icon](http://swift.gg/img/articles/ios9-uistackview-guide-swift/uistackview00.png1459387514.8102102)图标即可。
 
 非常简单，但是我们的教程将用代码的方式实现一个简单的嵌套布局。
 
-![](/img/articles/ios9-uistackview-guide-swift/uistackview02.gif1459387515.8780005)
+![](http://swift.gg/img/articles/ios9-uistackview-guide-swift/uistackview02.gif1459387515.8780005)
 
 在这个简单的示例程序中，我们将会在状态栏下放置一个 UIStackView，里面包含四个控件：两个 UILabel，一个水平方向的 UIStackView 和 一个 UIButton。水平方向的 UIStackView 中包含了三个带有默认图标的按钮。
 
@@ -46,48 +42,47 @@ UIStackView 同样也可以对现有的一些视图进行包装，只需要选�
 
 打开 `ViewController` 类并用下面的代码替换 `viewDidLoad` 方法：
 
-```swift
-var stackView:UIStackView!
-var nestedStackView = UIStackView()
-
-override func viewDidLoad() {
-    super.viewDidLoad()
-
-    stackView.translatesAutoresizingMaskIntoConstraints=false
-    self.view.addSubview(stackView)
-    // Main UIStackView contraints, nearly fills its parent view
-    self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-30-[stackView]-30-|",options: NSLayoutFormatOptions.AlignAllLeading,metrics: nil, views: ["stackView":stackView]))
-    self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-10-[stackView]-10-|",options: NSLayoutFormatOptions.AlignAllLeading,metrics: nil, views: ["stackView":stackView]))
-
-    stackView.axis = .Vertical
-    stackView.alignment = .Fill
-    stackView.spacing = 25
-    stackView.distribution = .FillEqually
-
-    var lbl = UILabel()
-    lbl.text ="Label 1"
-    lbl.backgroundColor = UIColor.redColor()
-    stackView.addArrangedSubview(lbl)
-
-    lbl = UILabel()
-    lbl.text = "Label 2"
-    lbl.backgroundColor = UIColor.greenColor()
-    stackView.addArrangedSubview(lbl)
-
-    nestedStackView.axis = .Horizontal
-    nestedStackView.alignment = .Fill
-    nestedStackView.spacing = 25
-    nestedStackView.distribution = .FillEqually
-    nestedStackView.addArrangedSubview(UIButton(type: .InfoDark))
-    nestedStackView.addArrangedSubview(UIButton(type: .InfoLight))
-    nestedStackView.addArrangedSubview(UIButton(type: .ContactAdd))
-    stackView.addArrangedSubview(nestedStackView)
-
-    let btn = UIButton(type: .System)
-    btn.setTitle("Press Me", forState: .Normal)
-    stackView.addArrangedSubview(btn)
-}
-```
+    
+    var stackView:UIStackView!
+    var nestedStackView = UIStackView()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        stackView.translatesAutoresizingMaskIntoConstraints=false
+        self.view.addSubview(stackView)
+        // Main UIStackView contraints, nearly fills its parent view
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-30-[stackView]-30-|",options: NSLayoutFormatOptions.AlignAllLeading,metrics: nil, views: ["stackView":stackView]))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-10-[stackView]-10-|",options: NSLayoutFormatOptions.AlignAllLeading,metrics: nil, views: ["stackView":stackView]))
+    
+        stackView.axis = .Vertical
+        stackView.alignment = .Fill
+        stackView.spacing = 25
+        stackView.distribution = .FillEqually
+    
+        var lbl = UILabel()
+        lbl.text ="Label 1"
+        lbl.backgroundColor = UIColor.redColor()
+        stackView.addArrangedSubview(lbl)
+    
+        lbl = UILabel()
+        lbl.text = "Label 2"
+        lbl.backgroundColor = UIColor.greenColor()
+        stackView.addArrangedSubview(lbl)
+    
+        nestedStackView.axis = .Horizontal
+        nestedStackView.alignment = .Fill
+        nestedStackView.spacing = 25
+        nestedStackView.distribution = .FillEqually
+        nestedStackView.addArrangedSubview(UIButton(type: .InfoDark))
+        nestedStackView.addArrangedSubview(UIButton(type: .InfoLight))
+        nestedStackView.addArrangedSubview(UIButton(type: .ContactAdd))
+        stackView.addArrangedSubview(nestedStackView)
+    
+        let btn = UIButton(type: .System)
+        btn.setTitle("Press Me", forState: .Normal)
+        stackView.addArrangedSubview(btn)
+    }
 
 为了指定主 UIStackView 是垂直方向布局的我们把 `axis` 属性设置成 `.Vertical`，前三个控件将会等间距排列，剩下的UIButton会填充剩余的可用空间。在嵌套 UIStackView 中的三个默认按钮也是用同样的方式来排列。`alignment`、`distribution`、`spacing` 三个属性会在下面单独讲解，这里我们先忽略它们。
 
@@ -95,31 +90,29 @@ override func viewDidLoad() {
 
 为了方便测试，我们给 UIButton 添加一个 `pressedMe` 的点击事件响应方法：
 
-```swift
-    ...
-    btn.setTitle("Press Me", forState: .Normal)
-    btn.addTarget(self, action: "pressedMe:", forControlEvents: UIControlEvents.TouchUpInside)
-    stackView.addArrangedSubview(btn)
-
-}
-
-func pressedMe(sender: UIButton!){
-    UIView.animateWithDuration(0.5) {
-        self.nestedStackView.hidden = !self.nestedStackView.hidden
+    
+        ...
+        btn.setTitle("Press Me", forState: .Normal)
+        btn.addTarget(self, action: "pressedMe:", forControlEvents: UIControlEvents.TouchUpInside)
+        stackView.addArrangedSubview(btn)
+    
     }
-}
-```
+    
+    func pressedMe(sender: UIButton!){
+        UIView.animateWithDuration(0.5) {
+            self.nestedStackView.hidden = !self.nestedStackView.hidden
+        }
+    }
 
 当点击这个按钮时，主 UISTackView 和 内部的 UISTackView 将会根据在 `viewDidLoad` 中设置的属性重新布局内部的子视图并带有短暂的显示或者隐藏动画效果。
 
 如果需要，subviews 也可以完全从 UIStackView 中移除然后剩下的子视图也会根据各自的属性重新布局。
 
-```swift
-func pressedMe(sender: UIButton!){
-   stackView.removeArrangedSubview(nestedStackView)
-   nestedStackView.removeFromSuperview()
-}
-```
+    
+    func pressedMe(sender: UIButton!){
+       stackView.removeArrangedSubview(nestedStackView)
+       nestedStackView.removeFromSuperview()
+    }
 
 这个移除的操作需要两步，第一步是调用 `removeArrangedSubview` 方法用来从 UIStackView 删除视图并且重新布局剩余的 subviews 但是实际上**并没有从父视图上删除**。第二部就是调用 `removeFromSuperview` 方法以保证该视图从父视图中完全的被删除。
 
@@ -127,7 +120,7 @@ func pressedMe(sender: UIButton!){
 
 下面让我们详细了解下  UIStackView 的布局属性：
 
-![StackProperty](/img/articles/ios9-uistackview-guide-swift/uistackview01.png1459387517.1515186)
+![StackProperty](http://swift.gg/img/articles/ios9-uistackview-guide-swift/uistackview01.png1459387517.1515186)
 
 ### Axis 轴
 
@@ -168,3 +161,4 @@ spacing 属性根据当前 distribution 属性的值有不同方向的解释。
 - [OAStackView](https://github.com/oarrabi/OAStackView)
 
 - [TZStackView](https://github.com/tomvanzummeren/TZStackView)
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
