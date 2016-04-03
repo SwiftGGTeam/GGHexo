@@ -1,7 +1,7 @@
 title: "Swift 编程思想，第三部分：结构体和类"
 date: 2015-10-20 09:00:00
-tags: [Crunchy Development]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Crunchy Development]
 permalink: thinking-in-swift-3
 
 ---

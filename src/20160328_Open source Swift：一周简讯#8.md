@@ -1,7 +1,7 @@
 title: "Swift 一周简讯 #8"
 date: 2016-03-28 11:10:00
-tags: [Open Source Swift]
-categories: [Swift 开源信息]
+tags: [Swift 开源信息]
+categories: [Open Source Swift]
 permalink: open-source-swift-weekly-8
 keywords: Swift开源
 custom_title: 

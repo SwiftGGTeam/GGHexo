@@ -1,7 +1,7 @@
 title: "Swift 编程思想，第四部分：map all the things!"
 date: 2015-10-22 09:00:00
-tags: [Crunchy Development]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Crunchy Development]
 permalink: thinking-in-swift-4
 
 ---

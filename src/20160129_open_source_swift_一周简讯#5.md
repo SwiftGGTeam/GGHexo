@@ -1,7 +1,7 @@
 title: "Swift 一周简讯 #5"
 date: 2016-01-29 12:30:00
-tags: [Open Source Swift]
-categories: [Swift 开源信息]
+tags: [Swift 开源信息]
+categories: [Open Source Swift]
 permalink: open-source-swift-5
 ---
 

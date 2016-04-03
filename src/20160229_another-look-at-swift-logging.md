@@ -1,7 +1,7 @@
 title: "也谈 Swift 日志"
 date: 2016-02-29 09:00:00
-tags: [iAchieved.it]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [iAchieved.it]
 permalink: another-look-at-swift-logging
 keywords: swift打印日志,swift输出日志
 custom_title: 

@@ -1,7 +1,7 @@
 title: "在 WordPress 中使用 GitHub README 标签"
 date: 2016-03-02 09:00:00
-tags: [iAchieved.it]
-categories: [WordPress]
+tags: [WordPress]
+categories: [iAchieved.it]
 permalink: github-readme-badges-in-wordpress
 keywords: github readme.md,github readme 排版
 custom_title: 

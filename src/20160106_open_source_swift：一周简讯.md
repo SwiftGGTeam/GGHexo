@@ -1,7 +1,7 @@
 title: "聚焦 Swift #1"
 date: 2016-01-06 12:20:00
-tags: [Open Source Swift]
-categories: [Swift 开源信息]
+tags: [Swift 开源信息]
+categories: [Open Source Swift]
 permalink: open-source-swift-weekly-1
 
 ---

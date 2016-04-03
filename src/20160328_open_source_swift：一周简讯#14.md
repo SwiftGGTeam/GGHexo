@@ -1,7 +1,7 @@
 title: "Swift 一周简讯 #14"
 date: 2016-03-28 11:30:00
-tags: [Open Source Swift]
-categories: [Swift 开源信息]
+tags: [Swift 开源信息]
+categories: [Open Source Swift]
 permalink: open-source-swift-weekly-14
 keywords: Swift开源
 custom_title: 

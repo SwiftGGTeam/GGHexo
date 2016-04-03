@@ -1,7 +1,7 @@
 title: "聚焦 Swift #0"
 date: 2015-12-29
-tags: [Open Source Swift]
-categories: [Swift 开源信息]
+tags: [Swift 开源信息]
+categories: [Open Source Swift]
 permalink: swift-open-source
 ---
 
