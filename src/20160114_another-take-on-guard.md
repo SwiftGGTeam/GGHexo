@@ -5,7 +5,6 @@ categories: [Erica Sadun]
 permalink: another-take-on-guard
 
 ---
-
 原文链接=http://ericasadun.com/2016/01/01/another-take-on-guard/
 
 作者=Erica Sadun

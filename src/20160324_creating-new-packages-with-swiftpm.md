@@ -6,6 +6,7 @@ permalink: creating-new-packages-with-swiftpm
 keywords: swift教程
 custom_title: 
 description: 在 swift build 中 运行命令 swift build --init 就能创建 Swift 包 的目录和文件，是不是感觉很赞呢。
+
 ---
 原文链接=http://dev.iachieved.it/iachievedit/creating-new-packages-with-swiftpm/
 作者=Joe

@@ -4,7 +4,6 @@ tags: [Swift 入门]
 categories: [Natasha The Robot]
 permalink: swift-2-lets-try
 
-
 ---
 原文链接=http://natashatherobot.com/swift-2-0-try/
 作者=Natasha

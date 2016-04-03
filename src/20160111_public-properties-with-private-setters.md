@@ -3,8 +3,8 @@ date: 2016-01-11
 tags: [Swift 入门]
 categories: [Thomas Hanning]
 permalink: public-properties-with-private-setters
----
 
+---
 原文链接=http://www.thomashanning.com/public-properties-with-private-setters/
 作者=Thomas Hanning
 原文日期=2015-12-24

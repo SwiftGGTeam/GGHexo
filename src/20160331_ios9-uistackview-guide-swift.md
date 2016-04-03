@@ -6,6 +6,7 @@ permalink: ios9-uistackview-guide-swift
 keywords: ios9 uistackview,uistackview的作用
 custom_title: 
 description: UIStackView可以让你的开发变的更简单哦，那么在 iOS9 中 UIStackView 要如何使用呢，本文来学习下吧。
+
 ---
 原文链接=https://www.uraimo.com/2015/09/08/ios9-uistackview-guide-swift/
 作者=Umberto Raimondi

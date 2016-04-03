@@ -8,7 +8,6 @@ custom_title:
 description: 邮件列表能让你更好的理解Swift的理念和特性，那么如何在在 OS X 上轻松获取 Swift 邮件列表呢，来看看本文吧。
 
 ---
-
 原文链接=http://appventure.me/2016/02/02/hirundo-mac-app-swift-mailing-lists/
 作者=BENEDIKT TERHECHTE
 原文日期=2016-02-02

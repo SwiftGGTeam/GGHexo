@@ -8,7 +8,6 @@ custom_title:
 description: 对于Swift自定义序列不明白的可以来看下本文，讲解了Swift Sequencestype和Swift Generatorstype。
 
 ---
-
 原文链接=https://www.uraimo.com/2015/11/12/experimenting-with-swift-2-sequencetype-generatortype/
 作者=uraimo
 原文日期=2015-11-12

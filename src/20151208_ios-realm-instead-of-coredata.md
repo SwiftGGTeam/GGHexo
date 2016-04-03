@@ -5,7 +5,6 @@ categories: [Tomasz Szulc]
 permalink: ios-realm-instead-of-coredata
 
 ---
-
 原文链接=http://szulctomasz.com/ios-realm-instead-of-coredata/
 作者=Tomasz Szulc
 原文日期=2015-11-29

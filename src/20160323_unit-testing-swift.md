@@ -6,8 +6,8 @@ permalink: unit-testing-swift
 keywords: xcode7单元测试,swift单元测试
 custom_title: 
 description: Xcode7 和 Swift 都支持单元测试，那么想知道具体如何在 Xcode7 中用 Swift 做单元测试呢，来看看本文吧。
----
 
+---
 原文链接=http://www.appcoda.com/unit-testing-swift/
 作者=Maxime Defauw  
 原文日期=2016-02-29

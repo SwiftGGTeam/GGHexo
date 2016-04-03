@@ -6,8 +6,8 @@ permalink: github-readme-badges-in-wordpress
 keywords: github readme.md,github readme 排版
 custom_title: 
 description: 使用WordPress的Swift博主用GitHub README标签来声明Swift语言的版本将是极好的。
----
 
+---
 原文链接=http://dev.iachieved.it/iachievedit/github-readme-badges-in-wordpress
 作者=Joe
 原文日期=2016-01-24

@@ -6,8 +6,8 @@ permalink: getting-ready-for-swift-to-stop-breaking-code
 keywords: swift3.0学习,swift3.0教程
 custom_title: 
 description: 
----
 
+---
 原文链接=http://ericasadun.com/2016/02/29/getting-ready-for-swift-to-stop-breaking-code/
 作者=Erica Sadun
 原文日期=2016-02-29

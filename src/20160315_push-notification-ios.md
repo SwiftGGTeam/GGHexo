@@ -6,8 +6,8 @@ permalink: push-notification-ios
 keywords: swift通知
 custom_title: 
 description: Swift推送通知要怎么实现呢，推送一条通知可是需要很多操作才能实现哦，下面本文就来好好说下吧。
----
 
+---
 原文链接=http://www.appcoda.com/push-notification-ios/
 作者=Gabriel Theodoropoulos
 原文日期=2016-01-27

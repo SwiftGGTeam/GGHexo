@@ -2,7 +2,7 @@ title: "Swift 中序列的实现方式"
 date: 2015-09-08 20:00:00  
 tags: [Swift 进阶]  
 categories: [Big O Note-Taking]  
-permalink: Sequence-Conformance  
+permalink: Sequence-Conformance
 
 ---
 原文链接=https://bigonotetaking.wordpress.com/2015/08/20/sequence-conformance/

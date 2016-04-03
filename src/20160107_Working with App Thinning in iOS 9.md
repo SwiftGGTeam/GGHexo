@@ -3,8 +3,8 @@ date: 2016-01-07 09:20:00
 tags: [Swift 进阶]
 categories: [AppCoda]
 permalink: app-thinning-appcoda
----
 
+---
 原文链接=http://www.appcoda.com/app-thinning/
 作者=gregg mojica
 原文日期=2015-10-11

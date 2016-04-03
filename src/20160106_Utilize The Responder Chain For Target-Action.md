@@ -3,8 +3,8 @@ date: 2016-01-06
 tags: [Swift 入门]
 categories: [Swift and Painless]
 permalink: utilize-the-responder-chain-for-target-action
----
 
+---
 原文链接=http://swiftandpainless.com/utilize-the-responder-chain-for-target-action/
 作者=Dominik Hauser
 原文日期=2016-1-1

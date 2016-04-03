@@ -6,8 +6,8 @@ permalink: swift-available-on-armv6-raspberry-1-zero
 keywords: armv6设备,armv6手机
 custom_title: 
 description: Swift 可以在 ARMv6 处理器上实现初步编译了哦，版本是Swift 2.2基于Raspbian，感兴趣的来看下吧。
----
 
+---
 原文链接=https://www.uraimo.com/2016/02/10/swift-available-on-armv6-raspberry-1-zero/
 作者=Umberto Raimondi
 原文日期=2016-02-10

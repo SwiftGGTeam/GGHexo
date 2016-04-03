@@ -8,7 +8,6 @@ custom_title:
 description: 在 Swift 里面有定长整型和位运算符，那么进行位操作就是很直接的事情了，本文就来说下 Swift 中的位操作。
 
 ---
-
 原文链接=https://www.uraimo.com/2016/02/05/Dealing-With-Bit-Sets-In-Swift/
 作者=uraimo
 原文日期=2016-02-05

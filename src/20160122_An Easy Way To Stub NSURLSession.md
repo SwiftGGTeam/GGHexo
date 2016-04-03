@@ -3,8 +3,8 @@ date: 2016-01-22 09:00:00
 tags: [iOS 开发]
 categories: [Swift and Painless]
 permalink: an-easy-way-to-stub-nsurlsession
----
 
+---
 原文链接=http://swiftandpainless.com/an-easy-way-to-stub-nsurlsession/
 原文日期=2016-01-09
 作者=Dominik Hauser
