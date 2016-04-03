@@ -12,7 +12,6 @@
 
 
 
-
 GitHub 上的很多框架和包都在他们的 README 文件中使用「badges（标签）」记录 repository 的不同属性。例如：
 
 - 一个 repository 的 Travis 构建（译者注：Travis CI 是开源持续集成构建项目）是否通过

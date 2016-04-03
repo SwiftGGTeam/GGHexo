@@ -12,7 +12,6 @@ Friday Q&A 2015-11-06：为什么 Swift 中的 String API 如此难用？"
 
 
 
-
 > 译者注：可以结合 WWDC 2015 Session 227 - What's New in Internationalization 一起学习
 
 欢迎来到本期因修改了很多次稿而推迟发布的周五问答。我发现很多人在使用 Swift 时，都会抱怨 `String` API 很难用。它很难学习并且设计得晦涩难懂，大多数人希望它能采用其他语言的字符串（String） API 设计风格。今天我就要来讲一下为什么 Swift 中的 `String` API 会被设计成现在这样（最起码要解释清楚我的看法），以及为什么我最终会认为，就其基础设计而言 Swift 中的 `String` API 是字符串 API 中设计得最好的。

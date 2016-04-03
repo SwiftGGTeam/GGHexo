@@ -12,7 +12,6 @@ Swift 现在可用于所有的 ARMv6 树莓派 （1,Zero）"
 
 
 
-
 经过上百小时的编译、各种各样的尝试，甚至弄坏几支 USB 后，我终于能够跟大家分享一下如何在 ARMv6 处理器上实现 Swift 2.2 的初步编译(基于 Raspbian)。
 
 [从 DropBox 获取](https://www.dropbox.com/s/he47c47bywm10nv/swift-armv6.tgz)

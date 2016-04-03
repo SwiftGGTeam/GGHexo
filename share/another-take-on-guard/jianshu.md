@@ -13,7 +13,6 @@
 
 
 
-
 今天，[iOS Dev 周刊](https://iosdevweekly.com) 贴出一篇 Alexei Kuznetsov 的关于『从你的代码中删除 `guard` 』的[文章](https://medium.com/swift-programming/why-swift-guard-should-be-avoided-484cfc2603c5)。Kuznetsov 指出支持他这篇文章的理论依据主要来自于 Robert C. Martin，这位世界顶级软件开发大师提出：**代码必须精简**。即关于函数存在两条规则，第一条：函数应该保持精简；第二条：没有最精简，只有更精简。Alexei Kuznetsov 表示应将 Martin 的理论应用在今后的 Swift 开发中。
 
 Kuznetsov 写到『使用 `guard` 语句能有效减少函数中的嵌套数量，但 `guard` 存在一些问题。使用 `guard` 语句会使我们在一个函数中做更多的事情，以及维护多个级别的抽象。如果我们坚持短小、功能单一的函数，就会发现根本不需要 `guard`』。

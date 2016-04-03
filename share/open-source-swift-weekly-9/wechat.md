@@ -12,7 +12,6 @@ Swift 一周简讯 #9"
 
 
 
-
 欢迎收看 Swift 开源周刊#9！由于周刊期号是从0开始的，这意味着本周已经是我们的第十期拉。🎉感谢亲们长久以来的陪伴！😄本周开源进展似乎略有放缓。甚至 Xcode7.3 beta3 的[发布说明](http://adcdownload.apple.com/Developer_Tools/Xcode_7.3_beta_3/Xcode_7.3_beta_3_Release_Notes.pdf)也略显平淡。这是否意味着我们越来越接近 Xcode7.3 和 Swift2.2 的正式发布呢。
 
 

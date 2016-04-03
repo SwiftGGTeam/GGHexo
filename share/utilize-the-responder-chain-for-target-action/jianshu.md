@@ -12,7 +12,6 @@
 
 
 
-
 本文会介绍 iOS 的响应链以及如何在 Target-Action 中使用它。
 
 ## 响应链（The Responder Chain）

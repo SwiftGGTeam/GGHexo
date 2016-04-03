@@ -12,7 +12,6 @@
 
 
 
-
 > 定稿注：原文没有提供源码，作为一个走心的翻译组，我们已经将本篇文章的最终版源码作成 Playground，可以到[这个地址](https://github.com/buginux/SwiftGGArticleCode)进行下载。
 
 > 更新：

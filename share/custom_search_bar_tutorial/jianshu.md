@@ -11,7 +11,6 @@
 
 
 
-
 很多应用都需要*搜索功能*并把结果展示在`UITableView`中。毋庸置疑，很多开发者都遇到过这种开发需求。通常的做法都是直接使用 iOS SDK 中自带的控件。iOS 8 以前，苹果提供了一个用于具有搜索功能的控制器`UISearchDisplayController`。使用这个控制器，结合`UISearchBar`，能更方便的在应用中添加搜索特性。然而，这些都已成为历史。
 
 iOS 8 到来以后，这种实现方式发生了改变。首先，`UISearchDisplayController`被弃用，即使他可以在 IB(Interface Builder) 界面中使用。而现在，出现了一个新的控制器`UISearchController`，但它却没有在 IB(Interface Builder) 中显示。相反，需要编码来进行初始化并配置，其实这很简单，接下来的文章中将会介绍到。

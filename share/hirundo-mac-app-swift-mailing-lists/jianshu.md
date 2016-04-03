@@ -12,7 +12,6 @@ Hirundo：在 OS X 上轻松获取 Swift 邮件列表"
 
 
 
-
 如果你对 Swift 感兴趣，邮件列表是一个特棒的资源。像 [Swift-Evolution](https://lists.swift.org/mailman/listinfo/swift-evolution) 邮件列表里就讨论了很多关于语言未来的发展方向和走势的内容。订阅它肯定会帮助你很好的理解 Swift 的设计理念和新特性。[Swift-Dev](https://lists.swift.org/mailman/listinfo/swift-dev) 邮件列表是从另一个方面阐述 Swift 内部的工作原理。如果你对这些不感兴趣，另外还有一个 [Swift-Users](https://lists.swift.org/mailman/listinfo/swift-users) 邮件列表是专门帮助你来解决 Swift 开发中遇到的问题的。
 
 

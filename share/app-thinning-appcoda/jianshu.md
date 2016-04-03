@@ -11,7 +11,6 @@
 
 
 
-
 **更新**: iOS 9 有个 bug 影响 APP 瘦身功能，这个 bug 在 iOS 9.0.2 被修复。从 AppStore 下载 App 时请留意。
 
 iOS 9 已经变成了一个大[热门](http://techcrunch.com/2015/09/21/apple-announces-50-ios-9-adoption-and-iphone-6s-launch-day-specifics/)。发布几周后，这个新的操作系统在 iOS 设备上的安装量就超过了一半。它的普及率打破了 iOS 7 在 2013 年的记录。
