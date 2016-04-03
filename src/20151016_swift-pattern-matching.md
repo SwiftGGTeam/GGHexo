@@ -1,7 +1,7 @@
 title: "Swift中的模式匹配"
 date: 2015-10-16 09:00:00
 tags: [Swift 进阶]
-ctegories: [Ole Begemann]
+categories: [Ole Begemann]
 permalink: swift-pattern-matching
 
 ---
