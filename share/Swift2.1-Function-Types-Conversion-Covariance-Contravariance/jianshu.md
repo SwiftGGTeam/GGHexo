@@ -37,9 +37,12 @@ Swift 2.1 函数类型转换：协变与逆变"
 > 译者注：如果 `T1` 是 `T2` 的子类型，则可以表示为 `T1 < T2`，那么上面的规则就可以表示为：对函数类型 `F1 = S1 -> T1` 和 `F2 = S2 -> T2` 来说，当且仅当 `S2 < S1` 且 `T1 < T2` 时，`F1` 是 `F2` 的子类型。
 > `S1` 和 `S2` 在入参位置上，他们之间的关系和 `F1` 与 `F2` 间的关系是相反的，所以入参是逆变的，同时，`T1` 和 `T2` 在出参位置上，他们之间的关系和 `F1` 与 `F2` 间的关系是相同的，所以出参是协变的。
 
-在 Swift 2.1 前的版本中，函数类型都是不变（invariance）的，如果你在 Playground 中尝试运行下面的代码，你会得到一些类似这样的警告：`Cannot convert value of type '(Int) -> Int' to expected argument type '(Int) -> Any (无法把 '(Int) -> Int' 转换为期望的参数类型 '(Int) -> Any')`。
+在 Swift 2.1 前的版本中，函数类型都是不变（invariance）的，如果你在 Playground 中尝试运行下面的代码，你会得到一些类似这样的警告：
 
     
+    
+    // Cannot convert value of type '(Int) -> Int' to expected argument type '(Int) -> Any 
+    // (无法把 '(Int) -> Int' 转换为期望的参数类型 '(Int) -> Any')
     func testVariance(foo:(Int)->Any){foo(1)}
     
     func innerAnyInt(p1:Any) -> Int{ return 1 }
