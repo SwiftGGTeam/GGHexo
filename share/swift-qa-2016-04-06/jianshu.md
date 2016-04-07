@@ -34,6 +34,7 @@ Swift 中有很多有用的属性关键字，在这里可以看到一些[介绍]
     
     doSomeOperationWithoutAutoclosure({2 > 3})
     doSomeOperationWithoutAutoclosure{2 > 3} //尾闭包的简化
+
 很容易看的出来，使用括号来写起来更加自然。其实如果是尾闭包的形式，也可以接受。只是尾闭包只能是放到参数列表的最后才能这样使用。而`@autoclosure`是可以修饰任何位置的参数：
 
     func doSomeOperationWithTwoAutoclosure(@autoclosure op1: () -> Bool, @autoclosure op2: () -> Bool) {
@@ -46,9 +47,8 @@ Swift 中有很多有用的属性关键字，在这里可以看到一些[介绍]
 `@autoclosure`本身取名也有体现出这种语法的意思。直译为自动闭包，也就是会把`(2 > 3)` 这样的语法自动转换为闭包执行。
 
 
-我们再来看看延迟执行这事。其实延迟这个特性，本身不是`@autoclosure`带来的，而是本来闭包本身就带有这样的特性。通过代码我们再回顾一下这个特性，
+我们再来看看延迟执行这事。其实延迟这个特性，本身不是`@autoclosure`带来的，而是本来闭包本身就带有这样的特性。以上的`op1`和`op2`都是在调用的时候才去执行。
 
-    
 
 
 ### @noescape 和 @escape
@@ -62,10 +62,12 @@ Swift 中有很多有用的属性关键字，在这里可以看到一些[介绍]
         }
     }
 其中`asyncClosure `在`dispatch_async `中的闭包中调用，完成异步的操作。因为闭包默认是`@escape`的，以上代码是可以运行的。但是当我们在`asyncClosure `前面加入`@noescape`属性时候，编译器就会报错:
+
     closure use of @noesape parameter `asyncClosure` may allow it to escape
 
 `@noescape`属性是在 Swift 1.2 中引入的，把传入闭包参数的调用限制在调用的函数体内，对性能有一定的提升，同时将闭包标注为`@noescape`使你能在闭包中隐式地引用self。
 在 Swift 标准库中很多方法，都用了`@noescape`属性，比如 Array 对应的方法 map，filter 和 reduce：
+
 
     func map<T>(@noescape transform: (Self.Generator.Element) -> T) -> [T]
     
@@ -74,9 +76,6 @@ Swift 中有很多有用的属性关键字，在这里可以看到一些[介绍]
     func reduce<T>(initial: T, @noescape combine: (T, Self.Generator.Element) -> T) -> T
 
 而`@autoclosure`默认是`@noescape`的，要使用逃逸特性，请使用`@autoclosure(escaping)`
-
-
-
 
 
 
