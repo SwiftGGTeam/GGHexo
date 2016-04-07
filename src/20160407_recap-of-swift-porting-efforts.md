@@ -3,6 +3,9 @@ date: 2016-04-07
 tags: [Swift 跨平台]
 categories: [uraimo]
 permalink: recap-of-swift-porting-efforts
+keywords: swift跨平台
+custom_title: 
+description: 在二月里面多平台上的 Swift 的移植进度怎么样呢，让我们来看看各个平台上的 Swift 进展如何吧。
 
 ---
 原文链接=https://www.uraimo.com/2016/02/02/recap-of-swift-porting-efforts
