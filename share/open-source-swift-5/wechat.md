@@ -13,8 +13,6 @@ Swift 一周简讯 #5"
 
 
 
-
-
 正如你所看到，Swift 一周简讯有[新家](http://swiftweekly.github.io)啦！有一个专用的网站发布内容感觉棒极了，比我的[个人博客](http://www.jessesquires.com/new-weekly-brief/)强多了。当然新网站还有一些小瑕疵，如果你发现或者有什么好的建议提升网站质量，请在 GitHub 上提交 issue，提问[入口](https://github.com/SwiftWeekly/swiftweekly.github.io/issues/new)。
 
 

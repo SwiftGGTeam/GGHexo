@@ -11,9 +11,12 @@ Friday Q&A 2015-09-04:让我们来自定义 dispatch_queue"
 
 
 
+
+
 > 译者注：这篇文章的代码是用 Objective-C 完成的，不过不妨碍大家学习多线程编码的知识。
 
 `Grand Central Dispatch` 是过去几年中苹果推出过的许多很棒的 API 中的一员。在最新一期的 “Let's Build” 系列中，我准备去探索 dispatch_queue 一些最基本特性的重新实现，这个主题的建议来自 Rob Rix。
+
 
 
 # 概述

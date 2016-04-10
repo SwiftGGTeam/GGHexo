@@ -18,6 +18,7 @@
 然而我想做一件跟大家不同的事情™，今天我要趁这个机会跟大家分享一下我自己的开源经历，并说明为什么向开源社区做贡献对每个人都有好处。
 
 
+
 ### 介绍：Swift 开源系统的大事件
 
 本周最大的新闻无疑就是 Swift 开源。苹果公司比我们所期待的更进一步，不仅公布了 [Swift 代码](https://github.com/Apple) 的**完整 GIT 历史记录**，还有**其它工具**的代码，如 `lldb` 与 REPL，表明它们使用了 [Swift 包管理器](https://swift.org/package-manager/)，同时尽了他们最大的努力去[创造一个更好的社区](https://swift.org/community/)！

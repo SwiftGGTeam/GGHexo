@@ -18,6 +18,7 @@
 然而，在 Swift 中，我不得不写一个丑陋的 extension 来达到这一目的。（[参考 StackOverflow 的回答](http://stackoverflow.com/questions/24107658/get-a-user-readable-version-of-the-class-name-in-swift-in-objc-nsstringfromclas)）
 
 
+
     
     public extension NSObject{
         public class var nameOfClass: String{

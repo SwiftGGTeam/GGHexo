@@ -10,6 +10,8 @@ iOS 8 中使用 Swift 录制视频教程"
 
 
 
+
+
 苹果公司提供了`UIimagePickerController`-这是一个使用 iOS 设备内置的摄像头来拍摄视频的可视化界面。在此教程中，我们将拍摄一段保存到手机相册的视频。教程运行在 iOS 8.4 和 Xcode 6.4 下。
 
 打开 Xcode 并创建一个`new Single View Application`,项目名称为`IOS8SwiftTakeVideoPlayerTutorial`，接着填上你的`Organization Name`和`Organization Identifier`，选择 Swift 语言，在设备一栏只选择 iPhone。

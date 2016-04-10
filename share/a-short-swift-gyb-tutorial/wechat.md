@@ -11,6 +11,7 @@ Swift GYB 简易教程"
 
 
 
+
 GYB（模板生成）[是一个 Swift 内部使用的工具](https://github.com/apple/swift/blob/master/utils/gyb.py)，可以用模板生成源文件。
 
 如果你有多个结构体/类/枚举在共享同一个通用的结构，并且你不想维护那些相同的代码，就可以用 GYB。如果你经常需要给不同的对象写一些相似的方法或者属性，那你的维护工作（由于粗心的复制/粘贴导致的错误）就可以全部交给 GYB。这个工具在 [Swift 代码库](https://github.com/apple/swift/search?utf8=%E2%9C%93&q=filename%3A*.gyb&type=Code) 中广泛使用，很容易就可以将它应用到你的项目中。

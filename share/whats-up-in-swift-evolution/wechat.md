@@ -10,6 +10,8 @@ Swift 新进展（2016年1月份）"
 
 
 
+
+
 > 译者注：有些内容已经过期，有些提议的状态已经发生了改变。
 
 ### 撤回的
@@ -19,6 +21,7 @@ Swift 新进展（2016年1月份）"
 ### 积极审查的
 
 [SE-0010](https://github.com/apple/swift-evolution/blob/master/proposals/0010-add-staticstring-unicodescalarview.md) 提议增加一种不可变的 `StaticString.UnicodeScalarView`（我喜欢这个）。（校者注：已被驳回）
+
 
 
 [SE-0013](https://github.com/apple/swift-evolution/blob/master/proposals/0013-remove-partial-application-super.md) 提议移除在调用时使用无 final 限制的 super 方法（校者注：即使用子类方法）。我对这个持怀疑态度，也没花多少时间去研究它。（校者注：已被驳回）

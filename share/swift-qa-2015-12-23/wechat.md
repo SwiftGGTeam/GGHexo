@@ -1,7 +1,6 @@
 [原创] 每周 Swift 社区问答 2015-12-23"
 
 
-
 作者：[shanks](http://codebuild.me)
 
 本周整理问题如下：

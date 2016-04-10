@@ -11,6 +11,7 @@
 
 
 
+
 >这篇博文启发自[Code Review.SE](http://codereview.stackexchange.com/questions/60875/project-euler-2-even-fibonacci-numbers-in-swift)上的一个讨论，同时[nerd-sniped](https://xkcd.com/356/)上的关于数学的有趣的学习。让我对数学和 Swift 的结合有了兴趣。所以我花了一段时间来把这些知识整理成一篇博文，特别是自从我完成了对我网站重建的第一步以后。更重要的是，我希望我能更勤勉的更新我的博客，这8年我只写了一篇而已，希望大家能对我的博客感兴趣。
 >这篇博文的目标对于初学者来讲，比较容易理解，同时也提供给那些已经对这个概念熟悉的人一些有用的细节和例子。希望大家能给我反馈。
 

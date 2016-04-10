@@ -12,7 +12,6 @@ Swift 3.0 和 Foundation"
 
 
 
-
 我将尽量避免那些看上去很尴尬的笑话，直接介绍 [Swift CoreLibs Foundation](https://github.com/apple/swift-corelibs-foundation)。
 
 以下引自 Apple：

@@ -11,6 +11,8 @@ Swift 编程思想，第二部分：数组的 Map 方法"
 
 
 
+
+
 在[本系列的第一篇文章](http://alisoftware.github.io/swift/2015/09/06/thinking-in-swift-1/)中，介绍了如何避免对可选类型强制解包以及拯救“小马”🐴 。在第二部分中，我们将会精简前文代码来让它看起来更有"雨燕风"(*Swift-er* : Swift编程语言风格)，同时向你介绍 `map()` 和 `flatMap()` 方法。
 
 

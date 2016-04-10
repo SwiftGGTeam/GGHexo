@@ -8,13 +8,11 @@
 
 本周整理问题如下:
 
-
 * [Hiding Hashable in Swift](#Question1)
 * [map function argument type](#Question2)
 * [confusion over initialisation in swift](#Question3)
 * [Prevent lazy initialization of static var](#Question4)
 * [Can I create a class that subclasses from Array?](#Question5)
-
 
 
 

@@ -8,7 +8,6 @@
 
 本周整理问题如下:
 
-
 * [Overriding function signature--documented?](#Question1)
 * [Swift syntax for struct: variations ?](#Question2)
 * [Why protocol is better than class in swift? ](#Question3)

@@ -11,6 +11,7 @@
 
 
 
+
 正如预期的一样，在圣诞放假期间 Swift.org 的[步伐](https://lists.swift.org/pipermail/swift-corelibs-dev/Week-of-Mon-20151214/000179.html)[慢了下来](https://lists.swift.org/pipermail/swift-dev/Week-of-Mon-20151221/000540.html)。我也在放假期间出去玩耍了一番，所以这篇文章会比较平常的来得短。如果你还没准备好，我强烈建议你从代码中抽身出去享受一下假期，[防止过劳](https://twitter.com/chriseidhof/status/679213894343200768)（译者注：然而我们并没有放假）。😄现在，让我们开始本周简讯！
 
 

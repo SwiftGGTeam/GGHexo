@@ -17,6 +17,7 @@
 在教程开始前，我准备介绍如何使用 Swift 在 iOS、watchOS、tvOS 和 OS X 上编程。此外，如果你想在本博客中学到其他知识，请给 Twitter [@CodingExplorer](https://twitter.com/CodingExplorer) 或者 [Contact Page](http://www.codingexplorer.com/contact/) 来提出建议。
 
 
+
 # 创建你的 watchOS 2 应用
 
 打开 Xcode，创建一个新项目。可以使用初始界面，也可以通过菜单（File → New → Project…）。然后，定位到 watchOS 部分并选择 Application，现在界面看起来是这样的：

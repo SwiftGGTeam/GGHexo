@@ -12,6 +12,7 @@
 
 
 
+
 今天的目标是用代码处理链接 `http://mywebsite.org/customers/:cid/orders/:oid`，从中提取出订单号（#oid）和顾客 ID（#cid） 。  
 
 我们将要使用一种简单快捷的方式来实现 -- 模式匹配和变量绑定。 

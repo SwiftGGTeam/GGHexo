@@ -10,6 +10,8 @@ Beta 2 更新：Swift 2.1 Playground 使用值放置方法"
 
 
 
+
+
 ![](http://swift.gg/img/articles/new-to-beta-2-swift-2-1-playground-value-drops-swiftlang/Color-AppScreenSnapz001.png1450226715.996496)
 
 Beta 2 的新特性允许你拖放颜色、图片以及文件。在截图中虽然看不到，但如果你打开文本赋值的历史记录，就会显示文件的文本内容（是我的购物清单，好奇的家伙们）。文本常量的类型为`NSURL`。颜色是`UIColor`，图片是`UIImage`。谢天谢地，希望你们对这些没有任何疑问。

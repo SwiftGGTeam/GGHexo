@@ -15,6 +15,7 @@ SE-0005，一个你可能想知道的 Swift 改进提案"
 截止 2016 年 2 月 5 日，[SE-0005](https://github.com/apple/swift-evolution/blob/master/proposals/0005-objective-c-name-translation.md) 提案正在接受公开的审核。它提议在 Swift 中导入 Objective-C 代码时自动转换名称。
 
 
+
 > 这个提案描述了如何改进 Swift 的「Clang Importer」，它负责将 C 和 Objective-C 的 API 导入到 Swift 中。通过这样的改进，Objective-C 的函数、类型、方法、属性等的名称可以被翻译成更加符合 [Swift API 设计准则](https://swift.org/documentation/api-design-guidelines/)的名称。这份准则是 Swift 3 的一部分。我们的解决方案专注在 Objective-C 的 [Cocoa 编码规范](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html) 和 Swift API 设计准则之间的区别，同时使用一些简单的语言分析来把 Objective-C 的名称自动转换成更加 Swift 化的名称。
 
 

@@ -11,6 +11,7 @@ Swift 中序列的实现方式"
 
 
 
+
 想要遵循 `SequenceType`协议？还想要遵循 `CollectionType`，`MutableSliceable`，`RangeReplaceableCollectionType`？——需要做些什么呢？
 
 

@@ -11,6 +11,7 @@
 
 
 
+
 Swift 2.0 beta 6 新增了一个关键字 `try?`，这为我们处理异常又增加一个新的途径。这篇简短的文章阐述了这个关键字的基础知识，同时说明为何这个新关键字很酷。
 
 在 Swift 1.x 中，我们只能通过可选数据类型和 `NSError` 来处理异常。我们可以在[其他编程语言中](https://hackage.haskell.org/package/base-4.8.1.0/docs/Data-Either.html)看到 [`Either`/`Result`](https://github.com/antitypical/Result)这样的形式，于是很多人将这种形式移植到 Swift 当中：

@@ -11,6 +11,7 @@ Swift 一周简讯 #8"
 
 
 
+
 本周在 Swift.org 上面有一篇[官方博客](https://swift.org/blog/swift-ci/)宣布了我上周提到过的持续集成配置。关于这个，现在官网上有一个[专门的页面](https://swift.org/continuous-integration/)，你可以在[这里](https://ci.swift.org/)查看当前的状态。似乎它可以跟 GitHub 很好地[进行集成](https://twitter.com/modocache/status/693069527807041536)，并且现在基本上已经[正常运作](https://github.com/apple/swift/pull/1151#issuecomment-178211302)了。😄
 
 

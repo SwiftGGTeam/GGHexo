@@ -12,9 +12,7 @@
 
 
 
-
 去年 11 月，我在 Swift 的 [JIRA](https://www.atlassian.com/software/jira) 中创建了一个 SwiftPM 的改进建议：[SR-353](https://bugs.swift.org/browse/SR-353)，在 `swift build` 中，添加一个类似于 `npm init` 的包初始化命令，用来创建 `Swift` 包需要的所有目录和文件。这个提议创建之后不久，[Bastian Rinsche](https://twitter.com/Memorion) 和 [Tobias Landsberg](https://github.com/tlandsberg) 就实现了这个特性，而且 [PR](https://github.com/apple/swift-package-manager/pull/117) 被合并。Bastian 还写了一篇非常棒的[文章](http://blog.bastianrinsche.de/2016/01/31/contributing-to-swift/)介绍他对于 Swift 开源的一些认识，并且介绍了他们实现的`swift build --init`命令。
-
 
 
 

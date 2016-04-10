@@ -10,6 +10,8 @@ Swift 2.0 中使用 try? 关键字"
 
 
 
+
+
 Xcode 7 Beta 6 发布时，我一下子就被下面这三个特性迷住了：
 
 >![](http://swift.gg/img/articles/swift-2-lets-try/1.png)

@@ -19,6 +19,7 @@ Swift 现在可用于所有的 ARMv6 树莓派 （1,Zero）"
 这个包适用于 树莓派1 (A,B,A+,B+) 和 Zero 系列，基于与 ARMv7 相同的资源包，但是缺少 Foundation, XCTest, LLDB 和 REPL。
 
 
+
 大多数情况下应该没什么问题，最近我正在编译 Swift master 分支上一个新的构建版本（因为[ William Dillon](https://github.com/apple/swift/pull/901)上传的 ARM 接口已经被合并进去了，关于其他接口可以看[这里](https://www.uraimo.com/2016/02/02/recap-of-swift-porting-efforts/)
 ），新版本应该会更加完善。
 

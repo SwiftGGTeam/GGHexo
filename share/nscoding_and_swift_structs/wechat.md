@@ -10,6 +10,8 @@ Swift 中的结构体与 NSCoding"
 
 
 
+
+
 正如大家所知，Swift 中的结构体不遵守 `NSCoding` 协议。`NSCoding` 只适用于继承自 `NSObject` 的类。 可是结构体在 Swift 中的地位与使用频率都非常高，因此，我们需要一个能将结构体的实例归档和解档的方法。
 
 

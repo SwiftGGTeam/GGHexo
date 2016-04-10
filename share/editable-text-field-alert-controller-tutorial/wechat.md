@@ -18,6 +18,7 @@ UIAlertController 类不仅用于呈现警告弹窗，还能够提供 Text Field
 打开X code，创建一个 Single View Application。输入项目名称：**IOS9TextFieldAlertControllerTutorial**，接着填写你独有的 Organization Name 以及 Organization Identifier。选择语言为 Swift 并确保设备为 iPhone 。
 
 
+
 ![](http://swift.gg/img/articles/editable-text-field-alert-controller-tutorial/format=1500w1451868017.9978042)
 
 前往 Storyboard。从 Object Library（译者注：快捷键 Command + Option + Control + 3） 中拖拽一个按钮（UIButton）到主视图中。双击按钮设置 title 名为 「Log in」。此刻保持按钮为选中状态，按下 Ctrl 键，使用鼠标左键拖拽一条线到主视图上方，弹出黑色信息框，使用 Shift 键选中「Vertical Spacing to Top Layout Guide」和「Center Horizontally in Container」两个选项。

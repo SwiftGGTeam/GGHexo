@@ -12,7 +12,6 @@ Swift 一周简讯 #14"
 
 
 
-
 欢迎来到开源周刊14期！效仿 [Dave Verwer](https://iosdevweekly.com/issues/241#start)，我也对 Xcode7.3 最后发布版本进行了预测 —— 包括 iOS9.3，OS X10.11.4 以及 watchOS2.2 三个版本。Xcode7.3 将包含最终版本的 Swift2.2 语法。核心团队可能会在下周一解开谜底。ps：Apple 将于 3.21 举办 [“Let Us Loop You In”](http://www.macrumors.com/2016/03/10/apple-invites-march-21-event/) 的发布会。
 
 

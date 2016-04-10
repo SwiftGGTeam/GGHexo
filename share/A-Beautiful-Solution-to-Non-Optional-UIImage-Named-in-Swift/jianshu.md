@@ -11,6 +11,7 @@
 
 
 
+
 昨天，我抽空看了[Swift in Practice WWDC15 Session](https://developer.apple.com/videos/wwdc/2015/?id=411)的视频，很喜欢其中对 `Image` 命名的处理建议。
 
 这个视频里解决的问题是方法`UIImage:named:`总需要传入硬编码(hard-coded)的字符串参数，然后返回一个可空(optional)的`UIImage`。这就意味着可能会有两种出错的情况：一种是字符串的拼写错误；另一种是对可选的`UIImage`不正确解包。

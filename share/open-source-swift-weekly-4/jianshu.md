@@ -10,6 +10,8 @@ Swift 一周简讯 #4"
 
 
 
+
+
 假期一晃而过，Swift.org 又重新开始更新东西啦。倘若你也是 Apple GitHub 开源项目的跟随者之一，你可能已经注意到了。早前不知为何我错过了一些重要的东西，直到本周我才发现 [`SwiftExperimental.swift`](https://github.com/apple/swift/blob/master/stdlib/internal/SwiftExperimental/SwiftExperimental.swift) 这货。目前，它为 `Set` 集合自定义了大量 unicode 操作（译者注：有 ∈ 、∉、⊂、⊄、⊆ 等等！）。这真是棒极了！我迫不及待想要在标准库中看到更多诸如此类的 API 接口。不管怎样，先来看看本周有哪些好玩的东西吧。
 
 

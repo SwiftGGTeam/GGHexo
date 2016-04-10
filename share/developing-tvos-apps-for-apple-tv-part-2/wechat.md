@@ -16,6 +16,7 @@
 本文是 tvOS 教程的第二部分。如果你还没看过[第一部分](http://jamesonquave.com/blog/developing-tvos-apps-for-apple-tv-with-swift/)([译文链接](http://swift.gg/2015/09/14/developing-tvos-apps-for-apple-tv-with-swift/))，我建议你先看那篇。
 
 
+
 ## 增加交互事件
 
 在第一部分中我们创建了一个简单的 TVML `document`，里面有几个按钮。这个`document`看起来是这样的：

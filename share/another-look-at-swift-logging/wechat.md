@@ -19,6 +19,7 @@
 Apple 发布 Swift 不久，就有大量的开发者提供了日志静态库，但 [Lumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack) 这样的好项目并不能在 Xcode 外执行。我们开发了 `swiftlog` ，这是一个简单的日志记录程序。
 
 
+
 来看看 `swiftlog` 的更新内容，它主要为 Linux 系统上的 Swift 应用提供快捷添加日志信息的方法。它有以下新特性：
 
 * Swift 包管理支持（SPM）

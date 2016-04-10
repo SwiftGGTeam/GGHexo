@@ -15,6 +15,7 @@
 回溯到八月份，我观看了 [Swift in Practice WWDC15](https://developer.apple.com/videos/play/wwdc2015-411/) 这个超赞的视频。视频的第一部分让我印象十分深刻，因此我针对这部分写了一篇博客—— [A Beautiful Solution to Non-Optional UIImage Named in Swift](http://natashatherobot.com/non-optional-uiimage-named-swift/) ——然后我最终开始准备写关于这个视频的第二部分，甚至其它更多令人激动的部分（毕竟，假期是最好的写博客的时机）（译者注：大神就是这样啊，假期不是用来玩的，反而是写博客的大好时机）。
 
 
+
 这次，我准备写的是：**处理多个 segue 标识的优雅解决方案**。你猜对了！就是使用协议。
 
 今天就让我们开始针对你的选择展开旅程吧。你会选择：红色药丸还是蓝色药丸...（译者注：如果你看不懂这个梗的话，我建议你去补习一下黑客帝国）

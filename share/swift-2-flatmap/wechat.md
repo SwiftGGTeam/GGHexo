@@ -10,6 +10,8 @@ Swift 2.0: 理解 flatMap"
 
 
 
+
+
 发布于 2015 年 7 月 26 日
 
 上周我写了一篇[博文](http://natashatherobot.com/swift-when-the-functional-approach-is-not-right/)，介绍如何创建一个非可选类型的有序图片数组。

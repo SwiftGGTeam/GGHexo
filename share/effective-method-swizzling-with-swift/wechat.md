@@ -25,6 +25,7 @@ Method Swizzling 通过改变特定 selector（方法）与实际实现之间的
 虽然这看起来非常方便，但是这个功能也有其缺点。在 runtime 执行这类更改时，你就不能在编译时利用那些可用的安全检查了。因此，应该小心使用 Method Swizzling。
 
 
+
 [NSHipster](http://nshipster.com/method-swizzling/) 上有一篇关于如何在 Objective-C 中使用 Method Swizzling 的文章（译者注：[南峰子的技术博客](http://southpeak.github.io/blog/2014/11/06/objective-c-runtime-yun-xing-shi-zhi-si-:method-swizzling/)有这篇文章的译文）（其他详情也可以看[这里](https://www.mikeash.com/pyblog/friday-qa-2010-01-29-method-replacement-for-fun-and-profit.html)）以及 [Stackoverflow](http://stackoverflow.com/q/5339276) 上有一些如何使用 Method Swizzling 的讨论。
 
 Swift 关于方法派发是使用静态方法的，但有些情形可能需要用到 Method Swizzling。

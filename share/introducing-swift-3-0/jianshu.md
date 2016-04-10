@@ -27,6 +27,7 @@ Swift 2.2 已经从 `master` 分支移到了 `swift-2.2` 分支。现在，Swift
     ./swift/utils/update-checkout --clone
 
 
+
 `Swift` 仓库中的 `update-checkout` 脚本能够帮你克隆编译 Swift 源代码所需的所有仓库内容，并将其打包成 `.tar.gz` 压缩文件。
 
 使用 "build and package" 预设不仅可以编译所有必要的目标文件，还能将它们打包成 `.tar.gz` 压缩文件。使用名为 `package.sh` 的脚本就能完成上述任务（在 `package-swift` 库中）：

@@ -15,6 +15,7 @@
 于是乎，在整理我大量 Swift 代码中的一小部分时，我决定利用一下 Swift Package Manager 的优势，将其中的一下推到 GitHub 上。这些都是[我](https://github.com/erica/SwiftUtility)！[做](https://github.com/erica/SwiftCollections)！[的](https://github.com/erica/SwiftString)！
 
 
+
 在此之后，我突然意识到我的命名太糟糕了。我本应该用一种更加符合逻辑、可读性好的方式去命名。
 
 包（Package）命名需要简洁易懂。是的，同样它们也需要避免重名情况的发生，因为当你有个叫做 SwiftString 的包时，可能 Bob、Jane、Harry 都会有同样名称的这个包。命名冲突是不可避免的。

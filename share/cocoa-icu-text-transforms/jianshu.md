@@ -12,10 +12,10 @@
 
 
 
-
 [ICU 的字符串变换](http://userguide.icu-project.org/transforms/general)很酷。[ICU 库](http://site.icu-project.org/)提供了一整套强大的文本变换功能，在处理用户输入、特别是当你的程序需要处理一些英语之外的语言或者非拉丁字符时非常有用。举个例子，你可以把一段简体中文转码成拉丁字符，同时清除音调符号、修饰符和隐藏字符，最后全部转换成小写，使其成为可以被你的数据库搜索 API 识别的字符串，而所有这些变换，只要一行代码就可完成。
 
 在 Apple 的平台中，字符串变换一直以来都是通过 Core Foundation 的 [CFStringTranform](https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMutableStringRef/index.html#//apple_ref/c/func/CFStringTransform) 函数来实现。Mattt Thompson 在 NSHipster 上对该 API 有[非常棒的介绍](http://nshipster.com/cfstringtransform/)，推荐阅读。
+
 
 
 随着 iOS 9 和 OS X 10.11 的发布，字符串变换被整合到了 Foundation 框架中。虽然在文档中还没有介绍 [NSString](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/) 的新方法 `stringByApplyingTransform(_:reverse:)`，但是 `CFStringTransform` 文档已经对它进行了说明，而且 Nate Cook 在 [这篇 NSHipster 的文章中](http://nshipster.com/ios9/)也展示了一些具体的例子。下面的代码演示了如何实现中文到拉丁字符的转换：

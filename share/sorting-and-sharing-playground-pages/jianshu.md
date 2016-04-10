@@ -19,6 +19,7 @@ playground 页面排序和共享"
 如果在同一个文件中有多个 playground 页面（我就是这样），那么你会发现如果按照字母排序，查找起来会很方便。使用 Edit > Sort > ByName 来整理你的文件结构。
 
 
+
 ![](http://swift.gg/img/articles/sorting-and-sharing-playground-pages/Screen-Shot-2016-01-04-at-10.07.27-AM.png1454637017.2610323)
 
 为了找起来更快，你最好给每一个页面起一个有意义的名字。

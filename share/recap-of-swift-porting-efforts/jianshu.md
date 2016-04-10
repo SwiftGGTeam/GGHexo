@@ -11,6 +11,7 @@
 
 
 
+
 明天（本文发表日期是 2016 年 2 月 2 日）就是 Swift 开源后的第二个月了。
 
 这么短的时间当中发生了很多事情。开源社区已经在全面发展这项语言了，他们为 Swift 的每个分支项目都贡献了[大量的代码](https://github.com/apple/swift/graphs/contributors)，他们甚至讨论了 [Swift 的将来](https://lists.swift.org/pipermail/swift-evolution/)，并为之提出意见和建议。苹果公司非常欢迎开源社区的加入，而开源社区则积极回应了许多贡献和想法。
