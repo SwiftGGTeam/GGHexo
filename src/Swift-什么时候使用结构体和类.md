@@ -12,6 +12,8 @@ permalink: friday-qa-2015-07-17-when-to-use-swift-structs-and-classes
 校对=千叶知风
 定稿=numbbbbb
 
+<!--此处开始正文-->
+
 在Swift的世界中一个一直被持续不断讨论话题就是什么时候使用结构体什么时候使用类。我想我今天要贡献一些自己的想法。
 
 <!--more-->

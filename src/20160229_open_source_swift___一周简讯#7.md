@@ -18,8 +18,6 @@ description:
 
 <!--此处开始正文-->
 
-
-
 本周我们迎来了 [Xcode 7.3 beta2](https://twitter.com/SwiftLang/status/691805674079195136) —— 这是首次支持 Swift 2.2 语法的 Xcode 正式发布版，凝聚了 Swift 开源社区的力量！我从未想过会看到这样的[发布版本说明](http://adcdownload.apple.com/Developer_Tools/Xcode_7.3_beta_2/Xcode_7.3_beta_2_Reease_Notes.pdf)。更令人难以置信地是能够在 “What's New” 章节看到那些由社区驱使做出的改动，同时还附上了 GitHub 链接。显然，苹果下一步应该是要将 Xcode 开源出来。😉
 
 <!--more-->

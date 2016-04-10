@@ -26,6 +26,7 @@ description: 现在Swift越来越流行了，那么还有必要学Objective-C吗
 > 我是一个刚开始编程的小菜鸟，所以希望得到您关于这个问题的见解。对于一个 iOS 开发者来说值得学习 Objective-C 吗，还是说直接上手 Swift，也无须回过头再去补 Objective-C 的知识？
 
 这个问题提得非常好，那么让咱们来好好研究研究它！
+
 <!--more-->
 
 ## Swift 应该是你的首选

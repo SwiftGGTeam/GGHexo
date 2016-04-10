@@ -12,7 +12,6 @@ permalink: sets-vs-dictionaries-smackdown-in-swiftlang
 校对=Cee
 定稿=千叶知风
 
-
 <!--此处开始正文-->
 
 传统的 `Cocoa` 在使用字典时有个不好的习惯。无论是用户信息还是字体选项亦或是视频流（AVFoundation）设置，`NSDictionary` 一直担任 `Cocoa` 传递数据的角色。字典是灵活的、易用的，但它也存在诸多潜在的危险。

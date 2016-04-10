@@ -18,6 +18,7 @@ description: 在iOS开发中，对于API的设计是有规范和原则的，而�
 <!--此处开始正文-->
 
 邮件列表中对 [SE-0023 API 设计指南（SE-0023 API Design Guidelines）](https://github.com/apple/swift-evolution/blob/master/proposals/0023-api-guidelines.md) 有大量讨论。你可以在 [swift.org](https://swift.org/documentation/api-design-guidelines/) 上找到原始的指南，我强烈推荐你阅读一下。这个指南的大部分内容我都很喜欢，不过我认为有些命名和标签规定过于严格。
+
 <!--more-->
 
 文档分为四章：基本原则、命名、惯例和特例。我完全同意**基本原则**这一章内容：要明确、清晰和简洁，注释一切。我已经写了 [Swift 文档标记（Swift Documentation Markup）](https://itunes.apple.com/us/book/swift-documentation-markup/id1049010423?mt=11)一书，这本书尊崇这些原则，另外还告诉你该如何实践。同样的原则适用于第四章：**特例**。

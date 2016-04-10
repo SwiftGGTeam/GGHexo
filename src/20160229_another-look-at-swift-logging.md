@@ -22,6 +22,7 @@ description: swiftlog是一个比Apple提供的日志静态库更简单好用的
 ![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat) ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat) ![License ISC](https://img.shields.io/badge/License-ISC-blue.svg?style=flat)
 
 Apple 发布 Swift 不久，就有大量的开发者提供了日志静态库，但 [Lumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack) 这样的好项目并不能在 Xcode 外执行。我们开发了 `swiftlog` ，这是一个简单的日志记录程序。
+
 <!--more-->
 
 来看看 `swiftlog` 的更新内容，它主要为 Linux 系统上的 Swift 应用提供快捷添加日志信息的方法。它有以下新特性：

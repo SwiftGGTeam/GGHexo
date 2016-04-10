@@ -24,7 +24,6 @@ permalink: c-callbacks-in-swift
 
 几年前，我曾经写过一篇关于如何获取 `CGPath` 和 `UIBezierPath` 中元素的[文章][1]。可以通过调用 [CGPathApply][2] 函数，并给这个函数传入一个回调的函数指针来达到这个目的。 随后 `CGPathApply` 会对 path(CGPath 或 UIBezierPath) 中的每一个元素调用这个回调函数。  
 
-
 <!--more-->
 
 很不幸，我们无法在 Swift 1.x 中做到这件事，因为我们没办法将 Swift 函数桥接到 C 语言函数。我们需要使用 C 或者 Objective-C 写一个小小的包装层来对这个回调函数进行封装。

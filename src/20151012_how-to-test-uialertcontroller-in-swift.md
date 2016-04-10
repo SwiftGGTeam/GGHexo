@@ -13,6 +13,8 @@ permalink: how-to-test-uialertcontroller-in-swift
 定稿=小锅
 发布时间=2015-10-12T09:00:00
 
+<!--此处开始正文-->
+
 最近我读了一篇在 Objective-C 中使用 control swizzling 测试`UIAlertController`的[文章](http://qualitycoding.org/testing-uialertcontrollers/)。这样的文章总是促使我寻找一种不使用 control swizzling 也可以测试同样东西的方法。虽然，我知道 swizzling 是开发者的一个非常有力的工具，但我个人是尽可能去避免去使用它的。事实上，在最近的六年时间里，我只在一个应用上用了 swizzling。所以我相信我们现在可以不使用 swizzling 来实现测试。
 
 那么问题来了，如何在 Swift 中不使用 swizzling 来对`UIAlertController` 进行测试？

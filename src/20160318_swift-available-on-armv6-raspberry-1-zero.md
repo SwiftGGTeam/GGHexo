@@ -22,6 +22,7 @@ description: Swift 可以在 ARMv6 处理器上实现初步编译了哦，版本
 [从 DropBox 获取](https://www.dropbox.com/s/he47c47bywm10nv/swift-armv6.tgz)
 
 这个包适用于 树莓派1 (A,B,A+,B+) 和 Zero 系列，基于与 ARMv7 相同的资源包，但是缺少 Foundation, XCTest, LLDB 和 REPL。
+
 <!--more-->
 
 大多数情况下应该没什么问题，最近我正在编译 Swift master 分支上一个新的构建版本（因为[ William Dillon](https://github.com/apple/swift/pull/901)上传的 ARM 接口已经被合并进去了，关于其他接口可以看[这里](https://www.uraimo.com/2016/02/02/recap-of-swift-porting-efforts/)

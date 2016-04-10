@@ -13,6 +13,7 @@ permalink: good-errors-swiftlang
 定稿=shanks
 发布时间=2015-09-30T09:00:00
 
+<!--此处开始正文-->
 
 为了处理错误，我们可以抛出一些遵循 `ErrorType` 协议的实例。最简单的例子，创建一个 `struct` 并且抛出错误，就像如下示例：
 
@@ -21,6 +22,7 @@ public struct SomethingWentWrong : ErrorType {}
 ...something happens...
 throw SomethingWentWrong()
 ```
+
 <!--more-->
 
 在所有可能的描述里，你的错误信息阅读起来不应该像随机的幸运纸片那样杂乱无章，而应该是像建设性指针那样，能够解释你的失败。应避免出现下列的写法：

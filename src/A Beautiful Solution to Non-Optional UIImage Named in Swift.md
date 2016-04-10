@@ -12,13 +12,14 @@ permalink: A-Beautiful-Solution-to-Non-Optional-UIImage-Named-in-Swift
 校对=Prayer
 定稿=shanks
 
+<!--此处开始正文-->
 
 昨天，我抽空看了[Swift in Practice WWDC15 Session](https://developer.apple.com/videos/wwdc/2015/?id=411)的视频，很喜欢其中对 `Image` 命名的处理建议。
 
 这个视频里解决的问题是方法`UIImage:named:`总需要传入硬编码(hard-coded)的字符串参数，然后返回一个可空(optional)的`UIImage`。这就意味着可能会有两种出错的情况：一种是字符串的拼写错误；另一种是对可选的`UIImage`不正确解包。
 
-
 <!--more-->
+
 一种可以解决这个字符串拼写错误的方式就是构建一个`Image`的常量文件，但是这不能解决出错的第二种情况。在 Swift 中，有个更好的解决方案。可以扩展`UIImage`，把所有的`Image`名字作为枚举类型，然后建立便利构造器来通过枚举构造对应的`Image`。看代码：
 
 ```swift

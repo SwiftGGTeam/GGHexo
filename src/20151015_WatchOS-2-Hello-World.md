@@ -15,7 +15,6 @@ permalink: watchos-2-hello-world
 
 <!--此处开始正文-->
 
-
 欢迎学习我的`WatchOS 2`系列教程。我会从最简单的部分开始带你学习`WatchOS 2`。一个 "Hello,World" app，没错，这个程序虽然非常简单，还是有一些要注意的地方。
 
 <!--more-->

@@ -12,6 +12,8 @@ permalink: ios-undo-and-redo-with-nsundomanager
 校对=numbbbbb
 定稿=
 
+<!--此处开始正文-->
+
 在相当长的一段时间内 NSUndoManager 对我来说都是一个很神秘的东西。我想学习使用它，但是一直没有时间。一直到今天，我写了一个简单的应用，这个应用创建了一个可以移动的矩形，并且还可以修改矩形的属性，例如背景色或者圆角。
 
 <!--more-->

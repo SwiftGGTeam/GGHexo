@@ -20,6 +20,7 @@ description: 想知道在Swift结构体怎么使用Mutating函数么，这篇文
 我认为关于 Swift 最棒的一个特性就是：在这门语言构建的工程中可以使用大量的不可变对象。这种特性使我们的代码更加清晰，也更加安全（如果你还对此存疑，强烈推荐观看这篇[演讲](https://realm.io/news/andy-matuschak-controlling-complexity/)）。
 
 但当我们真正需要去改变数据时，又该怎么处理呢？
+
 <!--more-->
 
 ### 函数方式

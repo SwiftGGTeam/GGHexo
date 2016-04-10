@@ -13,6 +13,7 @@ permalink: an-easy-way-to-stub-nsurlsession
 定稿=numbbbbb
 
 <!--此处开始正文-->
+
 如果你经常看我的博客，那应该知道，我在调试时最喜欢的方法是模拟 `NSURLSession` 返回的数据。
 
 那么我们到底要做什么呢？其实就是模拟方法的回调数据。而这里的 `NSURLSession` 指的是伪造 web API 的响应。这样做有一些好处，例如：

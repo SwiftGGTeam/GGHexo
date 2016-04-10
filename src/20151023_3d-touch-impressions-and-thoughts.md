@@ -12,6 +12,8 @@ permalink: 3d-touch-impressions-and-thoughts
 校对=pmst
 定稿=千叶知风
 
+<!--此处开始正文-->
+
 Hey，现在有了支持3D Touch的iPhone和iOS9，这是一项伟大的科技杰作。让我们看看这为开发者和用户都带来了什么呢。本文主要是我对3D Touch的理解，然后列举了一些需要注意的点。
 
 <!--more-->

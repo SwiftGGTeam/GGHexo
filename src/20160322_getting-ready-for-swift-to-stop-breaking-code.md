@@ -15,6 +15,8 @@ description:
 校对=numbbbbb
 定稿=shanks
 
+<!--此处开始正文-->
+
 当我们提到代码崩坏（code breaking）时，一般是指下面这两种情况。
 
 1. 语音语义发生了变化。这时你需要重构代码，典型例子就是 Swift 从 `(..., $NSError) -> Result?` 格式改为错误抛出。

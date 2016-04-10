@@ -17,11 +17,9 @@ description: 在 swift build 中 运行命令 swift build --init 就能创建 Sw
 
 <!--此处开始正文-->
 
-
 去年 11 月，我在 Swift 的 [JIRA](https://www.atlassian.com/software/jira) 中创建了一个 SwiftPM 的改进建议：[SR-353](https://bugs.swift.org/browse/SR-353)，在 `swift build` 中，添加一个类似于 `npm init` 的包初始化命令，用来创建 `Swift` 包需要的所有目录和文件。这个提议创建之后不久，[Bastian Rinsche](https://twitter.com/Memorion) 和 [Tobias Landsberg](https://github.com/tlandsberg) 就实现了这个特性，而且 [PR](https://github.com/apple/swift-package-manager/pull/117) 被合并。Bastian 还写了一篇非常棒的[文章](http://blog.bastianrinsche.de/2016/01/31/contributing-to-swift/)介绍他对于 Swift 开源的一些认识，并且介绍了他们实现的`swift build --init`命令。
 
 <!--more-->
-
 
 让我们看看具体应该怎么做。首先，使用 `mkdir` 创建一个新的目录，用来放置你的包或者应用。这里我们使用 `helloworld` 作为例子：`mkdir helloworld`。然后，使用 `cd` 命令进入 `helloworld` 目录，运行命令：`swift build --init`。
 

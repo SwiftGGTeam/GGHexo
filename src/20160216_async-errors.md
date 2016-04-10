@@ -15,6 +15,7 @@ description: 介绍了如何使用Promise来处理Swift中的异步错误，同�
 校对=小锅
 定稿=numbbbbb
 
+<!--此处开始正文-->
 
 在之前的一篇文章中，我介绍了如何在[Swift中使用`throw`做错误处理](http://alisoftware.github.io/2015/12/17/let-it-throw/)。但是如果你处理的是异步流程，`throw` 就无法胜任，该怎么办？
 

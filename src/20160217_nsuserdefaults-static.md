@@ -18,6 +18,7 @@ description: 在Swift中怎么使用静态类型的NSUserDefaults呢，下面本
 <!--此处开始正文-->
 
 一年前，在 Swift 推出不久后，我观察到许多 iOS 开发者仍然以 Objective-C 的开发习惯来写 Swift。而在我眼中，Swift 是一门全新的语言，有别于 Objective-C 的语法、设计哲学乃至发展潜力，因此我们更应探索出一条属于 Swift 独有风格的发展道路。我在之前的文章 [Swifty methods](http://radex.io/swift/methods) 中已经探讨过在 Swift 中如何清晰、明确地对方法进行命名，随后我开始连载 *Swifty API* 系列文章，同时将这一想法付诸实践，探索如何设计更加简单易用的接口 API。
+
 <!--more-->
 
 在该系列（*Swifty API*）第一篇[文章](http://radex.io/swift/nsuserdefaults/)中，我们对 `NSUserDefaults` API 进行了改造：

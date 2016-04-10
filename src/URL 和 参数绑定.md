@@ -13,6 +13,7 @@ permalink: urls-and-pattern-matching
 定稿=shanks
 发布时间=2015-09-15T19:50:00
 
+<!--此处开始正文-->
 
 今天的目标是用代码处理链接 `http://mywebsite.org/customers/:cid/orders/:oid`，从中提取出订单号（#oid）和顾客 ID（#cid） 。  
 

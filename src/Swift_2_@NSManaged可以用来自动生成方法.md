@@ -13,6 +13,8 @@ permalink: swift-2-nsmanaged-for-methods
 定稿=shanks
 发布时间=2015-09-14T19:50:00
 
+<!--此处开始正文-->
+
 > Xcode 7 beta 5 中的 Swift 2 拥有另外一个特性：当使用一对多关系时我们可以用 `@NSManaged` 来声明自动生成方法。
 
 这个技巧非常有用。假设你有一个 `Library` 和多个 `Book` 实体对象。且 `Library` 和 `books` 是一对多的关系。那么使用最新的 Xcode 和 `@NSManaged` 就可以在 `Library` 实体对象内（手动）声明自动生成方法。

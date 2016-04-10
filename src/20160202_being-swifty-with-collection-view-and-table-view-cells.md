@@ -19,6 +19,7 @@ description: 想知道Swift化tableView和collectionView是什么样子的吗，
 <!--此处开始正文-->
 
 这是一个常见的场景：你有一个 tableView 或者一个 collectionView，并且里面含有大量不同种类的内容。你想做到基于不同种类的内容而展示不一样的 `cell` ，而且这些 `cell` 都混合在同一个部件里（原谅我站在艺术的角度去设计），它看起来就如下图所示：
+
 <!--more-->
 
 ![](/img/articles/being-swifty-with-collection-view-and-table-view-cells/53092553e2ff9f43.png1454341216.473366) 

@@ -12,6 +12,7 @@ permalink: swift-generics
 校对=numbbbbb
 定稿=shanks
 
+<!--此处开始正文-->
 
 `Objective-C`缺乏一个重要特性:不支持**泛型**。幸运地是，`Swift`拥有这一特性。**泛型**允许你声明的函数、类以及结构体支持不同的数据类型。
 

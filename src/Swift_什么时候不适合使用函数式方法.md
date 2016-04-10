@@ -12,6 +12,8 @@ permalink: swift_when_the_functional_approach_is_not_right
 校对=numbbbbb
 定稿=numbbbbb
 
+<!--此处开始正文-->
+
 昨天，我在代码库中找到一段我所认为的极具 Swift 风格的代码。
 
 ```swift

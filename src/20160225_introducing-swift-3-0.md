@@ -31,6 +31,7 @@ cd swift-build
 git clone https://github.com/apple/swift.git 
 ./swift/utils/update-checkout --clone
 ```
+
 <!--more-->
 
 `Swift` 仓库中的 `update-checkout` 脚本能够帮你克隆编译 Swift 源代码所需的所有仓库内容，并将其打包成 `.tar.gz` 压缩文件。

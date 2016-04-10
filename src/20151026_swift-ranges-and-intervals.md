@@ -14,7 +14,6 @@ permalink: swift-ranges-and-intervals
 
 <!--此处开始正文-->
 
-
 本系列其它文章：
 
 (1)[自定义模式匹配](http://oleb.net/blog/2015/09/swift-pattern-matching/)

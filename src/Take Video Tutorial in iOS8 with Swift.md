@@ -12,6 +12,8 @@ permalink: take_video_tutorial_in_ios8_with_swift
 校对=numbbbbb
 定稿=shanks
 
+<!--此处开始正文-->
+
 苹果公司提供了`UIimagePickerController`-这是一个使用 iOS 设备内置的摄像头来拍摄视频的可视化界面。在此教程中，我们将拍摄一段保存到手机相册的视频。教程运行在 iOS 8.4 和 Xcode 6.4 下。
 
 打开 Xcode 并创建一个`new Single View Application`,项目名称为`IOS8SwiftTakeVideoPlayerTutorial`，接着填上你的`Organization Name`和`Organization Identifier`，选择 Swift 语言，在设备一栏只选择 iPhone。

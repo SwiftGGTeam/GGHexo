@@ -22,6 +22,7 @@ description: 在Swift中怎么正确使用swift guard语句呢，本文就来详
 因此，学习和理解如何正确使用 `guard` 表达式非常重要。`guard` 有它适用的场景，但是这并不意味着要将所有的 `if..else` 和 `if let` 语句都替换成 `guard` 语句。虽然 `guard` 语句很棒，但是很容易被滥用，并不是所有的代码结构中都适合使用 `guard` 语句。
 
 下面是 `guard` 语句的使用原则。
+
 <!--more-->
 
 ## 可以用 `guard`：在验证入口条件时

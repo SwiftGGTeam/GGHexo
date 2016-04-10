@@ -18,6 +18,7 @@ description: 在Swift开发中我们应该为Swift Packages命名，提供namesp
 <!--此处开始正文-->
 
 于是乎，在整理我大量 Swift 代码中的一小部分时，我决定利用一下 Swift Package Manager 的优势，将其中的一下推到 GitHub 上。这些都是[我](https://github.com/erica/SwiftUtility)！[做](https://github.com/erica/SwiftCollections)！[的](https://github.com/erica/SwiftString)！
+
 <!--more-->
 
 在此之后，我突然意识到我的命名太糟糕了。我本应该用一种更加符合逻辑、可读性好的方式去命名。

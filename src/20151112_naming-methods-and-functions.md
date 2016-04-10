@@ -12,6 +12,8 @@ permalink: naming-methods-and-functions
 校对=numbbbbb
 定稿=numbbbbb
 
+<!--此处开始正文-->
+
 请各位随意批判。同时请看[这里](https://realm.io/news/swift-summit-swifty-methods-clarity-brevity/)和[这里](http://radex.io/swift/methods/)。
 
 **简单明了**。根据上下文给动词和介词加上名词。请使用`removeObject(object, atIndex: index)`，而不是`remove(object, at: index)`。不要为了过度的简洁而影响清晰准确性。

@@ -12,6 +12,8 @@ permalink: generic-tableviewcells
 校对=小锅
 定稿=numbbbbb
 
+<!--此处开始正文-->
+
 各位新年快乐🎇🎉🎊🎆! 2016 年第一篇博客我想分享一个非常有用的技巧，那就是向大家展示 Swift 泛型的强大，以及方便地使用泛型来处理 `UITableViewCells` 和 `UICollectionViewCells`。
 
 <!--此处开始正文-->

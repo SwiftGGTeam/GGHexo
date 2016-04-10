@@ -15,6 +15,7 @@ permalink: implementing-printing-versions-of-try-and-try-on-steroids-in-swiftlan
 <!--此处开始正文-->
 
 Swift 2 中的`try?`运算符在可选类型(optionals)和错误处理机制中抛出 error 转换为输出 nil 结果值之间建立了桥接。这样你就可以使用 guard 语句和条件绑定，只关注处理成功的用例(case)。
+
 <!--more-->
 
 ```swift

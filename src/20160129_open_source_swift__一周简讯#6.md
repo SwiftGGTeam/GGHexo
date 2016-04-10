@@ -13,6 +13,8 @@ permalink: open-source-swift-weekly-6
 定稿=numbbbbb
 发布时间=2016-01-29T14:00:00
 
+<!--此处开始正文-->
+
 自 Apple 宣布 Swift 开源已过去一个月，我仍然在坚持探索新事物，乐此不疲，见证着 Swift 的成长与蜕变。欢迎来到新一期的每周开源简讯 #6！
 
 ### Commits 和 Pull requests

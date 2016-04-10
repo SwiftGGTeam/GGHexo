@@ -12,6 +12,8 @@ permalink: friday-qa-2015-06-19-the-best-of-whats-new-in-swift
 校对=numbbbbb
 定稿=shanks
 
+<!--此处开始正文-->
+
 苹果公司在今年的 WWDC 大会上发布了 Swift 2 以及相关的新特性，相比之下其他的内容就无聊多了。除了宣布 Swift 将会开源并且这门语言由苹果独立开发完成之外，Swift 2 还包含很多新的特性，这将大幅改善这门语言。今天我将介绍最重要的几个新特性。
 
 <!--more-->
