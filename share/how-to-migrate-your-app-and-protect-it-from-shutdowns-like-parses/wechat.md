@@ -1,6 +1,6 @@
 如何从 Parse 手中拯救你的应用"
 
-> 作者：Reinder de Vries，[原文链接](http://jamesonquave.com/blog/how-to-migrate-your-app-and-protect-it-from-shutdowns-like-parses/)，原文日期：2016/01/09
+> 作者：Reinder de Vries，[原文链接](http://jamesonquave.com/blog/how-to-migrate-your-app-and-protect-it-from-shutdowns-like-parses/)，原文日期：2016-01-09
 > 译者：[pucca601](http://weibo.com/601pucca)；校对：[靛青K](http://blog.dianqk.org/)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 

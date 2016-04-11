@@ -12,7 +12,6 @@ Swift 2.1 函数类型转换：协变与逆变"
 
 
 
-
 > 这篇 Swift 2.1 相关的文章需要使用 Xcode 7.1 beta 或者更新的版本， 你可以通过 [GitHub](https://github.com/uraimo/Swift-Playgrounds) 或者是 [zip 文件](https://www.uraimo.com/2015/09/29/Swift2.1-Function-Types-Conversion-Covariance-Contravariance/) 来获取相关 playground 文件。
 
 在即将和 Xcode 7.1 一起到来的 Swift 2.1 中（译者注：原文发表于 2015 年 9 月=，=），函数类型将支持协变与逆变。让我们看看这意味着什么。 

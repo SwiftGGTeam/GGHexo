@@ -1,27 +1,22 @@
-title: "I 💖 Storyboards & Nibs"
-date: 2016-04-11
-tags: [Swift 入门]
-categories: [Natasha the Robot]
-permalink: i-heart-storyboards-nibs
-keywords: storyboards,nibs
-custom_title: 
-description: Interface Builder 真的很好用为啥很多人不喜呢，下面来说说我为啥爱 Storyboards 和 Nibs 吧。
+I 💖 Storyboards & Nibs"
 
----
-原文链接=https://www.natashatherobot.com/i-heart-storyboards-nibs/
-作者=Natasha
-原文日期=2016/03/27
-译者=saitjr
-校对=小锅
-定稿=千叶知风
+> 作者：Natasha，[原文链接](https://www.natashatherobot.com/i-heart-storyboards-nibs/)，原文日期：2016/03/27
+> 译者：[saitjr](http://www.saitjr.com)；校对：[小锅](http://www.swiftyper.com)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+  
 
-<!--此处开始正文-->
+
+
+
+
+
+
+
 
 [@helenvholmes](https://twitter.com/helenvholmes) 在 [@tryswiftconf](https://twitter.com/tryswiftconf) 中谈到了一个我很感兴趣的话题（其实每个话题我都很感兴趣）—— 设计师怎样入门开发。当然从 Storyboard 入手是显而易见的。但这一见解却在开发者之间引起了很大的争议。
 
 事实上，我并没有参与整个争论的过程。Interface Builder 存在一些弊端吗？当然，但是以我的经验来看，利还是远大于弊的。而且这并不止关系到设计师怎样入门，而是所有人应该怎么入门。Interface Builder 可以使我们整个项目代码更易懂。
 
-<!--more-->
+
 
 在开发者拿到别人的项目时，从 Storyboard 开始梳理每个 ViewController 的关系是相当清晰的。
 
@@ -47,7 +42,7 @@ description: Interface Builder 真的很好用为啥很多人不喜呢，下面�
 
 由于我喜欢尽可能的对 view 进行复用，所以我的 Storyboard 一般是这样的：
 
-![](/img/articles/i-heart-storyboards-nibs/Screen-Shot-2016-03-27-at-2.20.11-PM-1024x346.png1460334616.8747678)
+![](http://swift.gg/img/articles/i-heart-storyboards-nibs/Screen-Shot-2016-03-27-at-2.20.11-PM-1024x346.png1460334616.8747678)
 
 即使保留着大量的使用 Nib （或者是纯代码）构造的 view 都是 ok 的。这样看起来很空旷的 Storyboard，对我来说也相当有用，它依然清晰的描述了界面的结构，我也能方便的查看 ViewController 内部细节。
 
@@ -64,3 +59,4 @@ description: Interface Builder 真的很好用为啥很多人不喜呢，下面�
 ## 最后
 
 作为一名 iOS 开发者，我真的很喜欢 Interface Builder，真是不理解为什么有些开发者这么反感它。当然，如果你没有正确的使用它，那我无话可说。只要你模块化的管理 IB 文件，并保持简洁，那么无论谁在中途参与到项目中来，程序的可读性都没有问题。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

@@ -1,6 +1,6 @@
 playground 页面排序和共享"
 
-> 作者：Erica Sadun，[原文链接](http://ericasadun.com/2016/01/04/sorting-and-sharing-playground-pages/)，原文日期：2016/01/04
+> 作者：Erica Sadun，[原文链接](http://ericasadun.com/2016/01/04/sorting-and-sharing-playground-pages/)，原文日期：2016-01-04
 > 译者：[littledogboy](undefined)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 

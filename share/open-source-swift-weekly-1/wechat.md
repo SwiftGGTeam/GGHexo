@@ -1,6 +1,6 @@
 聚焦 Swift #1"
 
-> 作者：Jesse Squires，[原文链接](http://www.jessesquires.com/open-source-swift-weekly-1/)，原文日期：2015.12.10
+> 作者：Jesse Squires，[原文链接](http://www.jessesquires.com/open-source-swift-weekly-1/)，原文日期：2015-12-10
 > 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
