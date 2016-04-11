@@ -1,7 +1,7 @@
 title: "I 💖 Storyboards & Nibs"
 date: 2016-04-11
 tags: [Swift 入门]
-categories: [Natasha the Robot]
+categories: [Natasha The Robot]
 permalink: i-heart-storyboards-nibs
 keywords: storyboards,nibs
 custom_title: 
