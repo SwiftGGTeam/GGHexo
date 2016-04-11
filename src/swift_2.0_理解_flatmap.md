@@ -7,7 +7,7 @@ permalink: swift-2-flatmap
 ---
 原文链接=http://natashatherobot.com/swift-2-flatmap/
 作者=Natasha
-原文日期=2015/07/26
+原文日期=2015-07-26
 译者=SergioChan
 校对=numbbbbb
 定稿=numbbbbb

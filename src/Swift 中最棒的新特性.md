@@ -7,7 +7,7 @@ permalink: friday-qa-2015-06-19-the-best-of-whats-new-in-swift
 ---
 原文链接=https://www.mikeash.com/pyblog/friday-qa-2015-06-19-the-best-of-whats-new-in-swift.html
 作者=Mike Ash
-原文日期=2015/06/19
+原文日期=2015-06-19
 译者=Yake
 校对=numbbbbb
 定稿=shanks

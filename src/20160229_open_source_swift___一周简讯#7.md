@@ -10,7 +10,7 @@ description:
 ---
 原文链接=http://swiftweekly.github.io/issue-7/
 作者=Jesse Squires
-原文日期=2016/01/28
+原文日期=2016-01-28
 译者=pmst
 校对=numbbbbb
 定稿=numbbbbb

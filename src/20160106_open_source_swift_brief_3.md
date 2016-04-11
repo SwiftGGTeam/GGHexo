@@ -7,7 +7,7 @@ permalink: open-source-swift-weekly-3
 ---
 原文链接=http://www.jessesquires.com/open-source-swift-weekly-3/
 作者=Jesse Squires
-原文日期=2015.12.24
+原文日期=2015-12-24
 译者=小锅
 校对=numbbbbb
 定稿=numbbbbb

@@ -7,7 +7,7 @@ permalink: optional-throw-swift
 ---
 原文链接=http://appventure.me/2015/08/25/optional-throw-swift/
 作者=Benedikt Terhechte
-原文日期=2015/08/25
+原文日期=2015-08-25
 译者=lfb_CD
 校对=小锅
 定稿=shanks

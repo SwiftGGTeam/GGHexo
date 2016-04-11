@@ -7,7 +7,7 @@ permalink: swift-open-source
 ---
 原文链接=http://www.jessesquires.com/swift-open-source/
 作者=Jesse Squires
-原文日期=2015/12/06
+原文日期=2015-12-06
 译者=pmst
 校对=numbbbbb
 定稿=numbbbbb

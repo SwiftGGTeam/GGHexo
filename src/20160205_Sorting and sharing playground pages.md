@@ -10,7 +10,7 @@ description: 想知道在Swift中playground页面怎么排序和共享么，相�
 ---
 原文链接=http://ericasadun.com/2016/01/04/sorting-and-sharing-playground-pages/
 作者=Erica Sadun
-原文日期=2016/01/04
+原文日期=2016-01-04
 译者=littledogboy
 校对=千叶知风
 定稿=numbbbbb

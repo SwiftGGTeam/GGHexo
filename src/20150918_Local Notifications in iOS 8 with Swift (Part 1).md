@@ -7,7 +7,7 @@ permalink: local-notifications-in-ios-8-with-swift-part-1
 ---
 原文链接=http://jamesonquave.com/blog/local-notifications-in-ios-8-with-swift-part-1/
 作者=Jason Newell
-原文日期=2015/03/04
+原文日期=2015-03-04
 译者=小铁匠Linus
 校对=shanks
 定稿=numbbbbb
