@@ -22,13 +22,13 @@ description: 怎么在 iOS9 里面预览到特定的 UITableViewCell 视图呢�
 <!--more-->
 
 <center>
-![1.gif](http://swiftgg-main.b0.upaiyun.com/img/peek-pop-view-inside-tableviewcell-1.gif)
+![1.gif](/img/articles/peek-pop-view-inside-tableviewcell/peek-pop-view-inside-tableviewcell-1.gif1460423718.616977)
 </center>
 
 然而，在 Q&A 模块中遇到了一些问题。我希望在 cell 中特定的视图上——**演讲者的图片**——来使用 peek & pop，而不是像其他模块那样，在整个 cell 上使用。
 
 <center>
-![2.gif](http://swiftgg-main.b0.upaiyun.com/img/peek-pop-view-inside-tableviewcell-2.gif)
+![2.gif](/img/articles/peek-pop-view-inside-tableviewcell/peek-pop-view-inside-tableviewcell-2.gif1460423720.6322474)
 </center>
 
 因为这个花费了很长时间才解决，所以我想把它记录下来。（在阅读本文之前，请先阅读[Peek & Pop Spirit Guide](http://krakendev.io/peek-pop/)）
@@ -201,7 +201,7 @@ extension QASessionsTableViewController: UIViewControllerPreviewingDelegate {
 下面是效果图——请注意，选中的图片之外的内容才会变得模糊！
 
 <center>
-![3.gif](http://swiftgg-main.b0.upaiyun.com/img/peek-pop-view-inside-tableviewcell-3.gif)
+![3.gif](/img/articles/peek-pop-view-inside-tableviewcell/peek-pop-view-inside-tableviewcell-3.gif1460423774.5112977)
 </center>
 
 ## 结论
@@ -209,5 +209,5 @@ extension QASessionsTableViewController: UIViewControllerPreviewingDelegate {
 所以在某个特定的视图上使用 3D Touch 功能并非难事！一般来说，实现 3D Touch 非常简单和有趣。我强烈推荐您在 app 中添加 3D Touch 的功能。
 
 <center>
-![peak and pop all the things](https://www.natashatherobot.com/wp-content/uploads/peekpop.jpg)
+![peak and pop all the things](/img/articles/peek-pop-view-inside-tableviewcell/peekpop.jpg1460423776.2347734)
 </center>
