@@ -1,4 +1,4 @@
-title: "对比 `attempt`、try? 和 try!"
+title: "对比 attempt、try? 和 try!"
 date: 2016-04-15
 tags: [Swift 进阶]
 categories: [Erica Sadun]
