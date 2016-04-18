@@ -1,4 +1,4 @@
-对比 `attempt`、try? 和 try!"
+对比 attempt、try? 和 try!"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2016/03/15/swift-my-attempt-code-vs-try-and-try/)，原文日期：2016-03-15
 > 译者：[星夜暮晨](http://www.jianshu.com/users/ef1058d2d851)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[CMB](https://github.com/chenmingbiao)
