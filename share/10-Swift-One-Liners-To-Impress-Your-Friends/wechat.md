@@ -185,7 +185,7 @@ Swift 还不具备这样的特性，但我们可以用 GCD 实现：
 
 <http://moreindirection.blogspot.it/2015/07/gcd-and-parallel-collections-in-swift.html>
 
-### #10 埃拉托色尼选筛法
+## #10 埃拉托色尼选筛法
 
 古老而优秀的埃拉托色尼选筛法被用于找到所有小于给定的上限 n 的质数。
 
