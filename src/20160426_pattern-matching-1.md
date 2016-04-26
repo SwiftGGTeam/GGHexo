@@ -36,10 +36,10 @@ enum Direction {
 extension Direction: CustomStringConvertible {
   var description: String {
     switch self {
-    case North: return "⬆️"
-    case South: return "⬇️"
-    case East: return "➡️"
-    case West: return "⬅️"
+    case North: return "↑"
+    case South: return "↓"
+    case East:  return "→"
+    case West:  return "←"
     }
   }
 }
@@ -128,7 +128,7 @@ book.checkAuthor("Jules Verne")
 extension Media {
   var mediaTitle2: String {
     switch self {
-      // 错误: 'case' 标签中绑定多种模式是不能声明变量的
+      // 错误: 'case' 标签中含多种模式，变量是不能被声明的
     case let .Book(title: aTitle, author: _, year: _), let .Movie(title: aTitle, director: _, year: _):
       return aTitle
     case let .WebSite(url: _, title: aTitle):
