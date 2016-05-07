@@ -29,7 +29,7 @@ description: GCD 是一个具备底层特性的框架，在 Swift 中使用可�
 
 这种模式的代码如下所示：
 
-```Swift
+```
 let defaultPriority = DISPATCH_QUEUE_PRIORITY_DEFAULT
 let backgroundQueue = dispatch_get_global_queue(defaultPriority, 0)
 dispatch_async(backgroundQueue, {
@@ -48,7 +48,7 @@ dispatch_async(backgroundQueue, {
 
 `dispatch_once` 这个 API 可以用来创建单例。不过这种方式在 Swift 中已不再重要，Swift 有更简单的方法来创建单例。我这里就只贴 OC 的实现：
 
-```Swift
+```
 + (instancetype) sharedInstance {  
 	static dispatch_once_t onceToken;  
 	static id sharedInstance;  
@@ -57,8 +57,7 @@ dispatch_async(backgroundQueue, {
 	});  
 	return sharedInstance;  
 }
-
-``` 
+```
 
 ## 摊平 completion block
 
@@ -66,7 +65,7 @@ dispatch_async(backgroundQueue, {
 
 如果你想同步执行一个异步 API，那你可以使用信号量，但是你不能修改它。
 
-```Swift
+```
 // 在后台队列
 dispatch_semaphore_t semaphore = dispatch_semaphore_create(0)
 doSomeExpensiveWorkAsynchronously(completionBlock: {
@@ -82,7 +81,7 @@ dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
 
 为什么在已有 completion block 的情况下还要摊平代码？因为方便呀，我能想到的一种场景是串行执行一组异步程序（即只有前一个任务执行完成，才会继续执行下一个任务）。下面把上述想法简单地抽象成一个 `AsyncSerialWorker` 类：
 
-```Swift
+```
 typealias DoneBlock = () -> ()
 typealias WorkBlock = (DoneBlock) -> ()
 
@@ -105,7 +104,7 @@ class AsyncSerialWorker {
 
 > 译者注：既然已经使用了 DISPATCH_QUEUE_SERIAL，那么队列中 work 的执行顺序不应该是先进先出的吗？确实是这样，但如果我们把 work 看成是一个耗时的网络操作，其内部是提交到其他线程并发去执行（`dispatch_async`），也就是每次执行到 work 就立刻返回了，即使最终结果可能还未返回。那么我们想要保证队列中的 work 等到前一个 work 执行返回结果后才执行，就需要 `semaphore`。说了这么多还是举个例子吧，打开 Playground：
 
-```Swift
+```
 import UIKit
 import XCPlayground
 
@@ -149,7 +148,7 @@ XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
 
 在上面的例子中，信号量被用作一个简单的标志，但它也可以当成一个有限资源的计数器。如果你想针对某些特定的资源限制连接数，可以这样做：
 
-```Swift
+```
 class LimitedWorker {
     private let concurrentQueue = dispatch_queue_create("com.khanlou.concurrent.queue", DISPATCH_QUEUE_CONCURRENT)
     private let semaphore: dispatch_semaphore_t
@@ -180,7 +179,7 @@ class LimitedWorker {
 
 如果你有许多 blocks 任务要去执行，你需要在它们全部完成时得到通知，那可以使用 group。`dispatch_group_async` 允许你在队列中添加任务（这些任务应该是同步执行的），而且你会追踪有多少被添加的任务。注意：同一个 `dispatch group` 能够添加不同队列上的任务，并且能保持对所有组内任务的追踪。当所有被追踪的任务完成时，一个传递给 `dispatch_group_notify` 的 `block` 会被触发执行，有点类似于 `completion block`
 
-```swift
+```
 dispatch_group_t group = dispatch_group_create()
 for item in someArray {
 	dispatch_group_async(group, backgroundQueue, {
@@ -196,7 +195,7 @@ dispatch_group_notify(group, dispatch_get_main_queue(), {
 
 下面这个例子更加详细地展示了 dispatch group 的用法，如果你的任务已经是异步，可以这样使用：
 
-```Swift
+```
 // 必须在后台队列使用
 dispatch_group_t group = dispatch_group_create()
 for item in someArray {
@@ -227,7 +226,7 @@ Swift 中的字典（和数组）都是值类型，当它们被修改时，它�
 
 > 标识映射（Identity Map）模式将所有已加载对象放在一个映射中，确保所有对象只被加载一次，并且在引用这些对象时使用该映射来查找对象。在处理数据并发访问时，需要一种策略让多个用户共同操作同一个业务实体，这个很重要。同样重要的是，单个用户在一个长运行事务或复杂事务中始终使用业务实体的一致版本。标识映射模式会为事务中使用所有的业务对象保存一个版本，如果一个实体被请求两次，会得到同一个实体。
 
-```Swift
+```
 class IdentityMap<T: Identifiable> {
 	var dictionary = Dictionary<String, T>()
 	
@@ -252,7 +251,7 @@ class IdentityMap<T: Identifiable> {
 
 理想的情况是，读操作并发执行，写操作异步执行并且必须确保没有其他操作同时执行。GCD 的 `barrier` 集合 API 提供了解决方案：它们会在队列中的任务清空后执行 block。使用 `barrier` API 可以限制我们对字典对象的写入，并且确保我们不会在同一时刻执行多个写操作，或者在执行写操作同时执行读操作。
 
-```Swift
+```
 class IdentityMap<T: Identifiable> {
 	var dictionary = Dictionary<String, T>()
 	let accessQueue = dispatch_queue_create("com.khanlou.isolation.queue", DISPATCH_QUEUE_CONCURRENT)
