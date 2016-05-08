@@ -1,7 +1,7 @@
 title: "使用 Quick Look Framework 快速预览文档"
 date: 2016-04-29
 tags: [Swift 进阶]
-categories: [APPCODA]
+categories: [AppCoda]
 permalink: quick-look-framework
 keywords: quicklook框架,quicklook.framework
 custom_title: 
