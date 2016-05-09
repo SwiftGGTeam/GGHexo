@@ -1,4 +1,4 @@
-title: "在 Swift3.0 中自动默认的 Objc APIs 实参"
+title: "Swift 3.0 的自动默认（auto-defaulting）实参"
 date: 2016-05-09
 tags: [Swift]
 categories: [Erica Sadun]
