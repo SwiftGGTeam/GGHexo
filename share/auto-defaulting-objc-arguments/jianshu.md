@@ -1,4 +1,4 @@
-在 Swift3.0 中自动默认的 Objc APIs 实参"
+Swift 3.0 的自动默认（auto-defaulting）实参"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2016/04/11/auto-defaulting-objc-arguments/)，原文日期：2016-04-11
 > 译者：[CMB](https://github.com/chenmingbiao)；校对：[shanks](http://codebuild.me/)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
