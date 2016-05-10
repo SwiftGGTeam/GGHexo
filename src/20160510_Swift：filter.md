@@ -17,8 +17,6 @@ description: 在 Swift 中怎么使用 filter 和 map 来操作数组呢，看�
 
 <!--此处开始正文-->
 
-# Swift 中的过滤器
-
 Swift 提供了很多方便的函数来操作数组，比如 `filter` 和 `map`。在这篇文章里，我将带大家熟悉一下 filter，以及学习如何使用 map 来组合出新的数组。
 
 <!--more-->
