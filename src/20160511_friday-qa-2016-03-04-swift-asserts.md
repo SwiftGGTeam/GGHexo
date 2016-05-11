@@ -8,7 +8,7 @@ custom_title:
 description: 在 Swift 里面怎么实现断言调用呢，下面就来说 Swift 中断言机制的实现细节。
 
 ---
-原文链接=https://www.mikeash.com/pyblog/friday-qa-2016-03-04-swift-asserts
+原文链接=https://www.mikeash.com/pyblog/friday-qa-2016-03-04-swift-asserts.html
 作者=Mike Ash
 原文日期=2016-03-04
 译者=zltunes
