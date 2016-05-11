@@ -1,6 +1,6 @@
 title: "Swift 3.0 的自动默认（auto-defaulting）实参"
 date: 2016-05-09
-tags: [Swift]
+tags: [Swift 3.0]
 categories: [Erica Sadun]
 permalink: auto-defaulting-objc-arguments
 keywords: swift3.0教程,swift objc
