@@ -1,0 +1,109 @@
+每周 Swift 社区问答：@NSCopying"
+
+
+今天我们来介绍一下`@NSCopying`。
+
+
+## `copy`关键字和`NSCopying`协议
+在介绍`@NSCopying`之前，我们首先来回顾一下 Objective-C 中与之相关一些知识点。首先是`copy`关键字。相信大家在初学 Objective-C 时， 会去理解`copy`，`retain`，`assign`等常用到的关键字。这几个关键字对应着赋值时候内存分配，理解起来也比较简单。[这篇文章](http://www.cnblogs.com/pengyingh/articles/2375080.html)讲的比较详细，这里只说说`copy`关键字的作用。
+
+`copy`关键字的作用，基本就是字面意思：生成新的对象，并且对内容进行拷贝。举一个`NSString` 的例子：
+
+    //声明copy属性的
+    @property (nonatomic, copy) NSString *copyedString;
+    
+    //使用可变字符串对copyedString进行赋值
+    NSMutableString *string = [NSMutableString stringWithFormat:@"test"];
+    self.copyedMString = string;
+    NSLog(@"origin string: %p, %p", string, &string);
+    NSLog(@"copyed string: %p, %p", _copyedString, &_copyedString);
+
+输出结果：
+
+    strong string: 0x7fddc060b460, 0x7fddc0698600
+    copy string: 0xa000000747365744, 0x7fddc0698608
+
+可以看到，赋值以后的`copyedString`已经是一个与`string`不相关的字符串。这就是所谓的`深拷贝`，地址和内容都赋值了一份。实际应用中，我们还会用到`strong`这个关键字，关于`copy`和`strong`的区别和联系。可以阅读文章最后的参考资料和 stackoverflow 相关问题展开阅读。
+
+实际上，使用`copy`关键字修饰的类必须遵循`NSCopying`协议才能在赋值时候进行`深拷贝`或者`浅拷贝`（是`深拷贝`还是`浅拷贝`取决于该协议的实现方法`- (id)copyWithZone:(NSZone *)zone`）。[IOS开发之深拷贝与浅拷贝(mutableCopy与Copy)详解](http://www.cnblogs.com/gaoxiao228/archive/2012/04/21/2462561.html)说到了如何理解和实现`深拷贝`和`浅拷贝`。
+
+
+
+## `@NSCopying`
+
+Swift 中的`@NSCopying`和 Objective-C 中的`copy`关键字类似。`@NSCopying`修饰的属性必须是遵循`NSCopying`协议的，而在 Swift 中， `NSCopying`协议被限制给类使用。由于 Swift 中的 String 类型已经是值类型了。所以 String 不能通过扩展遵循`NSCopying`协议。值类型的赋值，只可能是值的拷贝，当然，结构体里面有对象类型，就另当别论了。
+
+以下是一个使用`@NSCopying`的案例：
+
+    class Foo : NSObject, NSCopying {
+        var bar = "bar"
+        var baz = 1
+        func copyWithZone(zone: NSZone) -> AnyObject {
+            let copy = Foo()
+            print("copyed")
+            copy.bar = bar
+            copy.baz = baz
+            return copy
+        }
+    }
+    
+    class Test : NSObject {
+        @NSCopying private(set) var foo : Foo
+        init(foo : Foo) {
+            self.foo = foo
+            super.init()
+        }
+    }
+    
+    var initialFoo = Foo()
+    initialFoo.bar = "initial"
+    initialFoo.baz = 0
+    
+    let test = Test(foo: initialFoo)
+    test.foo.bar // "initial"
+    test.foo.baz // 0
+    
+    var readFoo = Foo()
+    readFoo.bar = "new"
+    readFoo.baz = 0
+    
+    
+    
+    test.foo = readFoo // 调用copyWithZone返回一个新的对象
+    
+    initialFoo === readFoo // 2个对象不一样了
+    
+    //readFoo变化了，但是test.foo没有变
+    readFoo.bar = "changed"
+    readFoo.baz = 100
+    
+    test.foo.bar // "new"
+    test.foo.baz // 0
+大部分情况下，`@NSCopying`在 Swift 中的使用场景都是放在调用 Objective-C 中的类型时候使用。自定义类去遵循`NSCopying`协议，不太符合 Swift 的类型体系：请使用结构体！
+
+
+## stackoverflow 相关问题整理
+
+* [Objective-C declared @property attributes (nonatomic, copy, strong, weak)](http://stackoverflow.com/questions/9859719/objective-c-declared-property-attributes-nonatomic-copy-strong-weak)
+
+	Objective-C 中几个关键字nonatomic, copy, strong, weak的区别和联系。
+	
+* [How to conform to NSCopying and implement copyWithZone in Swift 2?](http://stackoverflow.com/questions/32111868/how-to-conform-to-nscopying-and-implement-copywithzone-in-swift-2)
+	如何在 Swift 2 中实现`NSCopying`协议？
+	
+* [How to do “Deep Copy” in Swift?](http://stackoverflow.com/questions/24754559/how-to-do-deep-copy-in-swift/35126740#35126740)
+  如何在 Swift 实现 `深拷贝`，楼下的回答都导向使用值类型。。
+		
+## 参考资料
+
+* [官方文档](http://wiki.jikexueyuan.com/project/swift/chapter3/06_Attributes.html)
+
+* [NSString到底是用copy还是strong?](http://www.jianshu.com/p/731bdaf5f123)
+
+* [IOS开发之深拷贝与浅拷贝(mutableCopy与Copy)详解](http://www.cnblogs.com/gaoxiao228/archive/2012/04/21/2462561.html)
+
+
+
+
+
+
