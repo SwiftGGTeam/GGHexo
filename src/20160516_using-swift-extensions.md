@@ -18,7 +18,7 @@ description: 在 Swift 中使用 Extension 可以提高代码可读性，比如�
 
 别人一看到我的 Swift 代码，立刻就会问我为什么如此频繁的使用 extension。这是前几天在我写的另一篇文章中收到的评论：
 
-![](https://www.natashatherobot.com/wp-content/uploads/Screen-Shot-2016-03-29-at-9.30.16-AM-1024x160.png)
+![](/img/articles/using-swift-extensions/Screen-Shot-2016-03-29-at-9.30.16-AM-1024x160.png1463365519.9019809)
 
 我大量使用 extension 的主要目的是为了提高代码可读性。以下是我喜欢使用 extension 的场景，尽管 extension 并非是为这些场景设计的。
 
