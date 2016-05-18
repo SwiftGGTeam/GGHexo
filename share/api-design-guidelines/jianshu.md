@@ -119,13 +119,13 @@ Swift API 设计指南"
 
 * 熟知并使用符号命令语法识别零散的条目。像 Xcode 等主流开发工具为零散的条目提供了特殊的处理，其关键词如下：
 
-<a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Attention.html">Attention</a>         | <a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Author.html">Author</a>           | <a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Authors.html">Authors</a>     | <a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Bug.html">Bug</a>            | 
+<a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Attention.html">Attention</a> | <a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Author.html">Author</a> | <a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Authors.html">Authors</a> | <a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Bug.html">Bug</a> |
 --------------------|------------------|-----------------------|--------------------|
-<center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Complexity.html">Complexity</a></b></center> |  <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Copyright.html">Copyright</a></b></center>   | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Date.html">Date</a></b></center>   | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Experiment.html">Experiment</a></b></center>|
-<center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Important.html">Important</a></b></center>       | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Invariant.html">Invariant</a></b></center>   | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Note.html">Note</a></b></center>   | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Parameter.html">Parameter</a></b></center>|
-<center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Parameters.html">Parameters</a></b></center>  | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Postcondition.html">Postcondition</a></b></center>      | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Precondition.html">Precondition</a></b></center>        | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Remark.html">Remark</a></b></center>|
-<center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Requires.html">Requires</a></b></center>      | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Returns.html">Returns</a></b></center>  | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/SeeAlso.html">SeeAlso</a></b></center>    | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Since.html">Since</a></b></center>|
-<center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Throws.html">Throws</a></b></center>           | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Todo.html">Todo</a></b></center>    | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Version.html">Version</a></b></center>  | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Warning.html">Warning</a></b></center>|
+<center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Complexity.html">Complexity</a></b></center> | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Copyright.html">Copyright</a></b></center> | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Date.html">Date</a></b></center> | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Experiment.html">Experiment</a></b></center> |
+<center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Important.html">Important</a></b></center> | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Invariant.html">Invariant</a></b></center> | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Note.html">Note</a></b></center> | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Parameter.html">Parameter</a></b></center> |
+<center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Parameters.html">Parameters</a></b></center> | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Postcondition.html">Postcondition</a></b></center> | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Precondition.html">Precondition</a></b></center> | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Remark.html">Remark</a></b></center>|
+<center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Requires.html">Requires</a></b></center> | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Returns.html">Returns</a></b></center> | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/SeeAlso.html">SeeAlso</a></b></center> | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Since.html">Since</a></b></center>|
+<center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Throws.html">Throws</a></b></center> | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Todo.html">Todo</a></b></center> | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Version.html">Version</a></b></center>  | <center><b><a href="https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/Warning.html">Warning</a></b></center>|
 
 <a name="naming"></a>
 ## 命名
@@ -268,10 +268,12 @@ Swift API 设计指南"
   - 始终给**一对可变方法和不可变方法命名**。一个可变方法通常会有一个与之对应的不可变方法，但是不可变方法会返回一个新的值而不是更新现有的实例。
     - 当操作**被一个名词描述时**，给可变方法使用`ed`或`ing`前缀来给动词添加祈使语气。
 
-   Mutating         | Nonmutating      |
---------------------|------------------|
-<code class="highlighter-rouge">x.sort()</code> | <code class="highlighter-rouge">z = x.sorted()</code>   | 
-<code class="highlighter-rouge">x.append(y)</code>       | <code class="highlighter-rouge">z = x.appending(y)</code>   | 
+
+   Mutating         | Nonmutating      
+--------------------|------------------
+<code class="highlighter-rouge">x.sort()</code> | <code class="highlighter-rouge">z = x.sorted()</code>
+<code class="highlighter-rouge">x.append(y)</code> | <code class="highlighter-rouge">z = x.appending(y)</code>    
+
 
     - 尽量使用动词过去分词来命名不可变方法（通常是添加 `ed`）:
 
@@ -297,10 +299,12 @@ Swift API 设计指南"
 
   - 当操作**被一个名词描述时**，可给不可变方法使用名词并添加`form`前缀。
 
-    Nonmutating         | Mutating      |
---------------------|------------------|
-<code class="highlighter-rouge">x = y.union(z)</code> | <code class="highlighter-rouge">y.formUnion(z)</code>   | 
-<code class="highlighter-rouge">j = c.successor(i)</code>       | <code class="highlighter-rouge">c.formSuccessor(&i)</code>   | 
+
+    Nonmutating     | Mutating      
+--------------------|---------------
+<code class="highlighter-rouge">x = y.union(z)</code> | <code class="highlighter-rouge">y.formUnion(z)</code>
+<code class="highlighter-rouge">j = c.successor(i)</code> | <code class="highlighter-rouge">c.formSuccessor(&i)</code>
+
 
 * 当使用不可变方法时，**布尔型方法和属性读起来应该像是断言**，如：`x.isEmpty`, `line1.intersects(line2)`。
 
