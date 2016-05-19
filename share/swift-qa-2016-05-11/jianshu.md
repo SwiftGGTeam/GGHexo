@@ -4,6 +4,7 @@
 今天我们来介绍一下`@NSCopying`。
 
 
+
 ## `copy`关键字和`NSCopying`协议
 在介绍`@NSCopying`之前，我们首先来回顾一下 Objective-C 中与之相关一些知识点。首先是`copy`关键字。相信大家在初学 Objective-C 时， 会去理解`copy`，`retain`，`assign`等常用到的关键字。这几个关键字对应着赋值时候内存分配，理解起来也比较简单。[这篇文章](http://www.cnblogs.com/pengyingh/articles/2375080.html)讲的比较详细，这里只说说`copy`关键字的作用。
 
