@@ -3,6 +3,9 @@ date: 2016-05-19
 tags: [iOS 开发]
 categories: [AppCoda]
 permalink: parse-server-installation
+keywords: parse服务器,parse迁移
+custom_title: 
+description: Parse 关闭导致我们需要进行数据迁移了，本文就来介绍怎么将 Parse 服务器迁移到 Heroku 或 AWS
 
 ---
 原文链接=http://www.appcoda.com/parse-server-installation/
