@@ -12,5 +12,5 @@ SwiftGG 每周都会组织内部技术分享，直播之后会放出视频和 ke
 | 第三期 | [GGShow 第三期 - 邂逅 RxSwift](http://www.bilibili.com/video/av4028321) | [keynote](https://github.com/DianQK/MeetRxSwift) |
 | 第四期 | 由于录制视频的同学硬盘被撑爆，录制失败，本期没有视频= = | [keynote](http://7pulfv.com1.z0.glb.clouddn.com/InterView%40SwiftGG.key) |
 | 第五期 | [「SwiftGG Show」第五期 - 纯函数式的解析器设计](http://www.bilibili.com/video/av4211315/) | [keynote](http://pan.baidu.com/s/1qXAwgKO) |
-
+| 第六期 | [「SwiftGG Show」第六期 - Swift Notification Center](http://www.bilibili.com/video/av4744573/) | [keynote](https://speakerdeck.com/cee/swiftgg-show-di-liu-qi-swift-notification-center-100mango) |
 如果有什么建议请写到下方评论区，谢谢。
