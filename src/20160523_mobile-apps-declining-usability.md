@@ -1,11 +1,11 @@
 title: "移动优先以及不断下降的可用性"
 date: 2016-05-23
-tags: [iOS 开发]
+tags: [移动应用设计]
 categories: [JamesonQuave.com]
 permalink: mobile-apps-declining-usability
-keywords: 
-custom_title: 
-description: 
+keywords: 移动应用设计
+custom_title: 移动优先以及不断下降的可用性
+description: 移动应用设计正在飞速发展，随着“移动优先”的思想成为所有品类设计的口号，这一切也都成了设计的一个主要指标。因此，我认为有必要先回顾并分析一下现今的应用是如何设计的。在这里，我将剖析那些我认为确实给我们带来损失，并让我们的软件更糟糕的移动应用设计趋势。
 
 ---
 原文链接=http://jamesonquave.com/blog/mobile-apps-declining-usability/
