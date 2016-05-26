@@ -51,7 +51,7 @@ description: mvvm模式 for ios的好处你可能会说出一堆来，但是我�
 
 你自己的类叫什么名字完全由你决定，选个好听的就是了！
 
-###MVVM 不改变你的架构
+### MVVM 不改变你的架构
 
 `view model` 并不能从根本上改变你的应用程序的架构。这两张图有什么不同（[原图](https://www.objc.io/issues/13-architecture/mvvm/)）？
 <center>
