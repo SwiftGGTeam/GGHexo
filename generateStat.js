@@ -5,11 +5,25 @@ import nameMap from './nameMap'
 
 let basePath = './src'
 let pageHeader = `
-# SwiftGG团队贡献榜
+# SwiftGG 团队贡献榜
 
 本页面会记录团队内所有成员的贡献，方便大家进行查看。
 
-你的付出，全世界都看得到:]。
+你的付出，全世界都看得到 :]。
+`
+let nowMonth = (new Date()).getMonth() + 1
+let nowYear = (new Date()).getFullYear()
+let monthlyWordHeader = `
+# ${nowYear} 年 ${nowMonth} 月字数排行
+
+| 译者 | 字数 |
+| :------------: | :------------: |
+`
+let monthlyArticleHeader = `
+# ${nowYear} 年 ${nowMonth} 月篇数排行
+
+| 译者 | 篇数 |
+| :------------: | :------------: |
 `
 let wordHeader = `
 # 翻译字数统计
@@ -129,7 +143,8 @@ let originInfo = new Promise(function (resolve, reject) {
   let regs = {
     translators: '译者=(.*)',
     auditors: '校对=(.*)',
-    finalmans: '定稿=(.*)'
+    finalmans: '定稿=(.*)',
+    date: '(\\d{4}-\\d{2}-\\d{2})'
   }
   let info = {}
   for (let [key, value] of entries(regs)) {
@@ -141,8 +156,39 @@ let originInfo = new Promise(function (resolve, reject) {
     translators: info.translators.split(","),
     auditors: info.auditors.split(","),
     finalMans: info.finalmans.split(","),
+    date: info.date,
   }
 }))
+
+let monthlyStat = originInfo
+.then(contentArr => contentArr.reduce(
+  (contentMap, item) => 
+  {
+    for (let translator of item.translators) {
+      if ((new Date(Date.parse(item.date))).getMonth() == nowMonth - 1 && (new Date(Date.parse(item.date))).getFullYear() == nowMonth) {
+        contentMap.has(translator) ? 
+        contentMap.set(translator, [contentMap.get(translator)[0] + item.words, contentMap.get(translator)[1] + 1]) : 
+        contentMap.set(translator, [item.words, 1])
+      }
+    }
+    return contentMap
+  },
+  new Map()
+))
+
+let monthlyWordStat = monthlyStat
+.then(contentMap => Array.from(contentMap).sort((a, b) => b[1][0] - a[1][0]))
+.then(contentArr => contentArr.map(
+  contentItem => contentItem[0] && `| [${contentItem[0]}](${nameMap[contentItem[0]]}) | ${contentItem[1][0]} |`
+))
+.then(mdPartials => monthlyWordHeader + mdPartials.filter(part => part.trim()).join("\n"))
+
+let monthlyArticleStat = monthlyStat
+.then(contentMap => Array.from(contentMap).sort((a, b) => b[1][1] - a[1][1]))
+.then(contentArr => contentArr.map(
+  contentItem => contentItem[0] && `| [${contentItem[0]}](${nameMap[contentItem[0]]}) | ${contentItem[1][1]} |`
+))
+.then(mdPartials => monthlyArticleHeader + mdPartials.filter(part => part.trim()).join("\n"))
 
 // generate finalMan stat, return markdown table partial, contain final man name and article count
 let finalStat = originInfo
@@ -242,7 +288,7 @@ let articlesStat = translationInfo
 .then(mdPartials => articleHeader + mdPartials.filter(part => part.trim()).join("\n"))
 
 // combine all markdown partials and write to file
-let writeBack = Promise.all([wordsStat, articlesStat, auditStat, finalStat])
+let writeBack = Promise.all([monthlyWordStat, monthlyArticleStat, wordsStat, articlesStat, auditStat, finalStat])
 .then(statPartials => new Promise((resolve, reject) =>
   fs.writeFile(targetFile, pageHeader + statPartials.join("\n\n"), (err) => {
     if (err) throw err
