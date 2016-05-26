@@ -165,7 +165,7 @@ let monthlyStat = originInfo
   (contentMap, item) => 
   {
     for (let translator of item.translators) {
-      if ((new Date(Date.parse(item.date))).getMonth() == nowMonth - 1 && (new Date(Date.parse(item.date))).getFullYear() == nowMonth) {
+      if ((new Date(Date.parse(item.date))).getMonth() == nowMonth - 1 && (new Date(Date.parse(item.date))).getFullYear() == nowYear) {
         contentMap.has(translator) ? 
         contentMap.set(translator, [contentMap.get(translator)[0] + item.words, contentMap.get(translator)[1] + 1]) : 
         contentMap.set(translator, [item.words, 1])
