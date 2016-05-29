@@ -254,7 +254,7 @@ x.subViews(color: y)
 x.nounCapitalize()
 ```
 
-为使使用舒适，应把调用时的次要参数设计在第一或者第二个参数之后。
+如果不影响方法要表达的含义，那可以简化第一个或者前两个参数，这样使用起来更加流畅。
 
 ```swift
 AudioUnit.instantiate(
@@ -281,7 +281,7 @@ let foreground = Color(havingRGBValuesRed: 32, green: 64, andBlue: 128)
 let newPart = factory.makeWidget(havingGearCount: 42, andSpindleCount: 14)
 ```
 
-事实上，本指南对参数的标签都做了这样的处理，这意味着第一实参都会包含一个标签，除非该方法完全只是用来做宽度相等的类型转换。
+事实上，这条规则以及下面的参数命名规则都做了这样的处理，这意味着第一实参都会包含一个标签，除非该方法只用来作无损类型转换。
 
 ```swift
 let rgbForeground = RGBColor(cmykForeground)
