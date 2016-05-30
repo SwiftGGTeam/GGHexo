@@ -27,7 +27,7 @@ Swift 依然是一个有些不稳定的语言，每次发布新版本，都带�
 ![神秘但准确的描述了`单子`的装订(bind)](https://www.uraimo.com/imgs/bind.png)
 </center>
 
-考虑到 Swift 语言依然在初期状态，往往在尝试去理解一些特定的话题时，最后你会发现许多文章都是用 Swift 2.0 之前的语法，或者更糟糕的一些，内容混杂着多个版本语法。有时，搜索 `flatMap` 的文章，你发现不止一篇[好文章](http://khanlou.com/2015/09/what-the-heck-is-a-monad/)都会在 Swift 中解释单子[Monads](http://codeplease.io/2015/08/05/monads/)。
+考虑到 Swift 语言依然在初期状态，往往在尝试去理解一些特定的话题时，最后你会发现许多文章都是用 Swift 2.0 之前的语法，或者更糟糕的一些，内容混杂着多个版本语法。有时，搜索 `flatMap` 的文章，你发现不止一篇[好文章](http://khanlou.com/2015/09/what-the-heck-is-a-monad/)都会在 Swift 中解释 [Monads](http://codeplease.io/2015/08/05/monads/)。
 
 相关概念缺乏全面介绍的新文章，现在的许多文章常常用一些不是通俗易懂的例子和生硬的隐喻，一些人甚至使用一些难以理解的方式思考问题。
 
