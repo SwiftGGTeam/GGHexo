@@ -3,9 +3,9 @@ date: 2016-05-31
 tags: [Swift 入门]
 categories: [Erica Sadun]
 permalink: naturally-final-classes-in-swift
-keywords: 
+keywords: swift final class
 custom_title: 
-description: 
+description: swift final class 要怎么来使用才是最合适的呢，看完这篇文章你会有所感悟。
 
 ---
 原文链接=http://ericasadun.com/2015/12/18/naturally-final-classes-in-swift/

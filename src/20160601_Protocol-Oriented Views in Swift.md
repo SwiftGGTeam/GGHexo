@@ -3,9 +3,9 @@ date: 2016-06-01
 tags: [Swift 进阶]
 categories: [Natasha The Robot]
 permalink: protocol-oriented-views-in-swift
-keywords: 
+keywords: swift面向协议
 custom_title: 
-description: 
+description: Swift 面向协议编程是很多开发者很看重的，那么如何使用 Swift 编写面向协议的视图呢。
 
 ---
 原文链接=https://www.natashatherobot.com/protocol-oriented-views-in-swift/
