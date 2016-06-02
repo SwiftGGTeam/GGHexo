@@ -2,7 +2,7 @@ Swift：Selector 语法糖"
 
 > 作者：Andyy Hope，[原文链接](https://medium.com/swift-programming/swift-selector-syntax-sugar-81c8a8b10df3#.zc2lzkj76)，原文日期：2016-03-23
 > 译者：[saitjr](http://www.saitjr.com)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[shanks](http://codebuild.me/)
-  ---
+  
 
 
 
