@@ -3,9 +3,10 @@ date: 2016-06-03
 tags: [Swift 进阶]
 categories: [Natasha The Robot]
 permalink: protocol-oriented-networking-in-swift
-keywords: 
+permalink: protocol-oriented-networking-in-swift
+keywords: swift面向协议,swift网络请求
 custom_title: 
-description: 
+description: 在 Swift 中怎么编写面向协议的网络请求呢，本文就来举例实战下吧。
 
 ---
 原文链接=https://www.natashatherobot.com/protocol-oriented-networking-in-swift/
