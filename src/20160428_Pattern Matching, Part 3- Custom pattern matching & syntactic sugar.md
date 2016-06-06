@@ -1,6 +1,6 @@
 title: "模式匹配第三弹: 自定义的模式匹配和语法糖"
 date: 2016-04-28 09:30:00
-tags: [swift 进阶]
+tags: [Swift 进阶]
 categories: [Crunchy Development]
 permalink: pattern-matching-3
 keywords: swift模式匹配,swift switch

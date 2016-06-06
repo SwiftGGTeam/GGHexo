@@ -1,7 +1,7 @@
 title: "Swift 2.0 ：揭秘 Map 和 FlatMap"
 date: 2016-05-30
 tags: [Swift 进阶]
-categories: [uriamo]
+categories: [uraimo]
 permalink: swift2-map-flatmap-demystified
 keywords: swift2.0教程,swift map flatmap
 custom_title: 
