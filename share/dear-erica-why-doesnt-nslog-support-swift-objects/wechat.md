@@ -12,7 +12,7 @@
 
 
 
-Erica，你好，在我想在 Playground 运行以下代码时，编译未通过。错误原因：“error: ‘NSLog’ is unavailable: Variadic function is unavailable NSLog(“%@”, Foo()) Foundation.NSLog:2:13: note: ‘NSLog’ has been explicitly marked unavailable here（错误：'NSLog' 不可用：可变参数函数不支持 NSLog(“%@”, Foo())。'NSLog' 在此已被标记为不可用）”。这是为什么呢？
+> Erica，你好，在我想在 Playground 运行以下代码时，编译未通过。错误原因：“error: ‘NSLog’ is unavailable: Variadic function is unavailable NSLog(“%@”, Foo()) Foundation.NSLog:2:13: note: ‘NSLog’ has been explicitly marked unavailable here（错误：'NSLog' 不可用：可变参数函数不支持 NSLog(“%@”, Foo())。'NSLog' 在此已被标记为不可用）”。这是为什么呢？
 
     
     import Foundation
