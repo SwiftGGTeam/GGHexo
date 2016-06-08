@@ -1,5 +1,5 @@
 title: "Friday Q&A 2016-01-29: Swift 的结构体存储"
-date: 2015-06-08
+date: 2016-06-08
 tags: [Swift 进阶]
 categories: [Mike Ash]
 permalink: friday-qa-2016-01-29-swift-struct-storage
