@@ -26,10 +26,10 @@
 
     Objective-C
     NSError* error;
-    BOOL ok = [string writeToFile:path
-    				   atomically:YES
-    					 encoding:NSUTF8StringEncoding
-    						error:&error];
+    BOOL ok = [string writeToFile:path 
+                       atomically:YES
+                         encoding:NSUTF8StringEncoding
+                            error:&error];
     if (!ok) {
       NSLog(@“发生了一个错误: %@", error);
     }
