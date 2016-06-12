@@ -3,9 +3,9 @@ date: 2016-06-12
 tags: [Swift 进阶]
 categories: [alisoftware]
 permalink: let-it-throw
-keywords:
-custom_title:
-description:
+keywords: swift错误处理
+custom_title: 
+description: 怎么在 Swift 中进行错误处理，这是一个问题，本文就来教你如何解决这个问题。
 
 ---
 原文链接=http://alisoftware.github.io/swift/error/2015/12/17/let-it-throw/
