@@ -11,7 +11,7 @@ description: 在 Swift 中怎么使用 filter 和 map 来操作数组呢，看�
 原文链接=http://www.thomashanning.com/swift-filter/
 作者=Thomas Hanning
 原文日期=2016-04-25
-译者=way
+译者=walkingway
 校对=星夜暮晨
 定稿=千叶知风
 
