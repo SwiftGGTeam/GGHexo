@@ -1,7 +1,7 @@
 Swift 中的过滤器
 
 > 作者：Thomas Hanning，[原文链接](http://www.thomashanning.com/swift-filter/)，原文日期：2016-04-25
-> 译者：[way](undefined)；校对：[星夜暮晨](http://www.jianshu.com/users/ef1058d2d851)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[walkingway](http://chengway.in/)；校对：[星夜暮晨](http://www.jianshu.com/users/ef1058d2d851)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 
