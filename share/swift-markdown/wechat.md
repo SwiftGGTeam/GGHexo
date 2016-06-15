@@ -40,7 +40,7 @@
 
 ## Markdown 基础语法
 
-为了能更好地使用新的文档样式，对 Markdown 语法有一个基本的认识是很重要的。如果已经对这部分有充分的了解的话，可以跳过这一章，直接看下一章。你可以在网络上找到关于 Markdown 的很多信息，比如[这里](https://daringfireball.net/projects/markdown/syntax）还有[这里](https://confluence.atlassian.com/bitbucketserver/markdown-syntax-guide-776639995.html）都能找到。
+为了能更好地使用新的文档样式，对 Markdown 语法有一个基本的认识是很重要的。如果已经对这部分有充分的了解的话，可以跳过这一章，直接看下一章。你可以在网络上找到关于 Markdown 的很多信息，比如[这里](https://daringfireball.net/projects/markdown/syntax)还有[这里](https://confluence.atlassian.com/bitbucketserver/markdown-syntax-guide-776639995.html)都能找到。
 
 尽管你能找到关于 Markdown 语法的其他资源，但是我觉得至少要讲一下基础语法。我的目的当然不是要提供一整个 Markdown 使用指南，只是为了呈现特定语法的常见用法。
 
@@ -52,19 +52,19 @@
 * \*\*text\*\*：使文本具有**加粗**的效果。
 * \*text\*：使文本具有*斜体*的效果。
 * \* text：使文本成为一个无序列表的元素，值得注意的是，有个 * 后面需要有一个空格。同样，可以使用 + 或 - 实现这个的功能。
-* \1. text：使文本成为一个有序列表的元素。
-* \[linked text](http://some-url.com）：使文本成为可以点击的超链接。
+* 1. text：使文本成为一个有序列表的元素。
+* \[linked text](http://some-url.com)：使文本成为可以点击的超链接。
 * \> text：创建一个块引用。
 * 使用 4 个空格或 1 个 tab 来缩进所写的代码块，等价于 HTML 中的 \<pre\>\</pre\> 标签。可以继续使用 4 个空格或 1 个 tab 来添加另一个缩进。
 * 如果不想使用空格或 tab 的话，可以使用 \` 。比如， \`var myProperty\` 会显示成 `var myProperty`。
 * 另一种创建代码块的方法是添加 4 个 \`，并从下一行开始写具体的代码，最后添加 4 个 \` 表示结束。
-* 反斜杠修饰 Markdown 的特殊字符就可以避免 Markdown 语法的解析了。比如，\\*\\\*this\\\*\\\* 就不会产生加粗的效果。
+* 反斜杠修饰 Markdown 的特殊字符就可以避免 Markdown 语法的解析了。比如， `\**this\**` 就不会产生加粗的效果。
 
 以上这些是 Markdown 语法中比较重要的部分。虽然，Markdown 语法中还有很多额外的细节可以深究。但是，以上提供的这些已经足够你开始使用 Markdown 了。
 
 如果你发现 Markdown 还蛮有意思的话，你可以下载一个编辑器具体尝试一下。使用编辑器，你可以实时地看到你所写的文本在转化成 HTML 后的效果。
 
-> 关于编辑器：你可以尝试以下这些 Markdown 编辑器：[StackEdit](https://stackedit.io/），[Typora](https://www.typora.io/），[Macdown](http://macdown.uranusjr.com/），[Focused](https://71squared.com/focused） 和 [Ulysses](http://www.ulyssesapp.com/）。
+> 关于编辑器：你可以尝试以下这些 Markdown 编辑器：[StackEdit](https://stackedit.io/)，[Typora](https://www.typora.io/)，[Macdown](http://macdown.uranusjr.com/)，[Focused](https://71squared.com/focused) 和 [Ulysses](http://www.ulyssesapp.com/)。
 
 ## 使用 Markdown
 
@@ -298,11 +298,11 @@
 
 看了上面这么多例子，你应该能理解关键字的详细程度完全是由你确定的。代码中重要的部分（比如，上面拿来举例子的函数）要有具体的代码文档，而次要的部分只写基本的文档即可。
 
-Apple 提供了一个所有代码文档中可能用到的关键字页面，你如果点了下面提到的超链接，你可以看到每个关键字采用 Markdown 语法的具体使用指南。走过路过，不要错过了，[进去瞧一瞧](https://developer.apple.com/library/ios/documentation/Xcode/Reference/xcode_markup_formatting_ref/MarkupFunctionality.html#//apple_ref/doc/uid/TP40016497-CH54-SW1）。
+Apple 提供了一个所有代码文档中可能用到的关键字页面，你如果点了下面提到的超链接，你可以看到每个关键字采用 Markdown 语法的具体使用指南。走过路过，不要错过了，[进去瞧一瞧](https://developer.apple.com/library/ios/documentation/Xcode/Reference/xcode_markup_formatting_ref/MarkupFunctionality.html#//apple_ref/doc/uid/TP40016497-CH54-SW1)。
 
 ## 使用 Jazzy 产生代码文档
 
-[Jazzy](https://github.com/realm/jazzy） 是一款可以为 Swift 和 Objective-C 代码产生具有 Apple 风格的代码文档工具。事实上，Jazzy 会为你创建一个链接所有代码文档的独立网页。它是一款命令行工具，但还是很容易使用的。
+[Jazzy](https://github.com/realm/jazzy) 是一款可以为 Swift 和 Objective-C 代码产生具有 Apple 风格的代码文档工具。事实上，Jazzy 会为你创建一个链接所有代码文档的独立网页。它是一款命令行工具，但还是很容易使用的。
 
 我并不打算介绍 Jazzy 的具体使用方法；只需要访问它的 [GitHub 页面](https://github.com/realm/jazzy)，你就能找到所有你想要的信息了，包括使用要求和安装方法。安装过程真的很简单，你所有要做的如下：
 
