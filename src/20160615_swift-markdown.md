@@ -58,7 +58,7 @@ description: 在 Xcode 7 中可以使用 Markdown 语法来写 Swift 代码文�
 * \*text\*：使文本具有*斜体*的效果。
 * \* text：使文本成为一个无序列表的元素，值得注意的是，有个 * 后面需要有一个空格。同样，可以使用 + 或 - 实现这个的功能。
 * 1. text：使文本成为一个有序列表的元素。
-* \[linked text\]\(http://some-url.com\)：使文本成为可以点击的超链接。
+* `[linked text](http://some-url.com)`：使文本成为可以点击的超链接。
 * \> text：创建一个块引用。
 * 使用 4 个空格或 1 个 tab 来缩进所写的代码块，等价于 HTML 中的 \<pre\>\</pre\> 标签。可以继续使用 4 个空格或 1 个 tab 来添加另一个缩进。
 * 如果不想使用空格或 tab 的话，可以使用 \` 。比如， \`var myProperty\` 会显示成 `var myProperty`。
