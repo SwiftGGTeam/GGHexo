@@ -17,7 +17,7 @@ description: 在 Xcode 7 中可以使用 Markdown 语法来写 Swift 代码文�
 
 <!--此处开始正文-->
 
-在 Xcode 7 的所有功能中，有一个很特别：它给编写代码文档提供了一个更好的方法。随着 Xcode 7 的更新，开发者可以使用 **Markdown** 语法书写富文本格式的代码文档，而且可以结合特定的关键词来指明特殊部分（如参数，函数返回结果等）。作为新支持的 Markdown 文档样式，它具有以下几点优势：文本样式的自定义程度更高，更加灵活，当然也更有趣。然而，如果你仍然对原来的文本样式感兴趣的话，也可以看以前那篇[教程](http://www.appcoda.com/documenting-source-code-in-xcode/）。
+在 Xcode 7 的所有功能中，有一个很特别：它给编写代码文档提供了一个更好的方法。随着 Xcode 7 的更新，开发者可以使用 **Markdown** 语法书写富文本格式的代码文档，而且可以结合特定的关键词来指明特殊部分（如参数，函数返回结果等）。作为新支持的 Markdown 文档样式，它具有以下几点优势：文本样式的自定义程度更高，更加灵活，当然也更有趣。然而，如果你仍然对原来的文本样式感兴趣的话，也可以看以前那篇[教程](http://www.appcoda.com/documenting-source-code-in-xcode/)。
 
 <!--more-->
 
@@ -237,7 +237,7 @@ func createFullName（firstname: String, lastname: String) -> String {
 ```
 /**
     Another complicated function.
-
+    
     - Parameter fullname: The fullname that will be broken into its parts.
     - Returns: A *tuple* with the first and last name.
 
