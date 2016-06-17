@@ -1,11 +1,11 @@
-title: "Swift 结构体何时使用变异函数"
+title: "Swift 结构体何时使用 mutating 函数"
 date: 2016-06-17
 tags: [Swift]
 categories: [Natasha The Robot]
 permalink: when-to-use-mutating-functions-in-swift-structs
 keywords: swift结构体,swift函数
 custom_title: 
-description: Swift 支持对整体结构的不可变性，那么在什么时候需要使用变异函数呢，本文就来讲解下吧。
+description: Swift 支持对整体结构的不可变性，那么在什么时候需要使用 mutating 函数呢，本文就来讲解下吧。
 
 ---
 原文链接=https://www.natashatherobot.com/when-to-use-mutating-functions-in-swift-structs/
