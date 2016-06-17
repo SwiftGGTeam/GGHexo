@@ -1,7 +1,7 @@
-在 Swift 结构体中使用 Mutating 函数的最佳时机"
+Swift 结构体何时使用变异函数"
 
-> 作者：NatashaTheRobot，[原文链接](https://www.natashatherobot.com/when-to-use-mutating-functions-in-swift-structs/)，原文日期：2016-1-13
-> 译者：[walkingway](http://chengway.in/)；校对：[Cee](https://github.com/Cee)；定稿：[numbbbbb](http://numbbbbb.com/)
+> 作者：Natasha，[原文链接](https://www.natashatherobot.com/when-to-use-mutating-functions-in-swift-structs/)，原文日期：2016/01/13
+> 译者：[bestswifter](http://bestswifter.com)；校对：[saitjr](http://www.saitjr.com)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 
@@ -12,15 +12,15 @@
 
 
 
-我认为关于 Swift 最棒的一个特性就是：在这门语言构建的工程中可以使用大量的不可变对象。这种特性使我们的代码更加清晰，也更加安全（如果你还对此存疑，强烈推荐观看这篇[演讲](https://realm.io/news/andy-matuschak-controlling-complexity/)）。
+Swift 最棒的特点之一就是它内置了对整体结构的不可变性的支持，这使得我们的代码更加整洁、安全（关于这个话题，如果还没看过[这篇文章](https://realm.io/news/andy-matuschak-controlling-complexity/)，那么强烈推荐给你）。
 
-但当我们真正需要去改变数据时，又该怎么处理呢？
+不过，真的需要用到可变性时，你应该怎么做呢？
 
 
 
-### 函数方式
+## 函数式做法
 
-举个例子，假如有一个井字棋的游戏棋盘，我需要修改棋盘上各个点的状态：
+举个例子，我有一个井字棋棋盘，现在需要改变棋盘上某个位置的状态：
 
     
     struct Position {
@@ -31,16 +31,16 @@
             case X, O, Empty
         }
     }
-     
+    
     struct Board {
         
         let positions: [Position]
-     
-        // 需要添加一个函数来更新位置
-        // 从空棋盘到 X 或 O 
+    
+        // 需要添加一个函数来更新这个位置的状态
+        // 状态从 Empty 改为 X 或者 0
     }
 
-我们采取[函数式编程](https://www.natashatherobot.com/functional-programming-in-swift/)的方式，可以很轻松地得到一个新棋盘！
+如果完全采用[函数式编程的做法](https://www.natashatherobot.com/functional-programming-in-swift/)，你只需要简单的返回一个新的棋盘即可：
 
     
     struct Board {
@@ -48,10 +48,10 @@
         let positionsMatrix: [[Position]]
         
         init() {
-           // 初始化一个初始棋盘
+           // 初始化一个空棋盘的逻辑
         }
-     
-        // 函数式的实现方式
+    
+        // 函数式编程的做法
         func boardWithNewPosition(position: Position) -> Board {
             var positions = positionsMatrix
             let row = position.coordinate.row.rawValue
@@ -61,11 +61,11 @@
         }
     }
 
-我更喜欢函数式编程是因为这种方式没有副作用，将变量统统改为常量，测试起来也是相当容易！
+我更倾向于使用这种函数式的做法，因为它不会有任何副作用。变量可以继续保持不可变状态，当然，这样也非常易于测试！
 
     
     class BoardTests: XCTestCase {
-     
+    
         func testBoardWithNewPosition() {
             let board = Board()
             let coordinate = Coordinate(row: .Middle, column: .Middle)
@@ -79,11 +79,11 @@
         }
     }
 
-但是，我们还有更好的解决方案！
+不过这种做法并非在所有场景下都是最佳选择。
 
-### 使用 Mutating 关键字
+## 使用 Mutating 关键字
 
-让我们来跟踪一下每个用户下井字棋获胜的次数，首先创建一个计数器：
+假设我需要统计每个用户赢了多少局井字棋，那么我创建了一个 Counter：
 
     
     struct Counter {
@@ -93,10 +93,10 @@
             self.count = count
         }
         
-        // 需要一个方法来增加计数
+        // 需要实现一个增加计数的方法
     }
 
-当然，我们也可以通过函数式编程的方式来实现这个计数器：
+我依然可以选择函数式的做法：
 
     
     struct Counter {
@@ -106,63 +106,48 @@
             self.count = count
         }
         
-        // 函数式的实现方式
+        // 函数式做法
         func counterByIncrementing() -> Counter {
             let newCount = count + 1
             return Counter(count: newCount)
         }
     }
 
-如果你尝试去实现此函数，应该这样写：
+不过，如果你真的尝试了使用这个函数来增加计数，代码会是这样：
 
     
     var counter = Counter()
     counter = counter.counterByIncrementing()
 
-最终你会发现相当**晦涩难懂**！所以这里我更推荐使用 `mutating` 关键字而不是函数式编程：
+这种写法不够直观，可读性也不高。所以在这种场景下，我更倾向于使用 `mutating` 关键字：
 
     
     struct Counter {
-        // 现在这个 count 改为变量了 :/
+        // 这个变量现在得声明成 var
         var count: Int
         
         init(count: Int = 0) {
             self.count = count
         }
         
-        // 使用 mutating 关键字来实现修改 count 
+        // 使用 mutating 关键字的做法
         mutating func increment() {
             count += 1
         }
     }
 
-虽然我不喜欢 `increment` 函数中的副作用，但为了更好的可读性，这点牺牲是值得的。
+我不喜欢这个函数带来的副作用，但是相对于可读性的提升而言，这样做是值得的：
 
     
     var counter = Counter()
     counter.increment()
 
-让我们再进一步，通过使用 [private setter](https://www.natashatherobot.com/swift-magic-public-getter-private-setter/) 阻止了从外部修改 count 变量，从而将潜在危险降到最低：
+更进一步来说，通过[使用私有 setter 方法](https://www.natashatherobot.com/swift-magic-public-getter-private-setter/)可以确保 `count` 变量不会被外部修改（因为它现在被声明为变量了）。这样，使用变异方法和变量所带来的负面影响可以被降到最低。
 
-    
-    struct Counter {
-        // 将 setter 方法设为私有, 
-        // 这样只有 increment 函数能够修改它!
-        private(set) var count: Int
-        
-        init(count: Int = 0) {
-            self.count = count
-        }
-        
-        // 使用 mutating 关键字来实现修改 count 
-        mutating func increment() {
-            count += 1
-        }
-    }
+## 总结
 
-### 结论
+在选择使用 `mutating` 关键字和函数式编程时，我倾向于后者，但前提是**不会以牺牲可读性为代价**。
 
-当我面临要选择 `mutating` 关键字还是函数式编程时，通常我都会选择函数式编程，但这一些都是有前提的，那就是：**不能牺牲可读性**！
-
-为你的接口编写测试是一种很好的习惯，可以用来检验你的函数方法是否满足预期。如果你觉得接口写起来很怪异、不直观，那就去换一种方式去实现吧！最后别忘了用私有 `setter` 设置你的内部变量哦！
+写测试是一种很好的检查接口的方法，它可以判断你的函数式编程是否真的有意义。如果你觉得代码比较奇怪而且不够直观，那么就换成 mutating 方法吧。只要记得使用变量的私有 setter 方法就行了。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。数方法是否满足预期。如果你觉得接口写起来很怪异、不直观，那就去换一种方式去实现吧！最后别忘了用私有 `setter` 设置你的内部变量哦！
 > 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
