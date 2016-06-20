@@ -1,18 +1,13 @@
 title: "SE-0005 更好的把 Objective-C APIs 转换成 Swift 版本"
 date: 2016-06-20
 tags: [Swift 进化]
-categories: [Swift Evolution]
+categories: [投稿]
 permalink: SE-0005-better-translation-of-objective-c-api-into-swift
 keywords: objective c 转 swift
 custom_title: 
 description: 怎么把 Objective-C APIs 转成 Swift 呢，本文就来深入的探讨这个问题。
 
 ---
-原文链接=https://github.com/apple/swift-evolution/blob/master/proposals/0005-objective-c-name-translation.md
-作者=Natasha
-原文日期=2016-05-03
-
-<!--此处开始正文-->
 
 > 译者：[泊学](https://www.boxueio.com)
 
