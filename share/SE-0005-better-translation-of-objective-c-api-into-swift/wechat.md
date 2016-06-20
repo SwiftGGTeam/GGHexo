@@ -20,11 +20,11 @@ SE-0005 更好的把 Objective-C APIs 转换成 Swift 版本"
 
 ## 简介
 
-这份提议描述了我们如何改进 Swift 的 `Clang Importer`，它有两个功能：首先，把 C 和 Objective-C 的 APIs 映射成 Swift 版本；其次，翻译 Objective-C 中的函数、类型、方法和属性等的名字，让它们满足[API设计指南](https://github.com/apple/swift-evolution/blob/master/proposals/0023-api-guidelines.md)中的要求，这些要求，是我们在设计Swift 3时，建立的原则。
+这份提议描述了我们如何改进 Swift 的 `Clang Importer`，它有两个功能：首先，把 C 和 Objective-C 的 APIs 映射成 Swift 版本；其次，翻译 Objective-C 中的函数、类型、方法和属性等的名字，让它们满足 [API设计指南](https://github.com/apple/swift-evolution/blob/master/proposals/0023-api-guidelines.md) 中的要求，这些要求，是我们在设计Swift 3时，建立的原则。
 
-我们的方法专注于 Objective-C 版本的 [Cocoa 编码指南](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)和 Swift 版本的 [API 设计指南](https://github.com/apple/swift-evolution/blob/master/proposals/0023-api-guidelines.md)之间的差异。使用一些简单的语言学分析方法，协助我们把 Objective-C 中的名字自动转换成更加 Swift “原汁原味”的名字。
+我们的方法专注于 Objective-C 版本的 [Cocoa 编码指南](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html) 和 Swift 版本的 [API 设计指南](https://github.com/apple/swift-evolution/blob/master/proposals/0023-api-guidelines.md) 之间的差异。使用一些简单的语言学分析方法，协助我们把 Objective-C 中的名字自动转换成更加 Swift “原汁原味”的名字。
 
-转换的结果，可以在 [Swift 3 API Guidelines Review](https://github.com/apple/swift-3-api-guidelines-review) 这个 repository 中查看。这个 repository 中包含了用 [Swift 2](https://github.com/apple/swift-3-api-guidelines-review/tree/swift-2) 和 [Swift 3](https://github.com/apple/swift-3-api-guidelines-review/tree/swift-3) 编写的Objective-C APIs 项目，以及一些已经迁移到 Swift 3 版本的示例代码。你也可以通过[对比这两个分支](https://github.com/apple/swift-3-api-guidelines-review/compare/swift-2...swift-3)来查看所有的改动。
+转换的结果，可以在 [Swift 3 API Guidelines Review](https://github.com/apple/swift-3-api-guidelines-review) 这个 repository 中查看。这个 repository 中包含了用 [Swift 2](https://github.com/apple/swift-3-api-guidelines-review/tree/swift-2) 和 [Swift 3](https://github.com/apple/swift-3-api-guidelines-review/tree/swift-3) 编写的 Objective-C APIs 项目，以及一些已经迁移到 Swift 3 版本的示例代码。你也可以通过 [对比这两个分支](https://github.com/apple/swift-3-api-guidelines-review/compare/swift-2...swift-3) 来查看所有的改动。
 
 ## 动机
 
@@ -41,27 +41,27 @@ Objective-C 版本的 [Cocoa 编码指南](https://developer.apple.com/library/m
     let content = 
         listItemView.text.trimming(.whitespaceAndNewlines)
 
-这显然是更遵循 [Swift API 设计指南](https://github.com/apple/swift-evolution/blob/master/proposals/0023-api-guidelines.md) 中的用法，特别是，我们忽略掉了那些编译器已经能强制约束我们使用的类型名称（例如：view，string, character set等）。这份提议的目的，就是让从 Objective-C 引入 API 更加“Swift原汁原味”，让 Swift 开发者在使用 Objective API 时，有和使用 Swift “原生代码”更为一致的开发体验。
+这显然是更遵循 [Swift API 设计指南](https://github.com/apple/swift-evolution/blob/master/proposals/0023-api-guidelines.md) 中的用法，特别是，我们忽略掉了那些编译器已经能强制约束我们使用的类型名称（例如：view，string, character set等）。这份提议的目的，就是让从 Objective-C 引入 API 更加 “Swift原汁原味” ，让 Swift 开发者在使用 Objective API 时，有和使用 Swift “原生代码”更为一致的开发体验。
 
-这份提议中的解决方案对 Objective-C 框架（例如：Cocoa 和 Cocoa Touch）和任何可以在“Swift 混合项目”中使用的 Objective-C API 是相同的。要说明的是，[Swift 核心库](https://swift.org/core-libraries/)重新实现了 Objective-C 框架中的 API，所以，对这些 API（名称的）的改动都会在 Swift 3 核心库的实现中体现出来。
+这份提议中的解决方案对 Objective-C 框架（例如：Cocoa 和 Cocoa Touch）和任何可以在“Swift 混合项目”中使用的 Objective-C API 是相同的。要说明的是， [Swift 核心库](https://swift.org/core-libraries/) 重新实现了 Objective-C 框架中的 API，所以，对这些 API（名称的）的改动都会在 Swift 3 核心库的实现中体现出来。
 
 ## 提议的解决方案
 
-提议的解决方案引入了一种定义 Objective-C [Cocoa 编码指南](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)和[ Swift API设计指南](https://github.com/apple/swift-evolution/blob/master/proposals/0023-api-guidelines.md)区别的方式，这种方式可以帮助我们通过设置一系列规则，参照 Cocoa 编码指南以及 Objective-C 中既定的习俗，把前者变换成后者。这是对用Clang importer进行名称翻译的一种启发式扩展。例如：把 Objective-C 中的全局`enum`常量变成Swift中的cases（这要去掉Objective-C为全局enum常量名设置的前缀）以及把 Objective-C 中的工厂方法（例如：`+[NSNumber numberWithBool:]`）映射成 Swift 中的初始化方法（`NSNumber(bool: true)`）。
+提议的解决方案引入了一种定义 Objective-C [Cocoa 编码指南](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html) 和 [ Swift API设计指南](https://github.com/apple/swift-evolution/blob/master/proposals/0023-api-guidelines.md) 区别的方式，这种方式可以帮助我们通过设置一系列规则，参照 Cocoa 编码指南以及 Objective-C 中既定的习俗，把前者变换成后者。这是对用Clang importer进行名称翻译的一种启发式扩展。例如：把 Objective-C 中的全局 `enum` 常量变成 Swift 中的 cases（这要去掉 Objective-C 为全局enum常量名设置的前缀）以及把 Objective-C 中的工厂方法（例如：`+[NSNumber numberWithBool:]`）映射成 Swift 中的初始化方法（`NSNumber(bool: true)`）。
 
-这份提议中描述的启发式方法需要通过覆盖大量的Objective-C API进行迭代、调校和试验，以确保它最终可以正常工作。但是，它仍旧是不可能完美工作的，一定会有一些API，经过“翻译”之后，会导致其不如原来表意清晰。因此，我们的目标是确保绝大多数的Objective C API都可以在翻译之后更加的Swift原汁原味。并且允许Objective-C API的作者对于那些不满意的翻译，在Objective-C头文件中，通过API注释说明问题。
+这份提议中描述的启发式方法需要通过覆盖大量的 Objective-C API 进行迭代、调校和试验，以确保它最终可以正常工作。但是，它仍旧是不可能完美工作的，一定会有一些 API ，经过 “翻译” 之后，会导致其不如原来表意清晰。因此，我们的目标是确保绝大多数的Objective C API都可以在翻译之后更加的 Swift 原汁原味。并且允许 Objective-C API 的作者对于那些不满意的翻译，在 Objective-C 头文件中，通过 API 注释说明问题。
 
-这份提议的解决方案对Clang importer引入了以下这些改变：
+这份提议的解决方案对 Clang importer 引入了以下这些改变：
 
-1. **泛化`swift_name`属性的应用范围**：Clang的`swift_name`现在只能用于重命名`enum`的cases以及工厂方法。当它被引入到Swift后，它应该被泛化成允许重命名任意的C或Objective-C的语言元素，以方便C或Objective-C API的作者更好的调校重命名的过程。
-2. **去掉冗余的类型名称**：Objective-C Cocoa编码指南要求方法声明中要带有每一个参数的描述。当这个描述重申了参数的类型时，方法的名字就违背了Swift编码指南中关于“忽略不需要的字符”的设计要求。因此，执行翻译时，我们应该去掉那些描述类型的部分。
-3. **添加默认参数**：如果Objective-C API的声明强烈暗示参数需要参数默认值，应该为这样的API在引入Swift时，添加参数默认值。例如，一个表示选项集合的参数，可以被设置成\[\]。
-4. **为第一个参数添加label**：如果方法的第一个参数有默认值，[应该为这个参数设置一个参数label](https://swift.org/documentation/api-design-guidelines#first-argument-label)。
-5. **给Bool语义的属性添加“is”前缀**：[Bool属性应该在读取的时候，表达断言的语义](https://swift.org/documentation/api-design-guidelines#boolean-assertions)，但是Objective-C Cocoa编码指南中，[禁止在属性名中使用单词“is”](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingIvarsAndTypes.html#//apple_ref/doc/uid/20001284-BAJGIIJE)。因此，当引入这样的属性时，为它们添加“is”前缀。
-6. **表达值语义的名字，首字母小写**：在Swift API设计指南中，要求对“非类型声明（non-type declarations）”使用小写字母。包括，`enum`中的`case`以及属性或函数的声明。因此，引入Objective-C中没有前缀的值时，让这些名字的首字母小写（例如：一个叫做`URLHandler`的属性应该变成`urlHandler`）。
-7. **让实现`compare(_:) -> NSComparisonResult`的类遵从Comparable protocol**：在Objective-C中，类对象的比较结果，都是通过“排序”的方式判断的（注：例如`NSOrderedDescending`和`NSOrderedAscending`）。导入过程中，通过让这些类遵从`Comparable` protocol，可以让比较操作的实现更正规（注：通过`Comparable`提供的运算符方法）。
+1. **泛化 `swift_name` 属性的应用范围**：Clang 的 `swift_name` 现在只能用于重命名 `enum` 的 cases 以及工厂方法。当它被引入到Swift后，它应该被泛化成允许重命名任意的 C 或 Objective-C 的语言元素，以方便 C 或 Objective-C API 的作者更好的调校重命名的过程。
+2. **去掉冗余的类型名称**：Objective-C Cocoa 编码指南要求方法声明中要带有每一个参数的描述。当这个描述重申了参数的类型时，方法的名字就违背了 Swift 编码指南中关于“忽略不需要的字符”的设计要求。因此，执行翻译时，我们应该去掉那些描述类型的部分。
+3. **添加默认参数**：如果 Objective-C API 的声明强烈暗示参数需要参数默认值，应该为这样的 API 在引入 Swift 时，添加参数默认值。例如，一个表示选项集合的参数，可以被设置成\[\]。
+4. **为第一个参数添加label**：如果方法的第一个参数有默认值， [应该为这个参数设置一个参数label](https://swift.org/documentation/api-design-guidelines#first-argument-label) 。
+5. **给Bool语义的属性添加“is”前缀**：[Bool属性应该在读取的时候，表达断言的语义](https://swift.org/documentation/api-design-guidelines#boolean-assertions) ，但是 Objective-C Cocoa 编码指南中，[禁止在属性名中使用单词“is”](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingIvarsAndTypes.html#//apple_ref/doc/uid/20001284-BAJGIIJE) 。因此，当引入这样的属性时，为它们添加“is”前缀。
+6. **表达值语义的名字，首字母小写**：在 Swift API 设计指南中，要求对 “非类型声明（non-type declarations）” 使用小写字母。包括，`enum` 中的 `case` 以及属性或函数的声明。因此，引入Objective-C中没有前缀的值时，让这些名字的首字母小写（例如：一个叫做`URLHandler`的属性应该变成`urlHandler`）。
+7. **让实现`compare(_:) -> NSComparisonResult`的类遵从Comparable protocol**：在 Objective-C 中，类对象的比较结果，都是通过“排序”的方式判断的（注：例如 `NSOrderedDescending` 和 `NSOrderedAscending` ）。导入过程中，通过让这些类遵从 `Comparable` protocol，可以让比较操作的实现更正规（注：通过`Comparable`提供的运算符方法）。
 
-为了感受下这些转换规则带来的实际效果，看下`UIBezierPath`从Swift 2：
+为了感受下这些转换规则带来的实际效果，看下 `UIBezierPath` 从 Swift 2：
 
     
     class UIBezierPath : NSObject, NSCopying, NSCoding {
@@ -83,7 +83,7 @@ Objective-C 版本的 [Cocoa 编码指南](https://developer.apple.com/library/m
         func encodeWithCoder(_: NSCoder)
     }
 
-移植到Swift 3后的变化：
+移植到 Swift 3 后的变化：
 
     
     class UIBezierPath : NSObject, NSCopying, NSCoding {
@@ -106,14 +106,14 @@ Objective-C 版本的 [Cocoa 编码指南](https://developer.apple.com/library/m
         func encode(with aCoder: NSCoder)
     }
 
-可以看到，在Swift 3版本里，原来API里很多描述类型信息的部分都被去掉了。转换后的结果，更接近Swift API设计指南中的要求。现在，Swift开发者可以通过类似`foo.copy()`这样的方式，拷贝任何遵从`NSCopying`的对象，而不用再像原来`foo.copyWithZone(nil)`这样的方式。
+可以看到，在 Swift 3 版本里，原来 API 里很多描述类型信息的部分都被去掉了。转换后的结果，更接近 Swift API 设计指南中的要求。现在，Swift 开发者可以通过类似 `foo.copy()` 这样的方式，拷贝任何遵从 `NSCopying` 的对象，而不用再像原来 `foo.copyWithZone(nil)` 这样的方式。
 
 <A name="implementation-experience"></A>
 ## 实现过程
 
 这份提议的一个试验性实现在 Swift main repository 中。Swift 编译器提供了一些开关帮助我们查看按照这份提议中的描述，被引入的 Objective-C API 以及 Swift 代码自身的转换结果（例如，通过 utils/omit-needless-words.py 脚本）。这些开关是：
 
-* `--enable-omit-needless-words`：这个开关启用了对Clang importer绝大多数的改动（上一节中提到的 1，2，4，5）。它主要适合用来打印在 Master 和 [Swift 2.2 分支](https://github.com/apple/swift/tree/swift-2.2-branch) 上，Swift 对Objective-C 模块提供的接口。在 [Swift 3 API Guidelines分支](https://github.com/apple/swift/tree/swift-3-api-guidelines) 上，它默认是开启的；
+* `--enable-omit-needless-words`：这个开关启用了对 Clang importer 绝大多数的改动（上一节中提到的 1，2，4，5）。它主要适合用来打印在 Master 和 [Swift 2.2 分支](https://github.com/apple/swift/tree/swift-2.2-branch) 上，Swift 对Objective-C 模块提供的接口。在 [Swift 3 API Guidelines分支](https://github.com/apple/swift/tree/swift-3-api-guidelines) 上，它默认是开启的；
 * `--enable-infer-default-arguments`：这个开关启用了 Clang importer 中，对参数默认值的干涉（上一节的 3）；
 * `--swift-migration`：仅在 [Swift 2.2 分支](https://github.com/apple/swift/tree/swift-2.2-branch)上才有的开关，这个选项通过添加 "Fix-Its"，执行把名称从 Swift 2 迁移到 Swift 3 的基本转换。通过和其它编译器开关（例如：-fixit-code，-fixit-all）以及一个收集和应用 “Fix-Its” 的脚本（utils/apply-fixit-edits.py）一起使用，这个开关为我们提供的基础迁移工作可以帮助我们了解 Swift 代码在各种声明和调用场景里，按照这份提议被转换后的样子；
 
@@ -547,7 +547,7 @@ Objective-C方法名中的其它selector片段，会变成Swift方法的参数la
 
 ### 声明
 
-为了最终形成 [Swift API 设计指南](https://swift.org/documentation/api-design-guidelines)，这份自动名称转换提议由Dmitri Hrybenko, Ted Kremenek, Chris Lattner, Alex Migicovsky, Max Moiseev, Ali Ozer和Tony Parker开发。
+为了最终形成 [Swift API 设计指南](https://swift.org/documentation/api-design-guidelines) ，这份自动名称转换提议由Dmitri Hrybenko, Ted Kremenek, Chris Lattner, Alex Migicovsky, Max Moiseev, Ali Ozer和Tony Parker开发。
 
 
 补充添加进来的comparable部分之前由 [Chris Amanse](https://github.com/chrisamanse) 提交到了 [core-libraries](https://swift.org/core-libraries/) 邮件列表中。Philippe Hausler 进行 review 之后，添加到了这份提议中。
