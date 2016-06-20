@@ -125,7 +125,7 @@ class UIBezierPath : NSObject, NSCopying, NSCoding {
 
 这份提议的一个试验性实现在 Swift main repository 中。Swift 编译器提供了一些开关帮助我们查看按照这份提议中的描述，被引入的 Objective-C API 以及 Swift 代码自身的转换结果（例如，通过 utils/omit-needless-words.py 脚本）。这些开关是：
 
-* `--enable-omit-needless-words`：这个开关启用了对Clang importer绝大多数的改动（上一节中提到的 1，2，4，5）。它主要适合用来打印在 Master 和 [Swift 2.2](https://github.com/apple/swift/tree/swift-2.2-branch) 分支上，Swift 对Objective-C 模块提供的接口。在 [Swift 3 API Guidelines分支](https://github.com/apple/swift/tree/swift-3-api-guidelines) 上，它默认是开启的；
+* `--enable-omit-needless-words`：这个开关启用了对Clang importer绝大多数的改动（上一节中提到的 1，2，4，5）。它主要适合用来打印在 Master 和 [Swift 2.2 分支](https://github.com/apple/swift/tree/swift-2.2-branch) 上，Swift 对Objective-C 模块提供的接口。在 [Swift 3 API Guidelines分支](https://github.com/apple/swift/tree/swift-3-api-guidelines) 上，它默认是开启的；
 * `--enable-infer-default-arguments`：这个开关启用了 Clang importer 中，对参数默认值的干涉（上一节的 3）；
 * `--swift-migration`：仅在 [Swift 2.2 分支](https://github.com/apple/swift/tree/swift-2.2-branch)上才有的开关，这个选项通过添加 "Fix-Its"，执行把名称从 Swift 2 迁移到 Swift 3 的基本转换。通过和其它编译器开关（例如：-fixit-code，-fixit-all）以及一个收集和应用 “Fix-Its” 的脚本（utils/apply-fixit-edits.py）一起使用，这个开关为我们提供的基础迁移工作可以帮助我们了解 Swift 代码在各种声明和调用场景里，按照这份提议被转换后的样子；
 
@@ -221,7 +221,7 @@ func startWithQueue(_: dispatch_queue_t,
     completionHandler: MKMapSnapshotCompletionhandler)
 ```
 
-    * selector片段中的空字符串可以匹配类型名称中“数字+D”形式的后缀，例如：
+* selector片段中的空字符串可以匹配类型名称中“数字+D”形式的后缀，例如：
 
 ```swift
 // Coordinate+空字符串匹配到了2D
@@ -312,133 +312,133 @@ func add(_: UIGestureRecognizer) // should indicate that we're adding to the pro
     * 并且这个类型的名称匹配方法中第一个 selector 片段；
     * 匹配到的名词后面，紧跟一个介词；
     
-    就可以删除掉这个匹配。
+就可以删除掉这个匹配。
     
-    通常，匹配以上这些条件的属性和方法，它们都用于把自身类型变成其它某种等价形式的值。
+通常，匹配以上这些条件的属性和方法，它们都用于把自身类型变成其它某种等价形式的值。
     
-    例如：
+例如：
     
-    ```swift
-    extension NSColor {
-      func colorWithAlphaComponent(_: CGFloat) -> NSColor
-    }
-    let translucentForeground = 
-        foregroundColor.colorWithAlphaComponent(0.5)
-    ```
+```swift
+extension NSColor {
+  func colorWithAlphaComponent(_: CGFloat) -> NSColor
+}
+let translucentForeground = 
+    foregroundColor.colorWithAlphaComponent(0.5)
+```
     
-    可以被简化成：
+可以被简化成：
     
-    ```swift
-    extension NSColor {
-        func withAlphaComponent(_: CGFloat) -> NSColor
-    }
-    let translucentForeground = 
-        foregroundColor.withAlphaComponent(0.5)
-    ```
+```swift
+extension NSColor {
+    func withAlphaComponent(_: CGFloat) -> NSColor
+}
+let translucentForeground = 
+    foregroundColor.withAlphaComponent(0.5)
+```
 
 2. **删掉多余的介词By**。特别是，当以下情形的时候：
 
     * 在第一步中删掉了开始的名词之后；
     * 方法名称中，剩余的部分用 `By` +动名词的形式；
     
-    就可以删掉多余的 `By` 了。
+就可以删掉多余的 `By` 了。
     
-    这种启发式方法可以让我们使用类似`a = b.frobnicating(c)`的方法调用形式。例如：
+这种启发式方法可以让我们使用类似`a = b.frobnicating(c)`的方法调用形式。例如：
     
-    ```swift
-    extension NSString {
-        func stringByApplyingTransform(_: NSString, 
-            reverse: Bool) -> NSString?
-    }
-    let sanitizedInput = 
-        rawInput.stringByApplyingTransform(
-            NSStringTransformToXMLHex, reverse: false)
-    ```
+```swift
+extension NSString {
+    func stringByApplyingTransform(_: NSString, 
+        reverse: Bool) -> NSString?
+}
+let sanitizedInput = 
+    rawInput.stringByApplyingTransform(
+        NSStringTransformToXMLHex, reverse: false)
+```
     
-    就可以通过第一步和第二步，被简化成：
+就可以通过第一步和第二步，被简化成：
     
-    ```swift
-    extension NSString {
-        func applyingTransform(
-            _: NSString, reverse: Bool
-        ) -> NString?
-    }
+```swift
+extension NSString {
+    func applyingTransform(
+        _: NSString, reverse: Bool
+    ) -> NString?
+}
     
-    let sanitizedInput = 
-        rawInput.applyingTransform(NSStringTransformToXMLHex, 
-            reverse: false)
-    ```
+let sanitizedInput = 
+    rawInput.applyingTransform(NSStringTransformToXMLHex, 
+        reverse: false)
+```
 
 3. **在方法签名的最后一个 selector 片段中，删除任何匹配到的类型名称**。特别是以下类型：
 
-    方法名称的尾部是 | 删除匹配到的
-    --------------- | ------------
-    用于介绍参数的selector片段 | 参数类型名称
-    一个属性名称 | 属性的类型名称
-    一个不带参数的方法 | 返回值的类型名称
+方法名称的尾部是 | 删除匹配到的
+--------------- | ------------
+用于介绍参数的selector片段 | 参数类型名称
+一个属性名称 | 属性的类型名称
+一个不带参数的方法 | 返回值的类型名称
     
-    例如，下面这些情况：
+例如，下面这些情况：
     
-    ```swift
-    extension NSDocumentController {
-        func documentForURL(
-            _ url: NSURL) -> NSDocument? // parameter introducer
-    }
-    extension NSManagedObjectContext {
-        var parentContext: NSManagedObjectContext?  // property
-    }
-    extension UIColor {
-        class func darkGrayColor() -> UIColor  // zero-argument method
-    }
-    ...
+```swift
+extension NSDocumentController {
+    func documentForURL(
+        _ url: NSURL) -> NSDocument? // parameter introducer
+}
+extension NSManagedObjectContext {
+    var parentContext: NSManagedObjectContext?  // property
+}
+extension UIColor {
+    class func darkGrayColor() -> UIColor  // zero-argument method
+}
+...
     
-    myDocument = self.documentForURL(locationOfFile)
-    if self.managedObjectContext.parentContext != changedContext { 
-        return 
-    }
+myDocument = self.documentForURL(locationOfFile)
+if self.managedObjectContext.parentContext != changedContext { 
+    return 
+}
     
-    foregroundColor = .darkGrayColor()
-    ```
+foregroundColor = .darkGrayColor()
+```
     
-    可以被简化成：
+可以被简化成：
     
-    ```swift
-    extension NSDocumentController {
-        func documentFor(_ url: NSURL) -> NSDocument?
-    }
-    extension NSManagedObjectContext {
-        var parent : NSManagedObjectContext?
-    }
-    extension UIColor {
-        class func darkGray() -> UIColor
-    }
-    ...
-    myDocument = self.documentFor(locationOfFile)
-    if self.managedObjectContext.parent != changedContext { 
-        return 
-    }
-    foregroundColor = .darkGray()
-    ```
+```swift
+extension NSDocumentController {
+    func documentFor(_ url: NSURL) -> NSDocument?
+}
+extension NSManagedObjectContext {
+    var parent : NSManagedObjectContext?
+}
+extension UIColor {
+    class func darkGray() -> UIColor
+}
+...
+myDocument = self.documentFor(locationOfFile)
+if self.managedObjectContext.parent != changedContext { 
+    return 
+}
+foregroundColor = .darkGray()
+```
 
 4. **只要匹配到的类型名称前面直接连接动词，即便这个类型名称在方法名中间也可以删掉它**，例如：
 
-    ```swift
-    extension UIViewController {
-        func dismissViewControllerAnimated(
-            flag: Bool, 
-            completion: (() -> Void)? = nil)
-    }
-    ```
+```swift
+extension UIViewController {
+    func dismissViewControllerAnimated(
+        flag: Bool, 
+        completion: (() -> Void)? = nil)
+}
+```
     
-    可以被简化成：
+可以被简化成：
     
-    ```swift
-    extension UIViewController {
-        func dismissAnimated(
-            flag: Bool, 
-            completion: (() -> Void)? = nil)
-    }
-    ```
+```swift
+extension UIViewController {
+    func dismissAnimated(
+        flag: Bool, 
+        completion: (() -> Void)? = nil)
+}
+```
 
 ##### 为什么删除一定要按照顺序执行呢？
 
