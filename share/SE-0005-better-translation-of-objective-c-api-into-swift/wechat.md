@@ -444,7 +444,7 @@ Objective-C方法名中的其它selector片段，会变成Swift方法的参数la
 
 #### 添加参数默认值
 
-出了那些只有一个参数的 setter 方法之外，在以下情况时，应该给参数添加默认值：
+除了那些只有一个参数的 setter 方法之外，在以下情况时，应该给参数添加默认值：
 
 * 让**可以为空的 trailing closure 参数**值为`nil`；
 * 让**可以为空的 `NSZone` 参数**默认为 `nil`。Zones几乎不在Swift中使用，它们应该总是为 `nil` 的；
