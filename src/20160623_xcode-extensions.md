@@ -1,17 +1,17 @@
 title: "Xcode 扩展"
-date: 2016-06-14
+date: 2016-06-23 11:00:00
 tags: [Xcode]
 categories: [Russ Bishop]
 permalink: xcode-extensions
-keywords: 这里是关键字
-custom_title: 这里是定制标题
-description: 这里是网页描述
+keywords: xcode扩展,xcode源码编辑器
+custom_title: 
+description: Xcode 现在支持扩展 API 了，本文就来介绍下第一个源码编辑器的扩展。
 
 ---
 原文链接=http://www.russbishop.net/xcode-extensions
 作者=Russ Bishop
 原文日期=2016-06-14
-译者=小袋子
+译者=小袋子
 校对=saitjr
 定稿=CMB
 
@@ -35,15 +35,15 @@ Xcode 8 现在开始支持一套官方的扩展 API。第一个支持的扩展�
 
 首先，创建一个新的 Cocoa （Mac）程序，这只是一个容器程序。然后选择 Editor -> add a new Target。选择  Xcode Source Editor Extension 并创建，然后你会得到一个询问是否切换到扩展 scheme 的提示，选择切换。
 
-![这里写图片描述](http://img.blog.csdn.net/20160621095215813)
+![](http://img.blog.csdn.net/20160621095215813)
 
 编辑新的 scheme，然后在 Executable 选项里面选择 Xcode-beta.app 为可执行（注：选择 8.0 以上的 Xcode 即可，现在为 beta 版）。
 
-![这里写图片描述](http://img.blog.csdn.net/20160621104506975)
+![](http://img.blog.csdn.net/20160621104506975)
 
 一旦你运行扩展，就会打开一个新的 Xcode 。这个 Xcode 有一个灰白的图标，是为了让你知道有一个另外的进程在运行着你的扩展。
 
-![这里写图片描述](http://img.blog.csdn.net/20160621115727975)
+![](http://img.blog.csdn.net/20160621115727975)
 
 默认的模板包括了一个命令（在 plist 中预设了）和扩展。你可以编辑 plist 中命令的名称，使得在 Editor 菜单中可以看到更好的名称。如果你选择在代码中提供命令，你必须支持所有的命令。因为 Xcode 不会自动把出现在 plist 中的命令合并起来的。
 
