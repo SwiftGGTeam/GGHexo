@@ -18,7 +18,7 @@
 
 如果你还没有下载 Xcode 8 Beta 1，请到[这里](https://developer.apple.com/download/)下载。
 
-###（可选）通过命令行编译
+### （可选）通过命令行编译
 
 除非你想使用命令行编译，使用 Swift 3.0 的工具链并不需要对项目做任何改变。如果你想的话，打开 Xcode-beta，然后从顶部菜单栏中选择 **Xcode > Preferences**，接着选择 **Location**，在页面的底部，你会看到「Command Line Tool」这行设置，请在这里选择 Xcode 8.0。
 
@@ -26,7 +26,7 @@
 
 现在，在 Terminal 使用命令行找到工程所在的文件夹，调用 `xcodebuild` 命令就可以编译工程了。
 
-###（可选）移植现有的 Swift 2 应用
+### （可选）移植现有的 Swift 2 应用
 
 如果你想对一个已使用 Swift 2.0 开发的工程引入 Siri 功能，需要点击工程，选择 **Build Settings**，在 **Swift Compiler - Version** 下面，找到 **Use Legacy Swift Language Version** 选项，设置成 **No**。这会造成编译器报错，然后你可以根据这些报错信息来修改代码，推荐你使用这个设置来更新代码，以适应 Swift 不断进化的语义。
 
