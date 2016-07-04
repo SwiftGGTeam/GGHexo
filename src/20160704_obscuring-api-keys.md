@@ -11,7 +11,7 @@ description: 本文是讲解怎么加密 API 密钥以及解密 API 密钥，以
 原文链接=http://dev.iachieved.it/iachievedit/obscuring-api-keys
 作者=Joe
 原文日期=2016-04-16
-译者=pucca401
+译者=pucca601
 校对=Cee
 定稿=千叶知风
 
