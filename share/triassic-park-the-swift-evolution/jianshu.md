@@ -13,8 +13,6 @@
 
 
 
-# 三叠纪公园：Swift 的进化史
-
 ### 最新被接受的
 
 [SE-0048](https://github.com/apple/swift-evolution/blob/master/proposals/0048-generic-typealias.md)：**泛型别名**在定义中引进了类型的参数，例如：
