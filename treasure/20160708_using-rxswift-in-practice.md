@@ -25,7 +25,7 @@ permalink: using-rxswift-in-practice
 在登录的部分，点击登录，进行验证，很明显，如果密码有误，
 画图，
 
-![登录例子](http://o9m6k9jl7.bkt.clouddn.com/result_1.png "登录例子")
+![](http://o9m6k9jl7.bkt.clouddn.com/result_1.png "登录例子")
 
 图片表达的很清晰，对应代码的代码是：
 
