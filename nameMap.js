@@ -33,7 +33,8 @@ let nameMap = {
   "Crystal Sun": "http://www.jianshu.com/users/7a2d2cc38444/latest_articles",
   "Darren": "https://github.com/Harman-darrenchen",
   "Cwift": "http://blog.csdn.net/cg1991130",
-  "haolloyin": "https://github.com/haolloyin"
+  "haolloyin": "https://github.com/haolloyin",
+  "BigbigChai": "https://github.com/chaiyixiao"
 }
 
 export default nameMap
