@@ -6,7 +6,7 @@
 
 ![SwiftGG 简介](http://static.zybuluo.com/numbbbbb/vf1qkyzl8g681s9mkdsey3j0/SwiftGG%E5%9B%BE.png)
 
-SwiftGG 成立于 2015.6.27，前身是《The Swift Programming Language》翻译团队，文档完成之后出于兴趣组成了翻译组。
+SwiftGG 成立于 2015.6.27，前身是[《The Swift Programming Language》](https://github.com/numbbbbb/the-swift-programming-language-in-chinese/)翻译团队，文档完成之后出于兴趣组成了翻译组。
 
 SwiftGG 翻译组的原则是**只翻译作者授权的内容，绝不侵权**。每篇译文都会进行校对和定稿，尽量提高翻译质量。每个工作日我们都会发布一篇译文，将 Swift 领域世界最新的信息传递给国内开发者。
 
