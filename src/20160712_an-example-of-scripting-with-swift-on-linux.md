@@ -7,7 +7,7 @@ keywords: linux swift开发,swift脚本
 custom_title: 
 description: 在 Linux 上怎么用 Swift 来写脚本呢，本文就来举例实战下 Swift 在 Linux 上写个脚本。
 
-------
+---
 原文链接=http://dev.iachieved.it/iachievedit/an-example-of-scripting-with-swift-on-linux/?utm_source=rss&utm_medium=rss
 作者=Joe
 原文日期=2016/06/27
