@@ -6,6 +6,7 @@ permalink: parameter-objects
 keywords: swift 重构
 custom_title: 
 description: 这是重构与模式系列文章的参数对象内容，如果你对于 iOS API 设计中的 Swift 模式的参数对象有兴趣不妨来看下。
+
 ---
 
 原文链接=https://www.natashatherobot.com/parameter-objects/
