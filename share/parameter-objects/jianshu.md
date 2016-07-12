@@ -12,7 +12,6 @@
 
 
 
-
 我最近在读[《重构与模式》](https://book.douban.com/subject/20393327/) 。昨天（译注：原文日期的昨天），在我写描述了一个拥有多个参数的对象的[《创建方法》](http://swift.gg/2016/06/27/refactoring-to-creation-method/)时，想到了[@modocache](https://twitter.com/modocache)关于[iOS API 设计中的 Swift 模式](https://youtu.be/yu6KND7dJBA?list=PLdr22uU_wISpW6XI1J0S7Lp-X8Km-HaQW)超棒的演讲，尤其是关于**参数对象**部分。我第一次看的时候获益匪浅，因此我希望记录下来。
 
 
