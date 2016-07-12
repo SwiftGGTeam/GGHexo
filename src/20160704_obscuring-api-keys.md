@@ -1,7 +1,7 @@
 title: "混淆 API 密钥"
 date: 2016-07-04
 tags: [Swift 进阶]
-categories: [iAchievedit]
+categories: [iAchieved.it]
 permalink: obscuring-api-keys
 keywords: api密钥,ios 混淆私有api
 custom_title: 

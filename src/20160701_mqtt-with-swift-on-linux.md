@@ -1,7 +1,7 @@
 title: "Linux 下使用 Swift MQTT"
 date: 2016-07-01
 tags: [Swift 进阶]
-categories: [iAchievedit]
+categories: [iAchieved.it]
 permalink: mqtt-with-swift-on-linux
 keywords: swift mqtt,linux mqtt
 custom_title: 
