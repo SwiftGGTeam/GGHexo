@@ -1,4 +1,4 @@
-title: "在 Swift 和 Objective-C 项目中使用 Cocoapods"
+title: "在 Swift 和 Objective-C 项目中使用 CocoaPods"
 date: 2016-07-13 10:00:00
 tags: [Swift]
 categories: [AppCoda]
