@@ -116,7 +116,7 @@ CocoaPods 生成 Podfile 像这样：
 
 -   Podfile 描述了 Xcode 项目某个 Target 所需的依赖。因此，我们需要指定 Target，在这个 demo 中，是 `CocoapodsTest`。
 -   `use_frameworks` 选项是告诉 CocoaPods 使用 framework 而不是静态库。这在 Swift 项目中是必选。
--   我们添加的那行（`pod 'Firebase'`）是让 CocoaPods 知道我们要用 Firebase。或许你会好奇，我们怎么知道某个库的 pod 名称的。一般情况下，你可以查看文档，或者在 [cocoapods.org](cocoapods.org) 搜索。
+-   我们添加的那行（`pod 'Firebase'`）是让 CocoaPods 知道我们要用 Firebase。或许你会好奇，我们怎么知道某个库的 pod 名称的。一般情况下，你可以查看文档，或者在 [cocoapods.org](https://cocoapods.org/) 搜索。
 
 ![](http://www.appcoda.com/wp-content/uploads/2016/06/pod-cocoapods-org.jpg)
 
