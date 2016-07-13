@@ -1,4 +1,4 @@
-在 Swift 和 Objective-C 项目中使用 Cocoapods"
+在 Swift 和 Objective-C 项目中使用 CocoaPods"
 
 > 作者：Gregg Mojica，[原文链接](http://www.appcoda.com/cocoapods/)，原文日期：2016/06/24
 > 译者：[saitjr](http://www.saitjr.com)；校对：[Cee](https://github.com/Cee)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
