@@ -1,4 +1,4 @@
-Xcode 8：如何创建 iMessage 动画表情"
+Xcode 8：如何创建 iMessage 动图"
 
 > 作者：Natasha The Robot，[原文链接](https://www.natashatherobot.com/xcode-8-create-an-animated-imessage-sticker/)，原文日期：2016-07-01
 > 译者：[haolloyin](https://github.com/haolloyin)；校对：[Cee](https://github.com/Cee)；定稿：[numbbbbb](http://numbbbbb.com/)
