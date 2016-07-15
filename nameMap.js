@@ -35,7 +35,8 @@ let nameMap = {
   "Cwift": "http://blog.csdn.net/cg1991130",
   "haolloyin": "https://github.com/haolloyin",
   "BigbigChai": "https://github.com/chaiyixiao",
-  "wiilen": "http://www.jianshu.com/users/b7978363eb99/latest_articles"
+  "wiilen": "http://www.jianshu.com/users/b7978363eb99/latest_articles",
+  "Channe": "http://www.jianshu.com/users/7a07113a6597/latest_articles",
 }
 
 export default nameMap
