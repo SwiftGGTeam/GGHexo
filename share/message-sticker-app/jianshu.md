@@ -1,7 +1,7 @@
 使用 Xcode 8 为 iMessage 创建表情包插件"
 
 > 作者：SIMON NG，[原文链接](http://www.appcoda.com/message-sticker-app/)，原文日期：2016-06-20
-> 译者：[小袋子](http://daizi.me)；校对：[Cee](https://github.com/Cee)；定稿：[Channe](undefined)
+> 译者：[小袋子](http://daizi.me)；校对：[Cee](https://github.com/Cee)；定稿：[Channe](http://www.jianshu.com/users/7a07113a6597/latest_articles)
   
 
 

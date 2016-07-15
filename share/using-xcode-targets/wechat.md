@@ -1,7 +1,7 @@
 使用 Xcode 的 Target 区分开发和生产环境"
 
 > 作者：Eugene Trapeznikov，[原文链接](http://www.appcoda.com/using-xcode-targets/)，原文日期：2016-01-18
-> 译者：[小锅](http://www.swiftyper.com)；校对：[Channe](undefined)；定稿：[numbbbbb](http://numbbbbb.com/)
+> 译者：[小锅](http://www.swiftyper.com)；校对：[Channe](http://www.jianshu.com/users/7a07113a6597/latest_articles)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
 

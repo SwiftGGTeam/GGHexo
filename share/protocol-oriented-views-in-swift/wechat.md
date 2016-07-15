@@ -1,7 +1,7 @@
 用 Swift 编写面向协议的视图"
 
 > 作者：Natasha The Robot，[原文链接](https://www.natashatherobot.com/protocol-oriented-views-in-swift/)，原文日期：2016-05-13
-> 译者：[Lanford3_3](http://lanfordcai.github.io)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[Channe](undefined)
+> 译者：[Lanford3_3](http://lanfordcai.github.io)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[Channe](http://www.jianshu.com/users/7a07113a6597/latest_articles)
   
 
 

@@ -1,7 +1,7 @@
 初学者应该先学什么：TDD、Swift 还是函数式？"
 
 > 作者：Dominik Hauser，[原文链接](http://swiftandpainless.com/what-to-learn-first/)，原文日期：2015/04/19
-> 译者：[小锅](http://www.swiftyper.com)；校对：[Channe](undefined)；定稿：[numbbbbb](http://numbbbbb.com/)
+> 译者：[小锅](http://www.swiftyper.com)；校对：[Channe](http://www.jianshu.com/users/7a07113a6597/latest_articles)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
 

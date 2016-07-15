@@ -1,7 +1,7 @@
 MVVM 不是那么好"
 
 > 作者：Soroush Khanlou，[原文链接](http://khanlou.com/2015/12/mvvm-is-not-very-good/)，原文日期：2015-12-17
-> 译者：[zltunes](http://zltunes.com)；校对：[Channe](undefined)；定稿：[shanks](http://codebuild.me/)
+> 译者：[zltunes](http://zltunes.com)；校对：[Channe](http://www.jianshu.com/users/7a07113a6597/latest_articles)；定稿：[shanks](http://codebuild.me/)
   
 
 

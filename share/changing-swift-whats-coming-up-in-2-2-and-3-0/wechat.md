@@ -1,7 +1,7 @@
 Swift 的变化：从 2.2 到 3.0 会带来什么"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2015/12/03/changing-swift-whats-coming-up-in-2-2-and-3-0/)，原文日期：2015-12-03
-> 译者：[Channe](undefined)；校对：[Cee](https://github.com/Cee)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[Channe](http://www.jianshu.com/users/7a07113a6597/latest_articles)；校对：[Cee](https://github.com/Cee)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 

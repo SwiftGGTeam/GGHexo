@@ -1,7 +1,7 @@
 《重构与模式》Swift 版之参数对象"
 
 > 作者：Natasha The Robot，[原文链接](https://www.natashatherobot.com/parameter-objects/)，原文日期：2016-05-28
-> 译者：[Channe](undefined)；校对：[Cee](https://github.com/Cee)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[Channe](http://www.jianshu.com/users/7a07113a6597/latest_articles)；校对：[Cee](https://github.com/Cee)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 

@@ -1,7 +1,7 @@
 在 Xcode 中使用 Markdown 生成 Swift 代码文档"
 
 > 作者：Gabriel Theodoropoulos，[原文链接](http://www.appcoda.com/swift-markdown/)，原文日期：2016-05-12
-> 译者：[小铁匠Linus](http://linusling.com)；校对：[Channe](undefined)；定稿：[numbbbbb](http://numbbbbb.com/)
+> 译者：[小铁匠Linus](http://linusling.com)；校对：[Channe](http://www.jianshu.com/users/7a07113a6597/latest_articles)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
 

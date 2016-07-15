@@ -1,7 +1,7 @@
 三叠纪公园：Swift 的进化史"
 
 > 作者：Natasha The Robot，[原文链接](http://ericasadun.com/2016/04/15/triassic-park-the-swift-evolution/)，原文日期：2016-04-15
-> 译者：[Cee](https://github.com/Cee)；校对：[Channe](undefined)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[Cee](https://github.com/Cee)；校对：[Channe](http://www.jianshu.com/users/7a07113a6597/latest_articles)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 

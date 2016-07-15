@@ -1,7 +1,7 @@
 Swift 2.0 ：揭秘 Map 和 FlatMap"
 
 > 作者：uraimo，[原文链接](2015/10/08/Swift2-map-flatmap-demystified/)，原文日期：2015-10-08
-> 译者：[靛青K](http://blog.dianqk.org/)；校对：[Channe](undefined)；定稿：[shanks](http://codebuild.me/)
+> 译者：[靛青K](http://blog.dianqk.org/)；校对：[Channe](http://www.jianshu.com/users/7a07113a6597/latest_articles)；定稿：[shanks](http://codebuild.me/)
   
 
 

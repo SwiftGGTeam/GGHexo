@@ -1,7 +1,7 @@
 Swift 通知推送新手指南"
 
 > 作者：Gabriel Theodoropoulos，[原文链接](http://www.appcoda.com/push-notification-ios/)，原文日期：2016-01-27
-> 译者：[bestswifter](http://bestswifter.com)；校对：[Channe](undefined)；定稿：[numbbbbb](http://numbbbbb.com/)
+> 译者：[bestswifter](http://bestswifter.com)；校对：[Channe](http://www.jianshu.com/users/7a07113a6597/latest_articles)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
 

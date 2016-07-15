@@ -1,7 +1,7 @@
 合理的 Cocoa 和 Cocoa Touch 默认值"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2016/04/12/sensible-cocoa-and-cocoa-touch-defaults)，原文日期：2016-04-12
-> 译者：[赵磊](undefined)；校对：[Channe](undefined)；定稿：[Cee](https://github.com/Cee)
+> 译者：[赵磊](undefined)；校对：[Channe](http://www.jianshu.com/users/7a07113a6597/latest_articles)；定稿：[Cee](https://github.com/Cee)
   
 
 
