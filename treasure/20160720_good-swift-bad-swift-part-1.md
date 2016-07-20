@@ -30,18 +30,22 @@ permalink: good-swift-bad-swift-part-1
 
 在使用 NSURLSession 的每个项目里，我都包含了下面的代码片段：
 
-    enum HTTPMethod: String {
-        case GET = "GET"
-        case POST = "POST"
-        case PUT = "PUT"
-        case DELETE = "DELETE
-    }
+```
+enum HTTPMethod: String {
+    case GET = "GET"
+    case POST = "POST"
+    case PUT = "PUT"
+    case DELETE = "DELETE
+}
+```
 
 这是一个非常简单的枚举，我知道大部分的开发者可能都不屑于这么做。然而基于上述原因，我确实是这么使用的。
 
 **更新：** [Tobias Due Munk](https://medium.com/u/82271c72eab3) 指出，你甚至不需要把和键名相同的值字符串写出来，Swift 有更简化的语法。你只需要这样写：
 
-    enum HTTPMethod: String { case GET, POST, PUT, DELETE }
+```
+enum HTTPMethod: String { case GET, POST, PUT, DELETE }
+```
 
 ### 使用访问控制关键词限制内容可访问性
 
@@ -57,55 +61,63 @@ permalink: good-swift-bad-swift-part-1
 
 在编写了大量 view 和 view controller 代码之后，我遇到了一个难题。因为我更喜欢 auto layout，所以我偏向于不使用参数初始化视图（init:frame 是指定构造器）。如果你在 Swift 中，对于任何的 UIKit 类指定一个无参数的构造函数，你就不得不指定一个 init:coder 构造器。这很烦人，为了避免每次创建视图都写这段模板代码，我创建了一个 “泛型视图类（Generic View Class）” ，让所有视图继承这个类而无需继承 UIView。
 
-    public class GenericView: UIView {
-        public required init() {
-            super.init(frame: CGRect.zero)
-            configureView()
-        }
-             public required init?(coder: NSCoder) {
-            super.init(coder: coder)
-            configureView()
-        }
-       internal func configureView() {}
+```
+public class GenericView: UIView {
+    public required init() {
+        super.init(frame: CGRect.zero)
+        configureView()
     }
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        configureView()
+    }
+    internal func configureView() {}
+}
+```
 
 这个类同时也表达出我的另一个编程习惯：创建一个 “configureView” 方法，把所有配置视图的操作，包括添加子视图、约束、调整颜色、字体等，全都放到这个方法中。这样的话，无论什么时候创建视图，我都不需要再写一遍上述的模板代码了。
 
-    class AwesomeView: GenericView {
-        override func configureView() {
-            ....
-        }
-    }let awesomeView = AwesomeView()
+```
+class AwesomeView: GenericView {
+    override func configureView() {
+        ....
+    }
+}
+let awesomeView = AwesomeView()
+```
 
 当你把这个模式配合泛型 view controller 一起使用，效果更佳。
 
-    public class GenericViewController&lt;View: GenericView&gt;: UIViewController {
-        internal var contentView: View {
-            return view as! View
-        }
-        public init() {
-            super.init(nibName: nil, bundle: nil)
-        }
-        public required init?(coder: NSCoder)
-            super.init(coder: coder)
-        }
-        public override func loadView() {
-            view = View()
-        }
+```
+public class GenericViewController<View: GenericView>: UIViewController {
+    internal var contentView: View {
+        return view as! View
     }
+    public init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    public required init?(coder: NSCoder)
+        super.init(coder: coder)
+    }
+    public override func loadView() {
+        view = View()
+    }
+}
+```
 
 现在要给视图创建 view controller 更加简单了。
 
-    class AwesomeViewController: GenericViewController&lt;AwesomeView&gt; {
-        override func viewDidLoad()
-            super.viewDidLoad()
-            ....
-        }
+```
+class AwesomeViewController: GenericViewController<AwesomeView> {
+    override func viewDidLoad()
+        super.viewDidLoad()
+        ....
     }
+}
+```
 
 我把这个模式的代码抽离出来，放到了一个 [GitHub repo](https://github.com/ksmandersen/GenericViewKit) 中。这套代码可以配合 Carthage 或者 CocoaPods 作为一套框架使用。
 
 我同意这 4 个基类几乎没实现什么功能，也称不上一套框架。之所以发布这套代码，是因为我觉得对于大部分人来说，这种用法是最容易上手的方式。我觉得你完全可以把这几个类复制粘贴到你的代码当中，我预计不会对这套代码作出很大修改了。
 
 以上就是 Swift 语言面面观系列的第一部分，期待大家更多的想法、批评和建议。欢迎在下面留言，或者 [给我发 Twitter](http://twitter.com/ksmandersen)
-
