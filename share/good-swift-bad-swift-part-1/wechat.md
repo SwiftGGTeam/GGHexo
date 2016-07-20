@@ -57,11 +57,11 @@ Swift 语言面面观（一）"
             super.init(frame: CGRect.zero)
             configureView()
         }
-             public required init?(coder: NSCoder) {
+        public required init?(coder: NSCoder) {
             super.init(coder: coder)
             configureView()
         }
-       internal func configureView() {}
+        internal func configureView() {}
     }
 
 这个类同时也表达出我的另一个编程习惯：创建一个 “configureView” 方法，把所有配置视图的操作，包括添加子视图、约束、调整颜色、字体等，全都放到这个方法中。这样的话，无论什么时候创建视图，我都不需要再写一遍上述的模板代码了。
@@ -70,11 +70,12 @@ Swift 语言面面观（一）"
         override func configureView() {
             ....
         }
-    }let awesomeView = AwesomeView()
+    }
+    let awesomeView = AwesomeView()
 
 当你把这个模式配合泛型 view controller 一起使用，效果更佳。
 
-    public class GenericViewController&lt;View: GenericView&gt;: UIViewController {
+    public class GenericViewController<View: GenericView>: UIViewController {
         internal var contentView: View {
             return view as! View
         }
@@ -91,7 +92,7 @@ Swift 语言面面观（一）"
 
 现在要给视图创建 view controller 更加简单了。
 
-    class AwesomeViewController: GenericViewController&lt;AwesomeView&gt; {
+    class AwesomeViewController: GenericViewController<AwesomeView> {
         override func viewDidLoad()
             super.viewDidLoad()
             ....
@@ -103,4 +104,3 @@ Swift 语言面面观（一）"
 我同意这 4 个基类几乎没实现什么功能，也称不上一套框架。之所以发布这套代码，是因为我觉得对于大部分人来说，这种用法是最容易上手的方式。我觉得你完全可以把这几个类复制粘贴到你的代码当中，我预计不会对这套代码作出很大修改了。
 
 以上就是 Swift 语言面面观系列的第一部分，期待大家更多的想法、批评和建议。欢迎在下面留言，或者 [给我发 Twitter](http://twitter.com/ksmandersen)
-
