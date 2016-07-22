@@ -30,7 +30,6 @@ Matt Mathias](https://www.bignerdranch.com/about-us/nerds/matt-mathias/)
 
 
 ```Swift
-
     let x: Int! = nil
     print(x) // Crash! `x` is nil!
 ```
