@@ -59,7 +59,7 @@ description: 在 Swift 中使用 Struct 代替 Class 作为数据模型会遇到
 
 * 速度
 
-	值类型通常来说是以栈的形式分配的，而不是用堆。因此他们比 Class 要快很多，真的*很多*！在 [StackOverflow] (http://stackoverflow.com/a/24243626/596821) 给 struct 和 class 进行相同操作的表现做了基准测试，Struct 比 Class 要快九百倍。（注：在 2016-05-07 的测试中，Struct 的速度为 Class 的三千七百万倍，详见[StackOverflow] (http://stackoverflow.com/a/24243626/596821)）
+	值类型通常来说是以栈的形式分配的，而不是用堆。因此他们比 Class 要快很多，真的*很多*！在 [StackOverflow](http://stackoverflow.com/a/24243626/596821) 给 struct 和 class 进行相同操作的表现做了基准测试，Struct 比 Class 要快九百倍。（注：在 2016-05-07 的测试中，Struct 的速度为 Class 的三千七百万倍，详见 [StackOverflow](http://stackoverflow.com/a/24243626/596821)）
 
 * 拷贝
 
