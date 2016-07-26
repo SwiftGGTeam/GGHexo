@@ -18,7 +18,7 @@ permalink: good-swift-bad-swift-part-2
 
 > 注：好与坏，Swift面面观 Part1 [译文链接](http://swift.gg/2016/07/20/good-swift-bad-swift-part-1/)
 
-在这个系列的文章中，我将尝试提炼出我认为的 **Swift** 语言中好与不好的部分。唔，我也希望在未来有优秀的 **Swift** 来帮助我征服 **Swift** （唔，小伙子，别看了，中央已经决定是你了，快念两句诗吧）。如果你有什么想法，或者想告诉我一点作为开发者的人生经验什么的话，请在 Twitter 上联系我，我的账号是 [ksmandersen](http://twitter.com/ksmandersen)。
+在这个系列的文章中，我将尝试提炼出我认为的 **Swift** 语言中好与不好的部分。唔，我也希望在未来有优秀的 **Swift** 开发者来帮助我征服 **Swift** （唔，小伙子，别看了，中央已经决定是你了，快念两句诗吧）。如果你有什么想法，或者想告诉我一点作为开发者的人生经验什么的话，请在 Twitter 上联系我，我的账号是 [ksmandersen](http://twitter.com/ksmandersen)。
 
 好了废话不多说，让我们开始今天的课程吧。
 
@@ -75,15 +75,21 @@ currentRequest?.getValue { [weak self] result in
 
 ```Swift
 class AwesomeView: GenericView {
-    let bestTitleLabel = UILabel().then {
-        $0.textAlignment = .Center
-        $0.textColor = .purpleColor()tww
-    }
+    let bestTitleLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .Center
+        label.textColor = .purpleColor()
+        
+        return label
+    }()
 
-    let otherTitleLabel = UILabel().then {
-        $0.textAlignment = .
-        $0.textColor = .greenColor()
-    }
+    let otherTitleLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .Left
+        label.textColor = .greenColor()
+        
+        return label
+    }()
 
     override func configureView() {
         super.configureView()
