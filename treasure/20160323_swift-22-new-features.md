@@ -1,6 +1,6 @@
 title: "Swift 2.2 的新特性"
 date: 2016-03-23 12:00:00
-tags: [Swift 2.2]
+tags: [Swift 2]
 categories: [原创文章]
 permalink: swift-22-new-features
 ---

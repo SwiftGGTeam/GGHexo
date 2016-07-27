@@ -1,6 +1,6 @@
 title: "亲爱的 Erica：Swift 3 有哪些最重大最出色的改变？"
 date: 2016-06-21 09:00:00
-tags: [Swift3]
+tags: [Swift 3]
 categories: [Erica Sadun]
 permalink: dear-erica-whats-the-biggest-and-best-swift-3-change
 keywords: swift3.0新特性
