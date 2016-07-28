@@ -3,9 +3,9 @@ date: 2016-07-28
 tags: [Swift]
 categories: [Erica Sadun]
 permalink: guarding-against-an-empty-sequence
-keywords: 
+keywords: sequence序列,序列为空
 custom_title: 
-description: 
+description: 很多人都疑问要怎么防止序列（sequence）为空呢，本文就来探讨下这个问题吧。
 
 ---
 原文链接=http://ericasadun.com/2016/05/11/guarding-against-an-empty-sequence/
