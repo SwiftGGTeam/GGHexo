@@ -38,6 +38,7 @@ let nameMap = {
   "wiilen": "http://www.jianshu.com/users/b7978363eb99/latest_articles",
   "Channe": "http://www.jianshu.com/users/7a07113a6597/latest_articles",
   "冬瓜": "https://desgard.com/",
+  "Martin_Joy": "http://www.jianshu.com/users/9c51a213b02e/latest_articles"
 }
 
 export default nameMap
