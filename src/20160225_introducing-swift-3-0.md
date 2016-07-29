@@ -1,6 +1,6 @@
 title: "Swift 3.0 介绍"
 date: 2016-02-25 09:00:00
-tags: [Swift 入门,Swift 3.0]
+tags: [Swift 入门,Swift 3]
 categories: [iAchieved.it] 
 permalink: introducing-swift-3-0
 keywords: Swift3.0的特点,Swift3.0变化

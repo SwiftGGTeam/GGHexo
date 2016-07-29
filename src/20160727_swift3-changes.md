@@ -1,6 +1,6 @@
 title: "Swift 3 新特性"
 date: 2016-07-27
-tags: [Swift 3.0]
+tags: [Swift 3]
 categories: [AppCoda]
 permalink: swift3-changes
 keywords: swift3.0新特性,swift3.0变化
