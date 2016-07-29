@@ -30,7 +30,7 @@
 
 创建一个 **single-view application**，然后在 *ViewController.swift* 中添加如下代码：
 
-    Objective-C
+    
     import UIKit
     
     class ViewController: UIViewController {
