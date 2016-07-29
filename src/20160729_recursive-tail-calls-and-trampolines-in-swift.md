@@ -35,7 +35,7 @@ description: UIViewPropertyAnimator 是 iOS 10 中的新增的执行 View 动画
 
 创建一个 **single-view application**，然后在 *ViewController.swift* 中添加如下代码：
 
-```Objective-C
+```swift
 import UIKit
 
 class ViewController: UIViewController {
