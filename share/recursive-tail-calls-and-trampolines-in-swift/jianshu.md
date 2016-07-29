@@ -156,7 +156,8 @@ animator 有三种状态：
 
 来看下图示：
 
-![](http://static.zybuluo.com/numbbbbb/iku81lw1narjynpw485nq1c2/app-state.jpg)（译者注：为了方便大家阅读，附加了对应的中文翻译。）
+![](http://static.zybuluo.com/numbbbbb/iku81lw1narjynpw485nq1c2/app-state.jpg)
+（译者注：为了方便大家阅读，附加了对应的中文翻译。）
 
 （图片来源于[UIViewAnimating protocol reference](https://developer.apple.com/reference/uikit/uiviewanimating)）
 
