@@ -24,25 +24,25 @@ Swift 关联类型"
 
 我们在讨论什么？当然，关联类型。
 
-当我第一次看到 Swift 范型的实现时，**关联类型** 的用法的出现，让我感到很奇怪。
+当我第一次看到 Swift 泛型的实现时，**关联类型** 的用法的出现，让我感到很奇怪。
 
 在这篇文章，我将通过类型概念和一些实践经验，这几乎都是我用自己的思考尝试解释这些概念（如果我犯了错误，请告诉我）。
 
 
 
-### 范型
+### 泛型
 
-在 Swift 中，如果我想有一个抽象的类型（也就是创建一个范型的**东西**），在类中的语法是这个样子：
+在 Swift 中，如果我想有一个抽象的类型（也就是创建一个泛型的**东西**），在类中的语法是这个样子：
 
     
     class Wat<T> { ... }
 
-类似的，带范型的结构体：
+类似的，带泛型的结构体：
 
     
     struct WatWat<T> { ... }
 
-或者带范型的枚举：
+或者带泛型的枚举：
 
     
     enum GoodDaySir<T> { ... }
@@ -58,7 +58,7 @@ Swift 关联类型"
 
 ### 基本概念
 
-protocol 和 class、struct 以及 enum 不同，它不支持范型类型*参数*。代替支持[抽象类型成员](http://docs.scala-lang.org/tutorials/tour/abstract-types.html)；在 Swift 术语中称作*[关联类型](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Generics.html#//apple_ref/doc/uid/TP40014097-CH26-XID_289)*。尽管你可以用其它系统完成类似的事情，但这里有一些使用关联类型的好处（以及当前存在的一些缺点）。
+protocol 和 class、struct 以及 enum 不同，它不支持泛型类型*参数*。代替支持[抽象类型成员](http://docs.scala-lang.org/tutorials/tour/abstract-types.html)；在 Swift 术语中称作*[关联类型](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Generics.html#//apple_ref/doc/uid/TP40014097-CH26-XID_289)*。尽管你可以用其它系统完成类似的事情，但这里有一些使用关联类型的好处（以及当前存在的一些缺点）。
 
 协议中的一个关联类型表示：“我不知道具体类型是什么，一些服从我的类、结构体、枚举会帮我实现这个细节”。
 
