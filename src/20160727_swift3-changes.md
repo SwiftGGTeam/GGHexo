@@ -1,11 +1,11 @@
-title: "Swift 3 新特性"
+title: "Swift 3 新变化"
 date: 2016-07-27
 tags: [Swift 3]
 categories: [AppCoda]
 permalink: swift3-changes
-keywords: swift3.0新特性,swift3.0变化
-custom_title: swift 3.0 的新变化
-description: 在 Swift 3 中带来了很多的新特性，那么到底 Swift 3 有哪些不一样的改动呢，本文就详细介绍了 Swift 3 的那些新特性。
+keywords: swift3.0新变化,swift3.0变化
+custom_title: swift 3.0 新变化
+description: 在 Swift 3 中带来了很多的新变化，那么到底 Swift 3 有哪些不一样的改动呢，本文就详细介绍了 Swift 3 的那些新特性。
 
 ---
 原文链接=http://www.appcoda.com/swift3-changes/
