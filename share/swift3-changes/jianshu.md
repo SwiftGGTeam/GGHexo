@@ -1,4 +1,4 @@
-Swift 3 新特性"
+Swift 3 新变化"
 
 > 作者：COSMIN PUPĂZĂ，[原文链接](http://www.appcoda.com/swift3-changes/)，原文日期：2016/06/29
 > 译者：[saitjr](http://www.saitjr.com)；校对：[Cee](https://github.com/Cee)；定稿：[CMB](https://github.com/chenmingbiao)
