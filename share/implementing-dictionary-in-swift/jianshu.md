@@ -12,7 +12,7 @@
 
 
 
-虽然 Swift 原生的字典类型实现的[很复杂](http://ankit.im/swift/2016/01/20/exploring-swift-dictionary-implementation/)（毫无疑问是为了性能），但是我们可以利用 Swift 提供的工具写出漂亮简洁的实现。我们从一个简单的实现开始，并且逐步添加功能。
+虽然 Swift 原生的字典类型实现得[很复杂](http://ankit.im/swift/2016/01/20/exploring-swift-dictionary-implementation/)（毫无疑问是为了性能），但是我们可以利用 Swift 提供的工具写出漂亮简洁的实现。我们从一个简单的实现开始，并且逐步添加功能。
 
 
 
