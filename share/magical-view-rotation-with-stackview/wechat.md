@@ -1,7 +1,7 @@
 使用 StackView 实现魔术般的视图旋转适配"
 
 > 作者：Natasha，[原文链接](https://www.natashatherobot.com/magical-view-rotation-with-stackview/)，原文日期：2016-07-24
-> 译者：[宝珠珠](undefined)；校对：[aaaron7](http://www.jianshu.com/users/9efd08855d3a/)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[粉红星云](undefined)；校对：[aaaron7](http://www.jianshu.com/users/9efd08855d3a/)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 
