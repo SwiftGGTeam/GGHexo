@@ -11,7 +11,7 @@ description:
 原文链接=https://www.natashatherobot.com/magical-view-rotation-with-stackview/
 作者=Natasha
 原文日期=2016-07-24
-译者=宝珠珠
+译者=粉红星云
 校对=aaaron7
 定稿=CMB
 
