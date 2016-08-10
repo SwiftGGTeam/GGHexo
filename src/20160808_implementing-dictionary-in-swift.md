@@ -3,9 +3,9 @@ date: 2016-08-08
 tags: [Siwft 进阶]
 categories: [KHANLOU]
 permalink: implementing-dictionary-in-swift
-keywords: 
+keywords: swift字典
 custom_title: 
-description: 
+description: 怎么在 Swift 实现字典是很多人想知道的吧，那么下面就来详细说下 Swift 字典类型实现过程吧。
 
 ---
 原文链接=http://khanlou.com/2016/07/implementing-dictionary-in-swift/

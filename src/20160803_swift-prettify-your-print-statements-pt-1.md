@@ -3,9 +3,9 @@ date: 2016-08-03
 tags: [Swift]
 categories: [medium.com]
 permalink: swift-prettify-your-print-statements-pt-1
-keywords: 
+keywords: swift print
 custom_title: 
-description: 
+description: 在 Swift 中使用 print() 语句你会发现比以前的 NSLog 爽多了。
 
 ---
 原文链接=https://medium.com/swift-programming/swift-prettify-your-print-statements-pt-1-64832bb7fafa#.8sxylwim2

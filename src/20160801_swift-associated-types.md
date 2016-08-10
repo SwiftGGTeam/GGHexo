@@ -3,9 +3,9 @@ date: 2016-08-01
 tags: [Swift 进阶]
 categories: [Russ Bishop]
 permalink: swift-associated-types
-keywords: 
+keywords: swift关联类型
 custom_title: 
-description: 
+description: Swift 中的关联类型你都搞清楚了吗，本文就来比较详细的说下Swift 关联类型。
 
 ---
 原文链接=http://www.russbishop.net/swift-associated-types

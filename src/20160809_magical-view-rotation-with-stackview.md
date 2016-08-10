@@ -1,11 +1,11 @@
 title: "使用 StackView 实现魔术般的视图旋转适配"
 date: 2016-08-09
-tags: [Swift 进阶]
+tags: [iOS 开发]
 categories: [Natasha The Robot]
 permalink: magical-view-rotation-with-stackview
-keywords: 
+keywords: stackView ios
 custom_title: 
-description: 
+description: 使用 StackView 可以让图片实现自动切换横竖屏来展示图片，本文就来说下具体的实现过程。
 
 ---
 原文链接=https://www.natashatherobot.com/magical-view-rotation-with-stackview/

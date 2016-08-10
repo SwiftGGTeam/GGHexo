@@ -3,9 +3,9 @@ date: 2016-08-05
 tags: [Swift 进阶]
 categories: [Erica Sadun]
 permalink: afternoon-whoa-swifts-guard-case
-keywords: 
+keywords: swift guard,guard case
 custom_title: 
-description: 
+description: 在 Swift 中 guard case 适合模式匹配么，虽然它很酷但其实并不好用。
 
 ---
 原文链接=http://ericasadun.com/2016/03/15/afternoon-whoa-swifts-guard-case/
