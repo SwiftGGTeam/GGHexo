@@ -40,7 +40,8 @@ let nameMap = {
   "冬瓜": "https://desgard.com/",
   "Martin_Joy": "http://www.jianshu.com/users/9c51a213b02e/latest_articles",
   "Ckitakishi": "http://ckitakishi.com",
-  "粉红星云": "http://www.jianshu.com/users/f4d4f97d8b90/latest_articles"
+  "粉红星云": "http://www.jianshu.com/users/f4d4f97d8b90/latest_articles",
+  "钟颖": "https://github.com/cyanzhong"
 }
 
 export default nameMap
