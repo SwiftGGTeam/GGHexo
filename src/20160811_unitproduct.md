@@ -4,7 +4,7 @@ tags: [Swift 进阶]
 categories: [Ole Begemann]
 permalink: unitproduct 
 custom_title: 
-description: 
+description: 本文讲解在 Swift 中使用 Measurements 和 Units 来计算乘除的方程，以及还有 UnitProduct 协议的用法。
 
 ---
 原文链接=http://oleb.net/blog/2016/07/unitproduct/
