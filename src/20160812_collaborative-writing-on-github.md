@@ -25,7 +25,7 @@ description: 对于在 GitHub 协同写作很多人都还不是很了解吧，�
 
 编辑书目的过程是这样的：作者用 [Markdown](http://daringfireball.net/projects/markdown/) 格式编写章节并直接 push 到 [GitHub](https://github.com/) 的私有仓库。之后我会把我编辑的内容和一些注释或疑问提交并发起 pull request。对于首次审查后章节的变动，作者会开启新的 pull requests 并在 merge 之前允许我继续 push 改动或注释。
 
-总的来说，这种工作方式是行得通的。实际的协同写作过程如果借助 [Google Docs](https://www.google.com/docs/about/) 或者 [Quip](https://quip.com/)<sup id="fnref:1"><a href="#fn:1">1</a></sup>等工具可以让工作可能更简单，但在一个文件系统的目录<sup id="fnref:2"><a href="#fn:2">2</a></sup>中所有内容都采用纯文本文件形式，对于自动化构建过程是很有用的。例如 Chris 和 Florian 写了脚本去检d查样本代码中的编译错误、找出断掉的链接、并生成最终的 PDF。
+总的来说，这种工作方式是行得通的。实际的协同写作过程如果借助 [Google Docs](https://www.google.com/docs/about/) 或者 [Quip](https://quip.com/)<sup id="fnref:1"><a href="#fnref:1">1</a></sup>等工具可以让工作可能更简单，但在一个文件系统的目录<sup id="fnref:2"><a href="#fn:2">2</a></sup>中所有内容都采用纯文本文件形式，对于自动化构建过程是很有用的。例如 Chris 和 Florian 写了脚本去检d查样本代码中的编译错误、找出断掉的链接、并生成最终的 PDF。
 
 ### GitHub
 
