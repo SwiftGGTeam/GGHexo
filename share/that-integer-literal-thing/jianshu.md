@@ -18,39 +18,43 @@ Swift 标准库中一些类型转换相关的协议，Matthew Johson 和我观�
 
 因此我们递交了一份有关重命名的提案，不过最终被否决了。标准库团队倾向于使用新的 `Syntax` 命名空间，而我们的提案侧重于命名方面的指导。他们的答复是具体问题具体分析，在不违背哲学的前提下，Swift 的革新提案需要着眼真实世界进行设计，而不是单纯的理论指导。我和标准库团队没能达成共识，不过讨论还在持续，因为 WWDC 过后这些问题还是没能得到解决。最近 Matthew Johson 已经在起草一份新的提案了。
 
+
+
 当某个类型遵循 `IntegerLiteralConvertible` 协议后，意味着「允许一个整型字面量被解释成该类型的实例」。想要这样的行为发生，协议遵守者必须实现指定的构造器，该构造器接受一个 `Int` 类型的参数。
 
     
-    /// 协议的遵守者可以使用整型字面量进行初始化
+    // 协议的遵守者可以使用整型字面量进行初始化
     public protocol IntegerLiteralConvertible {
     
         associatedtype IntegerLiteralType
     
-        /// 创建一个实例，并用 `value` 进行初始化
+        // 创建一个实例，并用 `value` 进行初始化
         public init(integerLiteral value: Self.IntegerLiteralType)
     }
 
 我认为使用下面的表达方式来阐述这个协议会更清晰：
 
     
-    /// 遵守该协议后，协议的遵守者可以使用整型字面量表示
-    ///
-    ///
-/// let instance: T = *integer literal*
-///     /// 
-    /// 比如:
-    /// 
-    ///
-/// let myDouble: Double = 2 // 整型字面量 2 自动转型成了 Double
-/// let anotherDouble: Double = myDouble * 5 // 整型字面量 5 自动转型成了 Double
-///     ///
+    // 遵守该协议后，协议的遵守者可以使用整型字面量表示
+    //
+    //
+    // let instance: T = *integer literal*
+    //
+    // 
+    // 比如:
+    // 
+    //
+    // let myDouble: Double = 2 // 整型字面量 2 自动转型成了 Double
+    // let anotherDouble: Double = myDouble * 5 // 整型字面量 5 自动转型成了 Double
+    //
+    //
     public protocol NAME_TO_BE_DETERMINED {
     
-        ///  约束整型字面量，字面量默认会被识别成Int类型
+        //  约束整型字面量，字面量默认会被识别成Int类型
         associatedtype IntegerLiteralType
     
-        ///  创建一个实例，并用 `value` 进行初始化
-        ///  构造器内部的语法必须可以被替换
+        //  创建一个实例，并用 `value` 进行初始化
+        //  构造器内部的语法必须可以被替换
         public init(integerLiteral value: Self.IntegerLiteralType)
     }
 
