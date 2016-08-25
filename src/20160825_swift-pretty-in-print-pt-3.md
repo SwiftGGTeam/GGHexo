@@ -3,9 +3,9 @@ date: 2016-08-25
 tags: [Swift]
 categories: [medium.com]
 permalink: swift-pretty-in-print-pt-3
-keywords: 
+keywords: swift print
 custom_title: 
-description: 
+description: 本文是对于在 Swift 中使用 print() 语句的问题进行一些讨论，主要是 log 枚举和函数重载的建议。
 
 ---
 原文链接=https://medium.com/swift-programming/swift-pretty-in-print-pt-3-22dbc52c412c#
