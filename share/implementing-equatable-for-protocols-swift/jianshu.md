@@ -12,11 +12,7 @@
 
 
 
-## 为 Swift 的协议实现 Equatable
-
 上周我出席了 [iOSDevCampDC](http://iosdevcampdc.com/)，并有幸参加了 [@ayanonagon](https://twitter.com/ayanonagon) 关于测试的演讲，你们可以到[这儿](https://github.com/ayanonagon/talks/tree/master/2016-cmdu)获取样例代码。
-
-
 
 让我惊讶的是，出于测试的目的，她为一个协议（protocol）实现了默认的 Equatable，类似这样：
 
@@ -34,6 +30,8 @@
     }
 
 之所以说让我感到惊讶，是因为我从未想过让遵循某个协议的所有对象都拥有一个像这样的默认实现。这确确实实地让我陷入了思考！当然，对于 Ayaka 的例子来说这样做很合理——她完全是出于测试的目的添加了这样的代码。
+
+
 
 但是在我琢磨了这种做法，进行更深入的思考后，我看到了可能发生的 bug。如果遵循这个协议的值同时有着其他的属性会怎样呢？现在它的默认相等性判定将不会如预期那样工作。举个例子：
 
