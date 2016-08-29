@@ -1,7 +1,7 @@
-为 Apple TV 开发 tvOS App Part 1"
+Swift: 语法秘笈"
 
-> 作者：Jameson Quave，[原文链接](http://jamesonquave.com/blog/developing-tvos-apps-for-apple-tv-with-swift/)，原文日期：2015-09-09
-> 译者：[ray16897188](http://www.jianshu.com/users/97c49dfd1f9f/latest_articles)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[shanks](http://codebuild.me/)
+> 作者：Andyy Hope，[原文链接](https://medium.com/swift-programming/swift-syntax-cheat-codes-9ce4ab4bc82e#.tvz9bwxhk)，原文日期：2016/07/20
+> 译者：[冬瓜](https://desgard.com/)；校对：[Darren](https://github.com/Harman-darrenchen)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 
@@ -12,146 +12,193 @@
 
 
 
-![](http://swift.gg/img/articles/developing-tvos-apps-for-apple-tv-with-swift/tvOS.png1444269947.479754)
 
+![][image-1]
 
+↑ ↑ ↓ ↓ ← → ← → B A
 
-教程结束时，我们会做出这样一个应用：
-![你更喜欢哪个艺术家？](http://swift.gg/img/articles/developing-tvos-apps-for-apple-tv-with-swift/tvOSArtists.png1444269947.484753)
+无论 Swift 是你的第一门开发语言，还是从 Objective-C 转来，Swift 这门强大的语言都值得我们去学习和使用，但是 Swift 语法的不断迭代更新可能会令你畏惧。本文将会列举一些常见的语法，来帮助你提高 Swift 语言能力，精炼代码。
 
-## 开始
-
-在我们开始之前你需要安装 Xcode 7.1 beta 版，可以从这里下载：[下载Xcode 7.1 Beta](https://developer.apple.com/xcode/download/)
-注意：下载 Xcode 7.1 Beta 需要有一个苹果开发者账号，由于目前 Xcode 是预发行版，以后正式发布的时候可能会有变化。
-
-安装的时候要注意，如果你重命名 Xcode 7.1 应用，会遇到一个已知 bug。一定有人会这么做，所以提前说明……别这么做，否则你的 tvOS 模拟器会崩溃。
-
-同时要注意，虽然支持优胜美地 (Yosemite)，但是在该操作系统上，功能会受限。推荐用 OSX 10.11 El Capitan 或更新的系统。El Capitan beta 可以在[这里](https://developer.apple.com/osx/download/)下载。
-
-下面我们来介绍一些 tvOS 相关的定义。
-
-### *TVMLKit*
-TVMLKit 是 Apple 设计的一个新框架，能在使用 Swift 或 Objective-C 实现应用逻辑的同时使用 Javascript 和 XML 开发更炫酷的用户界面。
-
-### *TVML*
-TVML 是"TV Markup Language"（TV 标记语言）的缩写，基本上是一些 XML 语句，用于实现基于C/S（client-server，客户端-服务端）架构的 tvOS 应用布局。布局界面时，我们会用到一些 Apple 提供的 TVML 模板创建我们的 UI，然后用 TVJS 写交互脚本。
-
-### *TVJS*
-我能告诉你的是，TVJS 就是你（可能已经）熟悉的 JavaScript。 
-
-### *Hello World*
-
-我们从一个基本的 hello world 程序开始。就 Apple TV 而言，我们可以只把`"Hello World"`输出到控制台上。这也许是个不错的开始，但更好的选择是使用 Apple TV 的一些 TVMLKit 元素在屏幕上创建一个模板。
-
-首先，打开 Xcode 7.1 并创建一个新项目。你可以看到一个模板列表，我们在左侧选择*CHANGE tvOS*，然后再选*Single View Application*模板。
-
-这样就会根据 tvOS 模板创建一些默认文件和一个简单的 Swift 入口点，对一会儿创建 UI 很有帮助。
-
-### *建立 TVJS 主文件*
-
-在 C/S 架构的 tvOS 应用中，服务端本质上就是 TVML 和 JavaScript 文件以及和它们相关的所有数据。JavaScript 文件会装载 TVML 并把页面（page）放入视图栈中。可以从另一个角度理解：JavaScript 文件就像 TVML 文件的路由器或是控制器（controller），而 TVML 文件本质上是若干视图（views）。
-
-### *拉开序幕*
-
-首先我们要修改应用的`AppDelegate.swift`文件。第一步是让我们的应用遵循`TVApplicationControllerDelegate`协议。该协议定义在 TVMLKit 框架中，所以需要导入它。更新`AppDelegate.swift`文件，如下所示：
+## 闭包(Closure)
 
     
-    import TVMLKit
-    
-    class AppDelegate: UIResponder,
-    UIApplicationDelegate,
-    TVApplicationControllerDelegate {
-    
-    ....
+    () -> Void
 
-此协议包含四个 tvOS 实现`AppDelegate`后会调用的函数，用于给我们的应用发送 tvOS 生命周期通知。现在我们无需操心这些，但在后面的教程中我们会对它们进行深入研究。目前只要像上面的代码那样把协议加进去就够了。
+有些文章中也会称作*匿名函数*（unnamed functions），类似于 C 或 Objective-C 中的 *block* ；闭包是一个很轻量但是功能十分强大的函数，常用于类间的值传递，闭包通常作为函数的参数来使用，当然也可以作为变量。
 
-下一步，我们要添加一些代码，让 JS 文件起作用。由于是 beta 版，我们还需要自己完成这些工作。我相信在 Xcode 的后续版本中这一步会变成一个模板。
 
-在程序里`didFinishLaunchingWithOptions`这个函数中我们要完成一些步骤。它们对所有应用来说都是一样的，所以你可以直接复制这段代码：
+
+如果你有过 iOS 开发经验，你在使用 **UIView** animation 的 API 时肯定会用到闭包：
 
     
-    // 在一个可选属性中保存对 appController 的引用
-    var appController: TVApplicationController?
-     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-      self.window = UIWindow(frame:UIScreen.mainScreen().bounds)
-     
-      let appControllerContext = TVApplicationControllerContext()
-     
-      let jsFilePath = NSURL(string: "http://localhost:8000/main.js")
-      let javascriptURL = jsFilePath!
-     
-      appControllerContext.javaScriptApplicationURL = javascriptURL
-      if let options = launchOptions
-      {
-        for (kind, value) in options
-        {
-          if let kindStr = kind as? String
-          {
-            appControllerContext.launchOptions[kindStr] = value
-          }
-        }
-      }
-     
-      self.appController = TVApplicationController(context: appControllerContext, window: self.window, delegate: self)
-     
-      return true
+    class func animateWithDuration(_ duration: NSTimeInterval, animations: () -> Void)
+
+**animation 参数** ：传入动画相关代码，例如：
+
+    
+    UIView.animateWithDuration(10.0, animations: {
+        button.alpha = 0
+    })
+
+`animationWithDuration` 这个函数利用了闭包，最终我们看到的效果是 **button** 逐渐消失，直到 **alpha** 属性为**0**（不可见状态）。
+
+## 尾部闭包（Trailing closures）
+
+    
+    UIView.animateWithDuration(10.0) { 
+        button.alpha = 0
     }
 
-简单说说这段代码干了什么：它拿到了一个`TVApplicationControllerContext`引用，这个*Context*只是为我们的`AppDelegate`类提供了一些启动数据，然后给了我们一个能调整和修改启动过程的接口。接着把 URL 传给待会儿要运行的`main.js`文件，并将`appController`的路径设置成这个 URL。
+Swift 的这个特点可以省去很多无用代码。我们再看上面的代码，仔细的同学已经发现在相同的 API 我们上面的写法节省了很多代码。
 
-现在就要添加我们的 JavaScript 文件了，点击 File > New，然后在 iOS tab 下面选择 Other > Empty file。将这个文件命名为`main.js`。
+因为在 `animateWithDuration` 方法中最后一个参数是闭包，顾名思义，称之为*尾部闭包*。尾部闭包允许我们省略参数名，并且能放置在参数表括号以外，进一步简洁代码。以下两个代码实现功能相同，但是后者使用了尾部闭包：
 
-用同样方法创建一个`hello.tvml`文件。
-
-在`main.js`文件中添加一些简单的 JavaScript 代码，用来装载`hello.tvml`文件：
-
-    javascript
-    function getDocument(url) {
-      var templateXHR = new XMLHttpRequest();
-      templateXHR.responseType = "document";
-      templateXHR.addEventListener("load", function() {pushDoc(templateXHR.responseXML);}, false);
-      templateXHR.open("GET", url, true);
-      templateXHR.send();
-      return templateXHR;
+    
+    func say(message: String, completion: () -> Void) {
+        print(message)
+        completion()
     }
-     
-    function pushDoc(document) {
-      navigationDocument.pushDocument(document);
-    }
-     
-    App.onLaunch = function(options) {
-      var templateURL = 'http://localhost:8000/hello.tvml';
-      getDocument(templateURL);
-    }
-     
-    App.onExit = function() {
-      console.log('App finished');
+    ...
+    say("Hello", completion: {
+        // prints: "Hello" 
+        // Do some other stuff
+    })
+    say("Hello") {
+        // prints: "Hello"
+        // Do some other stuff
     }
 
-现在在`hello.tvml`文件中添加：
+## 类型别名(Type Alias)
 
-    xml
-    <document>
-      <alertTemplate>
-          <title>Hello tvOS!</title>
-      </alertTemplate>
-    </document>
+    
+    typealias
 
-TVML 文件是 UI 的实际内容。文档（document）必须用模板编写，否则现在的代码运行时会崩溃。这个 TVML 文件只是包含了一个简单的模板和一个单元素的标题。
+当我们大量的使用某一种类型来定义时，类型别名是一种方便的手段。比如说我们有一个函数，它的参数是闭包：
 
-在编写这些代码时我发现一个问题：本地无法引用这些文件，文件必须放在一个 web 服务器上。所以最简单的解决方案是找到你刚创建 TVML 和 JS 文件的位置，并在命令行中敲进如下指令：
+    
+    func dance(do: (Int, String, Double) -> (Int, String, Double)) { }
 
-## 启动服务端
+这看上去并不复杂，但是如果我们想在多个函数间相互传递这个闭包呢？我们不得不记住他的参数名，以确保它在函数中可传递。如果参数名不相同，就无法编译成功，错误日志会提示在这个传递过程中保证参数名相同。
 
-    python -m SimpleHTTPServer 8000
+    
+    func dance(do: (Int, String, Double) -> (Int, String, Double)) { }
+    func sing(do: (Int, String, Double) -> (Int, String, Double)) { }
+    func act(do: (Int, String, Double) -> (Int, String, Double)) { }
 
-这条指令用 Mac OS 内建的 python 解释器开启了一个端口号为 8000 的 web 服务器，可以用它来托管本地文件。如果在命令行中，执行了上面给出的代码，那么现在按一下 Xcode 的 play 按钮就能在 tvOS 模拟器中启动了。还有一个要注意的事情：这是一个不够安全的 HTTP 请求，在 iOS 9 中会被默认的应用传输安全机制拦截。为了能够按之前的方法来使用本地主机，我们需要在`Info.plist`文件中添加一个`key`。
+倘若我们交换参数顺序、改变返回值类型，同样的会出现上述问题。所以，一旦我们更改需求，我们需要更新所有出现这个闭包的地方，这种问题的处理方法将会十分繁琐。所以，我们引入*类型别名*来解决这个问题。
 
-### 允许直接加载（Allows Arbitrary Loads）
+    
+    typealias TripleThreat = (Int, String, Double) -> (Int, String, Double)
+    ...
+    func dance(dance: TripleThreat) { }
+    func act(act: TripleThreat) { }
+    func sing(sing: TripleThreat) { }
 
-选择`Info.plist`文件然后按加号(+)来创建一条新记录。在列表中选择"App Transport Security Settings"并按 return 建。这将创建一个新的字典条目，展开它，在这行上按加号(+)添加一个子行。接着选中"Allows Arbitrary Loads"并将其设为`true`。都设好了之后我们就能用模拟器运行应用了。
+现在我们重写之前的所有方法。如果再想更改参数闭包的话，我们所要做的仅仅是修改 `typealias` 即可。
+
+### 类型别名代表性的用法（Famous Type Aliases）
+
+    
+    typealias Void = ()
+    typealias NSTimeInterval = Double
+
+## 参数名缩写（Shorthand argument names）
+
+    
+    $0, $1, $2...
+
+如果一个闭包中有一个或多个参数，Swift 允许我们通过参数名来访问参数：
+
+     
+    func say(message: String, completion: (goodbye: String) -> Void) {
+        print(message)
+        completion(goodbye: "Goodbye")
+    }
+    ...
+    say("Hi") { (goodbye: String) -> Void in
+        print(goodbye)
+    }
+    // prints: "Hi"
+    // prints: "Goodbye"
+
+这个例子中，我们的尾部闭包中有一个名为 `goodbye` 的 `String` 型参数，Xcode 会将这个参数放到一个元祖中，然后紧跟着一个类型代表返回值，最后再加上 `in` 关键字来代表参数的结束。下一行则是我们闭包的具体实现。当我们的闭包短小，具有高可读性时，我们可以追求更加简洁的写法。我们现在开始减少代码，以达到极小：
+
+    
+    (goodbye: String) -> Void in
+
+很多代码都不是必要的，因为我们可以使用**参数名缩写**。
+
+    
+    say("Hi") { print($0) }
+    // prints: "Hi"
+    // prints: "Goodbye"
+
+
+正如所见，可以省略 `goodbye` 的参数名，以及 `Void` 返回值。并且 `in` 关键字也可省略，因为我们没有使用到参数名称。由于简单，每个参数都会依照在闭包中的声明的顺序。甚至，我们可以将闭包做缩行处理。
+
+
+如果闭包中有多个参数，参数名缩写将会依照顺序排列，例如：
+
+    
+    (goodbye: String, name: String, age: Int) -> Void in
+    // $0: goodbye
+    // $1: name
+    // $2: age
+
+### Return Self
+
+    
+    -> Self
+
+Swift 2.0 发布的时候，带来了一系列的新特性例如 `map`、`flatMap` 等等。更有趣的是，在这些方法中，我们同样的可以使用 *$* 符号来通过序号对其操作：
+
+    
+    [1, 2, 3, nil, 5]
+        .flatMap { $0 }     // remove nils
+        .filter { $0 < 3 }  // filter numbers that are greater than 2
+        .map { $0 * 100 }   // multiply each value by 100
+    // [100, 200]
+
+很酷吧？这种写法比较优雅、可读，易于理解。我们应该在更多的地方使用它。
+
+另外，我们可以通过闭包创建一个 `String` 的扩展，我们对 String 上执行一堆操作，并返回自己而不是使函数返回无效：
+
+    
+    // extension UIView
+    func withBackgroundColor(color: UIColor) -> Self {
+        backgroundColor = color
+        return self
+    }
+    func withCornerRadius(radius: CGFloat) -> Self {
+        layer.cornerRadius = 3
+        return self
+    }
+    ...
+    let view = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+              .withBackgroundColor(.blackColor())
+              .withCornerRadius(3)
+
+### 总结
+
+无论你是在写新的功能还是在读旧的代码，你会发现这种精炼代码的方式在任何地方都适用，并且你已经掌握了精炼方法。由于 Xcode 的自动补全现在还不完善，所以你应该不断地去质疑自己的代码，不要过度的依赖自动补全，而是自主完成代码。
+
+--- 
+
+另外，我在[github][1]上提供了一个playground文件以方便你来测试以上内容。
+
+> 译者注：译者自己整理了原作者的示例代码，并加上中文注释，详见译者的[Github仓库][2]
+
+如果你喜欢这篇文章，并且对你的Coding Style有所帮助，可以在[Twitter][3]联系并follow我。
+
+我将会在九月与一群swift爱好者参与[*try! Swift NYC*][4]，到时候我们不见不散。
+
+[1]:	https://github.com/andyyhope/Blog_SyntaxCheatCodes
+[2]:	https://github.com/Desgard/SwiftGG-Translation-Demo/blob/master/Swift%20Syntax%20cheat%20codes/Blog_SyntaxCheatCodes.playground/Contents.swift
+[3]:	https://twitter.com/AndyyHope
+[4]:	http://www.tryswiftnyc.com/
+
+[image-1]:	https://cdn-images-1.medium.com/max/2000/1*vjSHAgb-StGFzW3ryYFfvA.png
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。(+)添加一个子行。接着选中"Allows Arbitrary Loads"并将其设为`true`。都设好了之后我们就能用模拟器运行应用了。
 
 ### 添加按钮
 
