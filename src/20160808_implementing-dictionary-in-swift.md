@@ -1,6 +1,6 @@
 title: "在 Swift 中实现字典"
 date: 2016-08-08
-tags: [Siwft 进阶]
+tags: [Swift 进阶]
 categories: [KHANLOU]
 permalink: implementing-dictionary-in-swift
 keywords: swift字典
