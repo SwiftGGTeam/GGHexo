@@ -22,15 +22,15 @@ description: Swift 中解包引导的初始化过程应该怎么写才更地道�
 
 > 最近我在做下面这样的东西：
 
-	```swift
-	let dobString: String
-	if let dob = dob {
-	    dobString = serverDateFormatter.stringFromDate(dob)
-	}
-	else {
-	    dobString = ""
-	}
-	```
+```swift
+let dobString: String
+if let dob = dob {
+    dobString = serverDateFormatter.stringFromDate(dob)
+}
+else {
+    dobString = ""
+}
+```
 
 > 有没有更好更地道的写法能够实现同样的功能呢？
 
