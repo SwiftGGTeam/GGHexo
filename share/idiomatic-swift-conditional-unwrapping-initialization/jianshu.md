@@ -17,14 +17,14 @@
 
 > 最近我在做下面这样的东西：
 
-	    
-    	let dobString: String
-    	if let dob = dob {
-    	    dobString = serverDateFormatter.stringFromDate(dob)
-    	}
-    	else {
-    	    dobString = ""
-    	}
+    
+    let dobString: String
+    if let dob = dob {
+        dobString = serverDateFormatter.stringFromDate(dob)
+    }
+    else {
+        dobString = ""
+    }
 
 > 有没有更好更地道的写法能够实现同样的功能呢？
 
