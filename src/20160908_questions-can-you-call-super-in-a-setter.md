@@ -1,5 +1,5 @@
 title: "答疑：能在 setter 方法中调用父类么？"
-date: 2016-09-07
+date: 2016-09-08
 tags: [Swift]
 categories: [Erica Sadun]
 permalink: questions-can-you-call-super-in-a-setter
