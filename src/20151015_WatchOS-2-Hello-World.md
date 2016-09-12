@@ -1,7 +1,7 @@
 title: "WatchOS 2: Hello, World"
 date: 2015-10-15 09:00:00
-tags: [Natasha The Robot]
-categories: [WatchOS 2,Swift 入门]
+tags: [WatchOS 2,Swift 入门]
+categories: [Natasha The Robot]
 permalink: watchos-2-hello-world
 
 ---
@@ -14,7 +14,6 @@ permalink: watchos-2-hello-world
 发布时间=2015-10-15T09:00:00
 
 <!--此处开始正文-->
-
 
 欢迎学习我的`WatchOS 2`系列教程。我会从最简单的部分开始带你学习`WatchOS 2`。一个 "Hello,World" app，没错，这个程序虽然非常简单，还是有一些要注意的地方。
 

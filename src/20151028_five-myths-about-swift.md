@@ -1,7 +1,7 @@
 title: "关于 Swift 的 5 个误区"
 date: 2015-10-28 09:00:00
-tags: [Thomas Hanning]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Thomas Hanning]
 permalink: five-myths-about-swift
 
 ---

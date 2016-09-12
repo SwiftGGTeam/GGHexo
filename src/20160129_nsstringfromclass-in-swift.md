@@ -1,7 +1,7 @@
 title: "优雅的 NSStringFromClass 替代方案"
 date: 2016-01-29
-tags: [Natasha The Robot]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Natasha The Robot]
 permalink: nsstringfromclass-in-swift
 keywords: nsstringfromcolor
 custom_title: 
@@ -9,7 +9,7 @@ description: 本文教你Swift中NSStringFromClass的替代方案，再也不用
 
 ---
 原文链接=https://www.natashatherobot.com/nsstringfromclass-in-swift/
-作者=Natasha The Robot
+作者=Natasha
 原文日期=2016-01-14
 译者=saitjr
 校对=千叶知风
@@ -21,6 +21,7 @@ description: 本文教你Swift中NSStringFromClass的替代方案，再也不用
 使用 Swift 过程中，我意识到的第一个问题就是没有 `NSStringFromClass` 的替代方案。在自定义 `TableViewCell` 时，我喜欢用类名作为 cell 的 identifier，然后在重用队列中，通过 `NSStringFromClass` 来获得 identifier，从而避免拼写错误。
 
 然而，在 Swift 中，我不得不写一个丑陋的 extension 来达到这一目的。（[参考 StackOverflow 的回答](http://stackoverflow.com/questions/24107658/get-a-user-readable-version-of-the-class-name-in-swift-in-objc-nsstringfromclas)）
+
 <!--more-->
 
 ```swift

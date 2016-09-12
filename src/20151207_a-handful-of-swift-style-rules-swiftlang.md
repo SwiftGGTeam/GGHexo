@@ -1,7 +1,7 @@
 title: "几个 Swift 代码规范"
 date: 2015-12-07
-tags: [Erica Sadun]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Erica Sadun]
 permalink: a-handful-of-swift-style-rules-swiftlang
 
 ---
@@ -12,6 +12,7 @@ permalink: a-handful-of-swift-style-rules-swiftlang
 校对=lfb_CD
 定稿=shanks
 
+<!--此处开始正文-->
 
 我们需要经常带着新问题来重新审视一下以前的代码规范。
 

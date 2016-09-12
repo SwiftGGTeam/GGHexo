@@ -1,26 +1,18 @@
 title: "Swift：什么时候使用结构体和类"
-
 date: 2015-8-14
-
-tags: [Mike Ash]
-
-categories: [Swift 进阶]
-
+tags: [Swift 进阶]
+categories: [mikeash.com]
 permalink: friday-qa-2015-07-17-when-to-use-swift-structs-and-classes
 
 ---
-
 原文链接=https://www.mikeash.com/pyblog/friday-qa-2015-07-17-when-to-use-swift-structs-and-classes.html
-
 作者=Mike Ash
-
-原文日期=2015/07/17
-
+原文日期=2015-07-17
 译者=Yake
-
 校对=千叶知风
-
 定稿=numbbbbb
+
+<!--此处开始正文-->
 
 在Swift的世界中一个一直被持续不断讨论话题就是什么时候使用结构体什么时候使用类。我想我今天要贡献一些自己的想法。
 

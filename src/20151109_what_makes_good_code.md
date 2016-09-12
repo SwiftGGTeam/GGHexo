@@ -1,7 +1,7 @@
 title: "好代码是怎样炼成的"
 date: 2015-11-09 09:00:00
-tags: [Erica Sadun]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Erica Sadun]
 permalink: what-makes-good-code
 
 ---

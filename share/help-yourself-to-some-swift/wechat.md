@@ -1,7 +1,7 @@
 要不要来点 Swift
 
 > 作者：Jacob Bandes-Storch，[原文链接](http://bandes-stor.ch/blog/2015/11/28/help-yourself-to-some-swift/)，原文日期：2015-11-28
-> 译者：[mmoaay](http://blog.csdn.net/mmoaay)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[shanks](http://codebuild.me/)
+> 译者：[mmoaay](http://mmoaay.photo/)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[shanks](http://codebuild.me/)
   
 
 

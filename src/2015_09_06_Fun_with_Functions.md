@@ -1,23 +1,25 @@
 title: "函数之趣"
 date: 2015-9-11
-tags: [Crunchy Development]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Crunchy Development]
 permalink: fun_with_functions
 
 ---
 原文链接=http://alisoftware.github.io/swift/function/operator/2015/08/28/fun-with-functions/
 作者=Olivier Halligon
-原文日期=2015/08/28
+原文日期=2015-08-28
 译者=小锅
 校对=numbbbbb
 定稿=shanks
 
+<!--此处开始正文-->
 
 今天我们要研究 Swift 函数中一些好玩的特性，比如返回函数的函数，柯里化以及运算符函数。
 
 ## 函数的基础
 
 在这篇文章中，我们将使用一个返回 `Bool` 类型的函数来判断它的参数是否匹配某个条件，这个函数接收一个 `Int` 类型的参数。像这类功能可以使用`filter`方法对整型数组进行过滤。
+
 <!--more-->
 
 让我们从最简单的开始，下面是一个用来判断它的参数是否为正数的函数：

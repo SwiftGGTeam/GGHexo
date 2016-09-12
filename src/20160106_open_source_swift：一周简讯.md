@@ -1,13 +1,13 @@
 title: "聚焦 Swift #1"
 date: 2016-01-06 12:20:00
-tags: [Open Source Swift]
-categories: [Swift 开源信息]
+tags: [Swift 开源信息]
+categories: [Open Source Swift]
 permalink: open-source-swift-weekly-1
 
 ---
 原文链接=http://www.jessesquires.com/open-source-swift-weekly-1/
 作者=Jesse Squires
-原文日期=2015.12.10
+原文日期=2015-12-10
 译者=pmst
 校对=numbbbbb
 定稿=numbbbbb

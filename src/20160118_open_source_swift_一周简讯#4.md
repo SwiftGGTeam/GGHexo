@@ -1,16 +1,18 @@
 title: "Swift 一周简讯 #4"
 date: 2016-01-16 10:00:00
-tags: [Open Source Swift]
-categories: [Swift 开源信息]
+tags: [Swift 开源信息]
+categories: [Open Source Swift]
 permalink: open-source-swift-weekly-4
 
 ---
 原文链接=http://www.jessesquires.com/open-source-swift-weekly-4/
 作者=Jesse Squires
-原文日期=2016.1.7
+原文日期=2016-01-07
 译者=pmst
 校对=numbbbbb
 定稿=numbbbbb
+
+<!--此处开始正文-->
 
 假期一晃而过，Swift.org 又重新开始更新东西啦。倘若你也是 Apple GitHub 开源项目的跟随者之一，你可能已经注意到了。早前不知为何我错过了一些重要的东西，直到本周我才发现 [`SwiftExperimental.swift`](https://github.com/apple/swift/blob/master/stdlib/internal/SwiftExperimental/SwiftExperimental.swift) 这货。目前，它为 `Set` 集合自定义了大量 unicode 操作（译者注：有 ∈ 、∉、⊂、⊄、⊆ 等等！）。这真是棒极了！我迫不及待想要在标准库中看到更多诸如此类的 API 接口。不管怎样，先来看看本周有哪些好玩的东西吧。
 

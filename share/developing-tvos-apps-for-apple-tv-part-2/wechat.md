@@ -1,6 +1,6 @@
 为 Apple TV 开发 tvOS App Part 2"
 
-> 作者：Jameson Quave，[原文链接](http://jamesonquave.com/blog/developing-tvos-apps-for-apple-tv-part-2/)，原文日期：2015/09/10
+> 作者：Jameson Quave，[原文链接](http://jamesonquave.com/blog/developing-tvos-apps-for-apple-tv-part-2/)，原文日期：2015-09-10
 > 译者：[ray16897188](http://www.jianshu.com/users/97c49dfd1f9f/latest_articles)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[shanks](http://codebuild.me/)
   
 
@@ -14,6 +14,7 @@
 
 
 本文是 tvOS 教程的第二部分。如果你还没看过[第一部分](http://jamesonquave.com/blog/developing-tvos-apps-for-apple-tv-with-swift/)([译文链接](http://swift.gg/2015/09/14/developing-tvos-apps-for-apple-tv-with-swift/))，我建议你先看那篇。
+
 
 
 ## 增加交互事件

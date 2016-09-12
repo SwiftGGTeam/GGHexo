@@ -1,7 +1,7 @@
 title: "详解 Swift 模式匹配"
 date: 2015-10-27 09:00:00
-tags: [APPVENTURE]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [APPVENTURE]
 permalink: swift-pattern-matching-in-detail
 
 ---

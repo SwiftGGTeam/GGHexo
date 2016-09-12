@@ -1,17 +1,18 @@
 title: "Swift 中枚举的使用"  
 date: 2015-09-11
-tags: [Raj Kandathi]  
-categories: [Swift 入门]  
+tags: [Swift 入门]  
+categories: [Raj Kandathi]  
 permalink: understanding-enums-using-swift
 
 ---
 原文链接=http://rajkandathi.com/understanding-enums-using-swift/
 作者=Raj Kandathi
-原文日期=2015/08/31
+原文日期=2015-08-31
 译者=小铁匠Linus
 校对=Prayer
 定稿=shanks
 
+<!--此处开始正文-->
 
 枚举是用来表示值的“类型”，其中这些值之间是类似的。假如现在有个应用叫`MyFamily`，你每次打开这个应用它都会展示你家庭中的成员以及成员之间的关系。现在，家庭中每个成员跟你就只有那么几种关系(值)。这种关系可以用枚举类型的`FamilyRelationshipType`来表示。
 

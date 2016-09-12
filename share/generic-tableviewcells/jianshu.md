@@ -1,8 +1,10 @@
 使用泛型来优化 TableView Cells 的使用体验"
 
 > 作者：Olivier Halligon，[原文链接](http://alisoftware.github.io/swift/generics/2016/01/06/generic-tableviewcells/)，原文日期：2016-01-06
-> 译者：[walkingway](http://chengway.in/)；校对：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)；定稿：[numbbbbb](https://github.com/numbbbbb)
+> 译者：[walkingway](http://chengway.in/)；校对：[小锅](http://www.swiftyper.com)；定稿：[numbbbbb](http://numbbbbb.com/)
   
+
+
 
 
 
@@ -12,7 +14,7 @@
 
 各位新年快乐🎇🎉🎊🎆! 2016 年第一篇博客我想分享一个非常有用的技巧，那就是向大家展示 Swift 泛型的强大，以及方便地使用泛型来处理 `UITableViewCells` 和 `UICollectionViewCells`。
 
-
+<!--此处开始正文-->
 
 ## 介绍
 

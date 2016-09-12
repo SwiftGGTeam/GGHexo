@@ -1,7 +1,7 @@
 title: "在团队开发中使用 CocoaPods 的小技巧"
 date: 2015-12-31
-tags: [Natasha The Robot]
-categories: [iOS 开发]
+tags: [iOS 开发]
+categories: [Natasha The Robot]
 permalink: cocoapods-on-a-team
 
 ---

@@ -1,7 +1,7 @@
 title: "Swift：map 和 flatMap 基础入门"
 date: 2015-11-26
-tags: [Thomas Hanning]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Thomas Hanning]
 permalink: swift-map-and-flatmap
 
 ---

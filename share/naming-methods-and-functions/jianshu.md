@@ -1,8 +1,10 @@
 函数和方法命名规范"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2015/08/31/naming-methods-and-functions/)，原文日期：2015-08-31
-> 译者：[天才175](http://weibo.com/u/2916092907)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[numbbbbb](https://github.com/numbbbbb)
+> 译者：[天才175](http://weibo.com/u/2916092907)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[numbbbbb](http://numbbbbb.com/)
   
+
+
 
 
 

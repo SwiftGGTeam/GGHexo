@@ -1,12 +1,12 @@
 title: "WatchConnectivity：学习 WCSession"
 date: 2015-11-02
-tags: [Natasha The Robot]
-categories: [Swift 入门,WatchOS 2]
+tags: [Swift 入门,WatchOS 2]
+categories: [Natasha The Robot]
 permalink: watchconnectivity-say-hello-to-wcsession
 
 ---
 原文链接=http://natashatherobot.com/watchconnectivity-say-hello-to-wcsession/
-作者=Natasha The Robot
+作者=Natasha
 原文日期=2015-09-21
 译者=小袋子
 校对=numbbbbb

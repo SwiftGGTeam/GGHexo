@@ -1,17 +1,18 @@
 title: "Swift 中序列的实现方式"
 date: 2015-09-08 20:00:00  
-tags: [Big O Note-Taking]  
-categories: [Swift 进阶]  
-permalink: Sequence-Conformance  
+tags: [Swift 进阶]  
+categories: [Big O Note-Taking]  
+permalink: Sequence-Conformance
 
 ---
 原文链接=https://bigonotetaking.wordpress.com/2015/08/20/sequence-conformance/
 作者=bigonotetaker
-原文日期=2015/08/22
+原文日期=2015-08-22
 译者=Prayer
 校对=shanks
 定稿=numbbbbb
 
+<!--此处开始正文-->
 
 想要遵循 `SequenceType`协议？还想要遵循 `CollectionType`，`MutableSliceable`，`RangeReplaceableCollectionType`？——需要做些什么呢？
 

@@ -1,12 +1,12 @@
 title: 在 Swift 中编写 watchOS 2 Hello World 程序
 date: 2016-01-21 09:00:00
-tags: [Coding Explorer]
-categories: [Swift 入门,WatchOS 2]
+tags: [Swift 入门,WatchOS 2]
+categories: [Coding Explorer Blog]
 permalink: watchos-2-hello-world-app-in-swift
 
 ---
 原文链接=http://www.codingexplorer.com/watchos-2-hello-world-app-in-swift/
-作者=codingexplorer
+作者=Nick Hanan
 原文日期=2015-12-08
 译者=mmoaay
 校对=千叶知风
@@ -17,6 +17,7 @@ permalink: watchos-2-hello-world-app-in-swift
 过去的几个月我一直保持着写博客的习惯，但是现在我得专心工作了。最近在做一些 watchOS 2 相关的更新工作，我觉得如果出个系列教程会对大家很有帮助。首先我们需要学会开发第一个 watchOS 2 应用，所以下面来开发一个 watchOS 2 风格的 “Hello World!”吧！
 
 在教程开始前，我准备介绍如何使用 Swift 在 iOS、watchOS、tvOS 和 OS X 上编程。此外，如果你想在本博客中学到其他知识，请给 Twitter [@CodingExplorer](https://twitter.com/CodingExplorer) 或者 [Contact Page](http://www.codingexplorer.com/contact/) 来提出建议。
+
 <!--more-->
 
 # 创建你的 watchOS 2 应用

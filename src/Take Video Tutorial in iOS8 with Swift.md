@@ -1,16 +1,18 @@
 title: "iOS 8 中使用 Swift 录制视频教程"
 date: 2015-9-11
-tags: [IOSCREATOR]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [IOSCREATOR]
 permalink: take_video_tutorial_in_ios8_with_swift
 
 ---
 原文链接=http://www.ioscreator.com/tutorials/take-video-tutorial-ios8-swift
 作者=Arthur Knopper
-原文日期=2015/07/09
+原文日期=2015-07-09
 译者=lfb_CD
 校对=numbbbbb
 定稿=shanks
+
+<!--此处开始正文-->
 
 苹果公司提供了`UIimagePickerController`-这是一个使用 iOS 设备内置的摄像头来拍摄视频的可视化界面。在此教程中，我们将拍摄一段保存到手机相册的视频。教程运行在 iOS 8.4 和 Xcode 6.4 下。
 

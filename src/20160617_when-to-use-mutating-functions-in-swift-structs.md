@@ -1,0 +1,164 @@
+title: "Swift 结构体何时使用 mutating 函数"
+date: 2016-06-17
+tags: [Swift]
+categories: [Natasha The Robot]
+permalink: when-to-use-mutating-functions-in-swift-structs
+keywords: swift结构体,swift函数
+custom_title: 
+description: Swift 支持对整体结构的不可变性，那么在什么时候需要使用 mutating 函数呢，本文就来讲解下吧。
+
+---
+原文链接=https://www.natashatherobot.com/when-to-use-mutating-functions-in-swift-structs/
+作者=Natasha
+原文日期=2016/01/13
+译者=bestswifter
+校对=saitjr
+定稿=千叶知风
+
+<!--此处开始正文-->
+
+Swift 最棒的特点之一就是它内置了对整体结构的不可变性的支持，这使得我们的代码更加整洁、安全（关于这个话题，如果还没看过[这篇文章](https://realm.io/news/andy-matuschak-controlling-complexity/)，那么强烈推荐给你）。
+
+不过，真的需要用到可变性时，你应该怎么做呢？
+
+<!--more-->
+
+## 函数式做法
+
+举个例子，我有一个井字棋棋盘，现在需要改变棋盘上某个位置的状态：
+
+```swift
+struct Position {
+    let coordinate: Coordinate
+    let state: State
+    
+    enum State: Int {
+        case X, O, Empty
+    }
+}
+
+struct Board {
+    
+    let positions: [Position]
+
+    // 需要添加一个函数来更新这个位置的状态
+    // 状态从 Empty 改为 X 或者 0
+}
+```
+
+如果完全采用[函数式编程的做法](https://www.natashatherobot.com/functional-programming-in-swift/)，你只需要简单的返回一个新的棋盘即可：
+
+```swift
+struct Board {
+    
+    let positionsMatrix: [[Position]]
+    
+    init() {
+       // 初始化一个空棋盘的逻辑
+    }
+
+    // 函数式编程的做法
+    func boardWithNewPosition(position: Position) -> Board {
+        var positions = positionsMatrix
+        let row = position.coordinate.row.rawValue
+        let column = position.coordinate.column.rawValue
+        positions[row][column] = position
+        return Board(positionsMatrix: positions)
+    }
+}
+```
+
+我更倾向于使用这种函数式的做法，因为它不会有任何副作用。变量可以继续保持不可变状态，当然，这样也非常易于测试！
+
+```swift
+class BoardTests: XCTestCase {
+
+    func testBoardWithNewPosition() {
+        let board = Board()
+        let coordinate = Coordinate(row: .Middle, column: .Middle)
+        
+        let initialPosition = board[coordinate]
+        XCTAssertEqual(initialPosition.state, Position.State.Empty)
+        
+        let newPosition = Position(coordinate: coordinate, state: .X)
+        let newBoard = board.boardWithNewPosition(newPosition)
+        XCTAssertEqual(newBoard[coordinate], newPosition)
+    }
+}
+```
+
+不过这种做法并非在所有场景下都是最佳选择。
+
+## 使用 Mutating 关键字
+
+假设我需要统计每个用户赢了多少局井字棋，那么我创建了一个 Counter：
+
+```swift
+struct Counter {
+    let count: Int
+    
+    init(count: Int = 0) {
+        self.count = count
+    }
+    
+    // 需要实现一个增加计数的方法
+}
+```
+
+我依然可以选择函数式的做法：
+
+```swift
+struct Counter {
+    let count: Int
+    
+    init(count: Int = 0) {
+        self.count = count
+    }
+    
+    // 函数式做法
+    func counterByIncrementing() -> Counter {
+        let newCount = count + 1
+        return Counter(count: newCount)
+    }
+}
+```
+
+不过，如果你真的尝试了使用这个函数来增加计数，代码会是这样：
+
+```swift
+var counter = Counter()
+counter = counter.counterByIncrementing()
+```
+
+这种写法不够直观，可读性也不高。所以在这种场景下，我更倾向于使用 `mutating` 关键字：
+
+```swift
+struct Counter {
+    // 这个变量现在得声明成 var
+    var count: Int
+    
+    init(count: Int = 0) {
+        self.count = count
+    }
+    
+    // 使用 mutating 关键字的做法
+    mutating func increment() {
+        count += 1
+    }
+}
+```
+
+我不喜欢这个函数带来的副作用，但是相对于可读性的提升而言，这样做是值得的：
+
+```swift
+var counter = Counter()
+counter.increment()
+```
+
+更进一步来说，通过[使用私有 setter 方法](https://www.natashatherobot.com/swift-magic-public-getter-private-setter/)可以确保 `count` 变量不会被外部修改（因为它现在被声明为变量了）。这样，使用变异方法和变量所带来的负面影响可以被降到最低。
+
+## 总结
+
+在选择使用 `mutating` 关键字和函数式编程时，我倾向于后者，但前提是**不会以牺牲可读性为代价**。
+
+写测试是一种很好的检查接口的方法，它可以判断你的函数式编程是否真的有意义。如果你觉得代码比较奇怪而且不够直观，那么就换成 mutating 方法吧。只要记得使用变量的私有 setter 方法就行了。

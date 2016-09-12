@@ -1,10 +1,8 @@
 Swift 中的范围和区间"
 
 > 作者：Ole Begemann，[原文链接](http://oleb.net/blog/2015/09/swift-ranges-and-intervals/)，原文日期：2015-09-24
-> 译者：[靛青K](http://www.dianqk.org/)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；定稿：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)
+> 译者：[靛青K](http://blog.dianqk.org/)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；定稿：[小锅](http://www.swiftyper.com)
   
-
-
 
 
 

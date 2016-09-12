@@ -1,14 +1,14 @@
 title: "初识 iOS 9 中新的联系人框架"
 date: 2016-01-12
-tags: [AppCoda]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [AppCoda]
 permalink: ios-contacts-framework
 
 ---
 原文链接=http://www.appcoda.com/ios-contacts-framework/
 作者=gabriel theodoropoulos
 原文日期=2015-09-29
-译者=BridgeQ, 星夜暮晨
+译者=BridgeQ,星夜暮晨
 校对=小铁匠Linus
 定稿=
 

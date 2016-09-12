@@ -1,7 +1,7 @@
 title: "如何使用闭包初始化来加速 Swift 的 playground"
 date: 2015-11-24
-tags: [Erica Sadun]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Erica Sadun]
 permalink: speeding-up-swift-playgrounds-with-closure-initialization-swiftlang
 
 ---

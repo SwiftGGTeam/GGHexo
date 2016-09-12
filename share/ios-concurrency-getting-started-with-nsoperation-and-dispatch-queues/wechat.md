@@ -1,7 +1,7 @@
 iOS 并发：从 NSOperation 和 Dispatch Queues 开始"
 
 > 作者：hossam ghareeb，[原文链接](http://www.appcoda.com/ios-concurrency/)，原文日期：2015-12-09
-> 译者：[ray16897188](http://www.jianshu.com/users/97c49dfd1f9f/latest_articles)；校对：[Channe](undefined)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[ray16897188](http://www.jianshu.com/users/97c49dfd1f9f/latest_articles)；校对：[Channe](http://www.jianshu.com/users/7a07113a6597/latest_articles)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 

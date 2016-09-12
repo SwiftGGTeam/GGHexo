@@ -1,7 +1,7 @@
 在 Swift 2.0 当中使用 C 语言回调"
 
 > 作者：Ole Begemann，[原文链接](http://oleb.net/blog/2015/06/c-callbacks-in-swift/)，原文日期：2015-06-22
-> 译者：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)；校对：[shanks](http://codebuild.me/)；定稿：[shanks](http://codebuild.me/)
+> 译者：[小锅](http://www.swiftyper.com)；校对：[shanks](http://codebuild.me/)；定稿：[shanks](http://codebuild.me/)
   
 
 
@@ -21,7 +21,6 @@
 针对 Xcode 7 beta 2 更新从 `CGPathElement` 创建一个 `PathElement` 类型的代码。
 
 几年前，我曾经写过一篇关于如何获取 `CGPath` 和 `UIBezierPath` 中元素的[文章][1]。可以通过调用 [CGPathApply][2] 函数，并给这个函数传入一个回调的函数指针来达到这个目的。 随后 `CGPathApply` 会对 path(CGPath 或 UIBezierPath) 中的每一个元素调用这个回调函数。  
-
 
 
 

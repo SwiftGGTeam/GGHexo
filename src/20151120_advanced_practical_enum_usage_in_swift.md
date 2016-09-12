@@ -1,7 +1,7 @@
 title: "Swift 中枚举高级用法及实践"
 date: 2015-11-20
-tags: [APPVENTURE]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [APPVENTURE]
 permalink: advanced-practical-enum-examples
 
 ---

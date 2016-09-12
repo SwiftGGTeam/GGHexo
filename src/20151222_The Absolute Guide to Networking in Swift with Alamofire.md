@@ -1,13 +1,13 @@
 title: "如何在 Swift 中使用 Alamofire 进行网络编程"
 date: 2015-12-22
-tags: [AppCoda]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [AppCoda]
 permalink: alamofire-beginner-guide
 
 ---
 原文链接=http://www.appcoda.com/alamofire-beginner-guide/
 作者=gregg mojica
-原文日期=2015/11/30
+原文日期=2015-11-30
 译者=小铁匠Linus
 校对=Cee
 定稿=numbbbbb

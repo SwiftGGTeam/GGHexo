@@ -1,22 +1,22 @@
 title: "为什么 guard 比 if 好"
 date: 2015-8-6
-tags: [Natasha The Robot]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Natasha The Robot]
 permalink: swift-guard-better-than-if
 
 ---
 原文链接=http://natashatherobot.com/swift-guard-better-than-if/
 作者=Natasha
-原文日期=2015/07/16
+原文日期=2015-07-16
 译者=靛青K
 校对=numbbbbb
 定稿=numbbbbb
 
+<!--此处开始正文-->
 
 Swift 2.0 带来了令人激动的`guard`语句。但很多人还是不太理解`guard`的意义，特别是和 Swift 2.0 之前的简单`if`语句相比较。    
 
 这是个有意思的问题，所以到底为什么`guard`就是比`if`要好呢？让我们来好好分析一下……    
-
 <!--more-->
 
 ## 示例代码   

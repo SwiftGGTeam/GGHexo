@@ -1,8 +1,10 @@
 iOS 8 中使用 Swift 录制视频教程"
 
-> 作者：Arthur Knopper，[原文链接](http://www.ioscreator.com/tutorials/take-video-tutorial-ios8-swift)，原文日期：2015/07/09
-> 译者：[lfb_CD](http://weibo.com/lfbWb)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[shanks](http://codebuild.me/)
+> 作者：Arthur Knopper，[原文链接](http://www.ioscreator.com/tutorials/take-video-tutorial-ios8-swift)，原文日期：2015-07-09
+> 译者：[lfb_CD](http://weibo.com/lfbWb)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[shanks](http://codebuild.me/)
   
+
+
 
 
 

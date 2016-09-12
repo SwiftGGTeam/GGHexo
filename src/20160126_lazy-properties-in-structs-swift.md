@@ -1,10 +1,10 @@
 title: "结构体中的 Lazy 属性探究"
 date: 2016-01-26
-tags: [Ole Begemann]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Ole Begemann]
 permalink: lazy-properties-in-structs-swift
----
 
+---
 原文链接=http://oleb.net/blog/2015/12/lazy-properties-in-structs-swift/
 作者=Ole Begemann
 原文日期=2015-12-17

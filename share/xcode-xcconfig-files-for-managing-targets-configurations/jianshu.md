@@ -10,6 +10,8 @@ Xcode:用于管理多个 target 配置的 XCConfig 文件
 
 
 
+
+
 让我们来看看 XCConfig 文件如何才能在多个拥有不同配置的 target 中良好地工作。
 
 今天我本计划学习一些新东西，因此我搜索了 [mozilla/firefox-ios](https://github.com/mozilla/firefox-ios) 库（译者：这是在火狐浏览器在 github 的一个开源项目）的相关信息，接着我发现他们会在项目中使用大量的配置文件。

@@ -1,7 +1,7 @@
 title: "Swift 中集合与字典的角逐"
 date: 2016-01-20
-tags: [Erica Sadun]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Erica Sadun]
 permalink: sets-vs-dictionaries-smackdown-in-swiftlang
 
 ---
@@ -11,7 +11,6 @@ permalink: sets-vs-dictionaries-smackdown-in-swiftlang
 译者=CMB
 校对=Cee
 定稿=千叶知风
-
 
 <!--此处开始正文-->
 

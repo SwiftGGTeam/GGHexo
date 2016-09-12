@@ -1,8 +1,10 @@
 Friday Q&A 2015-09-04:让我们来自定义 dispatch_queue"
 
 > 作者：Mike Ash，[原文链接](https://www.mikeash.com/pyblog/friday-qa-2015-09-04-lets-build-dispatch_queue.html)，原文日期：2015-09-04
-> 译者：[Yake](http://blog.csdn.net/yake_099)；校对：[shanks](http://codebuild.me/)；定稿：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)
+> 译者：[Yake](http://blog.csdn.net/yake_099)；校对：[shanks](http://codebuild.me/)；定稿：[小锅](http://www.swiftyper.com)
   
+
+
 
 
 
@@ -14,6 +16,7 @@ Friday Q&A 2015-09-04:让我们来自定义 dispatch_queue"
 > 译者注：这篇文章的代码是用 Objective-C 完成的，不过不妨碍大家学习多线程编码的知识。
 
 `Grand Central Dispatch` 是过去几年中苹果推出过的许多很棒的 API 中的一员。在最新一期的 “Let's Build” 系列中，我准备去探索 dispatch_queue 一些最基本特性的重新实现，这个主题的建议来自 Rob Rix。
+
 
 
 # 概述

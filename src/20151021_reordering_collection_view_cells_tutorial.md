@@ -1,7 +1,7 @@
 title: "集合视图重排教程"
 date: 2015-10-21 09:00:00
-tags: [ioscreator]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [IOSCREATOR]
 permalink: reordering-collection-view-cells-tutorial
 
 ---
@@ -12,8 +12,6 @@ permalink: reordering-collection-view-cells-tutorial
 校对=靛青K
 定稿=千叶知风
 发布时间=2015-10-21T09:00:00
-
-
 
 <!--此处开始正文-->
 

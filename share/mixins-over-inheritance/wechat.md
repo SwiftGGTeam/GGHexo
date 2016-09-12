@@ -17,6 +17,7 @@ Mixins 比继承更好"
 从面向对象的编程语言的角度来说，继承（Inheritence）总被用来在多个类之间共享代码。但这并不总是一个最佳的解决方案，而且它本身还有些问题。在今天写的这篇文章中，我们会看到 Swift 中的协议扩展（Protocol Extensions），并将其以「Mixins」的形式去使用是怎样解决这个问题的。
 
 
+
 > 你可以从这里下载[包含本篇文章所有代码的 Swift Playground](http://alisoftware.github.io/assets/Mixins.playground.zip)。
 
 ### 继承本身存在的问题

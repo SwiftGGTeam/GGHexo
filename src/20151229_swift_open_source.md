@@ -1,16 +1,18 @@
 title: "聚焦 Swift #0"
 date: 2015-12-29
-tags: [Open Source Swift]
-categories: [Swift 开源信息]
+tags: [Swift 开源信息]
+categories: [Open Source Swift]
 permalink: swift-open-source
----
 
+---
 原文链接=http://www.jessesquires.com/swift-open-source/
 作者=Jesse Squires
-原文日期=2015/12/06
+原文日期=2015-12-06
 译者=pmst
 校对=numbbbbb
 定稿=numbbbbb
+
+<!--此处开始正文-->
 
 > 译者注：这个系列的关注重点是 Swift 开源项目本身的发展，作者会截取每周发生的大事（比如合并了一个大改动）并进行分析，还会写一些有趣的小发现，很有意思。我们已经拿到翻译授权，会每周进行更新，欢迎关注。
 

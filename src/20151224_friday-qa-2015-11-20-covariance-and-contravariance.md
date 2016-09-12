@@ -1,7 +1,7 @@
 title: "Friday Q&A 2015-11-20：协变与逆变"
 date: 2015-12-24
-tags: [Mike Ash]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [mikeash.com]
 permalink: friday-qa-2015-11-20-covariance-and-contravariance
 
 ---

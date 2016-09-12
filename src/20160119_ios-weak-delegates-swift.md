@@ -1,13 +1,13 @@
 title: "iOS：如何用 Swift 实现弱代理"
 date: 2016-01-19 09:00:00
-tags: [Natasha The Robot]
-categories: [Swift 入门] 
+tags: [Swift 入门]
+categories: [Natasha The Robot] 
 permalink: ios-weak-delegates-swift
----
 
+---
 原文链接=https://www.natashatherobot.com/ios-weak-delegates-swift/
 原文日期=2015-12-23
-作者=Natasha the Robot
+作者=Natasha
 译者=lfb_CD
 校对=numbbbbb
 定稿=Cee
@@ -18,7 +18,6 @@ permalink: ios-weak-delegates-swift
 有一个常见的场景：一个 ViewController 控制多个 View ，并且想在 ViewController 中代理 View 的一些逻辑。
 
 例如，你有一个 View，其中包含一个按钮（比如在表单中的「注册」），并且当用户点击这个注册按钮时，你希望代理其中的逻辑（比如注册验证和调用 API）。
-
 
 你的代码应该会是这样的：
 

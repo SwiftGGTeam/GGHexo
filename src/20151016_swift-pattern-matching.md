@@ -1,7 +1,7 @@
 title: "Swift中的模式匹配"
 date: 2015-10-16 09:00:00
-tags: [Ole Begemann]
-ctegories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Ole Begemann]
 permalink: swift-pattern-matching
 
 ---
@@ -20,7 +20,9 @@ permalink: swift-pattern-matching
 更新:
 2015.9.19: 添加了一些关于Swift语法问题的笔记。把自定义操作符的符号改为了一个我认为更加适合的。在总结中添加了一些对函数式编程的想法。
 2015.9.25: 添加了关于标准库中已经存在的`~>`操作符的笔记
+
 <!--more-->
+
 这个系列的其他文章：
 (1)Custom Pattern Matching (就是这篇)
 (2)[Ranges and Intervals](http://oleb.net/blog/2015/09/swift-ranges-and-intervals/)

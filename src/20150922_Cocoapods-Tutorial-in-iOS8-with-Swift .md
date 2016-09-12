@@ -1,13 +1,13 @@
 title: "在 iOS8（Swift）中使用 Cocoapods" 
 date: 2015-09-22 10:00:00
-tags: [IOSCREATOR]  
-categories: [Swift 入门]  
+tags: [Swift 入门]  
+categories: [IOSCREATOR]  
 permalink: Cocoapods-Tutorial-in-iOS8-with-Swift   
 
 ---
 原文链接=http://www.ioscreator.com/tutorials/cocoapods-tutorial-ios8-swift
 作者=Arthur Knopper  
-原文日期=2015/07/07  
+原文日期=2015-07-07  
 译者=Prayer
 校对=shanks
 定稿=千叶知风

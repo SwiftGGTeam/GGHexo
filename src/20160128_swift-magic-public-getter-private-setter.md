@@ -1,16 +1,15 @@
 title: "Swift 魔法：公开 Getter，隐藏 Setter"
 date: 2016-01-28
-tags: [Natasha The Robot]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Natasha The Robot]
 permalink: swift-magic-public-getter-private-setter
 keywords: swift getter,swift setter
 custom_title: 
 description: 在Swift中有属性需要在外部读并只能在内部进行的话，只需公开Getter同时隐藏Setter就可以了。
 
-
 ---
 原文链接=https://www.natashatherobot.com/swift-magic-public-getter-private-setter/
-作者=Gabriel Theodoropoulos
+作者=Natasha
 原文日期=2016-1-11
 译者=saitjr
 校对=小锅

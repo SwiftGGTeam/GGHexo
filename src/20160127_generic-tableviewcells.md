@@ -1,7 +1,7 @@
 title: "使用泛型来优化 TableView Cells 的使用体验"
 date: 2016-01-27
-tags: [Crunchy Development]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Crunchy Development]
 permalink: generic-tableviewcells
 
 ---
@@ -11,6 +11,8 @@ permalink: generic-tableviewcells
 译者=walkingway
 校对=小锅
 定稿=numbbbbb
+
+<!--此处开始正文-->
 
 各位新年快乐🎇🎉🎊🎆! 2016 年第一篇博客我想分享一个非常有用的技巧，那就是向大家展示 Swift 泛型的强大，以及方便地使用泛型来处理 `UITableViewCells` 和 `UICollectionViewCells`。
 

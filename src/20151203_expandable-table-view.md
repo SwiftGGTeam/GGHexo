@@ -1,7 +1,7 @@
 title: "如何在 iOS 中实现一个可展开的 Table View"
 date: 2015-12-03
-tags: [AppCoda]
-categories: [Swift 入门] 
+tags: [Swift 入门]
+categories: [AppCoda] 
 permalink: expandable-table-view
 
 ---
@@ -13,7 +13,6 @@ permalink: expandable-table-view
 定稿=numbbbbb
 
 <!--此处开始正文-->
-
 
 几乎所有的应用程序都有一个共同的特点：允许用户在多个视图控制器之间导航和协同工作。这些视图控制器应用非常广泛，例如简单显示某些形式的信息到屏幕上，或从用户处收集复杂的输入数据。为了实现一款应用的不同功能，经常需要创建新的视图控制器，且多数任务比较艰巨。不过，倘若你利用`expandable tableviews`（之后统一译为可展开的 tableview ） ，我们就能避免创建新的视图控制器（以及相关的界面和 storyboard）。
 

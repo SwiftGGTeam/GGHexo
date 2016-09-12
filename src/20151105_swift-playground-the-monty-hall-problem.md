@@ -1,7 +1,7 @@
 title: "Swift Playground: 三门问题的解法"
 date: 2015-11-05 09:00:00
-tags: [Thomas Hanning]
-categories: [Swift 入门] 
+tags: [Swift 入门]
+categories: [Thomas Hanning] 
 permalink: swift-playground-the-monty-hall-problem
 
 ---
@@ -12,6 +12,7 @@ permalink: swift-playground-the-monty-hall-problem
 校对=numbbbbb
 定稿=numbbbbb
 
+<!--此处开始正文-->
 
 三门问题是一个超级让人摸不着头脑的概率问题。我们会在 Swift Playground 里来演示它的解法，而不是通过枯燥的数学解释。
 

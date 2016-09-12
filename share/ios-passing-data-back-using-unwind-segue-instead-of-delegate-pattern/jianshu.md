@@ -1,7 +1,7 @@
 使用 unwind segue 而不是 delegate 模式传递回调数据"
 
 > 作者：Tomasz Szulc，[原文链接](http://szulctomasz.com/ios-passing-data-back-using-unwind-segue-instead-of-delegate-pattern/)，原文日期：2015-12-6
-> 译者：[靛青K](http://www.dianqk.org/)；校对：[Channe](undefined)；定稿：[Cee](https://github.com/Cee)
+> 译者：[靛青K](http://blog.dianqk.org/)；校对：[Channe](http://www.jianshu.com/users/7a07113a6597/latest_articles)；定稿：[Cee](https://github.com/Cee)
   
 
 

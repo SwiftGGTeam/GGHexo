@@ -1,8 +1,9 @@
 聚焦 Swift #3"
 
-> 作者：Jesse Squires，[原文链接](http://www.jessesquires.com/open-source-swift-weekly-3/)，原文日期：2015.12.24
-> 译者：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[numbbbbb](https://github.com/numbbbbb)
+> 作者：Jesse Squires，[原文链接](http://www.jessesquires.com/open-source-swift-weekly-3/)，原文日期：2015-12-24
+> 译者：[小锅](http://www.swiftyper.com)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[numbbbbb](http://numbbbbb.com/)
   
+
 
 
 

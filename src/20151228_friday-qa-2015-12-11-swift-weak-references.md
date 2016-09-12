@@ -1,7 +1,7 @@
 title: "Friday Q&A 2015-12-11：Swift 中的弱引用"
 date: 2015-12-28
-tags: [Mike Ash]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [mikeash.com]
 permalink: friday-qa-2015-12-11-swift-weak-references
 
 ---

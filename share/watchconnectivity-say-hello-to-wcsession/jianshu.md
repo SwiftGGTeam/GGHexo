@@ -1,7 +1,7 @@
 WatchConnectivity：学习 WCSession"
 
-> 作者：Natasha The Robot，[原文链接](http://natashatherobot.com/watchconnectivity-say-hello-to-wcsession/)，原文日期：2015-09-21
-> 译者：[小袋子](http://daizi.me)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 作者：Natasha，[原文链接](http://natashatherobot.com/watchconnectivity-say-hello-to-wcsession/)，原文日期：2015-09-21
+> 译者：[小袋子](http://daizi.me)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 

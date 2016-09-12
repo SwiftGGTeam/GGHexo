@@ -1,8 +1,10 @@
 Beta 2 更新：Swift 2.1 Playground 使用值放置方法"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2015/09/23/new-to-beta-2-swift-2-1-playground-value-drops-swiftlang/)，原文日期：2015-09-23
-> 译者：[天才175](http://weibo.com/u/2916092907)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[numbbbbb](https://github.com/numbbbbb)
+> 译者：[天才175](http://weibo.com/u/2916092907)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[numbbbbb](http://numbbbbb.com/)
   
+
+
 
 
 

@@ -1,13 +1,13 @@
 title: "实现可打印内容的 try? 和 try!"
 date: 2015-11-27 09:20:00
-tags: [Erica Sadun]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Erica Sadun]
 permalink: implementing-printing-versions-of-try-and-try-on-steroids-in-swiftlang
 
 ---
 原文链接=http://ericasadun.com/2015/11/05/implementing-printing-versions-of-try-and-try-on-steroids-in-swiftlang/
 作者=Erica Sadun
-原文日期=2015/11/5
+原文日期=2015-11-5
 译者=pmst
 校对=千叶知风
 定稿=numbbbbb
@@ -15,6 +15,7 @@ permalink: implementing-printing-versions-of-try-and-try-on-steroids-in-swiftlan
 <!--此处开始正文-->
 
 Swift 2 中的`try?`运算符在可选类型(optionals)和错误处理机制中抛出 error 转换为输出 nil 结果值之间建立了桥接。这样你就可以使用 guard 语句和条件绑定，只关注处理成功的用例(case)。
+
 <!--more-->
 
 ```swift

@@ -1,18 +1,19 @@
 title: "用模式匹配解析 URL"
 date: 2015-09-15 20:00:00
-tags: [Crunchy Development]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Crunchy Development]
 permalink: urls-and-pattern-matching
 
 ---
 原文链接=http://alisoftware.github.io/swift/pattern-matching/2015/08/23/urls-and-pattern-matching/
 作者=Olivier Halligon
-原文日期=2015/08/23
+原文日期=2015-08-23
 译者=靛青K
 校对=numbbbbb
 定稿=shanks
 发布时间=2015-09-15T19:50:00
 
+<!--此处开始正文-->
 
 今天的目标是用代码处理链接 `http://mywebsite.org/customers/:cid/orders/:oid`，从中提取出订单号（#oid）和顾客 ID（#cid） 。  
 

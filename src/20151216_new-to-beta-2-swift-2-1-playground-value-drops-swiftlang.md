@@ -1,7 +1,7 @@
 title: "Beta 2 更新：Swift 2.1 Playground 使用值放置方法"
 date: 2015-12-16
-tags: [Erica Sadun]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Erica Sadun]
 permalink: new-to-beta-2-swift-2-1-playground-value-drops-swiftlang
 
 ---
@@ -11,6 +11,8 @@ permalink: new-to-beta-2-swift-2-1-playground-value-drops-swiftlang
 译者=天才175
 校对=numbbbbb
 定稿=numbbbbb
+
+<!--此处开始正文-->
 
 ![](/img/articles/new-to-beta-2-swift-2-1-playground-value-drops-swiftlang/Color-AppScreenSnapz001.png1450226715.996496)
 

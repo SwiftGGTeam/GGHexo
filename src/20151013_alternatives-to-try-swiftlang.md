@@ -1,7 +1,7 @@
 title: "try? 的替代实现"
 date: 2015-10-13 09:00:00
-tags: [Erica Sadun]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Erica Sadun]
 permalink: alternatives-to-try-swiftlang
 
 ---
@@ -13,8 +13,12 @@ permalink: alternatives-to-try-swiftlang
 定稿=千叶知风
 发布时间=2015-10-13T09:00:00
 
+<!--此处开始正文-->
+
 `try？` 语法的优点在于你不必把可能会抛出错误的函数写在一个 `do-catch` 代码块当中。如果你使用了 `try?`，该函数的返回值就会是一个可选类型：成功返回 `.Some`，失败则返回 `.None`。你可以配合着 `if-let` 或者 `guard` 语句来使用 `try?` 语法。
+
 <!--more-->
+
 `try?` 语法的不足则在于它对错误的简化，让你难以了解到错误是什么以及错误发生的时间。这可不是件好事。
 
 但你可以试着自己写出 `try?` 的替代方法。比如实现一个简单的枚举`Result`：

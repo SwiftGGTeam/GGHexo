@@ -1,17 +1,18 @@
 title: "在 Swift 2 beta 6中使用 try? 抛出可选异常"
 date: 2015-09-11 20:00:01
-tags: [Benedikt Terhechte]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [APPVENTURE]
 permalink: optional-throw-swift
 
 ---
 原文链接=http://appventure.me/2015/08/25/optional-throw-swift/
 作者=Benedikt Terhechte
-原文日期=2015/08/25
+原文日期=2015-08-25
 译者=lfb_CD
 校对=小锅
 定稿=shanks
 
+<!--此处开始正文-->
 
 Swift 2.0 beta 6 新增了一个关键字 `try?`，这为我们处理异常又增加一个新的途径。这篇简短的文章阐述了这个关键字的基础知识，同时说明为何这个新关键字很酷。
 

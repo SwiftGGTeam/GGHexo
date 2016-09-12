@@ -1,7 +1,7 @@
 title: "你应该把 Objective-C 的代码转为 Swift 吗？"
 date: 2015-11-30
-tags: [Thomas Hanning]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Thomas Hanning]
 permalink: should-you-migrate-objective-c-code-to-swift
 
 ---

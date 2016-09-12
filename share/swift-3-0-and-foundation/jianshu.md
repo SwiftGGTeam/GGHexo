@@ -1,9 +1,8 @@
 Swift 3.0 和 Foundation"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2015/12/03/swift-3-0-and-foundation/)，原文日期：2015-12-03
-> 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[Cee](https://github.com/Cee)；定稿：[numbbbbb](https://github.com/numbbbbb)
+> 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[Cee](https://github.com/Cee)；定稿：[numbbbbb](http://numbbbbb.com/)
   
-
 
 
 

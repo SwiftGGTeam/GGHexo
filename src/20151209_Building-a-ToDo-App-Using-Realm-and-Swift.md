@@ -1,11 +1,9 @@
 title: 使用 Realm 和 Swift 创建 ToDo 应用
 date: 2015-12-08
-tags: [AppCoda]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [AppCoda]
 permalink: building-a-todo-app-using-realm-and-swift
-
 ---
-
 原文链接=http://www.appcoda.com/realm-database-swift/
 作者=Hossam Ghareeb
 原文日期=2015-10-28

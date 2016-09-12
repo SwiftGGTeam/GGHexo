@@ -1,7 +1,7 @@
 title: "tvOS 入门：开发你的第一个 tvOS 应用"
 date: 2015-11-25
-tags: [AppCoda]
-categories: [Swift 入门,Apple TV 开发]
+tags: [Swift 入门,Apple TV 开发]
+categories: [AppCoda]
 permalink: tvos-introduction
 
 ---
@@ -12,6 +12,7 @@ permalink: tvos-introduction
 校对=numbbbbb
 定稿=numbbbbb
 
+<!--此处开始正文-->
 
 上月在旧金山举办的苹果发布会中,苹果公司发布了第四代苹果电视。然而，此次更新不同于以往任何版本，苹果新电视将允许用户从 App Store 下载应用和游戏。
 

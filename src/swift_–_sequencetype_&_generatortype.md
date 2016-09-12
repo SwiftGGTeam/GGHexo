@@ -1,16 +1,18 @@
 title: "如何用 Swift 实现序列和生成器"
 date: 2015-9-11
-tags: [Raj Kandathi]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Raj Kandathi]
 permalink: sequencetype_and_generatortype
 
 ---
 原文链接=http://rajkandathi.com/swift-sequencetype-generatortype/
 作者=Raj Kandathi
-原文日期=2015/08/15
+原文日期=2015-08-15
 译者=pmst
 校对=numbbbbb
 定稿=shanks
+
+<!--此处开始正文-->
 
 > 注：作者连续写了两篇文章，我们将译文合并到了一起
 

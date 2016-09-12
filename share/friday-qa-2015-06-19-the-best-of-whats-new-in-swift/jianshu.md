@@ -1,8 +1,10 @@
 Swift 中最棒的新特性"
 
-> 作者：Mike Ash，[原文链接](https://www.mikeash.com/pyblog/friday-qa-2015-06-19-the-best-of-whats-new-in-swift.html)，原文日期：2015/06/19
-> 译者：[Yake](http://blog.csdn.net/yake_099)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[shanks](http://codebuild.me/)
+> 作者：Mike Ash，[原文链接](https://www.mikeash.com/pyblog/friday-qa-2015-06-19-the-best-of-whats-new-in-swift.html)，原文日期：2015-06-19
+> 译者：[Yake](http://blog.csdn.net/yake_099)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[shanks](http://codebuild.me/)
   
+
+
 
 
 

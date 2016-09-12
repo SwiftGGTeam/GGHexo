@@ -1,27 +1,29 @@
 .post,.page,.link,.photo
   background color-section
   a
-    color color-blue 
+    color color-theme
     &:hover
-      color color-orange     //color-theme
+      color color-theme     //color-theme
 
 article
+  padding-left 20px
+  padding-right 20px
+  border 1px solid rgba(0,0,0,.04)
+  border-bottom none
+  box-shadow 0 1px 4px rgba(0,0,0,.03)
   header.article-info
-    @media mini
-      border-bottom 1px solid lighten(color-gray,30%)
     >h1
-      padding 0.2em 3%
-      padding-top 0.5em
       padding-bottom 0.5em
       font-size font-size+50
-      line-height line-height
+      line-height 1.5
       @media tablet
         font-size font-size+50
         padding-top 0.5em
       word-wrap break-word 
       word-break normal
       font-smoothing antialiased
-      border-left 5px solid color-theme
+      a
+        color #333 !important
     >p.article-author
       padding 0.3em 4% 0.3em 0
       text-align right
@@ -30,10 +32,10 @@ article
         float right
         border-bottom none
     >p.article-time
-      padding-left 4%
+      color: #c7c7c7;
       float left
       padding-top 0.4em
-      font-size 0.9em
+      font-size 0.8em
       text-align center
       margin-bottom -2.7em
       @media mini
@@ -42,8 +44,7 @@ article
         padding-top 0.4em
         font-size 0.9em 
   .article-content
-    padding 1.5em 4%
-    color color-content
+    padding 1em 0%
     font-size font-size
     &:before,&:after
       content ""
@@ -88,7 +89,7 @@ article
       border-bottom 1px dotted
     blockquote
       border-left .2em solid color-theme
-      margin 0.65em 0 0.65em 1%
+      margin 0.65em 0 0.65em 0
       padding-left 1%
       line-height line-height
       font-size font-size
@@ -130,7 +131,7 @@ article
       -webkit-border-radius 0.25em
       border-radius 0.25em
     p
-      line-height line-height
+      line-height 1.5
       margin-top 0.7em
       @media tablet
         margin-top 1em
@@ -157,13 +158,6 @@ article
       position relative
       font-size 0.9em
       padding-left 1.3em
-      &:before
-        content '\f040'
-        position absolute
-        font 0.9em font-icon-family
-        position absolute
-        left 0
-        top .3em
     .video-container
       position relative;
       padding-top 56%

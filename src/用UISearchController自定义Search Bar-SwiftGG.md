@@ -1,18 +1,18 @@
 title: "使用UISearchController自定义搜索栏"
 date: 2015-09-11 20:00:02
-tags: [AppCoda]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [AppCoda]
 permalink: custom_search_bar_tutorial
 
 ---
-
 原文链接=http://www.appcoda.com/custom-search-bar-tutorial/
 作者=AppCoda
-原文日期=2015/08/27
+原文日期=2015-08-27
 译者=saitjr
 校对=numbbbbb
 定稿=shanks
 
+<!--此处开始正文-->
 
 很多应用都需要*搜索功能*并把结果展示在`UITableView`中。毋庸置疑，很多开发者都遇到过这种开发需求。通常的做法都是直接使用 iOS SDK 中自带的控件。iOS 8 以前，苹果提供了一个用于具有搜索功能的控制器`UISearchDisplayController`。使用这个控制器，结合`UISearchBar`，能更方便的在应用中添加搜索特性。然而，这些都已成为历史。
 

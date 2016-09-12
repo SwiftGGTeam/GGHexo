@@ -1,15 +1,15 @@
 body
   >header
     width 100%
-    box-shadow 2px 4px 5px hsla(0,1%,1%,.2)
-    if(banner_img)
-      background url("../"+banner-img) center color-theme
-    else
-      background color-theme
     color color-white
+    background-color color-white
     padding 1em 0 0.8em 
+    border-bottom 1px solid #ff7554
+    border-bottom 1px solid rgba(0,0,0,.04)
+    box-shadow 0 1px 4px rgba(0,0,0,.03)
+    border-radius 3px
     @media tablet
-      padding 1.8em 0 1.5em
+      padding 1em 0 1.5em
     >div
       width 95%
       margin 0 auto
@@ -19,40 +19,36 @@ body
         width 93%
     a
       display block
-      color color-white
+      color #ff7554
 
 #imglogo
   float left
-  width 5em
+  margin-top 0.5em
+  width 4em
   height 4em
   img
-    width 5em
+    width 4em
+    height 4em
 
 #textlogo
   float left
   width 60%
   margin-left 0.5em
+  color #ff7554
   @media mini 
     width 20%
   h1.site-name
     width 50%
     margin-top 0.2em
     margin-bottom -0.3em
-    ShowCustomFont = false
-    if ShowCustomFont
-      font-family font-custom-family
-      font-size font-size+100
-      line-height line-height
-      font-smoothing()
-      @media mini
-        font-size font-size+140
-    else
-      font-family font-default
+    font-family "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif
+    font-size font-size+90
+    line-height line-height-10
+    font-weight normal
+    a:hover
+      color #FF3100
+    @media mini
       font-size font-size+90
-      line-height line-height-10
-      font-weight normal
-      @media mini
-        font-size font-size+90
   h2.blog-motto
     font-size font-size
     font-weight normal
@@ -103,28 +99,50 @@ header nav
     @media tablet
       padding 0.2em 1.5em
     &:hover
-      background saturate(darken(color-theme, 25%), 10%)
-      color color-font-nav
+      color #FF3100
+      font-weight 600
 
 .shownav
   max-height 40em
 
 .search
   padding 0.1em 0 0 1em
+  color: #FF7554
   input
+    text-align: center
+    lhhere = 30px
     -webkit-appearance textfield
     font-size 0.87em
-    line-height line-height+0.2
-    border 1px solid color-white
-    color color-white
+    line-height lhhere
+    border 1px solid #FF7554
+    color #FF7554
     background transparent
     width 8rem
-    padding-left 0.5em
+    padding-left 0.6em
+    border-radius 30px
     @media tablet
       width 8em
       transition .5s width
       &:focus
         width 15em
+    &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+      color #FF7554
+      line-height lhhere - 2px
+    }
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color #FF7554
+      line-height lhhere - 4px
+      opacity 1
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color #FF7554
+      line-height lhhere - 4px
+      opacity 1
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color #FF7554
+      line-height lhhere - 4px
+    }
   label
     display none
 
@@ -175,7 +193,10 @@ header nav
       font-size 12px
       height 100%
       pcolor=#7D706D
-      lh=0.8rem
+      lh=0.7rem
+      &::-webkit-input-placeholder::before{content: "";}
+      &::-moz-placeholder:before{content: "\f002";}
+      &:-ms-input-placeholder::before{content: "\f002";}
       &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
           line-height lh
           color pcolor
@@ -231,9 +252,10 @@ header nav
     padding 0.4em
     #sw_slogan
       font-size 1em
-      width 30%
+      width 40%
     #content
       width 40%
+      margin-left 0px
   @media tablet
     padding 0.5em
     #sw_slogan

@@ -1,7 +1,7 @@
 好代码是怎样炼成的"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2015/10/28/what-makes-good-code/)，原文日期：2015-10-28
-> 译者：[小铁匠Linus](http://weibo.com/linusling)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[小铁匠Linus](http://linusling.com)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 

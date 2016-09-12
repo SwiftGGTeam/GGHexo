@@ -1,7 +1,7 @@
 title: 要不要来点 Swift
 date: 2016-01-15
-tags: [Jacob Bandes-Storch]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Jacob Bandes-Storch]
 permalink: help-yourself-to-some-swift
 
 ---

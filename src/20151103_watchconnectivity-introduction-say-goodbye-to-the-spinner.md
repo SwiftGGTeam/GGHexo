@@ -1,12 +1,12 @@
 title: "WatchConnectivity 介绍：告别加载等待"
 date: 2015-11-03 09:00:00
-tags: [Natasha The Robot]
-categories: [Swift 入门, WatchOS 2]
+tags: [Swift 入门, WatchOS 2]
+categories: [Natasha The Robot]
 permalink: watchconnectivity-introduction-say-goodbye-to-the-spinner
 
 ---
 原文链接=http://natashatherobot.com/watchconnectivity-introduction-say-goodbye-to-the-spinner/
-作者=Natasha The Robot
+作者=Natasha
 原文日期=2015-09-21
 译者=小袋子
 校对=numbbbbb

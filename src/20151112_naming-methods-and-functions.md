@@ -1,7 +1,7 @@
 title: "函数和方法命名规范"
 date: 2015-11-12 09:00:00
-tags: [Erica Sadun]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Erica Sadun]
 permalink: naming-methods-and-functions
 
 ---
@@ -11,6 +11,8 @@ permalink: naming-methods-and-functions
 译者=天才175
 校对=numbbbbb
 定稿=numbbbbb
+
+<!--此处开始正文-->
 
 请各位随意批判。同时请看[这里](https://realm.io/news/swift-summit-swifty-methods-clarity-brevity/)和[这里](http://radex.io/swift/methods/)。
 

@@ -1,7 +1,7 @@
 在 iOS8 和 iOS9 中锁定视图自动旋转"
 
 > 作者：Weston Hanners，[原文链接](http://www.alloc-init.com/2015/11/per-view-auto-rotation-locking-made-easy-for-ios-8-and-9/)，原文日期：2015-11-18
-> 译者：[littledogboy](undefined)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[littledogboy](undefined)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 
@@ -13,6 +13,7 @@
 
 
 这周我在开发一个 App，客户想要此 App 在某些情况下锁定竖屏，某些情况下锁定横屏。幸运的是，我已经在自动布局下创建了所有的视图，因此它们已经支持所需的约束，我仅需要锁定视图旋转。
+
 
 
 旋转 API 属于 UIKit 中经常被弃用的内容，因此当我开始旋转工作时，不得不查一下。我还想说，弃用和替换相关的 API 太麻烦了。经过一个小时左右的研究和两个小时的实践，我终于整出了两部分。（译者注：=W=，我当时也搞了好久）

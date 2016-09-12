@@ -1,7 +1,7 @@
 实现可打印内容的 try? 和 try!"
 
-> 作者：Erica Sadun，[原文链接](http://ericasadun.com/2015/11/05/implementing-printing-versions-of-try-and-try-on-steroids-in-swiftlang/)，原文日期：2015/11/5
-> 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[numbbbbb](https://github.com/numbbbbb)
+> 作者：Erica Sadun，[原文链接](http://ericasadun.com/2015/11/05/implementing-printing-versions-of-try-and-try-on-steroids-in-swiftlang/)，原文日期：2015-11-5
+> 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
 
@@ -13,6 +13,7 @@
 
 
 Swift 2 中的`try?`运算符在可选类型(optionals)和错误处理机制中抛出 error 转换为输出 nil 结果值之间建立了桥接。这样你就可以使用 guard 语句和条件绑定，只关注处理成功的用例(case)。
+
 
 
     

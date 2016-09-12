@@ -1,7 +1,7 @@
 关于 Swift 的 5 个误区"
 
 > 作者：Thomas Hanning，[原文链接](http://www.thomashanning.com/five-myths-about-swift/)，原文日期：2015-10-19
-> 译者：[小铁匠Linus](http://weibo.com/linusling)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)
+> 译者：[小铁匠Linus](http://linusling.com)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[小锅](http://www.swiftyper.com)
   
 
 

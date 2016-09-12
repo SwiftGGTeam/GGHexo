@@ -28,14 +28,14 @@ rss: /atom.xml ## RSS address.
 #### Image
 imglogo:
   enable: true             ## display image logo true/false.
-  src: img/logo.jpg        ## `.svg` and `.png` are recommended,please put image into the theme folder `/jacman/source/img`.
-favicon: img/favicon.ico   ## size:32px*32px,`.ico` is recommended,please put image into the theme folder `/jacman/source/img`.     
-apple_icon: img/logo.jpg ## size:114px*114px,please put image into the theme folder `/jacman/source/img`.
+  src: img/logo_new.png        ## `.svg` and `.png` are recommended,please put image into the theme folder `/jacman/source/img`.
+favicon: img/favicon_new.ico   ## size:32px*32px,`.ico` is recommended,please put image into the theme folder `/jacman/source/img`.     
+apple_icon: img/logo_new.jpg ## size:114px*114px,please put image into the theme folder `/jacman/source/img`.
 author_img: img/author.jpg ## size:220px*220px.display author avatar picture.if don't want to display,please don't set this.
 banner_img: #img/banner.jpg ## size:1920px*200px+. Banner Picture
 ### Theme Color 
 theme_color:
-    theme: '#2ca6cb'    ##the defaut theme color is blue
+    theme: '#5AC8FA'    ##the defaut theme color is blue
 
 # 代码高亮主题
 # available: default | night
@@ -44,7 +44,7 @@ highlight_theme: default
 #### index post is expanding or not 
 index:
   expand: true           ## default is unexpanding,so you can only see the short description of each post.
-  excerpt_link: Read More  
+  excerpt_link: 阅读全文 
 
 close_aside: false  #close sidebar in post page if true
 mathjax: true      #enable mathjax if true
@@ -73,23 +73,32 @@ author:
 
 #### Toc
 toc:
-  article: true   ## show contents in article.
+  article: false   ## show contents in article.
   aside: true     ## show contents in aside.
 ## you can set both of the value to true of neither of them.
 ## if you don't want display contents in a specified post,you can modify `front-matter` and add `toc: false`.
 
 #### Links
 links:
+  C4iOS 教程: http://c4ios.swift.gg
+  SwiftGG直播: http://swift.gg/2016/03/14/live-video/
+  T 沙龙: http://t.swift.gg/
   Code Build Me: http://codebuild.me
   "//TODO:": http://www.saitjr.com
   Perfect Freeze: http://blog.cee.moe 
   小锅的 swift 之路: http://www.swiftyper.com
   Prayer 的博客: http://www.futantan.com/
   画渣程序猿 mmoaay: http://blog.csdn.net/mmoaay
-  小铁匠的 swift 之路: http://blogoflinus.sinaapp.com
+  小铁匠的 swift 之路: http://linusling.com
   ppppppmst 的简书博客: http://www.jianshu.com/users/596f2ba91ce9/latest_articles
+  CMB 的博客: http://chenmingbiao.github.io/
   BridgeQ: http://wxgbridgeq.github.io/
   walkingway 的博客: http://chengway.in
+  靛青K: http://blog.dianqk.org
+  JackAlan: http://ijack.pw/
+  SwiftConChina: http://www.swiftconchina.com
+  Swift 中国: http://swiftcn.io
+  泊学: https://boxueio.com/
   BearyChat: https://bearychat.com/
   PHP-Z 论坛: http://bbs.php-z.com
   官方文档: http://www.swiftguide.cn

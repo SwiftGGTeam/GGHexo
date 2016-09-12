@@ -1,7 +1,7 @@
 title: "Xcode6 中模版的介绍"
 date: 2015-10-14 09:00:00
-tags: [Thomas Hanning]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Thomas Hanning]
 permalink: templates-in-xcode-6
 
 ---
@@ -13,6 +13,7 @@ permalink: templates-in-xcode-6
 定稿=小锅
 发布时间=2015-10-14T09:00:00
 
+<!--此处开始正文-->
 
 `Xcode` 为我们提供一整套的项目模板。在这篇文章中，我们将对这些模版进行讨论。
 

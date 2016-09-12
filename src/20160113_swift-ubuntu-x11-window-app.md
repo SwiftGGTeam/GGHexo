@@ -1,7 +1,7 @@
 title: "Swift包管理器：在Linux上创建和使用X11包"
 date: 2016-01-13
-tags: [Benedikt Terhechte]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [APPVENTURE]
 permalink: swift-ubuntu-x11-window-app
 
 ---

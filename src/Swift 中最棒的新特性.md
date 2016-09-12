@@ -1,16 +1,18 @@
 title: "Swift 中最棒的新特性"
 date: 2015-09-01 09:30:00
-tags: [Mike Ash]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [mikeash.com]
 permalink: friday-qa-2015-06-19-the-best-of-whats-new-in-swift
 
 ---
 原文链接=https://www.mikeash.com/pyblog/friday-qa-2015-06-19-the-best-of-whats-new-in-swift.html
 作者=Mike Ash
-原文日期=2015/06/19
+原文日期=2015-06-19
 译者=Yake
 校对=numbbbbb
 定稿=shanks
+
+<!--此处开始正文-->
 
 苹果公司在今年的 WWDC 大会上发布了 Swift 2 以及相关的新特性，相比之下其他的内容就无聊多了。除了宣布 Swift 将会开源并且这门语言由苹果独立开发完成之外，Swift 2 还包含很多新的特性，这将大幅改善这门语言。今天我将介绍最重要的几个新特性。
 

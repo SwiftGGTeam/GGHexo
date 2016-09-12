@@ -1,7 +1,7 @@
 title: "Swift 3.0 和 Foundation"
 date: 2015-12-21
-tags: [Erica Sadun]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Erica Sadun]
 permalink: swift-3-0-and-foundation
 
 ---
@@ -13,7 +13,6 @@ permalink: swift-3-0-and-foundation
 定稿=numbbbbb
 
 <!--此处开始正文-->
-
 
 我将尽量避免那些看上去很尴尬的笑话，直接介绍 [Swift CoreLibs Foundation](https://github.com/apple/swift-corelibs-foundation)。
 

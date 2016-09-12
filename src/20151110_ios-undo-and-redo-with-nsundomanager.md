@@ -1,7 +1,7 @@
 title: "使用 NSUndoManager 来进行撤销和重做"
 date: 2015-11-10 09:00:00
-tags: [Tomasz Szulc]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Tomasz Szulc]
 permalink: ios-undo-and-redo-with-nsundomanager
 
 ---
@@ -11,6 +11,8 @@ permalink: ios-undo-and-redo-with-nsundomanager
 译者=Yake
 校对=numbbbbb
 定稿=
+
+<!--此处开始正文-->
 
 在相当长的一段时间内 NSUndoManager 对我来说都是一个很神秘的东西。我想学习使用它，但是一直没有时间。一直到今天，我写了一个简单的应用，这个应用创建了一个可以移动的矩形，并且还可以修改矩形的属性，例如背景色或者圆角。
 

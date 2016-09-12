@@ -12,7 +12,6 @@
 
 
 
-
 智能手机的快速发展的同时，涌现出了很多对开发者友好的开发工具。这些工具不仅使得开发变得更加简单和容易，同时也保证了性能和产品质量。如今想要在 App Store 中占据一席之地，并非易事。而且想要使得应用易于扩展就更加困难了。当你成功获得百万量级的用户时，应用中的每一个细节都不能放过，并且需要在很短的时间完成对细节的打磨。所以和数据库打交道，是很多开发者都会面临的一个问题。相信我们每个人都会因为数据库引起的各种问题而头疼不已，对于数据库，我想如今我们只有两种选择：[SQLite](http://www.appcoda.com/sqlite-database-ios-app-tutorial/) 和 [Core Data](http://www.appcoda.com/introduction-to-core-data/)。我是 Core Data 的忠实粉丝，它对记录（records）的处理和持久化数据的能力非常强大，但是我意识到，在开发应用的过程中，我在 Core Data 上浪费了太多的时间。最近，我无意中发现了 Realm，一个可以替代 SQLite 和 Core Data 的更好的解决方案。
 
 ![](http://www.appcoda.com/wp-content/uploads/2015/10/realm-db-1024x683.jpg)

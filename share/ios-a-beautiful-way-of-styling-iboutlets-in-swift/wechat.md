@@ -1,8 +1,10 @@
 Swift 小贴士: 优雅地设置 IBOutlets"
 
-> 作者：Natasha，[原文链接](http://natashatherobot.com/ios-a-beautiful-way-of-styling-iboutlets-in-swift/)，原文日期：2015/07/29
-> 译者：[Channe](undefined)；校对：[numbbbbb](https://github.com/numbbbbb)；定稿：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)
+> 作者：Natasha，[原文链接](http://natashatherobot.com/ios-a-beautiful-way-of-styling-iboutlets-in-swift/)，原文日期：2015-07-29
+> 译者：[Channe](http://www.jianshu.com/users/7a07113a6597/latest_articles)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[小锅](http://www.swiftyper.com)
   
+
+
 
 
 
@@ -17,6 +19,8 @@ Swift 小贴士: 优雅地设置 IBOutlets"
 > -- Jesse Squires (@jesse_squires) 2015 年 7 月 29 日。
 
 设置 App 界面元素的颜色、字体和辅助功能总是很痛苦。理想情况下，storyboard 能搞定，但是 storyboard 中的颜色管理相当糟糕(可以用[Xcode调色板](http://natashatherobot.com/xcode-color-palette/)缓解这种痛苦)。更糟糕的是，比之更高级的辅助功能选项并不能在 storyboard 中设置。
+
+
 
 因此我个人更喜欢在代码中设置，这样在重新设计 App 时更容易看到所有颜色/字体/辅助功能等的变化. 我经常看到 Jesse 说的那种超长 viewDidLoad 方法，我试图把它们提取到一个或多个私有扩展中：
 

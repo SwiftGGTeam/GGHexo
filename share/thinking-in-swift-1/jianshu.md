@@ -1,6 +1,6 @@
 Swift 编程思想，第一部分：拯救小马"
 
-> 作者：Olivier Halligon，[原文链接](http://alisoftware.github.io/swift/2015/09/06/thinking-in-swift-1/)，原文日期：2015/09/06
+> 作者：Olivier Halligon，[原文链接](http://alisoftware.github.io/swift/2015/09/06/thinking-in-swift-1/)，原文日期：2015-09-06
 > 译者：[ray16897188](http://www.jianshu.com/users/97c49dfd1f9f/latest_articles)；校对：[shanks](http://codebuild.me/)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
@@ -11,7 +11,11 @@ Swift 编程思想，第一部分：拯救小马"
 
 
 
+
+
 我常看见 Swift 的新手尝试着把它们的 ObjC 代码翻译成 Swift。但是开始用 Swift 写代码的时候最难的事情并不是语法，而是思维方式的转变，去用那些 ObjC 里并没有的 Swift 新概念。
+
+
 
 在这一系列的文章中，我们会拿一个 ObjC 代码做例子，然后在把它转成 Swift 代码的全程中引入越来越多的对新概念的讲解。
 

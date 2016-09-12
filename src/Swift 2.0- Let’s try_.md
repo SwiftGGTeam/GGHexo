@@ -1,17 +1,18 @@
 title: "Swift 2.0 中使用 try? 关键字"
 date: 2015-8-31
-tags: [Natasha The Robot]
-categories: [Swift 入门]
+tags: [Swift 入门]
+categories: [Natasha The Robot]
 permalink: swift-2-lets-try
-
 
 ---
 原文链接=http://natashatherobot.com/swift-2-0-try/
 作者=Natasha
-原文日期=2015/08/26
+原文日期=2015-08-26
 译者=小铁匠Linus
 校对=lfb_CD
 定稿=numbbbbb
+
+<!--此处开始正文-->
 
 Xcode 7 Beta 6 发布时，我一下子就被下面这三个特性迷住了：
 

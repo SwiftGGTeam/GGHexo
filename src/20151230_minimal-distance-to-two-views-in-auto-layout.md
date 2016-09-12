@@ -1,12 +1,12 @@
 title: "教你如何在 Auto Layout 下设置两个视图之间的最小间距"
 date: 2015-12-30
-tags: [Swift and Painless]
-categories: [Swift 入门]
-permalink: minimal-distance-to-two-views-in-auto-layout 
+tags: [Swift 入门]
+categories: [Swift and Painless]
+permalink: minimal-distance-to-two-views-in-auto-layout
 
 ---
 原文链接=http://swiftandpainless.com/minimal-distance-to-two-views-in-auto-layout/
-作者=dom
+作者=Dominik Hauser
 原文日期=2015-12-08
 译者=pmst
 校对=星夜暮晨

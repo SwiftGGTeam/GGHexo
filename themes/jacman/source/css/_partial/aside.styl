@@ -34,6 +34,9 @@
 
 //sidebar
 #asidepart
+  border 1px solid rgba(0,0,0,.04)
+  box-shadow 0 1px 4px rgba(0,0,0,.03)
+  border-radius 3px
   background color-section
   margin 1em 0 0
   padding 0.5em 2% 1em
@@ -47,7 +50,7 @@
   font-size 1.1em
   color color-blue
   padding 0 0 0.3125em 0
-  border-bottom 0.1875em solid color-gray
+  border-bottom 1px solid color-gray
   a
     color color-blue
     &:hover
@@ -91,10 +94,8 @@
       display block
       margin 0.3125em
       padding 0.125em 0.3125em
-      background lighten(color-gray, 30%)
       &:hover
         color color-theme
-        background lighten(color-gray, 50%)
 
 //rss
 .rsspart
@@ -133,18 +134,15 @@
     font-size 0.8em
     line-height 2em
     a
-      padding 0.5em
       &:hover
         color color-theme
         transition color .25s
   .archive-list-count
+    color #817C7C
     &:before
       content "("
     &:after
       content ")"
-          
-.archive-list 
-  padding 0.5em 0 
 
 .archive-float 
   ul
@@ -152,8 +150,11 @@
   li
     float left
     margin 0.3em
+    margin-left 0
+    margin-right 1.3em
     @media tablet
       float none
+      margin-right 0
 
 //tagcloud
 .tagcloudlist
@@ -191,11 +192,12 @@
       font-size 1em
       line-height line-height
       display block
-      padding 0 3%
+      margin 0.3125em
+      padding 0.125em 0.3125em
       &:hover
         color color-theme
         transition color .25s
-
+        
 //wechat
 .wechatpart
   margin-top 0.5em 

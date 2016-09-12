@@ -1,7 +1,7 @@
 Friday Q&A 2015-11-20：协变与逆变"
 
 > 作者：Mike Ash，[原文链接](https://mikeash.com/pyblog/friday-qa-2015-11-20-covariance-and-contravariance.html)，原文日期：2015-11-20
-> 译者：[Cee](https://github.com/Cee)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[numbbbbb](https://github.com/numbbbbb)
+> 译者：[Cee](https://github.com/Cee)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
 

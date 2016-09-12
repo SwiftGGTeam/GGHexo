@@ -1,7 +1,7 @@
 Swift 魔法：公开 Getter，隐藏 Setter"
 
-> 作者：Gabriel Theodoropoulos，[原文链接](https://www.natashatherobot.com/swift-magic-public-getter-private-setter/)，原文日期：2016-1-11
-> 译者：[saitjr](http://www.brighttj.com)；校对：[小锅](http://www.jianshu.com/users/3b40e55ec6d5/latest_articles)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 作者：Natasha，[原文链接](https://www.natashatherobot.com/swift-magic-public-getter-private-setter/)，原文日期：2016-1-11
+> 译者：[saitjr](http://www.saitjr.com)；校对：[小锅](http://www.swiftyper.com)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 

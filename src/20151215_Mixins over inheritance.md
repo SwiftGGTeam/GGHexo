@@ -1,7 +1,7 @@
 title: "Mixins 比继承更好"
 date: 2015-12-15 10:30:00
-tags: [Crunchy Development]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Crunchy Development]
 permalink: mixins-over-inheritance
 
 ---
@@ -17,6 +17,7 @@ permalink: mixins-over-inheritance
 译者注：[Mixin](https://en.wikipedia.org/wiki/Mixin) 和 [Trait](https://en.wikipedia.org/wiki/Trait_\(computer_programming\) 是面向对象编程语言中的术语，本文中作者并未明确指出两者之间的区别。这两个单词在本译文中也不做翻译。
 
 从面向对象的编程语言的角度来说，继承（Inheritence）总被用来在多个类之间共享代码。但这并不总是一个最佳的解决方案，而且它本身还有些问题。在今天写的这篇文章中，我们会看到 Swift 中的协议扩展（Protocol Extensions），并将其以「Mixins」的形式去使用是怎样解决这个问题的。
+
 <!--more-->
 
 > 你可以从这里下载[包含本篇文章所有代码的 Swift Playground](http://alisoftware.github.io/assets/Mixins.playground.zip)。
