@@ -1,7 +1,7 @@
 title: "使用 Swift 创建简单的二维码扫描应用"
 date: 2016-07-26
-tags: [AppCoda]
-categories: [教程]
+tags: [教程]
+categories: [AppCoda]
 permalink: simple-barcode-reader-app-swift
 keywords: swift二维码,swift avfoundation
 custom_title: Swift 二维码扫描教程
