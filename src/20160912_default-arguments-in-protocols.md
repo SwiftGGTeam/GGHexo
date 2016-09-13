@@ -12,7 +12,8 @@ description:
 作者=Natasha The Robot 
 原文日期=2016-05-01
 译者=Channe
-校对=CMB
+校对=walkingway
+定稿=CMB
 
 <!--此处开始正文-->
 
