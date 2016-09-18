@@ -1,7 +1,7 @@
 利用 CAGradientLayer 实现渐变色效果"
 
 > 作者：GABRIEL THEODOROPOULOS，[原文链接](http://www.appcoda.com/cagradientlayer/)，原文日期：2016-07-16
-> 译者：[冬瓜](undefined)；校对：[saitjr](http://www.saitjr.com)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[冬瓜](http://www.desgard.com/)；校对：[saitjr](http://www.saitjr.com)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 
