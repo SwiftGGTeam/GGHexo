@@ -11,7 +11,7 @@ description:
 原文链接=http://www.appcoda.com/cagradientlayer/
 作者=GABRIEL THEODOROPOULOS
 原文日期=2016-07-16
-译者=冬瓜
+译者=冬瓜
 校对=saitjr
 定稿=CMB
 

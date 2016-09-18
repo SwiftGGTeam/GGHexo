@@ -37,11 +37,12 @@ let nameMap = {
   "BigbigChai": "https://github.com/chaiyixiao",
   "wiilen": "http://www.jianshu.com/users/b7978363eb99/latest_articles",
   "Channe": "http://www.jianshu.com/users/7a07113a6597/latest_articles",
-  "冬瓜": "https://desgard.com/",
+  "冬瓜": "http://www.desgard.com/",
   "Martin_Joy": "http://www.jianshu.com/users/9c51a213b02e/latest_articles",
   "Ckitakishi": "http://ckitakishi.com",
   "粉红星云": "http://www.jianshu.com/users/f4d4f97d8b90/latest_articles",
-  "钟颖": "https://github.com/cyanzhong"
+  "钟颖": "https://github.com/cyanzhong",
+  "与狼同行": "http://www.jianshu.com/users/1c22b0c065ec/latest_articles"
 }
 
 export default nameMap
