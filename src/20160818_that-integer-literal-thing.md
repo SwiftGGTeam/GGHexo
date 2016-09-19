@@ -4,7 +4,7 @@ tags: [Swift]
 categories: [Erica Sadun]
 permalink: that-integer-literal-thing
 keywords: 整型字面量
-custom\_title: 
+custom_title: 
 description: 在 Swift 中允许一个整型字面量被解释成该类型的实例，协议的遵守者可以像整型字面量那样来展示自己，本文就来解析下 Swift 整型字面量吧。
 
 ---
