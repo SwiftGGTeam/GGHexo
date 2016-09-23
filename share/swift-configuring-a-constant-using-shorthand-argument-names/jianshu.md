@@ -14,7 +14,7 @@ Swift：让人眼前一亮的初始化方式"
 
 有条传播得很广的 [tweet](https://twitter.com/nick_skmbo/status/735109452827877377) 讲到用位置参数（positional references）来初始化 Swift 常量：
 
-![](https://img1.doubanio.com/view/photo/large/public/p2367204967.jpg)
+![](http://swiftgg-main.b0.upaiyun.com/image/swift-configuring-a-constant-using-shorthand-argument-names.jpg)
 
 原始代码见这个 [gist](https://gist.github.com/erica/4fa60524d9b71bfa9819)（译注：原 gist 代码缩进太乱，搬运过来整理如下）：
 
