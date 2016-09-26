@@ -1,7 +1,7 @@
 Swift：让人眼前一亮的初始化方式"
 
 > 作者：Natasha The Robot，[原文链接](https://www.natashatherobot.com/swift-configuring-a-constant-using-shorthand-argument-names/)，原文日期：2016/05/25
-> 译者：[haolloyin](https://github.com/haolloyin)；校对：[saitjr](http://www.saitjr.com)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[haolloyin](https://github.com/haolloyin)；校对：[saitjr](http://www.saitjr.com)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 
@@ -14,7 +14,7 @@ Swift：让人眼前一亮的初始化方式"
 
 有条传播得很广的 [tweet](https://twitter.com/nick_skmbo/status/735109452827877377) 讲到用位置参数（positional references）来初始化 Swift 常量：
 
-![tweet](https://img1.doubanio.com/view/photo/large/public/p2367204967.jpg)
+![](http://swiftgg-main.b0.upaiyun.com/image/swift-configuring-a-constant-using-shorthand-argument-names.jpg)
 
 原始代码见这个 [gist](https://gist.github.com/erica/4fa60524d9b71bfa9819)（译注：原 gist 代码缩进太乱，搬运过来整理如下）：
 
@@ -53,6 +53,8 @@ Swift：让人眼前一亮的初始化方式"
 
 由于这条 tweet 太简短，而且没有像我预期的那样运作，这让我很困惑。因此我想在这儿写一篇关于这个问题更详细的文章。
 
+
+
 ## 问题
 
 声明常量后，在一个紧接着的闭包中进行初始化，而不是之后在 `viewDidLoad` 或其他类似的方法中进行设置，这在 Swift 中是很常见的写法（也确实是一种不错的写法！）。
@@ -70,10 +72,10 @@ Swift：让人眼前一亮的初始化方式"
 
 ## 解决方案
 
-因此当我看到 tweet 中使用 `$0` 而不是很繁琐地命名变量时感到很兴奋，我立马尝试了一下：
+当我看到 tweet 中用 `$0` 而不是很繁琐地命名变量时感到很兴奋，我立马尝试了一下：
 
     
-    // 声明：以下代码无法运行...
+    // 声明：以下代码无法运行
     let yellowView: UIView = {
         $0.backgroundColor = .yellowColor()
         return $0
@@ -92,7 +94,7 @@ Swift：让人眼前一亮的初始化方式"
 
 ## 结论
 
-我确实很喜欢在这里用 `$0` 的写法，而不是显式地再命名一个变量。为啥我没想到这种方法呢，好气哦。然而现在我知道必须在那里传入一个初始化好的 `UIView()`，这从逻辑上的确说得通。大概我以后都会用这种写法。在这里用 `$0` 这么优雅的写法，为啥不呢！
+我确实很喜欢在这里用 `$0` 的写法，而不是显式地再命名一个变量。为啥我没想到这种方法呢，好气哦。然而现在我知道必须传入一个初始化好的 `UIView()`，这从逻辑上的确说得通。大概我以后都会用这种写法。在这里用 `$0` 这么优雅的写法，为啥不呢！
 
 加入我们 9 月 1 ~ 2 日在纽约市举办的 *Swift 社区庆祝会🎉`（Swift Community Celebration）*吧，用这个优惠码 *NATASHATHEROBOT* 减 $100！
 
@@ -154,4 +156,5 @@ Swift：让人眼前一亮的初始化方式"
     public func with<T>(item: T, @noescape update: (inout T) throws -> Void) rethrows -> T {
         var this = item; try update(&this); return this
     }
-> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。swift.gg)。
+
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
