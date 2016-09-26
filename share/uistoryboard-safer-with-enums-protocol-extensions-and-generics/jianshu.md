@@ -48,13 +48,13 @@ UIStoryboard：和枚举、协议扩展、泛型一起使用更安全"
 
 首要原则是你的 storyboard 应该以它包含的模块命名。例如，如果一个 storyboard 包含的控制器是关于新闻的，那么就把 storyboard 文件命名为 “News.storyboard”。
 
-![](https://cdn-images-2.medium.com/max/1600/1*RPGWe7qndb5kKEsPcvPF7Q.png)
+![](http://swiftgg-main.b0.upaiyun.com/image/uistoryboard-safer-with-enums-protocol-extensions-and-generics-1.png)
 
 ### 统一 Storyboard 标识符
 
 当你打算在你的控制器上使用 Storyboard 标识符时，通常的做法是使用类名作为标识符。比如 “ArticleViewController” 作为 ArticleViewController 的标识符。这将会减少你和同事们的负担，你和你的同事们不必再去想和记忆统一标识符或者命名规范。
 
-![](https://cdn-images-2.medium.com/max/1600/1*NG_YDV3--KHnzL56NIhGdQ.png)
+![](http://swiftgg-main.b0.upaiyun.com/image/uistoryboard-safer-with-enums-protocol-extensions-and-generics-2.png)
 
 ### 枚举
 
