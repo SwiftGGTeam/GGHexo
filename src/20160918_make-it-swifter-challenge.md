@@ -3,9 +3,9 @@ date: 2016-09-18
 tags: [Swift]
 categories: [Erica Sadun]
 permalink: make-it-swifter-challenge
-keywords: 
+keywords: swift编程
 custom_title: 
-description: 
+description: 想让你的代码更加的有 Swifter 范吗，来看看本文是怎么来介绍的吧。
 
 ---
 原文链接=http://ericasadun.com/2016/06/28/make-it-swifter-challenge/

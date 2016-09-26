@@ -3,9 +3,9 @@ date: 2016-09-23
 tags: [Swift]
 categories: [Natasha The Robot]
 permalink: swift-configuring-a-constant-using-shorthand-argument-names
-keywords: 
+keywords: swift初始化方法
 custom_title: 
-description: 
+description: Swift 有着超级严格的初始化方法，而本文眼前一亮的介绍了一种不错的 Swift 初始化方法哦，非常值得一看。
 
 ---
 原文链接=https://www.natashatherobot.com/swift-configuring-a-constant-using-shorthand-argument-names/

@@ -3,9 +3,9 @@ date: 2016-09-19
 tags: [Swift 跨平台]
 categories: [iAchieved.it]
 permalink: swift-3-0-on-raspberry-pi-2-and-3
-keywords: 
+keywords: 树莓派 swift
 custom_title: 
-description: 
+description: 在 ARM 设备上运行 Swift 可不是一件容易的事，本文就介绍下关于 Swift 3.0 在树莓派 2 和 3 上的部署。 
 
 ---
 原文链接=http://dev.iachieved.it/iachievedit/swift-3-0-on-raspberry-pi-2-and-3/?utm_source=rss&utm_medium=rss

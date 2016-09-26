@@ -3,9 +3,9 @@ date: 2016-09-20
 tags: [Swift]
 categories: [Natasha The Robot]
 permalink: swift-what-are-protocols-with-associated-types
-keywords: 
+keywords: swift 关联类型
 custom_title: 
-description: 
+description: Swift 是一门面向协议的语言，那么在 Swift 中带有关联类型的协议是什么样子的呢，本文就来分析下这个问题。
 
 ---
 原文链接=https://www.natashatherobot.com/swift-what-are-protocols-with-associated-types/

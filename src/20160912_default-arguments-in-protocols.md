@@ -3,9 +3,9 @@ date: 2016-09-12
 tags: [Swift 进阶]
 categories: [Ole Begemann]
 permalink: default-arguments-in-protocols
-keywords: 
+keywords: swift协议
 custom_title: 
-description: 
+description: 在 Swift 中的协议不允许给方法参数指定默认值，那么要怎么做才能实现给 Swift 协议添加默认参数呢，本文就来讲解下吧。
 
 ---
 原文链接=http://oleb.net/blog/2016/05/default-arguments-in-protocols/

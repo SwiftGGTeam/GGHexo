@@ -3,9 +3,9 @@ date: 2016-09-22
 tags: [iOS 开发]
 categories: [Ole Begemann]
 permalink: measurements-and-units
-keywords: 
+keywords: swift foundation框架
 custom_title: 
-description: 
+description: Swift 的基本类型都可以无缝转换到 Foundation 框架中的对应类型，本文介绍的就是 Foundation 框架中的度量值和单位。
 
 ---
 原文链接=http://oleb.net/blog/2016/07/measurements-and-units/

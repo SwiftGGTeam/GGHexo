@@ -3,9 +3,9 @@ date: 2016-09-13
 tags: [iOS 开发]
 categories: [AppCoda]
 permalink: cagradientlayer
-keywords: 
+keywords: cagradientlayer的使用,cagradientlayer 渐变色
 custom_title: 
-description: 
+description: 想知道怎么用 cagradientlayer 实现上下渐变和左右渐变吗，本文就来教你如何做出 CAGradientLayer 渐变色效果。
 
 ---
 原文链接=http://www.appcoda.com/cagradientlayer/

@@ -3,9 +3,9 @@ date: 2016-09-14
 tags: [Swift]
 categories: [Erica Sadun]
 permalink: chris-lattner-on-wrapping-up-swift-3-starting-swift-4
-keywords: 
+keywords: swift 4,swift 3
 custom_title: 
-description: 
+description: Swift 3 即将正式到来了，而 Swift 4 也会跟着而来，本文就总结回顾了 Swift 3 以及对 Swift 4 的展望。
 
 ---
 原文链接=http://ericasadun.com/2016/07/29/chris-lattner-on-wrapping-up-swift-3-starting-swift-4/
