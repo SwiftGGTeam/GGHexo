@@ -29,7 +29,7 @@ description:
 
 此时 storyboard 应该看起来像这样：
 
-[](https://www.appcoda.com/wp-content/uploads/2016/08/speechkit-demo-1-1240x723.png)
+![](https://www.appcoda.com/wp-content/uploads/2016/08/speechkit-demo-1-1240x723.png)
 
 下一步，在 `ViewController.swift` 文件中为 `UITextView` 和 `UIButton` 定义 outlet 变量，将 `UITextView` 命名为 “textView”，`UIButton` 命名为 “microphoneButton” 之后，再创建一个空 action 方法来监听麦克风按钮 (microphoneButton) 的点击事件：
 
