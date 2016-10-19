@@ -21,7 +21,11 @@ WatchOS 目前并不是很支持动态代码。当你用一个 storyboard 来构
 
 <!--more-->
 
-<video class="wp-video-shortcode" id="video-6525-1" width="276" height="390" preload="metadata" controls="controls"><source type="http://swiftgg-main.b0.upaiyun.com/video/how-to-reuse-paging-interfacecontrollers-in-watchos.mp4" /><a href="http://swiftgg-main.b0.upaiyun.com/video/how-to-reuse-paging-interfacecontrollers-in-watchos.mp4">http://swiftgg-main.b0.upaiyun.com/video/how-to-reuse-paging-interfacecontrollers-in-watchos.mp4</a></video>
+<center>
+<video src="http://swiftgg-main.b0.upaiyun.com/video/how-to-reuse-paging-interfacecontrollers-in-watchos.mp4"  width="276" height="390" controls="controls">
+Your browser does not support the video tag.
+</video>
+</center>
 
 每个界面控制器仅有一张图片和一个标签：
 
