@@ -1,7 +1,7 @@
 title: "Swift: 语法秘笈"
 date: 2016-08-17
-tags: [medium.com]
-categories: [Swift进阶]
+tags: [Swift进阶]
+categories: [medium.com]
 permalink: developing-tvos-apps-for-apple-tv-with-swift
 keywords: swift语法
 custom_title: 

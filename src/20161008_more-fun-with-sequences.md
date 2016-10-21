@@ -1,7 +1,7 @@
 title: "Sequence 带来的更多乐趣"
 date: 2016-10-08
-tags: [Erica Sadun]
-categories: [Swift]
+tags: [Swift]
+categories: [Erica Sadun]
 permalink: more-fun-with-sequences
 keywords: 这里是关键字
 custom_title: 这里是定制标题

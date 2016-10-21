@@ -1,7 +1,7 @@
 title: "为 Swift 的协议实现 Equatable"
 date: 2016-08-26 17:00:00
-tags: [Natasha The Robot]
-categories: [Swift 进阶]
+tags: [Swift 进阶]
+categories: [Natasha The Robot]
 permalink: implementing-equatable-for-protocols-swift
 keywords: swift equatable，equatable协议
 custom_title: 

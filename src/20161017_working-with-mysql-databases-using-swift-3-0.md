@@ -1,7 +1,7 @@
 title: "使用 Swift 3.0 操作 MySQL 数据库"
 date: 2016-10-17
 tags: [Swift 进阶]
-categories: [iAchievedit]
+categories: [iAchieved.it]
 permalink: working-with-mysql-databases-using-swift-3-0
 keywords: Linux
 custom_title: 
