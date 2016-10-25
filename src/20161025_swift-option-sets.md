@@ -35,7 +35,7 @@ typedef enum {
 } NSStringCompareOptions;
 ```
 
-要同时使用 case-insensitive，backwark search，你可以使用*按位或*来组合对应的选项：
+要同时使用 case-insensitive，backward search，你可以使用*按位或*来组合对应的选项：
 
 ```objective-c
 NSStringCompareOptions options = NSCaseInsensitiveSearch | NSBackwardsSearch;
