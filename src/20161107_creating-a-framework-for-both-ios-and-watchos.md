@@ -3,9 +3,9 @@ date: 2016-11-07
 tags: [Swift 跨平台]
 categories: [Natasha The Robot]
 permalink: creating-a-framework-for-both-ios-and-watchos
-keywords: 
+keywords: swift跨平台,watchos
 custom_title: 
-description: 
+description: 如果有一个框架能在 iOS 和 watchOS 都通用是不是会很棒呢，本文就是来探讨这个问题。 
 
 ---
 原文链接=https://www.natashatherobot.com/creating-a-framework-for-both-ios-and-watchos/
