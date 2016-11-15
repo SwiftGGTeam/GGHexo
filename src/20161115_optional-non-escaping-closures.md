@@ -3,10 +3,9 @@ date: 2016-11-15
 tags: [Swift]
 categories: [Ole Begemann]
 permalink: optional-non-escaping-closures
-keywords: 
-custom_title: 
-description: 
-
+keywords: swift闭包,非逃逸闭包
+custom_title: Swift 非逃逸闭包
+description: 在 Swift 中的闭包有逃逸和非逃逸两种，本文就来探讨下可选型的非逃逸闭包。
 ---
 原文链接=https://oleb.net/blog/2016/10/optional-non-escaping-closures/
 作者=Ole Begemann
