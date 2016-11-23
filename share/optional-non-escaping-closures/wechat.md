@@ -1,7 +1,7 @@
 可选型的非逃逸闭包"
 
 > 作者：Ole Begemann，[原文链接](https://oleb.net/blog/2016/10/optional-non-escaping-closures/)，原文日期：2016/10/10
-> 译者：[Cwift](http://blog.csdn.net/cg1991130)；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[Cwift](http://weibo.com/277195544)；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

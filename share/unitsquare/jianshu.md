@@ -1,7 +1,7 @@
 使用幽灵类型的Measurements和Units，第四部分"
 
 > 作者：Ole Begemann，[原文链接](https://oleb.net/blog/2016/08/measurements-and-units-with-phantom-types/)，原文日期：2016-08-29
-> 译者：[与狼同行](http://www.jianshu.com/users/1c22b0c065ec/latest_articles)；校对：[Cwift](http://blog.csdn.net/cg1991130)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[与狼同行](http://www.jianshu.com/users/1c22b0c065ec/latest_articles)；校对：[Cwift](http://weibo.com/277195544)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 
