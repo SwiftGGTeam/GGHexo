@@ -32,7 +32,7 @@ let nameMap = {
   "pucca601": "http://weibo.com/601pucca",
   "Crystal Sun": "http://www.jianshu.com/users/7a2d2cc38444/latest_articles",
   "Darren": "https://github.com/Harman-darrenchen",
-  "Cwift": "http://blog.csdn.net/cg1991130",
+  "Cwift": "http://weibo.com/277195544",
   "haolloyin": "https://github.com/haolloyin",
   "BigbigChai": "https://github.com/chaiyixiao",
   "wiilen": "http://www.jianshu.com/users/b7978363eb99/latest_articles",
