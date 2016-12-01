@@ -140,7 +140,7 @@ let queue1 = DispatchQueue(label: "com.appcoda.queue1", qos: DispatchQoS.backgro
 
 这个优先级几乎是最低的，现在运行代码，看看会发生什么：
 
-![](http://appcoda.com/wp-content/uploads/2016/11/t57_4_sample4_qos_utility.png)
+![](http://www.appcoda.com/wp-content/uploads/2016/11/t57_5_sample5_qos_background.png)
 
 这次第二个队列完成得比较早，因为 `utility` 的优先级比较 `background` 来得高。
 
@@ -229,7 +229,7 @@ if let queue = inactiveQueue {
 let anotherQueue = DispatchQueue(label: "com.appcoda.anotherQueue", qos: .userInitiated, attributes: [.concurrent, .initiallyInactive])
 ```
 
-![](http://appcoda.com/wp-content/uploads/2016/11/t57_9_sample9_inactive_serial.png)
+![](http://www.appcoda.com/wp-content/uploads/2016/11/t57_10_sample10_inactive_concurrent.png)
 
 ## 延迟执行
 
