@@ -130,7 +130,7 @@ Swift 3 中，这些都有了很大的变化。Swift 3 采用了全新的 Swift 
 
 这个优先级几乎是最低的，现在运行代码，看看会发生什么：
 
-![](http://appcoda.com/wp-content/uploads/2016/11/t57_4_sample4_qos_utility.png)
+![](http://www.appcoda.com/wp-content/uploads/2016/11/t57_5_sample5_qos_background.png)
 
 这次第二个队列完成得比较早，因为 `utility` 的优先级比较 `background` 来得高。
 
@@ -211,7 +211,7 @@ Swift 3 中，这些都有了很大的变化。Swift 3 采用了全新的 Swift 
     
     let anotherQueue = DispatchQueue(label: "com.appcoda.anotherQueue", qos: .userInitiated, attributes: [.concurrent, .initiallyInactive])
 
-![](http://appcoda.com/wp-content/uploads/2016/11/t57_9_sample9_inactive_serial.png)
+![](http://www.appcoda.com/wp-content/uploads/2016/11/t57_10_sample10_inactive_concurrent.png)
 
 ## 延迟执行
 
