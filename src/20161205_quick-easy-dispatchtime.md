@@ -12,7 +12,8 @@ description: 如果想要以秒为单位的整数或者分数形式，那么使�
 作者=Russ Bishop
 原文日期=2016-11-10
 译者=Cwift
-校对=CMB
+校对=walkingway
+定稿=CMB
 
 <!--此处开始正文-->
 
