@@ -12,7 +12,6 @@ if [ $LOCAL = $REMOTE ]; then
   file_num_now=$(ls /GGHexo/source/_posts -1 --file-type | grep -v '/$' | wc -l)
   if (( file_num_now > file_num )); then
     git pull
-    python 3-extractImgs.py
     babel-node generatePosts.js
     cp -a treasure/. source/_posts
     babel-node generateStat.js
@@ -39,7 +38,6 @@ elif [ $LOCAL = $BASE ]; then
   git pull
   cd ..
   git pull
-  python 3-extractImgs.py
   cp -a treasure/. source/_posts
   babel-node generatePosts.js
   babel-node generateStat.js
