@@ -11,11 +11,11 @@ description:
 原文链接=https://www.appcoda.com/cocoapods-making-guide/
 作者=AppCoda
 原文日期=2016-09-16
-译者=BigbigChai
+译者=ckitakishi
 校对=mmoaay
 定稿=CMB
 
-<!--此处正文开始-->
+<!--此处开始正文-->
 
 CocoaPods 是一个面向 Xcode 的项目依赖管理工具。当需要向项目添加库和框架时，它是一项极其有用且值得选择的服务。
 
