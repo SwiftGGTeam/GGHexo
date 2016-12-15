@@ -242,11 +242,11 @@ end
 
 1.	`s.name` – 显而易见，他人使用时可以通过该名字将 Pod 添加到项目中。
 	
-2.	`s.version` – 这是你 Pod 的版本。务必注意，它得和 Github release 的版本号相同。如果两者不匹配，就会报错。 
-3.	`s.summary` 和 `s.description` – 这两个变量最终会显示在 Cocoapods 页面上。请确保 `description` 比 `summary` 更长，否则将会报错。 
+2.	`s.version` – 这是你 Pod 的版本。务必注意，它得和 Github release 的版本号相同。如果两者不匹配，就会报错。
+3.	`s.summary` 和 `s.description` – 这两个变量最终会显示在 Cocoapods 页面上。请确保 `description` 比 `summary` 更长，否则将会报错。
 4.	`s.homepage` – 这是 Pod 源代码的 URL。注意将 `YOUR GITHUB USERNAME` 替换为你的用户名哟。
 	
-5.	`s.author` – 开发者信息，注意替换相应内容。 
+5.	`s.author` – 开发者信息，注意替换相应内容。
 6.	`s.source_files` – 这是最重要的参数。它会告诉 CocoaPods 应该克隆哪些文件。我想要我的 `FantasticView.swift` 被克隆，它的目录是 `FantasticView/FantasticView.swift`。另外，有很多方法可以添加多个文件作为源代码文件。让我们来看一个例子：
 
 ```
@@ -388,4 +388,3 @@ Updating spec repo `master`
 在本教程中，我创建了一个工程，添加了一个 podspec，解释了 podspec 文件的不同选项，创建了一个 trunk 账号并推送了 Pod。如果遇到了问题，你可以在 CocoaPods 的 Github 仓库提交一个 issue。那是一个非常友好的社区，很酷，他们总是会在最短时间内给出答复。
 
 诚挚地希望你喜欢这篇教程！你可以在[这里](https://github.com/SahandTheGreat/FantasticView)下载完整项目作为参考。
-
