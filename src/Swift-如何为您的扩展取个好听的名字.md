@@ -1,4 +1,4 @@
-title: "如何为您的扩展取个好听的名字"
+title: "如何为您的扩展取个好听的名字"
 date: 2015-8-7
 tags: [Swift 入门]
 categories: [Natasha The Robot]
