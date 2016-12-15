@@ -1,7 +1,7 @@
 基于 Swift 创建 CocoaPods 完全指南"
 
 > 作者：AppCoda，[原文链接](https://www.appcoda.com/cocoapods-making-guide/)，原文日期：2016-09-16
-> 译者：[BigbigChai](https://github.com/chaiyixiao)；校对：[mmoaay](http://mmoaay.photo/)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[ckitakishi](undefined)；校对：[mmoaay](http://mmoaay.photo/)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 
@@ -10,7 +10,7 @@
 
 
 
-<!--此处正文开始-->
+
 
 CocoaPods 是一个面向 Xcode 的项目依赖管理工具。当需要向项目添加库和框架时，它是一项极其有用且值得选择的服务。
 
@@ -81,7 +81,7 @@ CocoaPods 是一个面向 Xcode 的项目依赖管理工具。当需要向项目
 
 但是为什么需要一个计数器呢？难道我们不是在遍历颜色数组吗？
 
-注意我刚刚是怎么说“遍历”的🙂️
+注意我刚刚是怎么说“遍历”的
 
 ### 魔法调味剂
 
