@@ -225,11 +225,11 @@ CocoaPods 要求 Pod 有一个源。大多数情况下，开发者使用 GitHub 
 
 1.	`s.name` – 显而易见，他人使用时可以通过该名字将 Pod 添加到项目中。
 	
-2.	`s.version` – 这是你 Pod 的版本。务必注意，它得和 Github release 的版本号相同。如果两者不匹配，就会报错。 
-3.	`s.summary` 和 `s.description` – 这两个变量最终会显示在 Cocoapods 页面上。请确保 `description` 比 `summary` 更长，否则将会报错。 
+2.	`s.version` – 这是你 Pod 的版本。务必注意，它得和 Github release 的版本号相同。如果两者不匹配，就会报错。
+3.	`s.summary` 和 `s.description` – 这两个变量最终会显示在 Cocoapods 页面上。请确保 `description` 比 `summary` 更长，否则将会报错。
 4.	`s.homepage` – 这是 Pod 源代码的 URL。注意将 `YOUR GITHUB USERNAME` 替换为你的用户名哟。
 	
-5.	`s.author` – 开发者信息，注意替换相应内容。 
+5.	`s.author` – 开发者信息，注意替换相应内容。
 6.	`s.source_files` – 这是最重要的参数。它会告诉 CocoaPods 应该克隆哪些文件。我想要我的 `FantasticView.swift` 被克隆，它的目录是 `FantasticView/FantasticView.swift`。另外，有很多方法可以添加多个文件作为源代码文件。让我们来看一个例子：
 
     ├── FantasticView.xcodeproj
@@ -239,11 +239,11 @@ CocoaPods 要求 Pod 有一个源。大多数情况下，开发者使用 GitHub 
         ├── FantasticView.swift
         └── FantasticerView.swift
 
-在这个例子中，我希望包含所有 `.swift` 文件。为达到目的，我会将 `source_files` 变量设置为洗面这样：
+在这个例子中，我希望包含所有 `.swift` 文件。为达到目的，我会将 `source_files` 变量设置为下面这样：
 
     'FantasticView/*.swift'
 
-星号 `*` 表示包含**任意**文件。当星号位于文件类型前时，表明包括所有该类型的文件。 
+星号 `*` 表示包含**任意**文件。当星号位于文件类型前时，表明包括所有该类型的文件。
 假设你想要在 Pod 下载时包含**所有**位于 `/FantasticView` 下的文件，只需要将文件名字和类型用星号代替即可：
 
     'FantasticView/*'
@@ -345,6 +345,4 @@ Woohoo！你通过了整个流程中最富挑战的一部分。
 在本教程中，我创建了一个工程，添加了一个 podspec，解释了 podspec 文件的不同选项，创建了一个 trunk 账号并推送了 Pod。如果遇到了问题，你可以在 CocoaPods 的 Github 仓库提交一个 issue。那是一个非常友好的社区，很酷，他们总是会在最短时间内给出答复。
 
 诚挚地希望你喜欢这篇教程！你可以在[这里](https://github.com/SahandTheGreat/FantasticView)下载完整项目作为参考。
-
-
 > 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
