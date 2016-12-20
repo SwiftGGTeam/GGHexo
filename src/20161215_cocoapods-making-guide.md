@@ -3,9 +3,9 @@ date: 2016-12-15
 tags: [Swift 入门]
 categories: [AppCoda]
 permalink: cocoapods-making-guide
-keywords: 
+keywords: swift cocoapods,cocoapods使用
 custom_title: 
-description: 
+description: CocoaPods 使用教程来了，对于 Swift CocoaPods 操作还不熟悉的可以来看下本文的内容，教你如何发布自己的 CocoaPod。 
 
 ---
 原文链接=https://www.appcoda.com/cocoapods-making-guide/

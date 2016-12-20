@@ -3,9 +3,9 @@ date: 2016-12-19
 tags: [WatchOS 2]
 categories: [Natasha The Robot]
 permalink: how-to-reuse-paging-interfacecontrollers-in-watchos
-keywords: 
+keywords: watchos开发
 custom_title: 
-description: 
+description: 众所周知 watchOS 的复用性不是很好，但是如果你“不择手段”也是能解决的，本文就来介绍了怎么重用 watchOS 的 Paging Interface Controller。
 
 ---
 原文链接=https://www.natashatherobot.com/how-to-reuse-paging-interfacecontrollers-in-watchos/
