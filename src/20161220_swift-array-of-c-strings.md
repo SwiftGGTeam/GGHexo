@@ -32,7 +32,7 @@ strlen("Hello 😃") // → 10
 func strlen(_ __s: UnsafePointer<Int8>!) -> UInt
 ```
 
-类型检查器能够 [将 String 值传递给一个 `UnsafePointer<Int8>` 或 `UnsafePointer<UInt8>` 参数](https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithCAPIs.html#//apple_ref/doc/uid/TP40014216-CH8-ID17) 。在此过程中，编译器隐式地创建了一个缓冲区，它包含一段以 UTF-8 编码[^1]、以 `null` 结束的字符串，并传回一个指向缓冲区的指针给函数。
+类型检查器能够 [将 String 值传递给一个 `UnsafePointer<Int8>` 或 `UnsafePointer<UInt8>` 参数](https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithCAPIs.html#//apple_ref/doc/uid/TP40014216-CH8-ID17) 。在此过程中，编译器隐式地创建了一个缓冲区，它包含一段以 UTF-8 编码、以 `null` 结束的字符串，并传回一个指向缓冲区的指针给函数。
 
 ## 对 C 字符串数组没有内置支持
 
@@ -46,7 +46,7 @@ Swift 将这些参数中 C 类型的 `char *` `const` `argv []` 转换为难以�
 
 ## 将 Swift 字符串数组转换为 C 字符串数组
 
-假设我们想为 posix_spawn [^2] 提供一个优雅的 Swift 接口。 我们的封装函数应该接收以下参数，一是正在启动的程序的路径，二是字符串数组：
+假设我们想为 posix_spawn 提供一个优雅的 Swift 接口。 我们的封装函数应该接收以下参数，一是正在启动的程序的路径，二是字符串数组：
 
 ```swift
 /// 产生一个子进程
