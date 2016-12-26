@@ -3,9 +3,9 @@ date: 2016-12-23
 tags: [Swift 入门]
 categories: [Ole Begemann]
 permalink: generic-range-algorithms
-keywords: 
+keywords: swift泛型
 custom_title: 
-description: 
+description: 在 Swift 中对泛型参数做很多约束后，泛型代码可能更难阅读，那么泛型适用于哪些范围呢，本文就来探讨下。
 
 ---
 原文链接=https://oleb.net/blog/2016/10/generic-range-algorithms/
