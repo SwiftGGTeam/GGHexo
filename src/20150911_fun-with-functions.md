@@ -1,5 +1,5 @@
 title: "函数之趣"
-date: 2015-9-11
+date: 2015-09-11
 tags: [Swift 进阶]
 categories: [Crunchy Development]
 permalink: fun_with_functions
