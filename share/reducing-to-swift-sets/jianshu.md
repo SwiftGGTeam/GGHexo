@@ -54,4 +54,5 @@ Swift 集合的 reduce 操作"
 这结果令我感到惊讶，因为您可能会觉得 `init<Source : Sequence where Source.Iterator.Element == Element>(_ sequence: Source)` 以及 `func union<S : Sequence where S.Iterator.Element == Element>(_ other: S) -> Set<Element>` 拥有相同的性能。
 
 不过我不感到惊讶的一点是：比起将中间数据存储在数组当中并籍此来直接构建集合，使用 `reduce` 来不停地构建集合的性能开销要大很多。只要数组的尺寸受到合理的限制（需要足够大，但是也不能太大，否则就会对应用内存造成负担），那么使用中间数组无疑是一个更好的办法。不过对于海量数据而言，`Set(collectedResults)` 的性能比 `insert`、`formUnion` 以及 `reduce/union` 更优异。
+
 > 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
