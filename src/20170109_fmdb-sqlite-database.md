@@ -1,5 +1,5 @@
 title: "在 iOS 的 SQLite 数据库中应用 FMDB 库"
-date: 2016-01-09
+date: 2017-01-09
 tags: [iOS 开发]
 categories: [AppCoda]
 permalink: fmdb-sqlite-database
