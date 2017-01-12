@@ -29,7 +29,7 @@ let p1 = OpaquePointer(unsafeMutableRawPtr1)
 let p2 = OpaquePointer(unsafeMutableRawPtr2)
 ```
 
-构建便利类型别名 (convenience typealias) 可以强调出结构相同、但用法不同的类型之间的区别。这可以区分每个使用点的具体类型，并且提供了内置的「类型评论 (type commentary)」。
+构建便利类型别名 (convenience typealias) 可以强调出结构相同、但用法不同的类型之间的区别。这可以区分每个使用点的具体类型，并且提供了内置的「类型注解 (type commentary)」。
 
 ```swift
 typealias OpaqueType1Pointer = OpaquePointer
