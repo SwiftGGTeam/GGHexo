@@ -1,4 +1,4 @@
-Swift：UserDefaults 协议（ Swift 视角下的泛字符串类型 `API` ）"
+Swift：UserDefaults 协议（ Swift 视角下的泛字符串类型 API ）"
 
 > 作者：Andyy Hope，[原文链接](https://medium.com/swift-programming/swift-userdefaults-protocol-4cae08abbf92#.nivsq4rph)，原文日期：2016-11-01
 > 译者：[Yake](http://blog.csdn.net/yake_099)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；定稿：[CMB](https://github.com/chenmingbiao)
