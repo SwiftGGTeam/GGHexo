@@ -268,7 +268,7 @@ let default = UserDefaults.BoolDefaultKey.isUserLoggedIn.rawValue
 
 拥有两种分别遵守同一协议并提供了相同的 `key` 的类型绝对是有可能的，作为编程人员，如果我们不能在项目落地之前解决这个问题，那我们绝对要熬夜了。绝对不能冒着拿某个 `key` 改变另外一个 `key` 的值的风险。所以我们应该为我们自己的 `key` 创建命名空间。
 
-###命名空间
+### 命名空间
 
 ```swift
 protocol KeyNamespaceable { }
