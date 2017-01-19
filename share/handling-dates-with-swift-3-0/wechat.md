@@ -12,7 +12,7 @@
 
 
 
-当你在想要[大规模重命名](https://developer.apple.com/videos/play/wwdc2016/403/)时，一个附带的挑战就是要确保所有相关的文档都必须同步更新。比如，截至到 2016 年 9 月 20 日，[DateFormatter]() 的文档依旧没有与版本统一，引用的是 Swift 2.3 风格的 API（译者注：现在是 2017年，文档依旧没有更新...）。随着时间的推移，这些疏漏毫无疑问都会被纠正，这里是一些使用 `Date` 以及 `DateFormatter` 实现的日期格式化的示例。
+当你在想要 [大规模重命名](https://developer.apple.com/videos/play/wwdc2016/403/) 时，一个附带的挑战就是要确保所有相关的文档都必须同步更新。比如，截至到 2016 年 9 月 20 日，[DateFormatter](https://developer.apple.com/reference/foundation/nsdateformatter) 的文档依旧没有与版本统一，引用的是 Swift 2.3 风格的 API（译者注：现在是 2017年，文档依旧没有更新...）。随着时间的推移，这些疏漏毫无疑问都会被纠正，这里是一些使用 `Date` 以及 `DateFormatter` 实现的日期格式化的示例。
 
 
 
