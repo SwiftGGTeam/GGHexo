@@ -22,11 +22,14 @@
 
 不过还好，这个问题解决起来很简单，你只需要安装 `clang` 编译器就可以了
 
-> sudo apt-get install clang-3.6
+    bash
+    sudo apt-get install clang-3.6
 
-> sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.6 100
+    bash
+    sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.6 100
 
-> sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.6 100
+    bash
+    sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.6 100
 
 在这个例子中，我们使用的是 `clang-3.6` ，但是 3.6 及其以上的版本都应该是可用的。
 
