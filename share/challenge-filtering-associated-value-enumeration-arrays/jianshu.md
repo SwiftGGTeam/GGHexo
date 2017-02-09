@@ -1,4 +1,4 @@
-等你来战：筛选关联值枚举数组"
+等你来战：筛选枚举数组的关联值"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2017/01/31/challenge-filtering-associated-value-enumeration-arrays/)，原文日期：2017-01-31
 > 译者：[星夜暮晨](http://www.jianshu.com/users/ef1058d2d851)；校对：[Crystal Sun](http://www.jianshu.com/users/7a2d2cc38444/latest_articles)；定稿：[CMB](https://github.com/chenmingbiao)
