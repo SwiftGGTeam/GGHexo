@@ -1,7 +1,7 @@
 这样的 StackView 动画，你想到了吗？"
 
 > 作者：Natasha The Robot，[原文链接](https://www.natashatherobot.com/button-animation-stackview/)，原文日期：2016-07-24
-> 译者：[Martin_Joy](http://www.jianshu.com/users/9c51a213b02e/latest_articles)；校对：[saitjr](http://www.saitjr.com)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[Joy](undefined)；校对：[saitjr](http://www.saitjr.com)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 
