@@ -11,7 +11,7 @@ description: 使用 StackView 可以做出很酷炫的动画来，想必很多�
 原文链接=https://www.natashatherobot.com/button-animation-stackview/
 作者=Natasha The Robot
 原文日期=2016-07-24
-译者=Martin_Joy
+译者=Joy
 校对=saitjr
 定稿=千叶知风
 

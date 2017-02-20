@@ -11,7 +11,7 @@ description: 想让你的代码更加的有 Swifter 范吗，来看看本文是�
 原文链接=http://ericasadun.com/2016/06/28/make-it-swifter-challenge/
 作者=Erica Sadun
 原文日期=2016-06-28
-译者=Martin_Joy
+译者=Joy
 校对=bestswifter
 定稿=CMB
 

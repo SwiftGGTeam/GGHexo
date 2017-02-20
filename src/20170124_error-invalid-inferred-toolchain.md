@@ -11,7 +11,7 @@ description:
 原文链接=http://dev.iachieved.it/iachievedit/error-invalid-inferred-toolchain/
 作者=iAchieved.it
 原文日期=2016-07-09
-译者=Martin_Joy
+译者=Joy
 校对=冬瓜
 定稿=CMB
 
