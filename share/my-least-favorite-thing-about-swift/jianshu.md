@@ -1,7 +1,7 @@
 关于 Swift，我不喜欢的几点"
 
 > 作者：Soroush Khanlou，[原文链接](http://khanlou.com/2016/08/my-least-favorite-thing-about-swift/)，原文日期：2016-08-14
-> 译者：[Joy](undefined)；校对：[冬瓜](http://www.desgard.com/)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[Joy](http://www.jianshu.com/users/9c51a213b02e/latest_articles)；校对：[冬瓜](http://www.desgard.com/)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

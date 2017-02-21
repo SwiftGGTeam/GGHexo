@@ -1,7 +1,7 @@
 手把手教你解决 invalid inferred toolchain "
 
 > 作者：iAchieved.it，[原文链接](http://dev.iachieved.it/iachievedit/error-invalid-inferred-toolchain/)，原文日期：2016-07-09
-> 译者：[Joy](undefined)；校对：[冬瓜](http://www.desgard.com/)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[Joy](http://www.jianshu.com/users/9c51a213b02e/latest_articles)；校对：[冬瓜](http://www.desgard.com/)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

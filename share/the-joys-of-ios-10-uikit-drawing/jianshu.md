@@ -1,7 +1,7 @@
 趣谈 iOS 10 UIKit 绘图"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2016/10/16/the-joys-of-ios-10-uikit-drawing/)，原文日期：2016-11-16
-> 译者：[冬瓜](http://www.desgard.com/)；校对：[Joy](undefined)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[冬瓜](http://www.desgard.com/)；校对：[Joy](http://www.jianshu.com/users/9c51a213b02e/latest_articles)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 
