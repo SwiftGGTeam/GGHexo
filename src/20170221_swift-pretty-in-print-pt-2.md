@@ -10,9 +10,10 @@ description:
 ---  
 原文链接=https://medium.com/swift-programming/swift-pretty-in-print-pt-2-640cea920653#.ou9umlt2f  
 作者=Andyy Hope
-原文日期=2017-04-14
+原文日期=2016-04-14
 译者=SketchK
 校对=Crystal Sun
+定稿=CMB
 
 <!--此处开始正文-->
 
