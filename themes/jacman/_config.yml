@@ -104,7 +104,7 @@ links:
   官方文档: http://www.swiftguide.cn
   又拍云赞助图床: https://www.upyun.com/
 #### Comment
-duoshuo_shortname: swiftgg   ## e.g. wuchong   your duoshuo short name.
+duoshuo_shortname:    ## e.g. wuchong   your duoshuo short name.
 disqus_shortname:     ## e.g. wuchong   your disqus short name.
 
 #### Share button
