@@ -10,7 +10,7 @@ permalink: swift-ubuntu-x11-window-app
 原文日期=2015-12-08
 译者=小锅
 校对=Prayer
-定稿=
+定稿=CMB
 
 <!--此处开始正文-->
 

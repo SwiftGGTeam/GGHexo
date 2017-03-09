@@ -10,7 +10,7 @@ permalink: ios-undo-and-redo-with-nsundomanager
 原文日期=2015-09-13
 译者=Yake
 校对=numbbbbb
-定稿=
+定稿=CMB
 
 <!--此处开始正文-->
 

@@ -10,7 +10,7 @@ permalink: ios-contacts-framework
 原文日期=2015-09-29
 译者=BridgeQ,星夜暮晨
 校对=小铁匠Linus
-定稿=
+定稿=CMB
 
 <!--此处开始正文-->
 
