@@ -1,5 +1,5 @@
 title: "Swift:什么时候不适合使用函数式方法"
-date: 2015-8-28
+date: 2015-08-28
 tags: [Swift 入门]
 categories: [Natasha The Robot]
 permalink: swift_when_the_functional_approach_is_not_right

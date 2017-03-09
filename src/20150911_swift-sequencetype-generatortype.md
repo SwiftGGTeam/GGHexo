@@ -1,5 +1,5 @@
 title: "如何用 Swift 实现序列和生成器"
-date: 2015-9-11
+date: 2015-09-11
 tags: [Swift 进阶]
 categories: [Raj Kandathi]
 permalink: sequencetype_and_generatortype

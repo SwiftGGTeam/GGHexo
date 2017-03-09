@@ -1,5 +1,5 @@
 title: "Swift 中的结构体与 NSCoding"
-date: 2015-8-27
+date: 2015-08-27
 tags: [Swift 入门]
 categories: [Swift and Painless]
 permalink: nscoding_and_swift_structs

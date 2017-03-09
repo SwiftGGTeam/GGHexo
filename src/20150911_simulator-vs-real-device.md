@@ -2,7 +2,7 @@ title: "模拟器和真机调试哪个更好？"
 date: 2015-09-11 20:00:00
 tags: [Swift 入门]
 categories: [Thomas Hanning]
-permalink: simulator_vs_real_device
+permalink: simulator-vs-real-device
 
 ---
 原文链接=http://www.thomashanning.com/simulator-vs-real-device/

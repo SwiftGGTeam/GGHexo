@@ -1,5 +1,5 @@
 title: "Swift 小贴士: 优雅地设置 IBOutlets"
-date: 2015-9-11
+date: 2015-09-11
 tags: [Swift 入门]
 categories: [Natasha The Robot]
 permalink: ios-a-beautiful-way-of-styling-iboutlets-in-swift
