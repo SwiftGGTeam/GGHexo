@@ -1,6 +1,6 @@
 title: "Swift 关联类型(续)"
 date: 2016-09-27
-tags: [Russ Bishop]
+tags: [Swift 进阶]
 categories: [Russ Bishop]
 permalink: wift-associated-types-cont
 keywords: swift关联类型,
