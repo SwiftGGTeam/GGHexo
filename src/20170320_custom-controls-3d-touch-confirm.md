@@ -21,7 +21,11 @@ description:
 
 通过这个教程，我们会创建一个自定义的按钮，并且要求用户通过 3D Touch 操作进行确认。如果用户的设备不支持 3D Touch，控件对用户的处理也会回退到备选方案。下面是预览视频，它能够让你快速了解这个自定义控件是如何工作的：
 
-<video src="blob:https://player.vimeo.com/8d05d0d7-0769-422f-83d3-85d50c1c8899" controls="controls"></video>
+<center>
+<div style="width:500px; background:#fff; margin:0 auto;">
+<iframe src="http://player.vimeo.com/video/196205629?title=0&amp;byline=0&amp;portrait=0&amp;color=f2cb5f" width="500" height="400" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+</div>
+</center>
 
 1. 当用户开始点击屏幕时，一个圆形的进度条就会跟踪用户按压屏幕的力度。用户按压屏幕的力度会影响圆形视图填充进度，按得越用力，圆就被填充得越多（稍后我会展示在不支持 3D Touch 的设备上模拟该行为）。
 
