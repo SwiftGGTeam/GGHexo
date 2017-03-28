@@ -42,7 +42,8 @@ let nameMap = {
   "Ckitakishi": "http://ckitakishi.com",
   "粉红星云": "http://www.jianshu.com/users/f4d4f97d8b90/latest_articles",
   "钟颖": "https://github.com/cyanzhong",
-  "与狼同行": "http://www.jianshu.com/users/1c22b0c065ec/latest_articles"
+  "与狼同行": "http://www.jianshu.com/users/1c22b0c065ec/latest_articles",
+  "智多芯": "http://hulizhen.me"
 }
 
 export default nameMap
