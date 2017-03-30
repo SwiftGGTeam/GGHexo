@@ -12,7 +12,7 @@ description:
 原文链接=https://oleb.net/blog/2017/02/sorted-array/
 作者=Ole Begemann
 原文日期=2017-02-08
-译者=kemchenj
+译者=四娘
 校对=Cwift
 定稿=CMB
 
