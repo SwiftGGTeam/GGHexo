@@ -1,7 +1,7 @@
 有序数组的一种实现"
 
 > 作者：Ole Begemann，[原文链接](https://oleb.net/blog/2017/02/sorted-array/)，原文日期：2017-02-08
-> 译者：[kemchenj](undefined)；校对：[Cwift](http://weibo.com/277195544)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[四娘](https://kemchenj.github.io)；校对：[Cwift](http://weibo.com/277195544)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 
