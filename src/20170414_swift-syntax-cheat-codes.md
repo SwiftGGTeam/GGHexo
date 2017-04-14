@@ -2,7 +2,7 @@ title: "Swift 代码小抄"
 date: 2017-04-14
 tags: [Swift]
 categories: [medium.com]
-permalink: swift-syntax-cheat-codes-9ce4ab4bc82e#.qrmtczdec
+permalink: swift-syntax-cheat-codes
 keywords: 
 custom_title: 
 description: 
