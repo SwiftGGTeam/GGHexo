@@ -165,9 +165,6 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 
 // 你可能会想把以上代码用到真是的 Xcode 工程中去，而不是仅仅在 Playgrounds 里面跑跑.
 
-// First, in your project file, you might have a "Main Interface" configured, this is normally
-// your first storyboard to load. Just open your project file and clear it out.
-
 // 首先，当你创建完工程之后，在工程文件里一般会有一个 `Main Interface` 的配置，它通常是第一个要加载的 `Storyboard`.
 // 现在我们不用它了，可以把它删掉.
 
@@ -181,19 +178,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication,
                     willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
 
-		// Let's create a new window. Every app needs one to start.
-		// We will set its frame to be the same size of the screen.
 		window = UIWindow(frame: UIScreen.main.bounds)
-
-		// Set the window's rootViewController to be the
-		// ViewController you want to start with.
 		window?.rootViewController = OurAwesomeViewController()
-
-		// This will push it on to the screen.
 		window?.makeKeyAndVisible()
-
-		// Unless you have some major failure during this function, you should
-		// return true here to let your application know it's ready to go.
 		return true
 	}
 }
