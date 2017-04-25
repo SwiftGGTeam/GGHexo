@@ -2,8 +2,7 @@
 
 > 作者：Tomasz Szulc，[原文链接](http://szulctomasz.com/how-do-I-build-a-network-layer/)，原文日期：2016-07-30
 > 译者：[智多芯](http://hulizhen.me)；校对：[Crystal Sun](http://www.jianshu.com/users/7a2d2cc38444/latest_articles)；定稿：[CMB](https://github.com/chenmingbiao)
-  ---
-
+  
 
 
 
