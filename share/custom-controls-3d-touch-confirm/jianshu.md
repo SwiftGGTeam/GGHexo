@@ -1,7 +1,7 @@
 自定义控件：利用 3D Touch 确认 Button 操作"
 
 > 作者：Yari D'areglia，[原文链接](http://www.thinkandbuild.it/custom-controls-3d-touch-confirm/)，原文日期：2017-01-03
-> 译者：[SketchK](undefined)；校对：[Cee](https://github.com/Cee)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[SketchK](http://www.sketchk.xyz)；校对：[Cee](https://github.com/Cee)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

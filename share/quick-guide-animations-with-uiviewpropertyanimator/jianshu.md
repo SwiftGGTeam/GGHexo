@@ -1,7 +1,7 @@
 快速入门指南：使用 UIViewPropertyAnimator 做动画"
 
 > 作者：Yari D'areglia，[原文链接](http://www.thinkandbuild.it/quick-guide-animations-with-uiviewpropertyanimator/)，原文日期：2016-11-20
-> 译者：[SketchK](undefined)；校对：[Cee](https://github.com/Cee)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[SketchK](http://www.sketchk.xyz)；校对：[Cee](https://github.com/Cee)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

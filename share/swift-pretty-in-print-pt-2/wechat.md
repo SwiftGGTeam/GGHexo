@@ -1,7 +1,7 @@
 Swift：漂亮的 print() Pt.2"
 
 > 作者：Andyy Hope，[原文链接](https://medium.com/swift-programming/swift-pretty-in-print-pt-2-640cea920653#.ou9umlt2f)，原文日期：2016-04-14
-> 译者：[SketchK](undefined)；校对：[Crystal Sun](http://www.jianshu.com/users/7a2d2cc38444/latest_articles)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[SketchK](http://www.sketchk.xyz)；校对：[Crystal Sun](http://www.jianshu.com/users/7a2d2cc38444/latest_articles)；定稿：[CMB](https://github.com/chenmingbiao)
     
 
 
@@ -172,4 +172,4 @@ Swift：漂亮的 print() Pt.2"
 
 *就像之前一样, 如果你喜欢今天读到的内容或者亲手实现了它，请[发推给我](https://twitter.com/AndyyHope)。很渴望听到你们的声音, 让我很受用.*
 
-> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。//swift.gg)。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。�

@@ -1,7 +1,7 @@
 Swift：漂亮的 print() Pt.1"
 
 > 作者：Andyy Hope，[原文链接](https://medium.com/swift-programming/swift-prettify-your-print-statements-pt-1-64832bb7fafa#.4g1f5sp1d)，原文日期：2016-04-06
-> 译者：[SketchK](undefined)；校对：[Crystal Sun](http://www.jianshu.com/users/7a2d2cc38444/latest_articles)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[SketchK](http://www.sketchk.xyz)；校对：[Crystal Sun](http://www.jianshu.com/users/7a2d2cc38444/latest_articles)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 
