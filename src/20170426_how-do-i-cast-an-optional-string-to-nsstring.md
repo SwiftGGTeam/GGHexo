@@ -1,5 +1,5 @@
 title: "如何将一个可选字符串转换为 NSString"
-date: 2017-03-27
+date: 2017-04-26
 tags: [Swift 入门]
 categories: [Erica Sadun]
 permalink: how-do-i-cast-an-optional-string-to-nsstring
