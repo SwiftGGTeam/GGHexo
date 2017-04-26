@@ -44,7 +44,8 @@ let nameMap = {
   "钟颖": "https://github.com/cyanzhong",
   "与狼同行": "http://www.jianshu.com/users/1c22b0c065ec/latest_articles",
   "智多芯": "http://hulizhen.me",
-  "四娘": "https://kemchenj.github.io"
+  "四娘": "https://kemchenj.github.io",
+  "SketchK": "http://www.sketchk.xyz"
 }
 
 export default nameMap
