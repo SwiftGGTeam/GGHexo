@@ -1,7 +1,7 @@
 使用 MapKit 绘制路线"
 
 > 作者：Arthur Knopper，[原文链接](https://www.ioscreator.com/tutorials/draw-route-mapkit-tutorial)，原文日期：2016-02-29
-> 译者：[Tony Han](undefined)；校对：[Crystal Sun](http://www.jianshu.com/users/7a2d2cc38444/latest_articles)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[TonyHan](undefined)；校对：[Crystal Sun](http://www.jianshu.com/users/7a2d2cc38444/latest_articles)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 
