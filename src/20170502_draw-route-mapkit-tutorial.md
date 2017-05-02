@@ -11,7 +11,7 @@ description:
 原文链接=https://www.ioscreator.com/tutorials/draw-route-mapkit-tutorial
 作者=Arthur Knopper
 原文日期=2016-02-29
-译者=Tony Han
+译者=TonyHan
 校对=Crystal Sun
 定稿=CMB
 
