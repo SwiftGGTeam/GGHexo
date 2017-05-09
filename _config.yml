@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://swiftggteam.github.io # 域名
+url: https://swift.gg # 域名
 root: /
 permalink: :year/:month/:day/:title/ # 文章的永久链接格式
 permalink_defaults:
