@@ -10,3 +10,23 @@
   </div>
 </section>
 <% } %>
+
+<section id="comments" class="comment">
+  <div id="gitcomment">
+  </div>
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script>
+    var gitment = new Gitment({
+      id: "<%- page.path %>",
+      owner: "<%- theme.git_comment.owner %>",
+      repo: "<%- theme.git_comment.repo  %>",
+      oauth: {
+        client_id: "<%- theme.git_comment.oauth.client_id %>",
+        client_secret: "<%- theme.git_comment.oauth.client_secret %>",
+      },
+    })
+    gitment.render('gitcomment')
+    </script>
+</section>
+
+
