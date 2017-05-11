@@ -2,8 +2,7 @@
 
 > 作者：Gregg Mojica，[原文链接](http://www.appcoda.com/face-detection-core-image/)，原文日期：2016-09-06
 > 译者：[智多芯](http://hulizhen.me)；校对：[Crystal Sun](http://www.jianshu.com/users/7a2d2cc38444/latest_articles)；定稿：[CMB](https://github.com/chenmingbiao)
-  ---
-
+  
 
 
 
