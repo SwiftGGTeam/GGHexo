@@ -6,7 +6,7 @@
 
 
 
-### 1 背景
+## 1 背景
 
 > 英文原文：
 [http://ryanipete.com/blog/ios/swift/objective-c/uidebugginginformationoverlay/](http://ryanipete.com/blog/ios/swift/objective-c/uidebugginginformationoverlay/)
@@ -15,11 +15,11 @@
 
 我们经常使用各种调试工具，或者开源库来支持悬浮窗调试信息，但苹果的私有方法就提供了 `UIDebuggingInformationOverlay` 。
 
-
-
 ![](http://upload-images.jianshu.io/upload_images/854231-2ef0080f4eea8935.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-### 2 如何使用
+
+
+## 2 如何使用
 
 在 `AppDelegate` 的 `didFinishLaunchingWithOptions` 方法中加入两行代码即可。
 
@@ -29,9 +29,9 @@
 
 运行程序后，两根手指点击状态栏即可调起这个调试的悬浮层。
 
-### 3 能做什么
+## 3 能做什么
 
-#### 3.1 查看整个 window 的 View嵌套关系
+### 3.1 查看整个 `window` 的 `View` 嵌套关系
 
 > View Hierarchy
 
@@ -39,7 +39,7 @@
 
 ![](http://upload-images.jianshu.io/upload_images/854231-66b7d3e56dd27cff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-#### 3.2 查看当前 ViewController 的属性
+### 3.2 查看当前 `ViewController` 的属性
 
 > VC Hierarchy
 
@@ -47,13 +47,13 @@
 
 ![](http://upload-images.jianshu.io/upload_images/854231-bbae2392b4a80173.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-#### 3.3 查看 UIApplication 的成员属性
+### 3.3 查看 `UIApplication` 的成员属性
 
 > Ivar Explorer
 
 ![](http://upload-images.jianshu.io/upload_images/854231-04044fb28c7d6910.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-#### 3.4 测量组件大小
+### 3.4 测量组件大小
 
 > Measure
 
@@ -63,7 +63,7 @@
 
 ![](http://upload-images.jianshu.io/upload_images/854231-7f0f0d183cc50196.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-#### 3.5 效果对比
+### 3.5 效果对比
 
 > Spec Compare
 
