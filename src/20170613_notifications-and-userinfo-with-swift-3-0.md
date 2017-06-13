@@ -1,7 +1,7 @@
 title: "Swift 3.0 下 Notifications 与 userInfo 的使用"
 date: 2017-06-13
 tags: [iOS 开发]
-categories: [IACHIEVED.IT]
+categories: [iAchieved.it]
 permalink: notifications-and-userinfo-with-swift-3-0
 keywords: 
 custom_title: 
