@@ -76,4 +76,4 @@ theme: jacman
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/SwiftGGTeam/SwiftGGTeam.github.io.git
+  repository: git@github.com:SwiftGGTeam/SwiftGGTeam.github.io.git
