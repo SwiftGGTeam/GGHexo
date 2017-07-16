@@ -6,17 +6,23 @@
     "version": "3.3.7"
   },
   "dependencies": {
-    "hexo": "^3.1.1",
+    "babel-cli": "^6.24.1",
+    "babel-preset-node6": "^11.0.0",
+    "hexo": "^3.3.7",
     "hexo-deployer-git": "0.0.4",
     "hexo-generator-archive": "^0.1.2",
     "hexo-generator-category": "^0.1.2",
+    "hexo-generator-feed": "^1.0.1",
     "hexo-generator-index": "^0.1.2",
+    "hexo-generator-sitemap": "^1.0.1",
     "hexo-generator-tag": "^0.1.1",
     "hexo-renderer-ejs": "^0.1.0",
     "hexo-renderer-marked": "^0.2.4",
     "hexo-renderer-stylus": "^0.2.0",
-    "hexo-server": "^0.1.2",
-    "hexo-generator-feed": "^1.0.1",
-    "hexo-generator-sitemap": "^1.0.1"
+    "hexo-server": "^0.1.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0"
   }
 }

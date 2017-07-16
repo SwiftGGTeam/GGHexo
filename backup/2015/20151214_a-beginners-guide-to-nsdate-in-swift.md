@@ -27,7 +27,7 @@ permalink: a-beginners-guide-to-nsdate-in-swift
 
 上面列出的所有内容，包括日期和字符串之间的相互转换，都是这篇教程要讨论的主题。在接下来的各个小节中，你会发现只要你知道该用什么工具以及如何使用它们，你就能随心所欲的对日期进行操作。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/09/nsdate-featured.jpg)
+![](/img/articles/a-beginners-guide-to-nsdate-in-swift/nsdate-featured.jpg1500171572.63)
 
 下面的链接清单里有很多重要的文章，供参考。如果需要深入了解某些特定知识点，别忘了点击访问一下：
 

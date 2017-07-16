@@ -23,27 +23,27 @@ description:
 
 打开 Xcode，创建一个 Single View Application。
 
-![](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/57f9545115d5dbb87f6fc4a5/1475957853618/?format=750w)
+![](/img/articles/local-notification-tutorial-ios10/format=750w1500172091.55)
 
 点击 Next，product name 一栏填写 **IOS10LocalNotificationTutorial**，填写好 Organization Name 和 Organization Identifier，Language 选择 Swift，Devices 选择 iPhone。
 
-![](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/57f9548e15d5dbb87f6fc6fc/1475957914544/?format=750w)
+![](/img/articles/local-notification-tutorial-ios10/format=750w1500172092.76)
 
 找到 **Storyboard**，拖一个 Button 控件到主视图中，将其 title 改为 “Send Local Notification”。选中此 Button 控件，随后点击 Auto Layout 的 Align 按钮，选中其中的 Horizontally in Container 选项，然后在 "Update Frame" 的下拉选项中选择 "Item of New Constraints"，最后点击 "Add 1 Constraint"。
 
-![](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/57f954d3893fc0a155a434dc/1475957982088/?format=300w)
+![](/img/articles/local-notification-tutorial-ios10/format=300w1500172093.68)
 
 接下来，依然选中 Button 控件，点击 Auto Layout 的 Pin 按钮，然后点击向上的竖线，在 "Update Frame" 的下拉选项中选择 "Item of New Constraints"，最后点击 "Add 1 Constraint"。
 
-![](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/57f954ee893fc0a155a435bd/1475958007199/?format=300w)
+![](/img/articles/local-notification-tutorial-ios10/format=300w1500172094.22)
 
 在这时候 Storyboard 会是下图这个样子：
 
-![](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/57f95607414fb528b40cf21d/1475958290955/?format=500w)
+![](/img/articles/local-notification-tutorial-ios10/format=500w1500172096.79)
 
 打开 Assistant Editor，确保 **ViewController.swift** 文件可见，按住 Ctrl 键并同时拖拽 Button 按钮到 ViewController 类里，创建如下图所示的 Action。
 
-![](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/57f9565303596eb277bb66a8/1475958364882/?format=300w) 
+![](/img/articles/local-notification-tutorial-ios10/format=300w1500172097.26) 
 
 找到 **ViewController.swift** 文件，更改 **viewDidLoad** 方法为如下所示：
 
@@ -95,10 +95,10 @@ override func viewDidLoad() {
 
 **编译并运行**工程。这个时候会申请用户的授权。
 
-![](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/57f9596937c581448910d121/1475960097101/?format=500w)
+![](/img/articles/local-notification-tutorial-ios10/format=500w1500172098.67)
 
 点击 Allow，然后点击 “Send Local Notification”按钮来安排通知，接着点击模拟器 Home 键（Shift + Command + H）回到屏幕主页。十秒之后接收到了本地通知。
 
-![](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/57f95d3329687f4dc6d5d5cd/1475960128717/?format=500w)
+![](/img/articles/local-notification-tutorial-ios10/format=500w1500172099.96)
 
 在 ioscreator 的 [github](https://github.com/ioscreator/ioscreator) 上可以下载到本节课程 **IOS10LocalNotificaitonTutorial** 的源代码。

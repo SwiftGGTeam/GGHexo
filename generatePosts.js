@@ -56,7 +56,7 @@ let deletedInfo = new Promise(function (resolve, reject) {
 .then(finalContents => finalContents.map(finalContent => {
   new Promise((resolve, reject) => {
     let fullPath = path.join(targetPath, finalContent.fileName)
-    console.log(fullPath)
+    // console.log(fullPath)
     fs.writeFile(fullPath, finalContent.content, {flag: 'w'}, (err) => {
       if (err) throw err
       resolve()
@@ -77,7 +77,9 @@ let originInfo = new Promise(function (resolve, reject) {
     file => new Promise((resolve, reject) =>
       fs.readFile(path.join(basePath, file), function (err, content) {
         if (err) reject(err)
+
         content = content.toString()
+
         resolve({
           fileName: file,
           content: content
@@ -87,6 +89,7 @@ let originInfo = new Promise(function (resolve, reject) {
   )
 ))
 .then(fileInfos => fileInfos.map(fileInfo => {
+
   function publishNow() {
       let reg = new RegExp('发布时间=(.*)')
       if (fileInfo.content.match(reg)) {
@@ -156,6 +159,7 @@ let originInfo = new Promise(function (resolve, reject) {
   result = result.splice(result.indexOf("---") + 3, 0, infoStr)
   // result += info.translators.split(",").map(name => `\n<center>![给译者打赏](/img/QRCode/${imgMap[name]})</center>`).join("\n")
   result += "\n> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。"
+
   return {
     fileName: fileInfo.fileName,
     content: result
