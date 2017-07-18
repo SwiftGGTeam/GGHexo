@@ -4,10 +4,10 @@ tags: [IOSCREATOR]
 categories: [iOS, Swift 入门]
 permalink: attributed-strings-ios-tutorial-ios10
 keywords: 属性字符串
-custom_title: 
-description: 
+custom_title: iOS 教程：属性字符串
+description: iOS 教程：属性字符串
 
-------
+---
 
 原文链接=https://www.ioscreator.com/tutorials/attributed-strings-ios-tutorial-ios10
 作者=Arthur Knopper
