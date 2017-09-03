@@ -43,6 +43,7 @@ clone 项目
 1. **修改文章头**并**生成最终文章**，参考下下节。
 2. **提取图片**，参考下一节内容。
 3. 生成静态页面 `hexo g`
+4. md文件命名请用以下格式：`20170903_swift-weekly-brief-75.md`，其中`swift-weekly-brief-75`对应md文件中permalink字段
 
 在本地环境预览
 
@@ -95,7 +96,7 @@ permalink: swift-functional-programming-intro
 ---
 原文链接=http://harlankellaway.com/blog/2015/08/10/swift-functional-programming-intro/
 作者=harlan kellaway
-原文日期=2015/08/10
+原文日期=2015-08-10
 译者=shanks,mmoaay
 校对=numbbbbb
 定稿=小锅
