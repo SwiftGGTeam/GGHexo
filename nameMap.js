@@ -2,7 +2,7 @@ let nameMap = {
   "shanks": "http://codebuild.me/",
   "小锅": "http://www.swiftyper.com",
   "lfb_CD": "http://weibo.com/lfbWb",
-  "mmoaay": "http://mmoaay.photo/",
+  "mmoaay": "http://www.jianshu.com/u/2d46948e84e3",
   "Yake": "http://blog.csdn.net/yake_099",
   "小铁匠Linus": "http://linusling.com",
   "SergioChan": "https://github.com/SergioChan",
