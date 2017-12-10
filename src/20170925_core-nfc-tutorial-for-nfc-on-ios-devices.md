@@ -21,7 +21,7 @@ description:
 
 在 iOS 11 中，这项技术被称作 Core NFC，下面我将在教程中使用 Swift 4 来讨论如何使用它。
 
-![](http://i2.wp.com/jamesonquave.com/blog/wp-content/uploads/nfc2.png?zoom=2&w=584)
+![](/img/articles/core-nfc-tutorial-for-nfc-on-ios-devices/nfc2.pngzoom=2&w=5841512890761.307122)
 
 <!--more-->
 
@@ -32,7 +32,7 @@ description:
 使用 NFC 的第一步是在 Apple Developer Center 中通过 App ID 来启用它。创建一个新的 App ID，并启用 "NFC Tag Reading" 这个功能。
 
 
-![](http://i0.wp.com/jamesonquave.com/blog/wp-content/uploads/entitlement.png?zoom=2&w=584)
+![](/img/articles/core-nfc-tutorial-for-nfc-on-ios-devices/entitlement.pngzoom=2&w=5841512890761.528886)
 
 
 这之后，我建议专门为这个 App ID 创建一个 development/distribution provisioning profile 文件，这样当你尝试构建 App 的时候，NFC 读取功能将会自动加入。

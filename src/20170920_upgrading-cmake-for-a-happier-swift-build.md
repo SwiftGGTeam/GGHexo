@@ -17,7 +17,7 @@ description:
 
 <!--此处开始正文-->
 
-![](http://dev.iachieved.it/iachievedit/wp-content/uploads/2016/06/swift-og-1.png)
+![](/img/articles/swift-option-sets/swift-og-1.png1512890761.873188)
 
 开源 Swift 已经有一些更新来利用新版本的 [CMake](https://cmake.org/) **在 Linux 上构建 Swift**。需要指出的是，Ubuntu 14.04 (2.8.12.2) 自带的默认版 cmake 不再胜任这项工作。
 
