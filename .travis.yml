@@ -1,0 +1,29 @@
+language: node_js
+language: python
+python:
+  - "3.6"
+branches:
+  only:
+  - master
+  - stage
+git:
+  submodules: false
+before_install:
+  # 让 travis ci 可以使用 git submodule，这要求 git submodule 的格式必须是 https 的
+  - echo -e "machine github.com\n  login $CI_USER_TOKEN" >> ~/.netrc
+  - git submodule update --init --recursive
+before_script:
+  - node isPRBuild $TRAVIS_PULL_REQUEST
+  - yarn install
+script:
+  - ./preDeploy.sh
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $CI_USER_TOKEN
+  repo: $DEPLOY_REPO_SLUG
+  target-branch: master
+  keep-history: true
+    on:
+    all_branches: true
+    condition: $TRAVIS_BRANCH =~ ^stage|master$

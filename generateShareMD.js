@@ -1,30 +1,10 @@
 import fs from 'fs'
 import path from 'path'
 import mkdirp from 'mkdirp'
-
+let deleted = require('./unauthorizedPost')
 
 let basePath = './source/_posts'
 let targetPath = './share/'
-let deleted = {
-  file: [
-    "A practical introduction to functional programming.md",
-    "A Trie in Swift.md",
-    "Checking API Availability With Swift.md",
-    "Cryptography in Swift with CommonCrypto.md",
-    "ibeacons_ios和swift教程.md",
-    "raywenderlich.com官方Swift风格指南.md",
-    "Swift 2_面向协议编程.md",
-    "Swift面试题及答案.md",
-    "Swift中的集合类数据结构.md",
-    "UIGestureRecognizer教程：创建自定义手势识别器.md",
-    "What's_New_in_Swift_2.md",
-    "如何正确使用协议.md",
-    "使用泛型与函数式思想高效解析JSON.md",
-    "改用swift来思考.md",
-    "数组、链表及其性能.md",
-    "如何创建一个 iOS 书本打开的动画（第一部分）.md"
-  ],
-}
 
 
 let originInfo = new Promise(function (resolve, reject) {
