@@ -10,7 +10,6 @@ current_branch=`git branch | grep "*"`
 if [[ $current_branch == "* master" ]]; then 
   echo 'swift.gg' > ./source/CNAME
   echo 'deploy to SwiftGG/SwiftGGTeam.github.io'
-  export DEPLOY_REPO_SLUG=SwiftGG/SwiftGGTeam.github.io
   cd source
   git pull
   git add .
@@ -23,6 +22,5 @@ if [[ $current_branch == "* master" ]]; then
 else
   echo 'test.forelax.space' > ./source/CNAME
   echo 'deploy to SwiftGGSite/SwiftGGSite.github.io'
-  export DEPLOY_REPO_SLUG=SwiftGGSite/SwiftGGSite.github.io
 fi
-yarn run hexo g
+yarn run hexo g --bail --silent

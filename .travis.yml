@@ -13,17 +13,31 @@ before_install:
   - echo -e "machine github.com\n  login $CI_USER_TOKEN" >> ~/.netrc
   - git submodule update --init --recursive
 before_script:
-  - node isPRBuild $TRAVIS_PULL_REQUEST
   - yarn install
+cache:
+  yarn: true
+  directories:
+    - node_modules
 script:
   - ./preDeploy.sh
 deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $CI_USER_TOKEN
-  repo: $DEPLOY_REPO_SLUG
-  target-branch: master
-  keep-history: true
+  - provider: pages
+    skip-cleanup: true
+    github-token: $CI_USER_TOKEN
+    repo: SwiftGGSite/SwiftGGSite.github.io
+    target-branch: master
+    local-dir: public
+    keep-history: true
     on:
-    all_branches: true
-    condition: $TRAVIS_BRANCH =~ ^stage|master$
+      all_branches: true
+      condition: $TRAVIS_BRANCH =~ ^stage$
+  - provider: pages
+    skip-cleanup: true
+    github-token: $CI_USER_TOKEN
+    repo: SwiftGG/SwiftGGTeam.github.io
+    target-branch: master
+    local-dir: public
+    keep-history: true
+    on:
+      all_branches: true
+      condition: $TRAVIS_BRANCH =~ ^master$

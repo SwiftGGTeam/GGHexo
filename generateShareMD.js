@@ -17,7 +17,6 @@ let originInfo = new Promise(function (resolve, reject) {
   files.map(
     file => new Promise((resolve, reject) =>
       fs.readFile(path.join(basePath, file), function (err, content) {
-        console.log(file)
         if (err) throw err
         content = content.toString()
         resolve({
