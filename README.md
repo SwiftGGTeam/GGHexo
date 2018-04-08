@@ -2,15 +2,13 @@
 
 打造国内第一的 Swift 译文站  
 
+[TOC]
+
 ## 使用流程  
 
 安装 Hexo  
 
     npm install hexo-cli -g
-
-替换 Hexo 文件
-
-- `replaceHexo/post.js` 替换到 `{NODE_PATH}/hexo/lib/models/post.js`
 
 clone 项目
 
@@ -24,52 +22,26 @@ clone 项目
 
 安装依赖  
 
-    npm install
+    (npm install -g yarn)
+    yarn install
 
----
+本地查看效果 
 
-`TAG: 以下每次重复`
+```
+hexo s
+```
 
-将要修改的子项目切换到 master 分支
+## 翻译提交流程
 
-    cd source
-    git checkout master
-    git pull
+1. 在 src 目录下创建要翻译的文章，文件命名请用以下格式：`20170903_swift-weekly-brief-75.md`，其中`swift-weekly-brief-75`对应md文件中permalink字段。内容格式按照 `书写规范以及 demo`下的例子来
+2. 本地 `hexo s` 查看效果
+3. 提交 PR 到 stage 分支，并进行修改
+4. PR 合入 stage 后，触发 travis build，将网站部署到 stage 环境
+5. 在 stage 环境确认无误后，将 stage 合入到 master 分支，触发
 
-在 `/src` 下创建 `{文章名}.md` 文件，进行编辑即可。
+## 自动化部署做的一些事
 
-发布前需要:
-
-1. **修改文章头**并**生成最终文章**，参考下下节。
-2. **提取图片**，参考下一节内容。
-3. 生成静态页面 `hexo g`
-4. md文件命名请用以下格式：`20170903_swift-weekly-brief-75.md`，其中`swift-weekly-brief-75`对应md文件中permalink字段
-
-在本地环境预览
-
-    hexo s
-
-打开 [`http://localhost:4000`](http://localhost:4000) 预览效果
-
-将生成的`html`部署到服务器
-
-    hexo d
-
-将文章 `md` 文件推送到 `SwiftGGTeam/source`
-
-    (source)目录下
-    git add *
-    git commit -m ''
-    git push
-
-更新 `GGHexo` 将其指向最新的 `source`
-
-    (GGHexo)目录下
-    git add -u
-    git commit -m "update submodule to lastest commit id"
-    git push
-
-## 自动提取图片
+###  自动提取图片
 
 在项目根目录下执行 `python 2-extractImgs.py` 或者 `python 3-extractImgs.py`，取决于你的 Python 版本。
 
@@ -82,9 +54,14 @@ clone 项目
 
 以上两条如果违反会直接报错，请根据错误信息修改对应文章，然后再次执行即可。
 
-执行完毕之后，继续执行 `hexo g`。
+### 文件头修改
 
-## md 文件头示例
+项目根目录下执行 `babel-node generatePosts.js` 就会在 `_posts` 中生成最终文件。主要做了两件事：
+
+1. 把作者原文日期等内容换成统一的头部，以及添加来源尾部
+2. 过滤掉一些没有授权的文章
+
+#### md 文件头示例
 
 ```
 title: "Swift 函数式编程实践"
@@ -110,19 +87,13 @@ title 是标题，date 是发布日期，tag 是标签，categories 是分类（
 
 译者、校对和定稿都支持多人，用英文逗号分隔即可。
 
-修改好头部之后，在项目根目录下执行 `babel-node generatePosts.js` 就会在 `_posts` 中生成最终文件。
-
-## 统计
+### 统计
 
 统计脚本是 `generateStat.js`，使用 ES6 语法编写，执行方法：
 
-- 首先安装 `babel`：`npm install babel -g`
-- 接着 `cd ...` 切换到项目根目录
-- 然后执行 `babel-node generateStat.js`，会自动生成 `source/stat` 下的 `md` 文件
+执行 `babel-node generateStat.js`，会自动生成 `source/stat` 下的 `md` 文件
 
-执行完毕后用 `hexo` 生成页面并部署即可。
-
-## 运营版本生成
+### 运营版本生成
 
 由于在各个网站发文章都需要修改文章，因此编写脚本自动生成。
 
@@ -152,10 +123,7 @@ title 是标题，date 是发布日期，tag 是标签，categories 是分类（
 
 使用：
 
-- `npm install mkdirp`
-- `npm install babel -g`
-- `cd ...` 进入项目根目录
-- `babel-node generateShareMD.js`
+`babel-node generateShareMD.js`
 
 生成好的文章在 `share` 目录下，每篇文章一个文件夹，用 `permalink` 命名文件夹，用运营目标命名具体的 `md` 文件
 

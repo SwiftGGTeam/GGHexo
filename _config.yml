@@ -71,9 +71,3 @@ archive_generator:
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
 theme: jacman
-
-# Deployment
-## Docs: http://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repository: git@github.com:SwiftGGTeam/SwiftGGTeam.github.io.git
