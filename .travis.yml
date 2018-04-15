@@ -4,7 +4,6 @@ python:
   - "3.6"
 branches:
   only:
-  - master
   - stage
 git:
   submodules: false
@@ -24,20 +23,10 @@ deploy:
   - provider: pages
     skip-cleanup: true
     github-token: $CI_USER_TOKEN
-    repo: SwiftGGSite/SwiftGGSite.github.io
-    target-branch: master
-    local-dir: public
-    keep-history: true
-    on:
-      all_branches: true
-      condition: $TRAVIS_BRANCH =~ ^stage$
-  - provider: pages
-    skip-cleanup: true
-    github-token: $CI_USER_TOKEN
     repo: SwiftGG/SwiftGGTeam.github.io
     target-branch: master
     local-dir: public
     keep-history: true
     on:
       all_branches: true
-      condition: $TRAVIS_BRANCH =~ ^master$
+      condition: $TRAVIS_BRANCH =~ ^stage$
