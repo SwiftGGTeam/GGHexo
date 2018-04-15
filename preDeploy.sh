@@ -9,8 +9,7 @@ if [[ $1 == 'local' ]]; then
   yarn run hexo s
 fi
 yarn run hexo clean
-current_branch=`git branch | grep "*"`
-if [[ $current_branch == "* stage" ]]; then 
+if [[ $TRAVIS_BRANCH == "stage" ]]; then 
   echo 'deploy to SwiftGG/SwiftGGTeam.github.io'
   cd source
   git pull

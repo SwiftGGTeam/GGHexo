@@ -23,7 +23,7 @@ deploy:
   - provider: pages
     skip-cleanup: true
     github-token: $CI_USER_TOKEN
-    repo: SwiftGG/SwiftGGTeam.github.io
+    repo: SwiftGGTeam/SwiftGGTeam.github.io
     target-branch: master
     local-dir: public
     keep-history: true
