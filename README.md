@@ -4,11 +4,7 @@
 
 [TOC]
 
-## 使用流程  
-
-安装 Hexo  
-
-    npm install hexo-cli -g
+## 使用流程
 
 clone 项目
 
@@ -27,17 +23,20 @@ clone 项目
 
 本地查看效果 
 
-```
-hexo s
+```shell
+# src 下没有新添加的文章时
+yarn run hexo s
+# src 下有自己新添加的文章
+./preDeploy.sh local
 ```
 
 ## 翻译提交流程
 
 1. 在 src 目录下创建要翻译的文章，文件命名请用以下格式：`20170903_swift-weekly-brief-75.md`，其中`swift-weekly-brief-75`对应md文件中permalink字段。内容格式按照 `书写规范以及 demo`下的例子来
-2. 本地 `hexo s` 查看效果
-3. 提交 PR 到 stage 分支，并进行修改
-4. PR 合入 stage 后，触发 travis build，将网站部署到 stage 环境
-5. 在 stage 环境确认无误后，将 stage 合入到 master 分支，触发
+2. 本地 `./preDeploy.sh local` 查看效果
+3. 提交 PR 申请合入到 stage 分支，并根据大家的 comment 进行修改
+4. PR 合入 stage 后，触发 travis build，将网站部署到 stage 环境 (stage.swift.gg 或者 swiftggteam.github.io)
+5. 在 stage 环境确认无误后，将 stage 合入到 master 分支，master 环境是在 aliyun 部署的，服务器隔一段时间会拉取 master 分支的代码
 
 ## 自动化部署做的一些事
 
