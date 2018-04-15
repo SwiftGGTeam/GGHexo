@@ -12,14 +12,16 @@ yarn run hexo clean
 if [[ $TRAVIS_BRANCH == "stage" ]]; then 
   echo 'deploy to SwiftGG/SwiftGGTeam.github.io'
   cd source
+  git checkout master
   git pull
   echo 'stage.swift.gg' > ./CNAME
   git add .
   git commit -m 'AUTO: Publish'
   git push
   cd ..
+  git checkout stage
   git add .
   git commit -m 'AUTO: Publish'
-  git push
+  git push 
 fi
 yarn run hexo g --bail --silent
