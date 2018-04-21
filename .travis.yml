@@ -19,23 +19,14 @@ cache:
     - node_modules
 script:
   - ./preDeploy.sh
-defaults: &defaults
-  provider: pages
-  repo: SwiftGGTeam/SwiftGGTeam.github.io
-  skip-cleanup: true
-  github-token: $CI_USER_TOKEN
-  local-dir: public
-  keep-history: true
 deploy:
-  - <<: *defaults
-    # swift.gg 是部署在 aliyun 的网站
-    target-branch: aliyun-pages
-    on:
-      all_branches: true
-      condition: $TRAVIS_BRANCH =~ ^master$
-  - <<: *defaults
-    # stage.swift.gg 是部署在 github.io 的网站
+  - provider: pages
+    skip-cleanup: true
+    github-token: $CI_USER_TOKEN
+    repo: SwiftGGTeam/SwiftGGTeam.github.io
     target-branch: master
+    local-dir: public
+    keep-history: true
     on:
       all_branches: true
       condition: $TRAVIS_BRANCH =~ ^stage$
