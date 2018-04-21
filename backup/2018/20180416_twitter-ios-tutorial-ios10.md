@@ -11,7 +11,7 @@ description:
 原文链接=https://www.ioscreator.com/tutorials/twitter-ios-tutorial-ios10
 作者=Arthur Knopper
 原文日期=2017/03/14
-译者=imiem
+译者=&nbsp
 校对=pmst
 定稿=mmoaay
 

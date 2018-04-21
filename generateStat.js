@@ -4,8 +4,7 @@ import nameMap from './nameMap'
 let deleted = require('./unauthorizedPost')
 
 
-let srcPath = './src'
-let backupPath = './backup'
+let basePath = './backup'
 let pageHeader = `
 # SwiftGG 团队贡献榜
 
@@ -61,18 +60,15 @@ function* entries(obj) {
 
 // get origin file content, prepare to generate stat
 let originInfo = new Promise(function (resolve, reject) {
-  const backupDirs = fs.readdirSync(backupPath)
-  const backupFiles = backupDirs.map((dir) => {
-    const files = fs.readdirSync(path.join(backupPath, dir))
-    return files.filter(file => !((file.indexOf(".") === 0) || (file in deleted.file))).map((file) => {
-      return path.join(backupPath, dir, file)
-    })
-  }).flatten(2)
-  const srcFiles = fs.readdirSync(srcPath).filter(file => !((file.indexOf(".") === 0) || (file in deleted.file))).map((file) => {
-    return path.join(srcPath, file)
+  fs.readdir(basePath, (err, dirs) => {
+    if (err) throw err
+    resolve(dirs.map((dir) => {
+      const files = fs.readdirSync(path.join(basePath, dir))
+      return files.filter(file => !((file.indexOf(".") === 0) || (file in deleted.file))).map((file) => {
+        return path.join(basePath, dir, file)
+      })
+    }).flatten(2))
   })
-  const allFiles = backupFiles.concat(srcFiles)
-  resolve(allFiles)
 })
 .then(files => Promise.all(
   files.map(
