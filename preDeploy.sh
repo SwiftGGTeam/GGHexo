@@ -21,7 +21,7 @@ if [[ $TRAVIS_BRANCH == "master" ]]; then
   cd ..
   git checkout master
   git add .
-  git commit -m 'AUTO: Publish'
+  git commit -m '[skip ci] AUTO: Publish'
   git push
 elif [[ $TRAVIS_BRANCH == "stage" ]]; then
   echo 'deploy to SwiftGG/SwiftGGTeam.github.io master branch'
