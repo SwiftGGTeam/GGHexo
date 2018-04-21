@@ -1,7 +1,7 @@
 Twitter iOS 教程"
 
 > 作者：Arthur Knopper，[原文链接](https://www.ioscreator.com/tutorials/twitter-ios-tutorial-ios10)，原文日期：2017/03/14
-> 译者：[imiem](https://imiem.github.io)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；定稿：[mmoaay](http://www.jianshu.com/u/2d46948e84e3)
+> 译者：[imiem](undefined)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；定稿：[mmoaay](http://www.jianshu.com/u/2d46948e84e3)
   
 
 
