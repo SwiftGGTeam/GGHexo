@@ -5,6 +5,7 @@ python:
 branches:
   only:
   - stage
+  - master
 git:
   submodules: false
 before_install:
