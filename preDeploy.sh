@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 yarn run babel-node generatePosts.js
 cp -a treasure/. source/_posts
-node backupPost.js
 yarn run babel-node generateStat.js
 yarn run babel-node generateShareMD.js
+node backupPost.js
 python 3-extractImgs.py
 if [[ $1 == 'local' ]]; then
   yarn run hexo s
