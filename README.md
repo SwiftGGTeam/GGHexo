@@ -1,16 +1,14 @@
 # GGHexo
 
+master deploy status:![master branch](https://travis-ci.org/SwiftGGTeam/GGHexo.svg?branch=master)
+
+stage deploy status:![stage branch](https://travis-ci.org/SwiftGGTeam/GGHexo.svg?branch=stage)
+
 打造国内第一的 Swift 译文站  
 
-## 使用流程  
+[TOC]
 
-安装 Hexo  
-
-    npm install hexo-cli -g
-
-替换 Hexo 文件
-
-- `replaceHexo/post.js` 替换到 `{NODE_PATH}/hexo/lib/models/post.js`
+## 使用流程
 
 clone 项目
 
@@ -24,52 +22,29 @@ clone 项目
 
 安装依赖  
 
-    npm install
+    (npm install -g yarn)
+    yarn install
 
----
+本地查看效果 
 
-`TAG: 以下每次重复`
+```shell
+# src 下没有新添加的文章时
+yarn run hexo s
+# src 下有自己新添加的文章
+./preDeploy.sh local
+```
 
-将要修改的子项目切换到 master 分支
+## 翻译提交流程
 
-    cd source
-    git checkout master
-    git pull
+1. 在 github 网页使用 [create new file](https://github.com/SwiftGGTeam/GGHexo/new/stage) 在 src 目录下创建要翻译的文章，文件命名请用以下格式：`20170903_swift-weekly-brief-75.md`，其中`swift-weekly-brief-75`对应md文件中permalink字段。内容格式按照 `书写规范以及 demo`下的例子来。然后创建 PR。
+2. 提交 PR 申请合入到 stage 分支，并根据大家的 comment 进行修改。
+3. PR 合入 stage 后，触发 travis build，将网站部署到 stage 环境 ([stage.swift.gg]，(http://stage.swift.gg) 部署在 swiftggteam.github.io 这个项目的 master 分支下)，可以通过 readme 顶部的 status image 来查看状态，也可以通过 [commits](https://github.com/SwiftGGTeam/GGHexo/commits/stage) 页面下的每个 commit 后面的对勾来查看构建状态。
+4. 在 stage 环境确认无误后，将 stage 合入到 master 分支，随后 travis ci 会将静态资源部署到 swiftggteam.github.io 项目的 aliyun-pages 分支，aliyun 部署的 crontab 脚本隔一段时间会拉取 aliyun-pages 分支的静态资源。travis.ci 同时还会将自动生成的其他平台运营用的 md 文件提交到 master 分支。
+5. 如果本次提交不包含网站相关的变更，比如 readme.md 的变更，可以在提交的最后一个 commit 中加入 `[skip ci]`，详情参考 [Skipping a build](https://docs.travis-ci.com/user/customizing-the-build#Skipping-a-build)
 
-在 `/src` 下创建 `{文章名}.md` 文件，进行编辑即可。
+## 自动化部署做的一些事
 
-发布前需要:
-
-1. **修改文章头**并**生成最终文章**，参考下下节。
-2. **提取图片**，参考下一节内容。
-3. 生成静态页面 `hexo g`
-4. md文件命名请用以下格式：`20170903_swift-weekly-brief-75.md`，其中`swift-weekly-brief-75`对应md文件中permalink字段
-
-在本地环境预览
-
-    hexo s
-
-打开 [`http://localhost:4000`](http://localhost:4000) 预览效果
-
-将生成的`html`部署到服务器
-
-    hexo d
-
-将文章 `md` 文件推送到 `SwiftGGTeam/source`
-
-    (source)目录下
-    git add *
-    git commit -m ''
-    git push
-
-更新 `GGHexo` 将其指向最新的 `source`
-
-    (GGHexo)目录下
-    git add -u
-    git commit -m "update submodule to lastest commit id"
-    git push
-
-## 自动提取图片
+###  自动提取图片
 
 在项目根目录下执行 `python 2-extractImgs.py` 或者 `python 3-extractImgs.py`，取决于你的 Python 版本。
 
@@ -82,9 +57,14 @@ clone 项目
 
 以上两条如果违反会直接报错，请根据错误信息修改对应文章，然后再次执行即可。
 
-执行完毕之后，继续执行 `hexo g`。
+### 文件头修改
 
-## md 文件头示例
+项目根目录下执行 `babel-node generatePosts.js` 就会在 `_posts` 中生成最终文件。主要做了两件事：
+
+1. 把作者原文日期等内容换成统一的头部，以及添加来源尾部
+2. 过滤掉一些没有授权的文章
+
+#### md 文件头示例
 
 ```
 title: "Swift 函数式编程实践"
@@ -110,19 +90,13 @@ title 是标题，date 是发布日期，tag 是标签，categories 是分类（
 
 译者、校对和定稿都支持多人，用英文逗号分隔即可。
 
-修改好头部之后，在项目根目录下执行 `babel-node generatePosts.js` 就会在 `_posts` 中生成最终文件。
-
-## 统计
+### 统计
 
 统计脚本是 `generateStat.js`，使用 ES6 语法编写，执行方法：
 
-- 首先安装 `babel`：`npm install babel -g`
-- 接着 `cd ...` 切换到项目根目录
-- 然后执行 `babel-node generateStat.js`，会自动生成 `source/stat` 下的 `md` 文件
+执行 `babel-node generateStat.js`，会自动生成 `source/stat` 下的 `md` 文件
 
-执行完毕后用 `hexo` 生成页面并部署即可。
-
-## 运营版本生成
+### 运营版本生成
 
 由于在各个网站发文章都需要修改文章，因此编写脚本自动生成。
 
@@ -152,10 +126,7 @@ title 是标题，date 是发布日期，tag 是标签，categories 是分类（
 
 使用：
 
-- `npm install mkdirp`
-- `npm install babel -g`
-- `cd ...` 进入项目根目录
-- `babel-node generateShareMD.js`
+`babel-node generateShareMD.js`
 
 生成好的文章在 `share` 目录下，每篇文章一个文件夹，用 `permalink` 命名文件夹，用运营目标命名具体的 `md` 文件
 
