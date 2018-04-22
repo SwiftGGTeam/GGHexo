@@ -48,7 +48,8 @@ let nameMap = {
   "SketchK": "http://www.sketchk.xyz",
   "Forelax": "http://forelax.space",
   "imiem": "https://imiem.github.io",
-  "Hale": "http://wuqiuhao.github.io"
+  "Hale": "http://wuqiuhao.github.io",
+  "Lision": "https://lision.me/"
 }
 
 export default nameMap
