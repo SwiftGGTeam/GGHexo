@@ -1,7 +1,7 @@
 Swift 服务端开发指南"
 
 > 作者：Soroush Khanlou，[原文链接](http://khanlou.com/2017/06/server-side-commands)，原文日期：2017/6/21
-> 译者：[Cwift](http://weibo.com/277195544)；校对：[Yousanflics](undefined)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[Cwift](http://weibo.com/277195544)；校对：[Yousanflics](http://blog.yousanflics.com.cn)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 
