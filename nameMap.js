@@ -51,7 +51,8 @@ let nameMap = {
   "Hale": "http://wuqiuhao.github.io",
   "Lision": "https://lision.me/",
   "Damonwong": "https://github.com/Damonvvong",
-  "Yousanflics": "http://blog.yousanflics.com.cn"
+  "Yousanflics": "http://blog.yousanflics.com.cn",
+  "muhlenXi": "http://muhlenxi.com/",
 }
 
 export default nameMap
