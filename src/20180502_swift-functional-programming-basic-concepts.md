@@ -12,7 +12,7 @@ description:
 作者=Andyy Hope
 原文日期=2016-05-18
 译者=muhlenXi
-校对=[Yousanflics,Lision]
+校对=Yousanflics,Lision
 定稿=CMB
 
 <!--此处开始正文-->
