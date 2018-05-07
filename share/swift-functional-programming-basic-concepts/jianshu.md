@@ -1,7 +1,7 @@
 函数式编程：基本概念"
 
 > 作者：Andyy Hope，[原文链接](https://medium.com/swift-programming/swift-functional-programming-basic-concepts-a6b0c3937d56)，原文日期：2016-05-18
-> 译者：[muhlenXi](undefined)；校对：[Yousanflics](http://blog.yousanflics.com.cn)，[ Lision](undefined)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[muhlenXi](http://muhlenxi.com/)；校对：[Yousanflics](http://blog.yousanflics.com.cn)，[Lision](https://lision.me/)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 
