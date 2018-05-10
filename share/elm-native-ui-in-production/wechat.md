@@ -1,27 +1,22 @@
-title: "Elm Native UI in Production"
-date: 2018-05-10
-tags: [Swift 进阶]
-categories: [Thoughtbot]
-permalink: elm-native-ui-in-production
-keywords: 
-custom_title: 
-description: 
+Elm Native UI in Production"
 
----
-原文链接=https://robots.thoughtbot.com/elm-native-ui-in-production
-作者=Josh Steiner
-原文日期=2016-03-01
-译者=muhlenXi
-校对=Yousanflics,aaaron7
-定稿=CMB
+> 作者：Josh Steiner，[原文链接](https://robots.thoughtbot.com/elm-native-ui-in-production)，原文日期：2016-03-01
+> 译者：[muhlenXi](http://muhlenxi.com/)；校对：[Yousanflics](http://blog.yousanflics.com.cn)，[aaaron7](http://www.jianshu.com/users/9efd08855d3a/)；定稿：[CMB](https://github.com/chenmingbiao)
+  
 
-<!--此处开始正文-->
+
+
+
+
+
+
+
 
 在 11 月份，thoughtbot 发布了一个叫 [Purple Train](https://purpletrainapp.com/) 的 APP ，该 APP 是用 [React Native](https://thoughtbot.com/services/react) 实现的， `React Native` 一直被用于快速构建跨平台的 APP 。由于 `Reactive Natice` 对传统移动开发的许多改进，使我们更加喜欢它，比如声明性 API、更快的开发周期、对 Web 开发和设计师来说更友好和跨平台等。但是 `React Native` 并不是对每个 APP 都非常合适，它虽然适合大多数的 APP ，但仍然有一个主要的缺陷：`JavaScript` 。
 
 `JavaScript` 作为一门语言它一直在改进，它有一个显著优点就是无所不在，然而，它也以 [奇怪的行为](https://www.destroyallsoftware.com/talks/wat) 和弱类型系统（读作 `aggressive type coercion` ）而闻名。
 
-<!--more-->
+
 
 ### Elm Native UI
 
@@ -37,7 +32,7 @@ description:
 
 `React` 取决于开发者不要犯错误，尽管有像 `eslint` 这样的静态分析工具可以帮助您，但是对于像 `JavaScript` 这样的动态语言的帮助是有限的，当你犯错误时，在开发模式下，你可能会看到用 “Red Screens of Death” 显示的运行时错误。
 
-![](/img/articles/elm-native-ui-in-production/UMpL2QIqQFutYXmAJikX_react-native-red-screen-of-death.png1525918443.8166037)
+![](https://images.thoughtbot.com/blog-vellum-image-uploads/UMpL2QIqQFutYXmAJikX_react-native-red-screen-of-death.png)
 
 Elm 另一方面依赖编译器来捕获 bug，我很高兴的说，在 `Purple Train` 运行期间，我没有碰到一个 Red Screen of Death<sup>[1]</sup>。
 
@@ -48,3 +43,4 @@ Elm 另一方面依赖编译器来捕获 bug，我很高兴的说，在 `Purple 
 ---------
 
 1、这并不完全正确。我遇到了 Red Screens of Death ，是当我为 `Elm Native UI` 库开发新功能时，而不是为 `Purple Train` 写新功能的时候。假定 `Elm Native UI` 中的 `JavaScript` 是没有 bug ，我希望这对于其他 APP 也是这样。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
