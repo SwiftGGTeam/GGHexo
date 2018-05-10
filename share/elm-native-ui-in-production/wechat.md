@@ -32,7 +32,7 @@ Elm Native UI in Production"
 
 `React` 取决于开发者不要犯错误，尽管有像 `eslint` 这样的静态分析工具可以帮助您，但是对于像 `JavaScript` 这样的动态语言的帮助是有限的，当你犯错误时，在开发模式下，你可能会看到用 “Red Screens of Death” 显示的运行时错误。
 
-![](https://images.thoughtbot.com/blog-vellum-image-uploads/UMpL2QIqQFutYXmAJikX_react-native-red-screen-of-death.png)
+![](http://swift.gg/img/articles/elm-native-ui-in-production/UMpL2QIqQFutYXmAJikX_react-native-red-screen-of-death.png1525918443.8166037)
 
 Elm 另一方面依赖编译器来捕获 bug，我很高兴的说，在 `Purple Train` 运行期间，我没有碰到一个 Red Screen of Death<sup>[1]</sup>。
 
