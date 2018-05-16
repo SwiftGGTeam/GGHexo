@@ -28,9 +28,9 @@ defaults: &defaults
   local-dir: public
   keep-history: true
 deploy:
-  - <<: *defaults
     # swift.gg 是部署在 aliyun 的网站
-    target-branch: aliyun-pages
+    provider: script
+    script: node deployMaster.js
     on:
       all_branches: true
       condition: $TRAVIS_BRANCH =~ ^master$
