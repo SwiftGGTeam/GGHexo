@@ -26,5 +26,5 @@ if [[ $TRAVIS_BRANCH == "master" ]]; then
 elif [[ $TRAVIS_BRANCH == "stage" ]]; then
   echo 'deploy to SwiftGG/SwiftGGTeam.github.io master branch'
   echo 'stage.swift.gg' > source/CNAME
+  yarn run hexo g --bail --silent
 fi
-yarn run hexo g --bail --silent

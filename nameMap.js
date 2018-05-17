@@ -55,6 +55,7 @@ let nameMap = {
   "muhlenXi": "http://muhlenxi.com/",
   "东莞大唐和尚": "https://weibo.com/u/5029986118",
   "Lefex": "https://weibo.com/u/5953150140",
+  "ennisk": "https://weibo.com/u/1771329710",
 }
 
 export default nameMap
