@@ -4,8 +4,8 @@ const CI_USER_TOKEN = process.env['CI_USER_TOKEN']
 
 axios.post("https://api.github.com/repos/SwiftGGTeam/SwiftGGTeam.github.io/pulls", {
     title: 'merge stage to master',
-    head: 'aliyun-pages',
-    base: 'master',
+    head: 'master',
+    base: 'aliyun-pages',
   }, {
     headers: {
       'Authorization': `token ${CI_USER_TOKEN}`,
@@ -19,13 +19,14 @@ axios.post("https://api.github.com/repos/SwiftGGTeam/SwiftGGTeam.github.io/pulls
     process.exit(1)
   }
   axios.put(`https://api.github.com/repos/SwiftGGTeam/SwiftGGTeam.github.io/pulls/${number}/merge`, {
-    merge_method: 'rebase'
+    merge_method: 'merge'
   }, {
     headers: {
       'Authorization': `token ${CI_USER_TOKEN}`,
     }
   })
   .then((result) => {
+    console.log('merge success! API result is:')
     console.log(result.data)
   }).catch((err) => {
     console.log(err.response)
