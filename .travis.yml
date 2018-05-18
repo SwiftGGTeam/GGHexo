@@ -14,10 +14,10 @@ before_install:
   - git submodule update --init --recursive
 before_script:
   - yarn install
-cache:
-  yarn: true
-  directories:
-    - node_modules
+# cache:
+#   yarn: true
+#   directories:
+#     - node_modules
 script:
   - ./preDeploy.sh
 defaults: &defaults
