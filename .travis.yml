@@ -14,28 +14,29 @@ before_install:
   - git submodule update --init --recursive
 before_script:
   - yarn install
-# cache:
-#   yarn: true
-#   directories:
-#     - node_modules
+cache:
+  yarn: true
+  directories:
+    - node_modules
 script:
   - ./preDeploy.sh
 defaults: &defaults
-  provider: pages
-  repo: SwiftGGTeam/SwiftGGTeam.github.io
   skip-cleanup: true
   github-token: $CI_USER_TOKEN
-  local-dir: public
-  keep-history: true
 deploy:
     # swift.gg 是部署在 aliyun 的网站
-  - provider: script
+  - <<: *defaults
+    provider: script
     script: node deployMaster.js
     on:
       all_branches: true
       condition: $TRAVIS_BRANCH =~ ^master$
   - <<: *defaults
     # stage.swift.gg 是部署在 github.io 的网站
+    provider: pages
+    local-dir: public
+    keep-history: true
+    repo: SwiftGGTeam/SwiftGGTeam.github.io
     target-branch: master
     on:
       all_branches: true
