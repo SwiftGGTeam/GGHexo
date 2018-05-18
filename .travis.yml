@@ -29,7 +29,7 @@ defaults: &defaults
   keep-history: true
 deploy:
     # swift.gg 是部署在 aliyun 的网站
-    provider: script
+  - provider: script
     script: node deployMaster.js
     on:
       all_branches: true
