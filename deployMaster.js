@@ -34,7 +34,7 @@ axios.post("https://api.github.com/repos/SwiftGGTeam/SwiftGGTeam.github.io/pulls
         console.log(err.response)
         process.exit(1)
       });
-  }, 3000 * 1000);
+  }, 3000);
 }).catch((err) => {
   console.log(err.response.data.errors)
   process.exit(1)
