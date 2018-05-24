@@ -1,21 +1,16 @@
-title: "苹果的深度学习框架：BNNS 和 MPSCNN 的对比"
-date: 2018-05-24
-tags: [深度学习]
-categories: [machinethink]
-permalink: apple-deep-learning-bnns-versus-metal-cnn
-keywords: 深度学习,BNNS,MPSCNN
-custom_title: 了解苹果深度学习框架 BNNS 和 MPSCNN
-description: 在这篇文章中，我们将针对 BNNS 和 MPSCNN 进行对比来显示出这两者的差异
+苹果的深度学习框架：BNNS 和 MPSCNN 的对比"
 
----
-原文链接=http://machinethink.net/blog/apple-deep-learning-bnns-versus-metal-cnn/
-作者=MATTHIJS HOLLEMANS
-原文日期=2017-02-07
-译者=TonyHan
-校对=冬瓜,liberalisman
-定稿=CMB
+> 作者：MATTHIJS HOLLEMANS，[原文链接](http://machinethink.net/blog/apple-deep-learning-bnns-versus-metal-cnn/)，原文日期：2017-02-07
+> 译者：[TonyHan](undefined)；校对：[冬瓜](http://www.desgard.com/)，[liberalisman](undefined)；定稿：[CMB](https://github.com/chenmingbiao)
+  
 
-<!--此处开始正文-->
+
+
+
+
+
+
+
 
 从 iOS 10 开始，苹果在 iOS 平台上引入了两个深度学习的框架：BNNS 和 MPSCNN。
 
@@ -29,7 +24,7 @@ description: 在这篇文章中，我们将针对 BNNS 和 MPSCNN 进行对比�
 
 在这篇文章中，我们将针对 BNNS 和 MPSCNN 进行对比来显示出这两者的差异。而且我们会对这两个 API 进行速度测试，来看下谁更快一些。
 
-<!--more-->
+
 
 ## 为什么要优先使用 BNNS 或 MPSCNN ？
 
@@ -47,7 +42,7 @@ description: 在这篇文章中，我们将针对 BNNS 和 MPSCNN 进行对比�
 
 你可以将神经网络想象为数据流经的管道。管道中的不同阶段便是网络**层级**。这些层级以不同的方式转换你的数据。同时深度学习，我们可以使用多达 10 层甚至 100 层的神经网络。
 
-![Cat2Probability](/img/articles/apple-deep-learning-bnns-versus-metal-cnn/Cat2Probability@2x.png1527128648.556878)
+![Cat2Probability](http://machinethink.net/images/bnns-vs-metal/Cat2Probability@2x.png)
 
 层级有不同的种类。BNNS 和 MPSCNN 提供的有：卷积层（convolutional layer）、池化层（pooling layer）、全连接层（Fully Connected Layer）和规范化层（normalization layer）。
 
@@ -55,21 +50,20 @@ description: 在这篇文章中，我们将针对 BNNS 和 MPSCNN 进行对比�
 
 为了说明层级作为建构单元的思想，下面描述了数据如何通过一个简单的神经网络在 BNNS 中流动：
 
-```swift
-// 为中间结果和最终结果分配内存。
-var tempBuffer1: [Float] = . . .
-var tempBuffer2: [Float] = . . .
-var results: [Float] = . . .
-
-// 对输入的数据（比如说一张图片）应用第一层级。
-BNNSFilterApply(convLayer, inputData, &tempBuffer1)
-
-// 对第一层级的输出应用第二层级。
-BNNSFilterApply(poolLayer, tempBuffer1, &tempBuffer2)
-
-// 应用第三和最后的层级。结果通常是概率分布。
-BNNSFilterApply(fcLayer, tempBuffer2, &results)
-```
+    
+    // 为中间结果和最终结果分配内存。
+    var tempBuffer1: [Float] = . . .
+    var tempBuffer2: [Float] = . . .
+    var results: [Float] = . . .
+    
+    // 对输入的数据（比如说一张图片）应用第一层级。
+    BNNSFilterApply(convLayer, inputData, &tempBuffer1)
+    
+    // 对第一层级的输出应用第二层级。
+    BNNSFilterApply(poolLayer, tempBuffer1, &tempBuffer2)
+    
+    // 应用第三和最后的层级。结果通常是概率分布。
+    BNNSFilterApply(fcLayer, tempBuffer2, &results)
 
 要使用 BNNS 和 MPSCNN 构建神经网络，只需要设置层级并向它们发送数据。框架负责处理层级*内*发生的事情，但你需要做的是连接层级。
 
@@ -231,7 +225,7 @@ MPSCNN 要求将所有数据放置在一个特殊的 `MPSImage` 对象内，这�
 
 如果你的输入是图片，那么它有三个通道：一个用于红色像素，一个用于绿色像素，另一个用于蓝色像素。问题是像 PNG 或 JPEG 这样的图像文件会作为交错的 RGBA 值被加载到内存中。BNNS 并不会接受这种情况。
 
-![](/img/articles/apple-deep-learning-bnns-versus-metal-cnn/InterleavedPlanar@2x.png1527128648.7662659)
+![](http://machinethink.net/images/bnns-vs-metal/InterleavedPlanar@2x.png)
 
 目前没有办法告诉 BNNS 使用红色像素值作为通道 0，绿色像素值作为通道 1，蓝色值作为通道 2，并跳过 alpha 通道。相反，你将不得不重新排列像素数据，以便输入缓冲区的首先包含所有 R 值，然后是所有 G 值，然后是所有 B 值。
 
@@ -297,7 +291,7 @@ BNNS 在 CPU 上工作，所以你可以在后台线程中开始工作，然后�
 
 我的神经网络设计大概是这样（点击图片放大）：
 
-![The convolutional neural network used for the speed test](/img/articles/apple-deep-learning-bnns-versus-metal-cnn/ConvNet@2x.png1527128648.814062)
+![The convolutional neural network used for the speed test](http://machinethink.net/images/bnns-vs-metal/ConvNet@2x.png)
 
 这种网络设计可以用来分类图像。网络采用 256×256 的 RGB 图像（无 alpha 通道）作为输入，并产生一个具有 100 个 `浮点值` 的数组。输出会表示出 100 多种可能类别的对象的概率分布。
 
@@ -307,7 +301,7 @@ BNNS 在 CPU 上工作，所以你可以在后台线程中开始工作，然后�
 
 如果你想一起实践，[这是 GitHub 上的代码](https://github.com/hollance/BNNS-vs-MPSCNN)。在 Xcode 中打开这个项目，并在至少有一个 A8 处理器的 iOS 10 兼容设备上运行它（它不能在模拟器上运行）。
 
-![The speed test app](/img/articles/apple-deep-learning-bnns-versus-metal-cnn/Screenshot@2x.png1527128648.8787365)
+![The speed test app](http://machinethink.net/images/bnns-vs-metal/Screenshot@2x.png)
 
 点击按钮后，App 冻结几秒钟，同时在每个神经网络上执行 100 个独立的推断。该 App 显示了创建网络需要多长时间（并不是很有趣），以及需要多长时间才能完成 100 次重复的推断。
 
@@ -323,101 +317,97 @@ BNNS 在 CPU 上工作，所以你可以在后台线程中开始工作，然后�
 
 你猜对了，`BNNSTest` 类使用 BNNS 功能创建神经网络。以下是创建第一个卷积层所需的一小段代码：
 
-```swift
-inputImgDesc = BNNSImageStackDescriptor(width: 256, height: 256, channels: 3, 
-                   row_stride: 256, image_stride: 256*256, 
-                   data_type: dataType, data_scale: 0, data_bias: 0)
-
-conv1imgDesc = BNNSImageStackDescriptor(width: 256, height: 256, channels: 16, 
-                   row_stride: 256, image_stride: 256*256, 
-                   data_type: dataType, data_scale: 0, data_bias: 0)
-
-let relu = BNNSActivation(function: BNNSActivationFunctionRectifiedLinear, 
-                          alpha: 0, beta: 0)
-
-let conv1weightsData = BNNSLayerData(data: conv1weights, data_type: dataType, 
-                           data_scale: 0, data_bias: 0, data_table: nil)
-
-let conv1biasData = BNNSLayerData(data: conv1bias, data_type: dataType, 
-                        data_scale: 0, data_bias: 0, data_table: nil)
-
-var conv1desc = BNNSConvolutionLayerParameters(x_stride: 1, y_stride: 1, 
-                    x_padding: 2, y_padding: 2, k_width: 5, k_height: 5, 
-                    in_channels: 3, out_channels: 16, 
-                    weights: conv1weightsData, bias: conv1biasData, 
-                    activation: relu)
-
-conv1 = BNNSFilterCreateConvolutionLayer(&inputImgDesc, &conv1imgDesc, 
-                                         &conv1desc, &filterParams)
-```
+    
+    inputImgDesc = BNNSImageStackDescriptor(width: 256, height: 256, channels: 3, 
+                       row_stride: 256, image_stride: 256*256, 
+                       data_type: dataType, data_scale: 0, data_bias: 0)
+    
+    conv1imgDesc = BNNSImageStackDescriptor(width: 256, height: 256, channels: 16, 
+                       row_stride: 256, image_stride: 256*256, 
+                       data_type: dataType, data_scale: 0, data_bias: 0)
+    
+    let relu = BNNSActivation(function: BNNSActivationFunctionRectifiedLinear, 
+                              alpha: 0, beta: 0)
+    
+    let conv1weightsData = BNNSLayerData(data: conv1weights, data_type: dataType, 
+                               data_scale: 0, data_bias: 0, data_table: nil)
+    
+    let conv1biasData = BNNSLayerData(data: conv1bias, data_type: dataType, 
+                            data_scale: 0, data_bias: 0, data_table: nil)
+    
+    var conv1desc = BNNSConvolutionLayerParameters(x_stride: 1, y_stride: 1, 
+                        x_padding: 2, y_padding: 2, k_width: 5, k_height: 5, 
+                        in_channels: 3, out_channels: 16, 
+                        weights: conv1weightsData, bias: conv1biasData, 
+                        activation: relu)
+    
+    conv1 = BNNSFilterCreateConvolutionLayer(&inputImgDesc, &conv1imgDesc, 
+                                             &conv1desc, &filterParams)
 
 使用 BNNS，你需要创建大量“描述符”助手来描述你将要使用的数据以及层级的属性和权重。其他层级也会重复此操作。现在你可以明白为什么我之前说这个会很无聊。
 
 `MetalTest` 类使用 `MPSCNN`做同样的事情：
 
-```swift
-conv1imgDesc = MPSImageDescriptor(channelFormat: channelFormat, width: 256, 
-                                  height: 256, featureChannels: 16)
-
-let relu = MPSCNNNeuronReLU(device: device, a: 0)
-
-let conv1desc = MPSCNNConvolutionDescriptor(kernelWidth: 5, kernelHeight: 5, 
-                    inputFeatureChannels: 3, outputFeatureChannels: 16, 
-                    neuronFilter: relu)
-
-conv1 = MPSCNNConvolution(device: device, convolutionDescriptor: conv1desc, 
-            kernelWeights: conv1weights, biasTerms: conv1bias, flags: .none)
-```
+    
+    conv1imgDesc = MPSImageDescriptor(channelFormat: channelFormat, width: 256, 
+                                      height: 256, featureChannels: 16)
+    
+    let relu = MPSCNNNeuronReLU(device: device, a: 0)
+    
+    let conv1desc = MPSCNNConvolutionDescriptor(kernelWidth: 5, kernelHeight: 5, 
+                        inputFeatureChannels: 3, outputFeatureChannels: 16, 
+                        neuronFilter: relu)
+    
+    conv1 = MPSCNNConvolution(device: device, convolutionDescriptor: conv1desc, 
+                kernelWeights: conv1weights, biasTerms: conv1bias, flags: .none)
 
 在这里你也可以创建各种描述符对象，但代码会短一些。
 
 你已经看到如何使用 BNNS 进行推断：你在每个层级调用一次 `BNNSFilterApply()`：
 
-```swift
-if BNNSFilterApply(conv1, imagePointer, &temp1) != 0 {
-  print("BNNSFilterApply failed on layer conv1")
-}
-
-if BNNSFilterApply(pool1, temp1, &temp2) != 0 {
-  print("BNNSFilterApply failed on layer pool1")
-}
-
-if BNNSFilterApply(conv2, temp2, &temp1) != 0 {
-  print("BNNSFilterApply failed on layer conv2")
-}
-
-if BNNSFilterApply(pool2, temp1, &temp2) != 0 {
-  print("BNNSFilterApply failed on layer pool2")
-}
-
-if BNNSFilterApply(fc3, temp2, &results) != 0 {
-  print("BNNSFilterApply failed on layer fc3")
-}
-```
+    
+    if BNNSFilterApply(conv1, imagePointer, &temp1) != 0 {
+      print("BNNSFilterApply failed on layer conv1")
+    }
+    
+    if BNNSFilterApply(pool1, temp1, &temp2) != 0 {
+      print("BNNSFilterApply failed on layer pool1")
+    }
+    
+    if BNNSFilterApply(conv2, temp2, &temp1) != 0 {
+      print("BNNSFilterApply failed on layer conv2")
+    }
+    
+    if BNNSFilterApply(pool2, temp1, &temp2) != 0 {
+      print("BNNSFilterApply failed on layer pool2")
+    }
+    
+    if BNNSFilterApply(fc3, temp2, &results) != 0 {
+      print("BNNSFilterApply failed on layer fc3")
+    }
 
 在这里，`imagePointer` 指向一个`浮点值`的 Swift 数组。同样，`temp1` 和 `temp2` 是普通的 `Swift` `浮点值`数组。我们不断重复使用这些数组来存储中间结果。网络的最终输出会写入 `[Float]` 类型的 `results` 中。一旦网络完成计算，我们可以立即读取这个数组的结果，并在我们 App 的其他地方使用它们。
 
 使用 MPSCNN 的过程是非常相似的：
 
-```swift
-let commandBuffer = commandQueue.makeCommandBuffer()
-
-let conv1img = MPSTemporaryImage(commandBuffer: commandBuffer, 
-                                 imageDescriptor: conv1imgDesc)
-conv1.encode(commandBuffer: commandBuffer, sourceImage: inputImage, 
-             destinationImage: conv1img)
-
-let pool1img = MPSTemporaryImage(commandBuffer: commandBuffer, 
-                                 imageDescriptor: pool1imgDesc)
-pool1.encode(commandBuffer: commandBuffer, sourceImage: conv1img, 
-             destinationImage: pool1img)
-. . . 
-
-fc3.encode(commandBuffer: commandBuffer, sourceImage: pool2img, 
-           destinationImage: outputImage)
-
-commandBuffer.commit()
-```
+    
+    let commandBuffer = commandQueue.makeCommandBuffer()
+    
+    let conv1img = MPSTemporaryImage(commandBuffer: commandBuffer, 
+                                     imageDescriptor: conv1imgDesc)
+    conv1.encode(commandBuffer: commandBuffer, sourceImage: inputImage, 
+                 destinationImage: conv1img)
+    
+    let pool1img = MPSTemporaryImage(commandBuffer: commandBuffer, 
+                                     imageDescriptor: pool1imgDesc)
+    pool1.encode(commandBuffer: commandBuffer, sourceImage: conv1img, 
+                 destinationImage: pool1img)
+    . . . 
+    
+    fc3.encode(commandBuffer: commandBuffer, sourceImage: pool2img, 
+               destinationImage: outputImage)
+    
+    commandBuffer.commit()
 
 你创建一个 `MPSTemporaryImage` 对象来保存当前层级的结果，然后通知层级对其自身使用 `encode()` 并添加到 Metal 的命令缓冲区。这些 `MPSTemporaryImage` 对象跟我们在 `BNNS` 代码中使用的 `temp1` 和 `temp2` 的是等价的。MPSCNN 在后台管理自己的存储。
 
@@ -461,11 +451,9 @@ commandBuffer.commit()
 
 我以下面的方式来到这个数字：
 
-```
-Number of flops per layer = 2 × kernelWidth   × kernelHeight   ×
-                                inputChannels × outputChannels ×
-                                outputWidth   × outputHeight
-```
+    Number of flops per layer = 2 × kernelWidth   × kernelHeight   ×
+                                    inputChannels × outputChannels ×
+                                    outputWidth   × outputHeight
 
 然后我为每一层添加了触发器，并试验了网络的大小，来验证 MPSCNN 变得比 BNNS 更快的临界点。
 
@@ -502,3 +490,5 @@ Number of flops per layer = 2 × kernelWidth   × kernelHeight   ×
 **最重要的是你的 App 运行得有多快，以及推断的效果如何。**
 
 如果你的项目紧急，需要快点，请使用 MPSCNN。但是如果你能腾出时间，那最好用这两种 API 来分别实现你的神经网络，通过对比来达到最佳速度。
+
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
