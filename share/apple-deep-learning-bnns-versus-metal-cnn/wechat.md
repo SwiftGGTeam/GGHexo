@@ -1,7 +1,7 @@
 苹果的深度学习框架：BNNS 和 MPSCNN 的对比"
 
 > 作者：MATTHIJS HOLLEMANS，[原文链接](http://machinethink.net/blog/apple-deep-learning-bnns-versus-metal-cnn/)，原文日期：2017-02-07
-> 译者：[TonyHan](undefined)；校对：[冬瓜](http://www.desgard.com/)，[liberalisman](undefined)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[TonyHan](undefined)；校对：[冬瓜](http://www.desgard.com/)，[liberalism](https://weibo.com/1743643682/profile?topnav=1&wvr=6)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 
@@ -42,7 +42,7 @@
 
 你可以将神经网络想象为数据流经的管道。管道中的不同阶段便是网络**层级**。这些层级以不同的方式转换你的数据。同时深度学习，我们可以使用多达 10 层甚至 100 层的神经网络。
 
-![Cat2Probability](http://machinethink.net/images/bnns-vs-metal/Cat2Probability@2x.png)
+![Cat2Probability](http://swift.gg/img/articles/apple-deep-learning-bnns-versus-metal-cnn/Cat2Probability@2x.png1527128648.556878)
 
 层级有不同的种类。BNNS 和 MPSCNN 提供的有：卷积层（convolutional layer）、池化层（pooling layer）、全连接层（Fully Connected Layer）和规范化层（normalization layer）。
 
@@ -225,7 +225,7 @@ MPSCNN 要求将所有数据放置在一个特殊的 `MPSImage` 对象内，这�
 
 如果你的输入是图片，那么它有三个通道：一个用于红色像素，一个用于绿色像素，另一个用于蓝色像素。问题是像 PNG 或 JPEG 这样的图像文件会作为交错的 RGBA 值被加载到内存中。BNNS 并不会接受这种情况。
 
-![](http://machinethink.net/images/bnns-vs-metal/InterleavedPlanar@2x.png)
+![](http://swift.gg/img/articles/apple-deep-learning-bnns-versus-metal-cnn/InterleavedPlanar@2x.png1527128648.7662659)
 
 目前没有办法告诉 BNNS 使用红色像素值作为通道 0，绿色像素值作为通道 1，蓝色值作为通道 2，并跳过 alpha 通道。相反，你将不得不重新排列像素数据，以便输入缓冲区的首先包含所有 R 值，然后是所有 G 值，然后是所有 B 值。
 
@@ -291,7 +291,7 @@ BNNS 在 CPU 上工作，所以你可以在后台线程中开始工作，然后�
 
 我的神经网络设计大概是这样（点击图片放大）：
 
-![The convolutional neural network used for the speed test](http://machinethink.net/images/bnns-vs-metal/ConvNet@2x.png)
+![The convolutional neural network used for the speed test](http://swift.gg/img/articles/apple-deep-learning-bnns-versus-metal-cnn/ConvNet@2x.png1527128648.814062)
 
 这种网络设计可以用来分类图像。网络采用 256×256 的 RGB 图像（无 alpha 通道）作为输入，并产生一个具有 100 个 `浮点值` 的数组。输出会表示出 100 多种可能类别的对象的概率分布。
 
@@ -301,7 +301,7 @@ BNNS 在 CPU 上工作，所以你可以在后台线程中开始工作，然后�
 
 如果你想一起实践，[这是 GitHub 上的代码](https://github.com/hollance/BNNS-vs-MPSCNN)。在 Xcode 中打开这个项目，并在至少有一个 A8 处理器的 iOS 10 兼容设备上运行它（它不能在模拟器上运行）。
 
-![The speed test app](http://machinethink.net/images/bnns-vs-metal/Screenshot@2x.png)
+![The speed test app](http://swift.gg/img/articles/apple-deep-learning-bnns-versus-metal-cnn/Screenshot@2x.png1527128648.8787365)
 
 点击按钮后，App 冻结几秒钟，同时在每个神经网络上执行 100 个独立的推断。该 App 显示了创建网络需要多长时间（并不是很有趣），以及需要多长时间才能完成 100 次重复的推断。
 
