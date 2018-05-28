@@ -7,8 +7,7 @@ keywords: Core ML
 custom_title: 
 description:  
 
-------
-
+---
 原文链接=http://www.appcoda.com/coreml-introduction/
 作者=Sai Kambampati
 原文日期=2017-06-14
@@ -26,7 +25,7 @@ Apple 公司在 WWDC 2017 发布了几个令开发者感到兴奋的框架和 AP
 
 ## 什么是 Core ML
 
-> Core ML 使得开发者能够将各种各样的机器学习模型集成到应用程序中。它除了支持超过 30 层类型的广泛深度学习（extensive deep learning with over 30 layer types），还支持如树集成、[SVMs](https://en.wikipedia.org/wiki/Support_vector_machine) 和广义线性模型等标准模型。Core ML 建立在像 Metal 和 Accelerate 这样的底层技术之上，因此它能够无缝地充分利用 CPU 和 GPU 以实现性能最大化。机器学习模型可直接运行在设备上，以至于数据被分析时不需要脱离设备。
+> Core ML 使得开发者能够将各种各样的机器学习模型集成到应用程序中。它除了支持超过 30 层类型的广泛深度学习，还支持如树集成、[SVMs](https://en.wikipedia.org/wiki/Support_vector_machine) 和广义线性模型等标准模型。Core ML 建立在像 Metal 和 Accelerate 这样的底层技术之上，因此它能够无缝地充分利用 CPU 和 GPU 以实现性能最大化。机器学习模型可直接运行在设备上，以至于数据被分析时不需要脱离设备。
 >
 > \- [关于 Core ML 的 Apple 官方文档](https://developer.apple.com/machine-learning/)
 
@@ -48,7 +47,7 @@ Core ML 是今年在 WWDC 上随着 iOS 11 发布的一个全新的机器学习�
 
 ## 开始
 
-首先，打开 Xcode 9 beta 并创建一个新项目。为该项目选择单视图应用程序（Single View App）模板，并确保使用的语言设置为 Swift。
+首先，打开 Xcode 9 beta 并创建一个新项目。为该项目选择单视图应用程序（`Single View App`）模板，并确保使用的语言设置为 Swift。
 
 ![](http://www.appcoda.com/wp-content/uploads/2017/06/xcode9-new-proj.png)
 
@@ -60,9 +59,7 @@ Core ML 是今年在 WWDC 上随着 iOS 11 发布的一个全新的机器学习�
 
 ![](http://www.appcoda.com/wp-content/uploads/2017/06/pic3.png)
 
-接着，在导航栏标题两边各添加一个按钮。对于左边的按钮，在 `Attributes Inspector` 中将 `System Item` 改为 `Camera`。对于右边的按钮，将其命名为 "Library"。这两个按钮分别为用户提供拍摄或者从相册中选取照片的功能。
-
-最后还需要一个 `UILabel` 和 `UIImageView`。把 `UIImageView` 放到视图内并居中，将宽高改为 `299x299 `使其为正方形。把 `UILabel`放到视图底端并对其缩放，使其两端刚好与视图两端重合。这样就搭建好了该应用的界面。
+ 放到视图底端并对其缩放，使其两端刚好与视图两端重合。这样就搭建好了该应用的界面。
 
 虽然本文没涉及到自动布局，但还是强烈建议使用。如果你没法做到自动布局，那就直接在 storyboard 中选择你将要运行的设备类型。
 
@@ -233,7 +230,7 @@ override func viewWillAppear(_ animated: Bool) {
 
 亲爱的朋友，它的意义在于，当应用程序尝试识别图像中的物体时，速度会快得多。（译者注：直接在声明 `model` 变量时直接初始化似乎也没什么影响，读者可自行测试。）
 
-现在回到 `Inceptionv3.mlmodel` ，该模型接受的唯一输入参数是一张尺寸为 `299x299`的图像，所以接下来要处理的就是如何将一张图像转换成这种尺寸。
+现在回到 `Inceptionv3.mlmodel` ，该模型接受的唯一输入参数是一张尺寸为 `299x299` 的图像，所以接下来要处理的就是如何将一张图像转换成这种尺寸。
 
 ## 转换图片
 
