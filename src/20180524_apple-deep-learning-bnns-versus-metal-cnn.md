@@ -12,7 +12,7 @@ description: 在这篇文章中，我们将针对 BNNS 和 MPSCNN 进行对比�
 作者=MATTHIJS HOLLEMANS
 原文日期=2017-02-07
 译者=TonyHan
-校对=冬瓜,liberalisman
+校对=冬瓜,liberalism
 定稿=CMB
 
 <!--此处开始正文-->

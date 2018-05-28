@@ -12,7 +12,7 @@ description:
 作者=Sai Kambampati
 原文日期=2017-06-14
 译者=智多芯
-校对=liberalisman,Lision
+校对=liberalism,Lision
 定稿=CMB
 
 <!--此处开始正文-->
