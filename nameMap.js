@@ -56,6 +56,7 @@ let nameMap = {
   "东莞大唐和尚": "https://weibo.com/u/5029986118",
   "Lefex": "https://weibo.com/u/5953150140",
   "ennisk": "https://weibo.com/u/1771329710",
+  "liberalism": "https://weibo.com/1743643682/profile?topnav=1&wvr=6",
 }
 
 export default nameMap
