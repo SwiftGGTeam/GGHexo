@@ -12,8 +12,7 @@ Swift 中的 Error Handling"
 
 
 
-# Swift 中的 Error Handling（错误处理）
-![img_1](http://www.codingexplorer.com/wp-content/uploads/2016/05/ErrorHandlingInSwiftTitle.png)
+![](http://swift.gg/img/articles/error-handling-swift/ErrorHandlingInSwiftTitle.png1527734952.362786)
 
 理想情况下，错误永远不会出现。我们所需的文件永远可以访问，网络永远可用并且稳定。不幸的是，现实并不理想，我们需要处理这种不理想的结果。幸运的是，Swift 团队在 Swift 2 中包含了一种很好的方式来处理与理想情况的偏差。Swift Error Handling 能够让我们快速而简便的告知编译器一个函数能否抛出错误，并且在抛出后以合适的方式去处理错误。
 
