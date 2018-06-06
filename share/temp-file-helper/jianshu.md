@@ -20,11 +20,13 @@ Swift 工具类：处理临时文件"
 
 
 1、选择一个文件名来初始化 `TemporaryFile` ：
+    
     let tmp = try TemporaryFile(creatingTempDirectoryForFilename: "report.pdf")
 这样就新建了一个唯一的临时目录。正如我前面提到的，这是个空目录，`TemporaryFile` 并不会创建任何文件。更确切地说，它只是提供了一个可以安全创建很多文件的目录，并且不用担心命名冲突。
 
 2、`TemporaryFile`有两个属性，`directoryURL` 是创建的临时目录 URL。`fileURL` 是目录中的文件 URL，即初始化时指定的文件名：
 
+    
     print(tmp.directoryURL.path)
     // → /var/folders/v8/tft1q…/T/…-8DC6DD131DC1
     print(tmp.fileURL.path)
@@ -32,6 +34,7 @@ Swift 工具类：处理临时文件"
 
 再次强调一下，该 URL 对应的文件暂时还不存在——你必须自己创建文件，通常来说可以把 URL 传入其他 API 来生成文件：
 
+    
     let renderer = UIGraphicsPDFRenderer(...)
     try renderer.writePDF(to: tmp.fileURL) { context in
         // 编写代码
@@ -42,6 +45,7 @@ Swift 工具类：处理临时文件"
 
 3、创建文件后，`TemporaryFile` 的值被应用中使用该文件的对象所持有（例如，创建文件函数的调用者）。当该对象完成后并且不再需要该文件时，可以调用`DeleTeDirectory`方法删除临时目录，包括其中的所有文件：
 
+    
     // 例如将 temp 文件传给 UIActivityController 用以分享
     // ...
     // 当你完成后, 调用 deleteDirectory
@@ -53,6 +57,7 @@ Swift 工具类：处理临时文件"
 
 以下是完整代码 (Swift 4.0):
 
+    
     import Foundation
     /// 临时目录中临时文件的包装（Wrapper）。目录是为文件而特别创建的，因此不再需要文件时，可以安全地删除该文件。
     ///
@@ -109,4 +114,5 @@ Swift 工具类：处理临时文件"
             return (directory, deleteDirectory)
         }
     }
+
 > 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
