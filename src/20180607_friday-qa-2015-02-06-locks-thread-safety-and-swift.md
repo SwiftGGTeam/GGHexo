@@ -48,7 +48,7 @@ description:
 - `dispatch_queue_t` 可以用作阻塞锁，也可以通过使用 barrier block 配置一个同步队列作为读写锁，还支持异步执行加锁代码；
 - `NSOperationQueue` 可以用作阻塞锁。与 `dispatch_queue_t` 一样，支持异步执行加锁代码。
 - `NSLock` 是 Objective-C 类的阻塞锁，它的同伴类 `NSRecursiveLock` 是递归锁。
-- 顾名思义，`OSSpinLock` 是一个自旋锁。
+- `OSSpinLock` 顾名思义，是一个自旋锁。
 
 最后，`@synchronized` 是一个阻塞递归锁。
 
@@ -271,7 +271,7 @@ func with(spinlock: UnsafeMutablePointer<OSSpinLock>, f: Void -> Void) {
 }
 ```
 
-### 模仿 @synchronized
+### 模仿 `@synchronized`
 
 有了上面的封装，模仿 `@synchronized` 的实现就变得很简单。给你的类添加一个属性，持有一个锁，然后使用 `with` 替代 `@synchronized` ：
 
