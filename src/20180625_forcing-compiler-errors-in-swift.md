@@ -1,5 +1,5 @@
 title: "Swift中的强制编译时报错"
-date: 2018-05-05
+date: 2018-06-25
 tags: [Swift]
 categories: [iAchieved.it]
 permalink: forcing-compiler-errors-in-swift
