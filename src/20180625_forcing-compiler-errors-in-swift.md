@@ -29,9 +29,9 @@ description: 本文介绍了Swift4.2即将发布的 #warning 和 #error 两个�
 #endif
 ```
 
-`#error`指令的例子使用条件编译标志（用-D选项设置）来检察编译是否产生了配置冲突。
+`#error` 指令的例子使用条件编译标志（用-D选项设置）来检察编译是否产生了配置冲突。
 
-我(原文作者)已经写了很多关于我不喜欢在Swift中使用蛇形命名法（THINGS_LIKE_THIS）的文章。但不可避免的，开发者们都喜欢使用蛇形命名法则来定义条件编译标志。无论是 `MY_BUILD_CONFIG`、`MY_OTHER_BUILD_CONFIG` 还是 `DEBUG`。虽然这是行业标准，但感觉这和Swift的美学存在冲突。
+我(原文作者)已经写了很多关于我不喜欢在Swift中使用蛇形命名法（THINGS_LIKE_THIS）的文章。但不可避免的，开发者们都喜欢使用蛇形命名法则来定义条件编译标志。无论是 `MY_BUILD_CONFIG` 、 `MY_OTHER_BUILD_CONFIG` 还是 `DEBUG` 。虽然这是行业标准，但感觉这和Swift的美学存在冲突。
 
 我也写过关于如何不显示使用 `DEBUG` 标志来[检测调试条件的提议](https://ericasadun.com/2018/04/15/writing-swift-adventures-in-compiler-mods/)。这边我附上了提议的链接，你们可以点击查看更多该提议的相关内容。
 
