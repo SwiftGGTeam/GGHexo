@@ -15,7 +15,11 @@ description: 本文介绍了Swift4.2即将发布的 #warning 和 #error 两个�
 校对=梁杰,Yousanflics
 定稿=Yousanflics,CMB
 
+<!--此处开始正文-->
+
 得益于[SE-0196](https://github.com/apple/swift-evolution/blob/master/proposals/0196-diagnostic-directives.md)，Swift 4.2 将引进 `#warning()` 和 `#error()` 两个编译指令。这两个指令允许你在编译期间合并诊断消息和抛出错误。下面这个例子来自已被确定接受的提议并且已经被实施。
+
+<!--more-->
 
 ```swift
 #warning("this is incomplete")
