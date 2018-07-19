@@ -91,5 +91,5 @@ $ .build/debug/Units
 macOS deployment target: 101000
 ```
 
-> 2. 你必须把所有依赖新 API 的代码用 `if #available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *) { ... }` 或类似的 block 进行包裹。
+2. 你必须把所有依赖新 API 的代码用 `if #available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *) { ... }` 或类似的 block 进行包裹。
 
