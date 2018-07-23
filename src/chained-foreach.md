@@ -14,11 +14,11 @@ description: 本文介绍了如何在 Swift 的链式调用中通过使用创建
 定稿=
 
 
-几周前，一位读者指出了 [*Advanced Swift*](https://oleb.net/advanced-swift/) 中的 [一处错误](https://twitter.com/jasonalexzurita/status/915972380685516800) 。我们当时在书中是这样描述 Swift 的 `forEach` 方法：
+几周前，一位读者指出了 [*Advanced Swift*](https://oleb.net/advanced-swift/) 中的[一处错误](https://twitter.com/jasonalexzurita/status/915972380685516800)。我们当时这样描述 Swift 中的 `forEach` 方法：
 
-> 把它（`forEach`）作为一系列链式调用的一部分确实可以大放异彩。举个例子，试想一下你在一个语句中通过链式调用的方式调用了几次 `map` 和 `filter` 方法。在调试这段代码时，你希望能够打印出某几步操作中间的值。要达成这一目的，在你期望的位置插入一个 `forEach` 或许是最快速的解决方式。
+> `forEach` 作为一系列链式调用中的一部分时确实可以大放异彩。举个例子，试想一下你在一个语句中通过链式调用的方式调用了几次 `map` 和 `filter` 方法。在调试这段代码时，你希望能够打印出某几步操作中间的值。要达成这一目的，在你期望的位置插入一个 `forEach` 或许是最快速的解决方式。
 
-当我写下这段描述时，众多美妙的想法涌现在我脑中，因为这听起来是个非常实用的特性（你并不能通过 `for-in` 循环达到这种效果）。可事实却如此的残酷 —— 你不能在一系列链式调用中间插入 `forEach`！
+当我写下这段描述时，众多美妙的想法涌现在我脑中，因为这听起来是个非常实用的特性[^1]（你并不能通过 `for-in` 循环达到这种效果）。可事实却如此的残酷 —— 你不能在一系列链式调用中间插入 `forEach`！
 
 
 
@@ -26,7 +26,7 @@ description: 本文介绍了如何在 Swift 的链式调用中通过使用创建
 
 为了以代码的形式更好地阐述我的想法，先让我们设想有一系列的链式操作如下：
 
-```
+```swift
 let numbers = 1...10
 let sumOfSquaredEvenNumbers = numbers
     .filter { $0 % 2 == 0}
@@ -37,7 +37,7 @@ let sumOfSquaredEvenNumbers = numbers
 
 现在假设我们希望确认一下每个链式操作是否达到了预期的效果 —— 例如 `filter` 和（或） `map` 操作后的返回值是否正确，最整洁的方式当然是在两个操作中间插入类似 `.forEach { print($0) }` 的调用。
 
-但为什么 `forEach` 并不支持类似这样的调用呢？在一系列链式调用中间的任何操作，都必须返回一个遵循 `Sequence` 协议的对象，因此下一个链式操作才能正常执行。而由于 `forEach` 的返回值为 `()`，它只能在一系列链式操作的结尾处调用。
+但为什么 `forEach` 并不支持类似这样的调用呢？在一系列链式调用中间的任何操作，都必须返回一个遵循 [`Sequence`](https://developer.apple.com/documentation/swift/sequence) 协议的对象，因此下一个链式操作才能正常执行。而由于 `forEach` 的返回值为 `()`，它只能在一系列链式操作的结尾处调用。
 
 
 
@@ -203,7 +203,7 @@ extension LazySequenceProtocol {
 
 与非惰性版本相比，这个方法在以下几个层面上做了区分：
 
-- 因为我们需要把传入的闭包暂存起来，所以它必须是 `@escaping` ，也就是逃逸闭包。
+- 因为我们需要把传入的闭包暂存起来，所以它必须是 `@escaping`，也就是逃逸闭包。
 - 由于其惰性性质，这个方法并不支持会抛出异常的方法。
 - 一般来说，一个惰性操作完成后必定会有后续的操作，因此其返回值并没有标记为 `descardable`。
 
@@ -239,3 +239,9 @@ After filter: 6
 # 结论
 
 我真的很喜欢这种往链式操作中注入副作用的功能，即便我几乎没有在除了调试之外的时候使用过。插句题外话，虽然基于 `print` 的调试方法一直在被争论是否已经 “过时” 了，但我还是一直在用。
+
+
+
+---
+
+[^1]: RxSwift 中的有一个类似的操作符 [debug](https://github.com/ReactiveX/RxSwift/blob/master/RxSwift/Observables/Debug.swift) 
