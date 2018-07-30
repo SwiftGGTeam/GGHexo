@@ -1,4 +1,4 @@
-title: "构建一个 `@synchronized`"
+title: "构建一个 @synchronized"
 date: 2018-07-30
 tags: [iOS 开发]
 categories: [Mike Ash]
