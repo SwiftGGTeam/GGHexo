@@ -37,7 +37,7 @@ let sumOfSquaredEvenNumbers = numbers
 
 现在假设我们希望确认一下每个链式操作是否达到了预期的效果 —— 例如 `filter` 和（或） `map` 操作后的返回值是否正确，最整洁的方式当然是在两个操作中间插入类似 `.forEach { print($0) }` 的调用。
 
-但为什么 `forEach` 并不支持类似这样的调用呢？在一系列链式调用中间的任何操作，都必须返回一个遵循 [`Sequence`](https://developer.apple.com/documentation/swift/sequence) 协议的对象，因此下一个链式操作才能正常执行。而由于 `forEach` 的返回值为 `()`，它只能在一系列链式操作的结尾处调用。
+但为什么 `forEach` 并不支持类似这样的使用方式呢？原因在于，在一系列链式调用中间的任何操作，都必须返回一个遵循 [`Sequence`](https://developer.apple.com/documentation/swift/sequence) 协议的对象，这样下一个链式操作才能正常执行。而 `forEach` 的返回值为 `()`，因此它只能在一系列链式操作的结尾处调用。
 
 
 
