@@ -24,7 +24,7 @@ description: 本文介绍了如何在 Swift 的链式调用中通过使用创建
 
 # 理想中的形式 
 
-为了以代码的形式更好地阐述我的想法，先让我们设想有一系列的链式操作如下：
+为了以代码的形式更好地阐述我的想法，先让我们设想有如下一系列的链式调用：
 
 ```swift
 let numbers = 1...10
@@ -43,7 +43,7 @@ let sumOfSquaredEvenNumbers = numbers
 
 # 实现一个返回 `Self` 的 `forEach`
 
-值得庆幸的一点是，实现这个功能并不困难。我们所需要做的事情只是实现一个方法 —— 它能够遍历序列中，并对每个元素调用传入的函数（就像 `forEach` 一样），最后返回自己（这样链式操作就能够无感知地继续进行）。换句话来说，这个方法的返回值类型应为 `Self`。为了避免在类型检查的时候这个方法与原生的 `forEach` 发生混淆，我把它命名为 `forEachPerform`。
+值得庆幸的一点是，实现这个功能并不困难。我们所需要做的事情只是实现一个方法 —— 它能够遍历序列，并对每个元素执行一次传入的函数（就像 `forEach` 一样），最后返回自己（这样链式操作就能够无感知地继续进行）。换句话来说，这个方法的返回值类型应为 `Self`。为了避免在类型检查的时候这个方法与原生的 `forEach` 发生混淆，我把它命名为 `forEachPerform`。
 
 ```swift
 extension Sequence {
@@ -174,7 +174,7 @@ struct LazyForEachSequence<Base: Sequence>
 }
 ```
 
-需要注意的是，这个序列遵循 [`LazySequenceProtocol`](https://developer.apple.com/documentation/swift/lazysequenceprotocol) 协议。此协议继承于 `Sequence`。这个协议的职责是为一些即刻响应的操作（译者注：例如 `map` 和 `fileter`）提供了惰性实现。
+需要注意的是，这个序列遵循 [`LazySequenceProtocol`](https://developer.apple.com/documentation/swift/lazysequenceprotocol) 协议。此协议继承于 `Sequence`。这个协议的职责是为一些即刻响应的操作（译者注：例如 `map` 和 `filter`）提供了惰性实现。
 
 > 译者注:
 >
@@ -201,7 +201,7 @@ extension LazySequenceProtocol {
 }
 ```
 
-与非惰性版本相比，这个方法在以下几个层面上做了区分：
+这个方法在以下几个方面上与与非惰性版本略有不同：
 
 - 因为我们需要把传入的闭包暂存起来，所以它必须是 `@escaping`，也就是逃逸闭包。
 - 由于其惰性性质，这个方法并不支持会抛出异常的方法。
@@ -238,7 +238,7 @@ After filter: 6
 
 # 结论
 
-我真的很喜欢这种往链式操作中注入副作用的功能，即便我几乎没有在除了调试之外的时候使用过。插句题外话，虽然基于 `print` 的调试方法一直在被争论是否已经 “过时” 了，但我还是一直在用。
+我真的很喜欢这种往链式操作中注入副作用的功能，即便我几乎没有在调试之外的时候使用过。插句题外话，虽然基于 `print` 的调试方法一直在被争论是否已经 “过时” 了，但我还是一直在用。
 
 
 
