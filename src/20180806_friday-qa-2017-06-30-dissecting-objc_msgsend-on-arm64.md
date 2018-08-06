@@ -1,6 +1,6 @@
 title: "剖析 ARM 64 架构中的 objc_msgSend"
 date: 2018-08-06
-tags: [objc_msgSend]
+tags: [iOS 开发]
 categories: [Mike Ash]
 permalink: friday-qa-2017-06-30-dissecting-objc_msgsend-on-arm64
 keywords: ARM,objc_msgSend
@@ -21,7 +21,7 @@ description:
 
 <!--more-->
 
-### 概述
+## 概述
 
 每个 Objective-C 对象都会指向一个类，而每个类又包含一个方法列表。每个方法则由选择器（`selector`）、函数指针和一些元数据（`metadata`）构成。`objc_msgSend` 职责就是接收对象（`object`）和选择器（`selector`），根据选择器名称找到对应方法的函数指针并跳转执行该函数。
 
@@ -45,7 +45,7 @@ description:
 
 下面开始分析其具体实现。
 
-### 执行过程的指令
+## 执行过程的指令
 
 *objc_msgSend* 在不同情形下执行路径不尽相同。对于向 `nil` 发送消息，标记指针（tagged pointers），哈希表冲突会相应特殊代码中进行处理。下面我将通过最常见也是最简单的情形来解释 `objc_msgSend`  的执行，即处理 non-nil、non-tagged 消息并且哈希表也能命中该方法。我会在该过程中标记出那些需要注意的处理路径*岔路口*，然后回过头来进行详细讲解。
 
@@ -215,7 +215,7 @@ struct cache_t {
 
 objc_msgSend 的主要处理流程到此告一段落，剩下 Tagged Pointer 和 `nil` 两个特殊情形的处理。
 
-### 标记指针的处理
+## 标记指针的处理
 
 我们回到第一组汇编指令的跳转处来讲解标记指针（`Tagged Pointer`）的处理。
 
@@ -300,7 +300,7 @@ x86 架构则不存在该问题，因为它采用可变长度指令集。它可�
 
 接下来，我们来看 `nil` 情形的处理过程。
 
-### `nil` 的处理
+## `nil` 的处理
 
 作为最后一个特殊情况，下面就是 `nil` 情形下被执行的所有指令。
 
@@ -326,7 +326,7 @@ x86 架构则不存在该问题，因为它采用可变长度指令集。它可�
 
 以上就是 `nil` 情形的处理，`objc_msgSend` 流程到此也宣告结束。
 
-### 总结
+## 总结
 
 深入框架底层还是很有趣的，而 `objc_msgSend`  就像一件艺术品，值得细细玩味。
 
@@ -334,7 +334,7 @@ x86 架构则不存在该问题，因为它采用可变长度指令集。它可�
 
 [2]: (http://www.sealiesoftware.com/blog/archive/2013/09/24/objc_explain_Non-pointer_isa.html)[http://www.sealiesoftware.com/blog/archive/2013/09/24/objc_explain_Non-pointer_isa.html]
 
-#### 汇编指令校对者注
+### 汇编指令校对者注
 
 1. `#0x0`：“#”修饰的数字表示立即数，可简单理解为数值，而非地址：
 2. `b` ：跳转指令，b.le 指比较结果小于等于的时候跳转至某内存地址；
