@@ -31,9 +31,9 @@ description:
 
 实际上，大多数语言，以及用这些语言编写的大多数字符串操作代码，都表现出对Unicode固有复杂性的某种程度的否定。这可能会导致一些令人不开心的错误
 
-Swift 为了字符串的实现支持 Unicode 做出了巨大的努力。Swift 中的 [`String`](https://developer.apple.com/documentation/swift/string)（字符串）是一系列 [`Character`](https://developer.apple.com/documentation/swift/character) 值（字符）的集合。这里的 `Character` 指的是人们视为单个字母的可读文本，无论这个字母是由多少个 Unicode 编码字符组成。因此，所有对于 `Collection`（集合）的操作（比如 `count` 或者 `prefix(5)` ）也同样是按照用户所理解的字母来操作的。
+Swift 为了字符串的实现支持 Unicode 做出了巨大的努力。Swift 中的 [`String`](https://developer.apple.com/documentation/swift/string)（字符串）是一系列 [`Character`](https://developer.apple.com/documentation/swift/character) 值（字符）的集合。这里的 `Character` 指的是人们视为单个字母的可读文本，无论这个字母是由多少个 Unicode 编码字符组成。因此，所有对于 `Collection`（集合）的操作（比如 `count` 或者 `prefix(5)`）也同样是按照用户所理解的字母来操作的。
 
-这样的设计在正确性上无可挑剔，但这是有代价的，主要是人们对它不熟悉。如果你习惯了熟练操作其他编程语言里字符串的整数索引，Swift 的设计会让你觉得笨重不堪，让你感觉到奇怪。为什么`str[999]`不能获得字符串第一千个字符？为什么 `str[idx+1]` 不能获得下一个字符？为什么不能用类似 `"a"..."z"` 的方式遍历一个范围的 `Character`（字符）？
+这样的设计在正确性上无可挑剔，但这是有代价的，主要是人们对它不熟悉。如果你习惯了熟练操作其他编程语言里字符串的整数索引，Swift 的设计会让你觉得笨重不堪，让你感觉到奇怪。为什么 `str[999]` 不能获得字符串第一千个字符？为什么 `str[idx+1]` 不能获得下一个字符？为什么不能用类似 `"a"..."z"` 的方式遍历一个范围的 `Character`（字符）？
 
 同时，这样的设计对代码性能也有一定的影响：`String` 不支持随意获取。换句话说，获得一个任意字符不是 O(1) 的操作——当字符宽度是个变量的时候，字符串只有查看过前面所有字符之后，才会知道第 n 个字符储存在哪里。
 
@@ -41,7 +41,7 @@ Swift 为了字符串的实现支持 Unicode 做出了巨大的努力。Swift �
 
 ## Unicode：抛弃固定宽度
 
-本来事情很简单。[ASCII编码](https://en.wikipedia.org/wiki/ASCII) 的字符串用0到127之间的一系列整数表示。如果使用8比特的二进制数组合表示字符，甚至还多余一个比特！由于每个字符的长度固定，所以 ASCII 编码的字符串是可以随机获取的。
+本来事情很简单。[ASCII编码](https://en.wikipedia.org/wiki/ASCII) 的字符串用 0 到 127 之间的一系列整数表示。如果使用 8 比特的二进制数组合表示字符，甚至还多余一个比特！由于每个字符的长度固定，所以 ASCII 编码的字符串是可以随机获取的。
 
 但是，如果不是英语而是其他国家的语言的话，其中的一些字符 ASCII 编码是不够的（其实即使是说英语的英国也有一个"£"符号）。这些语言中的特殊字符大多数都需要超过 7 比特的编码。在 [ISO 8859](https://en.wikipedia.org/wiki/ISO/IEC_8859) 标准中，就用多出来的那个比特定义了 16 种超出 ASCII 编码范围的编码，比如第一部分（ISO8859-1）包括了几种西欧语言的编码，第五部分包括了对西里尔字母语言的编码。
 
@@ -390,7 +390,7 @@ let safeIdx = s.index(s.startIndex, offsetBy: 400, limitedBy: s.endIndex)
 safeIdx // → nil
 ```
 
-比起简单的整数索引，这无疑使用了更多的代码。**这是 Swift 故意的。** 如果 Swift 允许对字符串进行整数索引，那不小心写出性能烂到爆的代码（比如在一个循环中使用整数的下标操作）的诱惑太大了。
+比起简单的整数索引，这无疑使用了更多的代码。**这是 Swift 故意的。**如果 Swift 允许对字符串进行整数索引，那不小心写出性能烂到爆的代码（比如在一个循环中使用整数的下标操作）的诱惑太大了。
 
 然而，对一个习惯于处理固定宽度字符的人来说，刚开始使用 Swift 处理字符串会有些挑战——没有了整数索引怎么搞？而且确实，一些看起来简单的任务处理起来还得大动干戈，比如提取字符串的前四个字符：
 
@@ -594,4 +594,4 @@ Swift 语言里的字符串跟其他所有的主流编程语言里的字符串�
 
 如果喜欢本文的话，请考虑[购买全书](https://gumroad.com/a/507458675)。谢谢！
 
-全书中第一张是本文的两本。讨论了其他的一些问题，包括如何使用以及什么时候使用字符串的代码块视图，如何和 Foundation里的处理字符串的 API（例如 [`NSRegularExpression`](https://developer.apple.com/documentation/foundation/nsregularexpression)或者 [`NSAttributedString`](https://developer.apple.com/documentation/foundation/nsattributedstring)） 配合处理。贴别是后面这个问题很难，而且很容易犯错。除此之外还讨论了其他标准库里面机遇字符串的 API，例如文本输出流（[`TextOutputStream`](https://developer.apple.com/documentation/swift/textoutputstream)）或自定义字符串转换（[`CustomStringConvertible`](https://developer.apple.com/documentation/swift/customstringconvertible)）。
+全书中第一张是本文的两本。讨论了其他的一些问题，包括如何使用以及什么时候使用字符串的代码块视图，如何和 Foundation里的处理字符串的 API（例如 [`NSRegularExpression`](https://developer.apple.com/documentation/foundation/nsregularexpression) 或者 [`NSAttributedString`](https://developer.apple.com/documentation/foundation/nsattributedstring)） 配合处理。贴别是后面这个问题很难，而且很容易犯错。除此之外还讨论了其他标准库里面机遇字符串的 API，例如文本输出流（[`TextOutputStream`](https://developer.apple.com/documentation/swift/textoutputstream)）或自定义字符串转换（[`CustomStringConvertible`](https://developer.apple.com/documentation/swift/customstringconvertible)）。
