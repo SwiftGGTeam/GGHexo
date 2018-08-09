@@ -57,7 +57,7 @@ Unicode 编码的数据可以用多种不同宽度的 [代码单元（*code unit
 
 [Unicode 标量](https://www.unicode.org/glossary/#unicode_scalar_value) 跟代码点基本一样，但是也有一点不一样。除开 `0xD800-0xDFFF` 中间的 2048 个代理代码点（[*surrogate code points*](https://en.wikipedia.org/wiki/UTF-16#U.2BD800_to_U.2BDFFF)）之外，他们都是一样的。这 2048 个代理代码点是 UTF-16 中用作表示配对的前缀或尾缀编码。标量在 Swift 中用 `\u{xxxx}` 表示，xxxx 代表十进制的数字。所以欧元符号在Swift里可以表示为 `"€"` 或 `"\u{20AC}"`。与之对应的 Swift 类型是 [`Unicode.Scalar`](https://developer.apple.com/documentation/swift/unicode.scalar)，一个 [`UInt32`](https://developer.apple.com/documentation/swift/uint32) 数值的封装。
 
-为了用一个代码单元代表一个 Unicode scalar，你需要一个 21 比特的编码机制（通常会达到 32 比特，比如 UTF-32），但是即便这样你也无法得到一个固定宽度的编码：最终表示字符的时候，Unicode 仍然是一个宽度可变的编码格式。屏幕上显示的一个字符，也就是用户通常认为的一个字符，可能需要多个 scalar 组合而成。Unicode 编码里把这种用户理解的字符称之为 [（扩展）字位集](https://www.unicode.org/glossary/#extended_grapheme_cluster)(extended grapheme cluster)。
+为了用一个代码单元代表一个 Unicode scalar，你需要一个 21 比特的编码机制（通常会达到 32 比特，比如 UTF-32），但是即便这样你也无法得到一个固定宽度的编码：最终表示字符的时候，Unicode 仍然是一个宽度可变的编码格式。屏幕上显示的一个字符，也就是用户通常认为的一个字符，可能需要多个 scalar 组合而成。Unicode 编码里把这种用户理解的字符称之为 [（扩展）字位集](https://www.unicode.org/glossary/#extended_grapheme_cluster) (extended grapheme cluster)。
 
 标量组成字位集的规则决定了如何分词。例如，如果你按了一下键盘上的退格键，你觉得你的文本编辑器就应该删除掉一个字位集，即使那个“字符”是由多个 Unicode scalars 组成，且每个 scalar 在计算机内存上还由数量不等的代码块组成的。Swift中用 `Character` 类型代表字位集。`Character` 类型可以由任意数量的 Scalars 组成，只要它们形成一个用户看到的字符。在下一部分，我们会看到几个这样的例子。
 
@@ -130,7 +130,7 @@ extension NSObject: Equatable {
 single.utf16.elementsEqual(double.utf16) // → false
 ```
 
-为什么 Unicode 编码要支持同一字符的多种展现方式呢？因为 Latin-1 中已经有了类似é和ñ这样的字母，只有灵活的组合方式才能让长度可变的 Unicode 代码点兼容 Latin-1。
+为什么 Unicode 编码要支持同一字符的多种展现方式呢？因为 Latin-1 中已经有了类似 é 和 ñ 这样的字母，只有灵活的组合方式才能让长度可变的 Unicode 代码点兼容 Latin-1。
 
 虽然使用起来会有一些麻烦，但是它使得两种编码之间的转换变得简单快速。
 
@@ -171,9 +171,9 @@ zalgo.count // → 4
 zalgo.utf16.count // → 36
 ```
 
-上面的例子中，`zalgo.count` 返回值是4（正确的），而 `zalgo.utf16.count` 返回值是 36。如果你的代码连网上的颜文字都无法正确处理，那它有什么好的？
+上面的例子中，`zalgo.count` 返回值是 4（正确的），而 `zalgo.utf16.count` 返回值是 36。如果你的代码连网上的颜文字都无法正确处理，那它有什么好的？
 
-Unicode 编码的字位分割规则甚至在你处理纯 ASCII 编码的字符的时候也有影响，回车 [CR](https://codepoints.net/U+000D) 和 换行[LF](https://codepoints.net/U+000A) 这一个字符对在 Windows 系统上通常表示新开一行，但它们其实只是一个字位：
+Unicode 编码的字位分割规则甚至在你处理纯 ASCII 编码的字符的时候也有影响，回车 [CR](https://codepoints.net/U+000D) 和 换行 [LF](https://codepoints.net/U+000A) 这一个字符对在 Windows 系统上通常表示新开一行，但它们其实只是一个字位：
 
 ```swift
 // CR+LF is a single Character
@@ -279,11 +279,11 @@ family3.count // → 1
 
 [Windows 系统已经可以](https://blog.emojipedia.org/diverse-emoji-families-come-to-windows/)把这些 emoji 渲染为一个字素了，其他操作系统厂家肯定也会尽快支持。但是，有一点是不变的：无论一个字符串的 API 如何精心设计，都无法完美支持每一个细小的案例，因为文本太复杂了。
 
-> 过去 Swift 很难跟得上 Unicode 编码标准改变的步伐。Swift 3 渲染肤色和零宽度连接符系列 emoji 是错误的，因为当时的分词算法是根据上一个版本的 Unicode 编码标准。自 Swift 4 起，Swift 开始启用操作系统的 [ICU](http://site.icu-project.org)库。因此，只要用户更新他们的操作系统，你的程序就会采用最新的 Unicode 编码标准。硬币的另一面是，你开发中看到的和用户看到的东西可能是不一样的。
+> 过去 Swift 很难跟得上 Unicode 编码标准改变的步伐。Swift 3 渲染肤色和零宽度连接符系列 emoji 是错误的，因为当时的分词算法是根据上一个版本的 Unicode 编码标准。自 Swift 4 起，Swift 开始启用操作系统的 [ICU](http://site.icu-project.org) 库。因此，只要用户更新他们的操作系统，你的程序就会采用最新的 Unicode 编码标准。硬币的另一面是，你开发中看到的和用户看到的东西可能是不一样的。
 
 编程语言如果全面考虑 Unicode 编码复杂性的话，在处理文本的时候会引发很多问题。上面这么多例子我们只是谈及其中的一个问题：字符串的长度。如果一个编程语言不是按字素集处理字符串，而这个字符串又包含很多字符序列的话，这时候一个简简单单的反序输出字符串的操作会变得多么复杂。
 
-这不是个新问题，但是 emoji 的流行使得糟糕的文本处理方法造成的问题更容易浮出表面，即使你的用户群大部分是说英语的。而且，错误的级别也大大提升：十年前，弄错一个变音符号的字母可能只会造成 1 个字符数的误差，现在如果弄错了 emoji 的话很可能就是 10 个字符数的误差。例如，一个四人家庭的 emoji在 UTF-16 编码下是 11 个字符，在 UTF-8 编码下就是 25 个字符了：
+这不是个新问题，但是 emoji 的流行使得糟糕的文本处理方法造成的问题更容易浮出表面，即使你的用户群大部分是说英语的。而且，错误的级别也大大提升：十年前，弄错一个变音符号的字母可能只会造成 1 个字符数的误差，现在如果弄错了 emoji 的话很可能就是 10 个字符数的误差。例如，一个四人家庭的 emoji 在 UTF-16 编码下是 11 个字符，在 UTF-8 编码下就是 25 个字符了：
 
 ```swift
 family1.count // → 1
@@ -367,7 +367,7 @@ greeting // → "Hello again."
 
 [字符串索引（`String.Index`）](https://developer.apple.com/documentation/swift/string.index) 是字符串及其视图使用的索引类型。它是个不透明值（opaque value，内部使用的值，开发者一般不直接使用），本质上存储的是从字符串开头算起的字节偏移量。如果你想计算第 n 个字符的索引，它还是一个 *O(n)* 的操作，而且你还是必须从字符串的开头开始算起，但是一旦你有了一个正确的索引之后，对这个字符串进行下标操作就只需要 *O(1)* 次了。关键是，找到现有索引后面的元素的索引的操作也会变得很快，因为你只需要从已有索引字节后面开始算起了——没有必要从字符串开头开始了。这也是为什么有序（向前或是向后）访问字符串里的字符效率很高的原因。
 
-字符串索引操作的依据跟你在其他集合里使用的所有 API 一样。因为我们最常用的集合——数组——使用的是整数索引，我们通常使用简单的算术来操作，所以有一点很容易忘记： [`index(after:)`](https://developer.apple.com/documentation/swift/string/1782583-index) 方法返回的是下一个字符的索引：
+字符串索引操作的依据跟你在其他集合里使用的所有 API 一样。因为我们最常用的集合：数组，使用的是整数索引，我们通常使用简单的算术来操作，所以有一点很容易忘记： [`index(after:)`](https://developer.apple.com/documentation/swift/string/1782583-index) 方法返回的是下一个字符的索引：
 
 ```swift
 let s = "abcdef"
@@ -522,7 +522,7 @@ lastWord(in: "one, two, three, four, five") // → "five"
 
 操作过程中使用子字符串，操作结束的时候才创建新的字符串，通过这种方式，我们把占用内存的动作推迟到了最后一刻，而且保证了我们只会创建必要的字符串。在上面的例子当中，我们把整个字符串（可能会很长）分成了一个个的子字符串，但是在最后只是创建了一个很短的字符串。（例子中的算法可能效率不是那么高，暂时忽略一下；从后先前找到第一个分隔符可能是个更好的方法。）
 
-遇到只接受 `Substring` 类型的方法，但是你想传递一个 `String` 的类型，这种情况很少见（大部分的方法都接受 `String` 类型或者接受所有符合字符串协议的类型），但是如果你确实需要传递一个 `String` 的类型，最便捷的方法是使用范围操作符（range operator）`...`，不限定范围：
+遇到只接受 `Substring` 类型的方法，但是你想传递一个 `String` 的类型，这种情况很少见（大部分的方法都接受 `String` 类型或者接受所有符合字符串协议的类型），但是如果你确实需要传递一个 `String` 的类型，最便捷的方法是使用范围操作符：`...`（range operator），不限定范围：
 
 ```swift
 // 子字符串和原字符串的起始和结束的索引完全一致 
@@ -568,7 +568,7 @@ let numbers = commaSeparatedNumbers
 
 如果你想为字符串类型扩展新的功能， 好的办法是将扩展放在字符串协议 `StringProtocol` 上，保证 API 在字符串和子字符串层面的一致性。字符权协议的设计初衷就是替换原先在字符串基础上做的扩展功能。如果你想把现有的扩展从字符串转移到字符串协议上，你要做的唯一改变就是，把传递 `Self` 给只接受具体 `String` 值的 API替换为 `String(Self)`。
 
-需要记住的一点是，从 Swift 4开始，如果你有一些自定义的字符串类型，不建议遵守字符串协议`StringProtocol`。官方文档明确警告：
+需要记住的一点是，从 Swift 4 开始，如果你有一些自定义的字符串类型，不建议遵守字符串协议`StringProtocol`。官方文档明确警告：
 
 > 不要做任何新的遵守字符串协议 `StringProtocol` 的声明。只有标准库里的 `String` 和 `Substring` 是有效的遵守类型。
 
