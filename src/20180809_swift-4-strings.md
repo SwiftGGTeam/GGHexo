@@ -246,7 +246,7 @@ skinTone.unicodeScalars.map { $0.unicodeName }
 
 注意我们是如何使用标准的集合（`Collection`）方法 `dropFirst` 和 `droplast` 进行移除操作的。如果你想对字符串进行操作，但是又不想对字符串进行手动索引，这就是一个很好的例子。这个方法同样也很高效，因为 `dropFisrt` 和 `dropLast` 方法返回的是 `Substring` 值，它们只是原字符串的一部分。在我们最后一步创建一个新的 `String` 字符串，赋值为这个 substring 之前，它是不占用新的内存的。关于这一点，我们在这一章的后面还有很多东西会涉及到。
 
-Emoji 里面对家庭和夫妻的表示（例如 [👨‍👩‍👧‍👦](https://emojipedia.org/family-man-woman-girl-boy/) 和 [👩‍❤️‍👩](https://emojipedia.org/couple-with-heart-woman-woman/)）是 Unicode 编码标准面临的又一个挑战。由于性别以及人数的可能组合太多，为每种可能的组合都做一个代码点肯定会有问题。再加上每个人物角色的肤色的问题，这样做几乎不可行。Unicode编码是这样解决这个问题的，它将这种 emoji 定义为一系列由零宽度连接符（[*zero-width joiner*](https://codepoints.net/U+200D)）联系起来的 emoji 。这样下来，这个家庭👨‍👩‍👧‍👦 emoji 其实就是 [*man* 👨](https://emojipedia.org/man/) + ZWJ + [*woman* 👩](https://emojipedia.org/woman/) + ZWJ + [*girl*👧](https://emojipedia.org/girl/) + ZWJ + [*boy* 👦](https://emojipedia.org/boy/)。而零宽度连接符的作用就是让操作系统知道这个 emoji 应该只是一个字素。
+Emoji 里面对家庭和夫妻的表示（例如 [👨‍👩‍👧‍👦](https://emojipedia.org/family-man-woman-girl-boy/) 和 [👩‍❤️‍👩](https://emojipedia.org/couple-with-heart-woman-woman/)）是 Unicode 编码标准面临的又一个挑战。由于性别以及人数的可能组合太多，为每种可能的组合都做一个代码点肯定会有问题。再加上每个人物角色的肤色的问题，这样做几乎不可行。Unicode 编码是这样解决这个问题的，它将这种 emoji 定义为一系列由零宽度连接符（[*zero-width joiner*](https://codepoints.net/U+200D)）联系起来的 emoji 。这样下来，这个家庭 👨‍👩‍👧‍👦 emoji 其实就是 [*man* 👨](https://emojipedia.org/man/) + ZWJ + [*woman* 👩](https://emojipedia.org/woman/) + ZWJ + [*girl* 👧](https://emojipedia.org/girl/) + ZWJ + [*boy* 👦](https://emojipedia.org/boy/)。而零宽度连接符的作用就是让操作系统知道这个 emoji 应该只是一个字素。
 
 我们可以验证一下到底是不是这样：
 
