@@ -1,23 +1,18 @@
-title: "在 Swift 中使用 Watch Connectivity — Application Context"
-date: 2018-08-15
-tags: [教程]
-categories: [codingexplorer]
-permalink: watch-connectivity-swift-application-context
-keywords: swiftWatch,apple Watch,Watch Connectivity
-custom_title: Swift Watch Connectivity 使用教程
-description: 本文详细讲解了如何通过 Watch Connectivity 的 Application Context 方式进行 watch 和 配对 iPhone 之间共享数据。
+在 Swift 中使用 Watch Connectivity — Application Context"
 
----
-原文链接=http://www.codingexplorer.com/watch-connectivity-swift-application-context/
-作者=codingexplorer
-原文日期=2018-07-18
-译者=Khala-wan
-校对=Yousanflics,wongzigii
-定稿=CMB
+> 作者：codingexplorer，[原文链接](http://www.codingexplorer.com/watch-connectivity-swift-application-context/)，原文日期：2018-07-18
+> 译者：[Khala-wan](undefined)；校对：[Yousanflics](http://blog.yousanflics.com.cn)，[wongzigii](undefined)；定稿：[CMB](https://github.com/chenmingbiao)
+  
 
-<!--此处开始正文-->
 
-![](/img/articles/Watch Connectivity in Swift — Application Context/Watch-Connectivity-Application-Context.png1534304479.3475852)
+
+
+
+
+
+
+
+![](http://www.codingexplorer.com/wp-content/uploads/2016/02/Watch-Connectivity-Application-Context.png)
 
 在 watchOS 1 时代，`WatchKit Extension` 位于已配对的 iOS 设备上，这使得宿主 APP 和 watch 之间的数据共享变得简单。类似偏好设置这种最简单的数据，只需要通过 App Groups 功能来存取 `NSUserDefaults`。目前在手机上留存的其他扩展程序和主 app 之间共享数据仍然应该使用这种方式，例如 `Today View Extension`，但它已不再适用于 watchOS 的 app。
 幸运的是，苹果为我们提供了新的 API 来做这件事。相比 App Groups，Watch Connectivity 拥有更强大的功能。它不仅提供了你的 Apple Watch 和与其配对 iPhone 之间连接状态的更多信息，还允许它们之间进行交互消息和 3 种方式的后台传输，这些方式分别是：
@@ -28,7 +23,7 @@ description: 本文详细讲解了如何通过 Watch Connectivity 的 Applicatio
 
 我们今天先讨论第一种方式：Application Context。
 
-<!--more-->
+
 
 ## 什么是 Application Context
 
@@ -46,28 +41,26 @@ description: 本文详细讲解了如何通过 Watch Connectivity 的 Applicatio
 
 首先，在 iOS app 的 `viewController` 中，我们需要设置一些东西：
 
-```swift
-import WatchConnectivity
- 
-class ViewController: UIViewController, WCSessionDelegate {
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
-    func sessionDidBecomeInactive(_ session: WCSession) { }
-    func sessionDidDeactivate(_ session: WCSession) { }
     
-    var session: WCSession?
- 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    import WatchConnectivity
+     
+    class ViewController: UIViewController, WCSessionDelegate {
+        func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
+        func sessionDidBecomeInactive(_ session: WCSession) { }
+        func sessionDidDeactivate(_ session: WCSession) { }
         
-        if WCSession.isSupported() {
-            session = WCSession.default
-            session?.delegate = self
-            session?.activate()
+        var session: WCSession?
+     
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            if WCSession.isSupported() {
+                session = WCSession.default
+                session?.delegate = self
+                session?.activate()
+            }
         }
     }
-}
-
-```
 
 下面，我们最先需要导入 `WatchConnectivity` 框架。没有它，我们所做的都是无用功。接下来，为了响应来自 WCSession 的回调，我们需要将当前这个 `ViewController` 设置为 `WCSession` 的代理，为此我们需要让它遵守这个协议，所以在 `ViewController` 的父类声明后面添加 `WCSessionDelegate` 协议。
 
@@ -84,20 +77,18 @@ class ViewController: UIViewController, WCSessionDelegate {
 将一个 `UISwitch` 放在 Storyboard 上，并将其 `ValueChanged` 方法关联到 `ViewController` 中。
 在方法中加入如下代码：
 
-```swift
-@IBAction func switchValueChanged(_ sender: UISwitch) {
-    if let validSession = session {
-        let iPhoneAppContext = ["switchStatus": sender.isOn]
- 
-        do {
-            try validSession.updateApplicationContext(iPhoneAppContext)
-        } catch {
-            print("Something went wrong")
+    
+    @IBAction func switchValueChanged(_ sender: UISwitch) {
+        if let validSession = session {
+            let iPhoneAppContext = ["switchStatus": sender.isOn]
+     
+            do {
+                try validSession.updateApplicationContext(iPhoneAppContext)
+            } catch {
+                print("Something went wrong")
+            }
         }
     }
-}
-
-```
 
 首先检查我们是否有一个有效的 session，如果是运行在 iPad 上，那么将跳过整个代码块。 `Application Context` 是一个 Swift 字典，它以 `String` 作为 `key`，`AnyObject` 作为 `value` (`Dictionary<String, AnyObject>`)。 value 必须遵循属性列表的规则，并且只包含某些类型。它和 `NSUserDefaults` 具有相同的限制，所以在上一篇文章 [NSUserDefaults — A Swift Introduction](http://www.codingexplorer.com/nsuserdefaults-a-swift-introduction/) 中已经介绍过了具体可以使用哪些类型。尽管如此，当我们发送一个 Swift `Bool` 类型时，其将会被转换为 `NSNumber boolean value`，所以没关系。
 
@@ -107,24 +98,22 @@ class ViewController: UIViewController, WCSessionDelegate {
 
 因为我们使用的是之前 [watchOS Hello World App in Swift](http://www.codingexplorer.com/watchos-2-hello-world-app-in-swift/) 文中的 Hello World App，所以部分相同的设置已经替我们完成了。跟 iPhone 类似，我们还需要做一些设置才能使用 `WatchConnectivity`。
 
-```swift
-import WatchConnectivity
-
-class InterfaceController: WKInterfaceController, WCSessionDelegate {
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
-
-    let session = WCSession.default
-
-    override func awake(withContext context: Any?) {
-        super.awake(withContext: context)
-        
-        session.delegate = self
-        session.activate()
+    
+    import WatchConnectivity
+    
+    class InterfaceController: WKInterfaceController, WCSessionDelegate {
+        func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
+    
+        let session = WCSession.default
+    
+        override func awake(withContext context: Any?) {
+            super.awake(withContext: context)
+            
+            session.delegate = self
+            session.activate()
+        }
+    //...
     }
-//...
-}
-
-```
 
 这里省略掉了之前 App 中的一些无关代码，只展示与 `WatchConnectivity` 设置相关的部分。同样，我们需要导入 `WatchConnectivity` 框架，并让我们的 InterfaceController 遵守 WCSessionDelegate 协议，紧接着，我们将 session 常量初始化为 `WCSession` 的单例 `defaultSession`。
 
@@ -134,19 +123,17 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
 让我们写一个辅助方法来处理 Application Context 的回调，因为我们可能会多次调用它，而不是仅仅当我们收到一个新 `context` 时（你很快会看到）。
 
-```swift
-func processApplicationContext() {
-    if let iPhoneContext = session.receivedApplicationContext as? [String : Bool] {
-
-        if iPhoneContext["switchStatus"] == true {
-            displayLabel.setText("Switch On")
-        } else {
-            displayLabel.setText("Switch Off")
+    
+    func processApplicationContext() {
+        if let iPhoneContext = session.receivedApplicationContext as? [String : Bool] {
+    
+            if iPhoneContext["switchStatus"] == true {
+                displayLabel.setText("Switch On")
+            } else {
+                displayLabel.setText("Switch Off")
+            }
         }
     }
-}
-
-```
 
 `WCSession` 有 2 个与 `Application Context` 相关的属性，`applicationContext` 和 `receivedApplicationContext`。它们的不同之处是：
 
@@ -159,13 +146,12 @@ func processApplicationContext() {
 
 当我们实际接收到一个新的  Application context 时，该 InterfaceController 将会收到我们 WCSession 对象的代理回调来通知我们这个信息，我们将在那里调用这个辅助方法。
 
-```swift
-func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-    DispatchQueue.main.async() {
-        self.processApplicationContext()
+    
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        DispatchQueue.main.async() {
+            self.processApplicationContext()
+        }
     }
-}
-```
 
 现在，你大概看到了 `didReceiveApplicationContext` 方法的入参带有它接收到的 `Application Context` 副本。它存储在上面提到的 `receivedApplicationContext` 属性中。所以我们并不需要它来调用辅助方法, 因此这个方法不需要传入任何行参。
 
@@ -178,17 +164,15 @@ func session(_ session: WCSession, didReceiveApplicationContext applicationConte
 
 那么，当我们的 app 完成加载之后想使用最后一次接收到的值，但是 app 在关闭期间又没有收到新的 `context`，这种情况该怎么办？我们在视图生命周期的早期设置 label，所以现在 `awakeWithContext` 看起来应该是这样：
 
-```swift
-override func awake(withContext context: Any?) {
-    super.awake(withContext: context)
- 
-    processApplicationContext()
- 
-    session.delegate = self
-    session.activate()
-}
-
-```
+    
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
+     
+        processApplicationContext()
+     
+        session.delegate = self
+        session.activate()
+    }
 
 由于 awakeWithContext 肯定在主线程上，我们不需要 `dispatch_async`。 因此这就是它仅用于在 didReceiveApplicationContext 回调中来调用辅助方法而不是在辅助方法内部使用的原因。
 
@@ -200,98 +184,96 @@ override func awake(withContext context: Any?) {
 
 ### ViewController.swift
 
-```swift
-import UIKit
-import WatchConnectivity
-
-class ViewController: UIViewController, WCSessionDelegate {
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
-    func sessionDidBecomeInactive(_ session: WCSession) { }
-    func sessionDidDeactivate(_ session: WCSession) { }
     
-    @IBOutlet var theSwitch: UISwitch!
+    import UIKit
+    import WatchConnectivity
     
-    var session: WCSession?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    class ViewController: UIViewController, WCSessionDelegate {
+        func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
+        func sessionDidBecomeInactive(_ session: WCSession) { }
+        func sessionDidDeactivate(_ session: WCSession) { }
         
-        if WCSession.isSupported() {
-            session = WCSession.default
-            session?.delegate = self
-            session?.activate()
-        }
-    }
+        @IBOutlet var theSwitch: UISwitch!
+        
+        var session: WCSession?
     
-    func processApplicationContext() {
-        if let iPhoneContext = session?.applicationContext as? [String : Bool] {
-            if iPhoneContext["switchStatus"] == true {
-                theSwitch.isOn = true
-            } else {
-                theSwitch.isOn = false
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            if WCSession.isSupported() {
+                session = WCSession.default
+                session?.delegate = self
+                session?.activate()
+            }
+        }
+        
+        func processApplicationContext() {
+            if let iPhoneContext = session?.applicationContext as? [String : Bool] {
+                if iPhoneContext["switchStatus"] == true {
+                    theSwitch.isOn = true
+                } else {
+                    theSwitch.isOn = false
+                }
+            }
+        }
+        
+        @IBAction func switchValueChanged(_ sender: UISwitch) {
+            if let validSession = session {
+                let iPhoneAppContext = ["switchStatus": sender.isOn]
+    
+                do {
+                    try validSession.updateApplicationContext(iPhoneAppContext)
+                } catch {
+                    print("Something went wrong")
+                }
             }
         }
     }
-    
-    @IBAction func switchValueChanged(_ sender: UISwitch) {
-        if let validSession = session {
-            let iPhoneAppContext = ["switchStatus": sender.isOn]
-
-            do {
-                try validSession.updateApplicationContext(iPhoneAppContext)
-            } catch {
-                print("Something went wrong")
-            }
-        }
-    }
-}
-```
 
 ### InterfaceController.swift
 
-```swift
-import WatchKit
-import WatchConnectivity
-
-class InterfaceController: WKInterfaceController, WCSessionDelegate {
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
-
     
-    @IBOutlet var displayLabel: WKInterfaceLabel!
+    import WatchKit
+    import WatchConnectivity
     
-    let session = WCSession.default
-
-    override func awake(withContext context: Any?) {
-        super.awake(withContext: context)
+    class InterfaceController: WKInterfaceController, WCSessionDelegate {
+        func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
+    
         
-        processApplicationContext()
+        @IBOutlet var displayLabel: WKInterfaceLabel!
         
-        session.delegate = self
-        session.activate()
-    }
+        let session = WCSession.default
     
-    @IBAction func buttonTapped() {
-        //displayLabel.setText("Hello World!")
-    }
-    
-    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-        DispatchQueue.main.async() {
-            self.processApplicationContext()
-        }
-    }
-    
-    func processApplicationContext() {
-        if let iPhoneContext = session.receivedApplicationContext as? [String : Bool] {
+        override func awake(withContext context: Any?) {
+            super.awake(withContext: context)
             
-            if iPhoneContext["switchStatus"] == true {
-                displayLabel.setText("Switch On")
-            } else {
-                displayLabel.setText("Switch Off")
+            processApplicationContext()
+            
+            session.delegate = self
+            session.activate()
+        }
+        
+        @IBAction func buttonTapped() {
+            //displayLabel.setText("Hello World!")
+        }
+        
+        func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+            DispatchQueue.main.async() {
+                self.processApplicationContext()
+            }
+        }
+        
+        func processApplicationContext() {
+            if let iPhoneContext = session.receivedApplicationContext as? [String : Bool] {
+                
+                if iPhoneContext["switchStatus"] == true {
+                    displayLabel.setText("Switch On")
+                } else {
+                    displayLabel.setText("Switch Off")
+                }
             }
         }
     }
-}
-```
 
 请记住，这些代码来自 Hello World App，但是我们没有用到 watchOS App 上的 button。所以我只是注释了原始功能的代码。
 
@@ -309,3 +291,5 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
 * [Facets of Swift, Part 5: Custom Operators — Swift Programming — Medium](https://medium.com/swift-programming/facets-of-swift-part-5-custom-operators-1080bc78ccc)
 * [watchOS 2 Tutorial: Using application context to transfer data (Watch    Connectivity #2)](http://www.kristinathai.com/watchos-2-tutorial-using-application-context-to-transfer-data-watch-connectivity-2/) by [Kristina Thai](https://twitter.com/kristinathai)
 * [WatchConnectivity: Sharing The Latest Data via Application Context](https://www.natashatherobot.com/watchconnectivity-application-context/) by   [Natasha The Robot](https://twitter.com/natashatherobot)
+
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
