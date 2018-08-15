@@ -57,7 +57,8 @@ let nameMap = {
   "Lefex": "https://weibo.com/u/5953150140",
   "ennisk": "https://weibo.com/u/1771329710",
   "liberalism": "https://weibo.com/1743643682/profile?topnav=1&wvr=6",
-  "阳仔": "https://github.com/YangGao1991"
+  "阳仔": "https://github.com/YangGao1991",
+  "Khala-wan": "http://khala-wan.com"
 }
 
 export default nameMap

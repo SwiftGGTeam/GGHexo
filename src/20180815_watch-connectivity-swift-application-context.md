@@ -2,7 +2,7 @@ title: "在 Swift 中使用 Watch Connectivity — Application Context"
 date: 2018-08-15
 tags: [教程]
 categories: [codingexplorer]
-permalink: Watch Connectivity in Swift — Application Context
+permalink: watch-connectivity-swift-application-context
 keywords: swiftWatch,apple Watch,Watch Connectivity
 custom_title: Swift Watch Connectivity 使用教程
 description: 本文详细讲解了如何通过 Watch Connectivity 的 Application Context 方式进行 watch 和 配对 iPhone 之间共享数据。
