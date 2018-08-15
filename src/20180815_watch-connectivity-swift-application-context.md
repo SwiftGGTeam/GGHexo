@@ -12,7 +12,7 @@ description: 本文详细讲解了如何通过 Watch Connectivity 的 Applicatio
 作者=codingexplorer
 原文日期=2018-07-18
 译者=Khala-wan
-校对=Yousanflics
+校对=Yousanflics,wongzigii
 定稿=CMB
 
 <!--此处开始正文-->
@@ -73,7 +73,7 @@ class ViewController: UIViewController, WCSessionDelegate {
 
 下一步，我们需要实现 `WCSessionDelegate` 中的一些方法。对于当前这个 app，它们不是特别必要，但是如果想要快速在 watch app 中切换，你就需要进一步实现它们。
 
-之后，我们需要创建一个变量用于存储 `WCSession`。因为 `WCSession` 实际上是一个单例，技术上我们可以跳过这一步，但每次输入 session？ 肯定要比 `WCSession.default` 更简短。
+之后，我们需要创建一个变量用于存储 `WCSession`。因为 `WCSession` 实际上是一个单例，技术上我们可以跳过这一步，但每次输入 `session?` 肯定要比 `WCSession.default` 更简短。
 
 你应该在代码运行初期对 session 进行设置。在大多数情况下，这将在程序初始化的时候来做。但由于我们是在 `ViewController` 中执行此操作，所以最早能执行的地方大概就只有 `viewDidLoad` 方法中了。一般情况下来说，你不应该在 `viewController` 中执行这个操作，因为你的 app 希望在屏幕上未加载特定 `viewController` 时就可以更新它的数据模型。为了简单起见，我在 `viewController` 中做了这个操作，这仅仅是为了展示如何使用这些 API。如果这个 `ViewController` 是唯一关心使用 `WCSession` 的东西，那就没关系。但通常情况并非如此。
 
