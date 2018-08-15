@@ -19,7 +19,7 @@ description: 本文详细讲解了如何通过 Watch Connectivity 的 Applicatio
 
 ![](http://www.codingexplorer.com/wp-content/uploads/2016/02/Watch-Connectivity-Application-Context.png)
 
-在 watchOS 1 时代，`WatchKit Extension` 位于已配对的 iOS 设备上，这使得宿主 APP 和 watch 之间的数据共享变得简单。类似偏好设置这种最简单的数据，只需要通过 App Groups 功能来存取 `NSUserDefaults`。目前在手机上留存的其他扩展程序和主 app 之间共享数据仍然应该使用这种方式，例如 `Today View Extension` ，但它已不再适用于 watchOS 的 app。
+在 watchOS 1 时代，`WatchKit Extension` 位于已配对的 iOS 设备上，这使得宿主 APP 和 watch 之间的数据共享变得简单。类似偏好设置这种最简单的数据，只需要通过 App Groups 功能来存取 `NSUserDefaults`。目前在手机上留存的其他扩展程序和主 app 之间共享数据仍然应该使用这种方式，例如 `Today View Extension`，但它已不再适用于 watchOS 的 app。
 幸运的是，苹果为我们提供了新的 API 来做这件事。相比 App Groups，Watch Connectivity 拥有更强大的功能。它不仅提供了你的 Apple Watch 和与其配对 iPhone 之间连接状态的更多信息，还允许它们之间进行交互消息和 3 种方式的后台传输，这些方式分别是：
 
 1. Application Context
@@ -155,7 +155,7 @@ func processApplicationContext() {
 
 现在，把它俩放到一起来看，至少接收到的看起来很明显。但在我第一次涉及这个时（不记得 WWDC 中 Watch Connectivity的介绍视频的全部内容？），我认为 applicationContext 是从最近的发送或接收来更新的，因为我认为它们是一致的 `context`。然而我大错特错，我花了一段时间才意识到它们是分开的。我当然能看出来原因，因为我们可能每次都会发送不一样的数据，就像从 Watch 的角度来看，applicationContext 就是 iPhone 端需要的 Watch 相关 `context`，而 receivedApplicationContext 则是 Watch 端需要的 iPhone 相关 `context`。无论哪种方式，请记住它们是不同的两个东西，并根据实际情况选择你所需要的那个。
 
-所以在这个方法中，我们首先尝试将 `receivedApplicationContext` 由 `[String: AnyObject]` 类型的字典转换为我们需要的 `[String: Bool]` 类型。如果转换成功，则再根据字典中布尔值的状态将 displayLabel 的 text 值设置为“Switch On”或“Switch Off”。
+所以在这个方法中，我们首先尝试将 `receivedApplicationContext` 由 `[String: AnyObject]` 类型的字典转换为我们需要的 `[String: Bool]` 类型。如果转换成功，则再根据字典中布尔值的状态将 displayLabel 的 text 值设置为 “Switch On” 或 “Switch Off”。
 
 当我们实际接收到一个新的  Application context 时，该 InterfaceController 将会收到我们 WCSession 对象的代理回调来通知我们这个信息，我们将在那里调用这个辅助方法。
 
@@ -169,11 +169,8 @@ func session(_ session: WCSession, didReceiveApplicationContext applicationConte
 
 现在，你大概看到了 `didReceiveApplicationContext` 方法的入参带有它接收到的 `Application Context` 副本。它存储在上面提到的 `receivedApplicationContext` 属性中。所以我们并不需要它来调用辅助方法, 因此这个方法不需要传入任何行参。
 
-***************
-译者注：
-    其实对于辅助方法 `processApplicationContext` 来说，增加行参 context 反而更"函数式"，也更"swift"。 通过增加一个 context 的入参，可以让方法内部实现和外部依赖解耦，更加方便我们对它进行单元测试。
-
-***************
+> 译者注：
+> 其实对于辅助方法 `processApplicationContext` 来说，增加行参 context 反而更 **函数式**，也更 swift。 通过增加一个 context 的入参，可以让方法内部实现和外部依赖解耦，更加方便我们对它进行单元测试。
 
 那么，调用 `dispatch_async` 是为了做什么呢？好吧，这些代理回调不在主线程上。你永远不应该在除主线程以外的任何线程更新 iOS 或 watchOS 中的 UI。而我们的辅助方法除了从 `receivedApplicationContext` 中读取信息之外，主要目的是用来更新 UI 元素。因此，我们要通过 `dispatch_async` 方法返回主线程来调用该方法。调用 `dispatch_async` 需要 2 个参数，首先是派发队列（对于主线程，我们通过 `dispatch_get_main_queue` 方法获取），其次是一个闭包来告诉它需要做什么操作，这里我们只是告诉它去调用辅助方法。
 
