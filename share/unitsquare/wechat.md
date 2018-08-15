@@ -1,7 +1,7 @@
-Measurements 和 Units，第三部分"
+使用幽灵类型的Measurements和Units，第四部分"
 
-> 作者：Ole Begemann，[原文链接](http://oleb.net/blog/2016/07/unitsquare/)，原文日期：2016/07/29
-> 译者：[钟颖](https://github.com/cyanzhong)；校对：[小铁匠Linus](http://linusling.com)；定稿：[CMB](https://github.com/chenmingbiao)
+> 作者：Ole Begemann，[原文链接](https://oleb.net/blog/2016/08/measurements-and-units-with-phantom-types/)，原文日期：2016-08-29
+> 译者：[与狼同行](http://www.jianshu.com/users/1c22b0c065ec/latest_articles)；校对：[Cwift](http://weibo.com/277195544)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 
@@ -12,217 +12,201 @@ Measurements 和 Units，第三部分"
 
 
 
-更新：
-2016-08-02 已将代码更新至 Xcode 8 Beta 4
-
 本系列其他文章：
 
 (1) [Measurements 和 Units 概览](http://oleb.net/blog/2016/07/measurements-and-units/)
-
 (2) [乘法和除法](http://oleb.net/blog/2016/07/unitproduct/)
+(3) [内容提炼](http://swift.gg/2016/09/29/unitsquare/)
+(4) 幽灵类型(本文)
 
-(3) 内容提炼（本文） 
-
-(4) [幽灵类型](http://oleb.net/blog/2016/08/measurements-and-units-with-phantom-types/)
-
-Swift 中 Measurements 和 Units 的系列文章中，仍然有一些[收尾](http://movie-sounds.org/sci-fi-movie-samples/sound-clips-from-star-trek-insurrection-1998/you-re-not-finished-here-just-a-few-loose-ends-to-tie-up-dougherty-out)工作要做。如果你还没有看过之前的文章的话，可以在[第一部分](http://oleb.net/blog/2016/07/measurements-and-units/)中找到 Foundation 框架中 Measurements 和 Units 接口的大致介绍，并在[第二部分](http://swift.gg/2016/08/11/unitproduct/)中看到我如何扩展该系统用于类型安全的乘法和除法。
+我之前撰写了关于标准库里新的度量值的短系列，此文是该系列的额外之作。虽然我很喜欢苹果的 API ，但我觉得探索同一问题的不同解决方案也很有意思。特别是这个问题，纯 Swift 设计是否能优于苹果的接口呢，因为苹果的接口考虑了 Objective-C 的[兼容性问题](https://lists.swift.org/pipermail/swift-corelibs-dev/Week-of-Mon-20160808/000864.html)。
 
 
 
-## 在计算过程中保持单位
+## 苹果的设计
 
-在我们[之前的文章](http://swift.gg/2016/08/11/unitproduct/)里面，乘法和除法在计算之前总是会将单位转换到各自的*默认单位*，正如我们在 `UnitProduct` 协议的 `defaultUnitMapping()` 方法定义的那样。为了让结果在各种计算场景下都正确，无论传入参数的单位是什么。
+在苹果的 API 中，开发者主要使用的数据类型是[度量值 `Measurement` 类型](https://developer.apple.com/reference/foundation/nsmeasurement)，它包含一个浮点数  `value` 和用于测值的单位 `unit` ，并基于单位类型使用了泛型。
 
-到目前为止，我们仍然使用一个*默认的单位映射*作为计算结果的单位。比如说，[`UnitSpeed`](https://developer.apple.com/reference/foundation/nsunitspeed)，[`UnitDuration`](https://developer.apple.com/reference/foundation/nsunitduration) 和 [`UnitLength`](https://developer.apple.com/reference/foundation/nsunitlength) 的映射是 `(.metersPerSecond, .seconds, .meters)`。这意味着 *72 千米每 2 小时* 将会在计算前被转换成 *72000 米每 7200 秒*。然后我们会将计算结果封装成 `Measurement<UnitVelocity>` 并且返回，它的单位将会是米每秒。
-
-从实现的角度来说这是一个最简单的方案，但是可以想象的是，方法的调用者会更希望在计算中尽可能保持单位一致。*如果我输入米和秒，则尽可能的返回米每秒，但是如果我输入千米和小时，则希望返回千米每小时。*
-
-## 首选单位映射
-
-我们可以在协议里面添加一个新的方法来实现这个目标，这个方法会通过优先级排序返回一个单位映射的集合。在计算的时候我们通过遍历这个集合，为当前的计算找出最合适的单位映射。如果没有匹配到，则回退到默认的单位映射。我把这个方法叫做 `preferredUnitMappings()`。完整的协议看起来像是这样：
-
-    
-    protocol UnitProduct {
-        associatedtype Factor1: Dimension
-        associatedtype Factor2: Dimension
-        associatedtype Product: Dimension
-    
-        static func defaultUnitMapping() -> (Factor1, Factor2, Product)
-        static func preferredUnitMappings() -> [(Factor1, Factor2, Product)]
+    struct Measurement<UnitType: Unit> {
+        let unit: UnitType
+        var value: Double
     }
-
-我们需要提供一个返回空数组的默认实现，这样的话如果协议的实现者不需要这个功能，他也可以选择忽略这个方法。
-
     
-    extension UnitProduct {
-        // 默认实现
-        static func preferredUnitMappings() -> [(Factor1, Factor2, Product)] {
-            return []
-        }
-    }
+    let length = Measurement(value: 5， unit: UnitLength.meters)
+    // 长度表现为一个 Measurement<UnitLength>
 
-接下来，我们需要提供一系列的便捷方法，他们的功能是为乘法或者除法的参数匹配出合适的单位映射。这个方法需要三个重载的形式，取决于 `Factor1`，`Factor2` 和 `Product` 三个参数是哪两个组成一对。他们的工作原理是相同的：返回在 `preferredUnitMappings` 列表里面同时匹配两个参数的第一个结果。如果没有匹配的话，返回默认的单位映射。我们使用 Swift 3 里面 `Sequence` 的新方法 [`first(where:)`](http://swiftdoc.org/v3.0/protocol/Sequence/#comment-func--first-where_) 来实现这个功能：
+Measurement 被视为[值类型](https://github.com/apple/swift-evolution/blob/master/proposals/0069-swift-mutability-for-foundation.md)——它在 Objective-C 中是类，在 Swift 中是结构体。
+在单位族（Unit Family）中，比如说长度或时长，被建模为类层次结构中的类型:  [Unit](https://developer.apple.com/reference/foundation/nsunit) > [Dimension](https://developer.apple.com/reference/foundation/nsdimension) > [UnitLength](https://developer.apple.com/reference/foundation/nsunitlength) 、 [UnitDuration](https://developer.apple.com/reference/foundation/nsunitduration)等等。具体的类型如米、千克，分别是它们单位族类的实例。每一个单位都是由单位的符号（如「kg」）和一个 [单元转换](https://developer.apple.com/reference/foundation/unitconverter)对象组成，该对象通过编码指令来使单位转化为该单位族的基本单位。
 
+## 幽灵类型
+
+如果我们将具体的单位视为一个类型而不是实例呢？假设有一些类型名为米（Meters）、千米（Kilometers），或者英里（Miles），我们可以设计一个泛型的 `Measurement` 类型，它只有一个存储属性来存放量值，该量值的单位可以被完整编码在自身类型中。
+
+    struct MyMeasurement<UnitType: MyUnit> {
+        var value: Double
     
-    extension UnitProduct {
-        static func unitMapping(factor1: Factor1, factor2: Factor2) -> (Factor1, Factor2, Product) {
-            let match = preferredUnitMappings().first { (f1, f2, _) in
-                f1 == factor1 && f2 == factor2
-            }
-            return match ?? defaultUnitMapping()
-        }
-    
-        static func unitMapping(product: Product, factor2: Factor2) -> (Factor1, Factor2, Product) {
-            let match = preferredUnitMappings().first { (_, f2, p) in
-                p == product && f2 == factor2
-            }
-            return match ?? defaultUnitMapping()
-        }
-    
-        static func unitMapping(product: Product, factor1: Factor1) -> (Factor1, Factor2, Product) {
-            let match = preferredUnitMappings().first { (f1, _, p) in
-                p == product && f1 == factor1
-            }
-            return match ?? defaultUnitMapping()
-        }
-    }
-
-## 在计算中使用首选单位映射
-
-最后，我们可以修改乘法和除法来使用这个新功能。计算过程本身没有任何变化，我们还是通过默认的单位进行计算。但是在返回结果之前，我们将其转换到我们首选的单位映射。如下是除法的代码（实现另一个重载方法的实现是类似的）：
-
-    
-    /// UnitProduct / Factor2 = Factor1
-    public func / <UnitType: Dimension> (lhs: Measurement<UnitType>, rhs: Measurement<UnitType.Factor2>)
-        -> Measurement<UnitType.Factor1> where UnitType: UnitProduct, UnitType == UnitType.Product {
-    
-        // 使用默认单位进行计算
-        let (resultUnit, rightUnit, leftUnit) = UnitType.defaultUnitMapping()
-        let value = lhs.converted(to: leftUnit).value / rhs.converted(to: rightUnit).value
-        let result = Measurement(value: value, unit: resultUnit)
-    
-        // 转换到首选的单位
-        let (desiredUnit, _, _) = UnitType.unitMapping(product: lhs.unit, factor2: rhs.unit)
-        return result.converted(to: desiredUnit)
-    }
-
-一切准备就绪，我们可以为 `UnitLength` 实现 `preferredUnitMappings()` 这个方法，他实现了 `UnitProduct` 这个协议：
-
-    
-    extension UnitLength {
-        static func preferredUnitMappings() -> [(UnitSpeed, UnitDuration, UnitLength)] {
-            return [
-                (.kilometersPerHour, .hours, .kilometers),
-                (.milesPerHour, .hours, .miles),
-                (.knots, .hours, .nauticalMiles)
-            ]
-        }
-    }
-
-现在，计算过程中匹配到合适单位的将会得到保留（会带有一点舍入误差）：
-
-    
-    Measurement(value: 72, unit: UnitLength.kilometers) / Measurement(value: 2, unit: UnitDuration.hours)
-    // → 35.999971200023 km/h
-    Measurement(value: 10, unit: UnitLength.miles) / Measurement(value: 1, unit: UnitDuration.hours)
-    // → 9.99997514515231 mph
-    Measurement(value: 25, unit: UnitLength.nauticalMiles) / Measurement(value: 2, unit: UnitDuration.hours)
-    // → 12.5000107991454 kn
-
-## 这是一个好主意吗？
-
-我不太确定这个方案是不是真的是一个好想法。他使代码变得相当的复杂，但是收益可以说是很小的。而且在每一次计算时，枚举首选单位列表会使代码变得慢一点点[^1]，这可能在循环中会是个问题。但像我们在这里做的这种简单的计算应该尽可能的快。
-
-## 乘方的问题
-
-如果你使用过 `UnitProduct` 这个协议的话，可能发现它并不能应用于物理量的乘方，也就是说，`Factor1` 和 `Factor2` 类型相同的情况。*面积 = 长度 × 长度* 是一个很好的例子：
-
-    
-    extension UnitArea: UnitProduct {
-        typealias Factor1 = UnitLength
-        typealias Factor2 = UnitLength
-        typealias Product = UnitArea
-    
-        static func defaultUnitMapping() -> (UnitLength, UnitLength, UnitArea) {
-            return (.meters, .meters, .squareMeters)
-        }
-    }
-
-如果我们尝试执行两个长度的乘法时，编译器会因为 * 运算符的歧义而报错。
-
-    
-    let width = Measurement(value: 4, unit: UnitLength.meters)
-    let height = Measurement(value: 6, unit: UnitLength.meters)
-    let area: Measurement<UnitArea> = width * height
-    // error: Ambiguous use of operator '*'
-
-原因是我们有两个乘法重载运算符，一个是 `(Factor1, Factor2) -> Product` 另一个是 `(Factor2, Factor1) -> Product`。当 `Factor1` 和 `Factor2` 类型相同的时候，这两个重载方法的类型是一模一样的，编译器不知道应该调用哪个，所以就会报错。（在我们的场景中，两个方法都是对的，他们能算出同一个结果，但是编译器并不知道这一点）
-
-最好的解决方案是，我们能够给其中一个方法添加一个通用的约束，类似于 `Factor1 != Factor2`，可以让类型检查在参数类型相同的时候将其区分开来。像这样：
-
-    
-    func * <UnitType: Dimension> (...) -> ...
-        where UnitType: UnitProduct, UnitType == UnitType.Product, UnitType.Factor1 != UnitType.Factor2
-    // error: Expected ':' or '==' to indicate a conformance or same-type requirement
-
-遗憾的是，Swift 并不支持这样的语法，Swift 的 where 语句只能包含 `:` 和 `==`。
-
-## 单独给乘方的协议
-
-我们通过引入一个单独的协议，`UnitSquare` 协议，来解决这个问题，用于定义乘方关系。这个协议只需要两个 associated 类型，`Factor` 和 `Product`：
-
-    
-    protocol UnitSquare {
-        associatedtype Factor: Dimension
-        associatedtype Product: Dimension
-    
-        static func defaultUnitMapping() -> (Factor, Factor, Product)
-        static func preferredUnitMappings() -> [(Factor, Factor, Product)]
-    }
-
-我们在这里就不展开其具体实现了，因为这个协议和 `UnitProduct` 很大程度上是相同的。（他的乘法和除法重载都只需要一个，相反的是 `UnitProduct` 需要两个。）
-
-如果我们将 [`UnitArea`](https://developer.apple.com/reference/foundation/nsunitarea) 遵循 `UnitSquare`，那么这些计算就能符合我们的预期：
-
-    
-    extension UnitArea: UnitSquare {
-        typealias Factor = UnitLength
-        typealias Product = UnitArea
-    
-        static func defaultUnitMapping() -> (UnitLength, UnitLength, UnitArea) {
-            return (.meters, .meters, .squareMeters)
+        init(_ value: Double) {
+            self.value = value
         }
     }
     
-    let width = Measurement(value: 4, unit: UnitLength.meters)
-    let height = Measurement(value: 6, unit: UnitLength.meters)
-    let area: Measurement<UnitArea> = width * height
-    // → 24.0 m²
-    area / width
-    // → 6.0 m
-    area / height
-    // → 4.0 m
+    let length = MyMeasurement<Meters>(5)
+    // length is a MyMeasurement<Meters>
 
-## 自身相除
+现在我们再次审视两种方式的不同之处，苹果的设计是让单位族 ` length` 作为 `Measurement` 的参数，让具体的单位 米 作为该值的一部分。而我的设计是让具体的单位 米 成为泛型参数。
+ `MyMeasurement` 也能被称为[幽灵类型](https://wiki.haskell.org/Phantom_type)，因为泛型参数 UnitType 没有在类型声明中出现。它的用途仅仅是用于相互区分类似 `MyMeasurement <Meters>` 和 `MyMeasurement <Kilometers>` 这样的类型，这样它们就无法互相替换。
+我们之后将看看这样设计是否真的有用，因为你可能会争辩，用米的度量值应当能与用千米的度量值互相转换。想了解更多关于 Swift 中幽灵类型的例子，可以看 [objc.org](https://www.objc.io/blog/2014/12/29/functional-snippet-13-phantom-types/) 的文章或 [Johannes Weiß](https://realm.io/news/swift-summit-johannes-weiss-the-type-system-is-your-friend/) 的谈话。Swift标准库也在使用幽灵类型，例如 [UnsafePointer <Memory>](https://developer.apple.com/reference/swift/unsafepointer) 。
 
-谜题的最后一部分，我想应该是实现两个相同类型的除法，比如说 *6 米 / 4 米 = 1.5*。计算结果应该是一个[没有单位的量](https://en.wikipedia.org/wiki/Dimensionless_quantity)（换句话说是一个 `Double` 类型），并且对所有的 [`Dimension`](https://developer.apple.com/reference/foundation/nsdimension) 类型都是可以有效的。
+## 好处
 
-支持这一特性十分简单，我们只需要再增加一个重载的除法。可以描述为：输入两个相同 `Dimension` 的量，返回一个 `Double` 值。我们通过将两个量都转换成基本类型来实现这个除法：
+我的方法最明显的好处是比使用度量值数据类型在大小上要小 50 % ，因为对单位实例的引用不是必要的。（单位实例自身是被所有那个单位的 Measurement 类所共用的，例如 5 米 和 10 米 两个度量值引用的是同一个单位实例。）但大小尺寸上的节省优势会被潜在更大的代码量所抵消，因为编译器会为泛型类型和使用该类型的函数产生更多的特化。
 
+由于 Unit 在苹果的 API 中为引用类型，将测量值传给函数也会带来 retain 和 release 的开销。这两个因素对一个传统 App 来说都不是很重要，我也没有展开进一步的研究，在探索这些想法的时候，它们对我来说无关紧要。
+
+## 具体的设计
+
+我们现在具体说一下如何在这个系统中定义单位，所有的单位都被封装到不同的单位族中，比如长度、温度、时长。我们开始为单位族定义一个协议：
+
+    /// 表现为一种物理数值 或者 可以认为是 “ 单位之族 ”
+    /// 例如: 长度， 温度， 速率.
+    protocol UnitFamily {
+        associatedtype BaseUnit
+    }
+
+正如苹果API中，每个单位族都会定义一个基础单位，它用于同一单位族的不同类型间的相互转换，例如长度单位族的基础单位是米。我们在 `UnitFamily` 协议中，把该基础单位定义为一个关联类型，这会有一个好处，基础单位会在这个类型系统中被编码，在 Foundation 库中，基础单位必须被单独记录以使得其他人用自定义的单位来扩展这个系统。
+
+下一步是定义 `MyUnit` 协议以塑造具体的单位，这些单位在苹果的设计中会被定义为单位族类型的一个实例。（这里我使用 My 作为前缀来避免和苹果类型的命名冲突）
+
+    /// 表现为度量值的单位
+    /// 例如: 米， 公里， 英里， 秒， 小时， 摄氏度.
+    protocol MyUnit {
+        associatedtype Family: UnitFamily
     
-    func / <UnitType: Dimension> (lhs: Measurement<UnitType>, rhs: Measurement<UnitType>) -> Double {
-        return lhs.converted(to: UnitType.baseUnit()).value / rhs.converted(to: UnitType.baseUnit()).value
+        static var symbol: String { get }
+        static var converter: UnitConverter { get }
+    }
+
+单位通过关联类型的方式来进行声明其所属的单位族。用静态属性来保存它的符号（比如米的符号是 m ，磅的符号是 lbs ）和它的单位转化器，转化器描述了如何将该单位转化为该族的基础单位。假如说长度单位族的基础单位是米，那么公里单位的转化器应该就是 `UnitConverterLinear(coefficient: 1000) `。基础单位自身的转化器系数应该为1。我这里从 Foundation 库中借用了[UnitConverter](https://developer.apple.com/reference/foundation/unitconverter) 类型。 Foundation 库将没有维度单位的 Unit 和有维度单位的 Dimension 进行了区分。简单起见，我们就不做这些事了，我们所有的单位都是有维度的。
+基础单位也必须是一个单位类型，这样想当然没错，理想来说在 UnitFamily 协议中的 BaseUnit 应当有一个对应的基础单位约束，那就是 MyUnit 。不过遗憾的是，这样会使得两个协议之间产生循环引用，这样在Swift中肯定是不被许可的。话虽如此说，但即便没有约束，一切也能工作顺利。
+
+## 遵守协议
+
+现在来为协议添加具体的实现。我这里展示一下长度、速度和时长的例子，每个都设置几个单位，再添加更多的单位和单位族也没什么意义。我选择用枚举来作为类型的结构，因为无例枚举不能被实例化，这对我们来说非常完美，因为我们只对类型感兴趣，而不是对类型的实例。
+
+    enum Length: UnitFamily {
+        typealias BaseUnit = Meters
     }
     
-    let ratio = height / width
-    // → 1.5
+    enum Meters: MyUnit {
+        typealias Family = Length
+        static let symbol = "m"
+        static let converter: UnitConverter = UnitConverterLinear(coefficient: 1)
+    }
+    
+    enum Kilometers: MyUnit {
+        typealias Family = Length
+        static let symbol = "km"
+        static let converter: UnitConverter = UnitConverterLinear(coefficient: 1000)
+    }
+    
+    // MARK: - Duration
+    enum Duration: UnitFamily {
+        typealias BaseUnit = Seconds
+    }
+    
+    enum Seconds: MyUnit {
+        typealias Family = Duration
+        static let symbol = "s"
+        static let converter: UnitConverter = UnitConverterLinear(coefficient: 1)
+    }
+    
+    enum Minutes: MyUnit {
+        typealias Family = Duration
+        static let symbol = "min"
+        static let converter: UnitConverter = UnitConverterLinear(coefficient: 60)
+    }
+    
+    enum Hours: MyUnit {
+        typealias Family = Duration
+        static let symbol = "hr"
+        static let converter: UnitConverter = UnitConverterLinear(coefficient: 3600)
+    }
+    
+    // MARK: - Speed
+    enum Speed: UnitFamily {
+        typealias BaseUnit = MetersPerSecond
+    }
+    
+    enum MetersPerSecond: MyUnit {
+        typealias Family = Speed
+        static let symbol = "m/s"
+        static let converter: UnitConverter = UnitConverterLinear(coefficient: 1)
+    }
+    
+    enum KilometersPerHour: MyUnit {
+        typealias Family = Speed
+        static let symbol = "km/h"
+        static let converter: UnitConverter = UnitConverterLinear(coefficient: 1.0/3.6)
+    }
 
-## 代码
+## 转换度量值
 
-我将在本系列文章中讨论到的所有代码放到了一个叫 [`Ampere`](https://github.com/ole/Ampere) 的库里面，你可以在 GitHub 上面找到。这个工作正在进展中，我还没有将其变成一个“真正的”库，类似于加入版本控制以及支持 CocoaPods，因为我不知道社区会不会对这些内容感兴趣。所以，让我知道你的想法吧！
+现在我们已经可以用不同的单位来表示度量值，接着我们需要让它们相互转换。`converted(to:)` 方法传入一个目标单位类型的参数并通过单位转换器返回那个单位新的度量值。注意这句约束`TargetUnit.Family == UnitType.Family`，它限制了转换只能适用于同单位族，编译器不会让你把 `Meters` 转换为 `Seconds`。
 
-[^1]: 在当前的实现中，单位映射的列表甚至没有被缓存下来，每次计算的时候都会重新创建一次。所以这毫无疑问是可以优化的，但不管怎样都会比不需要进行一次查询要慢。
-> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。>， block: () -> ())
+    extension MyMeasurement {
+        /// Converts self to a measurement that has another unit of the same family.
+        func converted<TargetUnit>(to target: TargetUnit.Type) -> MyMeasurement<TargetUnit>
+            where TargetUnit: MyUnit， TargetUnit.Family == UnitType.Family
+        {
+            let valueInBaseUnit = UnitType.converter.baseUnitValue(fromValue: value)
+            let valueInTargetUnit = TargetUnit.converter.value(fromBaseUnitValue: valueInBaseUnit)
+            return MyMeasurement<TargetUnit>(valueInTargetUnit)
+        }
+
+我们来为 `MyMeasurement` 添加一些方便的功能，遵守 `CustomStringConvertible` 是一个输出调试的良好方案，并通过遵守 `ExpressibleByIntegerLiteral` 和 `ExpressibleByFloatLiteral` 协议使得通过字面量创建新的度量值变得更加轻松愉快。
+
+    extension MyMeasurement: CustomStringConvertible {
+        var description: String {
+            return "\(value) \(UnitType.symbol)"
+        }
+    }
+    
+    extension MyMeasurement: ExpressibleByIntegerLiteral {
+        init(integerLiteral value: IntegerLiteralType) {
+            self.value = Double(value)
+        }
+    }
+    
+    extension MyMeasurement: ExpressibleByFloatLiteral {
+        init(floatLiteral value: FloatLiteralType) {
+            self.value = value
+        }
+    }
+
+## 用法
+
+现在我们开始创造一些度量值并把它们转换为其他单位，应用字面量的语法来表达对象创建非常不错。
+
+    let fiveMeters: MyMeasurement<Meters> = 5
+    // → 5.0 m
+    let threeKilometers: MyMeasurement<Kilometers> = 3
+    // → 3.0 km
+    threeKilometers.converted(to: Meters.self)
+    // → 3000.0 m
+    threeKilometers.converted(to: Seconds.self)
+    // error: 'Family' (aka 'Length') is not convertible to 'Family' (aka 'Duration') (as expected)
+
+我们再来看看把度量值作为函数参数会怎么样？看一下这个假想的 `delay` 函数，它以时长和一个闭包作为参数，并在具体时长后执行闭包:
+
+    func delay(after duration: MyMeasurement<Seconds>， block: () -> ()) {
+        // ...
+    }
+
+这个函数需要以秒为单位的度量值，如果你传入了毫秒作为参数，你必须负责转化值。以 `TimeInterval` 作为参数可以具有类型安全的优势，编译器不会允许你传入 `MyMeasurement<Milliseconds>` 作参数，但这样做会比我们使用 `Measurement<UnitDuration>` 要大大降低灵活性，使用后者将会允许我们传入任意的时长单位。
+
+我们通过基于单位类型将函数泛型化实现它(并且附上约束，它的单位族必须为时长)
+
+    func delay<Time>(after duration: MyMeasurement<Time>， block: () -> ())
         where Time: MyUnit， Time.Family == Duration
     {
         // ...
