@@ -170,7 +170,7 @@ func session(_ session: WCSession, didReceiveApplicationContext applicationConte
 现在，你大概看到了 `didReceiveApplicationContext` 方法的入参带有它接收到的 `Application Context` 副本。它存储在上面提到的 `receivedApplicationContext` 属性中。所以我们并不需要它来调用辅助方法, 因此这个方法不需要传入任何行参。
 
 > 译者注：
-> 其实对于辅助方法 `processApplicationContext` 来说，增加行参 context 反而更 **函数式**，也更 swift。 通过增加一个 context 的入参，可以让方法内部实现和外部依赖解耦，更加方便我们对它进行单元测试。
+> 其实对于辅助方法 `processApplicationContext` 来说，增加行参 context 反而更 **函数式**，也更 **Swift**。 通过增加一个 context 的入参，可以让方法内部实现和外部依赖解耦，更加方便我们对它进行单元测试。
 
 那么，调用 `dispatch_async` 是为了做什么呢？好吧，这些代理回调不在主线程上。你永远不应该在除主线程以外的任何线程更新 iOS 或 watchOS 中的 UI。而我们的辅助方法除了从 `receivedApplicationContext` 中读取信息之外，主要目的是用来更新 UI 元素。因此，我们要通过 `dispatch_async` 方法返回主线程来调用该方法。调用 `dispatch_async` 需要 2 个参数，首先是派发队列（对于主线程，我们通过 `dispatch_get_main_queue` 方法获取），其次是一个闭包来告诉它需要做什么操作，这里我们只是告诉它去调用辅助方法。
 
