@@ -32,7 +32,7 @@ description: 本文详细讲解了如何通过 Watch Connectivity 的 Applicatio
 
 假设你有个 watch app，它有一些可以在 iOS app 端设置的设置项，比如温度的显示单位是摄氏度还是华氏度。对于这样的设置项，除非你希望在用户在设置完成之后立即使用 watch 上的 app，否则将设置项的信息通过后台传输发送到 watch 才会是比较合理的。
 
-因为它可能不是 `立即` 需要的，所以系统可能会在节省电量最多的情况下将其发送出去。你也不需要任何历史记录，因为用户可能并不关心一小时之前的设置是摄氏度。
+因为它可能不是立即需要的，所以系统可能会在节省电量最多的情况下将其发送出去。你也不需要任何历史记录，因为用户可能并不关心一小时之前的设置是摄氏度。
 
 这就是 Application Context 的用武之地。它仅用于发送最新的数据。如果你将温度设置项从摄氏度改为华氏度，然后在 Application Context 发送到 watch 之前再将它（或者其他设置项）设置为不同的值，那么最新的值会覆盖之前等待发送的信息。
 
@@ -69,11 +69,11 @@ class ViewController: UIViewController, WCSessionDelegate {
 
 下面，我们最先需要导入 `WatchConnectivity` 框架。没有它，我们所做的都是无用功。接下来，为了响应来自 WCSession 的回调，我们需要将当前这个 `ViewController` 设置为 `WCSession` 的代理，为此我们需要让它遵守这个协议，所以在 `ViewController` 的父类声明后面添加 `WCSessionDelegate` 协议。
 
-下一步，我们需要实现 `WCSessionDelegate ` 中的一些方法。对于当前这个 app，它们不是特别必要，但是如果想要快速在 watch app 中切换，你就需要进一步实现它们。
+下一步，我们需要实现 `WCSessionDelegate` 中的一些方法。对于当前这个 app，它们不是特别必要，但是如果想要快速在 watch app 中切换，你就需要进一步实现它们。
 
-之后，我们需要创建一个变量用于存储 `WCSession` 。因为 `WCSession` 实际上是一个单例，技术上我们可以跳过这一步，但每次输入 session？ 肯定要比 `WCSession.default` 更简短。
+之后，我们需要创建一个变量用于存储 `WCSession`。因为 `WCSession` 实际上是一个单例，技术上我们可以跳过这一步，但每次输入 session？ 肯定要比 `WCSession.default` 更简短。
 
-你应该在代码运行初期对 session 进行设置。在大多数情况下，应该在程序初始化的时候来做。但是由于我们是在 `ViewController` 中执行此操作，所以最早执行的地方大概就只有 `viewDidLoad` 方法中了。一般情况下来说，你不应该在 `viewController` 中执行这个操作，因为你的 app 希望在屏幕上未加载特定 `viewController` 时就可以更新它的数据模型。为了简单起见，我在 `viewController` 中做了这个操作，这仅仅是为了展示如何使用这些 API。如果这个 `ViewController` 是唯一关心使用 `WCSession` 的东西，那就没关系。但通常情况并非如此。
+你应该在代码运行初期对 session 进行设置。在大多数情况下，这将在程序初始化的时候来做。但由于我们是在 `ViewController` 中执行此操作，所以最早能执行的地方大概就只有 `viewDidLoad` 方法中了。一般情况下来说，你不应该在 `viewController` 中执行这个操作，因为你的 app 希望在屏幕上未加载特定 `viewController` 时就可以更新它的数据模型。为了简单起见，我在 `viewController` 中做了这个操作，这仅仅是为了展示如何使用这些 API。如果这个 `ViewController` 是唯一关心使用 `WCSession` 的东西，那就没关系。但通常情况并非如此。
 
 要设置 session，我们需要先根据 `WCSession` 的 `isSupport` 方法的返回值来检查是否支持。如果程序在 iPad 上运行的话，这一点尤为重要。目前，你无法将 iPad 与 Apple Watch 配对，因此它会返回 `false` 表示不支持在 iPad 上使用 `WCSession`。在 iPhone 上它会返回 `true`。
 
