@@ -163,7 +163,8 @@
 
 就像众多其他编程语言一样，你也能够在`Swift`中利用泛型这一特性。倘若你想要写一个库，泛型是非常好用的特性。
 
-> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。Person]) -> Bool
+
 ## 问题
 
 我们已经厌烦了活在一个处理类型的世界里，不得不为每个我们想要查找的数组类型创建新的方法。终究这给我们带来了大量的技术负债。由于现代软件难以置信的复杂性，像你我这样的开发者需要使用更好地实践，更好的技术，更好的方法，用我们的神经元最大程度的控制这种混乱。据估计 Window 7 包含大约 4 千万行代码而 macOS 10.4 (Tiger) 包含大约 8.5 千万行代码，预估像这样的系统潜在行为次数都是不可能的。
@@ -325,7 +326,7 @@ exists 函数中 `<T: Equatable >` 标注是什么呢？它叫做类型约束，
     error: in argument type '[BasicPerson]', 'BasicPerson' does not conform to expected type 'Equatable'
     let isSamABasicPerson = exists(item: Sam, inArray: basicPersons)
 
-![image-20180813173212026](image-20180813173212026.png)
+![](https://camo.githubusercontent.com/f36f760385795cb9e802f886cda24bbf8bb720ab/68747470733a2f2f617070636f64612e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031382f30322f73776966742d342d67656e65726963732d312e706e67)
 
 这很糟糕了， 在 "BasicPerson" 类型的数组里面，你不能使用 Swift 数组的内建函数 `index` 和 `contains`。(你必须定义一个闭包，每当你想使用那两个方法 blah,blah,blah… 这个我就不提了。)
 
