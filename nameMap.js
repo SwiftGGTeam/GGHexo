@@ -59,7 +59,8 @@ let nameMap = {
   "liberalism": "https://weibo.com/1743643682/profile?topnav=1&wvr=6",
   "阳仔": "https://github.com/YangGao1991",
   "Khala-wan": "http://khala-wan.com",
-  "BigLuo": "https://github.com/Adolf-L"
+  "BigLuo": "https://github.com/Adolf-L",
+  "mobilefellow": "https://github.com/mobilefellow"
 }
 
 export default nameMap
