@@ -1,7 +1,5 @@
-# Swift 中的设计模式 \#1 工厂方法与单例方法
-
-title: "Design Patterns in Swift \#1: Factory Method and Singleton"
-date: 
+title: "Swift 中的设计模式 #1 工厂方法与单例方法"
+date: 2018-09-10
 tags: [Design Patterns]
 categories: [Swift]
 permalink: design-pattern-creational
@@ -11,10 +9,14 @@ permalink: design-pattern-creational
 作者=Andrew Jaffee
 原文日期=2018-07-24
 译者=BigLuo
-校对=colourful987,numbbbbb
+校对=pmst,numbbbbb
 定稿=Forelax
 
+<!--此处开始正文-->
+
 “Gang of Four” (“GoF”) Erich Gamma，Richard Helm，Ralph Johonson，和 John Vlissides 在他们“[设计模式：面向对象软件设计复用的基本原理](https://smile.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8/)” 的重要著作里整理了大概 23 种经典的设计模式 。本文会介绍 GoF 总结的两种创建型（creational）模式：*工厂方法*和*单例方法*。
+
+<!--more-->
 
 软件开发一直在努力地模拟真实世界的场景，希望通过创建工具的方式来加强人类的场景体验。财富管理工具，例如：像亚马逊或者 eBay 这样的银行 App 和购物辅助工具，相比十年前确实给消费者带来了更大的生活便利。回顾我们的发展路程。当应用变的更加强大易用时，应用的开发也已变的[**更加复杂**](http://iosbrain.com/blog/2018/04/29/controlling-chaos-why-you-should-care-about-adding-error-checking-to-your-ios-apps/#chaos)。
 
