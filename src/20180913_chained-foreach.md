@@ -242,4 +242,4 @@ After filter: 6
 
 ------
 
-[^1]: RxSwift 中的有一个类似的操作符 [debug](https://github.com/ReactiveX/RxSwift/blob/master/RxSwift/Observables/Debug.swift) 
+[^1]: RxSwift 中有一个类似的操作符 [debug](https://github.com/ReactiveX/RxSwift/blob/master/RxSwift/Observables/Debug.swift) 
