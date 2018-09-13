@@ -89,7 +89,7 @@ let originInfo = new Promise(function (resolve, reject) {
     translators: '译者=(.*)',
     auditors: '校对=(.*)',
     finalmans: '定稿=(.*)',
-    date: 'date: (\\d{4}-\\d{1,2}-\\d{1,2})'
+    date: 'date:\\s*(\\d{4}-\\d{1,2}-\\d{1,2})'
   }
   let info = {}
   for (let [key, value] of entries(regs)) {
