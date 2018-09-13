@@ -19,7 +19,7 @@ description: 本文介绍了如何在 Swift 的链式调用中通过使用创建
 
 > `forEach` 作为一系列链式调用中的一部分时确实可以大放异彩。举个例子，试想一下你在一个语句中通过链式调用的方式调用了几次 `map` 和 `filter` 方法。在调试这段代码时，你希望能够打印出某几步操作中间的值。要达成这一目的，在你期望的位置插入一个 `forEach` 或许是最快速的解决方式。
 
-当我写下这段描述时，众多美妙的想法涌现在我脑中，因为这听起来是个非常实用的特性[^1]（你并不能通过 `for-in` 循环达到这种效果）。可事实却如此的残酷 —— 你不能在一系列链式调用中间插入 `forEach`！
+当我写下这段描述时，众多美妙的想法涌现在我脑中，因为这听起来是个非常实用的特性<a href="#foot1" id="1"><sup>[1]</sup></a>（你并不能通过 `for-in` 循环达到这种效果）。可事实却如此的残酷 —— 你不能在一系列链式调用中间插入 `forEach`！
 
 <!--more-->
 
@@ -242,4 +242,4 @@ After filter: 6
 
 ------
 
-[^1]: RxSwift 中有一个类似的操作符 [debug](https://github.com/ReactiveX/RxSwift/blob/master/RxSwift/Observables/Debug.swift) 
+<a id="foot1" href="#1"><sup>[1]</sup></a>RxSwift 中有一个类似的操作符 [debug](https://github.com/ReactiveX/RxSwift/blob/master/RxSwift/Observables/Debug.swift) 
