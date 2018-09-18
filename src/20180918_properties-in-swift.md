@@ -12,7 +12,7 @@ description: 本文简单介绍了 Swift 中的属性
 作者=Thomas Hanning
 原文日期=2018-03-15
 译者=Sunnyyoung
-校对=小铁匠Linu,numbbbbb
+校对=小铁匠Linus,numbbbbb
 定稿=Forelax
 
 <!--此处开始正文-->
