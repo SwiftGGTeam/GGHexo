@@ -1,7 +1,7 @@
 构建一个 @synchronized"
 
 > 作者：Mike Ash，[原文链接](https://www.mikeash.com/pyblog/friday-qa-2015-02-20-lets-build-synchronized.html)，原文日期：2015-02-20
-> 译者：[Sunnyyoung](undefined)；校对：[智多芯](http://hulizhen.me)；定稿：[numbbbbb](http://numbbbbb.com/)，[CMB](https://github.com/chenmingbiao)
+> 译者：[Sunnyyoung](https://www.sunnyyoung.net/)；校对：[智多芯](http://hulizhen.me)；定稿：[numbbbbb](http://numbbbbb.com/)，[CMB](https://github.com/chenmingbiao)
   
 
 
