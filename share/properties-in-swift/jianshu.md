@@ -1,7 +1,7 @@
 Swift 中的属性"
 
 > 作者：Thomas Hanning，[原文链接](http://www.thomashanning.com/properties-in-swift/)，原文日期：2018-03-15
-> 译者：[Sunnyyoung](undefined)；校对：[小铁匠Linu](undefined)，[numbbbbb](http://numbbbbb.com/)；定稿：[Forelax](http://forelax.space)
+> 译者：[Sunnyyoung](undefined)；校对：[小铁匠Linus](http://linusling.com)，[numbbbbb](http://numbbbbb.com/)；定稿：[Forelax](http://forelax.space)
   
 
 
