@@ -12,7 +12,7 @@ description: 本文介绍了基于 iOS12 和 XCode10 创建 NSUserActivity 将�
 作者=AppCoda
 原文日期=2018-07-11
 译者=Hale
-校对=liberalisman,numbbbbb
+校对=liberalisman,numbbbbb,Yousanflics
 定稿=Forelax
 
 <!--此处开始正文-->
