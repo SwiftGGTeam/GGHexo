@@ -130,15 +130,7 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
 
 现在你可以唤起 Siri 并说出你的短语，体验 Shortcut！
 
-![](https://appcoda.com/wp-content/uploads/2018/07/i-1.png)
-
-![](https://appcoda.com/wp-content/uploads/2018/07/i-2.png)
-
-![](https://appcoda.com/wp-content/uploads/2018/07/i-3.png)
-
-![](https://appcoda.com/wp-content/uploads/2018/07/i-4.png)
-
-![](https://appcoda.com/wp-content/uploads/2018/07/i-5.png)
+![](https://ws2.sinaimg.cn/large/006tNbRwgy1fvfvhpdhd4j31kw0jr1kx.jpg)
 
 ## 总结
 
