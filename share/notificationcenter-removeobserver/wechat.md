@@ -1,7 +1,7 @@
 Block 形式的通知中心观察者是否需要手动注销"
 
 > 作者：Ole Begemann，[原文链接](https://oleb.net/blog/2018/01/notificationcenter-removeobserver/)，原文日期：2018-01-05
-> 译者：[BigNerdCoding](undefined)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[BigNerdCoding](https://bignerdcoding.com/)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

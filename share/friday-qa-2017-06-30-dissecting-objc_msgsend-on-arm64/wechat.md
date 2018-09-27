@@ -1,7 +1,7 @@
 剖析 ARM 64 架构中的 objc_msgSend"
 
 > 作者：Mike Ash，[原文链接](https://www.mikeash.com/pyblog/friday-qa-2017-06-30-dissecting-objc_msgsend-on-arm64.html)，原文日期：2017-06-30
-> 译者：[BigNerdCoding](undefined)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)，[shanks](http://codebuild.me/)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[BigNerdCoding](https://bignerdcoding.com/)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)，[shanks](http://codebuild.me/)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

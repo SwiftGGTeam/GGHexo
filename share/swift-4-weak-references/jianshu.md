@@ -1,7 +1,7 @@
 Swift 4 弱引用实现"
 
 > 作者：Mike Ash，[原文链接](https://www.mikeash.com/pyblog/friday-qa-2017-09-22-swift-4-weak-references.html)，原文日期：2017-09-22
-> 译者：[BigNerdCoding](undefined)；校对：[Yousanflics](http://blog.yousanflics.com.cn)，[numbbbbb](http://numbbbbb.com/)，[Cee](https://github.com/Cee)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[BigNerdCoding](https://bignerdcoding.com/)；校对：[Yousanflics](http://blog.yousanflics.com.cn)，[numbbbbb](http://numbbbbb.com/)，[Cee](https://github.com/Cee)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 
