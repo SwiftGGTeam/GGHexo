@@ -63,7 +63,8 @@ let nameMap = {
   "雨谨": "https://github.com/mobilefellow",
   "jojotov": "https://dingtz.com/",
   "Sunnyyoung": "https://www.sunnyyoung.net/",
-  "liberalisman": "http://xiaolu520.com/"
+  "liberalisman": "http://xiaolu520.com/",
+  "BigNerdCoding": "https://bignerdcoding.com/"
 }
 
 export default nameMap
