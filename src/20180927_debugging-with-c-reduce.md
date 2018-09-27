@@ -263,7 +263,7 @@ pass statistics:
 
 不过好在，这次我的直觉错了。C-Reduce 确实有一些与 C 相关的特定验证测试，但大部分还是和语言无关的。无论你使用何种语言只要你能写出相关的验证测试，C-Reduce 都能派上用场，虽然效率可能不是很理想。
 
-下面我们就来试一试。我在 *bugs.swift.org* 上面找到了一个很好的测试 [用例](https://bugs.swift.org/browse/SR-7354)。不过该崩溃只出现在 Xcode9.3 版本上，而我正好就安装了该版本。下面是该 bug 示例的简易修改版：
+下面我们就来试一试。我在 bugs.swift.org 上面找到了一个很好的测试 [用例](https://bugs.swift.org/browse/SR-7354)。不过该崩溃只出现在 Xcode9.3 版本上，而我正好就安装了该版本。下面是该 bug 示例的简易修改版：
 
 ```swift
 import Foundation
