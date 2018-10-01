@@ -1,7 +1,7 @@
-Swift 4 泛型：如何在你的代码或App里应用泛型"
+浅谈 Swift 中的泛型"
 
-> 作者：Andrew Jaffee，[原文链接](https://appcoda.com/swift-generics)，原文日期：2018-02-14
-> 译者：[BigLuo](https://github.com/Adolf-L)；校对：[numbbbbb](http://numbbbbb.com/)，[muhlenXi](http://muhlenxi.com/)；定稿：[CMB](https://github.com/chenmingbiao)
+> 作者：Thomas Hanning，[原文链接](http://www.thomashanning.com/swift-generics/)，原文日期：2015-09-09
+> 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[shanks](http://codebuild.me/)
   
 
 
@@ -12,89 +12,158 @@ Swift 4 泛型：如何在你的代码或App里应用泛型"
 
 
 
-问题 1：我能否写一个 Swift 函数用于查找在**任意数组**中存储的**任意类型**的**任何实例对象**的位置\索引。
-
-问题 2：我能否写一个 Swift 函数用于确定在**任意数组**中存储的**任意类型**的**任何实例对象**的类型。
-
-我所说的 "任何类型"，包括自定义类型，比如我们自己定义的 Class 类型。提示：我知道我能够用 Swift `Array` 类型的内置方法，如 `index` 和 `contains`，但今天我将会用简单代码实例来说明 Swift 泛型中的一些特性。
+`Objective-C`缺乏一个重要特性:不支持**泛型**。幸运地是，`Swift`拥有这一特性。**泛型**允许你声明的函数、类以及结构体支持不同的数据类型。
 
 
 
-一般来说，我将**泛型编程**作如下定义：
+## 提出问题
 
-> … a style of computer programming in which algorithms are written in terms of types to-be-specified-later that are then instantiated when needed for specific types provided as parameters. This approach, pioneered by ML in 1973, permits writing common functions or types that differ only in the set of types on which they operate when used, thus reducing duplication.
-
-> 是一种算法机制为 types to-be-specified-later (类型确定滞后)的计算机编程风格，当具体的类型作为参数传入后，该算法机制会对类型进行实例化。这个方法由 "ML" 在 1973 年开创。可以用共有的函数和类型来表示一个类型集合从而来减少函数操作的重复。
-
-特别的指出，来自[苹果Swift文档](https://developer.apple.com/library/content/documentation/Swift/Conceptual/SwiftProgrammingLanguage/Generics.html) 关于"泛型"话题的说明：
-
-> Generic code enables you to write flexible, reusable functions and types that can work with any type, subject to requirements that you define. You can write code that avoids duplication and expresses its intent in a clear, abstracted manner.
->
-> Generics are one of the most powerful features of  Swift , and much of the Swift standard library is built with generic code. … For example,  Swift ’s Array and Dictionary types are both generic collections. You can create an array that holds Int values, or an array that holds String values, or indeed an array for any other type that can be created in  Swift . Similarly, you can create a dictionary to store values of any specified type, and there are no limitations on what that type can be. …
-
-> 泛型编码能让你写出符合需求、支持任意类型，灵活、可重用的函数。你能够编写避免重复和编程风格抽象、清晰、优雅的代码。
->
-> 泛型是 Swift 中最强大的特性之一，大量的 Swift 标准库使用了泛型编码。例如， Swift 的数组和字典都是泛型集合。你可以创建一个存有整型值或者字符串值的数组，有必要的话，还可以创建一个任何 Swift 支持类型的数组。类似的，你也可以创建一个字典用于存储任意指定类型的值。
-
-我一直提倡构建可复用，简洁，可维护的代码，对于 Swift 中的泛型，如果运用恰当，能某种程度上帮助我实现上面提到的效果。所以对于上面两个问题，我的答案是 "YES"。
-
-## 生活在一个特定类型编码的世界
-
-让我们写一个 Swift 的方法来说明在一个字符串数组中是否存在特定的一个字符串：
+优秀的泛型使用案例中，最常见的例子当属对**栈(Stack)**的操作。栈作为容器有两种操作:一.**压入(Push)**操作添加项到容器中;二.**弹出(Pop)**操作将最近添加项从容器移除。首先我们用非泛型方式设计**栈**。最后代码如下所示:     
 
     
-    func existsManual(item:String, inArray:[String]) -> Bool
-    {
-        var index:Int = 0
-        var found = false
-        
-        while (index < inArray.count && found == false)
-        {
-            if item == inArray[index]
-            {
-                found = true
-            }
-            else
-            {
-                index = index + 1
-            }
-        }
-        
-        if found
-        {
-            return true
-        }
-        else
-        {
-            return false
-        }
+    class IntStack{
+      // 采用数组作为容器保存数据 类型为Int
+      private var stackItems:[Int] = []
+      // 入栈操作 即Push 添加最新数据到容器最顶部
+      func pushItem(item:Int){
+        stackItems.append(item)    
+      }
+      // 出栈操作 即Pop 将容器最顶部数据移除
+      func popItem()->Int?{
+        let lastItem = stackItems.last
+        stackItems.removeLast()
+        return lastItem
+      }
     }
 
-让我们测试这个方法：
+该栈能够处理**Int**类型数据。这看起来不错，但是倘若要建立一个能够处理`String`类型的**栈**，我们又该如何实现呢？我们需要替换所有`Int`为`String`，不过这显然是一个糟糕的解决方法。此外另外一种方法乍看之下灰常不错，如下:     
 
     
-    let strings = ["Ishmael", "Jacob", "Ezekiel"]
-     
-    let nameExistsInArray = existsManual(item: "Ishmael", inArray: strings)
-    // returns true
-     
-    let nameExistsInArray1 = existsManual(item: "Bubba", inArray: strings)
-    // returns false
+    class AnyObjectStack{
+      // 采用数组作为容器保存数据 类型为AnyObject
+      private var stackItems:[AnyObject] = []
+      // 入栈操作 即Push 添加最新数据到容器最顶部
+      func pushItem(item:AnyObject){
+        stackItems.append(item)    
+      }
+      // 出栈操作 即Pop 将容器最顶部数据移除
+      func popItem()->AnyObject?{
+        let lastItem = stackItems.last
+        stackItems.removeLast()
+        return lastItem
+      }    
+    }
 
-在创建了用于查找 `String` 数组的 `existsManual` 函数后。假如我决定想要一些类似的函数用于搜索 `Integer`，`Float`，和  `Double` 数组 — 甚至用于查找数组中自定义类呢？我最终花费了宝贵的时间写了很多做同样事情的函数。我需要写很多代码来实现。如果我发现了一个新的/更快的搜索算法呢？又如果在我的搜索算法有一个 bug 呢？我不得不改变我所有的查找方法的版本。我发现这简直是个复用地狱：
+此处，我们合理地使用`AnyObject`类型，那么现在能够将`String`类型数据压入到栈中了，对么？不过这种情况下我们就失去了数据类型的安全，并且每当我们对栈进行操作时,都需要进行一系列繁琐的类型转换(`casting`操作,使用`as`来进行类型转换)。
+
+
+
+### 解决方案
+
+参照泛型的特性，我们能够定义一个泛型类型，这看起来像一个占位符。使用泛型后的示例代码如下:     
+
+
 
     
-    func existsManual(item:String, inArray:[String]) -> Bool
-    ...
-    func existsManual(item:Int, inArray:[Int]) -> Bool
-    ...
-    func existsManual(item:Float, inArray:[Float]) -> Bool
-    ...
-    func existsManual(item:Double, inArray:[Double]) -> Bool
-    ...
-    //  "Person"  is a custom class we'll create
-    //  "Person" 是我们将要创建的自定义的类
-    func existsManual(item:Person, inArray:[Person]) -> Bool
+    class Stack<T> {
+    
+      private var stackItems: [T] = []  
+    
+      func pushItem(item:T) {
+        stackItems.append(item)
+      }  
+      
+      func popItem() -> T? {
+        let lastItem = stackItems.last
+        stackItems.removeLast()
+        return lastItem
+      }
+    
+    }
+
+泛型定义方式:由一对尖括号(`<>`)包裹，命名方式通常为大写字母开头(这里我们命名为`T`)。在初始化阶段，我们通过明确的类型(这里为`Int`)来定义参数,之后编译器将所有的泛型`T`替换成`Int`类型:
+
+    
+    // 指定了泛型T 就是 Int 
+    // 编译器会替换所有T为Int
+    let aStack = Stack<Int>()
+    
+    aStack.pushItem(10)
+    if let lastItem = aStack.popItem() {
+      print("last item: \(lastItem)")
+    }
+
+如此实现的栈，最大优势在于能够匹配任何类型。  
+
+
+
+### 类型约束
+
+这里存在一个缺点:尽管泛型能够代表任何类型，我们对它的操作也是比较有局限性的。仅仅是比较两个泛型都是不支持的，请看如下代码:
+
+    
+    class Stack<T> {
+    
+      private var stackItems: [T] = []
+    
+      func pushItem(item:T) {
+        stackItems.append(item)
+      }
+    
+      func popItem() -> T? {
+        let lastItem = stackItems.last
+        stackItems.removeLast()
+        return lastItem
+      }
+    
+      func isItemInStack(item:T) -> Bool {
+        var found = false
+        for stackItem in stackItems {
+          if stackItem == item { //编译报错!!!!!!!!!!
+            found = true
+          }
+        }
+        return found
+      }
+    }
+
+注意到函数`isItemInSatck(item:T)`中，我们得到了一个编译错误，因为两个参数没有实现`Equtable`协议的话，类型值是不能进行比较的。实际上我们可以为泛型增加约束条件来解决这个问题。在本例中，通过对第一行进行修改，我们让泛型`T`遵循`Equatable`协议:      
+
+
+
+    
+    class Stack<T:Equatable> {
+    
+      private var stackItems: [T] = []
+    
+      func pushItem(item:T) {
+        .append(item)
+      }
+    
+      func popItem() -> T? {
+        let lastItem = stackItems.last
+        stackItems.removeLast()
+        return lastItem
+      }
+    
+      func isItemInStack(item:T) -> Bool {
+        var found = false
+        for stackItem in stackItems {
+          if stackItem == item {
+            ound = true
+          }
+        }
+        return found
+      }
+    }
+
+
+
+### 总结
+
+就像众多其他编程语言一样，你也能够在`Swift`中利用泛型这一特性。倘若你想要写一个库，泛型是非常好用的特性。
+
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。Person]) -> Bool
 
 ## 问题
 
