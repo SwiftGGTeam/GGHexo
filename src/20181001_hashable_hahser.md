@@ -156,13 +156,13 @@ let yellow = Color(red: 0xFF, green: 0xFF, blue: 0x00)
 cyan.hashValue == yellow.hashValue // false, no collision
 ```
 
-#### 自定义哈希函数
+### 自定义哈希函数
 
 默认情况下，Swift 使用通用的哈希函数将字节序列缩减为一个整数。
 
 但是，你可以使用你项目中自定义的哈希函数来改进这个缩减的问题。比如，如果你正在编写一个程序来玩国际象棋或者棋盘游戏，你可以使用 [Zobrist hashing](https://en.wikipedia.org/wiki/Zobrist_hashing) 来快速的存储游戏的状态。
 
-#### 避免哈希泛滥(Hash-Flooding)
+### 避免哈希泛滥(Hash-Flooding)
 
 选择像 **SipHash** 这样的加密算法有助于防止哈希泛滥的 **DoS** 攻击，这种攻击会尝试生成哈希冲突，并试图强制实施哈希数据结构最坏的情况，最终导致程序慢下来。[这在 2010 年初引发了一系列的网络问题](https://arstechnica.com/information-technology/2011/12/huge-portions-of-web-vulnerable-to-hashing-denial-of-service-attack/)。
 
