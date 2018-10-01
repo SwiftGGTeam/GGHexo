@@ -9,7 +9,7 @@ description: 本文介绍了 Hashable 和相关的新类型 Hasher
 
 ---
 原文链接=https://nshipster.com/hashable/
-作者=Matt
+作者=Mattt
 原文日期=2018-08-13
 译者=Damonwong
 校对=Lision,Yousanflics
