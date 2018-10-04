@@ -65,7 +65,7 @@ Kotlin 也可能会成为未来的一个主流语言，但和有着相同问题�
 
 Rust 是一个有趣的语言。事实上它是如此的有趣，我花了几个月的时间慢慢的学习它。这门语言的很多方面与 Swift 相似，但比 Swift 更难（这里我们暂不做讨论，该部分内容将以主题的形式发布在博客）。似乎这两种语言一开始就是采用完全相反的设计思路；Swift 作为一个易学的语言起初是一些容易上手的特性，慢慢的添加复杂的特性。Rust 起初作为一门复杂的语言，它正在慢慢的增添一些更简单的抽象对象或更好的错误调试信息来让初学者容易上手。两种语言语法类似，这点我并不惊讶，直到未来的突然某天，我意识到两门语言在某些简单和复杂特性上有着高度的相似性。然而，目前而言，在你经历一段复杂学习体验的后，便会发现 Rust 背后有提供了一些非常诱人的特性。
 
-相对于 Swift，Rust 提供了更好的跨平台特性和一个虽难于处理但更高效的内存管理策略（比如在对象的生命周期和所有权方面），[幸运的是，Rust 的一部份内存管理的优点未来也会在 Swift 上出现](https://github.com/apple/swift/blob/master/docs/OwnershipManifesto.md)，同时它也支持 [Webassembly](https://rust-lang-nursery.github.io/rust-wasm/)（你可以用 Rust 写一个前端 App），也提供了很好的基础让开发者能够快速的构建新项目，虽然它没有提供像 Go 一样数量级的高质量项目，但它也提供了一些有潜力的项目（CoreUtils，RedoxOS，TikV，Vagga，Servo，Parity）。但更重要的，现在已经有大量的 Rust 第三方库供你选择。[你可以来看看看下这个列表。](https://github.com/rust-unofficial/awesome-rust)
+相对于 Swift，Rust 提供了更好的跨平台特性和一个虽难于处理但更高效的内存管理策略（比如在对象的生命周期和所有权方面），[幸运的是，Rust 的一部份内存管理的优点未来也会在 Swift 上出现](https://github.com/apple/swift/blob/master/docs/OwnershipManifesto.md)，同时它也支持 [Webassembly](https://rust-lang-nursery.github.io/rust-wasm/)（你可以用 Rust 写一个前端 App），也提供了很好的基础库让开发者能够快速的构建新项目，虽然它没有提供像 Go 一样数量级的高质量项目，但它也提供了一些有潜力的项目（CoreUtils，RedoxOS，TikV，Vagga，Servo，Parity）。但更重要的，现在已经有大量的 Rust 第三方库供你选择。[你可以来看看看下这个列表。](https://github.com/rust-unofficial/awesome-rust)
 
 ### 其他语言
 
