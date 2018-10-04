@@ -1,6 +1,6 @@
 Never"
 
-> 作者：Matt，[原文链接](https://nshipster.com/never/)，原文日期：2018-07-30
+> 作者：Mattt，[原文链接](https://nshipster.com/never/)，原文日期：2018-07-30
 > 译者：[雨谨](https://github.com/mobilefellow)；校对：[numbbbbb](http://numbbbbb.com/)，[wongzigii](undefined)，[Firecrest](undefined)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
