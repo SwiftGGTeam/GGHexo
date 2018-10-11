@@ -26,7 +26,6 @@ description: 本文介绍了 Hashable 和相关的新类型 Hasher
 这周我们的主题是 `Hashable` 和相关的新类型 `Hasher`。它们共同组成了 Swift 最受喜爱的两个集合类 `Dictionary` 和 `Set` 的基础功能。
 
 <!--more-->
----
 
 假设你有一个可以比较相等性的对象**[列表](https://zh.wikipedia.org/wiki/%E4%B8%B2%E5%88%97_(%E6%8A%BD%E8%B1%A1%E8%B3%87%E6%96%99%E5%9E%8B%E5%88%A5))**。要在这个列表中找到一个特定的对象，你需要遍历这个列表的元素，直到找到匹配项为止。随着你向列表中添加更多的元素时，需要找到其中任何一个元素所需的平均时间是线性级的(`O(n)`)。
 
@@ -157,21 +156,19 @@ let yellow = Color(red: 0xFF, green: 0xFF, blue: 0x00)
 cyan.hashValue == yellow.hashValue // false, no collision
 ```
 
-#### 自定义哈希函数
+### 自定义哈希函数
 
 默认情况下，Swift 使用通用的哈希函数将字节序列缩减为一个整数。
 
 但是，你可以使用你项目中自定义的哈希函数来改进这个缩减的问题。比如，如果你正在编写一个程序来玩国际象棋或者棋盘游戏，你可以使用 [Zobrist hashing](https://en.wikipedia.org/wiki/Zobrist_hashing) 来快速的存储游戏的状态。
 
-#### 避免哈希泛滥(Hash-Flooding)
+### 避免哈希泛滥(Hash-Flooding)
 
 选择像 SipHash 这样的加密算法有助于防止哈希泛滥的 DoS 攻击，这种攻击会尝试生成哈希冲突，并试图强制实施哈希数据结构最坏的情况，最终导致程序慢下来。[这在 2010 年初引发了一系列的网络问题](https://arstechnica.com/information-technology/2011/12/huge-portions-of-web-vulnerable-to-hashing-denial-of-service-attack/)。
 
 为了使事情变的更加安全，`Hasher` 会在每次启动应用程序时生成一个随机种子值，使得哈希值更难以预测。
 
 > 你不应该依赖特定的哈希值，也不应该在程序执行中保存特定的哈希值。在极少数情况下，你确定要这么做的话，可以设置 SWIFT_DETERMINISTIC_HASHING 标识符来禁用随机哈希种子。
-
----
 
 编程类比的挑战在于它们通过边界情况规范反社会行为。
 
