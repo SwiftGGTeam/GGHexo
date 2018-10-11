@@ -22,12 +22,12 @@ Swift 类型擦除
 
 协议或抽象父类可作为类型擦除简单的实现方式之一。例如 `NSString` 就是一个例子，每次创建一个 `NSString` 实例时，这个对象并不是一个普通的 `NSString` 对象，它通常是某个具体的子类的实例，这个子类一般是私有的，同时这些细节通常是被隐藏起来的。你可以使用子类提供的功能而不用知道它具体的类型，你也没必要将你的代码与它们的具体类型联系起来。
 
-在处理 Swift 泛型以及关联类型协议的时候，可能需要使用一些高级的内容。Swift 不允许把协议当做具体的类型来使用。例如， 如果你想编写一个方法，他的参数是一个包含了`Int` 的序列，那么下面这种做法是不正确的:
+在处理 Swift 泛型以及关联类型协议的时候，可能需要使用一些高级的内容。Swift 不允许把协议当做具体的类型来使用。例如，如果你想编写一个方法，它的参数是一个包含了 `Int` 的序列，那么下面这种做法是不正确的：
 
     
         func f(seq: Sequence<Int>) { ...
 
-你不能这样使用协议类型，这样会在编译时报错。但你可以使用泛型来替代协议, 解决这个问题: 
+你不能这样使用协议类型，这样会在编译时报错。但你可以使用泛型来替代协议，解决这个问题：
 
     
         func f<S: Sequence>(seq: S) where S.Element == Int { ...
@@ -60,11 +60,11 @@ Swift 标准库中提供了很多这样的类型，如 `AnyCollection`、`AnyHas
 这个类需要一个 `iterator` 类型作为 `makeIterator` 返回类型。我们必须要做两次类型擦除来隐藏底层的序列类型以及迭代器的类型。我们在 `MAnySequence` 内部定义了一个 `Iterator` 类，该类遵循着 `IteratorProtocol` 协议，并在  `next()` 方法中使用 `fatalError` 抛出异常。Swift 本身不支持抽象类型，但这样也够了:
 
     
-        class Iterator: IteratorProtocol {
-            func next() -> Element? {
-                fatalError("Must override next()")
+            class Iterator: IteratorProtocol {
+                func next() -> Element? {
+                    fatalError("Must override next()")
+                }
             }
-        }
 `MAnySequence` 对 `makeIterator` 方法实现也差不多。直接调用将抛出异常，这用来提示子类需要重写这个方法:
 
     
@@ -117,7 +117,7 @@ Swift 标准库中提供了很多这样的类型，如 `AnyCollection`、`AnyHas
             }
     
         }
-我们需要一种方法来实际创建这些东西: 对 `MAnySequence` 添加一个静态方法，该方法创建一个 `MAnySequenceImpl` 实例，并将其作为 `MAnySequence` 类型返回给调用者。
+我们需要一种方法来实际创建这些东西：对 `MAnySequence` 添加一个静态方法，该方法创建一个 `MAnySequenceImpl` 实例，并将其作为 `MAnySequence` 类型返回给调用者。
 
     
     
@@ -163,7 +163,7 @@ Swift 标准库中提供了很多这样的类型，如 `AnyCollection`、`AnyHas
                 }
             }
 
-`MAnySequence` 与 `Iterator` 很相似: 持有一个参数为空返回 `Iterator` 类型的存储型属性。遵循 `Sequence` 协议并在 `makeIterator` 方法中调用这个属性。
+`MAnySequence` 与 `Iterator` 很相似：持有一个参数为空返回 `Iterator` 类型的存储型属性。遵循 `Sequence` 协议并在 `makeIterator` 方法中调用这个属性。
 
     
             let _makeIterator: () -> Iterator
@@ -181,7 +181,7 @@ Swift 标准库中提供了很多这样的类型，如 `AnyCollection`、`AnyHas
 
     
                 _makeIterator = {
-如何生成迭代器？请求 `Seq` 序列生成:
+如何生成迭代器？请求 `Seq` 序列生成：
 
     
                     var iterator = seq.makeIterator()
@@ -232,5 +232,4 @@ Swift 标准库中提供了很多这样的类型，如 `AnyCollection`、`AnyHas
 Swift 标准库提供了几种可直接利用的类型擦除类型。如 `AnySequence` 包装一个 `Sequence`，正如其名，`AnySequence` 允许你对序列迭代而无需知道序列具体的类型。`AnyIterator` 也是类型擦除的类型，它提供一个类型擦除的迭代器。`AnyHashable` 也同样是类型擦除的类型，它提供了对Hashable类型访问功能。Swift 还有很多基于集合的擦除类型，你可以通过搜索 `Any` 来查阅。标准库中也为 `Codable` API 设计了类型擦除类型: `KeyedEncodingContainer` 和 `KeyedDecodingContainer`。它们都是容器协议类型包装器，可用来在不知道底层具体类型信息的情况下实现 `Encode` 和 `Decode`。
 
 这就是今天全部的内容了，下次再见。你们的建议对 Friday Q&A 是最好的鼓励，所以如果你关于这个主题有什么好的想法，请 [发邮件到这里](mailto:mike@mikeash.com)。
-
 > 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
