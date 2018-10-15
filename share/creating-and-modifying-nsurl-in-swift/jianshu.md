@@ -1,7 +1,7 @@
-在 Swift 应用里构造和修改 NSURL"
+在你的 Swift 应用中创建或修改 URL
 
-> 作者：Nick Hanan，[原文链接](http://www.codingexplorer.com/creating-and-modifying-nsurl-in-swift/)，原文日期：2016-03-17
-> 译者：[BigbigChai](https://github.com/chaiyixiao)；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
+> 作者：codingexplorer，[原文链接](http://www.codingexplorer.com/creating-and-modifying-nsurl-in-swift/)，原文日期：2018-07-18
+> 译者：[Damonwong](https://github.com/Damonvvong)；校对：[numbbbbb](http://numbbbbb.com/)，[BigNerdCoding](https://bignerdcoding.com/)；定稿：[Forelax](http://forelax.space)
   
 
 
@@ -12,89 +12,92 @@
 
 
 
-许多应用程序都有访问文件的需求。也许是应用 bundle 或文件系统的文件，又或许是网上的资源。在代码里需要调用某些方法来指向这些文件。对于 Apple 平台而言，基本上只有两个选择：使用 String 或 NSURL。
-
-使用过地址栏或任何终端的话，Swift 字符串将是一个非常容易理解的选择。我的意思是，所有的文本都是在地址栏的，对吧？Cocoa 和 Cocoa Touch SDK 中一些较旧的 API 都接收 NSURL 和字符串（通常在这些 API 中称为“路径”）作为参数，但是都越来越朝着只使用 NSURL 的方向发展。和 String 路径相比，NSURL 有许多优点，最明显的是可以访问 URL 各个部分的属性，而不必另外编写代码来从路径的字符串解析出这些组件。
-
-请继续关注如何在 Swift 应用程序中学习创建和使用 NSURL。
+对于大部分应用来说，都需要访问一些文件资源。这些文件资源可能在你的应用安装包中，或者在文件系统内，亦或者在某个网站服务器上。你需要用某种方法将它们体现在代码中。对于苹果平台而言，你主要有两种选择，用字符串或者 `URL`。
 
 
 
-## 在 Swift 中创建 NSURL
+如果你使用过浏览器的地址栏或者在终端中输入过地址，你可能会选择使用字符串，毕竟，在这些地方你只能输入字符串。虽然在 `Cocoa` 和 `Cocoa Touch` SDKs 中许多旧的 API 同时采用 `URL` 和字符串 (对于这些 API 来说，这些字符串通常被称为 "path") 作为参数，但是越来越多的 API 倾向于只能用 `URL` 对象。相比较于字符串路径来说，`URL` 对象有更多的优势，最明显的优势就是你可以直接通过属性访问 `URL` 的不同的部分，而不需要自己编写一个解析组件来解析路径字符串的不同部分。
 
-在 Swift 中，有几个构造器和工厂方法可以用于创建 NSURL，但是我只打算说明其中比较有用的一部分。
+紧跟我的步伐，接下来我们学习如何在 Swift 应用中创建和使用 `URL` 对象。
 
-#### init?(string URLString: String)：
+## 在 Swift 中创建一个 `URL` 对象
 
-这是最普通，也许也是最常用的方法。这需要 Swift 字符串版本的 URL，并将其转换为 NSURL 对象。 这个构造器允许失败，因为不是所有字符串都能生成合法的 URL。有一些字符无法在 URL 中使用，因此需要使用 % 编码，它的出现表示了可以在 URL 中发送的编码。我个人最常见的是 ％20，”空格“字符。这个构造器只接收有效的字符，它不会另外做 % 编码。因此，如果任何无法转换为合法 URL 的内容或字符串出现时，该构造器将返回 nil。
+在 Swift 中有好几个构造器和工厂方法可用于创建 `URL` 对象，下面我要讲一些更有用的初始化方法。
 
-    
-    	let NSHipster = NSURL(string: "http://nshipster.com/")                  //returns a valid URL
-    	let invalidURL = NSURL(string: "www.example.com/This is a sentence");   //Returns nil
+### init?(string URLString: String)
 
-这实际上是以下构造器的便利构造器。
+这个是普通的，也是最常用的初始化方法。将一个用于表示 `URL` 的 Swift 字符串转变成一个 `URL` 对象。但并不是所有的字符串都可以有效的表示一个 `URL`，所以这是一个可失败构造器。由于有些字符不能在 `URL` 中使用，因此需要进行 URL 编码，将这些不能使用的字符转化为可以在 `URL` 中发送的编码。我个人见过最多的是 `%20`，也就是“空格”字符。这个构造器需要有效的字符，它不会为你进行 URL 编码转化。如果字符串中包含无法转换为有效 `URL` 的字符或者内容，构造器将会返回 `nil`。
 
-#### init?(string URLString: String, relativeToURL baseURL: NSURL?)
+     
+    let NSHipster = URL(string: "http://nshipster.com/") //返回一个有效的 URL
+    let invalidURL = URL(string: "www.example.com/This is a sentence") //返回 nil
 
-这是允许定制的构造器。类似上一个构造器，它也是可失败的，接收类似的 URL Swift 字符串，同时也接受一个可选的 baseURL 对象（本身也是 NSURL）。如果 baseURL 为空，则完全使用 URLString 创建 URL，这也许就是第一个构造器的内在实现。
+这个构造器其实是下面这个构造器的一个便利构造器。
 
-    
-    let NSHipsterTwo = NSURL(string: "http://nshipster.com/", relativeToURL: nil)   //Returns valid NSHipster URL
-    let article = NSURL(string: "ios9/", relativeToURL: NSHipster)
+### init?(string: String, relativeTo: URL?)
 
-#### init(fileURLWithPath path: String, isDirectory isDir: Bool)
+这是一个指定构造器。和上面的构造器一样，也是一个可失败的构造器，而且需要一个类似 `URL` 的 Swift 字符串和一个可选的 `baseURL` 对象，这个 `baseURL` 本身也是一个 `URL` 对象。如果 `baseURL` 为 `nil`，那么内部会像第一个构造器一样，根据提供的 `URL` 字符串生成一个 `URL` 对象。
 
-这类似于上面的构造器，只是用于指向本地文件或目录。我不确定为什么本地文件需要一个特殊版本，但我猜测它进行了一些优化（至少是以文件 scheme 开头，而不是 http 之类）。有另一个版本没有 isDirectory 参数，但已知路径是否目录的话，头文件建议使用这个方法。也许因为另一个版本将需要再执行检查，而这一个方法让用户提供了答案，能省下检查的步骤。
+     
+    let NSHipsterTwo = URL(string: "http://nshipster.com/", relativeTo: nil) //返回一个有效的 NSHipster URL
+    let article = URL(string: "ios9/", relativeTo: NSHipster) //返回 "http://nshipster.com/ios9/" URL
 
-#### public init(fileURLWithPath path: String, isDirectory isDir: Bool, relativeToURL baseURL: NSURL?)
+### init(fileURLWithPath: String, isDirectory: Bool)
 
-这是 iOS 9 中新增的方法。与上个方法类似，只是还加了 relativeToURL 参数。类似之前的构造器，这将返回一个NSURL，并将路径附加到 baseURL 后。如果有一个目录内的几个文件，有需求对这些文件进行迭代的时候，就可以利用这个方法了。可以提供文件所在的目录作为 baseURL，然后只需使用文件名作为 Swift 字符串路径创建 URL。
+该构造方法与上一个构造方法类似，但是他的字符串参数指向的是本地文件或者目录。我不太确定为什么会有一个本地文件的特殊版本，我猜有可能是做了一些优化（至少需要是文件 `scheme` 开头，而不应该是 `http` 之类的）。虽然有一个不需要传 `isDirectory` 参数的构造器，但如果你知道它是否是一个目录时，苹果建议你使用这个这个方法。在我看来，有可能另外一个构造器在内部自己判断了输入参数是否是一个目录，而这个方法通过传入参数避免了检查。
 
-## 将 URL 转换回 Swift 字符串
+### init(fileURLWithPath: String, isDirectory: Bool, relativeTo: URL?)
 
-有时候，特别是在处理较旧的 API 或要向用户展示时，需要将 NSURL 转换回 Swift 字符串。好在 NSURL 提供了一个简单的只读属性 absoluteString 来获取字符串。 NSURL 对象只需调用该属性就能获得：
+这是在 iOS 9 中新加入的方法，这与前一个类似，但新增了 `relativeToURL` 参数。和之前的构造器一样，它将返回一个将路径附加到 `baseURL` 的 `URL` 对象。当你需要为了某个事情重复访问某个目录下的不同文件时，可以使用这个初始化方法。你可以将文件所在的目录作为 `baseURL`，然后只需要一个文件名作为 Swift 字符串路径来创建 `URL` 对象。
 
-    
+## 将 URL 转回 Swift 字符串
+
+有时你需要将 `URL` 对象转回 Swift 字符串，特别是在处理旧的 API 或者向用户展示情形下。值得庆幸的是，`URL` 提供了一个简单的只读属性来解决这个问题: `absoluteString`。只需要在你的 `URL` 对象调用该属性即可：
+
+     
     let articleString = article?.absoluteString
-    //ArticleString now contains: "http://nshipster.com/ios9/"
+    // articleString 现在包含 = 的值是 "http://nshipster.com/ios9/"
 
-在这种情况，接收了之前使用 relativeToURL 版本的构造器定义的 article 常量，从 scheme 直到结尾（在这种情况下是一个路径）把它解析成一个完整的 URL。如果一个 URL 包含文件扩展名（file extension），查询（query）和片段（fragment），也会把它们解析出来。可失败的构造器返回了原来的 article 对象，因此仍然有那个表示 Swift 可选链的问号。
+在这个例子中，我们使用了 `relativeToURL` 版本的构造器定义了一个 `article` 常量，将其解析为从 `scheme` 开始的完整 `URL` (在这种情况下是一个路径)。如果这个 `URL` 上有文件拓展名，query 或者 fragment，它依旧可以被解析。原来的 `article` 对象是由一个可失败构造器返回的，这就是为什么那儿有一个 Swift 可选访问。
 
-## 修改 NSURL 
+## 修改一个 URL 对象
 
-这些函数都是基于被调用的 NSURL 返回一个新的、根据需求修改过的 NSURL。他们*不*改变被调用的NSURL。
+我们接下来所说的这些方法，每一个都会在请求修改完成时根据调用的 `URL` 对象返回一个新的 `URL` 对象。它们不会更改调用它们的 `URL` 对象。
 
-#### func URLByAppendingPathComponent(pathComponent: String, isDirectory: Bool) -\> NSURL
+### func appendingPathComponent(String, isDirectory: Bool) -> URL
 
-这个方法给 URL 添加更多的路径组件，例如说你要添加一个文件到当前目录（存储在调用的 NSURL）。跟其他一些构造器一样，它有另一个没有 isDirectory 参数的版本。但如果能明确它是否为目录的话，建议使用这一个。因为这能省去用来确定是否目录的元数据检查。
+这个方法可以为你的 `URL` 添加更多的路径组件，比如当你要添加一个文件到你所在的目录(存储在这个方法调用返回的 `URL`)时，这个方法就可以派上用处。像我们前面提到的那个初始化方法一样，这个方法也有一个没有 `isDirectory` 参数的版本，但是无论你是否知道它是不是一个目录，都更推荐你使用这个方法来确保元数据可以存储在正确的目录下。
 
-#### var URLByDeletingLastPathComponent: NSURL? {get}
 
-此属性将返回一个新的、删除了最后一个路径组件的 NSURL。这只修改 URL 的路径组件，URL 的其他组件（例如域名）不受影响。我们可以这样写：
+### func deletingLastPathComponent() -> URL
+
+这个方法将会返回删除了最后一个路径组件的新 `URL` 对象。这方法适用于 `URL` 的路径部分，`URL` 的其他部分不受影响，比如域名。所以我们可以这样子做:
 
     
-    //articleTwo now contains "http://nshipster.com/ios9/"
-     
-    let deletePathComp = articleTwo?.URLByDeletingLastPathComponent
-    //deletePathComp now contains "http://nshipster.com/"
+    let articleTwo = NSHipster?.appendingPathComponent("ios9", isDirectory: true)
+    //articleTwo 现在包含的 URL 字符是 "http://nshipster.com/ios9/"
+    
+    let deletePathComp = articleTwo?.deletingLastPathComponent
+    //deletePathComp 现在包含的 URL 字符是 "http://nshipster.com/"
 
-没有路径信息的话，结果可能会变得有点诡异。为了好玩，我链式调用了几个URLByDeletingLastPathComponent，但最后只是在后面附加了“../”，类似命令行（cd ..）返回上一个目录。
+> 译者注：
+> 在 Swift 4.2 之前，deletingLastPathComponent 是一个属性，因此在调用时不用加括号。在 4.2 版本中，deletingLastPathComponent 变成了方法
+> 因此如果你在 4.2 上运行上面一段代码，需要在 articleTwo?.deletingLastPathComponent 最后加一个括号才能正确运行
 
-还有几个修改方法和属性，但这些可能是最常用的了。
+如果没有路径信息，可能有点儿奇怪。为了好玩，我链式调用了几次 `URLByDeletingLastPathComponent`，最后只是添加了 “../”，类似于在命令行（cd ..）中上一个目录。
 
-## Conclusion
+当然还有几种修改方法和属性，但这些可能是最常用的。
 
-#### All code in this post was tested in Xcode 7.3.1.
+## 总结
 
-如果你好奇 URL 格式规范的细节，可以查看 Apple 的 NSURL 类型参考在处理 URL 部分提到的 RFC 文档。初始化 URL 时使用的字符串必须符合 [RFC 2396](https://tools.ietf.org/html/rfc2396)，并且 URL 本身根据 [RFC 1738](https://tools.ietf.org/html/rfc1738) 和 [RFC 1808](https://tools.ietf.org/html/rfc1808) 进行解析。这些规范内容很多，但你能找到所有可能关于 URL，URI 等的信息。
+如果你对 URL 格式规范感兴趣的话，可以去查看苹果的 URL 参考文档中，关于如何处理 `URL` 这部分提及到的 `RFC` 文档。用于初始化的字符串必须符合 [RFC 2396](https://tools.ietf.org/html/rfc2396)，并且 `URL` 将会根据 [RFC 1738](https://tools.ietf.org/html/rfc1738) 和 [RFC 1808](https://tools.ietf.org/html/rfc1808) 被解析。这些规范内容很多，但你能找到所有可能关于 URL，URI 等的信息。
 
-NSURL 中还有很多其他的属性。如果你想要一个完全解析的 NSURL，baseURL，主机（host），查询（query），片段（fragment）等，你可以查看 Apple 的 NSURL 类型参考。但对我个人而言，主要使用了 absoluteString，偶尔也会用到 pathExtension。
+如果你完整查阅 `URL` 的文档的话，还可以看到它拥有 `baseURL`，`host`，`query`，`fragment` 等等非常多的属性，所有这些属性都能在 Apple 文档中查询到。不过对我来说，日常使用最多的还是 `absoluteString`，偶尔也会用到 `pathExtension`
 
-希望这篇文章对你有帮助。如果有，请在 Twitter 或任何社交媒体上分享这个帖子，每次分享都有裨益。当然，如果有任何问题，也请在[联系页面](http://www.codingexplorer.com/contact/) 或 Twitter [@CodingExplorer](https://twitter.com/CodingExplorer) 上联系我，我会尽量解答的。谢谢！
+我希望你能觉得这篇文章对你有所帮助。如果你觉得有用，请不要犹豫，在 Twitter 或者其他社交媒体上分享这篇文章。当然，如果你有任何疑问，请随时通过 [联系页面](http://www.codingexplorer.com/contact/) 或者 [Twitter@CodingExplorer](https://twitter.com/CodingExplorer) 与我联系。我会尽可能的帮助你。谢谢。
 
-## 参考来源
+## 参考
 
-* [NSURL 类型参考 -- Apple](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/)
-
+[URL Class Reference – Apple Inc.](https://developer.apple.com/documentation/foundation/url)
 
 > 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
