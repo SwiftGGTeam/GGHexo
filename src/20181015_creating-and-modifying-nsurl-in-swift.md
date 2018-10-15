@@ -89,6 +89,10 @@ let deletePathComp = articleTwo?.deletingLastPathComponent
 //deletePathComp 现在包含的 URL 字符是 "http://nshipster.com/"
 ```
 
+> 译者注：
+> 在 Swift 4.2 之前，deletingLastPathComponent 是一个属性，因此在调用时不用加括号。在 4.2 版本中，deletingLastPathComponent 变成了方法
+> 因此如果你在 4.2 上运行上面一段代码，需要在 articleTwo?.deletingLastPathComponent 最后加一个括号才能正确运行
+
 如果没有路径信息，可能有点儿奇怪。为了好玩，我链式调用了几次 `URLByDeletingLastPathComponent`，最后只是添加了 “../”，类似于在命令行（cd ..）中上一个目录。
 
 当然还有几种修改方法和属性，但这些可能是最常用的。
