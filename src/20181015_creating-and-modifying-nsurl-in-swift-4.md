@@ -2,7 +2,7 @@ title: 在你的 Swift 应用中创建或修改 URL
 date: 2018-10-15
 tags: [Swift]
 categories: [codingexplorer]
-permalink: creating-and-modifying-nsurl-in-swift
+permalink: creating-and-modifying-nsurl-in-swift-4
 keywords: Swift,URL,codingexplorer
 custom_title: 在你的 Swift 应用中创建或修改 URL
 description: 本文介绍了基于 Swift 4.1.2 和 Xcode 9.2 如何创建或者修改一个 URL 的常用 API 的描述。
@@ -16,6 +16,9 @@ description: 本文介绍了基于 Swift 4.1.2 和 Xcode 9.2 如何创建或者�
 定稿=Forelax
 
 <!--此处开始正文-->
+
+> 译者注：
+> 此篇文章以前我们曾经[翻译过](https://swift.gg/2017/02/22/creating-and-modifying-nsurl-in-swift/)，原文作者在今年对这篇文章进行了更新，我们也对更新后的文章进行了翻译并再次发布。
 
 对于大部分应用来说，都需要访问一些文件资源。这些文件资源可能在你的应用安装包中，或者在文件系统内，亦或者在某个网站服务器上。你需要用某种方法将它们体现在代码中。对于苹果平台而言，你主要有两种选择，用字符串或者 `URL`。
 
