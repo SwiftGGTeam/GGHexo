@@ -1,4 +1,4 @@
-title: "编译开源 Swift Foundation 库"
+title: 编译开源 Swift Foundation 库
 date: 2018-10-22
 tags: [Swift, iOS]
 categories: [iAchieved.it]
