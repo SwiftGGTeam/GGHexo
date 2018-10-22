@@ -1,62 +1,53 @@
-title: 编译开源 Swift Foundation 库
-date: 2018-10-22
-tags: [Swift, iOS]
-categories: [iAchieved.it]
-permalink: compiling-open-source-swift-foundation
-keywords: Swift
-custom_title: "编译开源 Swift Foundation 库"
-description: 这是一篇关于编译 Swift 开源的 Foundation 库的文章
+编译开源 Swift Foundation 库
 
----
-
-原文链接=http://dev.iachieved.it/iachievedit/compiling-open-source-swift-foundation/
-作者=iAchieved.it 
-原文日期=2016-06-30
-译者=rsenjoyer
-校对=numbbbbb,智多芯
-定稿=Forelax
+> 作者：iAchieved.it，[原文链接](http://dev.iachieved.it/iachievedit/compiling-open-source-swift-foundation/)，原文日期：2016-06-30
+> 译者：[rsenjoyer](https://github.com/rsenjoyer)；校对：[numbbbbb](http://numbbbbb.com/)，[智多芯](http://hulizhen.me)；定稿：[Forelax](http://forelax.space)
+  
 
 
-<!--此处开始正文-->
 
-![](/img/articles/compiling-open-source-swift-foundation/006tNbRwgy1fuksdkfewij306o06omx6.jpg1540189674.5814507)
+
+
+
+
+
+
+
+
+![](https://ws1.sinaimg.cn/large/006tNbRwgy1fuksdkfewij306o06omx6.jpg)
 
 我最近在开源的 [Swift Foundation](https://github.com/apple/swift-corelibs-foundation) 中遇到了 `NSThread` 实现的问题。如果不是尝试在树莓派 3 上运行代码，我也许就发现不了这个问题：
 
-```swift
-import Foundation
-import Glibc
- 
-var counter = 0
-while true {
-  sleep(2)
-  counter = counter + 1
-  let t = Thread(){
-    print("STARTED:\(counter)")
-    sleep(1)
-    print("EXIT:\(counter)")
-  }
-  print("START:\(counter)")
-  t.start()
-}
-
-```
+    
+    import Foundation
+    import Glibc
+     
+    var counter = 0
+    while true {
+      sleep(2)
+      counter = counter + 1
+      let t = Thread(){
+        print("STARTED:\(counter)")
+        sleep(1)
+        print("EXIT:\(counter)")
+      }
+      print("START:\(counter)")
+      t.start()
+    }
 我所期望的是每 2 秒都会创建并销毁一个线程。不幸的是在大约启动 230 个线程之后，系统资源已经耗尽，不再有新的线程被创建。解决的方式正如 [SR-1908](https://bugs.swift.org/browse/SR-1908) 所提到的，初始化具有系统范围的分离状态的线程
 
-<!--more-->
 
 
-```swift
-public init(_ main: (Void) -> Void) {
-  _main = main
-  let _ = withUnsafeMutablePointer(&_attr) { attr in
-    pthread_attr_init(attr)
-    pthread_attr_setscope(attr，Int32(PTHREAD_SCOPE_SYSTEM))
-    pthread_attr_setdetachstate(attr，Int32(PTHREAD_CREATE_DETACHED))
-  }
-}
 
-```
+    
+    public init(_ main: (Void) -> Void) {
+      _main = main
+      let _ = withUnsafeMutablePointer(&_attr) { attr in
+        pthread_attr_init(attr)
+        pthread_attr_setscope(attr，Int32(PTHREAD_SCOPE_SYSTEM))
+        pthread_attr_setdetachstate(attr，Int32(PTHREAD_CREATE_DETACHED))
+      }
+    }
 [Philippe Hausler](https://github.com/phausler) 在 SR-1908 中提出了解决方案。正巧我有个树莓派 3 可以实现和测试该方案。
 
 ## 针对 Foundation 的构建
@@ -75,19 +66,17 @@ public init(_ main: (Void) -> Void) {
 
 现在，让我们来看看如何使用它来测试 Foundation 上的内容。请注意，我们克隆的是我们自己 fork 的 swift-corelibs-foundation 的分支。如果你打算给上游开源库（即 Apple 开源库）提交 PR，这一点非常的重要。
 
-```shell
-# git clone https://github.com/iachievedit/swift-corelibs-foundation
-# export PREBUILT_ROOT=/root/workspace/Swift-3.0-Pi3-ARM-Incremental/build/buildbot_linux/
-# SWIFTC=$PREBUILT_ROOT/swift-linux-armv7/bin/swiftc \
-CLANG=$PREBUILT_ROOT/llvm-linux-armv7/bin/clang      \
-SWIFT=$PREBUILT_ROOT/swift-linux-armv7/bin/swift     \
-SDKROOT=$PREBUILT_ROOT/swift-linux-armv7             \
-BUILD_DIR=build ./configure Debug
-# /usr/bin/ninja
-...
-[290/290] Link: build/Foundation/libFoundation.so
-
-```
+    shell
+    # git clone https://github.com/iachievedit/swift-corelibs-foundation
+    # export PREBUILT_ROOT=/root/workspace/Swift-3.0-Pi3-ARM-Incremental/build/buildbot_linux/
+    # SWIFTC=$PREBUILT_ROOT/swift-linux-armv7/bin/swiftc \
+    CLANG=$PREBUILT_ROOT/llvm-linux-armv7/bin/clang      \
+    SWIFT=$PREBUILT_ROOT/swift-linux-armv7/bin/swift     \
+    SDKROOT=$PREBUILT_ROOT/swift-linux-armv7             \
+    BUILD_DIR=build ./configure Debug
+    # /usr/bin/ninja
+    ...
+    [290/290] Link: build/Foundation/libFoundation.so
 
 首先，我们将环境变量 `PREBUILT_ROOT` 设置到预构建 Swift 及相关工具所在的位置，还可以在下一步操作前配置 `./configure` 为 `Debug` 模式（你也可以配置为 `Release`）。我们还需要将环境变量 `SWIFTC`，`CLANG`，`SWIFT` 和 `SDKROOT` 配置脚本指向我们的“工具链”。最后，环境变量 `BUILD_DIR` 设置为所有中间件和最终输出（libFoundation.so）的放置位置。
 
@@ -100,36 +89,32 @@ BUILD_DIR=build ./configure Debug
 
 你可以通过向 `./configure` 添加 `-DXCTEST_BUILD_DIR` 参数来运行 Foundation 测试套件。
 
-```shell
-
-# export PREBUILT_ROOT=/root/workspace/Swift-3.0-Pi3-ARM-Incremental/build/buildbot_linux/
-# SWIFTC=$PREBUILT_ROOT/swift-linux-armv7/bin/swiftc \
-CLANG=$PREBUILT_ROOT/llvm-linux-armv7/bin/clang      \
-SWIFT=$PREBUILT_ROOT/swift-linux-armv7/bin/swift     \
-SDKROOT=$PREBUILT_ROOT/swift-linux-armv7             \
-BUILD_DIR=build ./configure Debug                    \
--DXCTEST_BUILD_DIR=$PREBUILT_ROOT/xctest-linux-armv7
-# /usr/bin/ninja test
-[4/4] Building Tests
-**** RUNNING TESTS ****
-execute:
-LD_LIBRARY_PATH= build/TestFoundation/TestFoundation
-**** DEBUGGING TESTS ****
-execute:
-LD_LIBRARY_PATH= lldb build/TestFoundation/TestFoundation
-
-```
+    shell
+    
+    # export PREBUILT_ROOT=/root/workspace/Swift-3.0-Pi3-ARM-Incremental/build/buildbot_linux/
+    # SWIFTC=$PREBUILT_ROOT/swift-linux-armv7/bin/swiftc \
+    CLANG=$PREBUILT_ROOT/llvm-linux-armv7/bin/clang      \
+    SWIFT=$PREBUILT_ROOT/swift-linux-armv7/bin/swift     \
+    SDKROOT=$PREBUILT_ROOT/swift-linux-armv7             \
+    BUILD_DIR=build ./configure Debug                    \
+    -DXCTEST_BUILD_DIR=$PREBUILT_ROOT/xctest-linux-armv7
+    # /usr/bin/ninja test
+    [4/4] Building Tests
+    **** RUNNING TESTS ****
+    execute:
+    LD_LIBRARY_PATH= build/TestFoundation/TestFoundation
+    **** DEBUGGING TESTS ****
+    execute:
+    LD_LIBRARY_PATH= lldb build/TestFoundation/TestFoundation
 
 运行测试需要为 `LD_LIBRARY_PATH` 提供两个路径：`libXCTest.so` 共享库和“library under test”的路径。
 如果我们按照上述步骤操作，`libFoundation.so` 就一定位于 `./build/Foundation` 目录中。
 
-```shell
-# LD_LIBRARY_PATH=./build/Foundation:$PREBUILT_ROOT/xctest-linux-armv7 ./build/TestFoundation/TestFoundation
-...
-Test Suite 'All tests' passed at 03:16:45.315
-     Executed 483 tests, with 0 failures (0 unexpected) in 37.621 (37.621) seconds
-
-```
+    shell
+    # LD_LIBRARY_PATH=./build/Foundation:$PREBUILT_ROOT/xctest-linux-armv7 ./build/TestFoundation/TestFoundation
+    ...
+    Test Suite 'All tests' passed at 03:16:45.315
+         Executed 483 tests, with 0 failures (0 unexpected) in 37.621 (37.621) seconds
 
 ### 结束语
 
@@ -137,3 +122,5 @@ Test Suite 'All tests' passed at 03:16:45.315
 
 祝你好运！
 
+
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
