@@ -136,3 +136,4 @@ Test Suite 'All tests' passed at 03:16:45.315
 需要强调的是使用这种技术，你需要一个“构建工具链”，它包含 Swift，clang 和 llvm。此外，您的工具链最后一次构建到您尝试自行构建 Foundation 的时间间隔越长，Foundation 所依赖的语言特性在构建工具链时不存在的风险就越高。但如果您决定开始使用 Foundation，请首先构建完整的 Swift 工具链并保存构建目录以使用上述技术。
 
 祝你好运！
+
