@@ -134,7 +134,7 @@ if name == "solar" {
 ```
 
 <br/>
-              bplist00Ò\u{01}\u{02}\u{03}...
+<samp>              bplist00Ò\u{01}\u{02}\u{03}...</samp>
 <br/>
 
 这又是什么？`bplist` 后面接了一串乱码？
