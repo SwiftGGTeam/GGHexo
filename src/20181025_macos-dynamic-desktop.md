@@ -34,7 +34,11 @@ Dark Mode（深色模式）可谓是 macOS 最受欢迎的特性之一了 ——
 
 答案会深入探究图片格式，同时涉及一些逆向工程以及球面三角学相关的内容。
 
+<br/>
+
 ------
+
+<br/>
 
 理解 Dynamic Desktop 第一步，就是要找到这些动态图片。
 
@@ -379,7 +383,11 @@ guard CGImageDestinationFinalize(imageDestination) else {
 
 如果一切顺利，就可以为重新定义 Dynamic Desktop 的自己而感到骄傲了。棒！
 
+<br/>
+
 ------
+
+<br/>
 
 我们非常喜欢 Mojave 的 Dynamic Desktop 特性，并且也很欣慰看到它仿佛重现了 Windows 95 壁纸进入主流市场时的辉煌。
 
@@ -417,9 +425,13 @@ guard CGImageDestinationFinalize(imageDestination) else {
 
 我个人是 [24 Hour Wallpaper](https://www.jetsoncreative.com/24hourwallpaper) 这款应用的粉丝。如果你有别的推荐，欢迎 [联系我们](https://twitter.com/NSHipster/)。
 
+<br/>
+
 ---
 
-<small>nsmutablehipster</small>
+<br/>
+
+### NSMUTABLEHIPSTER
 
 疑问？纠错？欢迎提 [issues](https://github.com/NSHipster/articles/issues) 和 [pull requests](https://github.com/NSHipster/articles/blob/master/2018-10-01-macos-dynamic-desktop.md) —— NSHipster 因你而变得更好。
 
