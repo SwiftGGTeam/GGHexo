@@ -431,8 +431,6 @@ guard CGImageDestinationFinalize(imageDestination) else {
 
 ---
 
-<br/>
-
 ### NSMUTABLEHIPSTER
 
 疑问？纠错？欢迎提 [issues](https://github.com/NSHipster/articles/issues) 和 [pull requests](https://github.com/NSHipster/articles/blob/master/2018-10-01-macos-dynamic-desktop.md) —— NSHipster 因你而变得更好。
