@@ -1,4 +1,4 @@
-title: "mac OS Dynamic Desktop"
+title: "macOS Dynamic Desktop"
 date: 2018-10-25
 tags: [Swift, NSHipster]
 categories: [Swift, NSHipster]
