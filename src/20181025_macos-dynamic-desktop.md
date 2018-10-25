@@ -132,11 +132,9 @@ if name == "solar" {
     print(String(data: data, encoding: .ascii))
 }
 ```
-
 <br/>
 <samp>              bplist00Ò\u{01}\u{02}\u{03}...</samp>
 <br/>
-
 这又是什么？`bplist` 后面接了一串乱码？
 
 天哪，原来这是 [二进制属性列表](https://en.wikipedia.org/wiki/Property_list) 的 [文件签名](https://en.wikipedia.org/wiki/File_format#Magic_number)。
