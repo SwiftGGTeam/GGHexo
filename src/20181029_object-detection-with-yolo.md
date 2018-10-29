@@ -5,7 +5,7 @@
  permalink: object-detection-with-yolo
  keywords:计算机视觉，目标检测，YOLO，机器学习
  description: 本文详细介绍了使用 YOLO 进行实时目标检测的原理，以及在 iOS 上的应用。
- ---
+---
  原文链接=http://machinethink.net/blog/object-detection-with-yolo/
  作者=Matthijs Hollemans
  原文日期=2018/03/28
