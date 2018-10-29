@@ -31,7 +31,7 @@
 
 在继续阅读之前，请先 [观看这个令人惊叹的 YOLOv2 介绍视频](https://www.youtube.com/watch?v=VOC3huqHrss)。
 
-### YOLO 的工作原理
+## YOLO 的工作原理
 
 你可以使用 [VGGNet](http://machinethink.net/blog/convolutional-neural-networks-on-the-iphone-with-vggnet/) 或 [Inception](https://github.com/hollance/Forge/tree/master/Examples/Inception) 这样的分类器，通过一个小的滑动窗口对图像进行遍历，从而形成一个目标检测器。每一步遍历运行一次分类器，来对当前窗口中的目标进行分类。使用这样的滑动窗口，会对一幅图像输出成百上千的检测结果，但你只需要保留分类器最确定的那些结果。
 
@@ -75,7 +75,7 @@ YOLO 同时会给出一个置信度，描述了某个检测框确实包含了某
 
 （以上图片来自 [pjreddie.com](https://pjreddie.com/)）
 
-### 神经网络
+## 神经网络
 
 YOLO 的结构只是一个简单的卷积神经网络：
 
@@ -119,7 +119,7 @@ YOLO 的使用很简单：输入一幅图像（大小为 416×416 像素），�
 > 小提示：要了解更多有关 YOLO 的工作原理，以及 YOLO 是如何训练的，请 [观看对它的发明者之一的访谈](https://www.youtube.com/watch?v=NM6lrxy0bxs)。这个视频介绍的是 YOLOv1，由于是老版本，结构稍有不同，但主体思想是相同的。很值得观看！
 >
 
-### 转换成 Metal
+## 转换成 Metal
 
 上文描述的是简化版的 YOLO，也是我们将在 iOS 应用中使用的版本。完全版 YOLOv2 的神经网络有三倍的分层数，因为太大，所以在当前的 iPhone 设备上不能快速运行。简化版的 YOLO 使用更少的分层数，因此运行会更快，但准确度也稍差。
 
@@ -186,7 +186,7 @@ b_new = ---------------- + beta
 
 如果你对这些操作感到好奇，你可以查看转换脚本 [yolo2metal.py](https://github.com/hollance/Forge/blob/master/Examples/YOLO/yolo2metal.py) 来获得详细信息。为了验证整合批标准化的效果，脚本创建了一个不包含批标准化层，但使用了调节后的权重的模型，并将其与原始模型的预测结果进行比对。
 
-### iOS 应用
+## iOS 应用
 
 我理所当然地使用 [Forge](https://github.com/hollance/Forge) 来编写我的 iOS 应用。😂你可以在 [YOLO](https://github.com/hollance/Forge/tree/master/Examples/YOLO) 文件夹中找到源代码。如果想尝试一下的话，可以下载或者 clone Forge，在 Xcode 8.3 以上版本中打开 **Forge.xcworkspace**，在 iPhone 6 以上设备上运行 **YOLO**。
 
@@ -319,9 +319,9 @@ if confidenceInClass > 0.3 {
 
 以上就是所有的过程了：一个常规的卷积网络，以及后续对结果的一些处理。
 
-### 运行效果如何？
+## 运行效果如何？
 
-[YOLO 官方网站](https://pjreddie.com/darknet/yolo/)宣称精简版 YOLO 最快每秒可处理 200 帧图像。但那是在性能优秀的笔记本上的运行结果，而不是在移动设备上。那么，它在 iPhone 上能够运行多快呢？
+[YOLO 官方网站](https://pjreddie.com/darknet/yolo/) 宣称精简版 YOLO 最快每秒可处理 200 帧图像。但那是在性能优秀的笔记本上的运行结果，而不是在移动设备上。那么，它在 iPhone 上能够运行多快呢？
 
 在我的 iPhone 6s 上，它处理一幅图像大约需要 0.15 秒。那也只有 6 FPS，几乎不能称之为实时。如果你将手机对准一辆开过的汽车，你会看到一个检测框拖在汽车后面一些。尽管如此，它能够生效已经使我印象深刻了。😁
 
@@ -335,7 +335,7 @@ if confidenceInClass > 0.3 {
 > 注意：顺便说一句，最近的 [Caffe2](http://caffe2.ai/) 框架也是通过 Metal 的支持，运行在 iOS 设备上。[Caffe2-iOS project](https://github.com/KleinYuan/Caffe2-iOS) 是一个针对 YOLO 的精简版本。看起来它运行得会比纯 Metal 版稍慢，大约 0.17 秒/帧。
 > 
 
-### 后记
+## 后记
 
 想要了解更多 YOLO 相关的知识，可以查看 YOLO 作者的以下论文：
 
