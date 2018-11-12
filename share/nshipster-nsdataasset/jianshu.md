@@ -1,18 +1,16 @@
-title: "NSDataAsset"
-date:2018-11-12
-tags: [Swift, NSHipster]
-categories: [Swift, NSHipster]
-permalink: nshipster-nsdataasset
+NSDataAsset"
 
----
-原文链接=https://nshipster.com/nsdataasset/
-作者=Mattt
-原文日期=2018-08-26
-译者=雨谨
-校对=wongzigii,numbbbbb
-定稿=Forelax
+> 作者：Mattt，[原文链接](https://nshipster.com/nsdataasset/)，原文日期：2018-08-26
+> 译者：[雨谨](https://github.com/mobilefellow)；校对：[wongzigii](https://github.com/wongzigii)，[numbbbbb](http://numbbbbb.com/)；定稿：[Forelax](http://forelax.space)
+  
 
-<!--此处开始正文-->
+
+
+
+
+
+
+
 
 在 Web 的世界里，速度不是一种奢求；它事关生死。
 
@@ -24,7 +22,7 @@ permalink: nshipster-nsdataasset
 
 在这个方面，App 凭借先下载后使用的特点，拥有传统网页所不具备的独特优势。在这一周的 NSHipster 里，我们将展示如何以一种非传统的方式使用 Asset Catalog 来改善你的 App 的首次启动体验。
 
-<!--more-->
+
 
 Asset Catalog 允许你根据当前设备的特点来组织资源文件。对于一个给定的图片，你可以根据设备（iPhone、iPad、Apple Watch、Apple TV、Mac）、屏幕分辨率（`@2x` / `@3x`）或者色域（sRGB / P3），提供不同的文件。对于其他类型的 asset，你可能根据可用内存或者 Metal 版本的不同而提供不同的文件。请求 asset 时仅需提供名字，最合适的那个资源就会自动返回。
 
@@ -42,7 +40,7 @@ Asset Catalog 允许你根据当前设备的特点来组织资源文件。对于
 
 当你在 Xcode 中新建一个 app 项目时，它会自动生成一个 Asset Catalog。在项目导航（Project navigator）中选中 `Assets.xcassets`，打开 Asset Catalog 编辑器。点击左下方的 <kbd>+</kbd> 图标，然后选择 "New Data Set"。
 
-![](/img/articles/nshipster-nsdataasset/add-new-data-set-b6d8b1604dd12f49f1e034c0a36a42aa9fc6efc3f42d7320d9b489b6cec5fde0.png1542005696.2277012)
+![](https://nshipster.com/assets/add-new-data-set-b6d8b1604dd12f49f1e034c0a36a42aa9fc6efc3f42d7320d9b489b6cec5fde0.png)
 
 这样会在 `Assets.xcassets` 下新建一个后缀名为 `.dataset` 的子目录。
 
@@ -52,44 +50,41 @@ Asset Catalog 允许你根据当前设备的特点来组织资源文件。对于
 
 打开 Finder，找到数据文件，把它拖拽到 Xcode 中 data set asset 的空白处。
 
-![](/img/articles/nshipster-nsdataasset/asset-catalog-any-any-universal-f634190ce57540a9fa1406ded75e13936c390fb0552b374d584510896db186bc.png1542005696.4512942)
+![](https://nshipster.com/assets/asset-catalog-any-any-universal-f634190ce57540a9fa1406ded75e13936c390fb0552b374d584510896db186bc.png)
 
 当你这么做时，Xcode 会把那个文件复制到 `.dataset` 子目录，并将它的文件名和 [通用类型标识符（Universal Type Identifier）](https://en.wikipedia.org/wiki/Uniform_Type_Identifier) 更新到 `contents.json` 元数据文件。
 
-```json
-{
-  "info": {
-    "version": 1,
-    "author": "xcode"
-  },
-  "data": [
+    json
     {
-      "idiom": "universal",
-      "filename": "colors.json",
-      "universal-type-identifier": "public.json"
+      "info": {
+        "version": 1,
+        "author": "xcode"
+      },
+      "data": [
+        {
+          "idiom": "universal",
+          "filename": "colors.json",
+          "universal-type-identifier": "public.json"
+        }
+      ]
     }
-  ]
-}
-```
 
 ### 步骤3：使用 NSDataAsset 访问数据
 
 现在你可以使用如下代码访问文件的数据：
 
-```swift
-guard let asset = NSDataAsset(name: "NamedColors") else {
-    fatalError("Missing data asset: NamedColors")
-}
-
-let data = asset.data
-```
+    
+    guard let asset = NSDataAsset(name: "NamedColors") else {
+        fatalError("Missing data asset: NamedColors")
+    }
+    
+    let data = asset.data
 
 对于我们颜色 App，我们可能在一个 view controller 的 `viewDidLoad()` 方法中调用上面的代码，然后解码返回的数据，获取 model 对象的数组，并展示在一个 table view 上。
 
-```swift
-let decoder = JSONDecoder()
-self.colors = try! decoder.decode([NamedColor].self, from: asset.data)
-```
+    
+    let decoder = JSONDecoder()
+    self.colors = try! decoder.decode([NamedColor].self, from: asset.data)
 
 ## 混合一下
 
@@ -99,32 +94,31 @@ Data set 通常无法从 Asset Catalog 的 App 瘦身特性中获益（例如，
 
 为了做到这一点，在 Asset Catalog 编辑器的侧边栏选中刚才的 asset，然后点击 Attributes Inspector 下名为 Gamut 的下拉控件。
 
-![](/img/articles/nshipster-nsdataasset/select-color-gamut-02114afe2b744c228c2b29b7277abb9ec7e2bcb9afa683cc80115792849988c4.png1542005696.594041)
+![](https://nshipster.com/assets/select-color-gamut-02114afe2b744c228c2b29b7277abb9ec7e2bcb9afa683cc80115792849988c4.png)
 
 为每个色域提供定制的数据文件后，`contents.json` 元数据文件应该看起来像这样：
 
-```json
-{
-  "info": {
-    "version": 1,
-    "author": "xcode"
-  },
-  "data": [
+    json
     {
-      "idiom": "universal",
-      "filename": "colors-srgb.json",
-      "universal-type-identifier": "public.json",
-      "display-gamut": "sRGB"
-    },
-    {
-      "idiom": "universal",
-      "filename": "colors-p3.json",
-      "universal-type-identifier": "public.json",
-      "display-gamut": "display-P3"
+      "info": {
+        "version": 1,
+        "author": "xcode"
+      },
+      "data": [
+        {
+          "idiom": "universal",
+          "filename": "colors-srgb.json",
+          "universal-type-identifier": "public.json",
+          "display-gamut": "sRGB"
+        },
+        {
+          "idiom": "universal",
+          "filename": "colors-p3.json",
+          "universal-type-identifier": "public.json",
+          "display-gamut": "display-P3"
+        }
+      ]
     }
-  ]
-}
-```
 
 ## 保鲜一下
 
@@ -136,14 +130,13 @@ Data set 通常无法从 Asset Catalog 的 App 瘦身特性中获益（例如，
 
 下面是一个 shell 脚本示例，你可以运行它来使用 `curl` 下载最新的数据文件：
 
-```shell
-#!/bin/sh
-CURL='/usr/bin/curl'
-URL='https://example.com/path/to/data.json'
-OUTPUT='./Assets.xcassets/Colors.dataset/data.json'
-
-$CURL -fsSL -o $OUTPUT $URL
-```
+    shell
+    #!/bin/sh
+    CURL='/usr/bin/curl'
+    URL='https://example.com/path/to/data.json'
+    OUTPUT='./Assets.xcassets/Colors.dataset/data.json'
+    
+    $CURL -fsSL -o $OUTPUT $URL
 
 ## 封装一下
 
@@ -153,56 +146,54 @@ $CURL -fsSL -o $OUTPUT $URL
 
 我们可以将 `curl` 的输出发送给 `gzip`，然后再写到我们的文件，从而为我们之前的 shell 脚本添加压缩功能。
 
-```shell
-#!/bin/sh
-CURL='/usr/bin/curl'
-GZIP='/usr/bin/gzip'
-URL='https://example.com/path/to/data.json'
-OUTPUT='./Assets.xcassets/Colors.dataset/data.json.gz'
-
-$CURL -fsSL $URL | $GZIP -c > $OUTPUT
-```
+    shell
+    #!/bin/sh
+    CURL='/usr/bin/curl'
+    GZIP='/usr/bin/gzip'
+    URL='https://example.com/path/to/data.json'
+    OUTPUT='./Assets.xcassets/Colors.dataset/data.json.gz'
+    
+    $CURL -fsSL $URL | $GZIP -c > $OUTPUT
 
 如果你使用了压缩，请确保 `"universal-type-identifier"` 字段体现了这一点：
 
-```json
-{
-  "info": {
-    "version": 1,
-    "author": "xcode"
-  },
-  "data": [
+    json
     {
-      "idiom": "universal",
-      "filename": "colors.json.gz",
-      "universal-type-identifier": "org.gnu.gnu-zip-archive"
+      "info": {
+        "version": 1,
+        "author": "xcode"
+      },
+      "data": [
+        {
+          "idiom": "universal",
+          "filename": "colors.json.gz",
+          "universal-type-identifier": "org.gnu.gnu-zip-archive"
+        }
+      ]
     }
-  ]
-}
-```
 
 在客户端上，你使用 asset catalog 之前需要先解压数据。如果有 `Gzip` 模块，你可能会做以下事情：
 
-```swift
-do {
-    let data = try Gzip.decompress(data: asset.data)
-} catch {
-    fatalError(error.localizedDescription)
-}
-```
+    
+    do {
+        let data = try Gzip.decompress(data: asset.data)
+    } catch {
+        fatalError(error.localizedDescription)
+    }
 
 或者，如果你会在 App 中反复地这么做，那么可以在 `NSDataAsset` 的扩展中创建一个便利方法：
 
-```swift
-extension NSDataAsset {
-    func decompressedData() throws -> Data {
-        return try Gzip.decompress(data: self.data)
+    
+    extension NSDataAsset {
+        func decompressedData() throws -> Data {
+            return try Gzip.decompress(data: self.data)
+        }
     }
-}
-```
 
 > 你还可以考虑使用 [Git Large File Storage (LFS)](https://git-lfs.github.com) 实现大型 data asset 文件的版本控制。
 
 尽管你倾向于认为你的所有用户都享受着快速的、无处不在的 WiFi 和 LTE 网络，但这并不适用于所有人，也不适用于所有时段。
 
 花点时间看看你的 App 在启动时发出的网络请求，然后考虑哪些可能从预加载中受益。给人留下好的第一印象可能意味着你的 App 是被长期地积极地使用着，而不是几秒钟之后就被删除。
+
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
