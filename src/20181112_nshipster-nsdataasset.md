@@ -42,7 +42,7 @@ Asset Catalog 允许你根据当前设备的特点来组织资源文件。对于
 
 当你在 Xcode 中新建一个 app 项目时，它会自动生成一个 Asset Catalog。在项目导航（Project navigator）中选中 `Assets.xcassets`，打开 Asset Catalog 编辑器。点击左下方的 <kbd>+</kbd> 图标，然后选择 "New Data Set"。
 
-![](https://nshipster.com/assets/add-new-data-set-b6d8b1604dd12f49f1e034c0a36a42aa9fc6efc3f42d7320d9b489b6cec5fde0.png)
+![](/img/articles/nshipster-nsdataasset/add-new-data-set-b6d8b1604dd12f49f1e034c0a36a42aa9fc6efc3f42d7320d9b489b6cec5fde0.png1542253210.0550492)
 
 这样会在 `Assets.xcassets` 下新建一个后缀名为 `.dataset` 的子目录。
 
@@ -52,7 +52,7 @@ Asset Catalog 允许你根据当前设备的特点来组织资源文件。对于
 
 打开 Finder，找到数据文件，把它拖拽到 Xcode 中 data set asset 的空白处。
 
-![](https://nshipster.com/assets/asset-catalog-any-any-universal-f634190ce57540a9fa1406ded75e13936c390fb0552b374d584510896db186bc.png)
+![](/img/articles/nshipster-nsdataasset/asset-catalog-any-any-universal-f634190ce57540a9fa1406ded75e13936c390fb0552b374d584510896db186bc.png1542253210.4507105)
 
 当你这么做时，Xcode 会把那个文件复制到 `.dataset` 子目录，并将它的文件名和 [通用类型标识符（Universal Type Identifier）](https://en.wikipedia.org/wiki/Uniform_Type_Identifier) 更新到 `contents.json` 元数据文件。
 
@@ -99,7 +99,7 @@ Data set 通常无法从 Asset Catalog 的 App 瘦身特性中获益（例如，
 
 为了做到这一点，在 Asset Catalog 编辑器的侧边栏选中刚才的 asset，然后点击 Attributes Inspector 下名为 Gamut 的下拉控件。
 
-![](https://nshipster.com/assets/select-color-gamut-02114afe2b744c228c2b29b7277abb9ec7e2bcb9afa683cc80115792849988c4.png)
+![](/img/articles/nshipster-nsdataasset/select-color-gamut-02114afe2b744c228c2b29b7277abb9ec7e2bcb9afa683cc80115792849988c4.png1542253210.733386)
 
 为每个色域提供定制的数据文件后，`contents.json` 元数据文件应该看起来像这样：
 
