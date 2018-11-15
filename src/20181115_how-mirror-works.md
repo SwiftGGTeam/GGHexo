@@ -1,5 +1,5 @@
 title: "Mirror 的工作原理"
-date: 2018-09-26
+date: 2018-11-15
 tags: [Swift]
 categories: [Mike Ash, Swift]
 permalink: how-mirror-works
@@ -10,8 +10,8 @@ keywords: swift, mirror
 作者=Mike Ash
 原文日期=2018-09-26
 译者=Nemocdz
-校对=校对名
-定稿=定稿名
+校对=numbbbbb,小铁匠Linus
+定稿=Forelax
 
 <!--此处开始正文-->
 
