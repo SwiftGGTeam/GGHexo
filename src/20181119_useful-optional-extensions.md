@@ -109,7 +109,7 @@ extension Optional where Wrapped == Error {
 
 这个概念非常的有用，它可在四个不同功能中被定义。
 
-### 默认值（Default Value）
+## 默认值（Default Value）
 
 第一个扩展方法是返回可选值或者默认值：
 
@@ -118,7 +118,7 @@ let optional: Int? = nil
 print(optional.or(10)) // 打印 10
 ```
 
-### 默认闭包（Default Closure）
+## 默认闭包（Default Closure）
 
 默认闭包和默认值非常的相似，但它允许从闭包中返回默认值。
 
@@ -153,7 +153,7 @@ if databaseController == nil {
 databaseController = databaseController.or(DatabaseController(config: config)
 ```
 
-### 抛出异常（Throw an error）
+## 抛出异常（Throw an error）
 
 这也是一个非常有用的补充，因为它将 Swift 中可选值与错误处理连接起来。根据项目中的代码，方法或函数通过返回一个为空的可选值（例如访问字典中不存在的键）时，抛出错误来表述这一无效的行为。将两者连接起来能够使代码更加清晰：
 
@@ -188,7 +188,7 @@ func build_car() throws -> Car {
 
 ```
 
-### 错误处理（Handling Errors）
+## 错误处理（Handling Errors）
 
 当代码中包含 [Stijn Willems 在 Github](https://github.com/doozMen) 自由函数，上面抛出异常部分的代码变更加有用。感谢 Stijn Willems 的建议。
 
@@ -218,7 +218,7 @@ should { try throwingFunction) }.or(print($0))
 ```
 我觉得在很多情况下，这样进行错误处理效果更好。
 
-### 变换（Map）
+## 变换（Map）
 
 正如上面所见，`map` 和 `flatMap` 是 Swift 标准库在可选项上面提供的的全部方法。然而，在多数情况下，也可以对它们稍微改进使得更加通用。这有两个扩展 `map` 允许定义一个默认值，类似于上面 `or` 的实现方式：
 
@@ -303,7 +303,7 @@ extension Optional {
 ```
 上面的四个函数都以传入可选值当做参数，最终都返回一个可选值，然而，他们的实现方式完全不同。
 
-### 依赖（Dependencies）
+## 依赖（Dependencies）
 
 若一个可选值的解包仅作为另一可选值解包的前提，`and<B>(_ optional)` 就显得非常使用：
 
@@ -317,7 +317,7 @@ if let account = user.and(userAccount()) ...
 ```
 在上面的例子中，我们对 `user` 的具体内容不感兴趣，但是要求在调用 `userAccount` 函数前保证它非空。虽然这种关系也可以使用 `user != nil`，但我觉得 `and` 使它们的意图更加清晰。
 
-### 链接（Chaining）
+## 链式调用（Chaining）
 
 `and<T>(then:)` 是另一个非常有用的函数, 它将多个可选项链接起来，以便将可选项 `A` 的解包值当做可选项 `B` 的输入。我们从一个简单的例子开始：
 
@@ -360,7 +360,7 @@ let children = database.current().and(then: { database.spouse($0) })
 
 是的，`children` 属性应该由调用 `database.childrenCount(spouse)` 创建，但我写成了 `database.childrenCount(father2)`。很难发现这样的错误。使用 `and(then:)` 就容易发现这个错误，因为它使用的是变量 `$0`。
 
-### 组合（Zipping）
+## 组合（Zipping）
 这是现有 Swift 概念的另一个扩展，`zip` 可以组合多个可选值，它们一起解包成功或解包失败。在上面的代码片段中，我提供了 `zip2` 与 `zip3` 函数，但你也可以命名为 `zip22`（好吧，也许对合理性和编译速度有一点点影响）。
 
 ```swift
@@ -384,7 +384,7 @@ func buildProduct() -> Product? {
 ```
 代码量更少，代码更清晰，更优雅。然而，也存一个缺点，就是更复杂了。读者必须了解并理解 `zip` 才能完全掌握它。
 
-#### On
+## On
 
 ```swift
 extension Optional {
@@ -409,7 +409,7 @@ self.user.on(none: { AppCoordinator.shared.logout() })
 self.user.on(some: { AppCoordinator.shared.unlock() })
 ```
 
-### Various
+## Various
 ```swift
 extension Optional {
     /// 可选值不为空且可选值满足 `predicate` 条件才返回，否则返回 `nil`
@@ -426,7 +426,7 @@ extension Optional {
     }
 }
 ```
-#### 过滤（Filter）
+### 过滤（Filter）
 这个方法类似于一个守护者一样，只有可选值满足 `predicate` 条件时才进行解包。比如说，我们希望所有的老用户都升级为高级账户，以便与我们保持更长久的联系。
 
 ```swift
@@ -439,7 +439,7 @@ user.filter({ $0.id < 1000 })?.upgradeToPremium()
 ```
 在这里，`user.filter` 使用起来更加自然。此外，它的实现类似于 Swift 集合中的功能。
 
-#### 期望（Expect）
+### 期望（Expect）
 
 这是我最喜欢的功能之一。这是我从 `Rush` 语言中借鉴而来的。我试图避免强行解包代码库中的任何东西。类似于隐式解包可选项。
 
