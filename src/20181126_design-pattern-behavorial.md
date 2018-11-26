@@ -1,4 +1,4 @@
-title: "Swift 设计模式 #2： 观察者模式与备忘录模式"
+title: "Swift 中的设计模式 #2 观察者模式与备忘录模式"
 date:2018-11-26
 tags: [Design Patterns]
 categories:[Swift]
@@ -15,7 +15,7 @@ permalink: design-pattern-behavorial
 
 <!--此处开始正文-->
 
-本次教程是 AppCoda [上周开启](https://www.appcoda.com/design-pattern-creational/) 的设计模式系列的第二期。在软件设计领域的四位大师级人物（GoF，又称“四人帮”或“Gang of Four”） —— Erich Gamma, Richard Helm, Ralph Johnson 和 John Vlissides 所著的 《设计模式：可复用面向对象软件的基础》一书中，首次对软件设计中总共 23 种设计模式进行了定义和归类，并对它们作了专业阐述。今天，我们将聚焦于其中两个行为型设计模式 —— “观察者模式” 和 “备忘录模式”。
+本次教程是 AppCoda [上周开启](https://swift.gg/2018/09/10/design-pattern-creational/) 的设计模式系列的第二期。在软件设计领域的四位大师级人物（GoF，又称“四人帮”或“Gang of Four”） —— Erich Gamma, Richard Helm, Ralph Johnson 和 John Vlissides 所著的 《设计模式：可复用面向对象软件的基础》一书中，首次对软件设计中总共 23 种设计模式进行了定义和归类，并对它们作了专业阐述。今天，我们将聚焦于其中两个行为型设计模式 —— “观察者模式” 和 “备忘录模式”。
 
 <!--more-->
 
