@@ -2,7 +2,9 @@ title: "Swift 中的设计模式 #3 外观模式与适配器模式"
 tags: [Design Patterns]
 categories: [Swift]
 permalink: design-pattern-structural
------
+
+---
+
 原文链接=https://www.appcoda.com/design-pattern-structural/
 作者=Andrew Jaffee
 原文日期=2018-09-04
