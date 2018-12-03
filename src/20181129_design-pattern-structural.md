@@ -1,4 +1,5 @@
 title: "Swift 中的设计模式 #3 外观模式与适配器模式"
+date:2018-11-29
 tags: [Design Patterns]
 categories: [Swift]
 permalink: design-pattern-structural
