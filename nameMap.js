@@ -69,6 +69,7 @@ let nameMap = {
   "wongzigii": "https://github.com/wongzigii",
   "Nemocdz": "https://nemocdz.github.io/",
   "郑一一": "https://www.jianshu.com/u/076cc5e18bb8",
+  "WAMaker": "https://github.com/WAMaker",
   "灰s": "https://github.com/dzyding"
 }
 
