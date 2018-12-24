@@ -1,7 +1,7 @@
 固定大小的数组"
 
 > 作者：Russ Bishop，[原文链接](http://www.russbishop.net/fixed-sized-arrays)，原文日期：2018-10-30
-> 译者：[zhongWJ](undefined)；校对：[numbbbbb](http://numbbbbb.com/)，[Cee](https://github.com/Cee)；定稿：[Forelax](http://forelax.space)
+> 译者：[zhongWJ](https://github.com/zhongWJ)；校对：[numbbbbb](http://numbbbbb.com/)，[Cee](https://github.com/Cee)；定稿：[Forelax](http://forelax.space)
   
 
 
