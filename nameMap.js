@@ -70,7 +70,7 @@ let nameMap = {
   "Nemocdz": "https://nemocdz.github.io/",
   "郑一一": "https://www.jianshu.com/u/076cc5e18bb8",
   "WAMaker": "https://github.com/WAMaker",
-  "zhongWJ ": "https://github.com/zhongWJ",
+  "zhongWJ": "https://github.com/zhongWJ",
   "灰s": "https://github.com/dzyding"
 }
 
