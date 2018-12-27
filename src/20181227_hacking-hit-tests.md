@@ -25,7 +25,7 @@ description:
 
 `-pointInside:` 会告诉调用者给定点是否包含在指定的视图区域中。而 `-hitTest:` 用 `pointInside:` 这个方法来告诉调用者哪个子视图（如果有的话）是当前触摸在给定点的接收者。现在我比较感兴趣的是后面这个方法。
 
-苹果的文档勉强能够让你理解怎么重新实现这个方法。在你学会怎么重新实现方法之前，你都不能改变它的功能。接下来让我们看 [文档](https://developer.apple.com/documentation/uikit/uiview/1622469-hittest?language=objc)，并尝试重写这个函数。
+苹果的文档勉强能够让你理解怎么重新实现这个方法。在你学会怎么重新实现方法之前，你都不能改变它的功能。接下来让我们看一遍 [文档](https://developer.apple.com/documentation/uikit/uiview/1622469-hittest?language=objc)，并尝试重写这个函数。
 
 ```swift
 override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
@@ -33,9 +33,9 @@ override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
 }
 ```
 
-首先，让我们从第二段开始吧：
+首先，让我们从文档的第二段开始吧：
 
-> 这个方法会忽略那些隐藏的视图， 禁用用户交互视图和 alpha 等级小于 0.01 的视图。
+> 这个方法会忽略那些隐藏的视图，禁用用户交互视图和 alpha 等级小于 0.01 的视图。
 
 让我们通过一些 `gurad` 语句来快速预处理这些前提条件。
 
@@ -57,21 +57,21 @@ override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
 
 逐字阅读文档后，感觉 `-pointInside:` 会在每一个子视图里被调用（用一个 for 循环），但这并不是完全正确的。
 
-感谢这个[读者](https://twitter.com/an0/status/1038254836016394240)。通过他在 `-hitTest:` 和 `-pointInside:` 中放置了断点的试验，我们知道 `-pointInside:` 会在 `self` 中调用（在有上面那些 guard 的情况下），而不是在每一个子视图中。 所以应该添加另外的 guard 语句，像下面这行代码一样：
+感谢这个 [读者](https://twitter.com/an0/status/1038254836016394240)。通过他在 `-hitTest:` 和 `-pointInside:` 中放置了断点的试验，我们知道 `-pointInside:` 会在 `self` 中调用（在有上面那些 guard 的情况下），而不是在每一个子视图中。 所以应该添加另外的 guard 语句，像下面这行代码一样：
 
 ```swift
 guard self.point(inside: point, with: event) else { return nil }
 ```
 
-`-pointInside:` 是 `UIView` 另一个需要重写的点。它的默认实现会检查传入的某个点是否包含在视图的 `bounds` 中。如果调用 `-pointInside` 返回 true，那么意味着触摸事件在它的 bounds 中。
+`-pointInside:` 是 `UIView` 另一个需要重写的方法。它的默认实现会检查传入的某个点是否包含在视图的 `bounds` 中。如果调用 `-pointInside` 返回 true，那么意味着触摸事件发生在它的 bounds 中。
 
-理解完这个小小的差别后，我们可以跟着文档继续了：
+理解完这个小小的差别后，我们可以继续阅读文档了：
 
 > 如果 `-pointInside:withEvnet:` 返回 YES，那么子视图的层级也会进行类似的遍历直到找到包含指定点的最前面的视图。
 
 所以，从这里知道我们需要遍历视图树。这意味着循环遍历所有的视图，并调用 `-hitTest:` 在它们每一个上去找到合适的子视图。在这种情况下，这个方法是递归的。
 
-为了遍历视图层级，我们需要一个循环。然而，这个方法其中一个更反人类的是需要反向遍历视图。子视图数组中尾部的视图反而会处在 Z 轴中*更高*的位置，所以它们应该被最先检验。（如果没有这篇[文章](http://smnh.me/hit-testing-in-ios/)，我可记不起这个点。）
+为了遍历视图层级，我们需要一个循环。然而，这个方法其中一个更反人类的是需要反向遍历视图。子视图数组中尾部的视图反而会处在 Z 轴中*更高*的位置，所以它们应该被最先检验。（如果没有这篇 [文章](http://smnh.me/hit-testing-in-ios/)，我可记不起这个点。）
 
 ```swift
 // ...
@@ -169,5 +169,3 @@ override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
 这种方法会正确地传递正确的点击事件到正确的的按钮中，而且不用打断显示删除按钮的滑动表现。（你可以尝试只忽略 `deletionOverlay`，不过它不会正确的传递滑动事件。）
 
 `-hitTest:` 是视图中一个很少重写的地方，但是在需要时，可以提供其他工具很难做到的行为。理解如何自己实现有助于随意替换它。你可以用这个技术去扩大点击的目标区域，去除触摸处理中的某些子视图，而不用把它们从可见的层级中去掉，又或是用一个视图作为另一个将响应触摸的视图的兜底。所有东西都是可能的。
-
-Open Annotation Sidebar
