@@ -71,7 +71,8 @@ let nameMap = {
   "郑一一": "https://www.jianshu.com/u/076cc5e18bb8",
   "WAMaker": "https://github.com/WAMaker",
   "zhongWJ": "https://github.com/zhongWJ",
-  "灰s": "https://github.com/dzyding"
+  "灰s": "https://github.com/dzyding",
+  "石榴": "https://github.com/alejx"
 }
 
 export default nameMap
