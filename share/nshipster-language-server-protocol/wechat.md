@@ -1,18 +1,16 @@
-title: "Language Server Protocol"
-date: 2019-01-15
-tags: [Swift, NSHipster]
-categories: [Swift, NSHipster]
-permalink: nshipster-language-server-protocol
+Language Server Protocol"
 
----
-原文链接=https://nshipster.com/language-server-protocol/
-作者=Mattt
-原文日期=2018-11-19
-译者=雨谨
-校对=numbbbbb,pmst
-定稿=Forelax
+> 作者：Mattt，[原文链接](https://nshipster.com/language-server-protocol/)，原文日期：2018-11-19
+> 译者：[雨谨](https://github.com/mobilefellow)；校对：[numbbbbb](http://numbbbbb.com/)，[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；定稿：[Forelax](http://forelax.space)
+  
 
-<!--此处开始正文-->
+
+
+
+
+
+
+
 
 上个月，苹果公司 [在 Swift.org 论坛上宣布](https://forums.swift.org/t/new-lsp-language-service-supporting-swift-and-c-family-languages-for-any-editor-and-platform/17024)，正在着手为 Swift 和 C 语言支持 [Language Server Protocol](https://microsoft.github.io/language-server-protocol/)（语言服务器协议，LSP）。
 
@@ -24,7 +22,7 @@ permalink: nshipster-language-server-protocol
 
 为了理解其中的原因，本周的文章将研究 Language Server Protocol 解决了什么问题，它是如何工作的，以及它的长期影响可能是什么。
 
-<!--more-->
+
 
 > **更新**：sourcekit-lsp 项目现在已经可以 [在 GitHub 上访问](https://github.com/apple/sourcekit-lsp) 了。
 
@@ -32,7 +30,7 @@ permalink: nshipster-language-server-protocol
 
 想象这样一个矩阵，每一行表示不同的编程语言（Swift、JavaScript、Ruby、Python 等），每一列表示不同的代码编辑器（Xcode、Visual Studio、Vim、Atom 等），这样每个单元格表示特定编辑器对一种语言的支持级别。
 
-![lsp-languages-times-editors.svg](/img/articles/nshipster-language-server-protocol/lsp-languages-times-editors-b9a398af0dea85f2ad6dcf5412fbcb451a43bc90091d5e3ab3b1140da9926b3e.svg1547520866.1069534)
+![lsp-languages-times-editors.svg](https://nshipster.com/assets/lsp-languages-times-editors-b9a398af0dea85f2ad6dcf5412fbcb451a43bc90091d5e3ab3b1140da9926b3e.svg)
 
 然后，你就发现各种组合形成了一种支离破碎的兼容。有些编辑器和部分语言深度集成，但除此之外几乎什么都干不了；其他编辑器则比较通用，对很多语言都提供了基本的支持。（IDE 这个术语通常用来描述前者。)
 
@@ -44,7 +42,7 @@ permalink: nshipster-language-server-protocol
 
 编辑器不必实现对每种语言的支持，只需支持 LSP 即可。之后，它就能同等程度地支持所有支持 LSP 的语言。
 
-![lsp-languages-plus-editors.svg](/img/articles/nshipster-language-server-protocol/lsp-languages-plus-editors-904f780fa4a21e89b5b00bfe5fca39795dd54c1c4c67acf3f0fe095aaf09064d.svg1547520866.4280558)
+![lsp-languages-plus-editors.svg](https://nshipster.com/assets/lsp-languages-plus-editors-904f780fa4a21e89b5b00bfe5fca39795dd54c1c4c67acf3f0fe095aaf09064d.svg)
 
 > Tomohiro Matsuyama 在 2010 年写的 ["Emacs は死んだ" (_"Emacs 已死"_)](https://tkf.github.io/2013/06/04/Emacs-is-dead.html) 这篇文章就对这种问题做出了一个很好的论述。Matsuyama 描述了 Emacs 脚本语言的局限性（不支持多线程、底层 API 过少、用户基数太小），他认为编写插件的首选方法应该是与外部程序进行交互，而不是原生实现。
 
@@ -76,12 +74,11 @@ Language Server Protocol 为支持的语言提供了一套通用的功能集，�
 
 每当工具中发生了什么事情，比如用户需要跳转到符号的定义，工具就会向 server 发送一个请求。server 接收到该请求，然后返回适当的响应。
 
-```swift
-class Parent {}
-class Child: Parent {}
-```
+    
+    class Parent {}
+    class Child: Parent {}
 
-![lsp-jump-to-definition.gif](/img/articles/nshipster-language-server-protocol/lsp-jump-to-definition-f76ae15d897ab30706c101e7300cd299ad97f6b910ed79ce4890351c2805ae56.gif1547520866.6389997)
+![lsp-jump-to-definition.gif](https://nshipster.com/assets/lsp-jump-to-definition-f76ae15d897ab30706c101e7300cd299ad97f6b910ed79ce4890351c2805ae56.gif)
 
 以下是 LSP 如何在幕后实现这种交互：
 
@@ -89,44 +86,42 @@ class Child: Parent {}
 
 当用户执行 "跳转到定义（jump to definition）" 指令时，编辑器向 Swift language server 发送以下请求：
 
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "method": "textDocument/definition",
-  "params": {
-    "textDocument": {
-      "uri": "file:///Users/NSHipster/Example.swift"
-    },
-    "position": {
-      "line": 1,
-      "character": 13
+    json
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "textDocument/definition",
+      "params": {
+        "textDocument": {
+          "uri": "file:///Users/NSHipster/Example.swift"
+        },
+        "position": {
+          "line": 1,
+          "character": 13
+        }
+      }
     }
-  }
-}
-```
 
 收到这个请求后，Swift language server 使用 [SourceKit](https://github.com/apple/swift/tree/master/tools/SourceKit) 等编译器工具来标识相应的代码实体，并在代码的上一行找到其声明的位置。然后 language server 用以下消息进行响应:
 
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "result": {
-    "uri": "file:///Users/NSHipster/Example.swift",
-    "range": {
-      "start": {
-        "line": 0,
-        "character": 6
-      },
-      "end": {
-        "line": 0,
-        "character": 12
+    json
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "result": {
+        "uri": "file:///Users/NSHipster/Example.swift",
+        "range": {
+          "start": {
+            "line": 0,
+            "character": 6
+          },
+          "end": {
+            "line": 0,
+            "character": 12
+          }
+        }
       }
     }
-  }
-}
-```
 
 最后，编辑器导航到文件(在本例中，该文件已经打开)，将光标移动到该范围，并高亮显示出来。
 
@@ -138,7 +133,7 @@ class Child: Parent {}
 
 LLVM 的核心是中间表示（intermediate representation，IR）。LLVM 所支持的语言使用 _编译器前端（compiler frontend）_ 生成 IR，再使用 _编译器后端（compiler backend）_ 将 IR 生成所支持平台的机器码。
 
-![lsp-llvm-ir.svg](/img/articles/nshipster-language-server-protocol/lsp-llvm-ir-34a10847cbe6519370c1b5e92def8f82b2ebde71aa2440c88880283bd5cbaf0a.svg1547520866.867885)
+![lsp-llvm-ir.svg](https://nshipster.com/assets/lsp-llvm-ir-34a10847cbe6519370c1b5e92def8f82b2ebde71aa2440c88880283bd5cbaf0a.svg)
 
 > 如果你想了解 Swift 代码编译的更多细节，请查看 [我们关于 SwiftSyntax 的文章](https://nshipster.com/swiftsyntax/)。
 
@@ -188,3 +183,4 @@ LSP 的好处并不限于 Swift 和 Objective-C，[Argyrios 在那个帖子的�
 软件的架构反映了创建它的组织的结构和价值。在某种程度上，反之亦然。
 
 通过让 Xcode 支持开放的 Language Server Protocol 标准，苹果正在履行其在苹果生态系统之外的平台上实现 Swift 成功的承诺。我认为这是可行的：工具（或缺少工具）通常是技术获得人心的关键决定因素。但或许更重要的是，我认为这一决定表明，公司内部（至少是一小部分）对合作和透明度的意愿有所增强。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
