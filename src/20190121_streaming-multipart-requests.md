@@ -1,6 +1,6 @@
 title: "以流的形式执行 Multipart 请求"
 date: 2019-01-21
-tags: [Swift][Objective-C][iOS开发]
+tags: [Swift,Objective-C, iOS 开发]
 categories: [Khanlou]
 permalink: streaming-multipart-requests
 keywords: multipart request，stream
