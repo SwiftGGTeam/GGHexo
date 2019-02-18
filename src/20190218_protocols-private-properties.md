@@ -153,7 +153,7 @@ extension Coordinator {
     }
   }
 }
-```  
+```
 
 现在，遵守协议的 `MainCoordinator` 类型：  
 
