@@ -36,12 +36,13 @@ description: 详细描述了使用 Core Bluetooth 的全流程。包括注册成
 
 蓝牙是一种短距离无线通讯技术的标准化规范。[**Bluetooth Special Interest Group（蓝牙技术联盟）**](https://www.bluetooth.com/zh-cn) 管理和保护这种短程无线技术背后的研发、发展还有知识产权。SIG 确保关于蓝牙的制造商，开发者和销售者他们的硬件和软件都是基于标准化规范。  
 
-根据 Bluetooth SIG 报道，[**“今年有将近 40 亿台设备使用蓝牙进行连接。连接手机，平板电脑，个人电脑，或者彼此。”**](https://www.bluetooth.com/bluetooth-technology)。一家对短程通讯技术进行深度投资的公司 Ellisys 对此表示认同，并 [**“预估 2018 年将有近 40 亿台新的蓝牙设备上市。”**](https://globenewswire.com/news-release/2018/02/22/1379920/0/en/Ellisys-Increases-Support-for-Bluetooth-Mesh-Networking-on-Protocol-Solutions.html)。请记住，*仅在今年*就有 40 亿*新*蓝牙设备上市。  
+根据 Bluetooth SIG 报道，[**“今年有将近 40 亿台设备使用蓝牙进行连接。连接手机，平板电脑，个人电脑，或者彼此。”**](https://www.bluetooth.com/bluetooth-technology)。一家对短程通讯技术进行深度投资的公司 Ellisys 对此表示认同，并 [**“预估 2018 年将有近 40 亿台新的蓝牙设备上市”**](https://globenewswire.com/news-release/2018/02/22/1379920/0/en/Ellisys-Increases-Support-for-Bluetooth-Mesh-Networking-on-Protocol-Solutions.html)。请记住，*仅在今年*就有 40 亿*新*蓝牙设备上市。  
 
-根据这个趋势，一家收集“市场和消费数据”的公司 Statista 认为全球的蓝牙设备 [**将从 2012 年的 35 亿增长到 2018 年预估的 100 亿。**](https://www.statista.com/statistics/283638/installed-base-forecast-bluetooth-enabled-devices-2012-2018/)  
+根据这个趋势，一家收集“市场和消费数据”的公司 Statista 认为全球的蓝牙设备 [**将从 2012 年的 35 亿增长到 2018 年预估的 100 亿**](https://www.statista.com/statistics/283638/installed-base-forecast-bluetooth-enabled-devices-2012-2018/)。
 
 ## 对于你的职业生涯，蓝牙意味着什么
-Dogtown Media 有限责任公司，一家 iOS 端“物联网蓝牙应用”精品开发商，该公司声称 [**“根据麦肯锡全球研究所（McKinsey Global Institute）的专家预测，在未来 9 年内，物联网将对全球经济产生超过 6 万亿美元的影响。”**](http://www.dogtownmedia.com/app-development-services/internet-of-things-bluetooth-app-development/) 这对于像你我这样的 iOS 开发意味着什么？Dogtown 说 [**“未来几年，对那些有远见的初创企业和创业者来说，将是令人兴奋的、多产的，而且非常有利可图的。”**](http://www.dogtownmedia.com/app-development-services/internet-of-things-bluetooth-app-development/)   
+
+Dogtown Media 有限责任公司，一家 iOS 端“物联网蓝牙应用”精品开发商，该公司声称 [**“根据麦肯锡全球研究所（McKinsey Global Institute）的专家预测，在未来 9 年内，物联网将对全球经济产生超过 6 万亿美元的影响”**](http://www.dogtownmedia.com/app-development-services/internet-of-things-bluetooth-app-development/) 。这对于像你我这样的 iOS 开发意味着什么？Dogtown 说 [**“未来几年，对那些有远见的初创企业和创业者来说，将是令人兴奋的、多产的，而且非常有利可图的。”**](http://www.dogtownmedia.com/app-development-services/internet-of-things-bluetooth-app-development/)   
 翻译：作为一个有前瞻性或者想创业的青年，应该学习使用蓝牙来进行应用程序的开发，因为在这个迅速扩大的市场，你的下个任务或者岗位有很大可能需要这个技能。  
 
 **免责声明**：  
@@ -50,13 +51,15 @@ Dogtown Media 有限责任公司，一家 iOS 端“物联网蓝牙应用”精�
  > - *我是 Bluetooth SIG 的一名 “Adopter” 级别成员。*  
 
 ## 在提交你使用 Core Bluetooth 开发的应用程序被审核之前
-从蓝牙技术刚展露头角之际，我经常看到开发者们找一些参考资料，然后立即投入到涉及无线设备的应用开发中，并提交蓝牙应用到 Apple 的 AppStore 中。别那么快，伙计。  
 
-Bluetooth SIG 规定，[**“所有使用蓝牙技术的产品必须完成 Bluetooth Qualification Process（蓝牙资格审核）。”**](https://www.bluetooth.com/develop-with-bluetooth/qualification-listing) 我听到有人说，“市面上有太多基于蓝牙的应用；没有人会注意到我的。”呃，并不是这样。蓝牙技术有 [**版权，专利，并且授权**](https://www.bluetooth.com/about-us/governing-documents) 给应用开发者。如果你想让你的应用程序被聚焦并且展示你集成了蓝牙技术的事实，请记住：  
+在蓝牙技术刚展露头角之际，我经常看到开发者们找一些参考资料，然后立即投入到涉及无线设备的应用开发中，并提交蓝牙应用到 Apple 的 AppStore 中。我想说：别那么快，伙计。  
+
+Bluetooth SIG 规定，[**“所有使用蓝牙技术的产品必须完成 Bluetooth Qualification Process（蓝牙资格审核）。”**](https://www.bluetooth.com/develop-with-bluetooth/qualification-listing) 我听到有人说，“市面上有太多基于蓝牙的应用；没有人会注意到我的”。呃，并不是这样。蓝牙技术有 [**版权，专利，并且授权**](https://www.bluetooth.com/about-us/governing-documents) 给应用开发者。如果你想让你的应用程序被聚焦并且展示你集成了蓝牙技术的事实，请记住：  
 
 > *Bluetooth* 商标 - 包括 BLUETOOTH 文字商标，图形商标（符文 B 和椭圆形设计），还有组合商标（蓝牙文字商标和设计）- 这些都被 Bluetooth SIG 所拥有。只有 Bluetooth SIG 的成员并且拥有对应资格和申报过的产品才可以展示，相关功能或者使用任何商标。为了保护这些商标，Bluetooth SIG 管理了一套执行程序，监控市场并进行审核，以确保会员使用商标的行为符合蓝牙品牌指南，并确保最终发布的产品与已通过资格审查程序的商品和服务相对应。
 
-查看 Bluetooth SIG 的 [**资质 FAQ**](https://www.bluetooth.com/develop-with-bluetooth/qualification-listing)：  
+来看一下 Bluetooth SIG 的 [**资质 FAQ**](https://www.bluetooth.com/develop-with-bluetooth/qualification-listing)：
+
 > 如果我没有给我的产品申请相应的资质会怎么样?  
 >
 > 如果你没有给你的产品申请相应的资质，你将成为执法行动的对象。请阅读这里的 [**更新策略**](https://www.bluetooth.com/develop-with-bluetooth/qualification-listing)，其中我们概述了升级计划。如果没有采取纠正措施，您的 Bluetooth SIG 会员资质可能被暂停或撤销。
@@ -64,7 +67,9 @@ Bluetooth SIG 规定，[**“所有使用蓝牙技术的产品必须完成 Bluet
 别傻了，别去冒险。最重要的一点是，我们所有人都应该努力追求最高的诚信和诚实，在应该给予信任的时候给予信任，并促进遵守标准，使协同工作成为规范，而不是例外。数千个人贡献了数千个小时的工作和数百万美元用于发展蓝牙的标准和 [**多项专利**](http://www.ipwatchdog.com/2015/05/10/evolution-of-technology-bluetooth-the-once-and-future-king/id=57473/)，从而创造了一套明显有用的知识财产。
 
 ## 别让我吓着你
+
 人们常常被「商标」、「专利」、「版权」、「资质」、「会员」、等严厉的词语所吓倒，尤其是 “强制执行。”不要开始担心使用蓝牙进行开发的事。*加入 Bluetooth SIG！它是免费的！* [**点击这里**](https://www.bluetooth.com/develop-with-bluetooth/join)，然后：
+
 > 首先成为一个 Adopter 级别的会员。使用蓝牙技术开发一款产品，会员资格是必须的，Adopter 级别会员拥有以下这些福利：  
 > • 根据 [**Bluetooth Patent/Copyright License Agreement（蓝牙专利/版权许可协议）**](https://www.bluetooth.com/~/media/downloads/pcla%20esign%20version%20version%2011.ashx?la=en) 使用蓝牙技术生产产品的许可  
 > • 根据 [**Bluetooth Trademark License Agreement（蓝牙商标许可协议）**](https://www.bluetooth.com/~/media/files/membership/btla.ashx?la=en) 在符合条件的产品上使用蓝牙商标的许可  
@@ -73,6 +78,7 @@ Bluetooth SIG 规定，[**“所有使用蓝牙技术的产品必须完成 Bluet
 > • 访问诸如 Profile Tuning Suite（PTS）之类的工具，提供协议和协同测试……
 
 ## 成为 Bluetooth SIG 的一员
+
 成为 SIG 的一员 [**会包含很多好处**](https://www.bluetooth.com/develop-with-bluetooth/build)。你可以免费使用教育工具包、培训视频、网络研讨会、开发人员论坛、开发人员支持服务、白皮书、产品测试工具，并帮助确保您的应用程序满足国际监管要求（主要是关于 [**射频排放**](https://www.fda.gov/MedicalDevices/DigitalHealth/WirelessMedicalDevices/default.htm)）。  
 
 你只要成为会员就会得到一些曝光。我的公司是它的一个成员，所以在 Bluetooth SIG’s Member Directory 中可以 [**被看到**](https://www.bluetooth.com/develop-with-bluetooth/join/member-directory?q=microIT%20Infrastructure,%20LLC)：  
@@ -81,20 +87,22 @@ Bluetooth SIG 规定，[**“所有使用蓝牙技术的产品必须完成 Bluet
 一旦你开发了一款应用，使其通过 SIG 认证，并获得 Apple App Store 的许可，那么你的产品同时也会被 SIG 公开上市，这时你将获得更多的曝光。  
 
 ## 对应用程序进行资格认证既简单又便宜
-当你对自己基于 Core Bluetooth 开发的应用程序感到满意，并准备将其提交到 Apple App Store 进行审核，请停下，然后前往 Bluetooth SIG 的网页对你的应用程序进行 [**认证**](https://www.bluetooth.com/develop-with-bluetooth/qualification-listing)。SIG 将为您提供一个整洁的 [**“Launch Studio，”**](https://launchstudio.bluetooth.com/)它“是您用来完成 Bluetooth Qualification Process 的在线工具。”  
+
+当你对自己基于 Core Bluetooth 开发的应用程序感到满意，并准备将其提交到 Apple App Store 进行审核，请停下，然后前往 Bluetooth SIG 的网页对你的应用程序进行 [**认证**](https://www.bluetooth.com/develop-with-bluetooth/qualification-listing)。SIG 将为您提供一个整洁的 [**“Launch Studio”**](https://launchstudio.bluetooth.com/)，它是您用来完成 Bluetooth Qualification Process 的在线工具。”  
 
 对于大多数应用程序，比如我将在本教程中介绍的 “GATT - based Profile Client（app），”认证和上市的费用是 100 美元。花一些精力来确保您的代码符合 Bluetooth 规范和做一些测试，将是非常值得的。最后，可以给你的应用程序印上蓝牙的商标。这个 [**商标**](https://www.bluetooth.com/develop-with-bluetooth/marketing-branding) “在全球范围内都是可识别的，消费者认知度高达92%。”  
 
 请不要担心 100 美元的问题。你更有可能获得一份拥有丰厚薪水或者时薪的工作，并为公司处理这些蓝牙的合规问题。
 
 ## 理解 Core Bluetooth
+
 大多数情况下，使用蓝牙设备是非常简单的。开发与蓝牙通讯的软件却有可能非常复杂。这就是为什么 Apple 创造了 [***Core Bluetooth*** **框架**](https://developer.apple.com/library/archive/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetoothOverview/CoreBluetoothOverview.html#//apple_ref/doc/uid/TP40013257-CH2-SW1)：  
 
 > Core Bluetooth 框架让您的 iOS 和 Mac 应用程序与蓝牙低能耗设备通信。例如，您的应用程序可以发现、搜索低能量的外围设备还有与之交互，比如心率监视器、数字恒温器，甚至其他 iOS 设备。  
 
 > 该框架是蓝牙 4.0 规范中关于使用低能耗设备的抽象。就是说，它为你，也就是开发者，隐藏了规范中很多底层的细节，使你更容易开发与低能耗设备进行交互的应用程序。因为该框架是基于标准规范的，所有规范中的很多概念和术语被采用了……  
 
-请注意是“低能量设备。”当使用 *Core Bluetooth* 我们并不是处理如无线扬声器这样的经典蓝牙设备。与这类设备的通讯会很快的耗尽电池能量。*Core Bluetooth* 是针对“Bluetooth Low Energy”（BLE）的 API，也称为“Bluetooth 4.0。”BLE 使用的电力要少得多，因为它的设计目的是通信少量的数据。BLE 设备的一个很好的例子是心率监测器（HRM）。它几乎每秒钟只发送几个字节的数据。这就是为什么人们可以带着一个 HRM 或者带着他们的 iPhone 跑一个小时，记录跑步期间心率的变化，而看不到电池电量的巨大消耗。注意，随着本文的进行，像 BLE 这种首字母缩略词的数量正在增加。  
+请注意是“低能量设备”。当使用 *Core Bluetooth* 我们并不是处理如无线扬声器这样的经典蓝牙设备。与这类设备的通讯会很快的耗尽电池能量。*Core Bluetooth* 是针对“Bluetooth Low Energy”（BLE）的 API，也称为“Bluetooth 4.0”。BLE 使用的电力要少得多，因为它的设计目的是通信少量的数据。BLE 设备的一个很好的例子是心率监测器（HRM）。它几乎每秒钟只发送几个字节的数据。这就是为什么人们可以带着一个 HRM 或者带着他们的 iPhone 跑一个小时，记录跑步期间心率的变化，而看不到电池电量的巨大消耗。注意，随着本文的进行，像 BLE 这种首字母缩略词的数量正在增加。  
 
 为了我们能够一起流畅的讨论 *Core Bluetooth* 你需要学习一个新的词汇表。  
 
@@ -102,53 +110,63 @@ Bluetooth SIG 规定，[**“所有使用蓝牙技术的产品必须完成 Bluet
 ![](https://appcoda.com/wp-content/uploads/2018/04/central-peripheral.png)  
 
 ## The Peripheral（外围设备）
-*外围设备*是硬件/软件的一部分，就像 HRM。大多数 HRM 设备搜集或/和计算数据，如每分钟心跳、HRM 的电池电量水平、以及所谓的“RR-Interval。”设备传输这些数据到另一个需要它们的实体或实体组。外围设备是*服务者*和*生产者*。市场上比较流行的 HRM 有 [**Wahoo TICKR，**](https://www.wahoofitness.com/devices/heart-rate-monitors/wahoo-tickr-heart-rate-strap)[**Polar H7，**](https://www.polar.com/us-en/products/accessories/h10_heart_rate_sensor)和 [**Scosche Rhythm+**](https://www.scosche.com/rhythm-plus-heart-rate-monitor-armband)。  
+
+*外围设备*是硬件/软件的一部分，就像 HRM。大多数 HRM 设备搜集或/和计算数据，如每分钟心跳、HRM 的电池电量水平、以及所谓的“RR-Interval”。设备传输这些数据到另一个需要它们的实体或实体组。外围设备是*服务者*和*生产者*。市场上比较流行的 HRM 有 [**Wahoo TICKR，**](https://www.wahoofitness.com/devices/heart-rate-monitors/wahoo-tickr-heart-rate-strap)[**Polar H7，**](https://www.polar.com/us-en/products/accessories/h10_heart_rate_sensor)和 [**Scosche Rhythm+**](https://www.scosche.com/rhythm-plus-heart-rate-monitor-armband)。  
 ![](https://appcoda.com/wp-content/uploads/2018/04/heart-rate-monitor-device.png)  
 
 我将通过编写连接到这三种设备的 Swift 4 代码来展示 BLE 等标准的重要性。  
 
 ***Core Bluetooth 视角***  
+
 来自 [**苹果的文档**](https://developer.apple.com/documentation/corebluetooth/cbperipheraldelegate)：  
+
 > CBPeripheralDelegate  
 >  
 > [`CBPeripheral`](https://developer.apple.com/documentation/corebluetooth/cbperipheral) 对象的代理必须遵守 [`CBPeripheralDelegate`](https://developer.apple.com/documentation/corebluetooth/cbperipheraldelegate) 协议。代理使用这个协议的方法来对一个远程外围设备的服务和属性，进行发现、探索、还有交互方面的监控。这个协议里面没有必须遵守的方法。  
 
 ## The Central（中央设备）
+
 *中央设备*是硬件/软件的一部分，就像 iPhone、iPad、MacBook、
-iMac 等。这些设备可以使用应用程序扫描像 HRM 这样的蓝牙外围设备。中央设备是一个*客户*以及 *消费者*。它们与 HRM 是连通的，所以它们可以使用从外围设备中取出的像每分钟心跳、电池的电量水平、还有“RR-Interval”这样的数据。中央设备接收这些数据，可以对数据执行增值计算，或者只是通过用户界面显示数据，并/或存储数据以供将来分析，展示，以及/或聚合和数据分析（就像统计分析需要足够的数据来确定重要的和有意义的趋势），或其他类似的操纵。  
+iMac 等。这些设备可以使用应用程序扫描像 HRM 这样的蓝牙外围设备。中央设备是一个*客户*以及 *消费者*。它们与 HRM 是连通的，所以它们可以使用从外围设备中取出的像每分钟心跳、电池的电量水平、还有“RR-Interval”这样的数据。中央设备接收这些数据，可以对数据执行增值计算，或者只是通过用户界面显示数据，或者是存储数据以供将来分析、展示，或者是聚合和数据分析（就像统计分析需要足够的数据来确定重要的和有意义的趋势），或其他类似的操作。  
 
 ***Core Bluetooth 视角***  
+
 来自 [**苹果的文档**](https://developer.apple.com/documentation/corebluetooth/cbcentralmanagerdelegate)：  
 > [`CBCentralManagerDelegate`](https://developer.apple.com/documentation/corebluetooth/cbcentralmanagerdelegate) 协议定义了方法，[`CBCentralManager`](https://developer.apple.com/documentation/corebluetooth/cbcentralmanager) 对象的代理必须遵守它。协议中的可选方法允许代理来监控对外围设备的发现、连接、还有检索。唯一必须实现的方法表明中央设备的可用性，并且当中央设备的状态发生更新时被调用。
 
 ## 通过广播找到外围设备
-如果你的 iPhone 或 iPad 找不到这些外设从而不能连接到它们，那么 HRM 之类的外设就没什么用了。因此，它们不断的、无线的广播数据的小片段（包），说着类似这样的话，“嘿，我是 Scosche Rhythm+ 心率检测器；我提供一些功能，比如我的穿戴者每分钟心率；我提供信息，比如我的电池电量水平。”当一个对心率感兴趣的*中央设备*进行*扫描*，并找到了这个*外围设备*，中央设备将连接到它并且它会停止广播。  
+
+如果你的 iPhone 或 iPad 找不到这些外设从而不能连接到它们，那么 HRM 之类的外设就没什么用了。因此，它们不断通过无线频段发送着数据的小片段（包），说着类似这样的话：“嘿，我是 Scosche Rhythm+ 心率检测器；我能提供类似我的穿戴者每分钟心率的功能；我能提供类似我的电池电量水平的信息。”当一个对心率感兴趣的*中央设备*通过*扫描*找到了这个*外围设备*，中央设备将连接到它并且它会停止广播。  
 
 你可能已经使用过 iPhone -> *设置* -> *蓝牙* 来开启或关闭蓝牙（包括传统的和 BLE）。当切换到开启，你可以看到你的 iPhone 扫描设备并与它们建立连接，就像下面我所截的两张图，搜索，并且将我的 iPhone 连接到一个 Scosche Rhythm+ HRM：  
 ![](https://appcoda.com/wp-content/uploads/2018/04/bluetooth-found-ryhthm.png)  
 
 依照 [**苹果**](https://developer.apple.com/library/archive/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetoothOverview/CoreBluetoothOverview.html#//apple_ref/doc/uid/TP40013257-CH2-SW17) 的说法：  
-> 外围设备以广告包的形式广播一些数据。一个广告包是一个相对较小的数据束，其中可能包含外围设备所能提供的有用信息，比如外围设备的名字还有主要功能。例如，数字恒温器可能会广播它能提供房间的当前温度。在 BLE 中，广播是外围设备展示其存在的主要方式。另一方面，中央设备可以扫描和监听任何外围设备，只要这些设备的广播信息是它感兴趣的……  
+
+> 外围设备以广播包的形式广播一些数据。一个广播包是一个相对较小的数据束，其中可能包含外围设备所能提供的有用信息，比如外围设备的名字还有主要功能。例如，数字恒温器可能会广播它能提供房间的当前温度。在 BLE 中，广播是外围设备展示其存在的主要方式。另一方面，中央设备可以扫描和监听任何外围设备，只要这些设备的广播信息是它感兴趣的……  
 
 在这篇教程中，过一会我会向你展示怎样使用 Swift 4 来编码进行外围设备的扫描并连接它们。
 
 ## 外围设备的各种服务
+
 服务可能不是你认为的那样。服务*描述*外围设备提供的主要特性或功能。但它并不是一种具体的测量方法，如每分钟心跳数，而是一种描述从外围设备可以得到的与心脏相关的测量方法的分类。  
 
 依照 [**苹果**](https://developer.apple.com/library/archive/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetoothOverview/CoreBluetoothOverview.html#//apple_ref/doc/uid/TP40013257-CH2-SW17) 的说法：  
 > 服务是一个数据和相关行为的集合，用于实现设备（或设备的一部分）的功能或特性。比如，心率检测器的一项服务可能是公开来自监测器的心率传感器的心率数据。
 
-具体定义一个蓝牙“服务，”我们应该看看 Bluetooth SIG 的 [**“GATT Services（服务）”**](https://www.bluetooth.com/specifications/gatt/services) 列表，这里 GATT 代表 [**“Generic Attributes（通用属性）”**](https://www.bluetooth.com/specifications/gatt)。  
+具体定义一个蓝牙“服务”，我们应该看看 Bluetooth SIG 的 [**“GATT Services（服务）”**](https://www.bluetooth.com/specifications/gatt/services) 列表，这里 GATT 代表 [**“Generic Attributes（通用属性）”**](https://www.bluetooth.com/specifications/gatt)。  
 
-向下滚动服务 [**列表**](https://www.bluetooth.com/specifications/gatt/services)，直到你在 **Name（名字）** 列中看到 “Heart Rate。”注意， **Uniform Type Identifier (统一类型标识符)** 对应的是 “org.bluetooth.service.heart_rate，”**Assigned Number（指定编码）** 则是 0x180D。请注意在后面的代码中我们将使用 0x180D 这个值。  
+向下滚动服务 [**列表**](https://www.bluetooth.com/specifications/gatt/services)，直到你在 **Name（名字）** 列中看到 “Heart Rate”。注意， **Uniform Type Identifier (统一类型标识符)** 对应的是 “org.bluetooth.service.heart_rate”，**Assigned Number（指定编码）** 则是 0x180D。请注意在后面的代码中我们将使用 0x180D 这个值。  
 
-点击 [**“Heart Rate（心率）。”**](https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.heart_rate.xml)你将打开一个网页，上面用粗体字写着 **Name: Heart Rate**。请注意 **Summary（摘要）** ，“HEART RATE Service（心率服务）公开心率和其他与心率传感器相关的数据，用于健身应用。”向下滚动页面就会发现 **Heart Rate** *service*本身并不会提供每分钟跳动的实际心率。这个服务是一个其他数据片段的集合，它们被称为 *characteristics（特征）*。最后，你会得到一个特征来提供重要数据：心率。  
+点击 [**“Heart Rate（心率）”**](https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.heart_rate.xml)，你将打开一个网页，上面用粗体字写着 **Name: Heart Rate**。请注意 **Summary（摘要）** ，“HEART RATE Service（心率服务）公开心率和其他与心率传感器相关的数据，用于健身应用。”向下滚动页面就会发现 **Heart Rate** *service* 本身并不会提供每分钟跳动的实际心率。这个服务是一个其他数据片段的集合，它们被称为 *characteristics（特征）*。最后，你会得到一个特征来提供重要数据：心率。  
 
 ***Core Bluetooth 视角***  
+
 来自 [**苹果的文档**](https://developer.apple.com/documentation/corebluetooth/cbservice)：  
 > [`CBService`](https://developer.apple.com/documentation/corebluetooth/cbservice) 和它的子类 [`CBMutableService`](https://developer.apple.com/documentation/corebluetooth/cbmutableservice) 代表一个外围设备的服务 - 为实现设备（或设备的一部分）的功能或特性而收集的数据和相关行为。`CBService` 对象特指远程外围设备（使用 [`CBPeripheral`](https://developer.apple.com/documentation/corebluetooth/cbperipheral) 对象来表示）的服务。服务组可能是主要的，也有可能是次要的，可能会包含一个特征组的代码，也有可能会包含一个服务组（代表其他的服务组）。  
 
 ## 外围设备服务的特征
+
 外围设备的服务常常被分解成更细化但相关的信息。特征通常是我们找到重要信息、真实*数据*的地方。再次查看 [**苹果**](https://developer.apple.com/library/archive/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetoothOverview/CoreBluetoothOverview.html#//apple_ref/doc/uid/TP40013257-CH2-SW17) 的说明：  
 > 服务本身是由特征或包含的服务（这里指别的服务）组成。特征更详细的提供了外围设备的服务信息。例如，刚才描述的心率服务，可能包含一个描述设备的心率传感器所在目标身体位置的特征和另一个传递心率测量数据的特征。  
 
