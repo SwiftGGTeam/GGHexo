@@ -4,6 +4,7 @@ menu:
   归档: /archives
   关于: /about
   统计: /stat
+  Swift 官方文档翻译: https://swiftgg.gitbook.io/swift/
 ## you can create `tags` and `categories` folders in `../source`.
 ## And create a `index.md` file in each of them.
 ## set `front-matter`as
