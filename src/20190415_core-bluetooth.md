@@ -36,7 +36,7 @@ description: 详细描述了使用 Core Bluetooth 的全流程。包括注册成
 
 蓝牙是一种短距离无线通讯技术的标准化规范。[**Bluetooth Special Interest Group（蓝牙技术联盟）**](https://www.bluetooth.com/zh-cn) 管理和保护这种短程无线技术背后的研发、发展还有知识产权。SIG 确保关于蓝牙的制造商，开发者和销售者他们的硬件和软件都是基于标准化规范。  
 
-根据 Bluetooth SIG 报道，[**“今年有将近 40 亿台设备使用蓝牙进行连接。连接手机，平板电脑，个人电脑，或者彼此。”**](https://www.bluetooth.com/bluetooth-technology)。一家对短程通讯技术进行深度投资的公司 Ellisys 对此表示认同，并 [**“预估 2018 年将有近 40 亿台新的蓝牙设备上市”**](https://globenewswire.com/news-release/2018/02/22/1379920/0/en/Ellisys-Increases-Support-for-Bluetooth-Mesh-Networking-on-Protocol-Solutions.html)。请记住，*仅在今年*就有 40 亿*新*蓝牙设备上市。  
+根据 Bluetooth SIG 报道，[**“今年有将近 40 亿台设备使用蓝牙进行连接。蓝牙将连接手机、平板电脑、个人电脑，蓝牙将会将我们彼此连接。”**](https://www.bluetooth.com/bluetooth-technology)。一家对短程通讯技术进行深度投资的公司 Ellisys 对此表示认同，并 [**“预估 2018 年将有近 40 亿台新的蓝牙设备上市”**](https://globenewswire.com/news-release/2018/02/22/1379920/0/en/Ellisys-Increases-Support-for-Bluetooth-Mesh-Networking-on-Protocol-Solutions.html)。请记住，*仅在今年*就有 40 亿*新*蓝牙设备上市。  
 
 根据这个趋势，一家收集“市场和消费数据”的公司 Statista 认为全球的蓝牙设备 [**将从 2012 年的 35 亿增长到 2018 年预估的 100 亿**](https://www.statista.com/statistics/283638/installed-base-forecast-bluetooth-enabled-devices-2012-2018/)。
 
