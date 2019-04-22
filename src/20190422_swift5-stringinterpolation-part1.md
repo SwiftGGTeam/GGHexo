@@ -6,7 +6,7 @@ permalink: swift5-stringinterpolation-part1
 keywords: swift 5，string，interpolation
 custom_title: "Swift 5 字符串插值-简介"
 
- ------
+---
 
 原文链接=http://alisoftware.github.io/swift/2018/12/15/swift5-stringinterpolation-part1/
 作者=Olivier Halligon
