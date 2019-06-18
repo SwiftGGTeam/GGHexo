@@ -1,7 +1,7 @@
 合理的使用 Swift 中的 final 类"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2015/12/18/naturally-final-classes-in-swift/)，原文日期：2015-12-18
-> 译者：[JackAlan](http://ijack.pw/)；校对：[靛青K](http://blog.dianqk.org/)；定稿：[shanks](http://codebuild.me/)
+> 译者：[JackAlan](http://alanmelody.com/)；校对：[靛青K](http://blog.dianqk.org/)；定稿：[shanks](http://codebuild.me/)
   
 
 
