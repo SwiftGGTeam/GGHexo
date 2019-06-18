@@ -21,7 +21,7 @@ let nameMap = {
   "riven": "http://weibo.com/riven0951",
   "Cee": "https://github.com/Cee",
   "星夜暮晨": "http://www.jianshu.com/users/ef1058d2d851",
-  "JackAlan": "http://ijack.pw/",
+  "JackAlan": "http://alanmelody.com/",
   "walkingway": "http://chengway.in/",
   "&nbsp": "https://github.com/initiOSJava",
   "bestswifter": "http://bestswifter.com",
