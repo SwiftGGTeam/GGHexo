@@ -4,8 +4,7 @@ tags: [Swift]
 categories: [Ole Begemann]
 permalink: sequence-head-tail
 keywords: Sequence
-custom_title: 将 Swift 序列切分为头部和尾部
-description: 本文描述了如何使用扩展将序列切分为头部和尾部，以及 Swift 4.2 与 Swift 5 做法的区别。
+custom_title: "将 Swift 序列切分为头部和尾部"
 
 ---
 
