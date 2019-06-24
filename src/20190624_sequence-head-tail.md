@@ -15,9 +15,13 @@ custom_title: "将 Swift 序列切分为头部和尾部"
 校对=numbbbbb,BigNerdCoding
 定稿=Forelax
 
+<!--此处开始正文-->
+
 函数式编程语言的一个常用范式是把一个列表切分为头部（第一个元素）和尾部（其余元素）。在 Haskell 中，[x:xs](https://en.wikibooks.org/wiki/Haskell/Pattern_matching) 会匹配非空列表，将头部绑定给变量 x，尾部绑定给 xs。
 
 [Swift 不是一门函数式编程语言](https://academy.realm.io/posts/tryswift-rob-napier-swift-legacy-functional-programming/)。既没有内置的 `List` 类型，也没有集合的特定匹配语法。<a href="#foot1" id="1"><sup>[1]</sup></a>
+
+<!--more-->
 
 ## 集合（Collections）
 尽管如此，将 `Sequence` 或 `Collection` 切分成头部和尾部偶尔很有用。对于集合来说这很容易：
