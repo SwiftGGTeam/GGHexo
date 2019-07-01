@@ -37,9 +37,8 @@ description: PhotoKit 的数据模型
 
 > 你可以使用如下的命令来查找 Xcode 中模拟器运行时内的其他 Core Data 模型：
 >
-> ```shell
-> find /Applications/Xcode-10.app -name '*.mom'
-> ```
+> `find /Applications/Xcode-10.app -name '*.mom'`
+> 
 
 ## 在 Xcode 中打开已编译的 Core Data 模型
 
