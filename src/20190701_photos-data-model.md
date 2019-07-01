@@ -24,11 +24,16 @@ description: PhotoKit 的数据模型
 至少从这两个地方，你就可以确认这一点：
 
 1. 编写一个能够访问照片库的应用，并使用 [`-com.apple.CoreData.SQLDebug 1.`](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CoreData/TroubleshootingCoreData.html#//apple_ref/doc/uid/TP40001075-CH26-SW21) 来启动这个应用程序。当你访问照片库时，从控制台就可以看到 Core Data 的调试信息。
-2. 如果查看 PhotoKit 框架的 [class dump](http://stevenygard.com/projects/class-dump/)，你将会在主要的类中看到对 [`NSManagedObjectID`](https://developer.apple.com/documentation/coredata/nsmanagedobjectid) 和其他 Core Data 类型的引用，例如， [`PHObject` 有一个 `_objectID：NSManagedObjectID` 类型的 ivar](https://github.com/nst/iOS-Runtime-Headers/blob/fbb634c78269b0169efdead80955ba64eaaa2f21/Frameworks/Photos.framework/PHObject.h)。
+2. 如果查看 PhotoKit 框架的 [class dump](http://stevenygard.com/projects/class-dump/)，你将会在主要的类中看到对 [`NSManagedObjectID`](https://developer.apple.com/documentation/coredata/nsmanagedobjectid) 和其他 Core Data 类型的引用，例如， [`PHObject` 有一个 `_objectID：NSManagedObjectID` 的 ivar](https://github.com/nst/iOS-Runtime-Headers/blob/fbb634c78269b0169efdead80955ba64eaaa2f21/Frameworks/Photos.framework/PHObject.h)。
 
 ## 寻找 PhotoKit 的核心数据模型
 
 为了更好地理解 PhotoKit 框架（特别是它的性能特征），我检查了它的数据模型。我在 Xcode 10.0 应用程序的包内容中找到了一个名为 `PhotoLibraryServices.framework / photos.momd / photos-10.0.mom` 的文件：
+
+
+```shell
+/Applications/Xcode-10.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/photos.momd/photos-10.0.mom
+```
 
 > 你可以使用如下的命令来查找 Xcode 中模拟器运行时内的其他 Core Data 模型：
 >
@@ -36,17 +41,13 @@ description: PhotoKit 的数据模型
 > find /Applications/Xcode-10.app -name '*.mom'
 > ```
 
-```shell
-/Applications/Xcode-10.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/photos.momd/photos-10.0.mom
-```
-
 ## 在 Xcode 中打开已编译的 Core Data 模型
 
 `.mom` 文件是*已编译的* Core Data 数据模型。Xcode 无法直接打开它，但可以将它*导入*到另一个 Core Data 模型中。通过如下的步骤，我们就可以在 Xcode 中查看这个模型：
 
 1. 创建一个新的空项目。因为使用 Xcode 10 在项目之外显示 Core Data 模型包并不是一个好的选择。
 2. 在项目中创建一个全新的“Core Data 数据模型”文件。 这将创建一个 `.xcdatamodeld` 包。
-3. 打开新数据模型，然后选择编辑器 > 导入.... ，选择要导入的 `.mom` 文件。
+3. 打开新数据模型，然后选择 编辑器 > 导入.... ，选择要导入的 `.mom` 文件。
 
 不幸的是，编译的模型并不存储 Xcode 的模型编辑器的布局信息，因此你必须手动将编辑器中的实体拖出来一个漂亮的样式中。这花了我几个小时。
 
