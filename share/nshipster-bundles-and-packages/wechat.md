@@ -1,19 +1,17 @@
-title: "Bundles and Packages"
-date: 2019-07-19
-tags:  [Swift, NSHipster]
-categories: [Swift, NSHipster]
-permalink: nshipster-bundles-and-packages
+Bundles and Packages"
 
----
+> 作者：Mattt，[原文链接](https://nshipster.com/bundles-and-packages/)，原文日期：2018-12-17
+> 译者：[WAMaker](https://github.com/WAMaker)；校对：[numbbbbb](http://numbbbbb.com/)，[BigNerdCoding](https://bignerdcoding.com/)；定稿：[Forelax](http://forelax.space)
+  
 
-原文链接=https://nshipster.com/bundles-and-packages/
-作者=Mattt
-原文日期=2018-12-17
-译者=WAMaker
-校对=numbbbbb,BigNerdCoding
-定稿=Forelax
 
-<!--此处开始正文-->
+
+
+
+
+
+
+
 
 在这个给予的季节，让我们停下脚步，思考一个现代计算机系统赐予我们的最棒的礼物：抽象。
 
@@ -21,7 +19,7 @@ permalink: nshipster-bundles-and-packages
 
 这周的 NSHipster，我们将讨论苹果平台上两个重要的抽象：包与包裹。🎁
 
-<!--more-->
+
 
 ---
 
@@ -32,7 +30,7 @@ permalink: nshipster-bundles-and-packages
 * 包裹是指在访达中看起来像是文件的目录。
 
 下图展示了包与包裹之间的关系，将应用、框架包、插件包和文档分别放入一个或多个分类之中：
-![diagram](/img/articles/nshipster-bundles-and-packages/packages-and-bundles-diagram-a604d818c7decc7430fffc8642f0743728d2f6be4dfae15b274a599655cd3e40.svg1563524952.9887984)
+![diagram](https://nshipster.com/assets/packages-and-bundles-diagram-a604d818c7decc7430fffc8642f0743728d2f6be4dfae15b274a599655cd3e40.svg)
 
 > 如果对两者的区别你依然感到困惑，这个类比或许能帮助你理解：
 > 把包裹想象成是一个内容被隐藏的盒子（📦），作为一个独立的实体而存在。这点与包不同，包更像是一个背包（🎒） —— 每一款都有特殊的口袋和隔层用来携带你需要的东西，不同的配置用以决定是带去学校，去工作，还是去健身房。如果某样东西既是包也是包裹，恰似行李（🧳）一般：像盒子一样浑然一体，像背包一样分隔自如。
@@ -49,9 +47,8 @@ permalink: nshipster-bundles-and-packages
 对于应用，playgrounds，以及其它你感兴趣的包来说，都能通过 `Bundle.main` 进行访问。大多数情况，可以使用 `url(forResource:withExtension:)`（或它的一种变体）来获取特定资源的路径。
 
 举例来说，如果应用中包含了一个名叫 `Photo.jpg` 的文件，用下面的方法能获得访问它的 URL：
-```swift
-Bundle.main.url(forResource: "Photo", withExtension: "jpg")
-```
+    
+    Bundle.main.url(forResource: "Photo", withExtension: "jpg")
 
 > 如果使用 Asset Catalog，你可以从媒体库（<kbd>⇧</kbd><kbd>⌘</kbd><kbd>M</kbd>）拖拽到编辑器来创建图像。
 
@@ -72,48 +69,42 @@ Bundle.main.url(forResource: "Photo", withExtension: "jpg")
 所有的应用包都必须有一个包含应用信息的 `Info.plist` 文件。
 
 `bundleURL` 和 `bundleIdentifier` 这样的原数据能够通过 bundle 实例被直接访问。
-```swift
-import Foundation
-
-let bundle = Bundle.main
-
-bundle.bundleURL        // "/path/to/Example.app"
-bundle.bundleIdentifier // "com.nshipster.example"
-```
+    
+    import Foundation
+    
+    let bundle = Bundle.main
+    
+    bundle.bundleURL        // "/path/to/Example.app"
+    bundle.bundleIdentifier // "com.nshipster.example"
 
 通过下标能从 `infoDictionary` 变量获得其他信息（如果信息要展示给用户，请使用 `localizedInfoDictionary`）。
-```swift
-bundle.infoDictionary["CFBundleName"] // "Example"
-bundle.localizedInfoDictionary["CFBundleName"] // "Esempio" (`it_IT` locale)
-```
+    
+    bundle.infoDictionary["CFBundleName"] // "Example"
+    bundle.localizedInfoDictionary["CFBundleName"] // "Esempio" (`it_IT` locale)
 
 ### 获取本地化字符串
 包的存在让本地化变得容易。强制本地化资源的存放位置后，系统便能将加载哪个版本的文件的逻辑从开发者层面抽象出来。
 
 举个例子，包负责加载应用的本地化字符串。使用 `localizedString(forKey:value:table:)` 方法就可以获取到这些值。
-```swift
-import Foundation
-
-let bundle = Bundle.main
-bundle.localizedString(forKey: "Hello, %@",
-                       value: "Hello, ${username}",
-                       table: nil)
-```
+    
+    import Foundation
+    
+    let bundle = Bundle.main
+    bundle.localizedString(forKey: "Hello, %@",
+                           value: "Hello, ${username}",
+                           table: nil)
 
 
 然而，通常来说用 `NSLocalizedString` 会更好，像 `genstrings` 这样的工具能够自动取出键和注释到 `.strings` 文件中便于翻译。
-```
-// Terminal
-$ find . \( -name "*.swift" !           \ # 找出所有 swift 文件
-            ! -path "./Carthage/*"      \ # 无视 Carthage 与 CocoaPods 的依赖
-            ! -path "./Pods/*"
-         \)    |                        \
-  tr '\n' '\0' |                        \ # 替换分隔符
-  xargs -0 genstrings -o .              \ # 处理带空格的路径
-```
-```swift
-NSLocalizedString("Hello, %@", comment: "Hello, ${username}")
-```
+    // Terminal
+    $ find . \( -name "*.swift" !           \ # 找出所有 swift 文件
+                ! -path "./Carthage/*"      \ # 无视 Carthage 与 CocoaPods 的依赖
+                ! -path "./Pods/*"
+             \)    |                        \
+      tr '\n' '\0' |                        \ # 替换分隔符
+      xargs -0 genstrings -o .              \ # 处理带空格的路径
+    
+    NSLocalizedString("Hello, %@", comment: "Hello, ${username}")
 
 ## 包裹（Packages）
 包裹把相关资源封装和加固成一个独立单元，意在**提升用户体验**。
@@ -125,7 +116,7 @@ NSLocalizedString("Hello, %@", comment: "Hello, ${username}")
 
 ### 访问包裹中的内容
 在访达中，右键展示选中项目的可操作目录。如果选中项目是包裹，“打开”操作下会出现“显示包内容”选项。
-![](/img/articles/nshipster-bundles-and-packages/show-package-contents-c7cc72f58a573cb2fbe349e6f76a4ef29d14fbada3cd9b8376fc37979da16bf3.png1563524953.1915808)
+![](https://nshipster.com/assets/show-package-contents-c7cc72f58a573cb2fbe349e6f76a4ef29d14fbada3cd9b8376fc37979da16bf3.png)
 
 点击这个选项会从包裹目录打开一个新的访达窗口。
 
@@ -138,36 +129,35 @@ NSLocalizedString("Hello, %@", comment: "Hello, ${username}")
 虽说是由访达决定如何展示文件和目录，大多数的判断会被代理给操作系统以及管理统一类型标识（UTI）的服务。
 
 如果想要确定一个文件扩展是一个内置系统包裹类型，还是一个被已安装的应用使用的文档类型，调用 Core Services 方法 `UTTypeCreatePreferredIdentifierForTag(_:_:_:)` 与 `UTTypeConformsTo(_:_:)` 能满足你的需求：
-```swift
-import Foundation
-import CoreServices
-
-func directoryIsPackage(_ url: URL) -> Bool {
-    let filenameExtension: CFString = url.pathExtension as NSString
-    guard let uti = UTTypeCreatePreferredIdentifierForTag(
-                        kUTTagClassFilenameExtension,
-                        filenameExtension, nil
-                    )?.takeRetainedValue()
-    else {
-        return false
+    
+    import Foundation
+    import CoreServices
+    
+    func directoryIsPackage(_ url: URL) -> Bool {
+        let filenameExtension: CFString = url.pathExtension as NSString
+        guard let uti = UTTypeCreatePreferredIdentifierForTag(
+                            kUTTagClassFilenameExtension,
+                            filenameExtension, nil
+                        )?.takeRetainedValue()
+        else {
+            return false
+        }
+    
+        return UTTypeConformsTo(uti, kUTTypePackage)
     }
-
-    return UTTypeConformsTo(uti, kUTTypePackage)
-}
-
-let xcode = URL(fileURLWithPath: "/Applications/Xcode.app")
-directoryIsPackage(xcode) // true
-```
+    
+    let xcode = URL(fileURLWithPath: "/Applications/Xcode.app")
+    directoryIsPackage(xcode) // true
 
 > 我们找不到任何描述如何设置所谓的包裹比特（package bit）的文档，但根据 [CarbonCore/Finder.h](https://opensource.apple.com/source/CarbonHeaders/CarbonHeaders-8A428/Finder.h)，在 `com.apple.FindlerInfo` 扩展参数中设置 `kHasBundle（0x2000）` 标示能够实现：
-> ```
-> $ xattr -wx com.apple.FinderInfo /path/to/package \
->  00 00 00 00 00 00 00 00 20 00 00 00 00 00 00 00 \
->  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-> ```
+>     > $ xattr -wx com.apple.FinderInfo /path/to/package \
+    >  00 00 00 00 00 00 00 00 20 00 00 00 00 00 00 00 \
+    >  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    >
 
 ---
 
 正如我们看到的那样，并非只有终端用户从抽象中获益 —— 无论是像 Swift 这样的高级编程语言的安全性和表现力，还是像 Foundation 这样的 API 的便利性，作为开发者也可以利用抽象开发出优秀的软件。
 
 或许我们会抱怨 [抽象泄漏](https://en.wikipedia.org/wiki/Leaky_abstraction) 与 [抽象反转](https://en.wikipedia.org/wiki/Abstraction_inversion) 带来的问题，但重要的是退一步，了解我们每天处理多少有用的抽象，以及它们带给了我们多少可能性。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
