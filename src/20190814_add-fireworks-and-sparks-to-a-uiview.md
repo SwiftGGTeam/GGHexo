@@ -9,8 +9,8 @@ permalink: add-fireworks-and-sparks-to-a-uiview
 作者=Tomasz Szulc
 原文日期=2018-09
 译者=Joeytat
-校对=
-定稿=
+校对=numbbbbb,WAMaker
+定稿=Pancf
 
 <!--此处开始正文-->
 
