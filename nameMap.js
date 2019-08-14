@@ -77,7 +77,8 @@ let nameMap = {
   "张弛": "https://github.com/zhangchi25806",
   "RickeyBoy": "https://github.com/RickeyBoy",
   "Ji4n1ng": "https://github.com/Ji4n1ng",
-  "CyberHex": "https://cyberhex.me/"
+  "CyberHex": "https://cyberhex.me/",
+  "Joeytat": "https://github.com/joeytat"
 }
 
 export default nameMap
