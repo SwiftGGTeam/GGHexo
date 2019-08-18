@@ -114,4 +114,5 @@ Table View 将会显示 TableData 数组里面的三个内容。为了启用上�
 ![image](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/58728d2c1b631b6a2299ad67/1483902262012/?format=750w)
 
 你可以在 ioscreator 的 [GitHub](https://github.com/ioscreator/ioscreator) 仓库里面找到 **IOS10ContextMenuTableViewTutorial** 的源码。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。程的源代码。
 > 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

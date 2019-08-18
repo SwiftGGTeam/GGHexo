@@ -1,7 +1,7 @@
 构建一个 iOS 和 watchOS 均可用的跨平台框架"
 
 > 作者：Natasha The Robot，[原文链接](https://www.natashatherobot.com/creating-a-framework-for-both-ios-and-watchos/)，原文日期：2016-09-26
-> 译者：[Joy](undefined)；校对：[bestswifter](http://bestswifter.com)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[Joy](http://www.jianshu.com/users/9c51a213b02e/latest_articles)；校对：[bestswifter](http://bestswifter.com)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

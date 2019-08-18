@@ -1,7 +1,7 @@
 使用 NSUndoManager 来进行撤销和重做"
 
 > 作者：Tomasz Szulc，[原文链接](http://szulctomasz.com/ios-undo-and-redo-with-nsundomanager/)，原文日期：2015-09-13
-> 译者：[Yake](http://blog.csdn.net/yake_099)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[](undefined)
+> 译者：[Yake](http://blog.csdn.net/yake_099)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

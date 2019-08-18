@@ -1,6 +1,6 @@
 用 Swift 编写面向协议的网络请求"
 
-> 作者：Natasha The Robot，[原文链接](https://www.natashatherobot.com/protocol-oriented-networking-in-swift/)，原文日期：2016/05/12
+> 作者：Natasha The Robot，[原文链接](https://www.natashatherobot.com/protocol-oriented-networking-in-swift/)，原文日期：2016-05-12
 > 译者：[saitjr](http://www.saitjr.com)；校对：[Channe](http://www.jianshu.com/users/7a07113a6597/latest_articles)；定稿：[CMB](https://github.com/chenmingbiao)
   
 

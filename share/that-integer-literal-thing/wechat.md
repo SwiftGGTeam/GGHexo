@@ -1,7 +1,7 @@
 整型字面量的那些事"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2016/06/28/that-integer-literal-thing/)，原文日期：2016/06/28
-> 译者：[Cwift](http://blog.csdn.net/cg1991130)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；定稿：[Cee](https://github.com/Cee)
+> 译者：[Cwift](http://weibo.com/277195544)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；定稿：[Cee](https://github.com/Cee)
   
 
 

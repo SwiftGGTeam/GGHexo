@@ -1,7 +1,7 @@
 地道的 Swift：解包引导的初始化过程"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2016/08/04/idiomatic-swift-conditional-unwrapping-initialization/)，原文日期：2016/08/04
-> 译者：[Cwift](http://blog.csdn.net/cg1991130)；校对：[Cee](https://github.com/Cee)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[Cwift](http://weibo.com/277195544)；校对：[Cee](https://github.com/Cee)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 

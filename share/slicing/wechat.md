@@ -1,7 +1,7 @@
 切片职责"
 
 > 作者：Soroush Khanlou，[原文链接](http://khanlou.com/2016/10/slicing/)，原文日期：2016-10-13
-> 译者：[Cwift](http://blog.csdn.net/cg1991130)；校对：[Crystal Sun](http://www.jianshu.com/users/7a2d2cc38444/latest_articles)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[Cwift](http://weibo.com/277195544)；校对：[Crystal Sun](http://www.jianshu.com/users/7a2d2cc38444/latest_articles)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 
