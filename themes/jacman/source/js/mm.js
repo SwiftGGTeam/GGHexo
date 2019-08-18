@@ -5,7 +5,7 @@ $(function() {
     }
 
     if (window.location.host[0] == "1") return
-    AV.initialize("Ab21p9Df2hlkXxzSiwHuUSr5", "MNphO03YUzWhy9k6rHHi4eHA");
+    AV.initialize("Ab21p9Df2hlkXxzSiwHuUSr5", "MNphO03YUzWhy9k6rHHi4eHA", "https://lcapi.swift.gg");
     var ArticleViewCount = AV.Object.extend("ArticleViewCount");
     var queryViewCount = new AV.Query(ArticleViewCount)
     queryViewCount.limit(1000)
