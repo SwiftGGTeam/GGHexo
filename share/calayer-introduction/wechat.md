@@ -1,7 +1,7 @@
 CALayer 新手指南"
 
 > 作者：Pranjal Satija，[原文链接](http://www.appcoda.com/calayer-introduction/)，原文日期：2016-08-16
-> 译者：[Cwift](http://weibo.com/277195544)；校对：[Cee](https://github.com/Cee)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[Cwift](http://blog.csdn.net/cg1991130)；校对：[Cee](https://github.com/Cee)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

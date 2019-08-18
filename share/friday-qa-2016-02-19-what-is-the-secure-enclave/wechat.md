@@ -1,7 +1,7 @@
 Friday Q&A 2016-02-19: 什么是安全区域？"
 
 > 作者：Mike Ash，[原文链接](https://www.mikeash.com/pyblog/friday-qa-2016-02-19-what-is-the-secure-enclave.html)，原文日期：2016-02-19
-> 译者：[littledogboy](undefined)；校对：[Cwift](http://weibo.com/277195544)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[littledogboy](undefined)；校对：[Cwift](http://blog.csdn.net/cg1991130)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

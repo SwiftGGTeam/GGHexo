@@ -1,7 +1,7 @@
 与服务器无关的移动端分析"
 
 > 作者：Joe，[原文链接](http://dev.iachieved.it/iachievedit/service-agnostic-mobile-analytics/)，原文日期：2016/04/12
-> 译者：[Cwift](http://weibo.com/277195544)；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[Cwift](http://blog.csdn.net/cg1991130)；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

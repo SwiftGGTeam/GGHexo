@@ -16,12 +16,12 @@
 
 你也很喜欢常用 app 里的那些小细节吧？当我从 [dribbble](https://dribbble.com/) 中寻找灵感时，就发现了这个漂亮的设计：当用户在某个重要的视图中修改设置或者进行了什么操作时，会有烟花在周围绽放。于是我就在想这个东西有多难实现，然后过了一段时间，我完成了 :)
 
-![hero](http://szulctomasz.com/uploads/programming-blog/post-54/hero.gif)
+![hero](http://swift.gg/img/articles/add-fireworks-and-sparks-to-a-uiview/hero.gif1565786277.3434784)
 
 ## _烟花的细节_
 下面是对于这个效果的详细描述。烟花应该在视图周围的某个特殊的位置爆开，可能是按钮在点击事件响应时。当点击发生时，烟花应该在按钮的四角爆开，并且爆炸产生的火花应该按照自身的轨迹移动。
 
-![final](http://szulctomasz.com/uploads/programming-blog/post-54/final.jpg)
+![final](http://swift.gg/img/articles/add-fireworks-and-sparks-to-a-uiview/final.jpg1565786278.2018952)
 
 *超喜欢这个效果! 不仅让我感受到视觉上的愉悦，还让我想要不停地戳这个按钮！ :) 🎉*
 
@@ -35,12 +35,12 @@
 ## _火花的分布_
 这个烟花特效有着简单的火花分布规则。将爆炸点分为四块「视线区域」来看：上左，上右，下左，下右，每个区域都有两个火花。
 
-![sparks distribution](http://szulctomasz.com/uploads/programming-blog/post-54/sparks-distribution.jpg)
+![sparks distribution](http://swift.gg/img/articles/add-fireworks-and-sparks-to-a-uiview/sparks-distribution.jpg1565786278.5224512)
 
 ## _火花的轨迹_
 火花的移动有着自己的轨迹。在一处烟花中有 8 个火花，那至少需要 8 道轨迹。理想状态下应该有更多的轨迹，可以增加一些随机性，这样连续爆发烟花的时候，不会看起来和前一个完全一样。
 
-![spark-trajectories](http://szulctomasz.com/uploads/programming-blog/post-54/spark-trajectories.jpg)
+![spark-trajectories](http://swift.gg/img/articles/add-fireworks-and-sparks-to-a-uiview/spark-trajectories.jpg1565786278.861796)
 
 我为每一个区域创建了 4 条轨迹，这样就赋予了两倍于火花数量的随机性。为了方便计算，我统一了每条轨迹的初始点。因为我用了不同的工具来可视化这些轨迹，所以图上的轨迹和我完成的效果略有不同 - 但你能明白我的想法就行 :)
 
@@ -85,7 +85,7 @@
         }
     }
 
-![desmos-tool](http://szulctomasz.com/uploads/programming-blog/post-54/desmos-tool.png)
+![desmos-tool](http://swift.gg/img/articles/add-fireworks-and-sparks-to-a-uiview/desmos-tool.png1565786279.294991)
 
 接下来要实现的是一个能够创建随机轨迹的工厂。前面的图中你可以看到轨迹是根据颜色来分组的。我只创建了上右和下右两块位置的轨迹，然后进行了镜像复制。这对于我们将要发射的烟花来说已经足够了🚀
 
@@ -542,11 +542,11 @@
 
 然后，哇!
 
-![classic](http://szulctomasz.com/uploads/programming-blog/post-54/classic.gif)
+![classic](http://swift.gg/img/articles/add-fireworks-and-sparks-to-a-uiview/classic.gif1565786279.8336995)
 
 从这一步起，新添加一个像下面这样的烟花就变得非常简单了。你只需要定义新的轨迹，创建一个新的烟花，并且按照你希望的样子来实现即可。将这些代码放入一个控制器可以让你想在哪里启动烟花都很简单 :) 或者你也可以直接使用这个*喷泉烟花*，我已经把它放在了我的 github 项目 [tomkowz/fireworks](https://github.com/tomkowz/fireworks) 中。
 
-![fountain](http://szulctomasz.com/uploads/programming-blog/post-54/fountain.gif)
+![fountain](http://swift.gg/img/articles/add-fireworks-and-sparks-to-a-uiview/fountain.gif1565786280.6926286)
 
 ## _总结_
 这个动画效果的实现并不简单但也不算很难。通过对问题（在我们的情况下是动画效果）的正确分析，我们可以将其分解成多个小问题，逐个解决然后将其组合在一起。真希望我有机会能够在未来的的项目中使用这个效果🎉

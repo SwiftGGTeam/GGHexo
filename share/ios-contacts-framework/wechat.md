@@ -1,7 +1,7 @@
 初识 iOS 9 中新的联系人框架"
 
 > 作者：gabriel theodoropoulos，[原文链接](http://www.appcoda.com/ios-contacts-framework/)，原文日期：2015-09-29
-> 译者：[BridgeQ](http://wxgbridgeq.github.io/)，[星夜暮晨](http://www.jianshu.com/users/ef1058d2d851)；校对：[小铁匠Linus](http://linusling.com)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[BridgeQ](http://wxgbridgeq.github.io/)，[星夜暮晨](http://www.jianshu.com/users/ef1058d2d851)；校对：[小铁匠Linus](http://linusling.com)；定稿：[](undefined)
   
 
 

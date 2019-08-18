@@ -1,7 +1,7 @@
 Swift 3 及展望"
 
 > 作者：Thomas Hanning，[原文链接](http://www.thomashanning.com/swift-3/)，原文日期：2015-12-10
-> 译者：[小铁匠Linus](http://linusling.com)；校对：[Cee](https://github.com/Cee)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[小铁匠Linus](http://linusling.com)；校对：[Cee](https://github.com/Cee)；定稿：[](undefined)
   
 
 

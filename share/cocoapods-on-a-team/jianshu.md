@@ -1,7 +1,7 @@
 在团队开发中使用 CocoaPods 的小技巧"
 
 > 作者：Natasha The Robot，[原文链接](http://natashatherobot.com/cocoapods-on-a-team/)，原文日期：2015-12-18
-> 译者：[JackAlan](http://alanmelody.com/)；校对：[Cee](https://github.com/Cee)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[JackAlan](http://ijack.pw/)；校对：[Cee](https://github.com/Cee)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 
