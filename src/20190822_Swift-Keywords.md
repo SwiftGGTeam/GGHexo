@@ -12,7 +12,7 @@ custom_title:"Swift 关键字"
 作者=Jordan Morgan
 原文日期=2017-02-11
 译者=郑一一
-校对=numbbbbb,colourful987
+校对=numbbbbb,pmst
 定稿=Pancf
 
 <!--此处开始正文-->
