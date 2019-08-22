@@ -1,7 +1,7 @@
 给 UIView 来点烟花"
 
 > 作者：Tomasz Szulc，[原文链接](http://szulctomasz.com/programming-blog/2018/09/add-fireworks-and-sparks-to-a-uiview/)，原文日期：2018-09
-> 译者：[Joeytat](https://github.com/joeytat)；校对：[numbbbbb](http://numbbbbb.com/)，[WAMaker](https://github.com/WAMaker)；定稿：[Pancf](undefined)
+> 译者：[Joeytat](https://github.com/joeytat)；校对：[numbbbbb](http://numbbbbb.com/)，[WAMaker](https://github.com/WAMaker)；定稿：[Pancf](https://github.com/Pancf)
   
 
 
