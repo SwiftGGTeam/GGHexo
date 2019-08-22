@@ -78,7 +78,7 @@ let nameMap = {
   "RickeyBoy": "https://github.com/RickeyBoy",
   "Ji4n1ng": "https://github.com/Ji4n1ng",
   "CyberHex": "https://cyberhex.me/",
-  "Joeytat": "https://github.com/joeytat"
+  "Joeytat": "https://github.com/joeytat",
   "Pancf": "https://github.com/Pancf"
 }
 
