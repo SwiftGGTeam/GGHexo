@@ -32,7 +32,7 @@ deploy:
       all_branches: true
       condition: $TRAVIS_BRANCH =~ ^master$
   - <<: *defaults
-    # stage.swift.gg 是部署在 github.io 的网站
+    # pages.swift.gg 是部署在 github.io 的网站
     provider: pages
     local-dir: public
     keep-history: true

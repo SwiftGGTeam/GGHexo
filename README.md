@@ -4,9 +4,7 @@ master deploy status:![master branch](https://travis-ci.org/SwiftGGTeam/GGHexo.s
 
 stage deploy status:![stage branch](https://travis-ci.org/SwiftGGTeam/GGHexo.svg?branch=stage)
 
-打造国内第一的 Swift 译文站  
-
-[TOC]
+打造国内第一的 Swift 译文站。
 
 ## 使用流程
 
@@ -38,13 +36,15 @@ yarn run hexo s
 
 1. 在 github 网页使用 [create new file](https://github.com/SwiftGGTeam/GGHexo/new/stage/src) 在 src 目录下创建要翻译的文章，文件命名请用以下格式：`20170903_swift-weekly-brief-75.md`，其中`swift-weekly-brief-75`对应md文件中permalink字段。内容格式按照 `书写规范以及 demo`下的例子来。然后创建 PR。
 2. 提交 PR 申请合入到 stage 分支，并根据大家的 comment 进行修改。
-3. PR 合入 stage 后，触发 travis build，将网站部署到 stage 环境 ([stage.swift.gg]，(http://stage.swift.gg) 部署在 swiftggteam.github.io 这个项目的 master 分支下)，可以通过 readme 顶部的 status image 来查看状态，也可以通过 [commits](https://github.com/SwiftGGTeam/GGHexo/commits/stage) 页面下的每个 commit 后面的对勾来查看构建状态。
+3. PR 合入 stage 后，触发 travis build，将网站部署到 [stage 环境](http://pages.swift.gg)，部署在 swiftggteam.github.io 这个项目的 master 分支下)，可以通过 readme 顶部的 status image 来查看状态，也可以通过 [commits](https://github.com/SwiftGGTeam/GGHexo/commits/stage) 页面下的每个 commit 后面的对勾来查看构建状态。
 4. 在 stage 环境确认无误后，将 stage 合入到 master 分支，随后 travis ci 会将静态资源部署到 swiftggteam.github.io 项目的 aliyun-pages 分支，aliyun 部署的 crontab 脚本隔一段时间会拉取 aliyun-pages 分支的静态资源。travis.ci 同时还会将自动生成的其他平台运营用的 md 文件提交到 master 分支。
 5. 如果本次提交不包含网站相关的变更，比如 readme.md 的变更，可以在提交的最后一个 commit 中加入 `[skip ci]`，详情参考 [Skipping a build](https://docs.travis-ci.com/user/customizing-the-build#Skipping-a-build)
 
 ## 自动化部署做的一些事
 
-###  自动提取图片
+###  自动提取图片（暂停使用）
+
+**暂时停用。之前服务器在香港，可以下载转存一些无法直接访问的图片。目前服务器在北京阿里云，和用户直接加载原图片 URL 没有区别。**
 
 在项目根目录下执行 `python 2-extractImgs.py` 或者 `python 3-extractImgs.py`，取决于你的 Python 版本。
 
