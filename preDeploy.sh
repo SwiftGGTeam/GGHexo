@@ -4,7 +4,7 @@ cp -a treasure/. source/_posts
 node backupPost.js
 yarn run babel-node generateStat.js
 yarn run babel-node generateShareMD.js
-python 3-extractImgs.py
+# python 3-extractImgs.py
 if [[ $1 == 'local' ]]; then
   yarn run hexo s
 fi
@@ -25,6 +25,6 @@ if [[ $TRAVIS_BRANCH == "master" ]]; then
   git push
 elif [[ $TRAVIS_BRANCH == "stage" ]]; then
   echo 'deploy to SwiftGG/SwiftGGTeam.github.io master branch'
-  echo 'stage.swift.gg' > source/CNAME
+  echo 'pages.swift.gg' > source/CNAME
   yarn run hexo g --bail --silent
 fi

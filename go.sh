@@ -3,8 +3,8 @@ cd source
 git pull
 cd ..
 git pull
-pythonversion=$(python -c 'import sys; print(sys.version_info[:])')
-pythonversion=${pythonversion:1:1}
+# pythonversion=$(python -c 'import sys; print(sys.version_info[:])')
+# pythonversion=${pythonversion:1:1}
 babel-node generatePosts.js
 babel-node generateStat.js
 babel-node generateShareMD.js
