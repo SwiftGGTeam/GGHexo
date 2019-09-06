@@ -43,7 +43,7 @@ Swift 中的面向协议编程：引言"
     
     class ViewController: UIViewController
     {
-    ...  
+    ...
 
 部分开发人员将在这里停下来，创建完全定制的接口，但大多数人将采取另一个步骤。  
 
@@ -54,7 +54,7 @@ Swift 中的面向协议编程：引言"
 让我给你们看一个例子使其便于理解。我相信你们很多人都用过 `UITableView`。虽然这不是一个关于 `UITableView` 的教程，但是你应该知道在 `UIViewController` 中将其实现时，协议扮演着重要的角色。在向 `UIViewController` 中添加 `UITableView`时，`UIViewController` 必须**遵循** `UITableViewDataSource` 和 `UITableViewDelegate` 协议，就像这样：  
 
     
-    class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  
+    class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 
 简而言之，遵循 `UITableViewDataSource` 允许你用数据填充所有的 `UITableViewCell`，比如给用户提供导航的菜单项名称。采用 `UITableViewDelegate`，你可以对用户与 `UITableView` 的交互进行更细粒度的控制，比如在用户点击特定的 `UITableViewCell` 时执行适当的操作。  
 
