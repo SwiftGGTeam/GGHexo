@@ -29,7 +29,7 @@ description:
 
 下面是一个 4×3 矩阵的例子：
 
-![Matrix](/img/articles/using-types-to-keep-yourself-honest/Matrix.png1530582060.2468634)
+![Matrix](https://swift.gg/img/articles/using-types-to-keep-yourself-honest/Matrix.png1530582060.2468634)
 
 下面写代码创建一个 `矩阵结构体`：
 
@@ -55,7 +55,7 @@ func multiply(m1: Matrix, _ m2: Matrix) -> Matrix {
 
 例如，使用矩阵乘法，两个矩阵的大小必须以特定方式匹配。
 
-![MatrixMultiplication](/img/articles/using-types-to-keep-yourself-honest/MatrixMultiplication.png1530582060.3889682)
+![MatrixMultiplication](https://swift.gg/img/articles/using-types-to-keep-yourself-honest/MatrixMultiplication.png1530582060.3889682)
 
 第一个矩阵中的列数必须与第二个矩阵中的行数相同。如果第一个矩阵的大小为 `U × V`，则第二个矩阵的大小必须为 `V × W`。这就是数学上规定的。
 

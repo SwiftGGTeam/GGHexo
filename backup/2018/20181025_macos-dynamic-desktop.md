@@ -25,7 +25,7 @@ Dark Mode（深色模式）可谓是 macOS 最受欢迎的特性之一了 ——
 
 <!--more-->
 
-![](/img/articles/macos-dynamic-desktop/desktop-and-screen-saver-preference-pane-b457c3a4bc26017c8d555506333d5b73244adaf8b7060f0cadd450f39b279c88.png1540446627.765852)
+![](https://swift.gg/img/articles/macos-dynamic-desktop/desktop-and-screen-saver-preference-pane-b457c3a4bc26017c8d555506333d5b73244adaf8b7060f0cadd450f39b279c88.png1540446627.765852)
 
 效果不仅微妙，而且让人愉悦。桌面仿佛被赋予了生命，能随着时间的推移而变化；符合自然规律。（不出意外的话，结合 dark mode 的切换，还会有讨喜的特效）
 
@@ -44,19 +44,19 @@ Dark Mode（深色模式）可谓是 macOS 最受欢迎的特性之一了 ——
 
 在 macOS Mojave 系统下，打开访达，选择“前往 > 前往文件夹...” （⇧⌘G），输入“/Library/Desktop Pictures/”。
 
-![](/img/articles/macos-dynamic-desktop/go-to-library-desktop-pictures-3992f8efa1d14dd3bf092ec7eb298c6c1855dcc8e0cf57c0e494a840a8cb4713.png1540446628.0454302)
+![](https://swift.gg/img/articles/macos-dynamic-desktop/go-to-library-desktop-pictures-3992f8efa1d14dd3bf092ec7eb298c6c1855dcc8e0cf57c0e494a840a8cb4713.png1540446628.0454302)
 
 在这个目录下，可以找到名为“Mojave.heic”的文件。双击通过预览打开。
 
-![](/img/articles/macos-dynamic-desktop/mojave-heic-abd6b67d8941ad50a9bcd7dd6657994174d4be713bb3c2cfbc9e24ffff7ad129.png1540446628.1945882)
+![](https://swift.gg/img/articles/macos-dynamic-desktop/mojave-heic-abd6b67d8941ad50a9bcd7dd6657994174d4be713bb3c2cfbc9e24ffff7ad129.png1540446628.1945882)
 
 在预览中，左边栏会显示从 1~16 的缩略图，每张都是不同状态的沙漠图。
 
-![](/img/articles/macos-dynamic-desktop/mojave-dynamic-desktop-images-c8bc3aab78c049d74abd46240445f82c3d0cf0ad043bcc9da6f3fda066776034.png1540446628.454165)
+![](https://swift.gg/img/articles/macos-dynamic-desktop/mojave-dynamic-desktop-images-c8bc3aab78c049d74abd46240445f82c3d0cf0ad043bcc9da6f3fda066776034.png1540446628.454165)
 
 如果选择“工具 > 显示检查器”（⌘I），可以看到更为详细的信息，如下图所示：
 
-![](/img/articles/macos-dynamic-desktop/mojave-heic-preview-info-b71c5e4084bd43f1e6b34852c4c757493627eb8b66ee44b282e2f53d274dda02.png1540446628.7528405)
+![](https://swift.gg/img/articles/macos-dynamic-desktop/mojave-heic-preview-info-b71c5e4084bd43f1e6b34852c4c757493627eb8b66ee44b282e2f53d274dda02.png1540446628.7528405)
 
 不幸的是，这些就是预览所展示的全部信息了（截至发稿前）。即使点击旁边的“更多信息检查器”，我们也只是能得到下面这个表格，其余的无从得知：
 
@@ -212,7 +212,7 @@ print("\(position.azimuth)° Az / \(position.elevation)° El")
 
 如果绘制出太阳一天的位置，我们可以得到一个正弦曲线，这不禁让人联想到 Apple Watch 的“太阳表盘”。
 
-![](/img/articles/macos-dynamic-desktop/solar-position-watch-faces-1815d6d3c84f42ff4588fa47cd59841f4de15be2b219f6f4ec9a83e13ea0f08b.jpg1540446628.9008124)
+![](https://swift.gg/img/articles/macos-dynamic-desktop/solar-position-watch-faces-1815d6d3c84f42ff4588fa47cd59841f4de15be2b219f6f4ec9a83e13ea0f08b.jpg1540446628.9008124)
 
 ### 扩展对 XMP 的理解
 

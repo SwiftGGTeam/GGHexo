@@ -19,7 +19,7 @@ description: 这是一篇关于编译 Swift 开源的 Foundation 库的文章
 
 <!--此处开始正文-->
 
-![](/img/articles/compiling-open-source-swift-foundation/006tNbRwgy1fuksdkfewij306o06omx6.jpg1540189674.5814507)
+![](https://swift.gg/img/articles/compiling-open-source-swift-foundation/006tNbRwgy1fuksdkfewij306o06omx6.jpg1540189674.5814507)
 
 我最近在开源的 [Swift Foundation](https://github.com/apple/swift-corelibs-foundation) 中遇到了 `NSThread` 实现的问题。如果不是尝试在树莓派 3 上运行代码，我也许就发现不了这个问题：
 
