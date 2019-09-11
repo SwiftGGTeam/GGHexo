@@ -39,7 +39,7 @@ description: 这次的教程是使用 SiriKit 在 Swift 2.0 开发的工程引�
 
 首先，在你的 App（或者是新建一个单视图的 Swift 模板工程），点击顶部的工程，然后点击左侧下方的 + 按钮，在这里（译者注：我在这里添加了一张图片，能够说的更明白）点击。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/adding-siri-to-ios-10-apps-in-swift-tutorial-1.png)
+![](http://jamesonquave.com/blog/wp-content/uploads/siri-1-1.png)
 
 弹出的窗口中，选择 **iOS > Application Extension**，接着选择 **Intents Extension**。
 

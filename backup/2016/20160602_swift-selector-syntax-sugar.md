@@ -17,7 +17,7 @@ description: 在 Swift 这门很新的语言中有很多不错的编码风格，
 
 <!--此处开始正文-->
 
-![](http://swiftgg-main.b0.upaiyun.com/img/swift-selector-syntax-sugar-1.jpeg)
+![](https://miro.medium.com/max/1400/1*L100yxVCNnyvn7Q5m8CCiQ.jpeg)
 
 Objective-C 已经出现好些年了。在这期间，开发者们遵循着各种代码风格，希望能提高可读性，为今后的版本迭代做准备。但是 Swift 不同。Swift 还是门很新的语言，没有专门的或者最广泛的编码风格可以遵循。所以很多时候我们需要自己去摸索。
 

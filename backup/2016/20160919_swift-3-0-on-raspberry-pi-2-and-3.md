@@ -17,6 +17,8 @@ description: 在 ARM 设备上运行 Swift 可不是一件容易的事，本文�
 
 <!--此处开始正文-->
 
+> 原文图片链接全部失效，因此本文图片无法显示。
+
 ![](http://dev.iachieved.it/iachievedit/wp-content/uploads/2016/06/raspberry-pi-logo-2.png)
 
 当前，有许多人[正在努力](http://dev.iachieved.it/iachievedit/swift-for-arm-systems/)将 Swift 3.0 引入到基于 ARM 的系统中。通过本文你将了解如何在运行 Ubuntu 16 ([Xenial Xerus](https://wiki.ubuntu.com/XenialXerus)) 的树莓派 2 或树莓派 3 上构建并使用 Swift 3.0。不过，我们暂时还没有对它在 Raspbian 系统上的可用性进行测试 (看起来并不可以)。
