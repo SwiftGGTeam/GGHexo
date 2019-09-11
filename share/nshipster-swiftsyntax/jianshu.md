@@ -29,7 +29,7 @@ SwiftSyntax"
 
 为了明白 SwiftSyntax 如何工作，我们首先要回头看看 Swift 编译器的架构：
 
-![](http://swift.gg/img/articles/nshipster-swiftsyntax/swift-compilation-diagram-8af7d0078f72cdaa8f50430e608f15a9d4214f5772439d2fd6904bb5a8a53c60.png1548390462.3512783)
+![](https://swift.gg/img/articles/nshipster-swiftsyntax/swift-compilation-diagram-8af7d0078f72cdaa8f50430e608f15a9d4214f5772439d2fd6904bb5a8a53c60.png1548390462.3512783)
 
 Swift 编译器的主要职责是把 Swift 代码转换为可执行的机器代码。整个过程可以划分为几个离散的步骤，一开始，[语法分析器](https://github.com/apple/swift/tree/master/lib/Parse) 会生成一个抽象语法树（AST）。之后，语义分析器会进行工作并生成一个通过类型检查的 AST。至此步骤，代码会降级到 [Swift 中间层语言](https://github.com/apple/swift/blob/master/docs/SIL.rst)；随后 SIL 会继续转换并优化自身，降级为 [LLVM IR](http://llvm.org/docs/LangRef.html)，并最终编译为机器代码。
 
@@ -252,7 +252,7 @@ SwiftSyntax 通过代理系统的 `swiftc` 调用来生成抽象语法树。但�
 
 不管怎样，在几个小时的开发工作后，我已经可以在 Swift 大量的语法特性中，生成出比较理想的渲染过的输出。
 
-![](http://swift.gg/img/articles/nshipster-swiftsyntax/swiftsyntaxhightlighter-example-output-829aa64ab4bdf73a2e3070aab017e21e3db37ca0ee35079f0e89e22594806df0.png1548390462.5352607)
+![](https://swift.gg/img/articles/nshipster-swiftsyntax/swiftsyntaxhightlighter-example-output-829aa64ab4bdf73a2e3070aab017e21e3db37ca0ee35079f0e89e22594806df0.png1548390462.5352607)
 
 这个项目需要一个库和命令行工具的支持。快去 [尝试一下 ](https://github.com/NSHipster/SwiftSyntaxHighlighter)然后让我知道你的想法吧！
 > 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

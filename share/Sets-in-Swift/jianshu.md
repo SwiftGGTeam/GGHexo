@@ -15,7 +15,7 @@ Swift 中的集合（Set）"
 
 集合（Set）是 Swift 集合类型（collection types）之一，集合用来存储类型相同且没有确定顺序唯一的值。你可以将集合想象成一盒台球：它们在颜色和数量上独一无二，但在盒内是无序的。
 
-![](http://swift.gg/img/articles/Sets-in-Swift/billiard.jpg1562643187.9223473)
+![](https://swift.gg/img/articles/Sets-in-Swift/billiard.jpg1562643187.9223473)
 
 
 
