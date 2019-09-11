@@ -177,7 +177,7 @@ struct Foo : MyProtocol
 
 当然，这不是说说而已，我已经在代码中进行了实践：
 
-![这里写图片描述](/img/articles/a-handful-of-swift-style-rules-swiftlang/Screen-Shot-2015-11-18-at-10.31.13-AM.png1449449055.5795417)
+![这里写图片描述](https://swift.gg/img/articles/a-handful-of-swift-style-rules-swiftlang/Screen-Shot-2015-11-18-at-10.31.13-AM.png1449449055.5795417)
 
 github [代码地址](https://github.com/erica/testlint)
 
