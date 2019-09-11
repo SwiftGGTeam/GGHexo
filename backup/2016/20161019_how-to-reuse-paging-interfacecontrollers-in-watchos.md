@@ -29,7 +29,7 @@ Your browser does not support the video tag.
 
 每个界面控制器仅有一张图片和一个标签：
 
-![](http://swiftgg-main.b0.upaiyun.com/image/how-to-reuse-paging-interfacecontrollers-in-watchos-1.png)
+![](https://www.natashatherobot.com/wp-content/uploads/Screen-Shot-2016-09-26-at-6.17.07-PM-768x306.png)
 
 尽管这些界面和逻辑在界面控制器中看起来一模一样，但在过去一年里，我还是没有找到重用界面控制器的解决方案。
 
@@ -59,15 +59,15 @@ extension FoodItem {
 
 下一个步骤是创建一个可重用界面控制器，我们将它命名为 FoodItemInterfaceController，并且将它指定为故事板里每个界面控制器的类：
 
-![](http://swiftgg-main.b0.upaiyun.com/image/how-to-reuse-paging-interfacecontrollers-in-watchos-2.png)
+![](https://www.natashatherobot.com/wp-content/uploads/Screen-Shot-2016-09-26-at-6.26.41-PM-768x220.png)
 
 然后是为图片和标签创建并关联 IBOutlets：
 
-![](http://swiftgg-main.b0.upaiyun.com/image/how-to-reuse-paging-interfacecontrollers-in-watchos-3.png)
+![](https://www.natashatherobot.com/wp-content/uploads/FoodItemInterfaceController_swift_%E2%80%94_Edited-768x154.png)
 
 最后，你必须在故事板中为你的每个界面控制器添加一个独一无二的标识符：
 
-![](http://swiftgg-main.b0.upaiyun.com/image/how-to-reuse-paging-interfacecontrollers-in-watchos-4.png)
+![](https://www.natashatherobot.com/wp-content/uploads/Interface_storyboard_%E2%80%94_Edited-1-768x272.png)
 
 ## 界面控制器
 

@@ -49,7 +49,7 @@ let minionImagesFiltered = (1...7)
 
 这样的确有用，但是我并不开森。这段代码又长又拙笨，而且我讨厌强制解包可选类型，虽然这里不会出错。不过这都是小事，主要的原因是这样看起来并不像原生for循环那样简单有效。如下图所示：
 
-![](/img/articles/swift_when_the_functional_approach_is_not_right/MyPlayground_playground1.png)
+![](https://www.natashatherobot.com/wp-content/uploads/MyPlayground_playground1-1024x427.png)
 
 可能这样做是错的，但是我最后还是选择了`for`循环。我的结论是：在 Swift 中偶尔使用`for`循环是可以的。当然我可能遗漏了一些东西，如果有，请在评论中告诉我！
 

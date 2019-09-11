@@ -77,7 +77,7 @@ Hello, beautiful world! I love you.
 > Pro tip: 
 > 在 OSX 系统中，在任意文本框中点击 Ctrl + Cmd + Space 将会打开一个 emoji 弹出框。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/swift-prettify-your-print-statements-pt-1-1.jpeg)
+![](https://miro.medium.com/max/1600/1*32Y_9OrQhKOMU6FjnCpMLQ.jpeg)
 
 #### Strings
 
@@ -128,7 +128,7 @@ print("🏫🐜 " + joke)
 // 🏫🐜 What is this... A center for ANTS?!
 ```
 
-![](http://swiftgg-main.b0.upaiyun.com/img/swift-prettify-your-print-statements-pt-1-2.jpeg)
+![](https://miro.medium.com/max/1566/1*jg0ZyJOF0qzttmjl24hLgw.jpeg)
 
 鉴于 iOS 9.1 有 184 种表情可供选择，并且将来还会出现更多，你的大多数日志的需求都能用表情来满足。
 

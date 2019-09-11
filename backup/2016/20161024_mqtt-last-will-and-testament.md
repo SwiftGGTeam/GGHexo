@@ -17,6 +17,8 @@ description:
 
 <!--此处开始正文-->
 
+> 原文图片链接全部失效，因此本文图片无法显示。
+
 ![](http://dev.iachieved.it/iachievedit/wp-content/uploads/2016/07/mqtt-e1467656045427.png)
 
 这里是在 `Linux` 上使用 `Swift` 来编写[MQTT](https://en.wikipedia.org/wiki/MQTT)客户端系列的一篇文章。

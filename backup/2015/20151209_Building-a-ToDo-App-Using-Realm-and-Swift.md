@@ -15,8 +15,6 @@ permalink: building-a-todo-app-using-realm-and-swift
 
 智能手机的快速发展的同时，涌现出了很多对开发者友好的开发工具。这些工具不仅使得开发变得更加简单和容易，同时也保证了性能和产品质量。如今想要在 App Store 中占据一席之地，并非易事。而且想要使得应用易于扩展就更加困难了。当你成功获得百万量级的用户时，应用中的每一个细节都不能放过，并且需要在很短的时间完成对细节的打磨。所以和数据库打交道，是很多开发者都会面临的一个问题。<!--more-->相信我们每个人都会因为数据库引起的各种问题而头疼不已，对于数据库，我想如今我们只有两种选择：[SQLite](http://www.appcoda.com/sqlite-database-ios-app-tutorial/) 和 [Core Data](http://www.appcoda.com/introduction-to-core-data/)。我是 Core Data 的忠实粉丝，它对记录（records）的处理和持久化数据的能力非常强大，但是我意识到，在开发应用的过程中，我在 Core Data 上浪费了太多的时间。最近，我无意中发现了 Realm，一个可以替代 SQLite 和 Core Data 的更好的解决方案。
 
-![](/img/articles/building-a-todo-app-using-realm-and-swift/realm-db-1024x683.jpg1500171566.91)
-
 <!--more-->
 
 ## Realm 是什么？
@@ -65,11 +63,11 @@ pod init
 
 然后使用 Xcode 打开生成的 Podfile 文件，在 target 之后，添加 `pod 'RealmSwift'`，修改完之后，应该是下面这个样子：
 
-![](/img/articles/building-a-todo-app-using-realm-and-swift/realm-podfile-1024x430.png1500171567.31)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/realm-podfile-1024x430.png)
 
 下面运行 `pod install` 命令来把 Realm 下载安装到项目中。完成之后，你会在你的工程文件目录发现一个新生成的 Xcode 工作空间。请确保打开 **RealmTasks.xcworkspace** 而不是 xcodeproj。打开工作空间后，你会看到像下面这样的情形：
 
-![](/img/articles/building-a-todo-app-using-realm-and-swift/realm-pod-folder-1024x446.png1500171567.71)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/realm-pod-folder-1024x446.png)
 
 现在就可以在 Xcode 中使用 Realm 啦，但是我们将安装下面的小工具来让使用 Realm 的过程更加容易。
 
@@ -83,17 +81,17 @@ curl -fsSL https://raw.githubusercontent.com/supermarin/Alcatraz/master/Scripts/
 
 然后在 Xcode 中，选择 `Window` -> `Package Manager`，如下图：
 
-![](/img/articles/building-a-todo-app-using-realm-and-swift/realm-package-manager-1024x334.png1500171568.06)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/realm-package-manager-1024x334.png)
 
 然后在弹出的窗口中，你可以选择安装你喜欢的插件或者文件模板，在搜索框中你可以搜索你喜欢的插件、配色。在搜索框输入「Realm」，在出现的结果中选择「RealmPlugin」，点击 `Install` 按钮
 
-![](/img/articles/building-a-todo-app-using-realm-and-swift/realm-plugin-1024x996.png1500171568.8)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/realm-plugin-1024x996.png)
 
 ## Realm 浏览器
 
 给大家介绍的最后一个工具是 Realm 浏览器。这个浏览器可以帮助你阅读和编辑你的 `.realm` 数据库文件。这些文件在应用程序中被创建，在数据库表中保存了所有的数据实体（entities）、属性（attributes）和记录（records）。之前我们说过，这些数据库文件可以在像 iOS 和 Android 这样不同的平台间共享。想要下载最新版本的 Realm 浏览器，请访问 [iTunes store](https://itunes.apple.com/app/realm-browser/id1007457278)。打开 Realm 浏览器，选择 `Tools` -> `Generate demo database`。它会帮你生成 realm 数据库测试文件，你可以使用该浏览器打开和编辑它的内容。当你打开的时候，你会看到像下面的内容：
 
-![](/img/articles/building-a-todo-app-using-realm-and-swift/browser.png1500171569.27)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/browser.png)
 
 正如你所见，在 RealmTestClass1 中，它拥有 1000 条记录，显示了多种不同的参数类型（即「列」）。我们会在下节介绍支持的属性类型。
 
@@ -118,11 +116,11 @@ Realm 中的 List 可以包含多个 Object 实例，参考上面 demo 数据库
 
 现在让我们使用之前在 Xcode 中安装的 Realm 插件来新建一个 Realm 类。打开 Xcode，新建文件，在右边的侧边栏选择 Realm：
 
-![](/img/articles/building-a-todo-app-using-realm-and-swift/realm_model.png1500171569.65)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/realm_model.png)
 
 然后选择 Swift 语言，类名我们输入 Task。会得到如下结果：
 
-![](/img/articles/building-a-todo-app-using-realm-and-swift/Task_swift.png1500171570.2)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/Task_swift.png)
 
 现在，可以向 Task 数据模型中添加属性了。
 
@@ -187,7 +185,7 @@ class Car: Object{
 
 现在基本的数据模型都已经创建好了。接下来我们会通过创建一个 ToDo 应用的过程，来讨论 Realm。首先，[从这里下载 app](https://github.com/hossamghareeb/realmtasks) 并且一窥究竟。在 Xcode 7 或更高的版本中运行，就像下面这样：
 
-![](/img/articles/building-a-todo-app-using-realm-and-swift/realm-todo-list-app-1024x661.png1500171570.77)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/realm-todo-list-app-1024x661.png)
 
 在项目中，我添加了两个视图控制器：TasksViewController 和 TaskListViewController。第一个视图控制器用来显示单个 task，第二个视图控制器用来显示所有的 TaskList。在 list 视图中，点击 + 按钮来添加一个任务清单。选择一个任务清单将会详情视图。你可以在这里添加多个 task。
 
@@ -371,7 +369,7 @@ func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: N
 
 这里我们使用 `UITableViewRowAction` 添加了两个操作，方法中定义了操作的 `style`，`title` 和 `handler`。当在滑动 cell 或者以其他方式进入编辑模式的时候，会像下面这样：
 
-![](/img/articles/building-a-todo-app-using-realm-and-swift/edit-mode-576x1024.png1500171571.32)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/edit-mode-576x1024.png)
 
 以上就是在进行删除和更新操作时候的 UI 代码逻辑。
 
@@ -491,13 +489,13 @@ redCars = realm.objects(Car).filter(aPredicate)
 
 在上面的代码中，我们使用 `filter` 方法来过滤 `color` 为 red，并且 `name` 以 "BMW" 开头的对象。第一行代码使用 string 作为参数来进行过滤。另外，你也可以使用 NSPredicate 获得同样的效果。下面的表格总结了 filter 方法的大部分常用操作：
 
-![](/img/articles/building-a-todo-app-using-realm-and-swift/realm-database-info-1024x675.png1500171571.72)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/realm-database-info-1024x675.png)
 
 ## 排序
 
 既然我们谈到了 Realm 数据库的基本操作，在本教程结束之前，我还想给大家介绍另外一个特性。排序功能，这是 Realm 提供了另一个特别有用的特性。对于 List 和 Result 对象，你可以调用方法 `sorted（「排序标准」）` 来将一组数据进行排序。让我们来看看如何在任务列表中使用该方法让任务列表以字母表或者创建时间先后顺序排序。首先，在 UI 中，我们增加了一个 segment control，将会根据选择的情况来进行对应的排序。
 
-![](/img/articles/building-a-todo-app-using-realm-and-swift/Simulator-Screen-Shot-Oct-24-2015-8.47.06-PM-576x1024.png1500171572.27)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/Simulator-Screen-Shot-Oct-24-2015-8.47.06-PM-576x1024.png)
 
 根据不同的选择来进行排序，代码逻辑如下：
 

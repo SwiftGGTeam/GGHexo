@@ -31,7 +31,7 @@ Fit Cat 会依据你的步数显示可爱的小猫咪，设计师是很有才的
 
 首先创建一个表情包，右键你的素材库文件或者点击底部的 `+` 号，然后选择 `New Sticker Pack`：
 
-![](http://swiftgg-main.b0.upaiyun.com/img/xcode-8-create-an-animated-imessage-sticker-1.png)
+![](https://www.natashatherobot.com/wp-content/uploads/Screen_Shot_2016-07-01_at_11_20_15_AM-768x930.png)
 
 ### 创建表情序列
 
@@ -39,19 +39,19 @@ Fit Cat 会依据你的步数显示可爱的小猫咪，设计师是很有才的
 
 这里的小技巧是，你必须右击表情包目录，然后选择 `New Sticker Sequence`。但如果你在表情区域内右击，必须先选择 `Add Assets` 再选择 `New Sticker Sequence` （这就是我掉坑的原因）。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/xcode-8-create-an-animated-imessage-sticker-2.png)
+![](https://www.natashatherobot.com/wp-content/uploads/Screen-Shot-2016-07-01-at-11.31.21-AM-246x300.png)
 
 ### 添加表情
 
 最后一步就是添加表情。我在这一步卡住了，因为只有**第一帧**外面有个轮廓。我不知道如何为表情添加其他几帧。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/xcode-8-create-an-animated-imessage-sticker-3.png)
+![](https://www.natashatherobot.com/wp-content/uploads/Screen_Shot_2016-07-01_at_11_37_06_AM-768x610.png)
 
 如果要添加额外的帧，只需要将下一帧图片拖动到第一帧之后即可。喏！这是一个典型的反人类 UI！
 
 最后终于做出来一个击剑猫咪。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/xcode-8-create-an-animated-imessage-sticker-4.png)
+![](https://www.natashatherobot.com/wp-content/uploads/Screen-Shot-2016-07-01-at-11.40.35-AM-768x655.png)
 
 我最喜欢的就是点表情的播放按钮（译者注：仔细看上图，猫嘴那里有个播放按钮），看着这只猫在做击剑动作真有意思！
 
@@ -59,7 +59,7 @@ Fit Cat 会依据你的步数显示可爱的小猫咪，设计师是很有才的
 
 这个动画有点太快了，你可以在 `Sticker Sequence` 的 `Attributes Inspector` 进行自定义：
 
-![](http://swiftgg-main.b0.upaiyun.com/img/xcode-8-create-an-animated-imessage-sticker-5.png)
+![](https://www.natashatherobot.com/wp-content/uploads/Assets_xcassets-768x496.png)
 
 在 Xcode 上可以实时看到所有改动。
 

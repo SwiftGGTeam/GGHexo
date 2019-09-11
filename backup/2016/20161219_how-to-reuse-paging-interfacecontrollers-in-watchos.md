@@ -62,11 +62,11 @@ extension FoodItem {
 
 然后，将 image 和 label 与 FoodItemInterfaceController 中的 IBOutlet 进行关联：
 
-![](https://www.natashatherobot.com/wp-content/uploads/FoodItemInterfaceController_swift_—_Edited-1024x206.png)
+![](https://www.natashatherobot.com/wp-content/uploads/FoodItemInterfaceController_swift_%E2%80%94_Edited-1024x206.png)
 
 最后，在 storyboard 中，给每一个 Interface Controller 一个唯一标识：
 
-![](https://www.natashatherobot.com/wp-content/uploads/Interface_storyboard_—_Edited-1-1024x362.png)
+![](https://www.natashatherobot.com/wp-content/uploads/Interface_storyboard_%E2%80%94_Edited-1-1024x362.png)
 
 ## Interface Controller
 

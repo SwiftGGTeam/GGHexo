@@ -16,8 +16,7 @@ description: 这是一篇关于服务器端的 swift 开发教程，将一个开
 定稿=Cee
 
 <!--此处开始正文-->
-
-![](http://swiftgg-main.b0.upaiyun.com/img/mqtt-with-swift-on-linux-1.png)
+> 原文图片链接全部失效，因此本文图片无法显示。
 
 ![](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat) ![](https://img.shields.io/badge/OS-Linux-blue.svg?style=flat)
 
@@ -28,6 +27,7 @@ description: 这是一篇关于服务器端的 swift 开发教程，将一个开
 在我们开始之前，做一个免责声明：目前基于 Linux 下的 Swift 3.0 版本还处于开发者预览版阶段。从[这里](http://dev.iachieved.it/iachievedit/introducing-swift-3-0/)可以获取到在 Ubuntu 14.04 和 15.10 下使用 Swift 3.0 的信息。或者，如果你有一台如 BeagleBone Black 等基于 armv7 的设备，可以尝试使用 Swift 3.0 版本下的 [ARM port](http://dev.iachieved.it/iachievedit/swift-3-0-on-a-beaglebone-black/)。
 
 <!--more-->
+
 
 ### 实例应用
 

@@ -144,7 +144,7 @@ Xcode 允许我们在每个工程中创建额外的配置。默认情况下 Xcod
 
 #### 编译设置
 
-![](http://swiftgg-main.b0.upaiyun.com/img/swift-pretty-in-print-pt-2.png)
+![](https://miro.medium.com/max/1743/1*wExNt9uLhE8ewadbCzTQCQ.png)
 
 1. 点击项目导航图标；
 2. 选择你的项目名称；

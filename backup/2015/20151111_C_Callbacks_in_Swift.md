@@ -198,7 +198,7 @@ path.addCurveToPoint(CGPoint(x: 200, y: 0),
 path.closePath()
 ```
 
-![The example path](/img/articles/c-callbacks-in-swift/uibezierpath-example.png1447203254.48282)
+![The example path](https://swift.gg/img/articles/c-callbacks-in-swift/uibezierpath-example.png1447203254.48282)
 
 也可以迭代 path 中的每一个元素，然后打印出每个元素的描述(description)字符串：
 

@@ -249,7 +249,7 @@ for i in Array(0...100000) {
 }
 ```
 
-![测试结果](http://7xiol9.com1.z0.glb.clouddn.com/pic测试结果.png)
+> 原文已无法访问，所以这里的图片无法显示。
 
 正如你所看见的，`reduce` 版本的执行效率和 `for-loop` 操作非常相近，且是链式操作的一半时间。
 

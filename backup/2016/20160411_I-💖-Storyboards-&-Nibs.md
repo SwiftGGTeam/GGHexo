@@ -47,7 +47,7 @@ description: Interface Builder 真的很好用为啥很多人不喜呢，下面�
 
 由于我喜欢尽可能的对 view 进行复用，所以我的 Storyboard 一般是这样的：
 
-![](/img/articles/i-heart-storyboards-nibs/Screen-Shot-2016-03-27-at-2.20.11-PM-1024x346.png1460334616.8747678)
+![](https://swift.gg/img/articles/i-heart-storyboards-nibs/Screen-Shot-2016-03-27-at-2.20.11-PM-1024x346.png1460334616.8747678)
 
 即使保留着大量的使用 Nib （或者是纯代码）构造的 view 都是 ok 的。这样看起来很空旷的 Storyboard，对我来说也相当有用，它依然清晰的描述了界面的结构，我也能方便的查看 ViewController 内部细节。
 

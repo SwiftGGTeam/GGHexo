@@ -27,7 +27,7 @@ description:
 
 原文链接：[All about Concurrency in Swift - Part 1: The Present](https://www.uraimo.com/2017/05/07/all-about-concurrency-in-swift-1-the-present/)
 
-![](/img/articles/all-about-concurrency-in-swift-1-the-present/concurr.png1504576909.77)
+![](https://swift.gg/img/articles/all-about-concurrency-in-swift-1-the-present/concurr.png1504576909.77)
 
 虽然在那些可以运行 Swift 的平台上，都可以使用 pthread 库来处理并发（译者注：pthread 库是跨平台的），但是在这里，不会讨论 pthread 库相关的函数和原语，对于这些底层一些库函数来说，有更高阶的替代者。NSTimer 类也不会在这里讨论，请查阅[这篇文章](https://www.uraimo.com/swiftbites/nstimer-in-swift-3/)，告诉你如何在 Swift 3中使用它。
 
