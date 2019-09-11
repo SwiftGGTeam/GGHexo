@@ -24,7 +24,7 @@ permalink: swift-ubuntu-x11-window-app
 
 下面是程序运行后的截图<sup>2</sup>：
 
-![](/img/articles/swift-ubuntu-x11-window-app/screenshot.png1452647719.9257545)
+![](https://swift.gg/img/articles/swift-ubuntu-x11-window-app/screenshot.png1452647719.9257545)
 
 ## Swift 包管理器
 
@@ -292,7 +292,7 @@ swift build
 
 这将会执行二进制文件，一个小小的 X11 窗口将会出现在你的桌面上：
 
-![](/img/articles/swift-ubuntu-x11-window-app/screenshot.png1452647719.9257545)
+![](https://swift.gg/img/articles/swift-ubuntu-x11-window-app/screenshot.png1452647719.9257545)
 
 ## 总结
 

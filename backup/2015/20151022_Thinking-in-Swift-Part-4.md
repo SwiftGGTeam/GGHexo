@@ -130,7 +130,7 @@ item.icon = iconName.flatMap(UIImage.init)
 
 哇哦！太魔幻了！
 
-![](/img/articles/thinking-in-swift-4/magic.gif1445562506.7864432)
+![](https://swift.gg/img/articles/thinking-in-swift-4/magic.gif1445562506.7864432)
 
 好了，有人说这么写很难读懂，为了让代码更明了更清晰，在这里还是更喜欢用一个显式闭包。但是这只是关乎个人偏好，并且知道这么做可行也是好事。
 
@@ -179,7 +179,7 @@ struct ListItem {
 以上就是 Swift 编程思想系列的最后一部分内容<sup>2</sup>。现在你要开始为新 Swift 项目发狂了，把 Swift 编程思想全部贯彻到你的脑海中。
 
 祝用 Swift 编程愉快，并且...
-![MAP 一切，FLATMAP 一切！](/img/articles/thinking-in-swift-4/map-all-the-things.jpg1445562507.5226758)
+![MAP 一切，FLATMAP 一切！](https://swift.gg/img/articles/thinking-in-swift-4/map-all-the-things.jpg1445562507.5226758)
 
 ---
 1. Lines of Codes，指有多少行代码

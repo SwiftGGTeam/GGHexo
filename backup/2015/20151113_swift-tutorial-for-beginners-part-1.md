@@ -61,7 +61,7 @@ print("Hello World!")
 
 输完这行代码，你就可以在 playground 的右边看到输出的结果。
 
-![](/img/articles/swift-tutorial-for-beginners-part-1/Screen-Shot-2015-10-03-at-18.26.55-1024x636.png1447379896.6408916)
+![](https://swift.gg/img/articles/swift-tutorial-for-beginners-part-1/Screen-Shot-2015-10-03-at-18.26.55-1024x636.png1447379896.6408916)
 
 恭喜，你已经成功编写了第一个 Swift 程序！
 

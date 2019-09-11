@@ -32,7 +32,7 @@ leftViewConstraints += NSLayoutConstraint.constraintsWithVisualFormat("V:[blue(1
 就是这样！你可以看到如下方截图所示的结果。左侧图片中，蓝色视图的高度为 100 单位像素，红色视图高度为 50 单位像素。 右侧图片则刚刚相反。
 
 
-![](/img/articles/minimal-distance-to-two-views-in-auto-layout/Screen-Shot-2015-12-08-at-21.52.25-300x155.png1451437944.9187686)
+![](https://swift.gg/img/articles/minimal-distance-to-two-views-in-auto-layout/Screen-Shot-2015-12-08-at-21.52.25-300x155.png1451437944.9187686)
 
 这里向你提供完整代码的 [playground](http://swift.eltanin.uberspace.de/wp-content/uploads/2015/12/MinimalDistanceAutoLayoutPlayground.playground.zip) 下载。
 

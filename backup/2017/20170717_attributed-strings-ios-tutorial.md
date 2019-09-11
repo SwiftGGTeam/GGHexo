@@ -25,23 +25,23 @@ description: iOS 教程：属性字符串
 
 打开 Xcode，创建一个 Single View Application。
 
-![](/img/articles/attributed-strings-ios-tutorial-ios10/single-view-xcode-templateformat=1500w1500254455.03)
+![](https://swift.gg/img/articles/attributed-strings-ios-tutorial-ios10/single-view-xcode-templateformat=1500w1500254455.03)
 
 Product Name 使用 **IOS10AttributedStringsTutorial**，填写自己的 Organization Name 和 Organization Identifier，Language 一栏选择 Swift，Devices 一栏选择 iPhone。
 
-![](/img/articles/attributed-strings-ios-tutorial-ios10/attributed-strings-projectformat=1500w1500254455.98)
+![](https://swift.gg/img/articles/attributed-strings-ios-tutorial-ios10/attributed-strings-projectformat=1500w1500254455.98)
 
 打开 **Storyboard**，从 Object-Library（控件库）中拖拽一个 Label 控件到主界面，点击 Storyboard 右下角 Auto Layout 的 Align 按钮，添加下图所示约束，点击 “Add 1 Constraint”。。
 
-![](/img/articles/attributed-strings-ios-tutorial-ios10/auto-layout-horizontally-in-containerformat=750w1500254456.86)
+![](https://swift.gg/img/articles/attributed-strings-ios-tutorial-ios10/auto-layout-horizontally-in-containerformat=750w1500254456.86)
 
 点击 Auto Layout 的 Pin 按钮，添加如下图所示约束，点击 “Add 1 Constraint”。
 
-![](/img/articles/attributed-strings-ios-tutorial-ios10/auto-layout-pin--to-topformat=750w1500254457.69)
+![](https://swift.gg/img/articles/attributed-strings-ios-tutorial-ios10/auto-layout-pin--to-topformat=750w1500254457.69)
 
 点击 Assistant Editor，确保 **ViewController.swift** 文件可见。按住 Control 键，将 Label 控件拖拽到 ViewController 类下面，创建下列 Outlet 连接。
 
-![](/img/articles/attributed-strings-ios-tutorial-ios10/attributes-label-outletformat=750w1500254459.19)
+![](https://swift.gg/img/articles/attributed-strings-ios-tutorial-ios10/attributes-label-outletformat=750w1500254459.19)
 
 打开 **ViewController.swift** 文件，如下所示对 **viewDidLoad** 方法进行修改。
 
@@ -75,6 +75,6 @@ override func viewDidLoad() {
 
 **运行**程序，属性字符串的实现效果如下。
 
-![](/img/articles/attributed-strings-ios-tutorial-ios10/attributed-strings-simulatorformat=750w1500254459.94)
+![](https://swift.gg/img/articles/attributed-strings-ios-tutorial-ios10/attributed-strings-simulatorformat=750w1500254459.94)
 
 可以从 [github](https://github.com/ioscreator/ioscreator) 上下载 **IOS10AttributedStringsTutorial** 教程的源代码。

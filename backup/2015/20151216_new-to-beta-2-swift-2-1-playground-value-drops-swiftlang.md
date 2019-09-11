@@ -14,7 +14,7 @@ permalink: new-to-beta-2-swift-2-1-playground-value-drops-swiftlang
 
 <!--此处开始正文-->
 
-![](/img/articles/new-to-beta-2-swift-2-1-playground-value-drops-swiftlang/Color-AppScreenSnapz001.png1450226715.996496)
+![](https://swift.gg/img/articles/new-to-beta-2-swift-2-1-playground-value-drops-swiftlang/Color-AppScreenSnapz001.png1450226715.996496)
 
 Beta 2 的新特性允许你拖放颜色、图片以及文件。在截图中虽然看不到，但如果你打开文本赋值的历史记录，就会显示文件的文本内容（是我的购物清单，好奇的家伙们）。文本常量的类型为`NSURL`。颜色是`UIColor`，图片是`UIImage`。谢天谢地，希望你们对这些没有任何疑问。
 
@@ -29,7 +29,7 @@ Beta 2 的新特性允许你拖放颜色、图片以及文件。在截图中虽�
 
 聪明人的做法：**不要把 playground 拖入它自身**。我是认真的，我已经踩过坑了。
 
-![](/img/articles/new-to-beta-2-swift-2-1-playground-value-drops-swiftlang/Screen-Shot-2015-09-23-at-8.30.41-PM.png1450226717.1296368)
+![](https://swift.gg/img/articles/new-to-beta-2-swift-2-1-playground-value-drops-swiftlang/Screen-Shot-2015-09-23-at-8.30.41-PM.png1450226717.1296368)
 
 由于文件可以随意复制到资源文件夹。所以：
 

@@ -66,11 +66,11 @@ class SecondViewController: UIViewController, ModelObjectDelegate {
 好的，现在我们来检查一下内存管理：当我们移除`SecondViewController`时，内存并不会减少。但这是为什么呢？  
 我们预期的结果是移除时，`SecondViewController`内存就会销毁。我们来看一下这些对象。当`SecondViewController`加载后，引用情况是下图这个样子：
 
-![](/img/articles/a-trick-to-discover-retain-cycles/retainc1.jpg1457485815.2839491)
+![](https://swift.gg/img/articles/a-trick-to-discover-retain-cycles/retainc1.jpg1457485815.2839491)
 
 现在，当移除`SecondViewController`时，引用情况是这个样子：
 
-![](/img/articles/a-trick-to-discover-retain-cycles/retain2c.jpg1457485816.052251)
+![](https://swift.gg/img/articles/a-trick-to-discover-retain-cycles/retain2c.jpg1457485816.052251)
 
 `RootViewController` 取消了强引用 `SecondViewController`。然而 `SecondViewController` 和 `ModelObject` 互相强引用。因此它们都没有被销毁。
 
@@ -146,7 +146,7 @@ class ModelObject {
 
 现在的对象关系是这个样子：
 
-![](/img/articles/a-trick-to-discover-retain-cycles/retainc3.jpg1457485816.738923)
+![](https://swift.gg/img/articles/a-trick-to-discover-retain-cycles/retainc3.jpg1457485816.738923)
 
 因为 `SecondViewController` 和 `ModelObject` 之间仅有一个强引用，这里应该不会再有什么问题了。
 

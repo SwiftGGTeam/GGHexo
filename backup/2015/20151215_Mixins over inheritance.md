@@ -103,7 +103,7 @@ class MyOtherViewController: UITableViewController {
 
 ### Mixins & Traits
 
-![生生不息，Mixin 繁荣](/img/articles/mixins-over-inheritance/12401450145416.541825)
+![生生不息，Mixin 繁荣](https://swift.gg/img/articles/mixins-over-inheritance/12401450145416.541825)
 
 Mixins 和 Traits 的概念<sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup>由此引入。
 - 通过继承，你定义你的类是什么。例如每条 `Dog` 都*是*一个 `Animal`。
@@ -297,7 +297,7 @@ extension TimeLord: SpaceTraveler {}
 extension Superman: SpaceTraveler {}
 ```
 
-![天哪！](/img/articles/mixins-over-inheritance/great-scott.gif1450145417.1893744)
+![天哪！](https://swift.gg/img/articles/mixins-over-inheritance/great-scott.gif1450145417.1893744)
 
 没错，这就是给已有类添加能力/trait 仅需的步骤！就这样，他们可以 `travelTo()` 任何的地方了！很简洁，是吧？
 
@@ -346,7 +346,7 @@ Huston，我们有麻烦了（译注：原文 "Huston, we have a problem here"�
 ### 无处不在的协议！
 因此，我们的一个解决方案是彻底弃用继承，将所有的东西都变成协议。毕竟我们不在乎我们的角色*是什么*，能够定义英雄本身的是他们拥有的*能力*！
 
-![终结掉继承！](/img/articles/mixins-over-inheritance/12401450145417.8855546)
+![终结掉继承！](https://swift.gg/img/articles/mixins-over-inheritance/12401450145417.8855546)
 
 我在这里附上了一个[可下载的 Swift Playground 文件](http://alisoftware.github.io/assets/Mixins.playground.zip)，包含这篇文章里的所有代码，并在 Playground 的第二页放上了一个全部用协议和结构体的解决方案，完全不用继承。快去看看吧！
 
@@ -362,7 +362,7 @@ Mixins 和 Traits 的方式可以让你描述你的类型**能够做什么**，�
 
 回到第一个例子，你可以创建一个 `BurgerMenuManager 协议`且该协议有一个默认实现，然后可以简单地将 View Controllers（不论是 `UIViewController`，`UITableViewController` 还是其他的类）都遵循这个协议，它们都能自动获得 `BurgerMenuManager` 所具有的能力和特性，你也根本不用去为父类 `UIViewController` 操心！
 
-![我不想离开](/img/articles/mixins-over-inheritance/i-dont-wanna-go.gif1450145418.0677123)
+![我不想离开](https://swift.gg/img/articles/mixins-over-inheritance/i-dont-wanna-go.gif1450145418.0677123)
 
 关于协议扩展还有很多要说的，我还想在文章中继续告诉你关于它更多的事情，因为它能够通过很多方式提高你的代码质量。嘿，但是，这篇文章已经挺长的了，同时也为以后的博客文章留一些空间吧，希望你到时还会再来看！
 

@@ -21,7 +21,7 @@ permalink: ios-undo-and-redo-with-nsundomanager
 你可以在[这儿](https://github.com/tomkowz/undo-manager-practice)获取到示例应用
 [这儿](https://youtu.be/3Pk85X8bugk)是一段小视频，你可以看看这个示例应用是怎么工作的。
 
-![Screen-Shot-2015-09-13-at-17.24.19.png](/img/articles/ios-undo-and-redo-with-nsundomanager/Screen-Shot-2015-09-13-at-17.24.19.png1447290433.4454885)
+![Screen-Shot-2015-09-13-at-17.24.19.png](https://swift.gg/img/articles/ios-undo-and-redo-with-nsundomanager/Screen-Shot-2015-09-13-at-17.24.19.png1447290433.4454885)
 
 
 ## NSUndoManager
@@ -121,7 +121,7 @@ private func updateUndoAndRedoButtons() {
 为了使用响应者链你需要重载`canBecomeFirstResponder()`属性并且设置返回值为`true`，然后通过调用`becomeFirstResponder()`方法使持有`undoManager`的对象成为第一响应者。如果你已经正确设置好了一切，可以执行一个摇晃手势，应用会出现一个警告框询问你是否要执行`undo`操作。
 
 
-![图片二.png](/img/articles/ios-undo-and-redo-with-nsundomanager/undo-event.png1447290437.6564598)
+![图片二.png](https://swift.gg/img/articles/ios-undo-and-redo-with-nsundomanager/undo-event.png1447290437.6564598)
 
 
 ## 示例代码

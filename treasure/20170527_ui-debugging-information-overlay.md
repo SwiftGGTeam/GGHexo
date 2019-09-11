@@ -20,7 +20,7 @@ permalink: ui-debugging-information-overlay
 
 我们经常使用各种调试工具，或者开源库来支持悬浮窗调试信息，但苹果的私有方法就提供了 `UIDebuggingInformationOverlay` 。
 
-![](http://upload-images.jianshu.io/upload_images/854231-2ef0080f4eea8935.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/854231-2ef0080f4eea8935.png?imageMogr2/auto-orient/strip%257CimageView2/2/w/1240)
 
 <!--more-->
 
@@ -43,7 +43,7 @@ _ = overlayClass?.perform(NSSelectorFromString("prepareDebuggingOverlay"))
 
 这个功能可以查看页面层级的结构树，点击感叹号进入详情页（点 `cell`  是没反应的），会展示那个 `view` 的 `frame` 、 `bounds` 和其他一些实例变量。
 
-![](http://upload-images.jianshu.io/upload_images/854231-66b7d3e56dd27cff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/854231-66b7d3e56dd27cff.png?imageMogr2/auto-orient/strip%257CimageView2/2/w/1240)
 
 ### 3.2 查看当前 `ViewController` 的属性
 
@@ -51,13 +51,13 @@ _ = overlayClass?.perform(NSSelectorFromString("prepareDebuggingOverlay"))
 
 查看激活的 `ViewController` 的 `childrenViewCotroller` 的结构树和相关属性：
 
-![](http://upload-images.jianshu.io/upload_images/854231-bbae2392b4a80173.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/854231-bbae2392b4a80173.png?imageMogr2/auto-orient/strip%257CimageView2/2/w/1240)
 
 ### 3.3 查看 `UIApplication` 的成员属性
 
 > Ivar Explorer
 
-![](http://upload-images.jianshu.io/upload_images/854231-04044fb28c7d6910.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/854231-04044fb28c7d6910.png?imageMogr2/auto-orient/strip%257CimageView2/2/w/1240)
 
 ### 3.4 测量组件大小
 
@@ -67,7 +67,7 @@ _ = overlayClass?.perform(NSSelectorFromString("prepareDebuggingOverlay"))
 选择 Vertical ，手指在屏幕拖动即可显示某个组件的高度；<br>
 选择 Horizontal ，手指在屏幕拖动即可显示某个组件的 宽度；
 
-![](http://upload-images.jianshu.io/upload_images/854231-7f0f0d183cc50196.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/854231-7f0f0d183cc50196.png?imageMogr2/auto-orient/strip%257CimageView2/2/w/1240)
 
 ### 3.5 效果对比
 
@@ -77,6 +77,6 @@ _ = overlayClass?.perform(NSSelectorFromString("prepareDebuggingOverlay"))
 
 点击 Add -> 从相册选择一个界面截图 -> 点击刚添加的截图 -> 手指在屏幕（悬浮窗外部）上下滑动 -> 即可动态改变截图的透明度来对比截图和当前界面的差异 -> 双击退出。
 
-![](http://upload-images.jianshu.io/upload_images/854231-d8eae18f88927c88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/854231-d8eae18f88927c88.png?imageMogr2/auto-orient/strip%257CimageView2/2/w/1240)
 
 我的微信公众号 `jinkey-love` 欢迎交流

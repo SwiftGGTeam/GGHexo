@@ -18,7 +18,7 @@ permalink: ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues
 
 <!--more-->
 
-![](/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214820.2549465)
+![](https://swift.gg/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214820.2549465)
 
 ## 我们为什么要用并发？
 
@@ -39,7 +39,7 @@ GCD 是在系统的Unix层级中用于管理并发代码并异步执行操作时
 ### 什么是队列
 
 队列是按照先进先出（FIFO）顺序管理对象的数据结构。队列类似于电影院的售票窗口前的长队。电影票是按先到先得的顺序卖出。长队前面的人先买到票，晚来的人后买到票。计算机科学中的队列概念和这个很像，因为第一个被加到队列中的对象也是第一个要从队列中被移除的。
-![Photo credit: FreeImages.com/Sigurd Decroos](/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.022044)
+![Photo credit: FreeImages.com/Sigurd Decroos](https://swift.gg/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.022044)
 
 ### Dispatch Queues
 
@@ -84,7 +84,7 @@ GCD 是在系统的Unix层级中用于管理并发代码并异步执行操作时
 
 现在你应该有了一个对 `Dispatch Queues` 的基本了解。我会给你一个简单的小抄做参考。里面很简单，包含了对 GCD 你需要了解的所有信息。
 
-![](/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.2764683)
+![](https://swift.gg/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.2764683)
 
 还不错吧？现在我们来研究一个简单的示范，看看如何使用 `Dispatch Queues`。我会告诉你如何使用 `Dispatch Queues` 来优化 App 的性能，让它有更快的响应速度。
 
@@ -92,7 +92,7 @@ GCD 是在系统的Unix层级中用于管理并发代码并异步执行操作时
 
 我们的初始项目很简单，它展示4个 image views，每个 image view 显示一张来自远端站点的图片。图片的请求是在主线程中完成。为了给你展示这么做对UI响应会有何影响，我还在图片下面加了一个简单的 slider。[下载并运行这个初始项目](https://www.dropbox.com/s/lkiasutevec5vx0/ConcurrencyDemoStarter.zip?dl=0)。点击 **Start** 按钮开始图片的下载，然后在图片下载的过程中拖动 slider，你会发现根本就拖不动。
 
-![](/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.4513347)
+![](https://swift.gg/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.4513347)
 你点了 Start 按钮之后，图片就会在主线程中开始下载。显然这种方式糟糕至极，让 UI 无法响应。不幸的是时至今日还有很对的 App 依旧在主线程中执行繁重的装载任务。现在我们使用 `Dispatch Queues` 来解决这个问题。
 
 首先我们使用并发队列的解决方案，随后再使用串行队列的解决方案。
@@ -266,7 +266,7 @@ GCD 是一个底层的 C API，能让开发者并行执行任务。与之相对�
 那么 `NSOperation` 的优势在哪里？
 
 1. 首先它可以通过 `NSOperation` 类的 addDependency（op: NSOperation）方法获得对相依性的支持。如果你有这样的需求：即某 operation 的启动需取决于另一个 operation 的执行，那么就得用 `NSOperation`。
-![](/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.6419117)
+![](https://swift.gg/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.6419117)
 2. 其次，你可将 *queuePriority* 属性设为以下值来改变执行优先级：
 
 ```swift
@@ -440,7 +440,7 @@ operation1.completionBlock = {
 - operation #3 已经排在队列中，等待 operation #2 的完成。因为 operation #3 是否开始取决于 operation #2 的完成与否，而 operation #2 已经被取消，operation #3 就不会被执行，从队列中被立即踢出了。
 - 没有对 operation #4 做任何相依性的设置，所以它被并发的执行了，下载了第四张图片。
 
-![](/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.7265584)
+![](https://swift.gg/img/articles/ios-concurrency-getting-started-with-nsoperation-and-dispatch-queues/12401452214821.7265584)
 
 ## 接下来看什么？
 

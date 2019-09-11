@@ -33,7 +33,7 @@ description: Parse 关闭导致我们需要进行数据迁移了，本文就来�
 
 ### 方法 1：使用 Heroku 按钮
 
-![](/img/articles/parse-server-installation/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e706e671463640618.590661)
+![](https://swift.gg/img/articles/parse-server-installation/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e706e671463640618.590661)
 
 点击上面的按钮，创建一个新的 heroku 应用，你会看到类似下方图片的界面：
 
@@ -216,7 +216,7 @@ Amazon Web Services（AWS）是全球知名的云服务提供商，为科技界�
 
 完成后，点击下方的按钮，创建一个新的 AWS 应用，AWS 提供一组云服务工具，每个工具都有自己的独特的功能，在本节教程中，我们使用 Elastic Beanstalk（和 Elastic Cloud Compute Engine 或简称 EC2 紧密相关）。
 
-![](/img/articles/parse-server-installation/687474703a2f2f64302e6177737374617469632e636f6d2f70726f647563742d6d61726b6574696e672f456c61737469632532304265616e7374616c6b2f6465706c6f792d746f2d6177732e706e671463640618.7692928)
+![](https://swift.gg/img/articles/parse-server-installation/687474703a2f2f64302e6177737374617469632e636f6d2f70726f647563742d6d61726b6574696e672f456c61737469632532304265616e7374616c6b2f6465706c6f792d746f2d6177732e706e671463640618.7692928)
 
  > **什么是 Elastic Beanstalk ？**
  > 根据 Amazon 上的简介，Elastic Beanstalk 是一个易于使用的，用于部署和扩展网页应用和服务，适用的语言有 Java、.NET、PHP、Node.js、Python、Ruby、Go、Docker，例如 Apache、Nginx、Passenger 和 IIS。

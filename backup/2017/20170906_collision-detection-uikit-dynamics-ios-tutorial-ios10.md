@@ -25,15 +25,15 @@ description:
 
 打开 Xcode，创建一个 Single View Application 工程。
 
-![](/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/single-view-xcode-templateformat=1500w1504677793.38)
+![](https://swift.gg/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/single-view-xcode-templateformat=1500w1504677793.38)
 
 Product Name 使用 **IOS10CollisionDectectionTutorial**（译者注：这里的 Dectection 估计是错别字，应该是 Detection），填写自己的 Organization Name 和 Organization Identifier，Language 一栏选择 Swift，Devices 一栏选择 iPhone。
 
-![](/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/line-view-uiviewformat=1500w1504677799.47)
+![](https://swift.gg/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/line-view-uiviewformat=1500w1504677799.47)
 
 用自定义的 UIView 画一些线，在 drawRect 方法中写点代码。选择 File -> New File -> iOS -> Source -> Cocoa Touch Class。Class 命名为 LineView，其父类为 UIView。
 
-![](/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/line-view-uiviewformat=1500w1504677799.47)
+![](https://swift.gg/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/line-view-uiviewformat=1500w1504677799.47)
 
 打开 **LineView.swift** 文件，想要画线需要先创建一个帮手：**drawLineFromPoint(fromX:toPoint:pointY:)** 方法。
 
@@ -59,27 +59,27 @@ override func draw(_ rect: CGRect) {
     drawLineFromPoint(fromX: bounds.size.width*0.67, toPoint:bounds.size.width, pointY:bounds.size.height - 100.0)}
 ```
 
-![](/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/custom-class-identity-inspectorformat=500w1504677802.86)
+![](https://swift.gg/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/custom-class-identity-inspectorformat=500w1504677802.86)
 
 **运行**工程，线已经出现在屏幕上了。
 
-![](/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/format=750w1504677808.44)
+![](https://swift.gg/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/format=750w1504677808.44)
 
 接下来，拖拽一个 Button 控件到 Storyboard 上，标题改为 “Next”。选中该 Button，点击 Auto Layout 的 Align 按钮，勾选 “Horizontally in Container”，点击 “Add 1 Constraint”。
 
-![](/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/auto-layout-horizontally-in-containerformat=750w1504677809.87)
+![](https://swift.gg/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/auto-layout-horizontally-in-containerformat=750w1504677809.87)
 
 继续选中该 Button，点击 Auto Layout 的 Pin 按钮，选中上边距的约束线，点击 “Add 1 Constraint”。
 
-![](/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/button-pin-to-topformat=750w1504677818.01)
+![](https://swift.gg/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/button-pin-to-topformat=750w1504677818.01)
 
 主界面看起来应如下图所示：
 
-![](/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/collision-detection-storyboardformat=750w1504677819.34)
+![](https://swift.gg/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/collision-detection-storyboardformat=750w1504677819.34)
 
 点击 Assistant Editor，确保 ViewController.swift 文件可见，按住 Control 键将该 Button 拖拽到 ViewController 类里，创建下列 Action 链接：
 
-![](/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/release%3Dsquare-actionformat=750w1504677820.03)
+![](https://swift.gg/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/release%253Dsquare-actionformat=750w1504677820.03)
 
 在 **ViewController.swift** 文件中，需要声明一些变量，来跟踪记录 view，如下所示：
 
@@ -183,6 +183,6 @@ animator.addBehavior(collision)
 
 首先，给方块下落的动作增加了重力，接下来，在自定义边界的基础上添加了碰撞行为。默认的碰撞模式是 UICollisionBehaviour 里的 UICollisionBehaviourMode.everything，也就是说，所有的元素都可以互相碰撞。**运行**工程，不停地按 Next 按钮，方块下落。
 
-![](/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/collision-detection-simulatorformat=750w1504677820.83)
+![](https://swift.gg/img/articles/collision-detection-uikit-dynamics-ios-tutorial-ios10/collision-detection-simulatorformat=750w1504677820.83)
 
 可以从 [github](https://github.com/ioscreator/ioscreator) 上下载 **IOS10CollisionDectectionTutorial** 教程的源代码。

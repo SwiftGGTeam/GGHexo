@@ -22,7 +22,7 @@ permalink: swift-2-0-protocol-oriented-mvvm
 
 接下来我会用一个简单的例子来说明。现在有一个设置界面，其中只有一个设置：开启、关闭Minion Mode，当然你也可以推广到有许多设置的情况：
 
-![](/img/articles/swift-2-0-protocol-oriented-mvvm/Simulator-Screen-Shot-Aug-17-2015-8.26.21-AM.png1444269944.206409)
+![](https://swift.gg/img/articles/swift-2-0-protocol-oriented-mvvm/Simulator-Screen-Shot-Aug-17-2015-8.26.21-AM.png1444269944.206409)
 
 ## 视图单元格
 

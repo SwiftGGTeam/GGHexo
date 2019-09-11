@@ -32,7 +32,7 @@ permalink: nshipster-language-server-protocol
 
 想象这样一个矩阵，每一行表示不同的编程语言（Swift、JavaScript、Ruby、Python 等），每一列表示不同的代码编辑器（Xcode、Visual Studio、Vim、Atom 等），这样每个单元格表示特定编辑器对一种语言的支持级别。
 
-![lsp-languages-times-editors.svg](/img/articles/nshipster-language-server-protocol/lsp-languages-times-editors-b9a398af0dea85f2ad6dcf5412fbcb451a43bc90091d5e3ab3b1140da9926b3e.svg1547520866.1069534)
+![lsp-languages-times-editors.svg](https://swift.gg/img/articles/nshipster-language-server-protocol/lsp-languages-times-editors-b9a398af0dea85f2ad6dcf5412fbcb451a43bc90091d5e3ab3b1140da9926b3e.svg1547520866.1069534)
 
 然后，你就发现各种组合形成了一种支离破碎的兼容。有些编辑器和部分语言深度集成，但除此之外几乎什么都干不了；其他编辑器则比较通用，对很多语言都提供了基本的支持。（IDE 这个术语通常用来描述前者。)
 
@@ -44,7 +44,7 @@ permalink: nshipster-language-server-protocol
 
 编辑器不必实现对每种语言的支持，只需支持 LSP 即可。之后，它就能同等程度地支持所有支持 LSP 的语言。
 
-![lsp-languages-plus-editors.svg](/img/articles/nshipster-language-server-protocol/lsp-languages-plus-editors-904f780fa4a21e89b5b00bfe5fca39795dd54c1c4c67acf3f0fe095aaf09064d.svg1547520866.4280558)
+![lsp-languages-plus-editors.svg](https://swift.gg/img/articles/nshipster-language-server-protocol/lsp-languages-plus-editors-904f780fa4a21e89b5b00bfe5fca39795dd54c1c4c67acf3f0fe095aaf09064d.svg1547520866.4280558)
 
 > Tomohiro Matsuyama 在 2010 年写的 ["Emacs は死んだ" (_"Emacs 已死"_)](https://tkf.github.io/2013/06/04/Emacs-is-dead.html) 这篇文章就对这种问题做出了一个很好的论述。Matsuyama 描述了 Emacs 脚本语言的局限性（不支持多线程、底层 API 过少、用户基数太小），他认为编写插件的首选方法应该是与外部程序进行交互，而不是原生实现。
 
@@ -81,7 +81,7 @@ class Parent {}
 class Child: Parent {}
 ```
 
-![lsp-jump-to-definition.gif](/img/articles/nshipster-language-server-protocol/lsp-jump-to-definition-f76ae15d897ab30706c101e7300cd299ad97f6b910ed79ce4890351c2805ae56.gif1547520866.6389997)
+![lsp-jump-to-definition.gif](https://swift.gg/img/articles/nshipster-language-server-protocol/lsp-jump-to-definition-f76ae15d897ab30706c101e7300cd299ad97f6b910ed79ce4890351c2805ae56.gif1547520866.6389997)
 
 以下是 LSP 如何在幕后实现这种交互：
 
@@ -138,7 +138,7 @@ class Child: Parent {}
 
 LLVM 的核心是中间表示（intermediate representation，IR）。LLVM 所支持的语言使用 _编译器前端（compiler frontend）_ 生成 IR，再使用 _编译器后端（compiler backend）_ 将 IR 生成所支持平台的机器码。
 
-![lsp-llvm-ir.svg](/img/articles/nshipster-language-server-protocol/lsp-llvm-ir-34a10847cbe6519370c1b5e92def8f82b2ebde71aa2440c88880283bd5cbaf0a.svg1547520866.867885)
+![lsp-llvm-ir.svg](https://swift.gg/img/articles/nshipster-language-server-protocol/lsp-llvm-ir-34a10847cbe6519370c1b5e92def8f82b2ebde71aa2440c88880283bd5cbaf0a.svg1547520866.867885)
 
 > 如果你想了解 Swift 代码编译的更多细节，请查看 [我们关于 SwiftSyntax 的文章](https://nshipster.com/swiftsyntax/)。
 

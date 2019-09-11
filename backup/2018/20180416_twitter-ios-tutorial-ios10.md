@@ -21,49 +21,49 @@ Social Framework 使在 App 中使用社交分享成为可能。本教程中我�
 <!--more-->
 
 打开 Xcode，创建一个 Single View Application。
-![](/img/articles/twitter-ios-tutorial-ios10/single-view-xcode-templateformat=750w1523791017.6382737)
+![](https://swift.gg/img/articles/twitter-ios-tutorial-ios10/single-view-xcode-templateformat=750w1523791017.6382737)
 
 Product Name 命名为 **IOS10TwitterTutorial**，填写自己的 Organization Name 和 Organization Identifier。Language 选择 Swift, 并确保 Devices 只选择了 iPhone。
 
-![](/img/articles/twitter-ios-tutorial-ios10/format=750w1523791017.6963322)
+![](https://swift.gg/img/articles/twitter-ios-tutorial-ios10/format=750w1523791017.6963322)
 
 转到 Storyboard，拖拽一个 Image View 到主页面上。选中 Image View 跳转到属性选项卡。在 View 部分使用 "Aspect Fit" 模式。
 
-![](/img/articles/twitter-ios-tutorial-ios10/format=300w1523791017.7377508)
+![](https://swift.gg/img/articles/twitter-ios-tutorial-ios10/format=300w1523791017.7377508)
 
 这种模式会使图片自适应 Image View。下一步，在页面的 Image View 下方添加两个 Button 按钮。title 分别设为 "Choose Image" 和 "Tweet"。
 
 选中 Image View，点击 Storyboard 右下角 Auto Layout 的 Pin 按钮，填写下方的值，点击 Add 4 Constraints 按钮。
 
-![](/img/articles/twitter-ios-tutorial-ios10/format=300w1523791017.786322)
+![](https://swift.gg/img/articles/twitter-ios-tutorial-ios10/format=300w1523791017.786322)
 
 按住 Cmd 键选中 "Choose Image" 和 "Tweet" 按钮。点击 Storyboard 右下角的 Align 按钮然后选择 "Horizontally in Container"。点击 "Add 2 Constraints" 按钮添加约束。
 
-![](/img/articles/twitter-ios-tutorial-ios10/format=300w1523791017.8271823)
+![](https://swift.gg/img/articles/twitter-ios-tutorial-ios10/format=300w1523791017.8271823)
 
 选中 "Choose Image" 按钮，点击 Storyboard 右下方的 Auto Layout 的 Pin 按钮，选中左边的线，点击 Add 1 Constraint 按钮添加约束。
 
-![](/img/articles/twitter-ios-tutorial-ios10/format=300w1523791017.870292)
+![](https://swift.gg/img/articles/twitter-ios-tutorial-ios10/format=300w1523791017.870292)
 
 选中 "Tweet" 按钮，点击 Storyboard 右下方的 Auto Layout 的 Pin 按钮，选中右边的线，点击 Add 1 Constraint 按钮添加约束。
 
-![](/img/articles/twitter-ios-tutorial-ios10/format=300w1523791017.91299)
+![](https://swift.gg/img/articles/twitter-ios-tutorial-ios10/format=300w1523791017.91299)
 
 Storyboard 看起来应如下图：
 
-![](/img/articles/twitter-ios-tutorial-ios10/format=300w1523791017.956209)
+![](https://swift.gg/img/articles/twitter-ios-tutorial-ios10/format=300w1523791017.956209)
 
 点击 Assistant Editor，确保 ViewController.swift 文件内容可见。接着选中 Image View ，按住 Ctrl 键鼠标左键拖拽一条线到  ViewController 类中，创建如下 Outlet 。
 
-![](/img/articles/twitter-ios-tutorial-ios10/format=300w1523791017.964874)
+![](https://swift.gg/img/articles/twitter-ios-tutorial-ios10/format=300w1523791017.964874)
 
 同上，选中 Choose Image 按钮，按住 Ctrl 键拖拽到 ViewController 类中，创建如下 Action。
 
-![](/img/articles/twitter-ios-tutorial-ios10/format=300w1523791018.0067496)
+![](https://swift.gg/img/articles/twitter-ios-tutorial-ios10/format=300w1523791018.0067496)
 
 选中 Tweet 按钮，按住 Ctrl 键拖拽到 ViewController 类中，创建如下 Action。
 
-![](/img/articles/twitter-ios-tutorial-ios10/format=300w1523791018.0520294)
+![](https://swift.gg/img/articles/twitter-ios-tutorial-ios10/format=300w1523791018.0520294)
 
 要想使用 Social framework，首先要将其导入到工程中。添加如下代码到 ViewController.swift 文件中。
 
@@ -147,12 +147,12 @@ func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMe
 
 要想获得图库权限，必须要在 Info.plist 中添加一个键值（key）。打开 Info.plist 点击 + 添加如下键值。
 
-![](/img/articles/twitter-ios-tutorial-ios10/format=750w1523791018.0618207)
+![](https://swift.gg/img/articles/twitter-ios-tutorial-ios10/format=750w1523791018.0618207)
 
 正常运行前，需要在 iOS 模拟器的设置中创建 Twitter 账号。
 
 构建和运行工程。这个应用会请求访问图库的权限，点击允许。下一步，点击 "Choose Image"  按钮在图库中选择一张图片。下一步，点击 "Tweet" 按钮创建和发布推文。
 
-![](/img/articles/twitter-ios-tutorial-ios10/format=500w1523791018.070653)
+![](https://swift.gg/img/articles/twitter-ios-tutorial-ios10/format=500w1523791018.070653)
 
 可以从 [github](https://github.com/ioscreator/ioscreator) 上下载 IOS10TwitterTutorial 教程的源代码。

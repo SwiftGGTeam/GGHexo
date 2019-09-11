@@ -18,25 +18,25 @@ permalink: take_video_tutorial_in_ios8_with_swift
 
 打开 Xcode 并创建一个`new Single View Application`,项目名称为`IOS8SwiftTakeVideoPlayerTutorial`，接着填上你的`Organization Name`和`Organization Identifier`，选择 Swift 语言，在设备一栏只选择 iPhone。
 
-![](/img/articles/take_video_tutorial_in_ios8_with_swift/format=750w1444269945.511148)
+![](https://swift.gg/img/articles/take_video_tutorial_in_ios8_with_swift/format=750w1444269945.511148)
 
 <!--more-->
 
 打开`Storyboard`，然后在主视图中拖入两个按钮，并分别设置两个`button`的`title`为`Take Video`和`View Library`。之后你的故事板内容应该像下面这样：
 
-![](/img/articles/take_video_tutorial_in_ios8_with_swift/format=750w1444269945.693111)
+![](https://swift.gg/img/articles/take_video_tutorial_in_ios8_with_swift/format=750w1444269945.693111)
 
 按住 `Control`键 并选中两个按钮，点击故事板右下角的`Resolve Auto Layout Issues`按钮(就是右下角那个三角形按钮),选择`Add Missing Constraints`
 
-![](/img/articles/take_video_tutorial_in_ios8_with_swift/format=500w1444269945.953059)
+![](https://swift.gg/img/articles/take_video_tutorial_in_ios8_with_swift/format=500w1444269945.953059)
 
 打开`Assistant Editor`(关联面板)，并确保`ViewController.swift`文件是打开着的。按住 `Control`键，把第一个按钮拖出到`ViewController.swift`文件中，并创建下面的`Action`
 
-![](/img/articles/take_video_tutorial_in_ios8_with_swift/format=300w1444269946.244001)
+![](https://swift.gg/img/articles/take_video_tutorial_in_ios8_with_swift/format=300w1444269946.244001)
 
 按住 `Control`键，把第二个按钮拖出到`ViewController.swift`文件，并创建下面的`Action`
 
-![](/img/articles/take_video_tutorial_in_ios8_with_swift/format=300w1444269946.314987)
+![](https://swift.gg/img/articles/take_video_tutorial_in_ios8_with_swift/format=300w1444269946.314987)
 
 打开`ViewController.swfit`文件，并在文件顶部添加下面代码：
 
@@ -139,6 +139,6 @@ func imagePickerControllerDidCancel(picker: UIImagePickerController) {
 
 当用户点击`Cancel`按钮时，`View Controller`视图就会消失掉。如果模拟器没有视频文件，请在真实的设备上编译并运行这个项目。选择”Take Video“拍摄一段视频并选择”Use Video“，接着选择”View Library“，视频就会保存到手机相册中了。
 
-![](/img/articles/take_video_tutorial_in_ios8_with_swift/TakeVideo-Device.pngformat=750w1444269946.386972)
+![](https://swift.gg/img/articles/take_video_tutorial_in_ios8_with_swift/TakeVideo-Device.pngformat=750w1444269946.386972)
 
 你可以在[Github](https://github.com/ioscreator/ioscreator)上下载`IOS8SwiftTakeVideoPlayerTutorial`的代码

@@ -32,7 +32,7 @@ permalink: nshipster-bundles-and-packages
 * 包裹是指在访达中看起来像是文件的目录。
 
 下图展示了包与包裹之间的关系，将应用、框架包、插件包和文档分别放入一个或多个分类之中：
-![diagram](/img/articles/nshipster-bundles-and-packages/packages-and-bundles-diagram-a604d818c7decc7430fffc8642f0743728d2f6be4dfae15b274a599655cd3e40.svg1563524952.9887984)
+![diagram](https://swift.gg/img/articles/nshipster-bundles-and-packages/packages-and-bundles-diagram-a604d818c7decc7430fffc8642f0743728d2f6be4dfae15b274a599655cd3e40.svg1563524952.9887984)
 
 > 如果对两者的区别你依然感到困惑，这个类比或许能帮助你理解：
 > 把包裹想象成是一个内容被隐藏的盒子（📦），作为一个独立的实体而存在。这点与包不同，包更像是一个背包（🎒） —— 每一款都有特殊的口袋和隔层用来携带你需要的东西，不同的配置用以决定是带去学校，去工作，还是去健身房。如果某样东西既是包也是包裹，恰似行李（🧳）一般：像盒子一样浑然一体，像背包一样分隔自如。
@@ -125,7 +125,7 @@ NSLocalizedString("Hello, %@", comment: "Hello, ${username}")
 
 ### 访问包裹中的内容
 在访达中，右键展示选中项目的可操作目录。如果选中项目是包裹，“打开”操作下会出现“显示包内容”选项。
-![](/img/articles/nshipster-bundles-and-packages/show-package-contents-c7cc72f58a573cb2fbe349e6f76a4ef29d14fbada3cd9b8376fc37979da16bf3.png1563524953.1915808)
+![](https://swift.gg/img/articles/nshipster-bundles-and-packages/show-package-contents-c7cc72f58a573cb2fbe349e6f76a4ef29d14fbada3cd9b8376fc37979da16bf3.png1563524953.1915808)
 
 点击这个选项会从包裹目录打开一个新的访达窗口。
 

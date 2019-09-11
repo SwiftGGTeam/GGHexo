@@ -34,7 +34,7 @@ description: 如果想让你的应用有一个稳定的后端，强烈建议你�
 
 先介绍一下背景：我住在德克萨斯州的 Austin，这意味着在每年我都能在 SXSW 看到接下来将变成大公司的初创公司。Twitter、Foursquare、GameSalad，甚至连 Four-Hour Work Week 都是 SXSW 孵化的项目。这都是一些成功项目，每年有无数天真的创业者来到 Austin 展示他们的项目，希望能够获得投资。在 2015 年，赢家是一个名为 Meerkat 的项目。
 
-![](/img/articles/your-parse-backend-was-always-a-bad-idea/12401463538621.8656638)
+![](https://swift.gg/img/articles/your-parse-backend-was-always-a-bad-idea/12401463538621.8656638)
 
 Meerkat 是一个实时流媒体直播的 P2P 平台，用户可以用 iPhone 直接把流媒体视频展示给其他用户观看，这在 SXSW 掀起了一场[风暴](http://www.theverge.com/2015/3/17/8234769/how-meerkat-conquered-all-at-sxsw)。去年只要你在 Austin 走走，经过 SXSW，到处都能看到 Meerkat 的 T 恤衫，每一个人都在现场直播音乐、SXSW 的课程、午饭或者任何人们正在做的事情。突然间，Meerkat 停止了服务，原因是：
 
@@ -73,7 +73,7 @@ Facebook 和 Twitter、Google 一样，从广告中获得收益，特别是 Goog
 ## Facebook 的 API
 
 早期使用 Facebook 的 API 时，你能轻易获取用户的联系人，结果导致了很多人都会收到 Facebook 游戏的垃圾邮件和信息，也造就了开心农场这样的成功游戏。但是 Facebook 觉得自己不喜欢这样，不再提供获取联系人的接口，这样就给很多应用造成了伤害，Zynga 的股票应声下跌。说真的，看看 Facebook 对 Zynga 的股票造成了哪些伤害：
-![](/img/articles/your-parse-backend-was-always-a-bad-idea/12401463538623.3903446)
+![](https://swift.gg/img/articles/your-parse-backend-was-always-a-bad-idea/12401463538623.3903446)
 
 如果你的主营业务是 App，***那么你的后端是非常重要的业务资产，你必须能够自己控制***。类似 Salesforce 的云计算公司几乎花了十年的时间才变成大型公司，甚至是在今天，大部分还在使用现场托管软件。原因就是运行良好的业务必须要有自己的关键系统。虽然这样做需要支付系统维护费用和初始部署的费用，但是如果你不能控制核心业务，那就只能把核心业务交给那些不靠谱的人，他们幻想能从你们的数据库中淘出点什么东西提供给广告商。你想让这些人来控制你的服务器吗？你信任 Facebook、Twitter、Google 吗？
 

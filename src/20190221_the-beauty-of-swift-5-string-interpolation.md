@@ -30,7 +30,7 @@ description: "本文对 Swift 5 中 SE-0228 对 String Interpolation 相关功�
 
 但这样写会立即得到一个警告：
 
-![](/img/articles/the-beauty-of-swift-5-string-interpolation/Screen-Shot-2018-12-12-at-2.38.51-PM.pngw=1065&ssl=11550726099.018731)
+![](https://swift.gg/img/articles/the-beauty-of-swift-5-string-interpolation/Screen-Shot-2018-12-12-at-2.38.51-PM.pngw=1065&ssl=11550726099.018731)
 
 我们可以点击修复按钮来消除这些警告，得到如下的代码。但我们仍然会看到一个类似于这样的输出：“There’s Optional(23) and nil”。
 

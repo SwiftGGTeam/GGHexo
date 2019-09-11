@@ -19,7 +19,7 @@ description: 编程这件事其实可以懒点的好哦，比如本文就来说�
 
 今天我们来看看怎样通过变懒la💤y 😴...来提高效率⚡️。具体点儿说，我们要聊一聊 `lazy var`、`LazySequence` 和喵星人😸。
 
-![](/img/articles/being-lazy/12401458869117.3506308)
+![](https://swift.gg/img/articles/being-lazy/12401458869117.3506308)
 
 <!--more-->
 
@@ -85,7 +85,7 @@ class Avatar {
 
 ## Swift的惰性初始化（lazy initialization）
 
-![](/img/articles/being-lazy/12401458869118.9293513)
+![](https://swift.gg/img/articles/being-lazy/12401458869118.9293513)
 
 多亏了 Swift，我们可以省掉上面那些胶水代码（glue code），偷点儿懒... 只要简单的把 `smallImage` 变量声明成一个 `lazy` 存储属性即可！
 
@@ -173,7 +173,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 这段代码会先打印出 `Hello`，然后是 `Global constant initialized` 和 `42`，接下来是 `Type constant initialized` 和 `Felix`，最后是 `Bye`；证明了 `foo` 和 `Cat.defaultName` 这两个常量只在被访问时才被创建，而非初始化时创建<sup>3</sup>。
 
-![](/img/articles/being-lazy/lazy-cat-on-leash.gif1458869119.3902402)
+![](https://swift.gg/img/articles/being-lazy/lazy-cat-on-leash.gif1458869119.3902402)
 
 *⚠️别把这个和class或结构体里面的实例属性的情况搞混了。如果你声明一个`struct Foo { let bar = Bar() }`，那 `bar` 这个实例属性会在一个 `Foo` 实例被创建的时候就被计算出来（作为其初始化的一部分），而不是以惰性的形式。*
 
@@ -196,7 +196,7 @@ print(incArray[0], incArray[4])
 
 ## Lazy sequences（惰性序列）
 
-![](/img/articles/being-lazy/12401458869121.470778)
+![](https://swift.gg/img/articles/being-lazy/12401458869121.470778)
 
 OK，我们来用另一种形式的 `lazy` 解决上面的问题。
 
@@ -245,7 +245,7 @@ print(doubleArray[3])
 
 正如那句话所说的：`“懒惰是人类文明进步的真正动力”`。
 
-![](/img/articles/being-lazy/12401458869121.7200716)
+![](https://swift.gg/img/articles/being-lazy/12401458869121.7200716)
 
 ---
 

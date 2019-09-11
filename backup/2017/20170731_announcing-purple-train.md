@@ -19,7 +19,7 @@ description: 关于 Purple Train 的说明
 
 我一直想开发一个 iOS 应用，现在我可以很高兴的告诉大家，在许多同事的帮助下终于在今年完成了 [Purple Train](https://purpletrainapp.com/)。
 
-![](/img/articles/announcing-purple-train/TujwAPQD6B8G2RoVixXA_purple-train-iphone-app-f7b427aaec509ee65069d07f2e809152.png1501462197.36)
+![](https://swift.gg/img/articles/announcing-purple-train/TujwAPQD6B8G2RoVixXA_purple-train-iphone-app-f7b427aaec509ee65069d07f2e809152.png1501462197.36)
 
 <!--more-->
 

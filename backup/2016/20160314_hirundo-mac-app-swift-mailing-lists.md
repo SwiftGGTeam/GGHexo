@@ -32,9 +32,9 @@ description: 邮件列表能让你更好的理解Swift的理念和特性，那�
 
 ### **介绍** Hirundo
 
-![Hirundo](/img/articles/hirundo-mac-app-swift-mailing-lists/hirundo-title@2x.png1457917817.97722)
+![Hirundo](https://swift.gg/img/articles/hirundo-mac-app-swift-mailing-lists/hirundo-title@2x.png1457917817.97722)
 
-![Screenshot](/img/articles/hirundo-mac-app-swift-mailing-lists/teaser1-full@2x.png1457917822.1646836)
+![Screenshot](https://swift.gg/img/articles/hirundo-mac-app-swift-mailing-lists/teaser1-full@2x.png1457917822.1646836)
 
 Hirundo 最终就是长上面这样的（当然是用 Swift 写的）。这是个拉丁语，意思就是燕子或者雨燕，所以我觉得这个名字非常酷。我也给它专门制作了一个网站[stylemac.com/hirundo](https://stylemac.com/hirundo/)。
 
