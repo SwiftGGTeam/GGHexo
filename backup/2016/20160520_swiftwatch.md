@@ -27,7 +27,7 @@ description: SwiftWatch 是一个开源的链接共享平台，在这里可以�
 　
 那么闲话少说，让我来介绍一下 [**SwiftWatch**](http://swiftwatch.net/)：
 　
-![swiftwatch](/img/articles/swiftwatch/swiftwatch@2x.png1463706021.3315504)
+![swiftwatch](https://swift.gg/img/articles/swiftwatch/swiftwatch@2x.png1463706021.3315504)
 
 
 [@SwiftWatch](http://swiftwatch.net/) 致力于成为这样的一个地方。我不会称它为社区或者社交网络。我更愿意将其定义为一个分享 Swift 有趣新闻的地方。为了减少垃圾邮件的可能性（虽然几乎没有发生过），你必须用一个 Twitter 或者 GitHub 账号来注册。您可以添加评论，但是我不指望这个网站能成为优质的讨论源。倒相反，如果人们开始用它来发布一些有趣的 Swift 新发展帖子，那么我会更加开心。

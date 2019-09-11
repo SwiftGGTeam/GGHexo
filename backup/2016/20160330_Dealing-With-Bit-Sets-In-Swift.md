@@ -244,7 +244,7 @@ let isSet = ~~(input & mask)   // 正如所料，结果是 1
 
 #### Bitter: 一个用于位操作的库
 
-![Bitter's logo](/img/articles/Dealing-With-Bit-Sets-In-Swift/logo.png1459300516.8592954)
+![Bitter's logo](https://swift.gg/img/articles/Dealing-With-Bit-Sets-In-Swift/logo.png1459300516.8592954)
 
 本文所列出的所有用来进行位操作的替代方法都是[Bitter](https://github.com/uraimo/Bitter)的一部分，这是一个试图为位操作提供更加 "Swifty" 的接口的库。
 

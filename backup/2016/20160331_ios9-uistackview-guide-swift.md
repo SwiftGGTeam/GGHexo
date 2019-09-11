@@ -35,11 +35,11 @@ UIStackView 既可以用代码编写也可以在 Interface Builder 中设计。
 
 在 Interface Builder 中你可以从 Object Library 控件选择工具集里找到垂直或者水平对齐的 UIStackView 并添加到相应位置，然后就可以在 UIStackView 上添加新的视图了。
 
-UIStackView 同样也可以对现有的一些视图进行包装，只需要选择他们并点击 Interface Builder 底部工具栏新加的![Stack icon](/img/articles/ios9-uistackview-guide-swift/uistackview00.png1459387514.8102102)图标即可。
+UIStackView 同样也可以对现有的一些视图进行包装，只需要选择他们并点击 Interface Builder 底部工具栏新加的![Stack icon](https://swift.gg/img/articles/ios9-uistackview-guide-swift/uistackview00.png1459387514.8102102)图标即可。
 
 非常简单，但是我们的教程将用代码的方式实现一个简单的嵌套布局。
 
-![](/img/articles/ios9-uistackview-guide-swift/uistackview02.gif1459387515.8780005)
+![](https://swift.gg/img/articles/ios9-uistackview-guide-swift/uistackview02.gif1459387515.8780005)
 
 在这个简单的示例程序中，我们将会在状态栏下放置一个 UIStackView，里面包含四个控件：两个 UILabel，一个水平方向的 UIStackView 和 一个 UIButton。水平方向的 UIStackView 中包含了三个带有默认图标的按钮。
 
@@ -128,7 +128,7 @@ func pressedMe(sender: UIButton!){
 
 下面让我们详细了解下  UIStackView 的布局属性：
 
-![StackProperty](/img/articles/ios9-uistackview-guide-swift/uistackview01.png1459387517.1515186)
+![StackProperty](https://swift.gg/img/articles/ios9-uistackview-guide-swift/uistackview01.png1459387517.1515186)
 
 ### Axis 轴
 

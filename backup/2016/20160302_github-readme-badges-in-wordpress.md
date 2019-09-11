@@ -23,7 +23,7 @@ GitHub 上的很多框架和包都在他们的 README 文件中使用「badges�
 - 一个 release 版本代码的下载次数 
 - 代码支持的平台（为苹果设备开发时尤其有用）
 
-![Badges!](/img/articles/github-readme-badges-in-wordpress/githubbadges.png1456881015.7654293)
+![Badges!](https://swift.gg/img/articles/github-readme-badges-in-wordpress/githubbadges.png1456881015.7654293)
 
 <!--more-->
 
