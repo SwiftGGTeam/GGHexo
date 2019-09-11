@@ -30,9 +30,9 @@ permalink: local-notifications-in-ios-8-with-swift-part-1
 
 我们最终完成的应用在导航控制器（navigation controller）下会有两个视图：根视图是一个显示按时间排序的待办列表，其中每个待办项会显示截止日期(deadline)，另一个视图用来添加待办项，如下图所示：
 
-<div style="max-width:300px;">
-![](/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-4-2015-10.26.58-PM.png1444269933.474555)![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-1-2015-11.43.36-PM.png1444269933.761498)
-</div>
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-4-2015-10.26.58-PM.png1444269933.474555)
+
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-1-2015-11.43.36-PM.png1444269933.761498)
 
 ## 创建视图控制器
 
@@ -108,9 +108,7 @@ application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes
 
 在第一次运行这个应用的时候，会提示用户授权应用程序触发通知的权限。如果用户授予权限，我们就能够做通知的计划了，通知包括显示一条横幅，播放一个声音，以及更新应用图标上的角标数字。(这部分内容会在本教程中的第二部分展示)。
 
-<div style="max-width:300px;">
 ![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-3-2015-2.56.37-PM.png1444269936.363977)
-</div>
 
 ## 对应用建模
 
@@ -204,9 +202,9 @@ func addItem(item: TodoItem) {
 
 模拟器里运行应用后，创建一个一分钟后触发的待办项，然后回到主屏或锁定屏幕(Shift+CMD+H 或 CMD+L)等着通知触发。通知不会在恰好一分钟的时候触发（主要由于日期选择器里隐含着一个“秒”值），但是你肯定会在一分钟内看到通知。
 
-<div style="max-width:300px;">
-![](/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-3-2015-4.29.05-PM.png1444269936.703909)![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-3-2015-4.33.13-PM.png1444269937.094831)
-</div>
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-3-2015-4.29.05-PM.png1444269936.703909)
+
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-3-2015-4.33.13-PM.png1444269937.094831)
 
 ## 通知数量上限为 64 个
 
@@ -294,9 +292,7 @@ class TodoTableViewController: UITableViewController {
 
 我们这个待办列表现在能按时间顺序显示待办项，如果过期的话会以红色显示时间。
 
-<div style="max-width:300px;">
 ![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-4-2015-10.26.58-PM.png1444269933.474555)
-</div>
 
 这里我们仍有两个问题需要解决。当通知触发（或待办项过期）的时候，用户目前还不能在应用处于前台时得到任何可视化的反馈。另一个问题是，应用恢复到前台时，待办列表不能自动刷新，即过期的待办项不能显示红色。接下来，让我们来解决这个两个问题。
 
@@ -365,9 +361,7 @@ override func tableView(tableView: UITableView, commitEditingStyle editingStyle:
 }
 ```
 
-<div style="max-width:300px;">
 ![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-4-2015-10.26.58-PM.png1444269933.474555)
-</div>
 
 ## 总结
 
