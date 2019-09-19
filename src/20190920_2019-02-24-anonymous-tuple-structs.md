@@ -19,7 +19,7 @@ description: 本文描述了如何巧妙利用结构体与元组来结构化类�
 <!--此处开始正文-->
 
 假设你正在开发一款社交网络应用，其中包含了一个带有关注按钮和点赞按钮的用户图片展示组件。同时，为了满足单一功能原则（single responsibility principle）和视图控制器的构成，**点赞**和**关注**的实现应该另有它处。社交网络不仅有高级账户，也有企业账户，因此 `InteractiveUserImageController`（命名从来不是我的强项） 要能满足一系列的配置选项。以下是这个类一个可能的实现（为作展示，示例代码保留了不少可改进的地方）：
-
+<!--more-->
 ```swift
 final class InteractiveUserImageController: UIView {
     /// 是否需要展示高级布局
