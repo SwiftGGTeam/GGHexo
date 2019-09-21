@@ -123,7 +123,7 @@ backupPathArr.forEach((pathitem) => {
 })
 
 Promise.all(backupPromises)
-.then(fileInfos => fileInfos.flat().map(fileInfo => {
+.then(fileInfos => [].concat.apply([], fileInfos).map(fileInfo => {
 
   function publishNow() {
       let reg = new RegExp('发布时间=(.*)')
