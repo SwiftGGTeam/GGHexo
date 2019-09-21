@@ -66,29 +66,64 @@ let deletedInfo = new Promise(function (resolve, reject) {
 .catch(err => console.log(err))
 
 // get origin file content and generate posts
-let originInfo = new Promise(function (resolve, reject) {
-  fs.readdir(basePath, (err, files) => {
-    if (err) reject(err)
-    resolve(files.filter(file => !(file.indexOf(".") === 0)))
+var year = (new Date()).getFullYear()
+var backupPathArr = []
+for (var i = 2015; i < year; i++) backupPathArr.push("./backup/" + i)
+
+var backupPromises = [
+  new Promise(function(resolve, reject) {
+    fs.readdir(basePath, (err, files) => {
+      if (err) reject(err)
+      resolve(files.filter(file => !(file.indexOf(".") === 0)))
+    })
   })
-})
-.then(files => Promise.all(
-  files.map(
-    file => new Promise((resolve, reject) =>
-      fs.readFile(path.join(basePath, file), function (err, content) {
-        if (err) reject(err)
+  .then(files => Promise.all(
+    files.map(
+      file => new Promise((resolve, reject) =>
+        fs.readFile(path.join(basePath, file), function(err, content) {
+          if (err) reject(err)
 
-        content = content.toString()
+          content = content.toString()
 
-        resolve({
-          fileName: file,
-          content: content
+          resolve({
+            fileName: file,
+            content: content
+          })
         })
-      })
+      )
     )
+  ))
+]
+
+backupPathArr.forEach((pathitem) => {
+  backupPromises.push(
+    new Promise(function(resolve, reject) {
+      fs.readdir(pathitem, (err, files) => {
+        if (err) reject(err)
+        resolve(files.filter(file => !(file.indexOf(".") === 0)))
+      })
+    })
+    .then(files => Promise.all(
+      files.map(
+        file => new Promise((resolve, reject) =>
+          fs.readFile(path.join(pathitem, file), function(err, content) {
+            if (err) reject(err)
+
+            content = content.toString()
+
+            resolve({
+              fileName: file,
+              content: content
+            })
+          })
+        )
+      )
+    ))
   )
-))
-.then(fileInfos => fileInfos.map(fileInfo => {
+})
+
+Promise.all(backupPromises)
+.then(fileInfos => [].concat.apply([], fileInfos).map(fileInfo => {
 
   function publishNow() {
       let reg = new RegExp('发布时间=(.*)')
