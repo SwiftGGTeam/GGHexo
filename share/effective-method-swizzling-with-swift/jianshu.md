@@ -20,7 +20,7 @@ Method Swizzling 在 Objective-C 或其他语言中是一种很有名的技术�
 
 Method Swizzling 通过改变特定 selector（方法）与实际实现之间的映射，在 *runtime* 时将一个方法的实现替换成其它方法的实现。
 
-![](http://swift.gg/img/articles/effective-method-swizzling-with-swift/swizzling.png1459213818.9107738)
+![](https://swift.gg/img/articles/effective-method-swizzling-with-swift/swizzling.png1459213818.9107738)
 
 虽然这看起来非常方便，但是这个功能也有其缺点。在 runtime 执行这类更改时，你就不能在编译时利用那些可用的安全检查了。因此，应该小心使用 Method Swizzling。
 

@@ -16,7 +16,7 @@
 
 在[上一篇](https://robots.thoughtbot.com/building-ios-interfaces-custom-button)文章中，我们交替使用 Interface Builder 和 Swift，实现了一个自定义的按钮 —— 如果你一遍又一遍重复这个过程，除非你开发的是一个手电筒 App，UI 上只有一个按钮，不然这项工作很快就会让人心累。即便不谈无聊的重复工作，如果只更新一点功能上的细节，也需要对每一个按钮的实例进行修改，这种做法也是不靠谱的。下面我们将介绍一种更好的方法。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/building-ios-interfaces-subclassing-views-1.png)
+![](https://images.thoughtbot.com/building-ios-interfaces-custom-button/ButtonOutcome.png)
 
 
 
@@ -28,15 +28,15 @@
 
 在 project navigator 右键点击父文件夹，选择 *New File...* 来添加一个新文件：
 
-![](http://swiftgg-main.b0.upaiyun.com/img/building-ios-interfaces-subclassing-views-2.jpg)
+![](https://images.thoughtbot.com/building-ios-interfaces-subclassing-views/NewFile.jpg)
 
 选择 *iOS* 下的 *Source*，然后从模版中选择 *Cocoa Touch Class*。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/building-ios-interfaces-subclassing-views-3.jpg)
+![](https://images.thoughtbot.com/building-ios-interfaces-subclassing-views/CocoaTouchClass.jpg)
 
 把类的命名为 *RoundedCornerButton*，然后将 *Subclass of* 那一行设为 *UIButton*，其他部分不动。在 Swift 中一般使用驼峰式命名法。为这个类取一个可以描述具体用途的名字，是一种好习惯。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/building-ios-interfaces-subclassing-views-4.jpg)
+![](https://images.thoughtbot.com/building-ios-interfaces-subclassing-views/NameClass.jpg)
 
 在刚生成的 Swift 文件中，删除所有的注释 —— 那些开头带有 `//` 的代码。最后代码看起来应该像下面这样：
 
@@ -54,7 +54,7 @@
 
 这也是实例发挥作用的地方。实例指的是遵循给定类的规范而构建的对象。在这个例子中，我们在 IB 中添加的按钮是 `RoundedCornerButton` 的实例。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/building-ios-interfaces-subclassing-views-5.jpg)
+![](https://images.thoughtbot.com/building-ios-interfaces-subclassing-views/ClassInstance.jpg)
 
 请注意 `UIButton` 类是如何在不具体设定值的情况下，声明每个按钮都需要有个 `buttonType` 属性的。按钮的实例可以自己决定 `buttonType`。
 
@@ -62,15 +62,15 @@
 
 在 storyboard 中，选中这个按钮，点击右侧工具栏中的第三个（ID）图标。这会切换到 *Identity inspector*，你可以在这里修改这个按钮实例独有的属性，比如它的类和 identifier。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/building-ios-interfaces-subclassing-views-6.jpg)
+![](https://images.thoughtbot.com/building-ios-interfaces-subclassing-views/IdentityInspector.jpg)
 
 在 *Class* 选项框中，输入之前创建的子类的名字。这会将这个按钮修改为 `RoundedCornerButton` 的实例，这样我们之前用代码创建的自定义行为，就都能应用到这个按钮上了。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/building-ios-interfaces-subclassing-views-7.jpg)
+![](https://images.thoughtbot.com/building-ios-interfaces-subclassing-views/ChangeClassIB.jpg)
 
 对子类的处理先到这里，由于现在我们不需要从 view controller 中直接访问这个按钮实例，让我们先把[之前创建](https://robots.thoughtbot.com/building-ios-interfaces-custom-button#outlets)的 outlet connection 移除。有几种方式可以做到这点，最简单的方法是：点击右侧面板最后一个图标，切换到 *Connections inspector*，点击 *Referencing Outlets* 下 `roundedCornerButton` 旁边的 *x* 。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/building-ios-interfaces-subclassing-views-8.gif)
+![](https://images.thoughtbot.com/building-ios-interfaces-subclassing-views/RemoveOutlet.gif)
 
 删除了 outlet 之后，我们需要移除 `ViewController.swift` 中对这个按钮的所有引用。删除该类声明部分的所有代码，最后代码看起来应该是下面这样：
 
@@ -116,11 +116,11 @@
 
 再次运行你的 App，现在我们的按钮上应该已经应用了圆角效果。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/building-ios-interfaces-subclassing-views-9.jpg)
+![](https://images.thoughtbot.com/building-ios-interfaces-subclassing-views/RoundedCornerButton.jpg)
 
 接下来的部分比较有趣：如果你在 IB 中按住 alt 来拖动并复制按钮，新的按钮会与原来的按钮完全相同，你不需要在 view controller 中改动新按钮的属性来达到这个效果。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/building-ios-interfaces-subclassing-views-10.jpg)
+![](https://images.thoughtbot.com/building-ios-interfaces-subclassing-views/TwoRoundedCornerButtons.jpg)
 
 不过这里也有个小问题。目前我们在 IB 中设置了按钮的背景颜色。这意味着如果以后需要修改所有按钮的颜色，我们需要在 IB 中手动修改每个按钮。
 
@@ -135,7 +135,7 @@
 
 如果你运行 App，你会发现两个按钮的颜色都变成了 *Tall Poppy* 色 —— 一种由 [Kromatic](https://kromatic.thoughtbot.com/) 命名的颜色。上面说的方法也可以用于修改字体、字体颜色，甚至可以用于添加新的行为，比如展示某种进行中的状态。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/building-ios-interfaces-subclassing-views-11.jpg)
+![](https://images.thoughtbot.com/building-ios-interfaces-subclassing-views/TwoRedButtons.jpg)
 
 ## 结语
 

@@ -22,7 +22,7 @@ Swift包管理器：在Linux上创建和使用X11包"
 
 下面是程序运行后的截图<sup>2</sup>：
 
-![](http://swift.gg/img/articles/swift-ubuntu-x11-window-app/screenshot.png1452647719.9257545)
+![](https://swift.gg/img/articles/swift-ubuntu-x11-window-app/screenshot.png1452647719.9257545)
 
 ## Swift 包管理器
 
@@ -267,7 +267,7 @@ Swift 包管理器使用了 Git 和 Git Tags 来对包进行管理。所以我�
 
 这将会执行二进制文件，一个小小的 X11 窗口将会出现在你的桌面上：
 
-![](http://swift.gg/img/articles/swift-ubuntu-x11-window-app/screenshot.png1452647719.9257545)
+![](https://swift.gg/img/articles/swift-ubuntu-x11-window-app/screenshot.png1452647719.9257545)
 
 ## 总结
 

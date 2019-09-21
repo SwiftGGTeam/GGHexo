@@ -151,4 +151,4 @@
 ![你更喜欢哪个艺术家？](http://swift.gg/img/articles/developing-tvos-apps-for-apple-tv-part-2/tvOSArtists.png1444269947.503749)
 
 [在Twitter上follow原作者](http://twitter.com/jquave)
-> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。��

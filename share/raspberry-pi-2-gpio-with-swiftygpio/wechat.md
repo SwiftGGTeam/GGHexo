@@ -67,7 +67,7 @@
 
 正确连接 LED 灯后，这两个灯会来回闪烁！
 
-![闪烁 闪烁](http://swift.gg/img/articles/raspberry-pi-2-gpio-with-swiftygpio/SwiftLEDs.png1459473018.7848978)
+![闪烁 闪烁](https://swift.gg/img/articles/raspberry-pi-2-gpio-with-swiftygpio/SwiftLEDs.png1459473018.7848978)
 
 ## 选择颜色
 

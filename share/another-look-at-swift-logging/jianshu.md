@@ -56,7 +56,7 @@ Apple 发布 Swift 不久，就有大量的开发者提供了日志静态库，�
 
 所有的日志等级按重要程度从低到高排列输出。日志是彩色的：
 
-![Colored Logs!](http://swift.gg/img/articles/another-look-at-swift-logging/Untitled-window_011.png1456708215.5935338)
+![Colored Logs!](https://swift.gg/img/articles/another-look-at-swift-logging/Untitled-window_011.png1456708215.5935338)
 
 很容易就能确定你的 `slogLevel` 级别，不过为了完整起见，这里还是列出所有级别：
 

@@ -20,7 +20,7 @@
 
 
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/thangiving-app-coda-20151-1024x768.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/thangiving-app-coda-20151-1024x768.png)
 
 哦，AppCoda 的所有作者祝大家节日开心！😊
 
@@ -78,19 +78,19 @@ Node 是由 Joyent 开发并维持的，Joyent 是一家位于旧金山的云计
 
 为了正确配置我们的后端，需要分别在 Heroku 和 MongoLab 上注册帐号。我们先从 MongoLab 开始吧，去 [MongoLab 官网](https://mongolab.com/home)注册帐号。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Untitled-1024x640.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Untitled-1024x640.png)
 
 确保选择的是 single-node（免费），填上你数据库的名字。我这边取名为 *alamofire-db*（以 db 为后缀表示是一个数据库，这是比较普遍的命名规范）。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Untitled2-1024x640.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Untitled2-1024x640.png)
 
 接下来，登录你的数据库，定位好 MongoDB 数据库的 URI。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-2.35.58-PM-1024x328.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-2.35.58-PM-1024x328.png)
 
 然后添加一个新的数据库帐号，输入用户名和密码。不要忘记密码。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-2.38.15-PM-1024x478.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-2.38.15-PM-1024x478.png)
 
 现在返回到你设置 URI 的页面，修改成新的地址。比如：
 
@@ -108,7 +108,7 @@ MongoLab 搞定！
 
 一旦你在终端上登录 heroku，就可以使用 cd 命令（cd 代表改变目录）进到对应目录，将之前从 dropbox 下载的工程文件夹移动进去。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-3.03.13-PM-2.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-3.03.13-PM-2.png)
 
 按下回车键就可以执行这行命令了。干的不错，现在我们可以用 **git** **提交（Push）**东西到 heroku 了。
 
@@ -125,19 +125,19 @@ git 是一款很流行的版本控制软件。
 
 现在你可以看到，终端里应该和下图的内容差不多：
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-3.09.42-PM-2.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-3.09.42-PM-2.png)
 
 因为你之前已经成功安装了 heroku toolbelt，所以你现在可以在终端里键入 *heroku login*，并输入帐号密码。敲回车后继续，如果帐号密码没问题的话，你的 Email 会以蓝绿色高亮显示。
 
 现在，键入 **heroku create** 来创建一个新的 heroku 应用。Heroku 会创建一个新的带有域名的应用给你。比如，我的就是 https://whispering-plains-1537.herokuapp.com/。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-3.50.39-PM-2.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-3.50.39-PM-2.png)
 
 现在，键入 **git push heroku master** 来把你新建的应用发送到 heroku。
 
 如果一切顺利的话，会显示如下图（其中的某一些设置可能会不同）。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-5.06.08-PM-2.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-5.06.08-PM-2.png)
 
 ## 使用 Node.js, Express, MongoLab & Mongoose
 
@@ -147,7 +147,7 @@ Javascript 在很大程度上是和 Swift 很相似的。我们之后会使用 e
 
 Express 是 [Node.js](http://nodejs.org/) 中的一个「快速、强大而又轻量级」的网络框架，它可以轻松解决路由（Route）问题。你问什么是路由？路由就是你与网络交互的方式。每次你打开 google.com 的时候，其实你访问的是根主页，即 google.com/。假如你访问 google.com/hello，那就是另外一个路由了。我们接下来将要定义一个能访问我们数据库的路由。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-5.11.44-PM-2-1024x576.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-5.11.44-PM-2-1024x576.png)
 
 你可以从 expressjs.org 官网上学习更多关于 express 的知识。
 
@@ -184,7 +184,7 @@ Express 是 [Node.js](http://nodejs.org/) 中的一个「快速、强大而又�
 
 我们可以使用 mongoose，它是一个用在应用与 mongo 之间作为接口的 npm 包。我起初在构建一个雇工跟踪应用，并把 model 命名为 employee，但是可能会随时修改这个 model。我保留着它，是因为这个教程的接下来部分可能会用到。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-27-at-12.48.53-AM-1024x640.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-27-at-12.48.53-AM-1024x640.png)
 
 Mongoose 能很方便的提供与 mongoLab 的 heroku node 应用连接并提供相应的接口。这的确非常方便。
 
@@ -192,7 +192,7 @@ Mongoose 能很方便的提供与 mongoLab 的 heroku node 应用连接并提供
 
 路由文件里存的是我们将会*输出*到 app.js 文件的内容。不用太担心这个输出——它是 node 中一个比较先进的特性，也超出了本教程的范围。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-27-at-12.53.18-AM-1024x640.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-27-at-12.53.18-AM-1024x640.png)
 
 注意第 26 行的 *newTodo*。正如你可能猜到的，这行代码创建了一个新的 todo。
 
@@ -222,7 +222,7 @@ Mongoose 能很方便的提供与 mongoLab 的 heroku node 应用连接并提供
 * 第 41 - 45 行代码建立应用的路由文件并连接到 /routes/todo.js 文件
 * 第 48 行代码创建服务器
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-27-at-12.59.54-AM-1024x640.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-27-at-12.59.54-AM-1024x640.png)
 
 以上这些，能让你了解到一些 Javascript 应用的基本运作知识。但是，毕竟这篇教程不是主讲 Javascript 的，我不会继续深究。当然，我还是鼓励你们去研究一下 express 和 mongoose。
 
@@ -239,11 +239,11 @@ Mongoose 能很方便的提供与 mongoLab 的 heroku node 应用连接并提供
 
 命令行中的 -i 和 -H 参数表示我们将要接收什么东西。我们会接收 JSON 并将 JSON url 追加到请求的末尾。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-6.00.45-PM-2.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-6.00.45-PM-2.png)
 
 你应该能看到有数据返回了。和下图差不多。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-6.00.49-PM-2.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-6.00.49-PM-2.png)
 
 正如你看到的，返回的数据就是我们想要得到的。如果你已经将 url 替换成你自己的，你可能什么也看不到，因为你的 mongodb 里现在还没数据。
 
@@ -254,24 +254,24 @@ Mongoose 能很方便的提供与 mongoLab 的 heroku node 应用连接并提供
     bash
     curl -H "Content-Type: application/json" -X POST -d '{"name":"Buy Presents"}' https://rocky-meadow-1164.herokuapp.com/todo
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-6.05.01-PM-2.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-6.05.01-PM-2.png)
 
 然后，你使用之前讲过的 GET 请求，就可以看到你刚才添加的「Buy Presents」的内容了。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/s.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/s.png)
 
 ### DELETE 请求
 
     bash
     curl -X DELETE 'https://rocky-meadow-1164.herokuapp.com/todo/5657901fee93910900cc54ed'
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-8.21.40-PM-2.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-8.21.40-PM-2.png)
 
 很棒！这里我们不会讲 PUT 请求，因为在这个应用里暂时还用不上。但是它和其他的请求使用起来差不多。
 
 ## 使用 Alamofire 设置 iOS 应用
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/alamofire.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/alamofire.png)
 
 让我们从新建一个名叫 TodoApp 的 Xcode 工程开始吧。因为假期就要到来，我们应该有一种方式来跟踪这件事情。幸运的是，我们有 node 应用来帮忙。
 
@@ -289,7 +289,7 @@ Mongoose 能很方便的提供与 mongoLab 的 heroku node 应用连接并提供
 
 Vim 是一款系统自带的命令行编辑器，与 Sublime Text 或 TextMate 类似。我们现在要新建一个 Podfile 的文件，Cocoapods 每次都会去这个文件里查询是否需要更新工程的 pod（包括各种的依赖）。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-8.32.03-PM-2.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-8.32.03-PM-2.png)
 
 在 Podfile 这个文件里键入如下内容：
 
@@ -311,7 +311,7 @@ Vim 是一款系统自带的命令行编辑器，与 Sublime Text 或 TextMate �
 
 敲了回车后，如果一切都设置好的话，大概会呈现下图显示的内容。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-8.38.01-PM-2.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-8.38.01-PM-2.png)
 
 这时候，你可以看到命令行里要求你关闭当前打开的 Xcode 并且以后都用 .xcworkspace 为后缀的文件来打开工程。
 
@@ -347,7 +347,7 @@ Vim 是一款系统自带的命令行编辑器，与 Sublime Text 或 TextMate �
 
 现在，打开 Main.storyboard，添加一个 tableview 到 view controller，并将视图控制器嵌入到 navigation controller。你的 storyboard 现在看起来应该跟我的一样，如下图（值得注意的是，现在返回的 JSON 数据还只是显示在控制台上，我们要将其显示出来。）。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-9.38.31-PM-2-1024x576.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-9.38.31-PM-2-1024x576.png)
 
 将以下代码复制并粘帖到你的 ViewController.swift 文件里。
 
@@ -393,7 +393,7 @@ Vim 是一款系统自带的命令行编辑器，与 Sublime Text 或 TextMate �
 
 我初始化了两个数组 jsonArray 和 newArray，用 for 循环遍历了返回数据的那个 jsonArray，将其中的每个数据保存到 newArray 中。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-10.08.34-PM-2.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-10.08.34-PM-2.png)
 
 我使用 POST cURL 请求在数据库里多添加了一些数据。用法类似，不再赘述。
 
@@ -427,13 +427,13 @@ Vim 是一款系统自带的命令行编辑器，与 Sublime Text 或 TextMate �
         // Dispose of any resources that can be recreated.
     }
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-10.16.39-PM-2-1024x576.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-10.16.39-PM-2-1024x576.png)
 
 正如你看到的，我们的 tableview 已经成功显示数据了。
 
 现在我们来添加一个按钮，用来添加数据到列表中。首先，先在 storyboard 里添加一个叫 AddViewController 的类，并用 segue 的方式连接起来。你的 storyboard 应该和下图差不多。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-11.34.59-PM-2-1024x576.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-26-at-11.34.59-PM-2-1024x576.png)
 
 ### Alamofire POST 请求
 

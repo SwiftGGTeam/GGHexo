@@ -17,7 +17,7 @@
 
 
 
-![](http://swift.gg/img/articles/being-swifty-with-collection-view-and-table-view-cells/53092553e2ff9f43.png1454341216.473366) 
+![](https://swift.gg/img/articles/being-swifty-with-collection-view-and-table-view-cells/53092553e2ff9f43.png1454341216.473366) 
 
 在 Objective-C 中，最典型就是使用 NSArray 来记录 collectionView 的数据源，然后通过对比每个数据源的类型后再对 cell 进行操作，现在看来这种方式是特别不方便的。
 

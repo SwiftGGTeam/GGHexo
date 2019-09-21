@@ -18,9 +18,6 @@ tvOS 入门：开发你的第一个 tvOS 应用"
 
 
 
-![image](http://www.appcoda.com/wp-content/uploads/2015/10/IMG_3302-1024x683.jpg)
-
-
 ## 了解 tvOS
 
 
@@ -44,7 +41,7 @@ tvOS 基于 iOS 系统开发而成。你使用的许多框架可能都适用于 
 
 启动 Xcode,创建一个新工程，选中一个新的 tvOS 应用。在右侧面板，选中击 Single View Application 并点击 next。
 
-![image2](http://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-31-at-11.07.02-PM-1024x732.png)
+![image2](https://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-31-at-11.07.02-PM-1024x732.png)
 
 接着为新应用命名。对于第一个应用来说，我们习惯以一个 Hello World App 作为教程的开始。命名该工程为 HelloWorld，接着点击创建并选择项目存储位置。
 
@@ -55,13 +52,13 @@ tvOS 基于 iOS 系统开发而成。你使用的许多框架可能都适用于 
 
 在你的 Main.storyboard 文件中，添加一个 button，将 title 修改为“Click Me!”，接着在其下方添加一个标签 label,如下所示：
 
-![image3](http://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-31-at-11.26.45-PM-1024x558.png)
+![image3](https://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-31-at-11.26.45-PM-1024x558.png)
 
 注意到 tvOS 中的按钮与 iOS 的按钮稍有不同。此外，当你添加多个按钮时，苹果已经允许用户在按钮间无缝切换，比如向右，向左，向上或向下滑动。开发者只需要在 storyboard 中为按钮布局来利用该特性(稍后详述)。
 
 和 iOS 一样，我们通过 control-drag 标签(label)和按钮(button)来创建 IBOutlet 以及 IBAction。这里分别命名 outlet 为 myLabel，IBAction 为 buttonPressed。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-31-at-11.32.31-PM-1024x647.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-31-at-11.32.31-PM-1024x647.png)
 
 
 在 buttonPressed 动作中，请键入如下代码行:
@@ -75,7 +72,7 @@ tvOS 基于 iOS 系统开发而成。你使用的许多框架可能都适用于 
 
 
 你可能想要通过鼠标来点击按钮，但与模拟器中的 iOS 应用不同，苹果电视未配备触摸屏，仅仅依靠一个遥控器罢了。因此，单击Hardware >Show Apple TV Remote 或者 Command + Shift + R 快捷键显示遥控器。通过遥控器实现按钮的点击，你的第一个 tvOS 应用就此完成了！
-![](http://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-31-at-11.58.52-PM-1024x575.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-31-at-11.58.52-PM-1024x575.png)
 
 
 ## 猜谜游戏 App
@@ -86,7 +83,7 @@ tvOS 基于 iOS 系统开发而成。你使用的许多框架可能都适用于 
 
 模仿我下面的布局做一些 storyboard 的基础操作。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-11-01-at-12.14.40-AM-1024x564.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-11-01-at-12.14.40-AM-1024x564.png)
 
 如果你不确定我是如何实现的，下面是我使用的组件的列表:
 
@@ -96,7 +93,7 @@ tvOS 基于 iOS 系统开发而成。你使用的许多框架可能都适用于 
 
 接着为 4 个按钮添加 text 并更改它们的背景颜色，均在 storyboard 完成(任何 iOS 应用都可以这么实现)。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-11-01-at-12.21.16-AM-1024x564.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-11-01-at-12.21.16-AM-1024x564.png)
 
 像以前一样,让我们将这些按钮绑定到代码中。为了代码简洁和易于理解,我将创建 4 个 IBAction(虽然这并不一定是最优雅的解决方案,但它是最简单的)。
 
@@ -198,15 +195,15 @@ tvOS 基于 iOS 系统开发而成。你使用的许多框架可能都适用于 
 
 单机遥控器，选中 Cupertino 选项
 
-![](http://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-11-01-at-12.49.37-AM-1024x552.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-11-01-at-12.49.37-AM-1024x552.png)
 
 你应该看到弹出一个 UIAlertController。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-11-01-at-12.49.27-AM-1024x557.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-11-01-at-12.49.27-AM-1024x557.png)
 
 不幸的是，模拟器并不支持 swiping，因此你可能需要在真机中测试成功的 alert 警告框。不过，你可以在模拟器(遥控)中通过按住 option 键 swipe 选项。在 Apple TV 真机中，你能够在所有按钮中无缝切换。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-11-01-at-12.53.00-AM-1024x575.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-11-01-at-12.53.00-AM-1024x575.png)
 
 恭喜！ 你已经完成了第二个项目。
 
@@ -268,7 +265,7 @@ tvOS 基于 iOS 系统开发而成。你使用的许多框架可能都适用于 
 
 不出意外，你应该看到一个 tableview 出现在界面中。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-11-01-at-9.21.21-AM-1024x567.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-11-01-at-9.21.21-AM-1024x567.png)
 
 现在，我们将在 tableView 的右侧添加一个按钮(UIButton)。在模拟或者真机上构建并运行，Whoo
 ！我们现在可以在按钮和 tableview 之间无缝切换了。
@@ -360,11 +357,11 @@ NSJSONSerialization 需要传入 NSData 进行解析。
 
 检查终端输出。你应该看到一个包裹了值的可选类型(你得到的值应该稍有不同，会根据不同的地理位置和天气来显示)。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-11-01-at-11.21.02-AM1.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-11-01-at-11.21.02-AM1.png)
 
 现在我们将一些 UILabel 链接到应用中。拖拽两个 UILabel，一个叫 currentTemp，另一个叫 currentSummary。仔细看下 forecast 的 API，你会注意到它返回当前天气温度以及天气的概况(当然还有其他数据)。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-11-01-at-12.26.11-PM-1024x565.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-11-01-at-12.26.11-PM-1024x565.png)
 
 在 newDict 变量下面放置如下代码：
 
@@ -376,7 +373,7 @@ NSJSONSerialization 需要传入 NSData 进行解析。
 
 在模拟器中构建并运行。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-11-01-at-11.41.44-AM-1024x549.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/10/Screen-Shot-2015-11-01-at-11.41.44-AM-1024x549.png)
 
 干的不错！你已经完成了天气预报项目！
 

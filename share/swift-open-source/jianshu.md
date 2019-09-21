@@ -18,7 +18,7 @@
 
 Apple 宣告 “[Swift即将开源](https://developer.apple.com/swift/blog/?id=34)” 的随后几天里，项目的活跃度让人瞠目结舌。回想今年早些时候的 [WWDC](https://developer.apple.com/wwdc/) 大会上 Apple 提及 Swift 不久会被开源，我可不认为任何人会像这样期待该发布版本。
 
-![](http://swift.gg/img/articles/swift-open-source/swift-logo.png1451394012.0965536)
+![](https://swift.gg/img/articles/swift-open-source/swift-logo.png1451394012.0965536)
 
 
 

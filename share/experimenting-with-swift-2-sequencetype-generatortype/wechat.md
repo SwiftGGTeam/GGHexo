@@ -14,7 +14,7 @@
 
 在这篇文章中我们将介绍 Swift 2 自定义序列，并举例说明有限序列和无限序列的区别，本文是 [Swift and the functional approach](https://www.uraimo.com/category/functional/) 系列其中一篇。
 
-![sequences](http://swift.gg/img/articles/experimenting-with-swift-2-sequencetype-generatortype/sequences.png1457572217.60734)
+![sequences](https://swift.gg/img/articles/experimenting-with-swift-2-sequencetype-generatortype/sequences.png1457572217.60734)
 
 > 你可以访问 [GitHub](https://github.com/uraimo/Swift-Playgrounds/) 或下载 [zip 文件](https://github.com/uraimo/Swift-Playgrounds/raw/master/archives/2015-11-12-SequenceTypeGeneratorTypePlayground.playground.zip)来获取本文示例程序的 playground。
 

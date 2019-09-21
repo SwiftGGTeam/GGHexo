@@ -75,7 +75,7 @@ Swift 的 NSDate 初学者指南"
 
 在 Xcode 的 playground 里敲入上面的语句，你会看到：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058093.7960339)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058093.7960339)
 
 注意我们会在下面的代码中多次使用到上面的这个值。现在初始化一个 *NSDateFormatter* 对象。它用来在 dates 和 strings 之间做转换。如下：
 
@@ -101,7 +101,7 @@ Swift 的 NSDate 初学者指南"
 
 先用第一种方法，我们需要使用 *NSDateFormatterStyle enum*。这个枚举类型的每一个枚举值都代表一种不同的格式样式类型。第一个样式是 *FullStyle*，下面的图片是使用它的效果：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058094.232729)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058094.232729)
 
 下面是上面代码的文本，想复制的话随意：
 
@@ -113,7 +113,7 @@ Swift 的 NSDate 初学者指南"
 
 好，来看下一个样式，*Long Style*：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058094.629814)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058094.629814)
 
 文本形式的代码：
 
@@ -123,7 +123,7 @@ Swift 的 NSDate 初学者指南"
 
 可以看到这种类型的样式中不包含星期几（和 Full Style 相比而言）。下面是 *Medium Style*：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058094.9355278)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058094.9355278)
 
     
     dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
@@ -139,7 +139,7 @@ Swift 的 NSDate 初学者指南"
 
 之前我说过 date formatter 的 locale 可以被设置成非默认值。现在我们已经看到如何使用 date formatter styles 做转换，我们再来看看不同的 locale 值如何改变初始日期的字符串转换结果。下面的例子中我会使用 Full Style，以及前面提到的两个 locale identifier（希腊和法国）。
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058095.0969288)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058095.0969288)
 
 我想现在 locale 能做什么你已经很清楚了，好好使用它吧。
 
@@ -163,7 +163,7 @@ Swift 的 NSDate 初学者指南"
 
 继续我们的例子，看一下 format specifier 具体怎么用。这回我们把当前日期转换成一个字符串，显示成具有星期名称、月的全写，日期数字和年份的格式：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058095.2924576)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058095.2924576)
 
     
     dateFormatter.dateFormat = "EEEE, MMMM dd, yyyy"
@@ -171,7 +171,7 @@ Swift 的 NSDate 初学者指南"
 
 我想怎么用自定义的 date format 已经不需要额外的讲解了，用法十分简单。再来一个例子，转换一下时间：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058095.4972548)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058095.4972548)
 
     
     dateFormatter.dateFormat = "HH:mm:ss"
@@ -179,7 +179,7 @@ Swift 的 NSDate 初学者指南"
 
 到现在为止我们看到的所有转换都是从 *NSDate* 对象变成一个有特定格式的字符串。相反的操作也很有意思，之前关于 date formatter styles 和 format specifiers 的也同样适用。把有既定格式的字符串转换成一个 *NSDate* 对象的关键是要对 date formatter 的 *dateFormat* 属性做出正确设置，然后调用 *dateFromString:* 方法。我们再看几个例子：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058095.7241263)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058095.7241263)
 
     
     var dateAsString = "24-12-2015 23:59"
@@ -188,7 +188,7 @@ Swift 的 NSDate 初学者指南"
 
 再看一个更复杂的字符串，还包含了时区：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058095.9686637)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058095.9686637)
 
     
     dateAsString = "Thu, 08 Oct 2015 09:22:33 GMT"
@@ -210,7 +210,7 @@ Swift 的 NSDate 初学者指南"
 
 现在我们看一个典型例子，一个 *NSDate* 对象是怎样被转换成一个 *NSDateComponents* 对象，之后我会做些讲解：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058096.3074582)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058096.3074582)
 
     
     let dateComponents = calendar.components([NSCalendarUnit.Day, NSCalendarUnit.Month, NSCalendarUnit.Year, NSCalendarUnit.WeekOfYear, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second, NSCalendarUnit.Nanosecond], fromDate: currentDate)
@@ -234,7 +234,7 @@ Swift 的 NSDate 初学者指南"
 
 从 date components 转换到日期对象也很容易。这回不会涉及到对 calendar unit 的使用。所需要的就是初始化一个新的*NSDateComponents*对象，然后明确指定出所有需要的components元素（当然是根据你app的需要），然后调用 *NSCalendar* 类的 *dateFromComponents* 方法实现转换。来看一下：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058096.656447)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058096.656447)
 
     
     let components = NSDateComponents()
@@ -247,7 +247,7 @@ Swift 的 NSDate 初学者指南"
 
 前面的部分我们看过一个在把某特定格式的字符串转换成一个日期对象时使用了 timezone 的例子。如果你足够好奇想看看对一个日期对象设置不同 timezone 的结果，我们就将上面的代码稍稍扩展一下，看看 timezone 的多种取值：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058715.7602158)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058715.7602158)
 
     
     components.timeZone = NSTimeZone(abbreviation: "GMT")
@@ -295,7 +295,7 @@ CET = 欧洲中部时间
 
 现在来看我们的例子，使用我们之前创建的那两个日期对象。下面的两条指令分别使用了刚才提到的那两个方法，为我们显示出更早的和更晚的日期：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058154.212341)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058154.212341)
 
     
     // Comparing dates - Method #1
@@ -304,11 +304,11 @@ CET = 欧洲中部时间
 
 第二种比较两个 *NSDate* 对象的方式使用的是 *NSDate* 类的 *compare:* 方法，以及 *NSComparisonResult* 枚举类型。看下面的例子就会明白我的意思，但是我先提一下这种方式的语法和我上面例子中的很像。比较日期所得的结果是和所有的可能值作比较，用这种方式可以很容易的判断出两个日期是否相等、哪一个更早或者更晚。不说了，下面的代码已经足够明了：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058154.3666584)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058154.3666584)
 
 Playground 中的结果如下：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058154.5087793)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058154.5087793)
 
 可复制的代码：
 
@@ -326,7 +326,7 @@ Playground 中的结果如下：
 
 比较两个日期对象的第三种方式多少有些不同，因为这种方式引入了对 *time intervals* 的使用。实际上这种方式很简单，它做的就是获得自每个日期以来的时间间隔（每个日期和*现在*的时间间隔），然后做比较：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058154.791958)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058154.791958)
     
     // Comparing dates - Method #3
     if date1.timeIntervalSinceReferenceDate > date2.timeIntervalSinceReferenceDate {
@@ -341,7 +341,7 @@ Playground 中的结果如下：
 
 上面的代码也可以应用到对时间的比较。下面我给你最后一个例子，而这次 *date1* 和 *date2* 对象包含了对时间的表示。我再次使用 *earlierDate:* 方法，但另外还有一个，*idEqualToDate:*，很明显，看名字就知道它是干什么的：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058155.0071487)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058155.0071487)
 
     
     // Comparing time.
@@ -374,7 +374,7 @@ Playground 中的结果如下：
 
 一开始我们先记一下当前日期（是我写这篇教程的日期），它会被用作我们的参考日期：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058155.1251872)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058155.1251872)
 
 现在假设我们想把当前日期加上两个月零五天，实际上还是写下来比较好：
 
@@ -392,13 +392,13 @@ Playground 中的结果如下：
 
 下面是每次叠加之后 playground 显示的结果：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058716.3939843)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058716.3939843)
 
 上面的方式不错，但是仅限于你要加的只有 1~2 个 calendar units，否则你得连续多次调用上面那个方法才行。
 
 当需要叠加更多的 units 时，第二个，也是更倾向的方式是使用 *NSDateComponents* 这个类。为了演示，我们不会再引入其他的组成元素，除上面已经定好的月和日之外。在这儿要做的事情很简单：首先初始化一个新的 *NSDateComponents* 对象，并给它设置之前定好的月和日。然后调用 *NSCalendar* 类的另一个叫做 *dateByAddingComponents:toDate:options:* 的方法，我们会立即得到一个新的 *NSDate* 对象，这个新对象即代表了最终想要的日期。
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058158.1788666)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058158.1788666)
 
     
     let newDateComponents = NSDateComponents()
@@ -421,7 +421,7 @@ Playground 中的结果如下：
 
 下面的代码示范了该怎么做。首先给当前日期加上一个特定天数的*负*值，这就可以得到一个属于过去的日期了。然后把结果转换成一个有适当格式的字符串，最后的结果...很有意思：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058716.4647555)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058716.4647555)
 
     
     let numberOfDays = -5684718
@@ -448,7 +448,7 @@ Playground 中的结果如下：
 
 有了上面的日期对象，我们再来看一下如何获取日期组成元素（date components）形式的日期差值（date difference ）。我们会再次用到 *NSCalendar* 类，还有它的一个之前我们没见过的方法。最后把日期组成元素打印出来看一下结果。很明显当有了它，这个代表了日期差值的元素之后，想怎么做都取决于你了。来看下示范：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058716.5368817)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058716.5368817)
 
     
     var diffDateComponents = NSCalendar.currentCalendar().components([NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second], fromDate: date1, toDate: date2, options: NSCalendarOptions.init(rawValue: 0))
@@ -467,7 +467,7 @@ Playground 中的结果如下：
 
 回到日期差值中来，这次我们要先算出两个日期之间的时间间隔。然后这个间隔本身会作为一个参数传递给 *NSDateComponentFormatter* 类的 *stringFromTimeInterval:* 方法，结果就会以一个格式化好了的字符串形式返回。
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058159.4423432)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058159.4423432)
 
     
     let interval = date2.timeIntervalSinceDate(date1)
@@ -475,7 +475,7 @@ Playground 中的结果如下：
 
 最后，在计算日期差值的最后一个方式中，两个日期需要作为参数传递给 *NSDateComponentsFormatter* 类的 *stringFromDate:toDate:* 方法。然而用这个方法之前需要先满足一个条件：*allowedUnits* 属性必须要设置一个 calendar unit，否则该方法会返回一个 nil。所以我们就「告诉」这个方法我们想要怎样的 unit，之后就等它给我们差值结果：
 
-![](http://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058716.6109412)
+![](https://swift.gg/img/articles/a-beginners-guide-to-nsdate-in-swift/12401450058716.6109412)
 
     
     dateComponentsFormatter.allowedUnits = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second]

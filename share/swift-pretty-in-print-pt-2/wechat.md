@@ -172,4 +172,4 @@ Swift：漂亮的 print() Pt.2"
 
 *就像之前一样, 如果你喜欢今天读到的内容或者亲手实现了它，请[发推给我](https://twitter.com/AndyyHope)。很渴望听到你们的声音, 让我很受用.*
 
-> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。�
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

@@ -1,7 +1,7 @@
 几个 Swift 代码规范"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2015/11/17/a-handful-of-swift-style-rules-swiftlang/)，原文日期：2015-11-17
-> 译者：[mmoaay](http://mmoaay.photo/)；校对：[lfb_CD](http://weibo.com/lfbWb)；定稿：[shanks](http://codebuild.me/)
+> 译者：[mmoaay](http://www.jianshu.com/u/2d46948e84e3)；校对：[lfb_CD](http://weibo.com/lfbWb)；定稿：[shanks](http://codebuild.me/)
   
 
 
@@ -147,7 +147,7 @@
 
 当然，这不是说说而已，我已经在代码中进行了实践：
 
-![这里写图片描述](http://swift.gg/img/articles/a-handful-of-swift-style-rules-swiftlang/Screen-Shot-2015-11-18-at-10.31.13-AM.png1449449055.5795417)
+![这里写图片描述](https://swift.gg/img/articles/a-handful-of-swift-style-rules-swiftlang/Screen-Shot-2015-11-18-at-10.31.13-AM.png1449449055.5795417)
 
 github [代码地址](https://github.com/erica/testlint)
 

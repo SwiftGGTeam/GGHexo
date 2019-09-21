@@ -20,7 +20,7 @@
 
 * 选中 `Info.plist` 文件中所有你想要支持的旋转方向。
 
-![](http://swift.gg/img/articles/per-view-auto-rotation-locking-made-easy-for-ios-8-and-9/InterfaceOrientation.png1450312516.562497)
+![](https://swift.gg/img/articles/per-view-auto-rotation-locking-made-easy-for-ios-8-and-9/InterfaceOrientation.png1450312516.562497)
 
 * 然后我们仅需要实现一个方法。
 

@@ -12,6 +12,8 @@ MVVM 不是那么好"
 
 
 
+> 原文图片链接全部失效，因此本文图片无法显示。
+
 我写过许多关于让 `ViewController` 变得更轻量的文章，`Model-View-ViewModel` 是一种常用的可以实现该目的的设计模式。我觉得 MVVM 是一种反人类的设计模式，它使架构更加混乱而非清晰。`View Model`的命名很糟糕，它只是架构优化的权宜之计。对我们来说放弃这一模式反而更好。
 
 
@@ -50,10 +52,10 @@ MVVM 不是那么好"
 
 `view model` 并不能从根本上改变你的应用程序的架构。这两张图有什么不同（[原图](https://www.objc.io/issues/13-architecture/mvvm/)）？
 <center>
-![](http://khanlou.com/wp-content/uploads/2015/12/mvvm1-16d81619.png)
+![](http://khanlou.com/images/mvvm1-16d81619.png)
 </center>
 <center>
-![](http://khanlou.com/wp-content/uploads/2015/12/mvvm-b27768df.png)
+![](http://khanlou.com/images/mvvm-b27768df.png)
 </center>
 
 不需要利用先进的图片理论你也能看出这两张图几乎是一样的。

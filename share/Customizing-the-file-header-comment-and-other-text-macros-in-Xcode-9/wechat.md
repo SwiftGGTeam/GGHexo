@@ -16,18 +16,18 @@
 
 
 
-![](http://swift.gg/img/articles/Customizing-the-file-header-comment-and-other-text-macros-in-Xcode-9/11.png1512891714.217959)
+![](https://swift.gg/img/articles/Customizing-the-file-header-comment-and-other-text-macros-in-Xcode-9/11.png1512891714.217959)
 
 因此，在我个人的项目里，我创建新文件后，第一件要做的事情就是删除这些注释。
 
 这个习惯一直持续到不久前，直到 Xcode9 允许使用一个 plist 文件来自定义文件头部注释和其他被称作文本宏的东西。这部分内容在 Xcode 的[帮助文档](https://help.apple.com/xcode/mac/9.0/index.html)中的[自定义文本宏](https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/dev91a7a31fc)这一页中有详尽的描述：
 
-![](http://swift.gg/img/articles/Customizing-the-file-header-comment-and-other-text-macros-in-Xcode-9/xcode-help-customize-text-macros.png1512892169.760428)
+![](https://swift.gg/img/articles/Customizing-the-file-header-comment-and-other-text-macros-in-Xcode-9/xcode-help-customize-text-macros.png1512892169.760428)
 
 1. **首先，创建一个叫做 `IDETemplateMacros.plist` 的 plist 文件**
 2. **当你想自定义一个文本宏时，就向 plist 的字典中添加一个新的键。**例如，当你想修改默认的文件头部注释时，就给 plist 文件中添加一个新条目，条目的键为 `FILEHEADER`。
 
-    ![在 Xcode 的 plist 编辑器中编辑`IDETemplateMacros.plist`文件](http://swift.gg/img/articles/Customizing-the-file-header-comment-and-other-text-macros-in-Xcode-9/xcode-plist-editor-IDETemplateMacros-plist.png1512892705.4828758)
+    ![在 Xcode 的 plist 编辑器中编辑`IDETemplateMacros.plist`文件](https://swift.gg/img/articles/Customizing-the-file-header-comment-and-other-text-macros-in-Xcode-9/xcode-plist-editor-IDETemplateMacros-plist.png1512892705.4828758)
 
     > Xcode 的 plist 编辑器只会展示一行，不过你可以用 Option + Return 添加新行。
 
@@ -42,7 +42,7 @@
 
 当你创建一个新文件时，新文件的头部看起来像是这样：
 ​    
-![在自定义了`FILEHEADRE`文本宏后创建爱你的新文件](http://swift.gg/img/articles/Customizing-the-file-header-comment-and-other-text-macros-in-Xcode-9/xcode-new-file-after-customizing-text-macros.png1512892705.61613)
+![在自定义了`FILEHEADRE`文本宏后创建爱你的新文件](https://swift.gg/img/articles/Customizing-the-file-header-comment-and-other-text-macros-in-Xcode-9/xcode-new-file-after-customizing-text-macros.png1512892705.61613)
 ​    
 > 注意，对于`FILEHEADER`宏，目前的 Xcode(Xcode9 beta3) 只会自动给第一行添加注释标记（一个不带空格的`//`），剩下的行并不会自动添加注释标记。你需要手动在带有宏的文本中添加注释标记。我不确定对 Xcode 来说这是一个 feature 还是一个 bug（对我来说现在看起来这是一个 bug）
 >
@@ -58,7 +58,7 @@
 
 这里是所有可以在 Xcode9 中使用的文本宏，我把他们从 [Xcode 的帮助页面](https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/dev7fe737ce0)中一字不差的复制过来了。
 
-![](http://swift.gg/img/articles/Customizing-the-file-header-comment-and-other-text-macros-in-Xcode-9/xcode-help-text-macros-reference.png1512892705.665681)
+![](https://swift.gg/img/articles/Customizing-the-file-header-comment-and-other-text-macros-in-Xcode-9/xcode-help-text-macros-reference.png1512892705.665681)
 
 > ##### DATE
 > 当前的日期。
@@ -114,7 +114,7 @@
 
 *以下内容都是从 Xcode 帮助页面中的[文本宏格式参考](https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devc8a500cb9)拷贝过来的*
 
-![](http://swift.gg/img/articles/Customizing-the-file-header-comment-and-other-text-macros-in-Xcode-9/xcode-help-text-macro-format-reference.png1512892705.816728)
+![](https://swift.gg/img/articles/Customizing-the-file-header-comment-and-other-text-macros-in-Xcode-9/xcode-help-text-macro-format-reference.png1512892705.816728)
 
 > 一个文本宏的值可以包含任何合法的 unicode 字符。同时一个文本宏的值也可以包含其他的文本宏。
 

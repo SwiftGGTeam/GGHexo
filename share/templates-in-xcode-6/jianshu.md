@@ -25,7 +25,7 @@ Xcode6 中模版的介绍"
 
 这是一个对学习分割视图控制器(`split view controllers`)和列表视图控制器(`table view controllers`)基础知识很有帮助的模版。如果你只在 `iPhone` 设备中使用，该模版中的分割视图控制器将不起作用，只能使用导航控制器来导航的主-从视图控制器。这种视图对于新手开发者来说这是一个好的开始。
 
-![icon](http://swift.gg/img/articles/templates-in-xcode-6/Bildschirmfoto-2015-08-25-um-18.28.35.png1444784411.7165086)
+![icon](https://swift.gg/img/articles/templates-in-xcode-6/Bildschirmfoto-2015-08-25-um-18.28.35.png1444784411.7165086)
 
 ### Page Based 应用程序
     
@@ -35,7 +35,7 @@ Xcode6 中模版的介绍"
 
 这个模版有点特别，它会创建一个有12个页面的页面视图控制器。同样的，这种模板对于学习基本的 iOS 开发也是很有帮助的。
 
-![icon](http://swift.gg/img/articles/templates-in-xcode-6/Bildschirmfoto-2015-08-25-um-18.40.16.png1444784413.1235225)
+![icon](https://swift.gg/img/articles/templates-in-xcode-6/Bildschirmfoto-2015-08-25-um-18.40.16.png1444784413.1235225)
 
 ### 单视图应用程序（Single View Application）
 
@@ -53,7 +53,7 @@ Xcode6 中模版的介绍"
 
 这是非常基础的模版，它会创建一个含有两个视图控制器的选项卡(`tab bar`)控制器。
 
-![icon](http://swift.gg/img/articles/templates-in-xcode-6/Bildschirmfoto-2015-08-25-um-18.42.57.png1444784413.9353302)
+![icon](https://swift.gg/img/articles/templates-in-xcode-6/Bildschirmfoto-2015-08-25-um-18.42.57.png1444784413.9353302)
 
 # Game
     
@@ -63,7 +63,7 @@ Xcode6 中模版的介绍"
 
 这是一个非常复杂的模版。你可以选择 `SceneKit`, `SpriteKit`, `Open GL ES` 或 `Metal` 的模版。如果你想了解游戏开发，这种模版可以让你有一个好的开始。
 
-![icon](http://swift.gg/img/articles/templates-in-xcode-6/Bildschirmfoto-2015-08-25-um-18.45.48.png1444784414.774583)
+![icon](https://swift.gg/img/articles/templates-in-xcode-6/Bildschirmfoto-2015-08-25-um-18.45.48.png1444784414.774583)
 
 # 总结
 

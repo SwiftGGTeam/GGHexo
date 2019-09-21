@@ -20,7 +20,7 @@
 
 因此我决定创建一个翻译流。如截图所示，当你打印流的时候，会把英文文本转换成其他语言。
 
-![](http://swiftgg-main.b0.upaiyun.com/image/transformative-streams-1.png)
+![](https://i1.wp.com/ericasadun.com/wp-content/uploads/2016/08/Screen-Shot-2016-08-29-at-4.12.58-PM.png?w=822&ssl=1)
 
 如图所示，我的解决方案充分利用了 Swift 标准库内置的 print 函数。Swift 允许打印到流。当使用我的 `ItalianStream.shared` 流时， 打印到控制台的内容被自动翻译成了我在流中提供的语言。
 
@@ -76,5 +76,5 @@
 
 *在下面的截图中，我把（第20行）打印到了用户的通知栏。*
 
-![](http://swiftgg-main.b0.upaiyun.com/image/transformative-streams-2.png)
+![](https://i0.wp.com/ericasadun.com/wp-content/uploads/2016/08/Screen-Shot-2016-08-29-at-9.06.29-PM.png?w=863&ssl=1)
 > 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

@@ -218,7 +218,7 @@ Swiftychat 需要用到 [swiftysockets](https://github.com/iachievedit/swiftysoc
 
 下面进行更加真实的测试，我们将启用一个服务器端和三个客户端，见下图：
 
-![](http://swift.gg/img/articles/tcp-sockets-with-swift-on-linux/Selection_007.png1456793714.7514606)
+![](https://swift.gg/img/articles/tcp-sockets-with-swift-on-linux/Selection_007.png1456793714.7514606)
 
 看图中左边的终端，我们的聊天服务器正在运行。右边终端有 3 个客户端，每一个都使用命令 `nc localhost 5555` 来启动。每个客户端连接服务器的时候，都会在服务器端打印出连接信息。
 

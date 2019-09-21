@@ -31,11 +31,11 @@ WWDC 2016 上最重磅的消息之一就是在 iOS 10 中引入了 Message 框�
 
 首先，打开 Xcode 8 然后创建一个新的项目。Xcode 8 已经为 Message Extension 准备了几个项目模板。如果是 sticker pack，选择 iOS > Application > Sticker Pack Application.
 
-![](http://swiftgg-main.b0.upaiyun.com/img/message-sticker-app-1.png)
+![](https://www.appcoda.com/wp-content/uploads/2016/06/messages-ext-newproject-1024x599.png)
 
 然后，输入项目名称。在这个项目里，我使用 CuteSticker ，但是你可以使用任何你喜欢的名称。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/message-sticker-app-2.png)
+![](https://www.appcoda.com/wp-content/uploads/2016/06/messages-ext-projectoptions-1024x720.png)
 
 ### 为 Sticker Pack 添加图片
 
@@ -43,13 +43,13 @@ WWDC 2016 上最重磅的消息之一就是在 iOS 10 中引入了 Message 框�
 
 假设你已经下载了[我们的图片包](https://github.com/appcoda/iMessageSticker/blob/master/Resources/StickerPack.zip?raw=true)，在 Finder 里面解压。然后选择所有的图片，并将他们拖到 Sticker Pack 文件夹。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/message-sticker-app-3.png)
+![](https://www.appcoda.com/wp-content/uploads/2016/06/messages-drag-images-1024x594.png)
 
 > 声明：这个图片表是由 [pixeden.com](http://www.pixeden.com/conceptual-vectors/halloween-vector-art-pack-vol2) 提供的。
 
 此外，你还可以随意地选择 sticker 的尺寸。选择 Sticker Pack 文件夹，然后选择 Attributes inspector。sticker 的默认尺寸为 `Medium`，你可以改为 `Small` 或 `Large`。在这个 demo 里面，我只是用了默认设置。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/message-sticker-app-4.png)
+![](https://www.appcoda.com/wp-content/uploads/2016/06/messages-sticker-size-1024x314.png)
 
 ### 添加应用图标
 
@@ -67,7 +67,7 @@ WWDC 2016 上最重磅的消息之一就是在 iOS 10 中引入了 Message 框�
 
 在你下载完我们的 [演示应用图标包](https://github.com/appcoda/iMessageSticker/blob/master/Resources/cutesticker-appicon.zip?raw=true) 后，解压并将所有图标拖到 iMessage App Icon 下。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/message-sticker-app-5.png)
+![](https://www.appcoda.com/wp-content/uploads/2016/06/messages-app-icon-1024x596.png)
 
 ### 测试 Sticker Pack
 
@@ -77,23 +77,23 @@ WWDC 2016 上最重磅的消息之一就是在 iOS 10 中引入了 Message 框�
 
 当模拟器登录完了， Message 将会直接打开。点击扩展按钮，你可以找到你的 sticker pack。如果你点击左下菜单，将会显示你的 Sticker pack，当然这也是内置的。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/message-sticker-app-6.png)
+![](https://www.appcoda.com/wp-content/uploads/2016/06/messages-stickerpack-test-1024x654.png)
 
 在模拟器里，Message 有两个模拟用户，选择一个表情发送，然后回到 messageuser2，你可以看到 messageuser1 发送的表情。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/message-sticker-app-7.png)
+![](https://www.appcoda.com/wp-content/uploads/2016/06/messages-test-between-users-1024x577.png)
 
 ### 使用动画图片来自增强 Sticker Pack
 
 你不仅仅可以在 Sticker Pack 里面绑定静态图片，并且可以让你简单地添加动态图片到表情包里。如果你已经有一些 [像这样的](http://giphy.com/gifs/transparent-dancing-happy-A9rJJcBbu1ah2) GIF 或者 APNG 图，简单地添加图片到表情包里。Xcode 将会识别并展示动画。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/message-sticker-app-8.gif)
+![](http://www.appcoda.com/wp-content/uploads/2016/06/cutesticker-animated.gif)
 
 创建动图的另外一个替代方案是创建一个 sticker 序列。回到你的 sticker pack，在任意空白处右击，选择 Add Assets > New Sticker Sequence。这个将会创建一个让你添加图片队列的 sticker 序列。
 
 作为示例，你可以下载 [这个图片包](https://github.com/appcoda/iMessageSticker/blob/master/Resources/animation_images.zip?raw=true)。解压并添加到 sticker 序列。Xcode 允许你在 sticker pack 的右边预览动画。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/message-sticker-app-9.gif)
+![](http://www.appcoda.com/wp-content/uploads/2016/06/messages-sequence-animated.gif)
 
 ### 总结
 

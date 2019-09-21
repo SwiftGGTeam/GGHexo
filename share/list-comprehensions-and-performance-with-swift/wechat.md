@@ -61,7 +61,7 @@
 
 没有使用列表解析的代码片段和模拟列表解析的代码片段都产生了同样的汇编代码.
 
-![The assembly code from Hopper](http://swift.gg/img/articles/list-comprehensions-and-performance-with-swift/asm.png1446426438.2465854)
+![The assembly code from Hopper](https://swift.gg/img/articles/list-comprehensions-and-performance-with-swift/asm.png1446426438.2465854)
 
 因为两个代码片段产生的汇编代码是一样的，所以我可以认为它们的执行时间是一样的。我们可以使用 XCTest 来测试我们程序的执行时间并证明这一点。
 

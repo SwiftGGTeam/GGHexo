@@ -1,7 +1,7 @@
 Swift 反射 API 及用法"
 
 > 作者：Benedikt Terhechte，[原文链接](http://appventure.me/2015/10/24/swift-reflection-api-what-you-can-do/)，原文日期：2015-10-24
-> 译者：[mmoaay](http://mmoaay.photo/)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：[mmoaay](http://www.jianshu.com/u/2d46948e84e3)；校对：[千叶知风](http://weibo.com/xiaoxxiao)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 

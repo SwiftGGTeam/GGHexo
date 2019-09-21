@@ -32,9 +32,8 @@
       })
       UIApplication.sharedApplication().applicationIconBadgeNumber = overdueItems.count
     }
-<div style="max-width:300px;">
-![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-2/iOS-Simulator-Screen-Shot-Feb-4-2015-10.31.14-PM.png1444269937.440762)![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-2/iOS-Simulator-Screen-Shot-Feb-4-2015-11.51.25-PM.png1444269937.731704)
-</div>
+
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-2/iOS-Simulator-Screen-Shot-Feb-4-2015-10.31.14-PM.png1444269937.440762)
 
 虽然可行，但是并不能在待办项过期时自动更新角标的值。因为我们不能简单的在通知触发的时候增加角标的值，因此，我们可以为本地通知预设一个“applicationIconBadgeNumber”的属性值。接下来，我们在 TodoList 中写一个为每个通知设置相关角标值的方法。
 
@@ -56,9 +55,7 @@
 
 `applicationIconBadgeNumber`这个属性可以接受的最大值是 2,147,483,647（`NSIntegerMax`），超过 5 位数的数字就会在图标上被截断，如图所示。而且，设置为零或负数是不会产生效果的。
 
-<div style="max-width:300px;">
-![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-2/Screen-Shot-2015-02-04-at-11.38.14-PM.png1444269938.072636)![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-2/Screen-Shot-2015-02-04-at-11.38.14-PM.png1444269938.072636)
-</div>
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-2/Screen-Shot-2015-02-04-at-11.38.14-PM.png1444269938.072636)
 
 
 我们只是需要在待办列表发生变化的时候调用这个方法。将下面这段代码添加到 TodoList 中的`addItem:`和`removeItem:`两个方法之后。
@@ -80,9 +77,9 @@
 
 iOS 8 引进了一个很有用的新特性：通知动作（notification actions），它可以让通知由用户来触发，甚至用户没有打开应用都可以触发。让我们来实现这个功能吧：从通知横幅上直接完成或等会提醒待办项。
 
-<div style="max-width:300px;">
-![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-2/iOS-Simulator-Screen-Shot-Feb-6-2015-12.43.34-AM.png1444269938.316587)![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-2/iOS-Simulator-Screen-Shot-Feb-6-2015-12.43.37-AM.png1444269938.705509)
-</div>
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-2/iOS-Simulator-Screen-Shot-Feb-6-2015-12.43.34-AM.png1444269938.316587)
+
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-2/iOS-Simulator-Screen-Shot-Feb-6-2015-12.43.37-AM.png1444269938.705509)
 
 `AppDelegate`文件里可以这样写：
 
@@ -109,9 +106,9 @@ iOS 8 引进了一个很有用的新特性：通知动作（notification actions
 
 值得注意的是，上面的代码中我们调用了`todoCategory.setActions()`两次，分别设置了动作上下文（action contexts）。如果通知是以横幅（banner）的形式显示，那么通知动作会以迷你形式（minimal context）显示出来。如果通知是以（默认的）提示（alert） 形式显示，通知动作会显示至少 4 个操作。如下图。
 
-<div style="max-width:300px;">
-![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-2/iOS-Simulator-Screen-Shot-Feb-6-2015-12.41.20-AM.png1444269939.116427)![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-2/iOS-Simulator-Screen-Shot-Feb-6-2015-12.06.33-AM.png1444269939.455359)
-</div>
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-2/iOS-Simulator-Screen-Shot-Feb-6-2015-12.41.20-AM.png1444269939.116427)
+
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-2/iOS-Simulator-Screen-Shot-Feb-6-2015-12.06.33-AM.png1444269939.455359)
 
 我们传递到`setActions:`方法里的通知动作的顺序会一一对应的呈现在 UI 里，但是很奇怪的是，迷你形式里通知动作的顺序是以从右向左排列的方式显示的。
 
@@ -151,9 +148,11 @@ iOS 8 引进了一个很有用的新特性：通知动作（notification actions
     }
 
 终于可以试着运行这个应用了（为了测试方便，建议将`dateByAddingTimeInterval:`设置一个较小的值）。
-<div style="max-width:300px;">
-![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-2/iOS-Simulator-Screen-Shot-Feb-6-2015-1.25.36-AM.png1444269939.847281)
-</div>
+
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-2/iOS-Simulator-Screen-Shot-Feb-6-2015-1.25.36-AM.png1444269939.847281)
+
 我们讨论了所有的非地理上（注：上一集讲到的用户进入和离开某个地理区域时，可以触发本地通知的功能）的 UILocalNotification 功能，现在已经有一个功能较全的待办项应用了，所以本系列教程到此结束。你可以在[这里](https://github.com/jasonbnewell/LocalNotificationTutorials/tree/part2_simplified)下载工程的源代码。
+
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。户进入和离开某个地理区域时，可以触发本地通知的功能）的 UILocalNotification 功能，现在已经有一个功能较全的待办项应用了，所以本系列教程到此结束。你可以在[这里](https://github.com/jasonbnewell/LocalNotificationTutorials/tree/part2_simplified)下载工程的源代码。
 
 > 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

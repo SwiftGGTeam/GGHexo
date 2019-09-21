@@ -68,7 +68,7 @@
 
 这并不复杂。在 `viewDidLoad` 方法中，创建一个绿色背景的圆形视图并放置在当前视图中央。然后添加 `UIPanGestureRecongnizer` 实例来感知拖动圆形视图的手势并调用 `dragCircle` 方法。你应该已经猜到执行效果了：
 
-![](http://i0.wp.com/jamesonquave.com/blog/wp-content/uploads/Rev-1.png?zoom=2&resize=432%2C702)
+![](http://i0.wp.com/jamesonquave.com/blog/wp-content/uploads/Rev-1.png?zoom=2&resize=432%252C702)
 
 ## UIViewPropertyAnimator 介绍
 
@@ -142,7 +142,7 @@
 
 动画结束时，如下图所示：
 
-![](http://i0.wp.com/jamesonquave.com/blog/wp-content/uploads/Rev-2.png?zoom=2&resize=404%2C674)
+![](http://i0.wp.com/jamesonquave.com/blog/wp-content/uploads/Rev-2.png?zoom=2&resize=404%252C674)
 
 圆形视图不再缩放，停止在放大后的尺寸。
 
@@ -333,7 +333,7 @@ Swift 3 兼容了旧的 `UIViewAnimationCurve`（例如在本文示例中使用�
     circleAnimator = UIViewPropertyAnimator(duration: 0.0, timingParameters: springParameters)
     // ...
 
-![](http://i2.wp.com/jamesonquave.com/blog/wp-content/uploads/Animations-2-1.png?zoom=2&resize=320%2C533)
+![](http://i2.wp.com/jamesonquave.com/blog/wp-content/uploads/Animations-2-1.png?zoom=2&resize=320%252C533)
 
 >  为了跟踪动画路径，我绘制了一些圆点。原本笔直的路径稍显弯曲，因为释放圆形视图，中心点会以弹簧效果的形式向中心“拉拽”，到达终点后动量仍旧保留。   
 
@@ -392,7 +392,7 @@ Swift 3 兼容了旧的 `UIViewAnimationCurve`（例如在本文示例中使用�
 
 现在拖拽圆形视图时会更新 `animator` 的 `fractionComplete` 属性，从而达到不同的效果：
 
-![](http://i2.wp.com/jamesonquave.com/blog/wp-content/uploads/Rev-3.png?zoom=2&resize=432%2C702)![](http://i2.wp.com/jamesonquave.com/blog/wp-content/uploads/Rev-4.png?zoom=2&resize=432%2C702)
+![](http://i2.wp.com/jamesonquave.com/blog/wp-content/uploads/Rev-3.png?zoom=2&resize=432%2C702)![](http://i2.wp.com/jamesonquave.com/blog/wp-content/uploads/Rev-4.png?zoom=2&resize=432%252C702)
 
 这里我使用的是线性曲线函数，你也可以基于这个例子实现其他函数。这个改变颜色的动画遵循一个压缩过的时间曲线。
 

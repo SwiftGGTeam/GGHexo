@@ -32,11 +32,11 @@ Xcode7 中用 Swift 做单元测试"
 
 在模拟器中运行 app。刚开始一切看起来都很正常。但当你开始改变数字时就会发现计算结果有问题。为找到 bug，我们将代码分割成不同的单元，然后分别做测试，看看每个是否都如期运行。这不会解决 bug，但能缩小你的查找范围。
 
-![](http://swift.gg/img/articles/unit-testing-swift/12401458696016.8096743)
+![](https://swift.gg/img/articles/unit-testing-swift/12401458696016.8096743)
 
 我创建项目的时候，默认情况下会勾选创建一个 test 文件的选项（如果你想要手动加一个的话，在 iOS Source 下面选择 select File > New > File > Unit Test Case Class）。我们的例子中 test 文件已经被 Xcode 自动创建出来，可以在项目导航栏中 “PercentageCalculatorTests” 文件夹中找到它。
 
-![](http://swift.gg/img/articles/unit-testing-swift/12401458696017.9022791)
+![](https://swift.gg/img/articles/unit-testing-swift/12401458696017.9022791)
 
 在 `PercentageCalculatorTests.swift` 文件中，`PercentageCalculatorTests` 类里面已经为我们创建好了 4 个方法。其中 2 个是测试方法（test methods）的例子，你可以删掉它们（它俩都以 `test` 关键字开头，并且它们左边的竖条中都有个方块形图标，名字也都以 “...Example” 结尾，所以你可以通过这些辨识出来它们是测试方法）。另外两个方法，`setUp()` 和 `tearDown()` 是特殊的样板方法（boilerplate methods），它们分别在每个测试方法被执行之前，和每个测试方法被执行之后被执行。
 
@@ -80,7 +80,7 @@ Xcode7 中用 Swift 做单元测试"
 
 单元测试中你要去检查某段代码是否如你所愿的那样工作。待测试的代码段一般都只有几行，典型情况是你只需要测试一个方法或者一个函数。单元测试是这样去做的：你给某个代码单元一个输入值，让这个值过一遍这段代码，然后检查一下输出的值是否和预期的一样。
 
-![](http://swift.gg/img/articles/unit-testing-swift/12401458696018.1332314)
+![](https://swift.gg/img/articles/unit-testing-swift/12401458696018.1332314)
 
 与“我们期望的那个值”做比较的这部分由 `XCTAssert` 函数来处理。最简单的 `XCTAssert` 函数是`XCTAssert(expression: BooleanType)`。这个函数要求一个布尔表达式（类似于 `5>3`，`8.90 == 8.90`或者 `true` 这种），随后如果表达式为真则让测试通过，否则认为测试失败。
 
@@ -93,7 +93,7 @@ Xcode7 中用 Swift 做单元测试"
 
 如果一切顺利，则测试通过，方法左边会出现一个绿色检测标。
 
-![](http://swift.gg/img/articles/unit-testing-swift/12401458696018.2352629)
+![](https://swift.gg/img/articles/unit-testing-swift/12401458696018.2352629)
 
 ### 验证百分比计算
 
@@ -145,7 +145,7 @@ Xcode7 中用 Swift 做单元测试"
 
 执行测试。（如果想一并执行我们test类的所有测试，你还可以点击 “class PercentageCalculatorTests” 旁边的那个方块）。
 
-![](http://swift.gg/img/articles/unit-testing-swift/12401458696018.3580859)
+![](https://swift.gg/img/articles/unit-testing-swift/12401458696018.3580859)
 
 ###我们来修Bug
 

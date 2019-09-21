@@ -134,4 +134,4 @@
 ![](http://swift.gg/img/articles/drawing-shapes-core-graphics-tutorial/format=750w1444269942.683713)
 
 你可以在[Github](https://github.com/ioscreator/ioscreator)上下载**`IOS9DrawShapesTutorial`**的代码。
-> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。gg)。

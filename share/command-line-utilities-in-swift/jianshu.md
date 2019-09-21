@@ -16,7 +16,7 @@
 
 在上一个例子中，我们通过组合使用 `popen` 和 `wget` 命令来调用[自然语言翻译服务](http://mymemory.translated.net/doc/spec.php)，来实现像 [Google 翻译](https://translate.google.com/)那样的翻译功能。本文的程序会基于之前我们已经完成的工作来进行。但与之前每次执行都只能翻译一句话所不同的是，这次我们要实现一个具备交互功能的 `shell` 程序，来翻译在控制台输入的每一句话。像下面的截图一样：
 
-![Translate all the things!](http://swift.gg/img/articles/command-line-utilities-in-swift/swifty_006.png1459126515.640598)
+![Translate all the things!](https://swift.gg/img/articles/command-line-utilities-in-swift/swifty_006.png1459126515.640598)
 
 
 

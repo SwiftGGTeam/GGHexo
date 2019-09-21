@@ -113,4 +113,4 @@
 这个问题唯一的解决办法就是重新实现那些方法。
 详情参见[rdar://22177512](http://www.openradar.me/22177512)——希望他们早日修复这个问题。
 
-> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。tp://swift.gg)。

@@ -1,7 +1,7 @@
 移动优先以及不断下降的可用性"
 
 > 作者：Jameson Quave，[原文链接](http://jamesonquave.com/blog/mobile-apps-declining-usability/)，原文日期：2016-02-11
-> 译者：[小袋子](http://daizi.me)；校对：[mmoaay](http://mmoaay.photo/)；定稿：[numbbbbb](http://numbbbbb.com/)
+> 译者：[小袋子](http://daizi.me)；校对：[mmoaay](http://www.jianshu.com/u/2d46948e84e3)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
 

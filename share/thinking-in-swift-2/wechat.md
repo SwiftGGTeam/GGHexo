@@ -139,7 +139,7 @@ Swift 编程思想，第二部分：数组的 Map 方法"
 
 同时，希望你花点时间来深入了解一下 `map()` 和 `flatMap()` 在数组上的应用，我知道你第一次学的时候可能觉得它们很复杂，但是一旦你学会了，你什么时候都会想用它们。
 
-![](http://swift.gg/img/articles/thinking-in-swift-2/map-everywhere.jpg1444352409.5202105)
+![](https://swift.gg/img/articles/thinking-in-swift-2/map-everywhere.jpg1444352409.5202105)
 
 
 [1](#note1): 请脑补一些作秀节目的用词

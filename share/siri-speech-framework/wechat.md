@@ -1,7 +1,7 @@
 使用 iOS 10 的 Speech 框架构建语音转文本应用"
 
 > 作者：SAHAND EDRISIAN，[原文链接](http://www.appcoda.com/siri-speech-framework/)，原文日期：2016-08-09
-> 译者：[ckitakishi](undefined)；校对：[mmoaay](http://mmoaay.photo/)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[ckitakishi](undefined)；校对：[mmoaay](http://www.jianshu.com/u/2d46948e84e3)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

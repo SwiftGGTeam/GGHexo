@@ -18,7 +18,7 @@
 
 顾名思义，可展开的 tableview “允许”其单元格展开和折叠，显示和隐藏那些始终可见的单元格下的其他单元格。当需要收集简单数据或向用户显示请求信息时，创建可展开的 tableview 是一个不错的选择。通过这种方式，我们无需再创建新的视图控制器，只需给定几种选项供用户抉择（只能选其一）。例如，利用可展开的 tableview ，你可以显示和隐藏用于收集数据的表格选项，而不再需要其他额外的视图控制器。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/09/expandable-uitableview.jpg)
+![](https://www.appcoda.com/wp-content/uploads/2015/09/expandable-uitableview.jpg)
 
 是否应该使用可展开的 tableview 取决于你所开发的应用程序的性质。应用程序的外观和体验通常来说不需要考虑，我们可以继承 `UITableViewCell` 并自定义单元格的 UI，还可以创建额外的 xib 文件。总之，它仅仅和需求有关。
 
@@ -94,7 +94,7 @@
 
 每个 section 中包含的条目项同样是一个数组（类型为字典），分别用于描述当前 section 中的每一个单元格。实际上，我们采用字典形式对上述属性进行分组，每一个字典匹配一个单独的单元格描述。下面是属性列表文件的一个示例：
 
-![img3](http://www.appcoda.com/wp-content/uploads/2015/09/t45_4_plist_sample.png)
+![img3](https://www.appcoda.com/wp-content/uploads/2015/09/t45_4_plist_sample.png)
 
 现在是最佳时机，抽点时间出来，透彻地理解下所有我们将要显示到 tableview 中的单元格描述属性以及相关值。显然，通过使用单元格描述，能够帮助我们明显减少创建和管理可展开单元格的代码，此外我们无需告知应用关于这些单元格的状态（例如，哪些单元格是可扩展的，它是否允许特定单元格进行展开，在代码中确定单元格是否可见等等这些问题）。所有这些信息已经存储在你刚刚下载的属性列表文件之中。
 
@@ -135,7 +135,7 @@
 
 如果你在上面代码最后一行键入`print(cellDescriptors)`命令，运行应用，你将看到命令控制台处打印了 plist 文件的所有内容。这意味着它们已经成功被加载到内存中了。
 
-![img4](http://www.appcoda.com/wp-content/uploads/2015/09/t45_5_console_plist.png)
+![img4](https://www.appcoda.com/wp-content/uploads/2015/09/t45_5_console_plist.png)
 
 按照惯例，我们本节的任务应该到此结束，但恰恰相反；我们将继续下去，接下来的部分至关重要。到目前为止，你已经发现（特别是打印 `CellDescriptor.plist` 文件内容之后），当应用程序启动之后并不是所有单元格都是可见的（译者注： plist 文件中单元格的 Visible 属性，有些为 YES，有些则为 NO）。实际上，我们不能知晓它们究竟是否将同时可见，因为只有当每次用户要求时，它们才进行展开或折叠。
 
@@ -321,7 +321,7 @@
 
 现在你可以运行应用，看看目前的成果。期望不要过高，因为你仅仅看到的只是顶级单元格内容。别忘了我们还未启用展开功能，所以当你点击它们时什么都不会出现。然而，不要气馁，正如你所看到的，到目前为止我们一切进展顺利。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/09/t45_6_top_level_cells.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/09/t45_6_top_level_cells.png)
 
 
 

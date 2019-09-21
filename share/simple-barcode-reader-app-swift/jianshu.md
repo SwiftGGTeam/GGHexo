@@ -26,17 +26,17 @@
 
 [从这里下载 CDBarcodes 的 starter project](https://github.com/appcoda/Simple-Barcode-Reader/raw/master/SimpleBarcodeStarter.zip)
 
-![](http://swiftgg-main.b0.upaiyun.com/img/simple-barcode-reader-app-swift-1.png)
+![](https://www.appcoda.com/wp-content/uploads/2016/05/barcode_screenshots-1024x596.png)
 
 ## Discogs
 
 先从 [Discogs](http://www.discogs.com/) 开始。首先，我们需要登录或者注册一个 Discogs 账户。登录之后，拉到网站的最底端，在 footer 的最左边边栏，点击 API。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/simple-barcode-reader-app-swift-2.png)
+![](https://www.appcoda.com/wp-content/uploads/2016/05/api_button_bottom-1024x640.png)
 
 在 Discogs API 页面，点击左边栏 Database 中的 Search。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/simple-barcode-reader-app-swift-3.png)
+![](https://www.appcoda.com/wp-content/uploads/2016/05/api_database_search-1024x640.png)
 
 这个就是我们将会用到的 API。我们使用 “title” 和 “year” 参数来获取专辑信息。
 
@@ -49,7 +49,7 @@
 
 回到刚才的 Discogs API 网站。我们需要创建一个新应用，取得 API 的使用资格。在导航栏中，网页的最顶部，点击 Create an App。之后点击 Create an Application 按钮。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/simple-barcode-reader-app-swift-4.png)
+![](https://www.appcoda.com/wp-content/uploads/2016/05/discogs_create_app_button-1024x640.png)
 
 应用名称的话，输入 “CDBarcodes + 你的名字”，或者其他你喜欢的名字。description 字段可以写：
 
@@ -65,7 +65,7 @@
 
 同 URL 一样，现在我们可以在应用中很方便地使用这些变量了。
 
-![](http://swiftgg-main.b0.upaiyun.com/img/simple-barcode-reader-app-swift-5.png)
+![](https://www.appcoda.com/wp-content/uploads/2016/05/discogs_create_name_description-1024x640.png)
 
 ## CocoaPods
 

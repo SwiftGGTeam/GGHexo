@@ -17,13 +17,13 @@ iOS9：预览特定的 UITableViewCell 视图"
 
 
 <center>
-![1.gif](http://swift.gg/img/articles/peek-pop-view-inside-tableviewcell/peek-pop-view-inside-tableviewcell-1.gif1460423718.616977)
+![1.gif](https://swift.gg/img/articles/peek-pop-view-inside-tableviewcell/peek-pop-view-inside-tableviewcell-1.gif1460423718.616977)
 </center>
 
 然而，在 Q&A 模块中遇到了一些问题。我希望在 cell 中特定的视图上——**演讲者的图片**——来使用 peek & pop，而不是像其他模块那样，在整个 cell 上使用。
 
 <center>
-![2.gif](http://swift.gg/img/articles/peek-pop-view-inside-tableviewcell/peek-pop-view-inside-tableviewcell-2.gif1460423720.6322474)
+![2.gif](https://swift.gg/img/articles/peek-pop-view-inside-tableviewcell/peek-pop-view-inside-tableviewcell-2.gif1460423720.6322474)
 </center>
 
 因为这个花费了很长时间才解决，所以我想把它记录下来。（在阅读本文之前，请先阅读[Peek & Pop Spirit Guide](http://krakendev.io/peek-pop/)）
@@ -193,7 +193,7 @@ iOS9：预览特定的 UITableViewCell 视图"
 下面是效果图——请注意，选中的图片之外的内容才会变得模糊！
 
 <center>
-![3.gif](http://swift.gg/img/articles/peek-pop-view-inside-tableviewcell/peek-pop-view-inside-tableviewcell-3.gif1460423774.5112977)
+![3.gif](https://swift.gg/img/articles/peek-pop-view-inside-tableviewcell/peek-pop-view-inside-tableviewcell-3.gif1460423774.5112977)
 </center>
 
 ## 结论
@@ -201,7 +201,7 @@ iOS9：预览特定的 UITableViewCell 视图"
 所以在某个特定的视图上使用 3D Touch 功能并非难事！一般来说，实现 3D Touch 非常简单和有趣。我强烈推荐您在 app 中添加 3D Touch 的功能。
 
 <center>
-![peak and pop all the things](http://swift.gg/img/articles/peek-pop-view-inside-tableviewcell/peekpop.jpg1460423776.2347734)
+![peak and pop all the things](https://swift.gg/img/articles/peek-pop-view-inside-tableviewcell/peekpop.jpg1460423776.2347734)
 </center>
 
 > 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

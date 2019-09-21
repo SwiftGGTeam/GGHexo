@@ -12,6 +12,8 @@
 
 
 
+> 原文图片链接全部失效，因此本文图片无法显示。
+
 ![](http://swiftgg-main.b0.upaiyun.com/img/building-swift-3-0-on-a-raspberry-pi-3-1.png)
 
 有许多小伙伴对在他们的树莓派 3 上构建 Swift 3.0 感兴趣，这篇教程献给那些勇敢的灵魂！

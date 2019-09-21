@@ -29,7 +29,7 @@
 
 ### 你好 GitHub
 
-![GitHub](http://swift.gg/img/articles/the-opensource-experience/583231v=3&s=1001456264515.2522745)
+![GitHub](https://swift.gg/img/articles/the-opensource-experience/583231v=3&s=1001456264515.2522745)
 
 与大多数人一样，我一开始只是想写一些代码并丢到 GitHub 上，这就是我的开源初体验。在一开始，我并不认为「我现在为开源做贡献」，我只是觉得 「哎哟，不错哦。我写了一些很赞的代码，让我来把它们放到 GitHub 上吧。这样做很酷，而且可以很容易地跟别人分享我的代码」。
 

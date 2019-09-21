@@ -34,8 +34,8 @@
 
 **为了便于理解，译者自己做了配图，展示新旧 Swift 的区别：**  
 
-![old](http://swift.gg/img/articles/swift-org-blog-iuo/40166397-082f067e-59f1-11e8-931a-3d3d0cb892eb.png1529377151.6054707)
-![new](http://swift.gg/img/articles/swift-org-blog-iuo/40166527-52d1029a-59f1-11e8-94f2-44d9dc1660ce.png1529377151.9917665)
+![old](https://swift.gg/img/articles/swift-org-blog-iuo/40166397-082f067e-59f1-11e8-931a-3d3d0cb892eb.png1529377151.6054707)
+![new](https://swift.gg/img/articles/swift-org-blog-iuo/40166527-52d1029a-59f1-11e8-94f2-44d9dc1660ce.png1529377151.9917665)
 
 ## 源代码兼容性
 
@@ -68,8 +68,8 @@
 
 **译者配图：**  
 
-![old-2](http://swift.gg/img/articles/swift-org-blog-iuo/40213466-2dd070ba-5a88-11e8-888a-0ca5066f4d36.png1529377152.1436236)
-![new-2](http://swift.gg/img/articles/swift-org-blog-iuo/40213471-336db9ba-5a88-11e8-9b8e-11287e1bfccd.png1529377152.292037)
+![old-2](https://swift.gg/img/articles/swift-org-blog-iuo/40213466-2dd070ba-5a88-11e8-888a-0ca5066f4d36.png1529377152.1436236)
+![new-2](https://swift.gg/img/articles/swift-org-blog-iuo/40213471-336db9ba-5a88-11e8-9b8e-11287e1bfccd.png1529377152.292037)
 
 ### 隐式解包可选类型的 map 方法
 

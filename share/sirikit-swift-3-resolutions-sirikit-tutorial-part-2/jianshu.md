@@ -73,7 +73,7 @@ Siri 传入的 `intent` 对象包含文字版的消息内容。我们只对 `con
         }
     }
 
-![](http://swiftgg-main.b0.upaiyun.com/img/sirikit-swift-3-resolutions-sirikit-tutorial-part-2-1.png)
+![](http://i2.wp.com/jamesonquave.com/blog/wp-content/uploads/what_to_say.png?w=584)
 
 现在当我们尝试发送消息时，SiriKit 就明白必须要提供内容值。接收方也要实现同样的功能。在本例中，接收方可以有多个值，可以使用多种方法从中查询目标值。如果你有一个聊天应用，那可以检查传入的 `INPerson` 对象，判断应该发送给哪个用户。
 

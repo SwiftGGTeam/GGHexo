@@ -1,7 +1,7 @@
 基于 Swift 创建 CocoaPods 完全指南"
 
 > 作者：AppCoda，[原文链接](https://www.appcoda.com/cocoapods-making-guide/)，原文日期：2016-09-16
-> 译者：[ckitakishi](undefined)；校对：[mmoaay](http://mmoaay.photo/)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[ckitakishi](undefined)；校对：[mmoaay](http://www.jianshu.com/u/2d46948e84e3)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

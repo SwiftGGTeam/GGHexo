@@ -175,7 +175,7 @@ Swift中有些机制能帮我们做简化：
 
 ## Swift难道不应该比ObjC更简洁么？ ##
 
-![诱人的蛋糕子虚乌有！](http://swift.gg/img/articles/thinking-in-swift-1/the-cake-is-a-lie.png1444269942.805689)
+![诱人的蛋糕子虚乌有！](https://swift.gg/img/articles/thinking-in-swift-1/the-cake-is-a-lie.png1444269942.805689)
 
 嗯好吧，这代码好像是比它的 ObjC 版本更复杂。但是别愁，在即将到来的本文第二部分中我们会把它大幅度简化。
 

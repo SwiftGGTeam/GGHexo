@@ -18,7 +18,7 @@
 
 在 iOS 中，事件（比如，触摸事件（touch event））都使用响应链来传递。响应链由响应者对象（Responder Objects，[苹果官方术语](https://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/event_delivery_responder_chain/event_delivery_responder_chain.html#//apple_ref/doc/uid/TP40009541-CH4-SW1)）构成。如果你看过官方文档，可能会注意到 `UIView` 和 `UIViewController` 都是响应者对象。这就意味着， `UIView` 和 `UIViewController` 都继承自 `UIResponder` ，如下图：
 
-![](http://swift.gg/img/articles/utilize-the-responder-chain-for-target-action/UIViewDocumentation.png1452047417.154566)
+![](https://swift.gg/img/articles/utilize-the-responder-chain-for-target-action/UIViewDocumentation.png1452047417.154566)
 
 
 

@@ -20,13 +20,11 @@
 
 但是，Force Touch 和 3d Touch 确实不一样！Force Touch 只能识别重按。这方面 3D Touch 要灵敏多了，它能够识别按压的力度。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/3dtouch-intro.jpg)
-
 虽然说，这点不同看起来无足轻重，但是这使开发者能开发更多精确计量方面的 App。比如这一款名为[Gravity](https://medium.com/swlh/turning-the-iphone-6s-into-a-digital-scale-f2197dc2b6e7)的应用，它利用 Force Touch 让你的 iPhone 成为了一个电子秤。虽然这款 App 被 Apple 拒了，但是这创意简直太棒了。为了展示 3D Touch 的工作流程，我们来做一个简单的 App。
 
 先去下载这个[初始案例](https://www.dropbox.com/s/i3xwostpd87rqci/ScaleStarter.zip?dl=0)。初始案例中只有一个空的 Single View。我在里面创建了 App 必要的 UI 元素（`UILabel`和`UIImage`），并关联了`ViewController.swift`。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/3dtouch-storyboard.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/3dtouch-storyboard.png)
 
 这个 App 的设计很简单：ViewController 上有两个 Label：一个标题和一个显示按压百分比的文本。
 
@@ -88,7 +86,7 @@
 
 然后...你就有了一个电子秤 App...
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/3d-touch-scale-app-492x1024.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/3d-touch-scale-app-492x1024.png)
 
 还有一个小问题：当物体或者触摸事件结束之后，文本没有重置。你可以实现`touchesEnded`方法来达到效果：
 
@@ -101,7 +99,7 @@
 
 另一个 3D Touch 的用法是主屏幕上的快捷操作。快捷操作可以让用户从快捷方式直接跳转到 App 的某个地方。按压 App icon 快捷方式就会出现。在介绍 3D Touch 的时候，Twitter、Instagram 等 App 就展示了这个新特性。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/3d-touch-quick-action.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/3d-touch-quick-action.png)
 
 让我们来给刚才的电子秤 App 添加一个快捷操作吧（把白色背景换成蓝色）。要添加快捷操作，先打开工程目录中的`info.plist`（在导航栏上点击工程名，在`TARTGET`中找到`info`选项卡）。在这个文件中，添加`UIApplicationShortcutItems`数组。数组中的元素是包含一个快捷操作配置的字典：
 
@@ -114,7 +112,7 @@
 
 在这个数组中，我们将会给自定义的快捷操作添加 4 个配置。然后，你的`info.plist`文件看起来应该是这样滴：
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/3d-touch-infoplist-600x102.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/3d-touch-infoplist-600x102.png)
 
 >       >   注意，我用到了`$(PRODUCT_BUNDLE_IDENTIFIER)`来代替`com.appcoda.Scale`（就是替代的 bundle ID）。这是出于安全考虑：无论在什么情况下，如果我在`General`中修改了 bundle ID，那整个工程的 bundle ID 就都变了，这势必会给项目带来不晓得影响。这样的话，我就需要手动去修改每个 bundle ID。在`info.plist`里面可以看到，其实每个 Bundle Identifier 配置项都是用的`$(PRODUCT_BUNDLE_IDENTIFIER)`来表示 bundle ID 在工程中的路径。
     >
@@ -153,13 +151,13 @@
 
 一切都是这么简单。现在把程序跑起来，使用快捷操作来启动 App，就可以看到背景已经是蓝色了。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/3d-touch-scale-blue.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/3d-touch-scale-blue.png)
 
 ## 还有一件事
 
 还有一个问题你别忘了...在程序启动顺序方面，**启动**程序和使用快捷操作**唤醒**是有区别的。我们都知道，程序启动会调用`willFinishLaunchingWithOptions`和`didFinishLaunchingWithOptions`方法。但是当使用快捷操作唤醒时，只会触发`performActionForShortcutItem`方法（译者注：这就意味着，使用快捷操作来**启动**会走三个方法，而使用快捷操作**唤醒**只会走一个，具体的方法列表如下图）。
 
-![](http://www.appcoda.com/wp-content/uploads/2015/11/3d-touch-quickaction-methods.png)
+![](https://www.appcoda.com/wp-content/uploads/2015/11/3d-touch-quickaction-methods.png)
 
 如果你回头看`didFinishLaunchingWithOptions`方法，会发现里面我写了一行设置背景色为白色的代码。这个是在直接启动程序时用的。
 

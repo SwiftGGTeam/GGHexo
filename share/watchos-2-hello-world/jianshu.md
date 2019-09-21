@@ -21,19 +21,19 @@ WatchOS 2: Hello, World"
 
 1. 在 `Xcode` 中, 打开 `File -> New -> Target`
 
-![](http://swift.gg/img/articles/watchos-2-hello-world/Screen_Shot_2015-09-21_at_7_23_42_AM.png1444874958.106001)
+![](https://swift.gg/img/articles/watchos-2-hello-world/Screen_Shot_2015-09-21_at_7_23_42_AM.png1444874958.106001)
 
 2. 选择`watchOS -> Application`。注意在`iOS`菜单下面有一个`Apple Watch`选项。不要选择这个选项！因为我曾经做过 `WatchKit apps`，所以系统自动选择了这个错误的选项 :( 。
  
-![](http://swift.gg/img/articles/watchos-2-hello-world/ItsAWatchWorld_xcodeproj.png1444874960.646429)
+![](https://swift.gg/img/articles/watchos-2-hello-world/ItsAWatchWorld_xcodeproj.png1444874960.646429)
 
 3. 选择`WatchKit App` 然后点击`Next`。注意**你的 Watch App 项目名称不能和 iOS 名称相同** - 因为这会创建两个名字相同的`target`！你可以随时在`Info.plist`中修改`Bundle Display Name`。同时还要注意，不要勾选`Include Complication`选项 :) 。
 
-![](http://swift.gg/img/articles/watchos-2-hello-world/Screenshot_9_21_15__7_35_AM.png1444874962.648526)
+![](https://swift.gg/img/articles/watchos-2-hello-world/Screenshot_9_21_15__7_35_AM.png1444874962.648526)
 
 4. 点击`Finish`。就酱！来看一下你的新 `App` 和 `Extension` 吧。跟 `WatchKit` 一样，这里有一个用于 Watch 的 `target`，并且附带了一个 `Storyboard`，以及用于编写程序逻辑的 `Extension`。
 
-![](http://swift.gg/img/articles/watchos-2-hello-world/Menubar_and_ItsAWatchWorld_xcodeproj_and_MyPlayground_6_36_06_PM_playground.png1444874964.5578082)
+![](https://swift.gg/img/articles/watchos-2-hello-world/Menubar_and_ItsAWatchWorld_xcodeproj_and_MyPlayground_6_36_06_PM_playground.png1444874964.5578082)
 
 开心地编程吧！！
 

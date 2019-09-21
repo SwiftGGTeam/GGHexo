@@ -168,4 +168,4 @@ Swift 2.0 带来了令人激动的`guard`语句。但很多人还是不太理解
 
 guard 还有什么重要的特性呢，请在评论中告诉我！
 
-> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。��

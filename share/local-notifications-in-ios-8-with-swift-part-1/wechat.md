@@ -20,7 +20,7 @@
 
 首先，我们在 Xcode 建立一个 single view application，命名为`LocalNotificationsTutorial`。记得选择 Swift 作为编程语言。如下图。
 
-![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/Screen-Shot-2015-01-30-at-10.15.42-PM.png1444269932.883674)
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/Screen-Shot-2015-01-30-at-10.15.42-PM.png1444269932.883674)
 
 在开始写代码之前，我们要先设置好视图控制器和视图，这是必要步骤。我会介绍一些使用 Interface Builder 的基本知识，如果你想要跳过这个步骤，可以在[这里](https://github.com/jasonbnewell/LocalNotificationTutorials/tree/part1_simplified)下载设置好的应用源代码，然后直接跳到[这里](#scheduling)开始探索。
 
@@ -28,15 +28,15 @@
 
 我们最终完成的应用在导航控制器（navigation controller）下会有两个视图：根视图是一个显示按时间排序的待办列表，其中每个待办项会显示截止日期(deadline)，另一个视图用来添加待办项，如下图所示：
 
-<div style="max-width:300px;">
-![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-4-2015-10.26.58-PM.png1444269933.474555)![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-1-2015-11.43.36-PM.png1444269933.761498)
-</div>
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-4-2015-10.26.58-PM.png1444269933.474555)
+
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-1-2015-11.43.36-PM.png1444269933.761498)
 
 ## 创建视图控制器
 
 在开始使用 IB（Interface Builder）之前，我们要先生成两个视图控制器。在项目管理器（project navigator）里按下 Ctrl+左键或者在项目组(project group)上点击右键，然后选择“New File”。如图：
 
-![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/Screen-Shot-2015-01-30-at-10.29.29-PM.png1444269934.173416)
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/Screen-Shot-2015-01-30-at-10.29.29-PM.png1444269934.173416)
 
 接下来，选择“Cocoa Touch Class”，创建一个名为`TodoTableViewController`的 `UITableViewController`子类。注意，选择 Swift 作为编程语言，不要创建 XIB 文件。这是根视图控制器，用来显示待办列表。
 
@@ -48,15 +48,15 @@
 
 从 Xcode 右下角的对象库（object library）里拖出一个导航控制器，放到目前空无一物的 storyboard 中。因为我们删除了根视图，所以需要把 Storyboard 入口点（Entry Point）重新指向导航控制器，使其成为新的根视图。
 
-![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/Screen-Shot-2015-01-30-at-11.11.26-PM.png1444269934.560338)
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/Screen-Shot-2015-01-30-at-11.11.26-PM.png1444269934.560338)
 
 点选导航控制器的根视图(table view)，然后在 identity inspector 中把 custom class 设置为 TodoTableViewController，如图。
 
-![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/Screen-Shot-2015-01-30-at-11.22.17-PM.png1444269934.80329)
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/Screen-Shot-2015-01-30-at-11.22.17-PM.png1444269934.80329)
 
 因为我们需要为每个待办项显示截止日期，所以，我们点选表格视图（table view）的唯一一个 prototype cell，切换到 attributes inspector，然后设置 cell 的样式为`Subtitle`。同时，cell 需要一个复用标识（ reuse identifier），这样我们才可以在代码中引用它。我们会使用“todoCell”来标记 cell。
 
-![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/Screen-Shot-2015-01-30-at-11.39.00-PM.png1444269935.048241)
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/Screen-Shot-2015-01-30-at-11.39.00-PM.png1444269935.048241)
 
 还是在 attributes inspector 界面，把一个导航项（navigation item）拖到表格视图上，命名为“Todo List”，再拖拽一个菜单栏按钮（bar button item）上去，把标识设置为“Add”。
 
@@ -64,17 +64,17 @@
 
 Ctrl+左键或直接右键点击“Add”按钮，按住“action”并拖拽到新的视图，然后选择“show”，如图。至此，我们的导航已经连接起来了。
 
-![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/Screen-Shot-2015-01-31-at-12.03.33-AM.png1444269935.291192)
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/Screen-Shot-2015-01-31-at-12.03.33-AM.png1444269935.291192)
 
 现在需要拖拽三个控件到视图上：一个文本框（占位符设置成`Title`）、一个日期选择器（date picker）和一个按钮(标题设置为`Save`)。将这三个控件居中显示，然后点选“add missing constraints”(位于 Xcode 右下角的三角形图标，如图)。这样添加约束后可以适配各种屏幕大小，而不会出现显示不全或排列不齐的问题。
 
-![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/Screen-Shot-2015-01-31-at-12.25.08-AM.png1444269935.534143)
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/Screen-Shot-2015-01-31-at-12.25.08-AM.png1444269935.534143)
 
 ## 将控件与代码连结起来
 
 我们的视图和导航已经布局完毕，现在需要将前面提到的三个控件以 IBOutlet 的形式与`TodoSchedulingViewController.swift`连接起来。这样我们就能在代码中访问这些控件以及控件的属性值。有很多方法可以实现，下面介绍比较简单的一种：点击 Xcode 右上角的 Assistant editor，接着 Ctrl+左键或直接右键点击需要联结的控件，拖拽“New Referencing Outlet”圆圈到`TodoSchedulingViewController`类中，如图。
 
-![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/Screen-Shot-2015-01-31-at-12.45.14-AM.png1444269936.025045)
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/Screen-Shot-2015-01-31-at-12.45.14-AM.png1444269936.025045)
 
 用相同的方法处理文本框和日期选择器，分别命名为`titleField`和`deadlinePicker`。
 
@@ -103,9 +103,7 @@ Ctrl+左键或直接右键点击“Add”按钮，按住“action”并拖拽到
 
 在第一次运行这个应用的时候，会提示用户授权应用程序触发通知的权限。如果用户授予权限，我们就能够做通知的计划了，通知包括显示一条横幅，播放一个声音，以及更新应用图标上的角标数字。(这部分内容会在本教程中的第二部分展示)。
 
-<div style="max-width:300px;">
-![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-3-2015-2.56.37-PM.png1444269936.363977)
-</div>
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-3-2015-2.56.37-PM.png1444269936.363977)
 
 ## 对应用建模
 
@@ -193,9 +191,9 @@ Ctrl+左键或直接右键点击“Add”按钮，按住“action”并拖拽到
 
 模拟器里运行应用后，创建一个一分钟后触发的待办项，然后回到主屏或锁定屏幕(Shift+CMD+H 或 CMD+L)等着通知触发。通知不会在恰好一分钟的时候触发（主要由于日期选择器里隐含着一个“秒”值），但是你肯定会在一分钟内看到通知。
 
-<div style="max-width:300px;">
-![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-3-2015-4.29.05-PM.png1444269936.703909)![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-3-2015-4.33.13-PM.png1444269937.094831)
-</div>
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-3-2015-4.29.05-PM.png1444269936.703909)
+
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-3-2015-4.33.13-PM.png1444269937.094831)
 
 ## 通知数量上限为 64 个
 
@@ -280,9 +278,7 @@ Ctrl+左键或直接右键点击“Add”按钮，按住“action”并拖拽到
 
 我们这个待办列表现在能按时间顺序显示待办项，如果过期的话会以红色显示时间。
 
-<div style="max-width:300px;">
-![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-4-2015-10.26.58-PM.png1444269933.474555)
-</div>
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-4-2015-10.26.58-PM.png1444269933.474555)
 
 这里我们仍有两个问题需要解决。当通知触发（或待办项过期）的时候，用户目前还不能在应用处于前台时得到任何可视化的反馈。另一个问题是，应用恢复到前台时，待办列表不能自动刷新，即过期的待办项不能显示红色。接下来，让我们来解决这个两个问题。
 
@@ -347,9 +343,7 @@ Ctrl+左键或直接右键点击“Add”按钮，按住“action”并拖拽到
       }
     }
 
-<div style="max-width:300px;">
-![](http://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-4-2015-10.26.58-PM.png1444269933.474555)
-</div>
+![](https://swift.gg/img/articles/local-notifications-in-ios-8-with-swift-part-1/iOS-Simulator-Screen-Shot-Feb-4-2015-10.26.58-PM.png1444269933.474555)
 
 ## 总结
 
@@ -358,5 +352,7 @@ Ctrl+左键或直接右键点击“Add”按钮，按住“action”并拖拽到
 下集教程内容会在这一集的基础上添加以下功能：应用图标角标显示、通知动作和不开启应用触发通知的新特性。
 
 欲知详情如何，请看下回分解。
+
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。知详情如何，请看下回分解。
 
 > 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

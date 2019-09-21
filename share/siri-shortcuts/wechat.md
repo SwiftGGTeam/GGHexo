@@ -122,7 +122,7 @@ Apple 全新的 Siri Shortcuts 大量借鉴了 Workflow。但是区分语音 Sho
 
 现在你可以唤起 Siri 并说出你的短语，体验 Shortcut！
 
-![](http://swift.gg/img/articles/siri-shortcuts/006tNbRwgy1fvfvhpdhd4j31kw0jr1kx.jpg1537423351.9367192)
+![](https://swift.gg/img/articles/siri-shortcuts/006tNbRwgy1fvfvhpdhd4j31kw0jr1kx.jpg1537423351.9367192)
 
 ## 总结
 
