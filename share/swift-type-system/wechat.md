@@ -1,7 +1,7 @@
 Swift 的类型体系"
 
 > 作者：Ole Begemann，[原文链接](http://oleb.net/blog/2015/07/swift-type-system/)，原文日期：2015-07-21
-> 译者：[mmoaay](http://mmoaay.photo/)；校对：[shanks](http://codebuild.me/)；定稿：[shanks](http://codebuild.me/)
+> 译者：[mmoaay](http://www.jianshu.com/u/2d46948e84e3)；校对：[shanks](http://codebuild.me/)；定稿：[shanks](http://codebuild.me/)
   
 
 
@@ -63,4 +63,4 @@ Swift 仍然在起步阶段。有时它可能会让你沮丧，但是随着时�
 <a name="3">3.毫无疑问，至少有一部分原因是我对语言比较陌生</a>
 
 <a name="4">4.我需要提醒大家的是注释是不保证正确性的，所以严格滴说它们没有头文件注释可靠。也许有人会认为仅仅一个严格的编译器就可以强制让 Apple 的文档更加精确。</a>
-> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。tp://swift.gg)。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
