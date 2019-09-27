@@ -189,7 +189,7 @@ Promise.all(backupPromises)
 
   let infoStr = `
 > 作者：${info.author}，[原文链接](${info.originUrl})，原文日期：${info.originDate}
-> 译者：${info.translators.split(",").map(name => `[${name}](${nameMap[name]})`).join("，")}；校对：${info.auditors.split(",").map(name => `[${name}](${nameMap[name]})`).join("，")}；定稿：${info.finalmans.split(",").map(name => `[${name}](${nameMap[name]})`).join("，")}
+> 译者：${info.translators.split(",").map(name => nameMap[name] ? `[${name}](${nameMap[name]})` : name).join("，")}；校对：${info.auditors.split(",").map(name => nameMap[name] ? `[${name}](${nameMap[name]})` : name).join("，")}；定稿：${info.finalmans.split(",").map(name => nameMap[name] ? `[${name}](${nameMap[name]})` : name).join("，")}
   `
   result = result.splice(result.indexOf("---") + 3, 0, infoStr)
   // result += info.translators.split(",").map(name => `\n<center>![给译者打赏](/img/QRCode/${imgMap[name]})</center>`).join("\n")
