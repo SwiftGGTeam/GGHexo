@@ -1,7 +1,7 @@
 Swift 3.0 下 Notifications 与 userInfo 的使用"
 
 > 作者：Joe，[原文链接](http://dev.iachieved.it/iachievedit/notifications-and-userinfo-with-swift-3-0/)，原文日期：2016-09-17
-> 译者：[Tony Han](undefined)；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：Tony Han；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

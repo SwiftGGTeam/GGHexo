@@ -1,7 +1,7 @@
 推荐给菜鸟的编程书"
 
 > 作者：Soroush Khanlou，[原文链接](http://khanlou.com/2016/06/resources-for-new-programmers/)，原文日期：2016-6-27
-> 译者：[X140Yu](undefined)；校对：[Crystal Sun](http://www.jianshu.com/users/7a2d2cc38444/latest_articles)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：X140Yu；校对：[Crystal Sun](http://www.jianshu.com/users/7a2d2cc38444/latest_articles)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

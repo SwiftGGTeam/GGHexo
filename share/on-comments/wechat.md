@@ -1,7 +1,7 @@
 关于注释"
 
 > 作者：Soroush Khanlou，[原文链接](http://khanlou.com/2017/03/on-comments/)，原文日期：2017-03-22
-> 译者：[TonyHan](undefined)；校对：[liberalism](https://weibo.com/1743643682/profile?topnav=1&wvr=6)，[Firecrest](undefined)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：TonyHan；校对：[liberalism](https://weibo.com/1743643682/profile?topnav=1&wvr=6)，Firecrest；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 
@@ -51,4 +51,4 @@
 - [Erica Sadun 的关于为何注释是有益的](http://ericasadun.com/2016/11/03/swift-holy-war-comments-are-not-an-anti-pattern/)。
 
 
-> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。ft.gg](http://swift.gg)。

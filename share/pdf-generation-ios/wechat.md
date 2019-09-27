@@ -1,7 +1,7 @@
 在 iOS 中使用 HTML 模版和 UIPrintPageRenderer 生成 PDF"
 
 > 作者：GABRIEL THEODOROPOULOS，[原文链接](http://www.appcoda.com/pdf-generation-ios/)，原文日期：2016-7-10
-> 译者：[X140Yu](undefined)；校对：[saitjr](http://www.saitjr.com)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：X140Yu；校对：[saitjr](http://www.saitjr.com)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

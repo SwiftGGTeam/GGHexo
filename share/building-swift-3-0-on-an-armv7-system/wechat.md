@@ -1,7 +1,7 @@
 在 ARMv7 的设备上编译 Swift 3.0"
 
 > 作者：Joe，[原文链接](http://dev.iachieved.it/iachievedit/building-swift-3-0-on-an-armv7-system/)，原文日期：2016/09/24
-> 译者：[X140Yu](undefined)；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：X140Yu；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

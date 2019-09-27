@@ -1,7 +1,7 @@
 苹果的深度学习框架：BNNS 和 MPSCNN 的对比"
 
 > 作者：MATTHIJS HOLLEMANS，[原文链接](http://machinethink.net/blog/apple-deep-learning-bnns-versus-metal-cnn/)，原文日期：2017-02-07
-> 译者：[TonyHan](undefined)；校对：[冬瓜](http://www.desgard.com/)，[liberalism](https://weibo.com/1743643682/profile?topnav=1&wvr=6)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：TonyHan；校对：[冬瓜](http://www.desgard.com/)，[liberalism](https://weibo.com/1743643682/profile?topnav=1&wvr=6)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

@@ -111,4 +111,4 @@
 
 你可以在 [GitHub 上查看完整代码](https://github.com/NatashaTheRobot/WatchReusablePagingExample)。
 
-> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。��访问 [http://swift.gg](http://swift.gg)。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。p://swift.gg](http://swift.gg)。

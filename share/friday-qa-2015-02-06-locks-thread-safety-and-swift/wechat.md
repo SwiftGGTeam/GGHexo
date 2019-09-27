@@ -1,7 +1,7 @@
 Swift 中的锁和线程安全"
 
 > 作者：Mike Ash，[原文链接](https://www.mikeash.com/pyblog/friday-qa-2015-02-06-locks-thread-safety-and-swift.html)，原文日期：2015-02-06
-> 译者：[Lefe_x](undefined)；校对：[numbbbbb](http://numbbbbb.com/)，[Yousanflics](http://blog.yousanflics.com.cn)，[liberalism](https://weibo.com/1743643682/profile?topnav=1&wvr=6)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：Lefe_x；校对：[numbbbbb](http://numbbbbb.com/)，[Yousanflics](http://blog.yousanflics.com.cn)，[liberalism](https://weibo.com/1743643682/profile?topnav=1&wvr=6)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

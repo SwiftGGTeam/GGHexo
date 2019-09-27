@@ -1,7 +1,7 @@
 Swift 代码小抄"
 
 > 作者：Andyy Hope，[原文链接](https://medium.com/swift-programming/swift-syntax-cheat-codes-9ce4ab4bc82e#.qrmtczdec)，原文日期：2016-07-20
-> 译者：[X140yu](undefined)；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：X140yu；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

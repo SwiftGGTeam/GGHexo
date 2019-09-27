@@ -1,7 +1,7 @@
 Swift: 带有关联类型的协议是什么样的？"
 
 > 作者：Natasha The Robot，[原文链接](https://www.natashatherobot.com/swift-what-are-protocols-with-associated-types/)，原文日期：2016-07-28
-> 译者：[jseanj](undefined)；校对：[saitjr](http://www.saitjr.com)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：jseanj；校对：[saitjr](http://www.saitjr.com)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

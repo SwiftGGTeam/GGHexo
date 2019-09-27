@@ -1,7 +1,7 @@
 在 GitHub 上进行协同写作"
 
 > 作者：Ole Begemann，[原文链接](http://oleb.net/blog/2016/02/collaborative-writing-on-github/)，原文日期：2016-02-29
-> 译者：[赵磊](undefined)；校对：[冬瓜](http://www.desgard.com/)；定稿：[Cee](https://github.com/Cee)
+> 译者：赵磊；校对：[冬瓜](http://www.desgard.com/)；定稿：[Cee](https://github.com/Cee)
   
 
 

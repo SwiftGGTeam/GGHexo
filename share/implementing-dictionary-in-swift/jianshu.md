@@ -1,7 +1,7 @@
 在 Swift 中实现字典"
 
 > 作者：Soroush Khanlou，[原文链接](http://khanlou.com/2016/07/implementing-dictionary-in-swift/)，原文日期：2016-07-05
-> 译者：[jseanj](undefined)；校对：[Prayer](http://www.futantan.com)；定稿：[shanks](http://codebuild.me/)
+> 译者：jseanj；校对：[Prayer](http://www.futantan.com)；定稿：[shanks](http://codebuild.me/)
   
 
 

@@ -1,7 +1,7 @@
 Swift中的强制编译时报错"
 
 > 作者：Erica Sadun，[原文链接](https://ericasadun.com/2018/04/18/forcing-compiler-errors-in-swift/)，原文日期：2018-04-18
-> 译者：[Hale](http://wuqiuhao.github.io)；校对：[梁杰](undefined)，[Yousanflics](http://blog.yousanflics.com.cn)；定稿：[Yousanflics](http://blog.yousanflics.com.cn)，[CMB](https://github.com/chenmingbiao)
+> 译者：[Hale](http://wuqiuhao.github.io)；校对：梁杰，[Yousanflics](http://blog.yousanflics.com.cn)；定稿：[Yousanflics](http://blog.yousanflics.com.cn)，[CMB](https://github.com/chenmingbiao)
   
 
 

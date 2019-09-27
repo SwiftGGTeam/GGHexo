@@ -1,7 +1,7 @@
 如何检测摇一摇手势"
 
 > 作者：Arthur Knopper，[原文链接](https://www.ioscreator.com/tutorials/detect-shake-gestures-ios-tutorial-ios10)，原文日期：2017-04-18
-> 译者：[Crystal Sun](http://www.jianshu.com/users/7a2d2cc38444/latest_articles)；校对：[way](undefined)；定稿：[shanks](http://codebuild.me/)
+> 译者：[Crystal Sun](http://www.jianshu.com/users/7a2d2cc38444/latest_articles)；校对：way；定稿：[shanks](http://codebuild.me/)
   
 
 

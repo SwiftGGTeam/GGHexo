@@ -1,7 +1,7 @@
 Swift 中的安全性"
 
 > 作者：Soroush Khanlou，[原文链接](http://khanlou.com/2017/04/safety-in-swift/)，原文日期：2017-04-05
-> 译者：[Doye](undefined)；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：Doye；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

@@ -1,7 +1,7 @@
 树莓派2 GPIO 和 SwiftyGPIO"
 
 > 作者：Joe，[原文链接](http://dev.iachieved.it/iachievedit/raspberry-pi-2-gpio-with-swiftygpio/)，原文日期：2016-02-08
-> 译者：[Crystal Sun](http://www.jianshu.com/users/7a2d2cc38444/latest_articles)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[littledogboy](undefined)
+> 译者：[Crystal Sun](http://www.jianshu.com/users/7a2d2cc38444/latest_articles)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：littledogboy
   
 
 

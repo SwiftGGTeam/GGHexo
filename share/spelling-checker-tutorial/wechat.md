@@ -1,7 +1,7 @@
 拼写检查教程"
 
 > 作者：Arthur Knopper，[原文链接](https://www.ioscreator.com/tutorials/spelling-checker-tutorial)，原文日期：2015-12-22
-> 译者：[钟颖Cyan](undefined)；校对：[Cwift](http://weibo.com/277195544)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：钟颖Cyan；校对：[Cwift](http://weibo.com/277195544)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

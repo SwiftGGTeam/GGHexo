@@ -1,7 +1,7 @@
 TableViewController 的最佳实践"
 
 > 作者：Dominik Hauser，[原文链接](http://swiftandpainless.com/the-best-table-view-controller-mar-2016-edition/)，原文日期：2016-03-28
-> 译者：[Doye](undefined)；校对：[way](undefined)；定稿：[shanks](http://codebuild.me/)
+> 译者：Doye；校对：way；定稿：[shanks](http://codebuild.me/)
   
 
 

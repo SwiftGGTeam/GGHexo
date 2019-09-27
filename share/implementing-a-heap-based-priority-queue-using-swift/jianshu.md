@@ -1,7 +1,7 @@
 使用 Swift 实现基于堆的优先级队列"
 
 > 作者：APPCODA EDITORIAL TEAM，[原文链接](https://appcoda.com/swift-algorithm/)，原文日期：2019-01-07
-> 译者：[Roc Zhang](undefined)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)，[numbbbbb](http://numbbbbb.com/)；定稿：[Forelax](http://forelax.space)
+> 译者：Roc Zhang；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)，[numbbbbb](http://numbbbbb.com/)；定稿：[Forelax](http://forelax.space)
   
 
 

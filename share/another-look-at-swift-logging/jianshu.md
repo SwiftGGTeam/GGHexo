@@ -1,7 +1,7 @@
 也谈 Swift 日志"
 
 > 作者：Joe，[原文链接](http://dev.iachieved.it/iachievedit/another-look-at-swift-logging/)，原文日期：2016-01-23
-> 译者：[DianQK](undefined)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[Cee](https://github.com/Cee)
+> 译者：DianQK；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[Cee](https://github.com/Cee)
   
 
 

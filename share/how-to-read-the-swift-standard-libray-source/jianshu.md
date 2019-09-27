@@ -1,7 +1,7 @@
 如何阅读 Swift 标准库中的源码"
 
 > 作者：Ole Begemann，[原文链接](https://oleb.net/blog/2016/10/swift-stdlib-source/)，原文日期：2016-10-28
-> 译者：[X140Yu](undefined)；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：X140Yu；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

@@ -1,7 +1,7 @@
 重新实现可选类型的隐式解包"
 
 > 作者：Mark Lacey，[原文链接](https://swift.org/blog/iuo/)，原文日期：2018-04-26
-> 译者：[灰s](https://github.com/dzyding)；校对：[numbbbbb](http://numbbbbb.com/)，[ mmoaay](undefined)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[灰s](https://github.com/dzyding)；校对：[numbbbbb](http://numbbbbb.com/)， mmoaay；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

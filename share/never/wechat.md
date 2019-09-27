@@ -1,7 +1,7 @@
 Never"
 
 > 作者：Mattt，[原文链接](https://nshipster.com/never/)，原文日期：2018-07-30
-> 译者：[雨谨](https://github.com/mobilefellow)；校对：[numbbbbb](http://numbbbbb.com/)，[wongzigii](https://github.com/wongzigii)，[Firecrest](undefined)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[雨谨](https://github.com/mobilefellow)；校对：[numbbbbb](http://numbbbbb.com/)，[wongzigii](https://github.com/wongzigii)，Firecrest；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

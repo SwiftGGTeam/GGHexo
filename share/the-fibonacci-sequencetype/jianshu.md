@@ -1,7 +1,7 @@
 斐波那契数列型-从数学角度学习 Swift 序列
 
 > 作者：Jacob Bandes-Storch，[原文链接](http://bandes-stor.ch/blog/2015/08/05/the-fibonacci-sequencetype/)，原文日期：2015-08-05
-> 译者：[Lou](undefined)；校对：[shanks](http://codebuild.me/)；定稿：[shanks](http://codebuild.me/)
+> 译者：Lou；校对：[shanks](http://codebuild.me/)；定稿：[shanks](http://codebuild.me/)
   
 
 

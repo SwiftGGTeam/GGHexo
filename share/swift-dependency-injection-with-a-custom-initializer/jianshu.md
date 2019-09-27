@@ -1,7 +1,7 @@
 Swift：使用自定义初始化方法进行依赖注入"
 
 > 作者：Natasha The Robot，[原文链接](https://www.natashatherobot.com/swift-dependency-injection-with-a-custom-initializer/)，原文日期：2016-01-08
-> 译者：[littledogboy](undefined)；校对：[Cee](https://github.com/Cee)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
+> 译者：littledogboy；校对：[Cee](https://github.com/Cee)；定稿：[千叶知风](http://weibo.com/xiaoxxiao)
   
 
 

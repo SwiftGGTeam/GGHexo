@@ -44,7 +44,7 @@ Swift:什么时候不适合使用函数式方法"
 
 这样的确有用，但是我并不开森。这段代码又长又拙笨，而且我讨厌强制解包可选类型，虽然这里不会出错。不过这都是小事，主要的原因是这样看起来并不像原生for循环那样简单有效。如下图所示：
 
-![](https://www.natashatherobot.com/wp-content/uploads/MyPlayground_playground1-1024x427.png)
+![](http://swift.gg/img/articles/swift_when_the_functional_approach_is_not_right/MyPlayground_playground1.png)
 
 可能这样做是错的，但是我最后还是选择了`for`循环。我的结论是：在 Swift 中偶尔使用`for`循环是可以的。当然我可能遗漏了一些东西，如果有，请在评论中告诉我！
 
@@ -59,4 +59,4 @@ Swift:什么时候不适合使用函数式方法"
 
 由此，我再次得出结论：使用`flatmap`不能提高代码可读性。如果那些对 Swift 和函数式编程了解不多的人看到这段代码，他们能理解发生了神马吗？相反，我可以确定，每个人只需看一眼就能够理解for循环。
 
-> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。tp://swift.gg)。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。

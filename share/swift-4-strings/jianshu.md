@@ -1,7 +1,7 @@
 Swift 4 中的字符串"
 
 > 作者：Ole Begemann，[原文链接](https://oleb.net/blog/2017/11/swift-4-strings)，原文日期：2017-11-27
-> 译者：[东莞大唐和尚](https://weibo.com/u/5029986118)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)，[Firecrest](undefined)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：[东莞大唐和尚](https://weibo.com/u/5029986118)；校对：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)，Firecrest；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

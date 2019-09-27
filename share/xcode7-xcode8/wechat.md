@@ -1,7 +1,7 @@
 同时兼容 Xcode7 和 Xcode8"
 
 > 作者：radex.io，[原文链接](http://radex.io/xcode7-xcode8/)，原文日期：2016-07-28
-> 译者：[ckitakishi](undefined)；校对：[Channe](http://www.jianshu.com/users/7a07113a6597/latest_articles)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：ckitakishi；校对：[Channe](http://www.jianshu.com/users/7a07113a6597/latest_articles)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

@@ -1,7 +1,7 @@
 Swift Package Manager 重写 macOS 部署目标"
 
 > 作者：Ole Begemann，[原文链接](https://oleb.net/blog/2017/04/swift-3-1-package-manager-deployment-target/)，原文日期：2017-04-07
-> 译者：[EyreFree](undefined)；校对：[liberalism](https://weibo.com/1743643682/profile?topnav=1&wvr=6)，[Firecrest](undefined)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：EyreFree；校对：[liberalism](https://weibo.com/1743643682/profile?topnav=1&wvr=6)，Firecrest；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

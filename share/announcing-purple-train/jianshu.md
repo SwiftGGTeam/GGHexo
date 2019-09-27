@@ -1,7 +1,7 @@
 关于 Purple Train 的说明"
 
 > 作者：Ian C. Anderson，[原文链接](https://robots.thoughtbot.com/announcing-purple-train)，原文日期：2017-1-9
-> 译者：[Tuccuay](undefined)；校对：[way](undefined)；定稿：[shanks](http://codebuild.me/)
+> 译者：Tuccuay；校对：way；定稿：[shanks](http://codebuild.me/)
   
 
 

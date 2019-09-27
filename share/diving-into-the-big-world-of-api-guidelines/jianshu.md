@@ -1,7 +1,7 @@
 探索 API 指南的大世界"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2016/01/28/diving-into-the-big-world-of-api-guidelines/)，原文日期：2016-1-28
-> 译者：[ahfepj](undefined)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[Cee](https://github.com/Cee)
+> 译者：ahfepj；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[Cee](https://github.com/Cee)
   
 
 

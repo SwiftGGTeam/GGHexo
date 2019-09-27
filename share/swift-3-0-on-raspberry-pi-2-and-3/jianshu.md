@@ -1,7 +1,7 @@
 树莓派 2 和 3 上的 Swift 3.0"
 
 > 作者：JOE，[原文链接](http://dev.iachieved.it/iachievedit/swift-3-0-on-raspberry-pi-2-and-3/?utm_source=rss&utm_medium=rss)，原文日期：2016-05-01
-> 译者：[ckitakishi](undefined)；校对：[mmoaay](http://www.jianshu.com/u/2d46948e84e3)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：ckitakishi；校对：[mmoaay](http://www.jianshu.com/u/2d46948e84e3)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

@@ -1,7 +1,7 @@
 升级 CMake 使 Swift 的构建过程更加愉悦"
 
 > 作者：Joe，[原文链接](http://dev.iachieved.it/iachievedit/upgrading-cmake-for-a-happier-swift-build/)，原文日期：2016/06/30
-> 译者：[EyreFree](undefined)；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：EyreFree；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 
@@ -49,7 +49,7 @@
 
 以上就是全部过程。构建愉快！
 
-> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。eveloper.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-ID82)来遵从 [`OptionSet`](https://developer.apple.com/reference/swift/optionset) 协议，以引入选项集合，而非[枚举（`enum`）](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Enumerations.html#//apple_ref/doc/uid/TP40014097-CH12-ID145)。为什么这样处理呢？当枚举成员互斥的时候，比如说，一次只有一个选项可以被选择的情况下，枚举是非常好的。但是和 C 不同，在 Swift 中，你无法把多个枚举成员组合成一个值，而 C 中的枚举对编译器来说就是整型，可以接受任意整数值。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。��](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-ID82)来遵从 [`OptionSet`](https://developer.apple.com/reference/swift/optionset) 协议，以引入选项集合，而非[枚举（`enum`）](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Enumerations.html#//apple_ref/doc/uid/TP40014097-CH12-ID145)。为什么这样处理呢？当枚举成员互斥的时候，比如说，一次只有一个选项可以被选择的情况下，枚举是非常好的。但是和 C 不同，在 Swift 中，你无法把多个枚举成员组合成一个值，而 C 中的枚举对编译器来说就是整型，可以接受任意整数值。
 
 和 C 中一样，Swift 中的选项集合结构体使用了高效的位域来表示，但是这个结构体本身表现为一个集合，它的成员则为被选择的选项。这允许你使用标准的[集合运算](https://en.wikipedia.org/wiki/Set_(mathematics)#Basic_operations)来维护位域，比如使用 [contains](https://developer.apple.com/reference/swift/optionset/1641006-contains) 来检验集合中是否有某个成员，或者是用 [union](https://developer.apple.com/reference/swift/optionset/1641498-union) 来组合两个位域。另外，由于 `OptionSet` 继承于 [`ExpressibleByArrayLiteral`](https://developer.apple.com/reference/swift/expressiblebyarrayliteral)，你可以使用数组字面量来生成一个选项集合。
 

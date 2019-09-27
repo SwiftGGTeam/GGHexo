@@ -1,7 +1,7 @@
 Swift: NotificationCenter 协议"
 
 > 作者：Arthur Knopper，[原文链接](https://medium.com/swift-programming/swift-nsnotificationcenter-protocol-c527e67d93a1#.4zto25k8j)，原文日期：2016-06-01
-> 译者：[TonyHan](undefined)；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：TonyHan；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

@@ -1,7 +1,7 @@
 Xcode7 中用 Swift 做单元测试"
 
 > 作者：Maxime Defauw，[原文链接](http://www.appcoda.com/unit-testing-swift/)，原文日期：2016-02-29
-> 译者：[ray](undefined)；校对：[numbbbbb](http://numbbbbb.com/)；定稿：[way](undefined)
+> 译者：ray；校对：[numbbbbb](http://numbbbbb.com/)；定稿：way
   
 
 

@@ -1,7 +1,7 @@
 你是否依然应该学习 Objective-C 呢？"
 
 > 作者：Thomas Hanning，[原文链接](http://www.thomashanning.com/should-you-still-learn-objective-c/)，原文日期：2016-03-07
-> 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：[littledogboy](undefined)；定稿：[saitjr](http://www.saitjr.com)
+> 译者：[pmst](http://www.jianshu.com/users/596f2ba91ce9/latest_articles)；校对：littledogboy；定稿：[saitjr](http://www.saitjr.com)
   
 
 

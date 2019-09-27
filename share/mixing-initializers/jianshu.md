@@ -1,7 +1,7 @@
 混合构造器"
 
 > 作者：Russ Bishop，[原文链接](http://www.russbishop.net/mixing-initializers)，原文日期：2016-11-09
-> 译者：[Cyan](undefined)；校对：[小铁匠Linus](http://linusling.com)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：Cyan；校对：[小铁匠Linus](http://linusling.com)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 

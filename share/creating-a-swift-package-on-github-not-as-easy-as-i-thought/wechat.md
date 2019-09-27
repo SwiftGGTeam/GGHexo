@@ -1,7 +1,7 @@
 在 GitHub 上创建一个 Swift 包：其实一点也不简单"
 
 > 作者：Erica Sadun，[原文链接](http://ericasadun.com/2015/12/27/creating-a-swift-package-on-github-not-as-easy-as-i-thought/)，原文日期：2015-12-27
-> 译者：[DianQK](undefined)；校对：[Cee](https://github.com/Cee)；定稿：[numbbbbb](http://numbbbbb.com/)
+> 译者：DianQK；校对：[Cee](https://github.com/Cee)；定稿：[numbbbbb](http://numbbbbb.com/)
   
 
 

@@ -1,7 +1,7 @@
 XML 解析教程"
 
 > 作者：Arthur Knopper，[原文链接](https://www.ioscreator.com/tutorials/parsing-xml-tutorial)，原文日期：2016-07-26
-> 译者：[pucca](undefined)；校对：[Cwift](http://weibo.com/277195544)；定稿：[CMB](https://github.com/chenmingbiao)
+> 译者：pucca；校对：[Cwift](http://weibo.com/277195544)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 
