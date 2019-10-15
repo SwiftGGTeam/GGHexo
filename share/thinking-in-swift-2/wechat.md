@@ -139,7 +139,7 @@ Swift 编程思想，第二部分：数组的 Map 方法"
 
 同时，希望你花点时间来深入了解一下 `map()` 和 `flatMap()` 在数组上的应用，我知道你第一次学的时候可能觉得它们很复杂，但是一旦你学会了，你什么时候都会想用它们。
 
-![](https://swift.gg/img/articles/thinking-in-swift-2/map-everywhere.jpg1444352409.5202105)
+![](http://swift.gg/img/articles/thinking-in-swift-2/map-everywhere.jpg1444352409.5202105)
 
 
 [1](#note1): 请脑补一些作秀节目的用词
@@ -147,4 +147,4 @@ Swift 编程思想，第二部分：数组的 Map 方法"
 [2](#note2): `flatMap`还有其他一些作用。比如把一个二维数组变换为一维数组，比如，[[T]] -> [T]。但是在这里，我们只需要关注在如何使用 T->U? 的变换把 [T] 变成 [U]。
 
 [3](#note3): 注意到我们的代码中，允许`NSDictionary`没有`icon`键，这意味着我们认为一个`ListItem`可以不需要有任何`icon`。但是其他键是必须的。
-> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。�
