@@ -26,6 +26,7 @@ permalink: nshipster-xcconfig
 
 这一周，我们将向你展示如何在 Xcode 之外，通过修改基于文本的 `xcconfig` 文件，让你的项目更加紧凑、易懂、强大。
 
+<!--more-->
 ---
 
 [Xcode Build 配置文件](https://help.apple.com/xcode/mac/8.3/#/dev745c5c974)，即大家所熟知的 `xcconfig` 文件，允许我们在不使用 Xcode 的情况下声明和管理 APP 的 Build Setting。它们是纯文本，这意味着它们对代码管理系统更加友好，而且可以被任意编辑器修改。
