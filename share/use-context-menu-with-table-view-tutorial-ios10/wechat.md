@@ -1,8 +1,8 @@
-Table View 上下文菜单教程"
+Table View 中开启文本菜单功能"
 
 > 作者：Arthur Knopper，[原文链接](https://www.ioscreator.com/tutorials/use-context-menu-with-table-view-tutorial-ios10)，原文日期：2017-01-09
-> 译者：钟颖Cyan；校对：[Cwift](http://weibo.com/277195544)；定稿：[CMB](https://github.com/chenmingbiao)
-  
+> 译者：[Crystal Sun](http://www.jianshu.com/users/7a2d2cc38444/latest_articles)；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
+  ---
 
 
 
@@ -12,54 +12,57 @@ Table View 上下文菜单教程"
 
 
 
-通过长按手势来展示上下文菜单，给了用户对选中对象进行 剪切/复制/粘贴 操作的能力。在默认情况下，Table View 的上下文菜单是禁止的。在本文中，使用上下文菜单复制 Table View Cell 上面的文字，随后可以将文字粘贴到 Text Field 里面。本教程基于 Xcode 8.1 和 iOS 10。
+
+长按所选的对象后，弹出文本菜单（Context Menu），允许用户进行剪切、复制、粘贴操作。默认情况下，文本菜单功能在 Table View 中是关闭状态。在本节教程中，将学习如何在 Table View Cell 中开启文本菜单功能，将所选的文本复制到 Text Filed（文本输入框）中。本节教程使用的是 Xcode 8.1 和 iOS 10。
 
 
 
-打开 Xcode 并创建一个新的 Single View Application：
+### 设置工程
 
-![image](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/58728420414fb539f16738e6/1483899951269/?format=1500w)
+打开 Xcode，创建一个 Single View Application。
 
-点下一步，用 **IOS10ContextMenuTableViewTutorial** 作为项目的名字，然后根据你的习惯填写好 Organization Name 和 Organization Identifier。选择 Swift 作为开发语言，并且确保 Devices 为仅 iPhone。
+![](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/58ff88928419c2b2a27d0754/1493141675229/single-view-xcode-template?format=1500w)
 
-![image](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/587284518419c2902d0b4038/1483899997903/?format=1500w)
+点击 Next。Product Name 使用 **IOS10ContextMenuTableViewTutorial**，填写自己的 Organization Name 和 Organization Identifier，Language 一栏选择 Swift，Devices 一栏选择 iPhone。
 
-打开 **Main.storyboard** 文件并从 Object Library 拖拽一个 Table View 到 main View 的顶部。打开 Attribute Inspector 在 Table View 区域将 Prototype Cells 设置成 1。
+![](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/587284518419c2902d0b4038/1483899997903/?format=1500w)
 
-![image](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/58728478414fb539f1673cc0/1483900034219/?format=500w)
+打开 **Main.storyboard** 文件，从 Object Library 中拖拽一个 Table View 到主界面，然后选中 Table View，找到 Attribute Inspector，在 Table View 部分，将 Prototype Cells 的值改为1。
 
-选择 Table View Cell 后打开 Attribute Inspector，在 Table View Cell 区域将 Identifier 设置成 *"cell"*。
+![](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/58728478414fb539f1673cc0/1483900034219/?format=500w)
 
-![image](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/58728493bf629afa514967a5/1483900060894/?format=750w)
+选中 Table View Cell，找到 Attribute Inspector ，在 Table View Cell 区域，将 Indentifier 的值设置为 “cell”。
 
-选择 Table View，点击 storyboard 右下角的固定按钮固定 Table View 的上边、左边和右边。同时选择高度属性给 Table View 设置一个固定的高度。在 Update Frames 的下拉菜单中选择 Items of New Constraints，然后点击 Add 4 Constraints。
+![](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/58728493bf629afa514967a5/1483900060894/?format=750w)
 
-![image](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/587284b5725e2549f7b0a58c/1483900094417/?format=750w)
+选中 Table View，点击右下角的 Pin 按钮，点击上方、左、右三条线，选择 Height，设置成固定高度。在 Update Frames 的下拉菜单中选择 Items of New Contraints，接下来点击 “Add 4 Constraints”。
 
-从 Object Library 拖拽一个 Text Field 并放到 Table View 的正下方。按住 Ctrl 从 Text Field 内部连线到 Table View，保持按住 Ctrl 的状态并选择 "Vertical Spacing" 和 "Center Horizontally"。
+![](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/587284b5725e2549f7b0a58c/1483900094417/?format=750w)
 
-![image](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/587285ead1758edd735361d8/1483900403738/Autolayout-Pinleftandright.png?format=500w)
+从 Object Library 中拖拽一个 Text Field 控件，放到 Table View 的下方。按住 Control 键，将其拖拽到 Table View 上，松开 Control 键，选择 “Vertical Spacing” 和 “Center Horizontally”。
 
-选择 Text Field，点击 storyboard 右下角的固定按钮固定 Text Field 的左右边距。
+![](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/587285ead1758edd735361d8/1483900403738/Autolayout-Pinleftandright.png?format=500w)
 
-![image](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/587286031e5b6c9fdaadb7b3/1483900432899/?format=750w)
+选中 Text Field，点击右下角的 Pin 按钮，选中左、右两条线。如下图添加约束。
 
-需要 View Controller 作为 Table View 的代理，选择 TableView，按住 Ctrl 拖拽到 main View 顶部的 View Controller 图标，选择 dataSource，重复一遍并选择 delegate。
+![](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/587286031e5b6c9fdaadb7b3/1483900432899/?format=750w)
 
-![image](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/58728664bebafb08e6a84d26/1483900526787/?format=300w)
+View Controller 需要成为 Table View 的代理（delegate）。选中 TableView，按住 Control 键，将其拖拽到 View Controller 顶部的黄色图标上，点击 dataSource，重复上述步骤，点击 delegate。
 
-对 Text Field 进行同样的操作，让 View Controller 成为它的代理。打开 **ViewController.swift** 文件并将类声明改成：
+![](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/58728664bebafb08e6a84d26/1483900526787/?format=300w)
+
+对 Text Field 控件也重复上述步骤，使 View Controller 成为 Text Field 的代理（delegate）。然后打开 **ViewController.swift** 文件，将类的声明改成如下代码：
 
     
     class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
-添加下面的成员：
+接着添加下列属性：
 
     
     var pasteBoard = UIPasteboard.generalPasteboard()
     var tableData: [String] = ["dog","cat","fish"]
 
-`pasteBoard` 将用来进行复制粘贴操作，`tableData` 用来存储展示到 Table View Cells 上面的内容。下一步，修改 Table View 的代理方法：
+pasteBoard 属性将用于复制粘贴操作，tableData 存储展示在 Table View Cell 上的数据。接下来，如下所示修改 Table View 的 delegate 方法：
 
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -79,7 +82,7 @@ Table View 上下文菜单教程"
         return cell
     }
 
-Table View 将会显示 TableData 数组里面的三个内容。为了启用上下文菜单，必须实现下面三个方法：
+Table View 现在会展示 tableData 数组中的值，想要开启文本菜单功能，需要实现以下三个 delegate 方法。
 
     
     func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool
@@ -99,9 +102,9 @@ Table View 将会显示 TableData 数组里面的三个内容。为了启用上�
         pasteBoard.string = cell!.textLabel?.text
     }
 
-为了长按 Table View Cell 的时候显示菜单，`tableView:shouldShowMenuForRowAt` 方法必须返回 `true`。在 `tableView:canPerformAction:forRowAt` 方法里仅仅显示`复制`这个菜单项。在 `tableView:performAction:forRowAt:withSender` 方法里面将选中的文字复制到剪贴板。
+**tableView:shouldShowMenuForRowAt** 方法必须返回 true，才能长按显示文本菜单。**tableView:canPerformAction:forRowAt** 方法，让文本菜单只显示 copy（复制）一个选项。**tableView:performAction:forRowAt:withSender** 方法将选中的文本复制到 pasteBoard 变量中。
 
-最后，实现 `textFieldShouldReturn` 方法，当用户编辑 Text Field 时按下回车后收起键盘：
+最后，通过 **textFieldShouldReturn** 方法，在点击 Text Field 后让键盘消失。
 
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -109,10 +112,9 @@ Table View 将会显示 TableData 数组里面的三个内容。为了启用上�
         return false
     }
 
-**编译并运行**项目，长按列表项并选择复制，将文字粘贴到文本框。
+**运行**工程，长按一行 Table View Cell，然后选择 copy（复制） 选项，粘贴到 Text Field（文本框）里。
 
-![image](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/58728d2c1b631b6a2299ad67/1483902262012/?format=750w)
+![](https://static1.squarespace.com/static/52428a0ae4b0c4a5c2a2cede/t/58728d2c1b631b6a2299ad67/1483902262012/?format=750w)
 
-你可以在 ioscreator 的 [GitHub](https://github.com/ioscreator/ioscreator) 仓库里面找到 **IOS10ContextMenuTableViewTutorial** 的源码。
-> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。utorial** 教程的源代码。
+可以从 [github](https://github.com/ioscreator/ioscreator) 上下载 **IOS10ContextMenuTableViewTutorial** 教程的源代码。
 > 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
