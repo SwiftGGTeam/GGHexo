@@ -12,7 +12,7 @@ description: "本文介绍了在 Swift 中如何对一些集合类型的操作�
 原文链接=http://khanlou.com/2018/12/analyzing-complexity/
 作者=Soroush Khanlou
 原文日期=2018-12-17
-译者=Roc Zhang
+译者=RocZhang
 校对=numbbbbb,WAMaker
 定稿=Pancf
 
