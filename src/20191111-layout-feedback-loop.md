@@ -154,7 +154,7 @@ struct objc_method {
 在下面这行代码中:
 ```
 class_addMethod(trackableClass,#selector(originalClass.layoutSubviews), implementation, "v@:")
-``` 
+```
 我们所做的是给 `layoutSubviews()` 方法对应的键分配新值。    
 
 这个方法直截了当。我们获得这个计数器，使它的计数值加一。如果计数值超过临界值，我们会发送分析事件，其中包含类名和想要的任何数据体。
@@ -174,9 +174,9 @@ objc_setAssociatedObject(trackableClass, &RuntimeConstants.CounterKey, counter+1
 func printAddress(_ string: UnsafeRawPointer) {
     print("\(string)")
 }
- 
+
 let str = "test"
- 
+
 printAddress(str)
 printAddress(str)
 let closure = {
@@ -184,7 +184,7 @@ let closure = {
     printAddress(str)
 }
 closure()
-// 最后两个函数调用的地址将始终不同 
+// 最后两个函数调用的地址将始终不同
 ```
 
 用引用的方式来传递键的主意总是好的，因为有时，即使你没有使用闭包，变量的地址仍可能因内存管理而更改。在我们例子中，如果你把上面的代码运行多次，即使是前两个 printAddress() 的调用也可能会输出不同的地址。
