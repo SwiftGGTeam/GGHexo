@@ -88,3 +88,4 @@
 - `src`：只有两个例子是 svg 失效。
 
 其他大部分为加 https://swift.gg 头就行了。很少的需要 url encode。
+
