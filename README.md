@@ -134,3 +134,7 @@ title 是标题，date 是发布日期，tag 是标签，categories 是分类（
 ### google 分析
 
 ID：UA-66150920-1
+
+### backup 注意事项
+
+每到新的一年，执行一次 `backupPost.js`，把上一年的文章自动放入 /backup/YYYY，否则生成文章会报错。
