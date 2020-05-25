@@ -1,7 +1,7 @@
-如何在 watchOS 中复用分页界面控制器"
+如何重用 watchOS 的 Paging Interface Controller"
 
-> 作者：Natasha The Robot，[原文链接](https://www.natashatherobot.com/how-to-reuse-paging-interfacecontrollers-in-watchos/)，原文日期：2016/09/26
-> 译者：pucca；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
+> 作者：Natasha The Robot，[原文链接](https://www.natashatherobot.com/how-to-reuse-paging-interfacecontrollers-in-watchos/)，原文日期：2016-09-26
+> 译者：[saitjr](http://www.saitjr.com)；校对：[小锅](http://www.swiftyper.com)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
 
@@ -12,27 +12,26 @@
 
 
 
-WatchOS 目前并不是很支持动态代码。当你用一个 storyboard 来构建它的界面，即使所有的这些界面元素非常相似，还是必须把所有的界面控制器都放进去。比如下面这个关于意大利食物的 Apple Watch 的应用。
-
-
+目前为止，watchOS 的复用性都不是很好。即使每个界面都差不多，你也不得不在 storyboard 中把所有 Interface Controller 拖出来，就像下面这个 Italian Food 应用一样：
 
 <center>
-<video src="http://swiftgg-main.b0.upaiyun.com/video/how-to-reuse-paging-interfacecontrollers-in-watchos.mp4"  width="276" height="390" controls="controls">
-Your browser does not support the video tag.
+<video src="https://www.natashatherobot.com/wp-content/uploads/WatchOSPaging.mp4?_=1"  width="276" height="390" controls="controls">
 </video>
 </center>
 
-每个界面控制器仅有一张图片和一个标签：
+每个 Interface Controller 简单到就只有一个 image 和 label：
 
-![](https://www.natashatherobot.com/wp-content/uploads/Screen-Shot-2016-09-26-at-6.17.07-PM-768x306.png)
+![](https://www.natashatherobot.com/wp-content/uploads/Screen-Shot-2016-09-26-at-6.17.07-PM-1024x408.png)
 
-尽管这些界面和逻辑在界面控制器中看起来一模一样，但在过去一年里，我还是没有找到重用界面控制器的解决方案。
+即使它们的界面，甚至逻辑都完全一样，在此之前，我都没找到重用这些 Interface Controller 的方法！
 
-所以我复制粘贴三次代码，稍微修改模态层图片和标签的数据详情后，得到三个不同的控制器。但是哎，又一次搜索解决方案以后，我勉强得出了一个可用的解决方法。
+所以我有三个不同的 controller，而它们的代码，除了 image 和 label 的数据模型外，其它的我都复制粘贴的。在我坚持不懈下，终于发现了个黑魔法，虽然有点恶心，不过能解决问题倒是真的。
 
-## 数据模型
 
-首先，下面是一个简单的 FoodItem 模型，用来向界面控制器填充数据：
+
+## 模型
+
+首先，我创建了一个简单的 **FoodItem** 模型，它的数据主要是用于填充 Interface Controller ：
 
     
     struct FoodItem {
@@ -49,23 +48,23 @@ Your browser does not support the video tag.
         ]
     }
 
-## 故事板
+## Storyboard
 
-下一个步骤是创建一个可重用界面控制器，我们将它命名为 FoodItemInterfaceController，并且将它指定为故事板里每个界面控制器的类：
+下一步则是创建用于重用的 Interface Controller，就叫 **FoodItemInterfaceController** 吧，然后将它设置为 Storyboard 中每个 Interface Controller 的类：
 
-![](https://www.natashatherobot.com/wp-content/uploads/Screen-Shot-2016-09-26-at-6.26.41-PM-768x220.png)
+![](https://www.natashatherobot.com/wp-content/uploads/Screen-Shot-2016-09-26-at-6.26.41-PM-1024x293.png)
 
-然后是为图片和标签创建并关联 IBOutlets：
+然后，将 image 和 label 与 FoodItemInterfaceController 中的 IBOutlet 进行关联：
 
-![](https://www.natashatherobot.com/wp-content/uploads/FoodItemInterfaceController_swift_%E2%80%94_Edited-768x154.png)
+![](https://www.natashatherobot.com/wp-content/uploads/FoodItemInterfaceController_swift_%E2%80%94_Edited-1024x206.png)
 
-最后，你必须在故事板中为你的每个界面控制器添加一个独一无二的标识符：
+最后，在 storyboard 中，给每一个 Interface Controller 一个唯一标识：
 
-![](https://www.natashatherobot.com/wp-content/uploads/Interface_storyboard_%E2%80%94_Edited-1-768x272.png)
+![](https://www.natashatherobot.com/wp-content/uploads/Interface_storyboard_%E2%80%94_Edited-1-1024x362.png)
 
-## 界面控制器
+## Interface Controller
 
-现在到了最不堪的部分... 当第一个界面控制器加载的时候，你必须做些修改使它加载所有剩余的界面控制器...
+现在，就到了最恶心的部分了… 在加载第一个 Interface Controller 时，你需要用点小技巧，使其加载其他的 controller。
 
     
     import WatchKit
@@ -75,17 +74,17 @@ Your browser does not support the video tag.
         @IBOutlet var image: WKInterfaceImage!
         @IBOutlet var label: WKInterfaceLabel!
         
-        // 你必须跟踪这是否是第一次加载...
+        // 记录是否是第一次加载
         static var first = true
         
         override func awake(withContext context: Any?) {
             super.awake(withContext: context)
             
-            // 如果是第一次加载... 
+            // 如果是第一次加载
             if FoodItemInterfaceController.first {
-                // then reload with the data for all 3 controllers... 
-                // the Names are the storyboard identifiers 
-                // the Context is the data
+                // 根据三个数据模型，重载三个 controller
+                // Names 数组是 storyboard 中的 identifier
+                // Context 即数据模型
                 if FoodItemInterfaceController.first {
                 WKInterfaceController.reloadRootControllers(
                     withNames: ["FoodItem1", "FoodItem2", "FoodItem3"],
@@ -93,9 +92,9 @@ Your browser does not support the video tag.
                 FoodItemInterfaceController.first = false
             }
             
-            // context 中的数据传递给这个方法
+            // 数据模型是通过 context 传到这个方法中的
             if let foodItem = context as? FoodItem {
-                // 为图片和文本设置合适的数据
+                // 给 image 和 label 赋值
                 image.setImage(UIImage(named: foodItem.imageName))
                 label.setText(foodItem.title)
             }
@@ -104,12 +103,12 @@ Your browser does not support the video tag.
 
 ## 结论
 
-首先，这个实现比硬编出所有界面控制器来的慢，因为第一次加载界面控制器，它需要重加载所有的东西。但是至少这段代码只出现一个地方，对吧？
+首先，这种方式会比硬编码 Interface Controller 的方式要慢，因为在第一次加载 Interface Controller 时，它需要去重新载入所有东西。但至少，这样代码集中啊！
 
-并且，我认为没办法拥有一个动态的数据集合（例如，你从服务器获取了一组可用的食物项数组，并且想用至少 3 页来显示它们。虽然本例中，你可以使用表格代替分页界面）。
+而且，在我能力范围以内，还没办法解决动态数据（比如，food item 是通过网络请求获得的）并将其展示到三个以上界面的问题。不过这种情况，你可以选择用 table 来展示数据，而不是 paging。
 
-喔，当然，你还是必须在故事板中复制这些界面控制器，尽管它们都有一样大小的图片和标签，且有相同结构和字体。如果你对其中一个做了调整改变，要记得手动给其他几个也做同样的调整，以保证它们最终看起来一样。我已经多次忘记了，包括这次的 demo...
+哦，对了，你还是需要在 Storyboard 中复制多个 Interface Controller，它们有相同尺寸的 image，以及相同布局和字体的 label，如果对其中一个进行了调整，记着对其他几个也要相应改动，这样才一致。我就经常忘记统一修改，连下面这个 demo 也是...
 
-你可以[在此](https://github.com/NatashaTheRobot/WatchReusablePagingExample)浏览完整的代码。
+你可以在 [GitHub 上查看完整代码](https://github.com/NatashaTheRobot/WatchReusablePagingExample)。
 
-> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
+> 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。p://swift.gg](http://swift.gg)。
