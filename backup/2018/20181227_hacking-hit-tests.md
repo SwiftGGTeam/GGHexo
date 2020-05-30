@@ -21,7 +21,7 @@ description:
 
 <!--more-->
 
-`UIKit` 有个十分古怪的地方，那是它的触摸事件处理系统。它主要包括两个方法，`-pointInstide:withEvent:` 和 `-hitTest:withEvent:`。
+`UIKit` 有个十分古怪的地方，那是它的触摸事件处理系统。它主要包括两个方法，`-pointInside:withEvent:` 和 `-hitTest:withEvent:`。
 
 `-pointInside:` 会告诉调用者给定点是否包含在指定的视图区域中。而 `-hitTest:` 用 `pointInside:` 这个方法来告诉调用者哪个子视图（如果有的话）是当前触摸在给定点的接收者。现在我比较感兴趣的是后面这个方法。
 
