@@ -9,7 +9,7 @@ description:
 
 ---
 原文链接=http://khanlou.com/2017/03/that-one-optional-property/
-作者=Ole Begemann
+作者=Soroush Khanlou
 原文日期=2017/3/6
 译者=Cwift
 校对=walkingway
