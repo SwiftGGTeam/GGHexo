@@ -1,6 +1,6 @@
 一个可选型的属性"
 
-> 作者：Ole Begemann，[原文链接](http://khanlou.com/2017/03/that-one-optional-property/)，原文日期：2017/3/6
+> 作者：Soroush Khanlou，[原文链接](http://khanlou.com/2017/03/that-one-optional-property/)，原文日期：2017/3/6
 > 译者：[Cwift](http://weibo.com/277195544)；校对：[walkingway](http://chengway.in/)；定稿：[CMB](https://github.com/chenmingbiao)
   
 
@@ -121,4 +121,5 @@
 如果你正在用 [我编写的 `Promise` 库](https://github.com/khanlou/Promise) ，你可以使用无参的构造器创建一个挂起状态的 `Promise`，稍后调用 `fulfill` 方法来完成它。
 
 当遇到可选型的属性时，它可能会揭示之前未察觉到的代码问题。当你发现自己正在向一个 `ViewController` 添加一个可选型的参数时，不妨扪心自问，这个可选型是什么意思？有没有更好的方式来表示这个数据？
+
 > 本文由 SwiftGG 翻译组翻译，已经获得作者翻译授权，最新文章请访问 [http://swift.gg](http://swift.gg)。
