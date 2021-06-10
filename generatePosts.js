@@ -99,7 +99,7 @@ backupPathArr.forEach((pathitem) => {
   backupPromises.push(
     new Promise(function(resolve, reject) {
       fs.readdir(pathitem, (err, files) => {
-        if (err) reject(err)
+        if (err) resolve([])
         resolve(files ? files.filter(file => !(file.indexOf(".") === 0)) : [])
       })
     })
