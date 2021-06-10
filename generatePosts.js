@@ -36,7 +36,7 @@ String.prototype.splice = function( idx, rem, s ) {
 let deletedInfo = new Promise(function (resolve, reject) {
   fs.readdir(deletedPath, (err, files) => {
     if (err) reject(err)
-    resolve(files.filter(file => !(file.indexOf(".") === 0)))
+    resolve(files ? files.filter(file => !(file.indexOf(".") === 0)) : [])
   })
 })
 .then(files => Promise.all(
@@ -74,7 +74,7 @@ var backupPromises = [
   new Promise(function(resolve, reject) {
     fs.readdir(basePath, (err, files) => {
       if (err) reject(err)
-      resolve(files.filter(file => !(file.indexOf(".") === 0)))
+      resolve(files ? files.filter(file => !(file.indexOf(".") === 0)) : [])
     })
   })
   .then(files => Promise.all(
@@ -100,7 +100,7 @@ backupPathArr.forEach((pathitem) => {
     new Promise(function(resolve, reject) {
       fs.readdir(pathitem, (err, files) => {
         if (err) reject(err)
-        resolve(files.filter(file => !(file.indexOf(".") === 0)))
+        resolve(files ? files.filter(file => !(file.indexOf(".") === 0)) : [])
       })
     })
     .then(files => Promise.all(
