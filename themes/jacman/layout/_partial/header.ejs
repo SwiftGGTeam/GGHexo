@@ -12,10 +12,20 @@ function root_for(path){
   return path;
 }
 %>
+<div style="
+top: 0px;
+position: sticky;
+width: 100%;
+background-color: #e3512b;
+z-index: 9999;
+padding: 10px 0px 10px;
+text-align: center;">
+  <span id="sw_slogan">Hi，SwiftGG 翻译组启用了新的域名：<b><a style="color: white;text-decoration:underline;" target="_blank" href="https://swiftgg.team">swiftgg.team</a></b>后续翻译组的各项运营活动将会在新域名下维护。</span>
+</div>
 <div>
-		<% if	(theme.imglogo.enable&&theme.imglogo.src){ %>
-			<div id="imglogo">
-				<a href="<%- config.root %>"><img src="<%- config.root %><%= theme.imglogo.src %>" alt="<%= config.title %>" title="<%= config.title %>"/></a>
+	<% if	(theme.imglogo.enable&&theme.imglogo.src){ %>
+		<div id="imglogo">
+			<a href="<%- config.root %>"><img src="<%- config.root %><%= theme.imglogo.src %>" alt="<%= config.title %>" title="<%= config.title %>"/></a>
 			</div>
 			<% } %>
 			<div id="textlogo">
